@@ -20,492 +20,684 @@ import Data.StrMap as StrMap
 import AWS.Request as Request
 import AWS.Request.Types as Types
 
-serviceName = "SSM" :: String
-
 
 -- | <p>Adds or overwrites one or more tags for the specified resource. Tags are metadata that you can assign to your documents, managed instances, Maintenance Windows, Parameter Store parameters, and patch baselines. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define. For example, you could define a set of tags for your account's managed instances that helps you track each instance's owner and stack level. For example: Key=Owner and Value=DbAdmin, SysAdmin, or Dev. Or Key=Stack and Value=Production, Pre-Production, or Test.</p> <p>Each resource can have a maximum of 50 tags. </p> <p>We recommend that you devise a set of tag keys that meets your needs for each resource type. Using a consistent set of tag keys makes it easier for you to manage your resources. You can search and filter the resources based on the tags you add. Tags don't have any semantic meaning to Amazon EC2 and are interpreted strictly as a string of characters. </p> <p>For more information about tags, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2 Resources</a> in the <i>Amazon EC2 User Guide</i>.</p>
 addTagsToResource :: forall eff. AddTagsToResourceRequest -> Aff (exception :: EXCEPTION | eff) AddTagsToResourceResult
-addTagsToResource = Request.request serviceName "addTagsToResource" 
+addTagsToResource = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "addTagsToResource"
 
 
 -- | <p>Attempts to cancel the command specified by the Command ID. There is no guarantee that the command will be terminated and the underlying process stopped.</p>
 cancelCommand :: forall eff. CancelCommandRequest -> Aff (exception :: EXCEPTION | eff) CancelCommandResult
-cancelCommand = Request.request serviceName "cancelCommand" 
+cancelCommand = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "cancelCommand"
 
 
 -- | <p>Registers your on-premises server or virtual machine with Amazon EC2 so that you can manage these resources using Run Command. An on-premises server or virtual machine that has been registered with EC2 is called a managed instance. For more information about activations, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting Up Systems Manager in Hybrid Environments</a>.</p>
 createActivation :: forall eff. CreateActivationRequest -> Aff (exception :: EXCEPTION | eff) CreateActivationResult
-createActivation = Request.request serviceName "createActivation" 
+createActivation = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "createActivation"
 
 
 -- | <p>Associates the specified Systems Manager document with the specified instances or targets.</p> <p>When you associate a document with one or more instances using instance IDs or tags, the SSM Agent running on the instance processes the document and configures the instance as specified.</p> <p>If you associate a document with an instance that already has an associated document, the system throws the AssociationAlreadyExists exception.</p>
 createAssociation :: forall eff. CreateAssociationRequest -> Aff (exception :: EXCEPTION | eff) CreateAssociationResult
-createAssociation = Request.request serviceName "createAssociation" 
+createAssociation = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "createAssociation"
 
 
 -- | <p>Associates the specified Systems Manager document with the specified instances or targets.</p> <p>When you associate a document with one or more instances using instance IDs or tags, the SSM Agent running on the instance processes the document and configures the instance as specified.</p> <p>If you associate a document with an instance that already has an associated document, the system throws the AssociationAlreadyExists exception.</p>
 createAssociationBatch :: forall eff. CreateAssociationBatchRequest -> Aff (exception :: EXCEPTION | eff) CreateAssociationBatchResult
-createAssociationBatch = Request.request serviceName "createAssociationBatch" 
+createAssociationBatch = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "createAssociationBatch"
 
 
 -- | <p>Creates a Systems Manager document.</p> <p>After you create a document, you can use CreateAssociation to associate it with one or more running instances.</p>
 createDocument :: forall eff. CreateDocumentRequest -> Aff (exception :: EXCEPTION | eff) CreateDocumentResult
-createDocument = Request.request serviceName "createDocument" 
+createDocument = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "createDocument"
 
 
 -- | <p>Creates a new Maintenance Window.</p>
 createMaintenanceWindow :: forall eff. CreateMaintenanceWindowRequest -> Aff (exception :: EXCEPTION | eff) CreateMaintenanceWindowResult
-createMaintenanceWindow = Request.request serviceName "createMaintenanceWindow" 
+createMaintenanceWindow = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "createMaintenanceWindow"
 
 
 -- | <p>Creates a patch baseline.</p> <note> <p>For information about valid key and value pairs in <code>PatchFilters</code> for each supported operating system type, see <a href="http://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html">PatchFilter</a>.</p> </note>
 createPatchBaseline :: forall eff. CreatePatchBaselineRequest -> Aff (exception :: EXCEPTION | eff) CreatePatchBaselineResult
-createPatchBaseline = Request.request serviceName "createPatchBaseline" 
+createPatchBaseline = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "createPatchBaseline"
 
 
 -- | <p>Creates a resource data sync configuration to a single bucket in Amazon S3. This is an asynchronous operation that returns immediately. After a successful initial sync is completed, the system continuously syncs data to the Amazon S3 bucket. To check the status of the sync, use the <a>ListResourceDataSync</a>.</p> <p>By default, data is not encrypted in Amazon S3. We strongly recommend that you enable encryption in Amazon S3 to ensure secure data storage. We also recommend that you secure access to the Amazon S3 bucket by creating a restrictive bucket policy. To view an example of a restrictive Amazon S3 bucket policy for Resource Data Sync, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-configuring.html#sysman-inventory-datasync">Configuring Resource Data Sync for Inventory</a>.</p>
 createResourceDataSync :: forall eff. CreateResourceDataSyncRequest -> Aff (exception :: EXCEPTION | eff) CreateResourceDataSyncResult
-createResourceDataSync = Request.request serviceName "createResourceDataSync" 
+createResourceDataSync = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "createResourceDataSync"
 
 
 -- | <p>Deletes an activation. You are not required to delete an activation. If you delete an activation, you can no longer use it to register additional managed instances. Deleting an activation does not de-register managed instances. You must manually de-register managed instances.</p>
 deleteActivation :: forall eff. DeleteActivationRequest -> Aff (exception :: EXCEPTION | eff) DeleteActivationResult
-deleteActivation = Request.request serviceName "deleteActivation" 
+deleteActivation = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "deleteActivation"
 
 
 -- | <p>Disassociates the specified Systems Manager document from the specified instance.</p> <p>When you disassociate a document from an instance, it does not change the configuration of the instance. To change the configuration state of an instance after you disassociate a document, you must create a new document with the desired configuration and associate it with the instance.</p>
 deleteAssociation :: forall eff. DeleteAssociationRequest -> Aff (exception :: EXCEPTION | eff) DeleteAssociationResult
-deleteAssociation = Request.request serviceName "deleteAssociation" 
+deleteAssociation = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "deleteAssociation"
 
 
 -- | <p>Deletes the Systems Manager document and all instance associations to the document.</p> <p>Before you delete the document, we recommend that you use <a>DeleteAssociation</a> to disassociate all instances that are associated with the document.</p>
 deleteDocument :: forall eff. DeleteDocumentRequest -> Aff (exception :: EXCEPTION | eff) DeleteDocumentResult
-deleteDocument = Request.request serviceName "deleteDocument" 
+deleteDocument = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "deleteDocument"
 
 
 -- | <p>Deletes a Maintenance Window.</p>
 deleteMaintenanceWindow :: forall eff. DeleteMaintenanceWindowRequest -> Aff (exception :: EXCEPTION | eff) DeleteMaintenanceWindowResult
-deleteMaintenanceWindow = Request.request serviceName "deleteMaintenanceWindow" 
+deleteMaintenanceWindow = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "deleteMaintenanceWindow"
 
 
 -- | <p>Delete a parameter from the system.</p>
 deleteParameter :: forall eff. DeleteParameterRequest -> Aff (exception :: EXCEPTION | eff) DeleteParameterResult
-deleteParameter = Request.request serviceName "deleteParameter" 
+deleteParameter = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "deleteParameter"
 
 
 -- | <p>Delete a list of parameters. This API is used to delete parameters by using the Amazon EC2 console.</p>
 deleteParameters :: forall eff. DeleteParametersRequest -> Aff (exception :: EXCEPTION | eff) DeleteParametersResult
-deleteParameters = Request.request serviceName "deleteParameters" 
+deleteParameters = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "deleteParameters"
 
 
 -- | <p>Deletes a patch baseline.</p>
 deletePatchBaseline :: forall eff. DeletePatchBaselineRequest -> Aff (exception :: EXCEPTION | eff) DeletePatchBaselineResult
-deletePatchBaseline = Request.request serviceName "deletePatchBaseline" 
+deletePatchBaseline = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "deletePatchBaseline"
 
 
 -- | <p>Deletes a Resource Data Sync configuration. After the configuration is deleted, changes to inventory data on managed instances are no longer synced with the target Amazon S3 bucket. Deleting a sync configuration does not delete data in the target Amazon S3 bucket.</p>
 deleteResourceDataSync :: forall eff. DeleteResourceDataSyncRequest -> Aff (exception :: EXCEPTION | eff) DeleteResourceDataSyncResult
-deleteResourceDataSync = Request.request serviceName "deleteResourceDataSync" 
+deleteResourceDataSync = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "deleteResourceDataSync"
 
 
 -- | <p>Removes the server or virtual machine from the list of registered servers. You can reregister the instance again at any time. If you don't plan to use Run Command on the server, we suggest uninstalling the SSM Agent first.</p>
 deregisterManagedInstance :: forall eff. DeregisterManagedInstanceRequest -> Aff (exception :: EXCEPTION | eff) DeregisterManagedInstanceResult
-deregisterManagedInstance = Request.request serviceName "deregisterManagedInstance" 
+deregisterManagedInstance = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "deregisterManagedInstance"
 
 
 -- | <p>Removes a patch group from a patch baseline.</p>
 deregisterPatchBaselineForPatchGroup :: forall eff. DeregisterPatchBaselineForPatchGroupRequest -> Aff (exception :: EXCEPTION | eff) DeregisterPatchBaselineForPatchGroupResult
-deregisterPatchBaselineForPatchGroup = Request.request serviceName "deregisterPatchBaselineForPatchGroup" 
+deregisterPatchBaselineForPatchGroup = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "deregisterPatchBaselineForPatchGroup"
 
 
 -- | <p>Removes a target from a Maintenance Window.</p>
 deregisterTargetFromMaintenanceWindow :: forall eff. DeregisterTargetFromMaintenanceWindowRequest -> Aff (exception :: EXCEPTION | eff) DeregisterTargetFromMaintenanceWindowResult
-deregisterTargetFromMaintenanceWindow = Request.request serviceName "deregisterTargetFromMaintenanceWindow" 
+deregisterTargetFromMaintenanceWindow = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "deregisterTargetFromMaintenanceWindow"
 
 
 -- | <p>Removes a task from a Maintenance Window.</p>
 deregisterTaskFromMaintenanceWindow :: forall eff. DeregisterTaskFromMaintenanceWindowRequest -> Aff (exception :: EXCEPTION | eff) DeregisterTaskFromMaintenanceWindowResult
-deregisterTaskFromMaintenanceWindow = Request.request serviceName "deregisterTaskFromMaintenanceWindow" 
+deregisterTaskFromMaintenanceWindow = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "deregisterTaskFromMaintenanceWindow"
 
 
 -- | <p>Details about the activation, including: the date and time the activation was created, the expiration date, the IAM role assigned to the instances in the activation, and the number of instances activated by this registration.</p>
 describeActivations :: forall eff. DescribeActivationsRequest -> Aff (exception :: EXCEPTION | eff) DescribeActivationsResult
-describeActivations = Request.request serviceName "describeActivations" 
+describeActivations = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "describeActivations"
 
 
 -- | <p>Describes the association for the specified target or instance. If you created the association by using the <code>Targets</code> parameter, then you must retrieve the association by using the association ID. If you created the association by specifying an instance ID and a Systems Manager document, then you retrieve the association by specifying the document name and the instance ID. </p>
 describeAssociation :: forall eff. DescribeAssociationRequest -> Aff (exception :: EXCEPTION | eff) DescribeAssociationResult
-describeAssociation = Request.request serviceName "describeAssociation" 
+describeAssociation = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "describeAssociation"
 
 
 -- | <p>Provides details about all active and terminated Automation executions.</p>
 describeAutomationExecutions :: forall eff. DescribeAutomationExecutionsRequest -> Aff (exception :: EXCEPTION | eff) DescribeAutomationExecutionsResult
-describeAutomationExecutions = Request.request serviceName "describeAutomationExecutions" 
+describeAutomationExecutions = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "describeAutomationExecutions"
 
 
 -- | <p>Information about all active and terminated step executions in an Automation workflow.</p>
 describeAutomationStepExecutions :: forall eff. DescribeAutomationStepExecutionsRequest -> Aff (exception :: EXCEPTION | eff) DescribeAutomationStepExecutionsResult
-describeAutomationStepExecutions = Request.request serviceName "describeAutomationStepExecutions" 
+describeAutomationStepExecutions = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "describeAutomationStepExecutions"
 
 
 -- | <p>Lists all patches that could possibly be included in a patch baseline.</p>
 describeAvailablePatches :: forall eff. DescribeAvailablePatchesRequest -> Aff (exception :: EXCEPTION | eff) DescribeAvailablePatchesResult
-describeAvailablePatches = Request.request serviceName "describeAvailablePatches" 
+describeAvailablePatches = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "describeAvailablePatches"
 
 
 -- | <p>Describes the specified Systems Manager document.</p>
 describeDocument :: forall eff. DescribeDocumentRequest -> Aff (exception :: EXCEPTION | eff) DescribeDocumentResult
-describeDocument = Request.request serviceName "describeDocument" 
+describeDocument = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "describeDocument"
 
 
 -- | <p>Describes the permissions for a Systems Manager document. If you created the document, you are the owner. If a document is shared, it can either be shared privately (by specifying a user's AWS account ID) or publicly (<i>All</i>). </p>
 describeDocumentPermission :: forall eff. DescribeDocumentPermissionRequest -> Aff (exception :: EXCEPTION | eff) DescribeDocumentPermissionResponse
-describeDocumentPermission = Request.request serviceName "describeDocumentPermission" 
+describeDocumentPermission = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "describeDocumentPermission"
 
 
 -- | <p>All associations for the instance(s).</p>
 describeEffectiveInstanceAssociations :: forall eff. DescribeEffectiveInstanceAssociationsRequest -> Aff (exception :: EXCEPTION | eff) DescribeEffectiveInstanceAssociationsResult
-describeEffectiveInstanceAssociations = Request.request serviceName "describeEffectiveInstanceAssociations" 
+describeEffectiveInstanceAssociations = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "describeEffectiveInstanceAssociations"
 
 
 -- | <p>Retrieves the current effective patches (the patch and the approval state) for the specified patch baseline. Note that this API applies only to Windows patch baselines.</p>
 describeEffectivePatchesForPatchBaseline :: forall eff. DescribeEffectivePatchesForPatchBaselineRequest -> Aff (exception :: EXCEPTION | eff) DescribeEffectivePatchesForPatchBaselineResult
-describeEffectivePatchesForPatchBaseline = Request.request serviceName "describeEffectivePatchesForPatchBaseline" 
+describeEffectivePatchesForPatchBaseline = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "describeEffectivePatchesForPatchBaseline"
 
 
 -- | <p>The status of the associations for the instance(s).</p>
 describeInstanceAssociationsStatus :: forall eff. DescribeInstanceAssociationsStatusRequest -> Aff (exception :: EXCEPTION | eff) DescribeInstanceAssociationsStatusResult
-describeInstanceAssociationsStatus = Request.request serviceName "describeInstanceAssociationsStatus" 
+describeInstanceAssociationsStatus = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "describeInstanceAssociationsStatus"
 
 
 -- | <p>Describes one or more of your instances. You can use this to get information about instances like the operating system platform, the SSM Agent version (Linux), status etc. If you specify one or more instance IDs, it returns information for those instances. If you do not specify instance IDs, it returns information for all your instances. If you specify an instance ID that is not valid or an instance that you do not own, you receive an error. </p>
 describeInstanceInformation :: forall eff. DescribeInstanceInformationRequest -> Aff (exception :: EXCEPTION | eff) DescribeInstanceInformationResult
-describeInstanceInformation = Request.request serviceName "describeInstanceInformation" 
+describeInstanceInformation = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "describeInstanceInformation"
 
 
 -- | <p>Retrieves the high-level patch state of one or more instances.</p>
 describeInstancePatchStates :: forall eff. DescribeInstancePatchStatesRequest -> Aff (exception :: EXCEPTION | eff) DescribeInstancePatchStatesResult
-describeInstancePatchStates = Request.request serviceName "describeInstancePatchStates" 
+describeInstancePatchStates = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "describeInstancePatchStates"
 
 
 -- | <p>Retrieves the high-level patch state for the instances in the specified patch group.</p>
 describeInstancePatchStatesForPatchGroup :: forall eff. DescribeInstancePatchStatesForPatchGroupRequest -> Aff (exception :: EXCEPTION | eff) DescribeInstancePatchStatesForPatchGroupResult
-describeInstancePatchStatesForPatchGroup = Request.request serviceName "describeInstancePatchStatesForPatchGroup" 
+describeInstancePatchStatesForPatchGroup = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "describeInstancePatchStatesForPatchGroup"
 
 
 -- | <p>Retrieves information about the patches on the specified instance and their state relative to the patch baseline being used for the instance.</p>
 describeInstancePatches :: forall eff. DescribeInstancePatchesRequest -> Aff (exception :: EXCEPTION | eff) DescribeInstancePatchesResult
-describeInstancePatches = Request.request serviceName "describeInstancePatches" 
+describeInstancePatches = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "describeInstancePatches"
 
 
 -- | <p>Retrieves the individual task executions (one per target) for a particular task executed as part of a Maintenance Window execution.</p>
 describeMaintenanceWindowExecutionTaskInvocations :: forall eff. DescribeMaintenanceWindowExecutionTaskInvocationsRequest -> Aff (exception :: EXCEPTION | eff) DescribeMaintenanceWindowExecutionTaskInvocationsResult
-describeMaintenanceWindowExecutionTaskInvocations = Request.request serviceName "describeMaintenanceWindowExecutionTaskInvocations" 
+describeMaintenanceWindowExecutionTaskInvocations = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "describeMaintenanceWindowExecutionTaskInvocations"
 
 
 -- | <p>For a given Maintenance Window execution, lists the tasks that were executed.</p>
 describeMaintenanceWindowExecutionTasks :: forall eff. DescribeMaintenanceWindowExecutionTasksRequest -> Aff (exception :: EXCEPTION | eff) DescribeMaintenanceWindowExecutionTasksResult
-describeMaintenanceWindowExecutionTasks = Request.request serviceName "describeMaintenanceWindowExecutionTasks" 
+describeMaintenanceWindowExecutionTasks = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "describeMaintenanceWindowExecutionTasks"
 
 
 -- | <p>Lists the executions of a Maintenance Window. This includes information about when the Maintenance Window was scheduled to be active, and information about tasks registered and run with the Maintenance Window.</p>
 describeMaintenanceWindowExecutions :: forall eff. DescribeMaintenanceWindowExecutionsRequest -> Aff (exception :: EXCEPTION | eff) DescribeMaintenanceWindowExecutionsResult
-describeMaintenanceWindowExecutions = Request.request serviceName "describeMaintenanceWindowExecutions" 
+describeMaintenanceWindowExecutions = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "describeMaintenanceWindowExecutions"
 
 
 -- | <p>Lists the targets registered with the Maintenance Window.</p>
 describeMaintenanceWindowTargets :: forall eff. DescribeMaintenanceWindowTargetsRequest -> Aff (exception :: EXCEPTION | eff) DescribeMaintenanceWindowTargetsResult
-describeMaintenanceWindowTargets = Request.request serviceName "describeMaintenanceWindowTargets" 
+describeMaintenanceWindowTargets = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "describeMaintenanceWindowTargets"
 
 
 -- | <p>Lists the tasks in a Maintenance Window.</p>
 describeMaintenanceWindowTasks :: forall eff. DescribeMaintenanceWindowTasksRequest -> Aff (exception :: EXCEPTION | eff) DescribeMaintenanceWindowTasksResult
-describeMaintenanceWindowTasks = Request.request serviceName "describeMaintenanceWindowTasks" 
+describeMaintenanceWindowTasks = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "describeMaintenanceWindowTasks"
 
 
 -- | <p>Retrieves the Maintenance Windows in an AWS account.</p>
 describeMaintenanceWindows :: forall eff. DescribeMaintenanceWindowsRequest -> Aff (exception :: EXCEPTION | eff) DescribeMaintenanceWindowsResult
-describeMaintenanceWindows = Request.request serviceName "describeMaintenanceWindows" 
+describeMaintenanceWindows = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "describeMaintenanceWindows"
 
 
 -- | <p>Get information about a parameter.</p> <p>Request results are returned on a best-effort basis. If you specify <code>MaxResults</code> in the request, the response includes information up to the limit specified. The number of items returned, however, can be between zero and the value of <code>MaxResults</code>. If the service reaches an internal limit while processing the results, it stops the operation and returns the matching values up to that point and a <code>NextToken</code>. You can specify the <code>NextToken</code> in a subsequent call to get the next set of results.</p>
 describeParameters :: forall eff. DescribeParametersRequest -> Aff (exception :: EXCEPTION | eff) DescribeParametersResult
-describeParameters = Request.request serviceName "describeParameters" 
+describeParameters = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "describeParameters"
 
 
 -- | <p>Lists the patch baselines in your AWS account.</p>
 describePatchBaselines :: forall eff. DescribePatchBaselinesRequest -> Aff (exception :: EXCEPTION | eff) DescribePatchBaselinesResult
-describePatchBaselines = Request.request serviceName "describePatchBaselines" 
+describePatchBaselines = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "describePatchBaselines"
 
 
 -- | <p>Returns high-level aggregated patch compliance state for a patch group.</p>
 describePatchGroupState :: forall eff. DescribePatchGroupStateRequest -> Aff (exception :: EXCEPTION | eff) DescribePatchGroupStateResult
-describePatchGroupState = Request.request serviceName "describePatchGroupState" 
+describePatchGroupState = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "describePatchGroupState"
 
 
 -- | <p>Lists all patch groups that have been registered with patch baselines.</p>
 describePatchGroups :: forall eff. DescribePatchGroupsRequest -> Aff (exception :: EXCEPTION | eff) DescribePatchGroupsResult
-describePatchGroups = Request.request serviceName "describePatchGroups" 
+describePatchGroups = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "describePatchGroups"
 
 
 -- | <p>Get detailed information about a particular Automation execution.</p>
 getAutomationExecution :: forall eff. GetAutomationExecutionRequest -> Aff (exception :: EXCEPTION | eff) GetAutomationExecutionResult
-getAutomationExecution = Request.request serviceName "getAutomationExecution" 
+getAutomationExecution = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "getAutomationExecution"
 
 
 -- | <p>Returns detailed information about command execution for an invocation or plugin. </p>
 getCommandInvocation :: forall eff. GetCommandInvocationRequest -> Aff (exception :: EXCEPTION | eff) GetCommandInvocationResult
-getCommandInvocation = Request.request serviceName "getCommandInvocation" 
+getCommandInvocation = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "getCommandInvocation"
 
 
 -- | <p>Retrieves the default patch baseline. Note that Systems Manager supports creating multiple default patch baselines. For example, you can create a default patch baseline for each operating system.</p>
 getDefaultPatchBaseline :: forall eff. GetDefaultPatchBaselineRequest -> Aff (exception :: EXCEPTION | eff) GetDefaultPatchBaselineResult
-getDefaultPatchBaseline = Request.request serviceName "getDefaultPatchBaseline" 
+getDefaultPatchBaseline = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "getDefaultPatchBaseline"
 
 
 -- | <p>Retrieves the current snapshot for the patch baseline the instance uses. This API is primarily used by the AWS-RunPatchBaseline Systems Manager document. </p>
 getDeployablePatchSnapshotForInstance :: forall eff. GetDeployablePatchSnapshotForInstanceRequest -> Aff (exception :: EXCEPTION | eff) GetDeployablePatchSnapshotForInstanceResult
-getDeployablePatchSnapshotForInstance = Request.request serviceName "getDeployablePatchSnapshotForInstance" 
+getDeployablePatchSnapshotForInstance = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "getDeployablePatchSnapshotForInstance"
 
 
 -- | <p>Gets the contents of the specified Systems Manager document.</p>
 getDocument :: forall eff. GetDocumentRequest -> Aff (exception :: EXCEPTION | eff) GetDocumentResult
-getDocument = Request.request serviceName "getDocument" 
+getDocument = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "getDocument"
 
 
 -- | <p>Query inventory information.</p>
 getInventory :: forall eff. GetInventoryRequest -> Aff (exception :: EXCEPTION | eff) GetInventoryResult
-getInventory = Request.request serviceName "getInventory" 
+getInventory = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "getInventory"
 
 
 -- | <p>Return a list of inventory type names for the account, or return a list of attribute names for a specific Inventory item type. </p>
 getInventorySchema :: forall eff. GetInventorySchemaRequest -> Aff (exception :: EXCEPTION | eff) GetInventorySchemaResult
-getInventorySchema = Request.request serviceName "getInventorySchema" 
+getInventorySchema = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "getInventorySchema"
 
 
 -- | <p>Retrieves a Maintenance Window.</p>
 getMaintenanceWindow :: forall eff. GetMaintenanceWindowRequest -> Aff (exception :: EXCEPTION | eff) GetMaintenanceWindowResult
-getMaintenanceWindow = Request.request serviceName "getMaintenanceWindow" 
+getMaintenanceWindow = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "getMaintenanceWindow"
 
 
 -- | <p>Retrieves details about a specific task executed as part of a Maintenance Window execution.</p>
 getMaintenanceWindowExecution :: forall eff. GetMaintenanceWindowExecutionRequest -> Aff (exception :: EXCEPTION | eff) GetMaintenanceWindowExecutionResult
-getMaintenanceWindowExecution = Request.request serviceName "getMaintenanceWindowExecution" 
+getMaintenanceWindowExecution = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "getMaintenanceWindowExecution"
 
 
 -- | <p>Retrieves the details about a specific task executed as part of a Maintenance Window execution.</p>
 getMaintenanceWindowExecutionTask :: forall eff. GetMaintenanceWindowExecutionTaskRequest -> Aff (exception :: EXCEPTION | eff) GetMaintenanceWindowExecutionTaskResult
-getMaintenanceWindowExecutionTask = Request.request serviceName "getMaintenanceWindowExecutionTask" 
+getMaintenanceWindowExecutionTask = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "getMaintenanceWindowExecutionTask"
 
 
 -- | <p>Retrieves a task invocation. A task invocation is a specific task executing on a specific target. Maintenance Windows report status for all invocations. </p>
 getMaintenanceWindowExecutionTaskInvocation :: forall eff. GetMaintenanceWindowExecutionTaskInvocationRequest -> Aff (exception :: EXCEPTION | eff) GetMaintenanceWindowExecutionTaskInvocationResult
-getMaintenanceWindowExecutionTaskInvocation = Request.request serviceName "getMaintenanceWindowExecutionTaskInvocation" 
+getMaintenanceWindowExecutionTaskInvocation = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "getMaintenanceWindowExecutionTaskInvocation"
 
 
 -- | <p>Lists the tasks in a Maintenance Window.</p>
 getMaintenanceWindowTask :: forall eff. GetMaintenanceWindowTaskRequest -> Aff (exception :: EXCEPTION | eff) GetMaintenanceWindowTaskResult
-getMaintenanceWindowTask = Request.request serviceName "getMaintenanceWindowTask" 
+getMaintenanceWindowTask = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "getMaintenanceWindowTask"
 
 
 -- | <p>Get information about a parameter by using the parameter name. </p>
 getParameter :: forall eff. GetParameterRequest -> Aff (exception :: EXCEPTION | eff) GetParameterResult
-getParameter = Request.request serviceName "getParameter" 
+getParameter = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "getParameter"
 
 
 -- | <p>Query a list of all parameters used by the AWS account.</p>
 getParameterHistory :: forall eff. GetParameterHistoryRequest -> Aff (exception :: EXCEPTION | eff) GetParameterHistoryResult
-getParameterHistory = Request.request serviceName "getParameterHistory" 
+getParameterHistory = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "getParameterHistory"
 
 
 -- | <p>Get details of a parameter.</p>
 getParameters :: forall eff. GetParametersRequest -> Aff (exception :: EXCEPTION | eff) GetParametersResult
-getParameters = Request.request serviceName "getParameters" 
+getParameters = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "getParameters"
 
 
 -- | <p>Retrieve parameters in a specific hierarchy. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working with Systems Manager Parameters</a>. </p> <p>Request results are returned on a best-effort basis. If you specify <code>MaxResults</code> in the request, the response includes information up to the limit specified. The number of items returned, however, can be between zero and the value of <code>MaxResults</code>. If the service reaches an internal limit while processing the results, it stops the operation and returns the matching values up to that point and a <code>NextToken</code>. You can specify the <code>NextToken</code> in a subsequent call to get the next set of results.</p> <note> <p>This API action doesn't support filtering by tags. </p> </note>
 getParametersByPath :: forall eff. GetParametersByPathRequest -> Aff (exception :: EXCEPTION | eff) GetParametersByPathResult
-getParametersByPath = Request.request serviceName "getParametersByPath" 
+getParametersByPath = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "getParametersByPath"
 
 
 -- | <p>Retrieves information about a patch baseline.</p>
 getPatchBaseline :: forall eff. GetPatchBaselineRequest -> Aff (exception :: EXCEPTION | eff) GetPatchBaselineResult
-getPatchBaseline = Request.request serviceName "getPatchBaseline" 
+getPatchBaseline = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "getPatchBaseline"
 
 
 -- | <p>Retrieves the patch baseline that should be used for the specified patch group.</p>
 getPatchBaselineForPatchGroup :: forall eff. GetPatchBaselineForPatchGroupRequest -> Aff (exception :: EXCEPTION | eff) GetPatchBaselineForPatchGroupResult
-getPatchBaselineForPatchGroup = Request.request serviceName "getPatchBaselineForPatchGroup" 
+getPatchBaselineForPatchGroup = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "getPatchBaselineForPatchGroup"
 
 
 -- | <p>Retrieves all versions of an association for a specific association ID.</p>
 listAssociationVersions :: forall eff. ListAssociationVersionsRequest -> Aff (exception :: EXCEPTION | eff) ListAssociationVersionsResult
-listAssociationVersions = Request.request serviceName "listAssociationVersions" 
+listAssociationVersions = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "listAssociationVersions"
 
 
 -- | <p>Lists the associations for the specified Systems Manager document or instance.</p>
 listAssociations :: forall eff. ListAssociationsRequest -> Aff (exception :: EXCEPTION | eff) ListAssociationsResult
-listAssociations = Request.request serviceName "listAssociations" 
+listAssociations = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "listAssociations"
 
 
 -- | <p>An invocation is copy of a command sent to a specific instance. A command can apply to one or more instances. A command invocation applies to one instance. For example, if a user executes SendCommand against three instances, then a command invocation is created for each requested instance ID. ListCommandInvocations provide status about command execution.</p>
 listCommandInvocations :: forall eff. ListCommandInvocationsRequest -> Aff (exception :: EXCEPTION | eff) ListCommandInvocationsResult
-listCommandInvocations = Request.request serviceName "listCommandInvocations" 
+listCommandInvocations = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "listCommandInvocations"
 
 
 -- | <p>Lists the commands requested by users of the AWS account.</p>
 listCommands :: forall eff. ListCommandsRequest -> Aff (exception :: EXCEPTION | eff) ListCommandsResult
-listCommands = Request.request serviceName "listCommands" 
+listCommands = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "listCommands"
 
 
 -- | <p>For a specified resource ID, this API action returns a list of compliance statuses for different resource types. Currently, you can only specify one resource ID per call. List results depend on the criteria specified in the filter. </p>
 listComplianceItems :: forall eff. ListComplianceItemsRequest -> Aff (exception :: EXCEPTION | eff) ListComplianceItemsResult
-listComplianceItems = Request.request serviceName "listComplianceItems" 
+listComplianceItems = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "listComplianceItems"
 
 
 -- | <p>Returns a summary count of compliant and non-compliant resources for a compliance type. For example, this call can return State Manager associations, patches, or custom compliance types according to the filter criteria that you specify. </p>
 listComplianceSummaries :: forall eff. ListComplianceSummariesRequest -> Aff (exception :: EXCEPTION | eff) ListComplianceSummariesResult
-listComplianceSummaries = Request.request serviceName "listComplianceSummaries" 
+listComplianceSummaries = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "listComplianceSummaries"
 
 
 -- | <p>List all versions for a document.</p>
 listDocumentVersions :: forall eff. ListDocumentVersionsRequest -> Aff (exception :: EXCEPTION | eff) ListDocumentVersionsResult
-listDocumentVersions = Request.request serviceName "listDocumentVersions" 
+listDocumentVersions = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "listDocumentVersions"
 
 
 -- | <p>Describes one or more of your Systems Manager documents.</p>
 listDocuments :: forall eff. ListDocumentsRequest -> Aff (exception :: EXCEPTION | eff) ListDocumentsResult
-listDocuments = Request.request serviceName "listDocuments" 
+listDocuments = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "listDocuments"
 
 
 -- | <p>A list of inventory items returned by the request.</p>
 listInventoryEntries :: forall eff. ListInventoryEntriesRequest -> Aff (exception :: EXCEPTION | eff) ListInventoryEntriesResult
-listInventoryEntries = Request.request serviceName "listInventoryEntries" 
+listInventoryEntries = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "listInventoryEntries"
 
 
 -- | <p>Returns a resource-level summary count. The summary includes information about compliant and non-compliant statuses and detailed compliance-item severity counts, according to the filter criteria you specify.</p>
 listResourceComplianceSummaries :: forall eff. ListResourceComplianceSummariesRequest -> Aff (exception :: EXCEPTION | eff) ListResourceComplianceSummariesResult
-listResourceComplianceSummaries = Request.request serviceName "listResourceComplianceSummaries" 
+listResourceComplianceSummaries = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "listResourceComplianceSummaries"
 
 
 -- | <p>Lists your resource data sync configurations. Includes information about the last time a sync attempted to start, the last sync status, and the last time a sync successfully completed.</p> <p>The number of sync configurations might be too large to return using a single call to <code>ListResourceDataSync</code>. You can limit the number of sync configurations returned by using the <code>MaxResults</code> parameter. To determine whether there are more sync configurations to list, check the value of <code>NextToken</code> in the output. If there are more sync configurations to list, you can request them by specifying the <code>NextToken</code> returned in the call to the parameter of a subsequent call. </p>
 listResourceDataSync :: forall eff. ListResourceDataSyncRequest -> Aff (exception :: EXCEPTION | eff) ListResourceDataSyncResult
-listResourceDataSync = Request.request serviceName "listResourceDataSync" 
+listResourceDataSync = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "listResourceDataSync"
 
 
 -- | <p>Returns a list of the tags assigned to the specified resource.</p>
 listTagsForResource :: forall eff. ListTagsForResourceRequest -> Aff (exception :: EXCEPTION | eff) ListTagsForResourceResult
-listTagsForResource = Request.request serviceName "listTagsForResource" 
+listTagsForResource = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "listTagsForResource"
 
 
 -- | <p>Shares a Systems Manager document publicly or privately. If you share a document privately, you must specify the AWS user account IDs for those people who can use the document. If you share a document publicly, you must specify <i>All</i> as the account ID.</p>
 modifyDocumentPermission :: forall eff. ModifyDocumentPermissionRequest -> Aff (exception :: EXCEPTION | eff) ModifyDocumentPermissionResponse
-modifyDocumentPermission = Request.request serviceName "modifyDocumentPermission" 
+modifyDocumentPermission = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "modifyDocumentPermission"
 
 
 -- | <p>Registers a compliance type and other compliance details on a designated resource. This action lets you register custom compliance details with a resource. This call overwrites existing compliance information on the resource, so you must provide a full list of compliance items each time that you send the request.</p> <p>ComplianceType can be one of the following:</p> <ul> <li> <p>ExecutionId: The execution ID when the patch, association, or custom compliance item was applied.</p> </li> <li> <p>ExecutionType: Specify patch, association, or Custom:<code>string</code>.</p> </li> <li> <p>ExecutionTime. The time the patch, association, or custom compliance item was applied to the instance.</p> </li> <li> <p>Id: The patch, association, or custom compliance ID.</p> </li> <li> <p>Title: A title.</p> </li> <li> <p>Status: The status of the compliance item. For example, <code>approved</code> for patches, or <code>Failed</code> for associations.</p> </li> <li> <p>Severity: A patch severity. For example, <code>critical</code>.</p> </li> <li> <p>DocumentName: A SSM document name. For example, AWS-RunPatchBaseline.</p> </li> <li> <p>DocumentVersion: An SSM document version number. For example, 4.</p> </li> <li> <p>Classification: A patch classification. For example, <code>security updates</code>.</p> </li> <li> <p>PatchBaselineId: A patch baseline ID.</p> </li> <li> <p>PatchSeverity: A patch severity. For example, <code>Critical</code>.</p> </li> <li> <p>PatchState: A patch state. For example, <code>InstancesWithFailedPatches</code>.</p> </li> <li> <p>PatchGroup: The name of a patch group.</p> </li> <li> <p>InstalledTime: The time the association, patch, or custom compliance item was applied to the resource. Specify the time by using the following format: yyyy-MM-dd'T'HH:mm:ss'Z'</p> </li> </ul>
 putComplianceItems :: forall eff. PutComplianceItemsRequest -> Aff (exception :: EXCEPTION | eff) PutComplianceItemsResult
-putComplianceItems = Request.request serviceName "putComplianceItems" 
+putComplianceItems = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "putComplianceItems"
 
 
 -- | <p>Bulk update custom inventory items on one more instance. The request adds an inventory item, if it doesn't already exist, or updates an inventory item, if it does exist.</p>
 putInventory :: forall eff. PutInventoryRequest -> Aff (exception :: EXCEPTION | eff) PutInventoryResult
-putInventory = Request.request serviceName "putInventory" 
+putInventory = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "putInventory"
 
 
 -- | <p>Add one or more parameters to the system.</p>
 putParameter :: forall eff. PutParameterRequest -> Aff (exception :: EXCEPTION | eff) PutParameterResult
-putParameter = Request.request serviceName "putParameter" 
+putParameter = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "putParameter"
 
 
 -- | <p>Defines the default patch baseline.</p>
 registerDefaultPatchBaseline :: forall eff. RegisterDefaultPatchBaselineRequest -> Aff (exception :: EXCEPTION | eff) RegisterDefaultPatchBaselineResult
-registerDefaultPatchBaseline = Request.request serviceName "registerDefaultPatchBaseline" 
+registerDefaultPatchBaseline = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "registerDefaultPatchBaseline"
 
 
 -- | <p>Registers a patch baseline for a patch group.</p>
 registerPatchBaselineForPatchGroup :: forall eff. RegisterPatchBaselineForPatchGroupRequest -> Aff (exception :: EXCEPTION | eff) RegisterPatchBaselineForPatchGroupResult
-registerPatchBaselineForPatchGroup = Request.request serviceName "registerPatchBaselineForPatchGroup" 
+registerPatchBaselineForPatchGroup = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "registerPatchBaselineForPatchGroup"
 
 
 -- | <p>Registers a target with a Maintenance Window.</p>
 registerTargetWithMaintenanceWindow :: forall eff. RegisterTargetWithMaintenanceWindowRequest -> Aff (exception :: EXCEPTION | eff) RegisterTargetWithMaintenanceWindowResult
-registerTargetWithMaintenanceWindow = Request.request serviceName "registerTargetWithMaintenanceWindow" 
+registerTargetWithMaintenanceWindow = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "registerTargetWithMaintenanceWindow"
 
 
 -- | <p>Adds a new task to a Maintenance Window.</p>
 registerTaskWithMaintenanceWindow :: forall eff. RegisterTaskWithMaintenanceWindowRequest -> Aff (exception :: EXCEPTION | eff) RegisterTaskWithMaintenanceWindowResult
-registerTaskWithMaintenanceWindow = Request.request serviceName "registerTaskWithMaintenanceWindow" 
+registerTaskWithMaintenanceWindow = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "registerTaskWithMaintenanceWindow"
 
 
 -- | <p>Removes all tags from the specified resource.</p>
 removeTagsFromResource :: forall eff. RemoveTagsFromResourceRequest -> Aff (exception :: EXCEPTION | eff) RemoveTagsFromResourceResult
-removeTagsFromResource = Request.request serviceName "removeTagsFromResource" 
+removeTagsFromResource = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "removeTagsFromResource"
 
 
 -- | <p>Sends a signal to an Automation execution to change the current behavior or status of the execution. </p>
 sendAutomationSignal :: forall eff. SendAutomationSignalRequest -> Aff (exception :: EXCEPTION | eff) SendAutomationSignalResult
-sendAutomationSignal = Request.request serviceName "sendAutomationSignal" 
+sendAutomationSignal = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "sendAutomationSignal"
 
 
 -- | <p>Executes commands on one or more managed instances.</p>
 sendCommand :: forall eff. SendCommandRequest -> Aff (exception :: EXCEPTION | eff) SendCommandResult
-sendCommand = Request.request serviceName "sendCommand" 
+sendCommand = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "sendCommand"
 
 
 -- | <p>Initiates execution of an Automation document.</p>
 startAutomationExecution :: forall eff. StartAutomationExecutionRequest -> Aff (exception :: EXCEPTION | eff) StartAutomationExecutionResult
-startAutomationExecution = Request.request serviceName "startAutomationExecution" 
+startAutomationExecution = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "startAutomationExecution"
 
 
 -- | <p>Stop an Automation that is currently executing.</p>
 stopAutomationExecution :: forall eff. StopAutomationExecutionRequest -> Aff (exception :: EXCEPTION | eff) StopAutomationExecutionResult
-stopAutomationExecution = Request.request serviceName "stopAutomationExecution" 
+stopAutomationExecution = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "stopAutomationExecution"
 
 
 -- | <p>Updates an association. You can update the association name and version, the document version, schedule, parameters, and Amazon S3 output.</p>
 updateAssociation :: forall eff. UpdateAssociationRequest -> Aff (exception :: EXCEPTION | eff) UpdateAssociationResult
-updateAssociation = Request.request serviceName "updateAssociation" 
+updateAssociation = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "updateAssociation"
 
 
 -- | <p>Updates the status of the Systems Manager document associated with the specified instance.</p>
 updateAssociationStatus :: forall eff. UpdateAssociationStatusRequest -> Aff (exception :: EXCEPTION | eff) UpdateAssociationStatusResult
-updateAssociationStatus = Request.request serviceName "updateAssociationStatus" 
+updateAssociationStatus = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "updateAssociationStatus"
 
 
 -- | <p>The document you want to update.</p>
 updateDocument :: forall eff. UpdateDocumentRequest -> Aff (exception :: EXCEPTION | eff) UpdateDocumentResult
-updateDocument = Request.request serviceName "updateDocument" 
+updateDocument = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "updateDocument"
 
 
 -- | <p>Set the default version of a document. </p>
 updateDocumentDefaultVersion :: forall eff. UpdateDocumentDefaultVersionRequest -> Aff (exception :: EXCEPTION | eff) UpdateDocumentDefaultVersionResult
-updateDocumentDefaultVersion = Request.request serviceName "updateDocumentDefaultVersion" 
+updateDocumentDefaultVersion = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "updateDocumentDefaultVersion"
 
 
 -- | <p>Updates an existing Maintenance Window. Only specified parameters are modified.</p>
 updateMaintenanceWindow :: forall eff. UpdateMaintenanceWindowRequest -> Aff (exception :: EXCEPTION | eff) UpdateMaintenanceWindowResult
-updateMaintenanceWindow = Request.request serviceName "updateMaintenanceWindow" 
+updateMaintenanceWindow = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "updateMaintenanceWindow"
 
 
 -- | <p>Modifies the target of an existing Maintenance Window. You can't change the target type, but you can change the following:</p> <p>The target from being an ID target to a Tag target, or a Tag target to an ID target.</p> <p>IDs for an ID target.</p> <p>Tags for a Tag target.</p> <p>Owner.</p> <p>Name.</p> <p>Description.</p> <p>If a parameter is null, then the corresponding field is not modified.</p>
 updateMaintenanceWindowTarget :: forall eff. UpdateMaintenanceWindowTargetRequest -> Aff (exception :: EXCEPTION | eff) UpdateMaintenanceWindowTargetResult
-updateMaintenanceWindowTarget = Request.request serviceName "updateMaintenanceWindowTarget" 
+updateMaintenanceWindowTarget = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "updateMaintenanceWindowTarget"
 
 
 -- | <p>Modifies a task assigned to a Maintenance Window. You can't change the task type, but you can change the following values:</p> <p>Task ARN. For example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript to AWS-RunShellScript.</p> <p>Service role ARN.</p> <p>Task parameters.</p> <p>Task priority.</p> <p>Task MaxConcurrency and MaxErrors.</p> <p>Log location.</p> <p>If a parameter is null, then the corresponding field is not modified. Also, if you set Replace to true, then all fields required by the RegisterTaskWithMaintenanceWindow action are required for this request. Optional fields that aren't specified are set to null.</p>
 updateMaintenanceWindowTask :: forall eff. UpdateMaintenanceWindowTaskRequest -> Aff (exception :: EXCEPTION | eff) UpdateMaintenanceWindowTaskResult
-updateMaintenanceWindowTask = Request.request serviceName "updateMaintenanceWindowTask" 
+updateMaintenanceWindowTask = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "updateMaintenanceWindowTask"
 
 
 -- | <p>Assigns or changes an Amazon Identity and Access Management (IAM) role to the managed instance.</p>
 updateManagedInstanceRole :: forall eff. UpdateManagedInstanceRoleRequest -> Aff (exception :: EXCEPTION | eff) UpdateManagedInstanceRoleResult
-updateManagedInstanceRole = Request.request serviceName "updateManagedInstanceRole" 
+updateManagedInstanceRole = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "updateManagedInstanceRole"
 
 
 -- | <p>Modifies an existing patch baseline. Fields not specified in the request are left unchanged.</p> <note> <p>For information about valid key and value pairs in <code>PatchFilters</code> for each supported operating system type, see <a href="http://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html">PatchFilter</a>.</p> </note>
 updatePatchBaseline :: forall eff. UpdatePatchBaselineRequest -> Aff (exception :: EXCEPTION | eff) UpdatePatchBaselineResult
-updatePatchBaseline = Request.request serviceName "updatePatchBaseline" 
+updatePatchBaseline = Request.request service method  where
+    service = Request.ServiceName "SSM"
+    method = Request.MethodName "updatePatchBaseline"
 
 
 newtype AccountId = AccountId String
