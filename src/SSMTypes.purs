@@ -5,7 +5,6 @@ import Prelude
 import Data.Foreign.Class (class Decode, class Encode)
 import Data.Foreign.Generic (defaultOptions, genericDecode, genericEncode)
 import Data.Foreign.Generic.Types (Options)
-import Data.Foreign.NullOrUndefined (NullOrUndefined(..))
 import Data.Generic.Rep (class Generic)
 import Data.Generic.Rep.Show (genericShow)
 import Data.Maybe (Maybe(..))
@@ -38,15 +37,15 @@ instance encodeAccountIdList :: Encode AccountIdList where encode = genericEncod
 
 -- | <p>An activation registers one or more on-premises servers or virtual machines (VMs) with AWS so that you can configure those servers or VMs using Run Command. A server or VM that has been registered with AWS is called a managed instance.</p>
 newtype Activation = Activation 
-  { "ActivationId" :: NullOrUndefined (ActivationId)
-  , "Description" :: NullOrUndefined (ActivationDescription)
-  , "DefaultInstanceName" :: NullOrUndefined (DefaultInstanceName)
-  , "IamRole" :: NullOrUndefined (IamRole)
-  , "RegistrationLimit" :: NullOrUndefined (RegistrationLimit)
-  , "RegistrationsCount" :: NullOrUndefined (RegistrationsCount)
-  , "ExpirationDate" :: NullOrUndefined (ExpirationDate)
-  , "Expired" :: NullOrUndefined (Boolean)
-  , "CreatedDate" :: NullOrUndefined (CreatedDate)
+  { "ActivationId" :: Maybe (ActivationId)
+  , "Description" :: Maybe (ActivationDescription)
+  , "DefaultInstanceName" :: Maybe (DefaultInstanceName)
+  , "IamRole" :: Maybe (IamRole)
+  , "RegistrationLimit" :: Maybe (RegistrationLimit)
+  , "RegistrationsCount" :: Maybe (RegistrationsCount)
+  , "ExpirationDate" :: Maybe (ExpirationDate)
+  , "Expired" :: Maybe (Boolean)
+  , "CreatedDate" :: Maybe (CreatedDate)
   }
 derive instance newtypeActivation :: Newtype Activation _
 derive instance repGenericActivation :: Generic Activation _
@@ -56,12 +55,12 @@ instance encodeActivation :: Encode Activation where encode = genericEncode opti
 
 -- | Constructs Activation from required parameters
 newActivation :: Activation
-newActivation  = Activation { "ActivationId": (NullOrUndefined Nothing), "CreatedDate": (NullOrUndefined Nothing), "DefaultInstanceName": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "ExpirationDate": (NullOrUndefined Nothing), "Expired": (NullOrUndefined Nothing), "IamRole": (NullOrUndefined Nothing), "RegistrationLimit": (NullOrUndefined Nothing), "RegistrationsCount": (NullOrUndefined Nothing) }
+newActivation  = Activation { "ActivationId": Nothing, "CreatedDate": Nothing, "DefaultInstanceName": Nothing, "Description": Nothing, "ExpirationDate": Nothing, "Expired": Nothing, "IamRole": Nothing, "RegistrationLimit": Nothing, "RegistrationsCount": Nothing }
 
 -- | Constructs Activation's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newActivation' :: ( { "ActivationId" :: NullOrUndefined (ActivationId) , "Description" :: NullOrUndefined (ActivationDescription) , "DefaultInstanceName" :: NullOrUndefined (DefaultInstanceName) , "IamRole" :: NullOrUndefined (IamRole) , "RegistrationLimit" :: NullOrUndefined (RegistrationLimit) , "RegistrationsCount" :: NullOrUndefined (RegistrationsCount) , "ExpirationDate" :: NullOrUndefined (ExpirationDate) , "Expired" :: NullOrUndefined (Boolean) , "CreatedDate" :: NullOrUndefined (CreatedDate) } -> {"ActivationId" :: NullOrUndefined (ActivationId) , "Description" :: NullOrUndefined (ActivationDescription) , "DefaultInstanceName" :: NullOrUndefined (DefaultInstanceName) , "IamRole" :: NullOrUndefined (IamRole) , "RegistrationLimit" :: NullOrUndefined (RegistrationLimit) , "RegistrationsCount" :: NullOrUndefined (RegistrationsCount) , "ExpirationDate" :: NullOrUndefined (ExpirationDate) , "Expired" :: NullOrUndefined (Boolean) , "CreatedDate" :: NullOrUndefined (CreatedDate) } ) -> Activation
-newActivation'  customize = (Activation <<< customize) { "ActivationId": (NullOrUndefined Nothing), "CreatedDate": (NullOrUndefined Nothing), "DefaultInstanceName": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "ExpirationDate": (NullOrUndefined Nothing), "Expired": (NullOrUndefined Nothing), "IamRole": (NullOrUndefined Nothing), "RegistrationLimit": (NullOrUndefined Nothing), "RegistrationsCount": (NullOrUndefined Nothing) }
+newActivation' :: ( { "ActivationId" :: Maybe (ActivationId) , "Description" :: Maybe (ActivationDescription) , "DefaultInstanceName" :: Maybe (DefaultInstanceName) , "IamRole" :: Maybe (IamRole) , "RegistrationLimit" :: Maybe (RegistrationLimit) , "RegistrationsCount" :: Maybe (RegistrationsCount) , "ExpirationDate" :: Maybe (ExpirationDate) , "Expired" :: Maybe (Boolean) , "CreatedDate" :: Maybe (CreatedDate) } -> {"ActivationId" :: Maybe (ActivationId) , "Description" :: Maybe (ActivationDescription) , "DefaultInstanceName" :: Maybe (DefaultInstanceName) , "IamRole" :: Maybe (IamRole) , "RegistrationLimit" :: Maybe (RegistrationLimit) , "RegistrationsCount" :: Maybe (RegistrationsCount) , "ExpirationDate" :: Maybe (ExpirationDate) , "Expired" :: Maybe (Boolean) , "CreatedDate" :: Maybe (CreatedDate) } ) -> Activation
+newActivation'  customize = (Activation <<< customize) { "ActivationId": Nothing, "CreatedDate": Nothing, "DefaultInstanceName": Nothing, "Description": Nothing, "ExpirationDate": Nothing, "Expired": Nothing, "IamRole": Nothing, "RegistrationLimit": Nothing, "RegistrationsCount": Nothing }
 
 
 
@@ -161,7 +160,7 @@ instance encodeAllowedPattern :: Encode AllowedPattern where encode = genericEnc
 
 -- | <p>Error returned if an attempt is made to register a patch group with a patch baseline that is already registered with a different patch baseline.</p>
 newtype AlreadyExistsException = AlreadyExistsException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeAlreadyExistsException :: Newtype AlreadyExistsException _
 derive instance repGenericAlreadyExistsException :: Generic AlreadyExistsException _
@@ -171,12 +170,12 @@ instance encodeAlreadyExistsException :: Encode AlreadyExistsException where enc
 
 -- | Constructs AlreadyExistsException from required parameters
 newAlreadyExistsException :: AlreadyExistsException
-newAlreadyExistsException  = AlreadyExistsException { "Message": (NullOrUndefined Nothing) }
+newAlreadyExistsException  = AlreadyExistsException { "Message": Nothing }
 
 -- | Constructs AlreadyExistsException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAlreadyExistsException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> AlreadyExistsException
-newAlreadyExistsException'  customize = (AlreadyExistsException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newAlreadyExistsException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> AlreadyExistsException
+newAlreadyExistsException'  customize = (AlreadyExistsException <<< customize) { "Message": Nothing }
 
 
 
@@ -201,16 +200,16 @@ instance encodeAssociatedInstances :: Encode AssociatedInstances where encode = 
 
 -- | <p>Describes an association of a Systems Manager document and an instance.</p>
 newtype Association = Association 
-  { "Name" :: NullOrUndefined (DocumentName)
-  , "InstanceId" :: NullOrUndefined (InstanceId)
-  , "AssociationId" :: NullOrUndefined (AssociationId)
-  , "AssociationVersion" :: NullOrUndefined (AssociationVersion)
-  , "DocumentVersion" :: NullOrUndefined (DocumentVersion)
-  , "Targets" :: NullOrUndefined (Targets)
-  , "LastExecutionDate" :: NullOrUndefined (DateTime)
-  , "Overview" :: NullOrUndefined (AssociationOverview)
-  , "ScheduleExpression" :: NullOrUndefined (ScheduleExpression)
-  , "AssociationName" :: NullOrUndefined (AssociationName)
+  { "Name" :: Maybe (DocumentName)
+  , "InstanceId" :: Maybe (InstanceId)
+  , "AssociationId" :: Maybe (AssociationId)
+  , "AssociationVersion" :: Maybe (AssociationVersion)
+  , "DocumentVersion" :: Maybe (DocumentVersion)
+  , "Targets" :: Maybe (Targets)
+  , "LastExecutionDate" :: Maybe (DateTime)
+  , "Overview" :: Maybe (AssociationOverview)
+  , "ScheduleExpression" :: Maybe (ScheduleExpression)
+  , "AssociationName" :: Maybe (AssociationName)
   }
 derive instance newtypeAssociation :: Newtype Association _
 derive instance repGenericAssociation :: Generic Association _
@@ -220,12 +219,12 @@ instance encodeAssociation :: Encode Association where encode = genericEncode op
 
 -- | Constructs Association from required parameters
 newAssociation :: Association
-newAssociation  = Association { "AssociationId": (NullOrUndefined Nothing), "AssociationName": (NullOrUndefined Nothing), "AssociationVersion": (NullOrUndefined Nothing), "DocumentVersion": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing), "LastExecutionDate": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Overview": (NullOrUndefined Nothing), "ScheduleExpression": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing) }
+newAssociation  = Association { "AssociationId": Nothing, "AssociationName": Nothing, "AssociationVersion": Nothing, "DocumentVersion": Nothing, "InstanceId": Nothing, "LastExecutionDate": Nothing, "Name": Nothing, "Overview": Nothing, "ScheduleExpression": Nothing, "Targets": Nothing }
 
 -- | Constructs Association's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAssociation' :: ( { "Name" :: NullOrUndefined (DocumentName) , "InstanceId" :: NullOrUndefined (InstanceId) , "AssociationId" :: NullOrUndefined (AssociationId) , "AssociationVersion" :: NullOrUndefined (AssociationVersion) , "DocumentVersion" :: NullOrUndefined (DocumentVersion) , "Targets" :: NullOrUndefined (Targets) , "LastExecutionDate" :: NullOrUndefined (DateTime) , "Overview" :: NullOrUndefined (AssociationOverview) , "ScheduleExpression" :: NullOrUndefined (ScheduleExpression) , "AssociationName" :: NullOrUndefined (AssociationName) } -> {"Name" :: NullOrUndefined (DocumentName) , "InstanceId" :: NullOrUndefined (InstanceId) , "AssociationId" :: NullOrUndefined (AssociationId) , "AssociationVersion" :: NullOrUndefined (AssociationVersion) , "DocumentVersion" :: NullOrUndefined (DocumentVersion) , "Targets" :: NullOrUndefined (Targets) , "LastExecutionDate" :: NullOrUndefined (DateTime) , "Overview" :: NullOrUndefined (AssociationOverview) , "ScheduleExpression" :: NullOrUndefined (ScheduleExpression) , "AssociationName" :: NullOrUndefined (AssociationName) } ) -> Association
-newAssociation'  customize = (Association <<< customize) { "AssociationId": (NullOrUndefined Nothing), "AssociationName": (NullOrUndefined Nothing), "AssociationVersion": (NullOrUndefined Nothing), "DocumentVersion": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing), "LastExecutionDate": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Overview": (NullOrUndefined Nothing), "ScheduleExpression": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing) }
+newAssociation' :: ( { "Name" :: Maybe (DocumentName) , "InstanceId" :: Maybe (InstanceId) , "AssociationId" :: Maybe (AssociationId) , "AssociationVersion" :: Maybe (AssociationVersion) , "DocumentVersion" :: Maybe (DocumentVersion) , "Targets" :: Maybe (Targets) , "LastExecutionDate" :: Maybe (DateTime) , "Overview" :: Maybe (AssociationOverview) , "ScheduleExpression" :: Maybe (ScheduleExpression) , "AssociationName" :: Maybe (AssociationName) } -> {"Name" :: Maybe (DocumentName) , "InstanceId" :: Maybe (InstanceId) , "AssociationId" :: Maybe (AssociationId) , "AssociationVersion" :: Maybe (AssociationVersion) , "DocumentVersion" :: Maybe (DocumentVersion) , "Targets" :: Maybe (Targets) , "LastExecutionDate" :: Maybe (DateTime) , "Overview" :: Maybe (AssociationOverview) , "ScheduleExpression" :: Maybe (ScheduleExpression) , "AssociationName" :: Maybe (AssociationName) } ) -> Association
+newAssociation'  customize = (Association <<< customize) { "AssociationId": Nothing, "AssociationName": Nothing, "AssociationVersion": Nothing, "DocumentVersion": Nothing, "InstanceId": Nothing, "LastExecutionDate": Nothing, "Name": Nothing, "Overview": Nothing, "ScheduleExpression": Nothing, "Targets": Nothing }
 
 
 
@@ -241,22 +240,22 @@ instance encodeAssociationAlreadyExists :: Encode AssociationAlreadyExists where
 
 -- | <p>Describes the parameters for a document.</p>
 newtype AssociationDescription = AssociationDescription 
-  { "Name" :: NullOrUndefined (DocumentName)
-  , "InstanceId" :: NullOrUndefined (InstanceId)
-  , "AssociationVersion" :: NullOrUndefined (AssociationVersion)
-  , "Date" :: NullOrUndefined (DateTime)
-  , "LastUpdateAssociationDate" :: NullOrUndefined (DateTime)
-  , "Status" :: NullOrUndefined (AssociationStatus)
-  , "Overview" :: NullOrUndefined (AssociationOverview)
-  , "DocumentVersion" :: NullOrUndefined (DocumentVersion)
-  , "Parameters" :: NullOrUndefined (Parameters)
-  , "AssociationId" :: NullOrUndefined (AssociationId)
-  , "Targets" :: NullOrUndefined (Targets)
-  , "ScheduleExpression" :: NullOrUndefined (ScheduleExpression)
-  , "OutputLocation" :: NullOrUndefined (InstanceAssociationOutputLocation)
-  , "LastExecutionDate" :: NullOrUndefined (DateTime)
-  , "LastSuccessfulExecutionDate" :: NullOrUndefined (DateTime)
-  , "AssociationName" :: NullOrUndefined (AssociationName)
+  { "Name" :: Maybe (DocumentName)
+  , "InstanceId" :: Maybe (InstanceId)
+  , "AssociationVersion" :: Maybe (AssociationVersion)
+  , "Date" :: Maybe (DateTime)
+  , "LastUpdateAssociationDate" :: Maybe (DateTime)
+  , "Status" :: Maybe (AssociationStatus)
+  , "Overview" :: Maybe (AssociationOverview)
+  , "DocumentVersion" :: Maybe (DocumentVersion)
+  , "Parameters" :: Maybe (Parameters)
+  , "AssociationId" :: Maybe (AssociationId)
+  , "Targets" :: Maybe (Targets)
+  , "ScheduleExpression" :: Maybe (ScheduleExpression)
+  , "OutputLocation" :: Maybe (InstanceAssociationOutputLocation)
+  , "LastExecutionDate" :: Maybe (DateTime)
+  , "LastSuccessfulExecutionDate" :: Maybe (DateTime)
+  , "AssociationName" :: Maybe (AssociationName)
   }
 derive instance newtypeAssociationDescription :: Newtype AssociationDescription _
 derive instance repGenericAssociationDescription :: Generic AssociationDescription _
@@ -266,12 +265,12 @@ instance encodeAssociationDescription :: Encode AssociationDescription where enc
 
 -- | Constructs AssociationDescription from required parameters
 newAssociationDescription :: AssociationDescription
-newAssociationDescription  = AssociationDescription { "AssociationId": (NullOrUndefined Nothing), "AssociationName": (NullOrUndefined Nothing), "AssociationVersion": (NullOrUndefined Nothing), "Date": (NullOrUndefined Nothing), "DocumentVersion": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing), "LastExecutionDate": (NullOrUndefined Nothing), "LastSuccessfulExecutionDate": (NullOrUndefined Nothing), "LastUpdateAssociationDate": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "OutputLocation": (NullOrUndefined Nothing), "Overview": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing), "ScheduleExpression": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing) }
+newAssociationDescription  = AssociationDescription { "AssociationId": Nothing, "AssociationName": Nothing, "AssociationVersion": Nothing, "Date": Nothing, "DocumentVersion": Nothing, "InstanceId": Nothing, "LastExecutionDate": Nothing, "LastSuccessfulExecutionDate": Nothing, "LastUpdateAssociationDate": Nothing, "Name": Nothing, "OutputLocation": Nothing, "Overview": Nothing, "Parameters": Nothing, "ScheduleExpression": Nothing, "Status": Nothing, "Targets": Nothing }
 
 -- | Constructs AssociationDescription's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAssociationDescription' :: ( { "Name" :: NullOrUndefined (DocumentName) , "InstanceId" :: NullOrUndefined (InstanceId) , "AssociationVersion" :: NullOrUndefined (AssociationVersion) , "Date" :: NullOrUndefined (DateTime) , "LastUpdateAssociationDate" :: NullOrUndefined (DateTime) , "Status" :: NullOrUndefined (AssociationStatus) , "Overview" :: NullOrUndefined (AssociationOverview) , "DocumentVersion" :: NullOrUndefined (DocumentVersion) , "Parameters" :: NullOrUndefined (Parameters) , "AssociationId" :: NullOrUndefined (AssociationId) , "Targets" :: NullOrUndefined (Targets) , "ScheduleExpression" :: NullOrUndefined (ScheduleExpression) , "OutputLocation" :: NullOrUndefined (InstanceAssociationOutputLocation) , "LastExecutionDate" :: NullOrUndefined (DateTime) , "LastSuccessfulExecutionDate" :: NullOrUndefined (DateTime) , "AssociationName" :: NullOrUndefined (AssociationName) } -> {"Name" :: NullOrUndefined (DocumentName) , "InstanceId" :: NullOrUndefined (InstanceId) , "AssociationVersion" :: NullOrUndefined (AssociationVersion) , "Date" :: NullOrUndefined (DateTime) , "LastUpdateAssociationDate" :: NullOrUndefined (DateTime) , "Status" :: NullOrUndefined (AssociationStatus) , "Overview" :: NullOrUndefined (AssociationOverview) , "DocumentVersion" :: NullOrUndefined (DocumentVersion) , "Parameters" :: NullOrUndefined (Parameters) , "AssociationId" :: NullOrUndefined (AssociationId) , "Targets" :: NullOrUndefined (Targets) , "ScheduleExpression" :: NullOrUndefined (ScheduleExpression) , "OutputLocation" :: NullOrUndefined (InstanceAssociationOutputLocation) , "LastExecutionDate" :: NullOrUndefined (DateTime) , "LastSuccessfulExecutionDate" :: NullOrUndefined (DateTime) , "AssociationName" :: NullOrUndefined (AssociationName) } ) -> AssociationDescription
-newAssociationDescription'  customize = (AssociationDescription <<< customize) { "AssociationId": (NullOrUndefined Nothing), "AssociationName": (NullOrUndefined Nothing), "AssociationVersion": (NullOrUndefined Nothing), "Date": (NullOrUndefined Nothing), "DocumentVersion": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing), "LastExecutionDate": (NullOrUndefined Nothing), "LastSuccessfulExecutionDate": (NullOrUndefined Nothing), "LastUpdateAssociationDate": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "OutputLocation": (NullOrUndefined Nothing), "Overview": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing), "ScheduleExpression": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing) }
+newAssociationDescription' :: ( { "Name" :: Maybe (DocumentName) , "InstanceId" :: Maybe (InstanceId) , "AssociationVersion" :: Maybe (AssociationVersion) , "Date" :: Maybe (DateTime) , "LastUpdateAssociationDate" :: Maybe (DateTime) , "Status" :: Maybe (AssociationStatus) , "Overview" :: Maybe (AssociationOverview) , "DocumentVersion" :: Maybe (DocumentVersion) , "Parameters" :: Maybe (Parameters) , "AssociationId" :: Maybe (AssociationId) , "Targets" :: Maybe (Targets) , "ScheduleExpression" :: Maybe (ScheduleExpression) , "OutputLocation" :: Maybe (InstanceAssociationOutputLocation) , "LastExecutionDate" :: Maybe (DateTime) , "LastSuccessfulExecutionDate" :: Maybe (DateTime) , "AssociationName" :: Maybe (AssociationName) } -> {"Name" :: Maybe (DocumentName) , "InstanceId" :: Maybe (InstanceId) , "AssociationVersion" :: Maybe (AssociationVersion) , "Date" :: Maybe (DateTime) , "LastUpdateAssociationDate" :: Maybe (DateTime) , "Status" :: Maybe (AssociationStatus) , "Overview" :: Maybe (AssociationOverview) , "DocumentVersion" :: Maybe (DocumentVersion) , "Parameters" :: Maybe (Parameters) , "AssociationId" :: Maybe (AssociationId) , "Targets" :: Maybe (Targets) , "ScheduleExpression" :: Maybe (ScheduleExpression) , "OutputLocation" :: Maybe (InstanceAssociationOutputLocation) , "LastExecutionDate" :: Maybe (DateTime) , "LastSuccessfulExecutionDate" :: Maybe (DateTime) , "AssociationName" :: Maybe (AssociationName) } ) -> AssociationDescription
+newAssociationDescription'  customize = (AssociationDescription <<< customize) { "AssociationId": Nothing, "AssociationName": Nothing, "AssociationVersion": Nothing, "Date": Nothing, "DocumentVersion": Nothing, "InstanceId": Nothing, "LastExecutionDate": Nothing, "LastSuccessfulExecutionDate": Nothing, "LastUpdateAssociationDate": Nothing, "Name": Nothing, "OutputLocation": Nothing, "Overview": Nothing, "Parameters": Nothing, "ScheduleExpression": Nothing, "Status": Nothing, "Targets": Nothing }
 
 
 
@@ -286,7 +285,7 @@ instance encodeAssociationDescriptionList :: Encode AssociationDescriptionList w
 
 -- | <p>The specified association does not exist.</p>
 newtype AssociationDoesNotExist = AssociationDoesNotExist 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeAssociationDoesNotExist :: Newtype AssociationDoesNotExist _
 derive instance repGenericAssociationDoesNotExist :: Generic AssociationDoesNotExist _
@@ -296,12 +295,12 @@ instance encodeAssociationDoesNotExist :: Encode AssociationDoesNotExist where e
 
 -- | Constructs AssociationDoesNotExist from required parameters
 newAssociationDoesNotExist :: AssociationDoesNotExist
-newAssociationDoesNotExist  = AssociationDoesNotExist { "Message": (NullOrUndefined Nothing) }
+newAssociationDoesNotExist  = AssociationDoesNotExist { "Message": Nothing }
 
 -- | Constructs AssociationDoesNotExist's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAssociationDoesNotExist' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> AssociationDoesNotExist
-newAssociationDoesNotExist'  customize = (AssociationDoesNotExist <<< customize) { "Message": (NullOrUndefined Nothing) }
+newAssociationDoesNotExist' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> AssociationDoesNotExist
+newAssociationDoesNotExist'  customize = (AssociationDoesNotExist <<< customize) { "Message": Nothing }
 
 
 
@@ -393,9 +392,9 @@ instance encodeAssociationName :: Encode AssociationName where encode = genericE
 
 -- | <p>Information about the association.</p>
 newtype AssociationOverview = AssociationOverview 
-  { "Status" :: NullOrUndefined (StatusName)
-  , "DetailedStatus" :: NullOrUndefined (StatusName)
-  , "AssociationStatusAggregatedCount" :: NullOrUndefined (AssociationStatusAggregatedCount)
+  { "Status" :: Maybe (StatusName)
+  , "DetailedStatus" :: Maybe (StatusName)
+  , "AssociationStatusAggregatedCount" :: Maybe (AssociationStatusAggregatedCount)
   }
 derive instance newtypeAssociationOverview :: Newtype AssociationOverview _
 derive instance repGenericAssociationOverview :: Generic AssociationOverview _
@@ -405,12 +404,12 @@ instance encodeAssociationOverview :: Encode AssociationOverview where encode = 
 
 -- | Constructs AssociationOverview from required parameters
 newAssociationOverview :: AssociationOverview
-newAssociationOverview  = AssociationOverview { "AssociationStatusAggregatedCount": (NullOrUndefined Nothing), "DetailedStatus": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newAssociationOverview  = AssociationOverview { "AssociationStatusAggregatedCount": Nothing, "DetailedStatus": Nothing, "Status": Nothing }
 
 -- | Constructs AssociationOverview's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAssociationOverview' :: ( { "Status" :: NullOrUndefined (StatusName) , "DetailedStatus" :: NullOrUndefined (StatusName) , "AssociationStatusAggregatedCount" :: NullOrUndefined (AssociationStatusAggregatedCount) } -> {"Status" :: NullOrUndefined (StatusName) , "DetailedStatus" :: NullOrUndefined (StatusName) , "AssociationStatusAggregatedCount" :: NullOrUndefined (AssociationStatusAggregatedCount) } ) -> AssociationOverview
-newAssociationOverview'  customize = (AssociationOverview <<< customize) { "AssociationStatusAggregatedCount": (NullOrUndefined Nothing), "DetailedStatus": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newAssociationOverview' :: ( { "Status" :: Maybe (StatusName) , "DetailedStatus" :: Maybe (StatusName) , "AssociationStatusAggregatedCount" :: Maybe (AssociationStatusAggregatedCount) } -> {"Status" :: Maybe (StatusName) , "DetailedStatus" :: Maybe (StatusName) , "AssociationStatusAggregatedCount" :: Maybe (AssociationStatusAggregatedCount) } ) -> AssociationOverview
+newAssociationOverview'  customize = (AssociationOverview <<< customize) { "AssociationStatusAggregatedCount": Nothing, "DetailedStatus": Nothing, "Status": Nothing }
 
 
 
@@ -419,7 +418,7 @@ newtype AssociationStatus = AssociationStatus
   { "Date" :: (DateTime)
   , "Name" :: (AssociationStatusName)
   , "Message" :: (StatusMessage)
-  , "AdditionalInfo" :: NullOrUndefined (StatusAdditionalInfo)
+  , "AdditionalInfo" :: Maybe (StatusAdditionalInfo)
   }
 derive instance newtypeAssociationStatus :: Newtype AssociationStatus _
 derive instance repGenericAssociationStatus :: Generic AssociationStatus _
@@ -429,12 +428,12 @@ instance encodeAssociationStatus :: Encode AssociationStatus where encode = gene
 
 -- | Constructs AssociationStatus from required parameters
 newAssociationStatus :: DateTime -> StatusMessage -> AssociationStatusName -> AssociationStatus
-newAssociationStatus _Date _Message _Name = AssociationStatus { "Date": _Date, "Message": _Message, "Name": _Name, "AdditionalInfo": (NullOrUndefined Nothing) }
+newAssociationStatus _Date _Message _Name = AssociationStatus { "Date": _Date, "Message": _Message, "Name": _Name, "AdditionalInfo": Nothing }
 
 -- | Constructs AssociationStatus's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAssociationStatus' :: DateTime -> StatusMessage -> AssociationStatusName -> ( { "Date" :: (DateTime) , "Name" :: (AssociationStatusName) , "Message" :: (StatusMessage) , "AdditionalInfo" :: NullOrUndefined (StatusAdditionalInfo) } -> {"Date" :: (DateTime) , "Name" :: (AssociationStatusName) , "Message" :: (StatusMessage) , "AdditionalInfo" :: NullOrUndefined (StatusAdditionalInfo) } ) -> AssociationStatus
-newAssociationStatus' _Date _Message _Name customize = (AssociationStatus <<< customize) { "Date": _Date, "Message": _Message, "Name": _Name, "AdditionalInfo": (NullOrUndefined Nothing) }
+newAssociationStatus' :: DateTime -> StatusMessage -> AssociationStatusName -> ( { "Date" :: (DateTime) , "Name" :: (AssociationStatusName) , "Message" :: (StatusMessage) , "AdditionalInfo" :: Maybe (StatusAdditionalInfo) } -> {"Date" :: (DateTime) , "Name" :: (AssociationStatusName) , "Message" :: (StatusMessage) , "AdditionalInfo" :: Maybe (StatusAdditionalInfo) } ) -> AssociationStatus
+newAssociationStatus' _Date _Message _Name customize = (AssociationStatus <<< customize) { "Date": _Date, "Message": _Message, "Name": _Name, "AdditionalInfo": Nothing }
 
 
 
@@ -467,16 +466,16 @@ instance encodeAssociationVersion :: Encode AssociationVersion where encode = ge
 
 -- | <p>Information about the association version.</p>
 newtype AssociationVersionInfo = AssociationVersionInfo 
-  { "AssociationId" :: NullOrUndefined (AssociationId)
-  , "AssociationVersion" :: NullOrUndefined (AssociationVersion)
-  , "CreatedDate" :: NullOrUndefined (DateTime)
-  , "Name" :: NullOrUndefined (DocumentName)
-  , "DocumentVersion" :: NullOrUndefined (DocumentVersion)
-  , "Parameters" :: NullOrUndefined (Parameters)
-  , "Targets" :: NullOrUndefined (Targets)
-  , "ScheduleExpression" :: NullOrUndefined (ScheduleExpression)
-  , "OutputLocation" :: NullOrUndefined (InstanceAssociationOutputLocation)
-  , "AssociationName" :: NullOrUndefined (AssociationName)
+  { "AssociationId" :: Maybe (AssociationId)
+  , "AssociationVersion" :: Maybe (AssociationVersion)
+  , "CreatedDate" :: Maybe (DateTime)
+  , "Name" :: Maybe (DocumentName)
+  , "DocumentVersion" :: Maybe (DocumentVersion)
+  , "Parameters" :: Maybe (Parameters)
+  , "Targets" :: Maybe (Targets)
+  , "ScheduleExpression" :: Maybe (ScheduleExpression)
+  , "OutputLocation" :: Maybe (InstanceAssociationOutputLocation)
+  , "AssociationName" :: Maybe (AssociationName)
   }
 derive instance newtypeAssociationVersionInfo :: Newtype AssociationVersionInfo _
 derive instance repGenericAssociationVersionInfo :: Generic AssociationVersionInfo _
@@ -486,18 +485,18 @@ instance encodeAssociationVersionInfo :: Encode AssociationVersionInfo where enc
 
 -- | Constructs AssociationVersionInfo from required parameters
 newAssociationVersionInfo :: AssociationVersionInfo
-newAssociationVersionInfo  = AssociationVersionInfo { "AssociationId": (NullOrUndefined Nothing), "AssociationName": (NullOrUndefined Nothing), "AssociationVersion": (NullOrUndefined Nothing), "CreatedDate": (NullOrUndefined Nothing), "DocumentVersion": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "OutputLocation": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing), "ScheduleExpression": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing) }
+newAssociationVersionInfo  = AssociationVersionInfo { "AssociationId": Nothing, "AssociationName": Nothing, "AssociationVersion": Nothing, "CreatedDate": Nothing, "DocumentVersion": Nothing, "Name": Nothing, "OutputLocation": Nothing, "Parameters": Nothing, "ScheduleExpression": Nothing, "Targets": Nothing }
 
 -- | Constructs AssociationVersionInfo's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAssociationVersionInfo' :: ( { "AssociationId" :: NullOrUndefined (AssociationId) , "AssociationVersion" :: NullOrUndefined (AssociationVersion) , "CreatedDate" :: NullOrUndefined (DateTime) , "Name" :: NullOrUndefined (DocumentName) , "DocumentVersion" :: NullOrUndefined (DocumentVersion) , "Parameters" :: NullOrUndefined (Parameters) , "Targets" :: NullOrUndefined (Targets) , "ScheduleExpression" :: NullOrUndefined (ScheduleExpression) , "OutputLocation" :: NullOrUndefined (InstanceAssociationOutputLocation) , "AssociationName" :: NullOrUndefined (AssociationName) } -> {"AssociationId" :: NullOrUndefined (AssociationId) , "AssociationVersion" :: NullOrUndefined (AssociationVersion) , "CreatedDate" :: NullOrUndefined (DateTime) , "Name" :: NullOrUndefined (DocumentName) , "DocumentVersion" :: NullOrUndefined (DocumentVersion) , "Parameters" :: NullOrUndefined (Parameters) , "Targets" :: NullOrUndefined (Targets) , "ScheduleExpression" :: NullOrUndefined (ScheduleExpression) , "OutputLocation" :: NullOrUndefined (InstanceAssociationOutputLocation) , "AssociationName" :: NullOrUndefined (AssociationName) } ) -> AssociationVersionInfo
-newAssociationVersionInfo'  customize = (AssociationVersionInfo <<< customize) { "AssociationId": (NullOrUndefined Nothing), "AssociationName": (NullOrUndefined Nothing), "AssociationVersion": (NullOrUndefined Nothing), "CreatedDate": (NullOrUndefined Nothing), "DocumentVersion": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "OutputLocation": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing), "ScheduleExpression": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing) }
+newAssociationVersionInfo' :: ( { "AssociationId" :: Maybe (AssociationId) , "AssociationVersion" :: Maybe (AssociationVersion) , "CreatedDate" :: Maybe (DateTime) , "Name" :: Maybe (DocumentName) , "DocumentVersion" :: Maybe (DocumentVersion) , "Parameters" :: Maybe (Parameters) , "Targets" :: Maybe (Targets) , "ScheduleExpression" :: Maybe (ScheduleExpression) , "OutputLocation" :: Maybe (InstanceAssociationOutputLocation) , "AssociationName" :: Maybe (AssociationName) } -> {"AssociationId" :: Maybe (AssociationId) , "AssociationVersion" :: Maybe (AssociationVersion) , "CreatedDate" :: Maybe (DateTime) , "Name" :: Maybe (DocumentName) , "DocumentVersion" :: Maybe (DocumentVersion) , "Parameters" :: Maybe (Parameters) , "Targets" :: Maybe (Targets) , "ScheduleExpression" :: Maybe (ScheduleExpression) , "OutputLocation" :: Maybe (InstanceAssociationOutputLocation) , "AssociationName" :: Maybe (AssociationName) } ) -> AssociationVersionInfo
+newAssociationVersionInfo'  customize = (AssociationVersionInfo <<< customize) { "AssociationId": Nothing, "AssociationName": Nothing, "AssociationVersion": Nothing, "CreatedDate": Nothing, "DocumentVersion": Nothing, "Name": Nothing, "OutputLocation": Nothing, "Parameters": Nothing, "ScheduleExpression": Nothing, "Targets": Nothing }
 
 
 
 -- | <p>You have reached the maximum number versions allowed for an association. Each association has a limit of 1,000 versions. </p>
 newtype AssociationVersionLimitExceeded = AssociationVersionLimitExceeded 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeAssociationVersionLimitExceeded :: Newtype AssociationVersionLimitExceeded _
 derive instance repGenericAssociationVersionLimitExceeded :: Generic AssociationVersionLimitExceeded _
@@ -507,12 +506,12 @@ instance encodeAssociationVersionLimitExceeded :: Encode AssociationVersionLimit
 
 -- | Constructs AssociationVersionLimitExceeded from required parameters
 newAssociationVersionLimitExceeded :: AssociationVersionLimitExceeded
-newAssociationVersionLimitExceeded  = AssociationVersionLimitExceeded { "Message": (NullOrUndefined Nothing) }
+newAssociationVersionLimitExceeded  = AssociationVersionLimitExceeded { "Message": Nothing }
 
 -- | Constructs AssociationVersionLimitExceeded's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAssociationVersionLimitExceeded' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> AssociationVersionLimitExceeded
-newAssociationVersionLimitExceeded'  customize = (AssociationVersionLimitExceeded <<< customize) { "Message": (NullOrUndefined Nothing) }
+newAssociationVersionLimitExceeded' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> AssociationVersionLimitExceeded
+newAssociationVersionLimitExceeded'  customize = (AssociationVersionLimitExceeded <<< customize) { "Message": Nothing }
 
 
 
@@ -554,7 +553,7 @@ instance encodeAutomationActionName :: Encode AutomationActionName where encode 
 
 -- | <p>An Automation document with the specified name could not be found.</p>
 newtype AutomationDefinitionNotFoundException = AutomationDefinitionNotFoundException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeAutomationDefinitionNotFoundException :: Newtype AutomationDefinitionNotFoundException _
 derive instance repGenericAutomationDefinitionNotFoundException :: Generic AutomationDefinitionNotFoundException _
@@ -564,18 +563,18 @@ instance encodeAutomationDefinitionNotFoundException :: Encode AutomationDefinit
 
 -- | Constructs AutomationDefinitionNotFoundException from required parameters
 newAutomationDefinitionNotFoundException :: AutomationDefinitionNotFoundException
-newAutomationDefinitionNotFoundException  = AutomationDefinitionNotFoundException { "Message": (NullOrUndefined Nothing) }
+newAutomationDefinitionNotFoundException  = AutomationDefinitionNotFoundException { "Message": Nothing }
 
 -- | Constructs AutomationDefinitionNotFoundException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAutomationDefinitionNotFoundException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> AutomationDefinitionNotFoundException
-newAutomationDefinitionNotFoundException'  customize = (AutomationDefinitionNotFoundException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newAutomationDefinitionNotFoundException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> AutomationDefinitionNotFoundException
+newAutomationDefinitionNotFoundException'  customize = (AutomationDefinitionNotFoundException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>An Automation document with the specified name and version could not be found.</p>
 newtype AutomationDefinitionVersionNotFoundException = AutomationDefinitionVersionNotFoundException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeAutomationDefinitionVersionNotFoundException :: Newtype AutomationDefinitionVersionNotFoundException _
 derive instance repGenericAutomationDefinitionVersionNotFoundException :: Generic AutomationDefinitionVersionNotFoundException _
@@ -585,39 +584,39 @@ instance encodeAutomationDefinitionVersionNotFoundException :: Encode Automation
 
 -- | Constructs AutomationDefinitionVersionNotFoundException from required parameters
 newAutomationDefinitionVersionNotFoundException :: AutomationDefinitionVersionNotFoundException
-newAutomationDefinitionVersionNotFoundException  = AutomationDefinitionVersionNotFoundException { "Message": (NullOrUndefined Nothing) }
+newAutomationDefinitionVersionNotFoundException  = AutomationDefinitionVersionNotFoundException { "Message": Nothing }
 
 -- | Constructs AutomationDefinitionVersionNotFoundException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAutomationDefinitionVersionNotFoundException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> AutomationDefinitionVersionNotFoundException
-newAutomationDefinitionVersionNotFoundException'  customize = (AutomationDefinitionVersionNotFoundException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newAutomationDefinitionVersionNotFoundException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> AutomationDefinitionVersionNotFoundException
+newAutomationDefinitionVersionNotFoundException'  customize = (AutomationDefinitionVersionNotFoundException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>Detailed information about the current state of an individual Automation execution.</p>
 newtype AutomationExecution = AutomationExecution 
-  { "AutomationExecutionId" :: NullOrUndefined (AutomationExecutionId)
-  , "DocumentName" :: NullOrUndefined (DocumentName)
-  , "DocumentVersion" :: NullOrUndefined (DocumentVersion)
-  , "ExecutionStartTime" :: NullOrUndefined (DateTime)
-  , "ExecutionEndTime" :: NullOrUndefined (DateTime)
-  , "AutomationExecutionStatus" :: NullOrUndefined (AutomationExecutionStatus)
-  , "StepExecutions" :: NullOrUndefined (StepExecutionList)
-  , "StepExecutionsTruncated" :: NullOrUndefined (Boolean)
-  , "Parameters" :: NullOrUndefined (AutomationParameterMap)
-  , "Outputs" :: NullOrUndefined (AutomationParameterMap)
-  , "FailureMessage" :: NullOrUndefined (String)
-  , "Mode" :: NullOrUndefined (ExecutionMode)
-  , "ParentAutomationExecutionId" :: NullOrUndefined (AutomationExecutionId)
-  , "ExecutedBy" :: NullOrUndefined (String)
-  , "CurrentStepName" :: NullOrUndefined (String)
-  , "CurrentAction" :: NullOrUndefined (String)
-  , "TargetParameterName" :: NullOrUndefined (AutomationParameterKey)
-  , "Targets" :: NullOrUndefined (Targets)
-  , "ResolvedTargets" :: NullOrUndefined (ResolvedTargets)
-  , "MaxConcurrency" :: NullOrUndefined (MaxConcurrency)
-  , "MaxErrors" :: NullOrUndefined (MaxErrors)
-  , "Target" :: NullOrUndefined (String)
+  { "AutomationExecutionId" :: Maybe (AutomationExecutionId)
+  , "DocumentName" :: Maybe (DocumentName)
+  , "DocumentVersion" :: Maybe (DocumentVersion)
+  , "ExecutionStartTime" :: Maybe (DateTime)
+  , "ExecutionEndTime" :: Maybe (DateTime)
+  , "AutomationExecutionStatus" :: Maybe (AutomationExecutionStatus)
+  , "StepExecutions" :: Maybe (StepExecutionList)
+  , "StepExecutionsTruncated" :: Maybe (Boolean)
+  , "Parameters" :: Maybe (AutomationParameterMap)
+  , "Outputs" :: Maybe (AutomationParameterMap)
+  , "FailureMessage" :: Maybe (String)
+  , "Mode" :: Maybe (ExecutionMode)
+  , "ParentAutomationExecutionId" :: Maybe (AutomationExecutionId)
+  , "ExecutedBy" :: Maybe (String)
+  , "CurrentStepName" :: Maybe (String)
+  , "CurrentAction" :: Maybe (String)
+  , "TargetParameterName" :: Maybe (AutomationParameterKey)
+  , "Targets" :: Maybe (Targets)
+  , "ResolvedTargets" :: Maybe (ResolvedTargets)
+  , "MaxConcurrency" :: Maybe (MaxConcurrency)
+  , "MaxErrors" :: Maybe (MaxErrors)
+  , "Target" :: Maybe (String)
   }
 derive instance newtypeAutomationExecution :: Newtype AutomationExecution _
 derive instance repGenericAutomationExecution :: Generic AutomationExecution _
@@ -627,12 +626,12 @@ instance encodeAutomationExecution :: Encode AutomationExecution where encode = 
 
 -- | Constructs AutomationExecution from required parameters
 newAutomationExecution :: AutomationExecution
-newAutomationExecution  = AutomationExecution { "AutomationExecutionId": (NullOrUndefined Nothing), "AutomationExecutionStatus": (NullOrUndefined Nothing), "CurrentAction": (NullOrUndefined Nothing), "CurrentStepName": (NullOrUndefined Nothing), "DocumentName": (NullOrUndefined Nothing), "DocumentVersion": (NullOrUndefined Nothing), "ExecutedBy": (NullOrUndefined Nothing), "ExecutionEndTime": (NullOrUndefined Nothing), "ExecutionStartTime": (NullOrUndefined Nothing), "FailureMessage": (NullOrUndefined Nothing), "MaxConcurrency": (NullOrUndefined Nothing), "MaxErrors": (NullOrUndefined Nothing), "Mode": (NullOrUndefined Nothing), "Outputs": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing), "ParentAutomationExecutionId": (NullOrUndefined Nothing), "ResolvedTargets": (NullOrUndefined Nothing), "StepExecutions": (NullOrUndefined Nothing), "StepExecutionsTruncated": (NullOrUndefined Nothing), "Target": (NullOrUndefined Nothing), "TargetParameterName": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing) }
+newAutomationExecution  = AutomationExecution { "AutomationExecutionId": Nothing, "AutomationExecutionStatus": Nothing, "CurrentAction": Nothing, "CurrentStepName": Nothing, "DocumentName": Nothing, "DocumentVersion": Nothing, "ExecutedBy": Nothing, "ExecutionEndTime": Nothing, "ExecutionStartTime": Nothing, "FailureMessage": Nothing, "MaxConcurrency": Nothing, "MaxErrors": Nothing, "Mode": Nothing, "Outputs": Nothing, "Parameters": Nothing, "ParentAutomationExecutionId": Nothing, "ResolvedTargets": Nothing, "StepExecutions": Nothing, "StepExecutionsTruncated": Nothing, "Target": Nothing, "TargetParameterName": Nothing, "Targets": Nothing }
 
 -- | Constructs AutomationExecution's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAutomationExecution' :: ( { "AutomationExecutionId" :: NullOrUndefined (AutomationExecutionId) , "DocumentName" :: NullOrUndefined (DocumentName) , "DocumentVersion" :: NullOrUndefined (DocumentVersion) , "ExecutionStartTime" :: NullOrUndefined (DateTime) , "ExecutionEndTime" :: NullOrUndefined (DateTime) , "AutomationExecutionStatus" :: NullOrUndefined (AutomationExecutionStatus) , "StepExecutions" :: NullOrUndefined (StepExecutionList) , "StepExecutionsTruncated" :: NullOrUndefined (Boolean) , "Parameters" :: NullOrUndefined (AutomationParameterMap) , "Outputs" :: NullOrUndefined (AutomationParameterMap) , "FailureMessage" :: NullOrUndefined (String) , "Mode" :: NullOrUndefined (ExecutionMode) , "ParentAutomationExecutionId" :: NullOrUndefined (AutomationExecutionId) , "ExecutedBy" :: NullOrUndefined (String) , "CurrentStepName" :: NullOrUndefined (String) , "CurrentAction" :: NullOrUndefined (String) , "TargetParameterName" :: NullOrUndefined (AutomationParameterKey) , "Targets" :: NullOrUndefined (Targets) , "ResolvedTargets" :: NullOrUndefined (ResolvedTargets) , "MaxConcurrency" :: NullOrUndefined (MaxConcurrency) , "MaxErrors" :: NullOrUndefined (MaxErrors) , "Target" :: NullOrUndefined (String) } -> {"AutomationExecutionId" :: NullOrUndefined (AutomationExecutionId) , "DocumentName" :: NullOrUndefined (DocumentName) , "DocumentVersion" :: NullOrUndefined (DocumentVersion) , "ExecutionStartTime" :: NullOrUndefined (DateTime) , "ExecutionEndTime" :: NullOrUndefined (DateTime) , "AutomationExecutionStatus" :: NullOrUndefined (AutomationExecutionStatus) , "StepExecutions" :: NullOrUndefined (StepExecutionList) , "StepExecutionsTruncated" :: NullOrUndefined (Boolean) , "Parameters" :: NullOrUndefined (AutomationParameterMap) , "Outputs" :: NullOrUndefined (AutomationParameterMap) , "FailureMessage" :: NullOrUndefined (String) , "Mode" :: NullOrUndefined (ExecutionMode) , "ParentAutomationExecutionId" :: NullOrUndefined (AutomationExecutionId) , "ExecutedBy" :: NullOrUndefined (String) , "CurrentStepName" :: NullOrUndefined (String) , "CurrentAction" :: NullOrUndefined (String) , "TargetParameterName" :: NullOrUndefined (AutomationParameterKey) , "Targets" :: NullOrUndefined (Targets) , "ResolvedTargets" :: NullOrUndefined (ResolvedTargets) , "MaxConcurrency" :: NullOrUndefined (MaxConcurrency) , "MaxErrors" :: NullOrUndefined (MaxErrors) , "Target" :: NullOrUndefined (String) } ) -> AutomationExecution
-newAutomationExecution'  customize = (AutomationExecution <<< customize) { "AutomationExecutionId": (NullOrUndefined Nothing), "AutomationExecutionStatus": (NullOrUndefined Nothing), "CurrentAction": (NullOrUndefined Nothing), "CurrentStepName": (NullOrUndefined Nothing), "DocumentName": (NullOrUndefined Nothing), "DocumentVersion": (NullOrUndefined Nothing), "ExecutedBy": (NullOrUndefined Nothing), "ExecutionEndTime": (NullOrUndefined Nothing), "ExecutionStartTime": (NullOrUndefined Nothing), "FailureMessage": (NullOrUndefined Nothing), "MaxConcurrency": (NullOrUndefined Nothing), "MaxErrors": (NullOrUndefined Nothing), "Mode": (NullOrUndefined Nothing), "Outputs": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing), "ParentAutomationExecutionId": (NullOrUndefined Nothing), "ResolvedTargets": (NullOrUndefined Nothing), "StepExecutions": (NullOrUndefined Nothing), "StepExecutionsTruncated": (NullOrUndefined Nothing), "Target": (NullOrUndefined Nothing), "TargetParameterName": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing) }
+newAutomationExecution' :: ( { "AutomationExecutionId" :: Maybe (AutomationExecutionId) , "DocumentName" :: Maybe (DocumentName) , "DocumentVersion" :: Maybe (DocumentVersion) , "ExecutionStartTime" :: Maybe (DateTime) , "ExecutionEndTime" :: Maybe (DateTime) , "AutomationExecutionStatus" :: Maybe (AutomationExecutionStatus) , "StepExecutions" :: Maybe (StepExecutionList) , "StepExecutionsTruncated" :: Maybe (Boolean) , "Parameters" :: Maybe (AutomationParameterMap) , "Outputs" :: Maybe (AutomationParameterMap) , "FailureMessage" :: Maybe (String) , "Mode" :: Maybe (ExecutionMode) , "ParentAutomationExecutionId" :: Maybe (AutomationExecutionId) , "ExecutedBy" :: Maybe (String) , "CurrentStepName" :: Maybe (String) , "CurrentAction" :: Maybe (String) , "TargetParameterName" :: Maybe (AutomationParameterKey) , "Targets" :: Maybe (Targets) , "ResolvedTargets" :: Maybe (ResolvedTargets) , "MaxConcurrency" :: Maybe (MaxConcurrency) , "MaxErrors" :: Maybe (MaxErrors) , "Target" :: Maybe (String) } -> {"AutomationExecutionId" :: Maybe (AutomationExecutionId) , "DocumentName" :: Maybe (DocumentName) , "DocumentVersion" :: Maybe (DocumentVersion) , "ExecutionStartTime" :: Maybe (DateTime) , "ExecutionEndTime" :: Maybe (DateTime) , "AutomationExecutionStatus" :: Maybe (AutomationExecutionStatus) , "StepExecutions" :: Maybe (StepExecutionList) , "StepExecutionsTruncated" :: Maybe (Boolean) , "Parameters" :: Maybe (AutomationParameterMap) , "Outputs" :: Maybe (AutomationParameterMap) , "FailureMessage" :: Maybe (String) , "Mode" :: Maybe (ExecutionMode) , "ParentAutomationExecutionId" :: Maybe (AutomationExecutionId) , "ExecutedBy" :: Maybe (String) , "CurrentStepName" :: Maybe (String) , "CurrentAction" :: Maybe (String) , "TargetParameterName" :: Maybe (AutomationParameterKey) , "Targets" :: Maybe (Targets) , "ResolvedTargets" :: Maybe (ResolvedTargets) , "MaxConcurrency" :: Maybe (MaxConcurrency) , "MaxErrors" :: Maybe (MaxErrors) , "Target" :: Maybe (String) } ) -> AutomationExecution
+newAutomationExecution'  customize = (AutomationExecution <<< customize) { "AutomationExecutionId": Nothing, "AutomationExecutionStatus": Nothing, "CurrentAction": Nothing, "CurrentStepName": Nothing, "DocumentName": Nothing, "DocumentVersion": Nothing, "ExecutedBy": Nothing, "ExecutionEndTime": Nothing, "ExecutionStartTime": Nothing, "FailureMessage": Nothing, "MaxConcurrency": Nothing, "MaxErrors": Nothing, "Mode": Nothing, "Outputs": Nothing, "Parameters": Nothing, "ParentAutomationExecutionId": Nothing, "ResolvedTargets": Nothing, "StepExecutions": Nothing, "StepExecutionsTruncated": Nothing, "Target": Nothing, "TargetParameterName": Nothing, "Targets": Nothing }
 
 
 
@@ -705,7 +704,7 @@ instance encodeAutomationExecutionId :: Encode AutomationExecutionId where encod
 
 -- | <p>The number of simultaneously running Automation executions exceeded the allowable limit.</p>
 newtype AutomationExecutionLimitExceededException = AutomationExecutionLimitExceededException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeAutomationExecutionLimitExceededException :: Newtype AutomationExecutionLimitExceededException _
 derive instance repGenericAutomationExecutionLimitExceededException :: Generic AutomationExecutionLimitExceededException _
@@ -715,37 +714,37 @@ instance encodeAutomationExecutionLimitExceededException :: Encode AutomationExe
 
 -- | Constructs AutomationExecutionLimitExceededException from required parameters
 newAutomationExecutionLimitExceededException :: AutomationExecutionLimitExceededException
-newAutomationExecutionLimitExceededException  = AutomationExecutionLimitExceededException { "Message": (NullOrUndefined Nothing) }
+newAutomationExecutionLimitExceededException  = AutomationExecutionLimitExceededException { "Message": Nothing }
 
 -- | Constructs AutomationExecutionLimitExceededException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAutomationExecutionLimitExceededException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> AutomationExecutionLimitExceededException
-newAutomationExecutionLimitExceededException'  customize = (AutomationExecutionLimitExceededException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newAutomationExecutionLimitExceededException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> AutomationExecutionLimitExceededException
+newAutomationExecutionLimitExceededException'  customize = (AutomationExecutionLimitExceededException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>Details about a specific Automation execution.</p>
 newtype AutomationExecutionMetadata = AutomationExecutionMetadata 
-  { "AutomationExecutionId" :: NullOrUndefined (AutomationExecutionId)
-  , "DocumentName" :: NullOrUndefined (DocumentName)
-  , "DocumentVersion" :: NullOrUndefined (DocumentVersion)
-  , "AutomationExecutionStatus" :: NullOrUndefined (AutomationExecutionStatus)
-  , "ExecutionStartTime" :: NullOrUndefined (DateTime)
-  , "ExecutionEndTime" :: NullOrUndefined (DateTime)
-  , "ExecutedBy" :: NullOrUndefined (String)
-  , "LogFile" :: NullOrUndefined (String)
-  , "Outputs" :: NullOrUndefined (AutomationParameterMap)
-  , "Mode" :: NullOrUndefined (ExecutionMode)
-  , "ParentAutomationExecutionId" :: NullOrUndefined (AutomationExecutionId)
-  , "CurrentStepName" :: NullOrUndefined (String)
-  , "CurrentAction" :: NullOrUndefined (String)
-  , "FailureMessage" :: NullOrUndefined (String)
-  , "TargetParameterName" :: NullOrUndefined (AutomationParameterKey)
-  , "Targets" :: NullOrUndefined (Targets)
-  , "ResolvedTargets" :: NullOrUndefined (ResolvedTargets)
-  , "MaxConcurrency" :: NullOrUndefined (MaxConcurrency)
-  , "MaxErrors" :: NullOrUndefined (MaxErrors)
-  , "Target" :: NullOrUndefined (String)
+  { "AutomationExecutionId" :: Maybe (AutomationExecutionId)
+  , "DocumentName" :: Maybe (DocumentName)
+  , "DocumentVersion" :: Maybe (DocumentVersion)
+  , "AutomationExecutionStatus" :: Maybe (AutomationExecutionStatus)
+  , "ExecutionStartTime" :: Maybe (DateTime)
+  , "ExecutionEndTime" :: Maybe (DateTime)
+  , "ExecutedBy" :: Maybe (String)
+  , "LogFile" :: Maybe (String)
+  , "Outputs" :: Maybe (AutomationParameterMap)
+  , "Mode" :: Maybe (ExecutionMode)
+  , "ParentAutomationExecutionId" :: Maybe (AutomationExecutionId)
+  , "CurrentStepName" :: Maybe (String)
+  , "CurrentAction" :: Maybe (String)
+  , "FailureMessage" :: Maybe (String)
+  , "TargetParameterName" :: Maybe (AutomationParameterKey)
+  , "Targets" :: Maybe (Targets)
+  , "ResolvedTargets" :: Maybe (ResolvedTargets)
+  , "MaxConcurrency" :: Maybe (MaxConcurrency)
+  , "MaxErrors" :: Maybe (MaxErrors)
+  , "Target" :: Maybe (String)
   }
 derive instance newtypeAutomationExecutionMetadata :: Newtype AutomationExecutionMetadata _
 derive instance repGenericAutomationExecutionMetadata :: Generic AutomationExecutionMetadata _
@@ -755,12 +754,12 @@ instance encodeAutomationExecutionMetadata :: Encode AutomationExecutionMetadata
 
 -- | Constructs AutomationExecutionMetadata from required parameters
 newAutomationExecutionMetadata :: AutomationExecutionMetadata
-newAutomationExecutionMetadata  = AutomationExecutionMetadata { "AutomationExecutionId": (NullOrUndefined Nothing), "AutomationExecutionStatus": (NullOrUndefined Nothing), "CurrentAction": (NullOrUndefined Nothing), "CurrentStepName": (NullOrUndefined Nothing), "DocumentName": (NullOrUndefined Nothing), "DocumentVersion": (NullOrUndefined Nothing), "ExecutedBy": (NullOrUndefined Nothing), "ExecutionEndTime": (NullOrUndefined Nothing), "ExecutionStartTime": (NullOrUndefined Nothing), "FailureMessage": (NullOrUndefined Nothing), "LogFile": (NullOrUndefined Nothing), "MaxConcurrency": (NullOrUndefined Nothing), "MaxErrors": (NullOrUndefined Nothing), "Mode": (NullOrUndefined Nothing), "Outputs": (NullOrUndefined Nothing), "ParentAutomationExecutionId": (NullOrUndefined Nothing), "ResolvedTargets": (NullOrUndefined Nothing), "Target": (NullOrUndefined Nothing), "TargetParameterName": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing) }
+newAutomationExecutionMetadata  = AutomationExecutionMetadata { "AutomationExecutionId": Nothing, "AutomationExecutionStatus": Nothing, "CurrentAction": Nothing, "CurrentStepName": Nothing, "DocumentName": Nothing, "DocumentVersion": Nothing, "ExecutedBy": Nothing, "ExecutionEndTime": Nothing, "ExecutionStartTime": Nothing, "FailureMessage": Nothing, "LogFile": Nothing, "MaxConcurrency": Nothing, "MaxErrors": Nothing, "Mode": Nothing, "Outputs": Nothing, "ParentAutomationExecutionId": Nothing, "ResolvedTargets": Nothing, "Target": Nothing, "TargetParameterName": Nothing, "Targets": Nothing }
 
 -- | Constructs AutomationExecutionMetadata's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAutomationExecutionMetadata' :: ( { "AutomationExecutionId" :: NullOrUndefined (AutomationExecutionId) , "DocumentName" :: NullOrUndefined (DocumentName) , "DocumentVersion" :: NullOrUndefined (DocumentVersion) , "AutomationExecutionStatus" :: NullOrUndefined (AutomationExecutionStatus) , "ExecutionStartTime" :: NullOrUndefined (DateTime) , "ExecutionEndTime" :: NullOrUndefined (DateTime) , "ExecutedBy" :: NullOrUndefined (String) , "LogFile" :: NullOrUndefined (String) , "Outputs" :: NullOrUndefined (AutomationParameterMap) , "Mode" :: NullOrUndefined (ExecutionMode) , "ParentAutomationExecutionId" :: NullOrUndefined (AutomationExecutionId) , "CurrentStepName" :: NullOrUndefined (String) , "CurrentAction" :: NullOrUndefined (String) , "FailureMessage" :: NullOrUndefined (String) , "TargetParameterName" :: NullOrUndefined (AutomationParameterKey) , "Targets" :: NullOrUndefined (Targets) , "ResolvedTargets" :: NullOrUndefined (ResolvedTargets) , "MaxConcurrency" :: NullOrUndefined (MaxConcurrency) , "MaxErrors" :: NullOrUndefined (MaxErrors) , "Target" :: NullOrUndefined (String) } -> {"AutomationExecutionId" :: NullOrUndefined (AutomationExecutionId) , "DocumentName" :: NullOrUndefined (DocumentName) , "DocumentVersion" :: NullOrUndefined (DocumentVersion) , "AutomationExecutionStatus" :: NullOrUndefined (AutomationExecutionStatus) , "ExecutionStartTime" :: NullOrUndefined (DateTime) , "ExecutionEndTime" :: NullOrUndefined (DateTime) , "ExecutedBy" :: NullOrUndefined (String) , "LogFile" :: NullOrUndefined (String) , "Outputs" :: NullOrUndefined (AutomationParameterMap) , "Mode" :: NullOrUndefined (ExecutionMode) , "ParentAutomationExecutionId" :: NullOrUndefined (AutomationExecutionId) , "CurrentStepName" :: NullOrUndefined (String) , "CurrentAction" :: NullOrUndefined (String) , "FailureMessage" :: NullOrUndefined (String) , "TargetParameterName" :: NullOrUndefined (AutomationParameterKey) , "Targets" :: NullOrUndefined (Targets) , "ResolvedTargets" :: NullOrUndefined (ResolvedTargets) , "MaxConcurrency" :: NullOrUndefined (MaxConcurrency) , "MaxErrors" :: NullOrUndefined (MaxErrors) , "Target" :: NullOrUndefined (String) } ) -> AutomationExecutionMetadata
-newAutomationExecutionMetadata'  customize = (AutomationExecutionMetadata <<< customize) { "AutomationExecutionId": (NullOrUndefined Nothing), "AutomationExecutionStatus": (NullOrUndefined Nothing), "CurrentAction": (NullOrUndefined Nothing), "CurrentStepName": (NullOrUndefined Nothing), "DocumentName": (NullOrUndefined Nothing), "DocumentVersion": (NullOrUndefined Nothing), "ExecutedBy": (NullOrUndefined Nothing), "ExecutionEndTime": (NullOrUndefined Nothing), "ExecutionStartTime": (NullOrUndefined Nothing), "FailureMessage": (NullOrUndefined Nothing), "LogFile": (NullOrUndefined Nothing), "MaxConcurrency": (NullOrUndefined Nothing), "MaxErrors": (NullOrUndefined Nothing), "Mode": (NullOrUndefined Nothing), "Outputs": (NullOrUndefined Nothing), "ParentAutomationExecutionId": (NullOrUndefined Nothing), "ResolvedTargets": (NullOrUndefined Nothing), "Target": (NullOrUndefined Nothing), "TargetParameterName": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing) }
+newAutomationExecutionMetadata' :: ( { "AutomationExecutionId" :: Maybe (AutomationExecutionId) , "DocumentName" :: Maybe (DocumentName) , "DocumentVersion" :: Maybe (DocumentVersion) , "AutomationExecutionStatus" :: Maybe (AutomationExecutionStatus) , "ExecutionStartTime" :: Maybe (DateTime) , "ExecutionEndTime" :: Maybe (DateTime) , "ExecutedBy" :: Maybe (String) , "LogFile" :: Maybe (String) , "Outputs" :: Maybe (AutomationParameterMap) , "Mode" :: Maybe (ExecutionMode) , "ParentAutomationExecutionId" :: Maybe (AutomationExecutionId) , "CurrentStepName" :: Maybe (String) , "CurrentAction" :: Maybe (String) , "FailureMessage" :: Maybe (String) , "TargetParameterName" :: Maybe (AutomationParameterKey) , "Targets" :: Maybe (Targets) , "ResolvedTargets" :: Maybe (ResolvedTargets) , "MaxConcurrency" :: Maybe (MaxConcurrency) , "MaxErrors" :: Maybe (MaxErrors) , "Target" :: Maybe (String) } -> {"AutomationExecutionId" :: Maybe (AutomationExecutionId) , "DocumentName" :: Maybe (DocumentName) , "DocumentVersion" :: Maybe (DocumentVersion) , "AutomationExecutionStatus" :: Maybe (AutomationExecutionStatus) , "ExecutionStartTime" :: Maybe (DateTime) , "ExecutionEndTime" :: Maybe (DateTime) , "ExecutedBy" :: Maybe (String) , "LogFile" :: Maybe (String) , "Outputs" :: Maybe (AutomationParameterMap) , "Mode" :: Maybe (ExecutionMode) , "ParentAutomationExecutionId" :: Maybe (AutomationExecutionId) , "CurrentStepName" :: Maybe (String) , "CurrentAction" :: Maybe (String) , "FailureMessage" :: Maybe (String) , "TargetParameterName" :: Maybe (AutomationParameterKey) , "Targets" :: Maybe (Targets) , "ResolvedTargets" :: Maybe (ResolvedTargets) , "MaxConcurrency" :: Maybe (MaxConcurrency) , "MaxErrors" :: Maybe (MaxErrors) , "Target" :: Maybe (String) } ) -> AutomationExecutionMetadata
+newAutomationExecutionMetadata'  customize = (AutomationExecutionMetadata <<< customize) { "AutomationExecutionId": Nothing, "AutomationExecutionStatus": Nothing, "CurrentAction": Nothing, "CurrentStepName": Nothing, "DocumentName": Nothing, "DocumentVersion": Nothing, "ExecutedBy": Nothing, "ExecutionEndTime": Nothing, "ExecutionStartTime": Nothing, "FailureMessage": Nothing, "LogFile": Nothing, "MaxConcurrency": Nothing, "MaxErrors": Nothing, "Mode": Nothing, "Outputs": Nothing, "ParentAutomationExecutionId": Nothing, "ResolvedTargets": Nothing, "Target": Nothing, "TargetParameterName": Nothing, "Targets": Nothing }
 
 
 
@@ -775,7 +774,7 @@ instance encodeAutomationExecutionMetadataList :: Encode AutomationExecutionMeta
 
 -- | <p>There is no automation execution information for the requested automation execution ID.</p>
 newtype AutomationExecutionNotFoundException = AutomationExecutionNotFoundException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeAutomationExecutionNotFoundException :: Newtype AutomationExecutionNotFoundException _
 derive instance repGenericAutomationExecutionNotFoundException :: Generic AutomationExecutionNotFoundException _
@@ -785,12 +784,12 @@ instance encodeAutomationExecutionNotFoundException :: Encode AutomationExecutio
 
 -- | Constructs AutomationExecutionNotFoundException from required parameters
 newAutomationExecutionNotFoundException :: AutomationExecutionNotFoundException
-newAutomationExecutionNotFoundException  = AutomationExecutionNotFoundException { "Message": (NullOrUndefined Nothing) }
+newAutomationExecutionNotFoundException  = AutomationExecutionNotFoundException { "Message": Nothing }
 
 -- | Constructs AutomationExecutionNotFoundException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAutomationExecutionNotFoundException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> AutomationExecutionNotFoundException
-newAutomationExecutionNotFoundException'  customize = (AutomationExecutionNotFoundException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newAutomationExecutionNotFoundException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> AutomationExecutionNotFoundException
+newAutomationExecutionNotFoundException'  customize = (AutomationExecutionNotFoundException <<< customize) { "Message": Nothing }
 
 
 
@@ -841,7 +840,7 @@ instance encodeAutomationParameterValueList :: Encode AutomationParameterValueLi
 
 -- | <p>The specified step name and execution ID don't exist. Verify the information and try again.</p>
 newtype AutomationStepNotFoundException = AutomationStepNotFoundException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeAutomationStepNotFoundException :: Newtype AutomationStepNotFoundException _
 derive instance repGenericAutomationStepNotFoundException :: Generic AutomationStepNotFoundException _
@@ -851,12 +850,12 @@ instance encodeAutomationStepNotFoundException :: Encode AutomationStepNotFoundE
 
 -- | Constructs AutomationStepNotFoundException from required parameters
 newAutomationStepNotFoundException :: AutomationStepNotFoundException
-newAutomationStepNotFoundException  = AutomationStepNotFoundException { "Message": (NullOrUndefined Nothing) }
+newAutomationStepNotFoundException  = AutomationStepNotFoundException { "Message": Nothing }
 
 -- | Constructs AutomationStepNotFoundException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAutomationStepNotFoundException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> AutomationStepNotFoundException
-newAutomationStepNotFoundException'  customize = (AutomationStepNotFoundException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newAutomationStepNotFoundException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> AutomationStepNotFoundException
+newAutomationStepNotFoundException'  customize = (AutomationStepNotFoundException <<< customize) { "Message": Nothing }
 
 
 
@@ -899,7 +898,7 @@ instance encodeBatchErrorMessage :: Encode BatchErrorMessage where encode = gene
 -- | <p/>
 newtype CancelCommandRequest = CancelCommandRequest 
   { "CommandId" :: (CommandId)
-  , "InstanceIds" :: NullOrUndefined (InstanceIdList)
+  , "InstanceIds" :: Maybe (InstanceIdList)
   }
 derive instance newtypeCancelCommandRequest :: Newtype CancelCommandRequest _
 derive instance repGenericCancelCommandRequest :: Generic CancelCommandRequest _
@@ -909,12 +908,12 @@ instance encodeCancelCommandRequest :: Encode CancelCommandRequest where encode 
 
 -- | Constructs CancelCommandRequest from required parameters
 newCancelCommandRequest :: CommandId -> CancelCommandRequest
-newCancelCommandRequest _CommandId = CancelCommandRequest { "CommandId": _CommandId, "InstanceIds": (NullOrUndefined Nothing) }
+newCancelCommandRequest _CommandId = CancelCommandRequest { "CommandId": _CommandId, "InstanceIds": Nothing }
 
 -- | Constructs CancelCommandRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCancelCommandRequest' :: CommandId -> ( { "CommandId" :: (CommandId) , "InstanceIds" :: NullOrUndefined (InstanceIdList) } -> {"CommandId" :: (CommandId) , "InstanceIds" :: NullOrUndefined (InstanceIdList) } ) -> CancelCommandRequest
-newCancelCommandRequest' _CommandId customize = (CancelCommandRequest <<< customize) { "CommandId": _CommandId, "InstanceIds": (NullOrUndefined Nothing) }
+newCancelCommandRequest' :: CommandId -> ( { "CommandId" :: (CommandId) , "InstanceIds" :: Maybe (InstanceIdList) } -> {"CommandId" :: (CommandId) , "InstanceIds" :: Maybe (InstanceIdList) } ) -> CancelCommandRequest
+newCancelCommandRequest' _CommandId customize = (CancelCommandRequest <<< customize) { "CommandId": _CommandId, "InstanceIds": Nothing }
 
 
 
@@ -939,26 +938,26 @@ instance encodeClientToken :: Encode ClientToken where encode = genericEncode op
 
 -- | <p>Describes a command request.</p>
 newtype Command = Command 
-  { "CommandId" :: NullOrUndefined (CommandId)
-  , "DocumentName" :: NullOrUndefined (DocumentName)
-  , "Comment" :: NullOrUndefined (Comment)
-  , "ExpiresAfter" :: NullOrUndefined (DateTime)
-  , "Parameters" :: NullOrUndefined (Parameters)
-  , "InstanceIds" :: NullOrUndefined (InstanceIdList)
-  , "Targets" :: NullOrUndefined (Targets)
-  , "RequestedDateTime" :: NullOrUndefined (DateTime)
-  , "Status" :: NullOrUndefined (CommandStatus)
-  , "StatusDetails" :: NullOrUndefined (StatusDetails)
-  , "OutputS3Region" :: NullOrUndefined (S3Region)
-  , "OutputS3BucketName" :: NullOrUndefined (S3BucketName)
-  , "OutputS3KeyPrefix" :: NullOrUndefined (S3KeyPrefix)
-  , "MaxConcurrency" :: NullOrUndefined (MaxConcurrency)
-  , "MaxErrors" :: NullOrUndefined (MaxErrors)
-  , "TargetCount" :: NullOrUndefined (TargetCount)
-  , "CompletedCount" :: NullOrUndefined (CompletedCount)
-  , "ErrorCount" :: NullOrUndefined (ErrorCount)
-  , "ServiceRole" :: NullOrUndefined (ServiceRole)
-  , "NotificationConfig" :: NullOrUndefined (NotificationConfig)
+  { "CommandId" :: Maybe (CommandId)
+  , "DocumentName" :: Maybe (DocumentName)
+  , "Comment" :: Maybe (Comment)
+  , "ExpiresAfter" :: Maybe (DateTime)
+  , "Parameters" :: Maybe (Parameters)
+  , "InstanceIds" :: Maybe (InstanceIdList)
+  , "Targets" :: Maybe (Targets)
+  , "RequestedDateTime" :: Maybe (DateTime)
+  , "Status" :: Maybe (CommandStatus)
+  , "StatusDetails" :: Maybe (StatusDetails)
+  , "OutputS3Region" :: Maybe (S3Region)
+  , "OutputS3BucketName" :: Maybe (S3BucketName)
+  , "OutputS3KeyPrefix" :: Maybe (S3KeyPrefix)
+  , "MaxConcurrency" :: Maybe (MaxConcurrency)
+  , "MaxErrors" :: Maybe (MaxErrors)
+  , "TargetCount" :: Maybe (TargetCount)
+  , "CompletedCount" :: Maybe (CompletedCount)
+  , "ErrorCount" :: Maybe (ErrorCount)
+  , "ServiceRole" :: Maybe (ServiceRole)
+  , "NotificationConfig" :: Maybe (NotificationConfig)
   }
 derive instance newtypeCommand :: Newtype Command _
 derive instance repGenericCommand :: Generic Command _
@@ -968,12 +967,12 @@ instance encodeCommand :: Encode Command where encode = genericEncode options
 
 -- | Constructs Command from required parameters
 newCommand :: Command
-newCommand  = Command { "CommandId": (NullOrUndefined Nothing), "Comment": (NullOrUndefined Nothing), "CompletedCount": (NullOrUndefined Nothing), "DocumentName": (NullOrUndefined Nothing), "ErrorCount": (NullOrUndefined Nothing), "ExpiresAfter": (NullOrUndefined Nothing), "InstanceIds": (NullOrUndefined Nothing), "MaxConcurrency": (NullOrUndefined Nothing), "MaxErrors": (NullOrUndefined Nothing), "NotificationConfig": (NullOrUndefined Nothing), "OutputS3BucketName": (NullOrUndefined Nothing), "OutputS3KeyPrefix": (NullOrUndefined Nothing), "OutputS3Region": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing), "RequestedDateTime": (NullOrUndefined Nothing), "ServiceRole": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "StatusDetails": (NullOrUndefined Nothing), "TargetCount": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing) }
+newCommand  = Command { "CommandId": Nothing, "Comment": Nothing, "CompletedCount": Nothing, "DocumentName": Nothing, "ErrorCount": Nothing, "ExpiresAfter": Nothing, "InstanceIds": Nothing, "MaxConcurrency": Nothing, "MaxErrors": Nothing, "NotificationConfig": Nothing, "OutputS3BucketName": Nothing, "OutputS3KeyPrefix": Nothing, "OutputS3Region": Nothing, "Parameters": Nothing, "RequestedDateTime": Nothing, "ServiceRole": Nothing, "Status": Nothing, "StatusDetails": Nothing, "TargetCount": Nothing, "Targets": Nothing }
 
 -- | Constructs Command's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCommand' :: ( { "CommandId" :: NullOrUndefined (CommandId) , "DocumentName" :: NullOrUndefined (DocumentName) , "Comment" :: NullOrUndefined (Comment) , "ExpiresAfter" :: NullOrUndefined (DateTime) , "Parameters" :: NullOrUndefined (Parameters) , "InstanceIds" :: NullOrUndefined (InstanceIdList) , "Targets" :: NullOrUndefined (Targets) , "RequestedDateTime" :: NullOrUndefined (DateTime) , "Status" :: NullOrUndefined (CommandStatus) , "StatusDetails" :: NullOrUndefined (StatusDetails) , "OutputS3Region" :: NullOrUndefined (S3Region) , "OutputS3BucketName" :: NullOrUndefined (S3BucketName) , "OutputS3KeyPrefix" :: NullOrUndefined (S3KeyPrefix) , "MaxConcurrency" :: NullOrUndefined (MaxConcurrency) , "MaxErrors" :: NullOrUndefined (MaxErrors) , "TargetCount" :: NullOrUndefined (TargetCount) , "CompletedCount" :: NullOrUndefined (CompletedCount) , "ErrorCount" :: NullOrUndefined (ErrorCount) , "ServiceRole" :: NullOrUndefined (ServiceRole) , "NotificationConfig" :: NullOrUndefined (NotificationConfig) } -> {"CommandId" :: NullOrUndefined (CommandId) , "DocumentName" :: NullOrUndefined (DocumentName) , "Comment" :: NullOrUndefined (Comment) , "ExpiresAfter" :: NullOrUndefined (DateTime) , "Parameters" :: NullOrUndefined (Parameters) , "InstanceIds" :: NullOrUndefined (InstanceIdList) , "Targets" :: NullOrUndefined (Targets) , "RequestedDateTime" :: NullOrUndefined (DateTime) , "Status" :: NullOrUndefined (CommandStatus) , "StatusDetails" :: NullOrUndefined (StatusDetails) , "OutputS3Region" :: NullOrUndefined (S3Region) , "OutputS3BucketName" :: NullOrUndefined (S3BucketName) , "OutputS3KeyPrefix" :: NullOrUndefined (S3KeyPrefix) , "MaxConcurrency" :: NullOrUndefined (MaxConcurrency) , "MaxErrors" :: NullOrUndefined (MaxErrors) , "TargetCount" :: NullOrUndefined (TargetCount) , "CompletedCount" :: NullOrUndefined (CompletedCount) , "ErrorCount" :: NullOrUndefined (ErrorCount) , "ServiceRole" :: NullOrUndefined (ServiceRole) , "NotificationConfig" :: NullOrUndefined (NotificationConfig) } ) -> Command
-newCommand'  customize = (Command <<< customize) { "CommandId": (NullOrUndefined Nothing), "Comment": (NullOrUndefined Nothing), "CompletedCount": (NullOrUndefined Nothing), "DocumentName": (NullOrUndefined Nothing), "ErrorCount": (NullOrUndefined Nothing), "ExpiresAfter": (NullOrUndefined Nothing), "InstanceIds": (NullOrUndefined Nothing), "MaxConcurrency": (NullOrUndefined Nothing), "MaxErrors": (NullOrUndefined Nothing), "NotificationConfig": (NullOrUndefined Nothing), "OutputS3BucketName": (NullOrUndefined Nothing), "OutputS3KeyPrefix": (NullOrUndefined Nothing), "OutputS3Region": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing), "RequestedDateTime": (NullOrUndefined Nothing), "ServiceRole": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "StatusDetails": (NullOrUndefined Nothing), "TargetCount": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing) }
+newCommand' :: ( { "CommandId" :: Maybe (CommandId) , "DocumentName" :: Maybe (DocumentName) , "Comment" :: Maybe (Comment) , "ExpiresAfter" :: Maybe (DateTime) , "Parameters" :: Maybe (Parameters) , "InstanceIds" :: Maybe (InstanceIdList) , "Targets" :: Maybe (Targets) , "RequestedDateTime" :: Maybe (DateTime) , "Status" :: Maybe (CommandStatus) , "StatusDetails" :: Maybe (StatusDetails) , "OutputS3Region" :: Maybe (S3Region) , "OutputS3BucketName" :: Maybe (S3BucketName) , "OutputS3KeyPrefix" :: Maybe (S3KeyPrefix) , "MaxConcurrency" :: Maybe (MaxConcurrency) , "MaxErrors" :: Maybe (MaxErrors) , "TargetCount" :: Maybe (TargetCount) , "CompletedCount" :: Maybe (CompletedCount) , "ErrorCount" :: Maybe (ErrorCount) , "ServiceRole" :: Maybe (ServiceRole) , "NotificationConfig" :: Maybe (NotificationConfig) } -> {"CommandId" :: Maybe (CommandId) , "DocumentName" :: Maybe (DocumentName) , "Comment" :: Maybe (Comment) , "ExpiresAfter" :: Maybe (DateTime) , "Parameters" :: Maybe (Parameters) , "InstanceIds" :: Maybe (InstanceIdList) , "Targets" :: Maybe (Targets) , "RequestedDateTime" :: Maybe (DateTime) , "Status" :: Maybe (CommandStatus) , "StatusDetails" :: Maybe (StatusDetails) , "OutputS3Region" :: Maybe (S3Region) , "OutputS3BucketName" :: Maybe (S3BucketName) , "OutputS3KeyPrefix" :: Maybe (S3KeyPrefix) , "MaxConcurrency" :: Maybe (MaxConcurrency) , "MaxErrors" :: Maybe (MaxErrors) , "TargetCount" :: Maybe (TargetCount) , "CompletedCount" :: Maybe (CompletedCount) , "ErrorCount" :: Maybe (ErrorCount) , "ServiceRole" :: Maybe (ServiceRole) , "NotificationConfig" :: Maybe (NotificationConfig) } ) -> Command
+newCommand'  customize = (Command <<< customize) { "CommandId": Nothing, "Comment": Nothing, "CompletedCount": Nothing, "DocumentName": Nothing, "ErrorCount": Nothing, "ExpiresAfter": Nothing, "InstanceIds": Nothing, "MaxConcurrency": Nothing, "MaxErrors": Nothing, "NotificationConfig": Nothing, "OutputS3BucketName": Nothing, "OutputS3KeyPrefix": Nothing, "OutputS3Region": Nothing, "Parameters": Nothing, "RequestedDateTime": Nothing, "ServiceRole": Nothing, "Status": Nothing, "StatusDetails": Nothing, "TargetCount": Nothing, "Targets": Nothing }
 
 
 
@@ -1037,20 +1036,20 @@ instance encodeCommandId :: Encode CommandId where encode = genericEncode option
 
 -- | <p>An invocation is copy of a command sent to a specific instance. A command can apply to one or more instances. A command invocation applies to one instance. For example, if a user executes SendCommand against three instances, then a command invocation is created for each requested instance ID. A command invocation returns status and detail information about a command you executed. </p>
 newtype CommandInvocation = CommandInvocation 
-  { "CommandId" :: NullOrUndefined (CommandId)
-  , "InstanceId" :: NullOrUndefined (InstanceId)
-  , "InstanceName" :: NullOrUndefined (InstanceTagName)
-  , "Comment" :: NullOrUndefined (Comment)
-  , "DocumentName" :: NullOrUndefined (DocumentName)
-  , "RequestedDateTime" :: NullOrUndefined (DateTime)
-  , "Status" :: NullOrUndefined (CommandInvocationStatus)
-  , "StatusDetails" :: NullOrUndefined (StatusDetails)
-  , "TraceOutput" :: NullOrUndefined (InvocationTraceOutput)
-  , "StandardOutputUrl" :: NullOrUndefined (Url)
-  , "StandardErrorUrl" :: NullOrUndefined (Url)
-  , "CommandPlugins" :: NullOrUndefined (CommandPluginList)
-  , "ServiceRole" :: NullOrUndefined (ServiceRole)
-  , "NotificationConfig" :: NullOrUndefined (NotificationConfig)
+  { "CommandId" :: Maybe (CommandId)
+  , "InstanceId" :: Maybe (InstanceId)
+  , "InstanceName" :: Maybe (InstanceTagName)
+  , "Comment" :: Maybe (Comment)
+  , "DocumentName" :: Maybe (DocumentName)
+  , "RequestedDateTime" :: Maybe (DateTime)
+  , "Status" :: Maybe (CommandInvocationStatus)
+  , "StatusDetails" :: Maybe (StatusDetails)
+  , "TraceOutput" :: Maybe (InvocationTraceOutput)
+  , "StandardOutputUrl" :: Maybe (Url)
+  , "StandardErrorUrl" :: Maybe (Url)
+  , "CommandPlugins" :: Maybe (CommandPluginList)
+  , "ServiceRole" :: Maybe (ServiceRole)
+  , "NotificationConfig" :: Maybe (NotificationConfig)
   }
 derive instance newtypeCommandInvocation :: Newtype CommandInvocation _
 derive instance repGenericCommandInvocation :: Generic CommandInvocation _
@@ -1060,12 +1059,12 @@ instance encodeCommandInvocation :: Encode CommandInvocation where encode = gene
 
 -- | Constructs CommandInvocation from required parameters
 newCommandInvocation :: CommandInvocation
-newCommandInvocation  = CommandInvocation { "CommandId": (NullOrUndefined Nothing), "CommandPlugins": (NullOrUndefined Nothing), "Comment": (NullOrUndefined Nothing), "DocumentName": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing), "InstanceName": (NullOrUndefined Nothing), "NotificationConfig": (NullOrUndefined Nothing), "RequestedDateTime": (NullOrUndefined Nothing), "ServiceRole": (NullOrUndefined Nothing), "StandardErrorUrl": (NullOrUndefined Nothing), "StandardOutputUrl": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "StatusDetails": (NullOrUndefined Nothing), "TraceOutput": (NullOrUndefined Nothing) }
+newCommandInvocation  = CommandInvocation { "CommandId": Nothing, "CommandPlugins": Nothing, "Comment": Nothing, "DocumentName": Nothing, "InstanceId": Nothing, "InstanceName": Nothing, "NotificationConfig": Nothing, "RequestedDateTime": Nothing, "ServiceRole": Nothing, "StandardErrorUrl": Nothing, "StandardOutputUrl": Nothing, "Status": Nothing, "StatusDetails": Nothing, "TraceOutput": Nothing }
 
 -- | Constructs CommandInvocation's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCommandInvocation' :: ( { "CommandId" :: NullOrUndefined (CommandId) , "InstanceId" :: NullOrUndefined (InstanceId) , "InstanceName" :: NullOrUndefined (InstanceTagName) , "Comment" :: NullOrUndefined (Comment) , "DocumentName" :: NullOrUndefined (DocumentName) , "RequestedDateTime" :: NullOrUndefined (DateTime) , "Status" :: NullOrUndefined (CommandInvocationStatus) , "StatusDetails" :: NullOrUndefined (StatusDetails) , "TraceOutput" :: NullOrUndefined (InvocationTraceOutput) , "StandardOutputUrl" :: NullOrUndefined (Url) , "StandardErrorUrl" :: NullOrUndefined (Url) , "CommandPlugins" :: NullOrUndefined (CommandPluginList) , "ServiceRole" :: NullOrUndefined (ServiceRole) , "NotificationConfig" :: NullOrUndefined (NotificationConfig) } -> {"CommandId" :: NullOrUndefined (CommandId) , "InstanceId" :: NullOrUndefined (InstanceId) , "InstanceName" :: NullOrUndefined (InstanceTagName) , "Comment" :: NullOrUndefined (Comment) , "DocumentName" :: NullOrUndefined (DocumentName) , "RequestedDateTime" :: NullOrUndefined (DateTime) , "Status" :: NullOrUndefined (CommandInvocationStatus) , "StatusDetails" :: NullOrUndefined (StatusDetails) , "TraceOutput" :: NullOrUndefined (InvocationTraceOutput) , "StandardOutputUrl" :: NullOrUndefined (Url) , "StandardErrorUrl" :: NullOrUndefined (Url) , "CommandPlugins" :: NullOrUndefined (CommandPluginList) , "ServiceRole" :: NullOrUndefined (ServiceRole) , "NotificationConfig" :: NullOrUndefined (NotificationConfig) } ) -> CommandInvocation
-newCommandInvocation'  customize = (CommandInvocation <<< customize) { "CommandId": (NullOrUndefined Nothing), "CommandPlugins": (NullOrUndefined Nothing), "Comment": (NullOrUndefined Nothing), "DocumentName": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing), "InstanceName": (NullOrUndefined Nothing), "NotificationConfig": (NullOrUndefined Nothing), "RequestedDateTime": (NullOrUndefined Nothing), "ServiceRole": (NullOrUndefined Nothing), "StandardErrorUrl": (NullOrUndefined Nothing), "StandardOutputUrl": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "StatusDetails": (NullOrUndefined Nothing), "TraceOutput": (NullOrUndefined Nothing) }
+newCommandInvocation' :: ( { "CommandId" :: Maybe (CommandId) , "InstanceId" :: Maybe (InstanceId) , "InstanceName" :: Maybe (InstanceTagName) , "Comment" :: Maybe (Comment) , "DocumentName" :: Maybe (DocumentName) , "RequestedDateTime" :: Maybe (DateTime) , "Status" :: Maybe (CommandInvocationStatus) , "StatusDetails" :: Maybe (StatusDetails) , "TraceOutput" :: Maybe (InvocationTraceOutput) , "StandardOutputUrl" :: Maybe (Url) , "StandardErrorUrl" :: Maybe (Url) , "CommandPlugins" :: Maybe (CommandPluginList) , "ServiceRole" :: Maybe (ServiceRole) , "NotificationConfig" :: Maybe (NotificationConfig) } -> {"CommandId" :: Maybe (CommandId) , "InstanceId" :: Maybe (InstanceId) , "InstanceName" :: Maybe (InstanceTagName) , "Comment" :: Maybe (Comment) , "DocumentName" :: Maybe (DocumentName) , "RequestedDateTime" :: Maybe (DateTime) , "Status" :: Maybe (CommandInvocationStatus) , "StatusDetails" :: Maybe (StatusDetails) , "TraceOutput" :: Maybe (InvocationTraceOutput) , "StandardOutputUrl" :: Maybe (Url) , "StandardErrorUrl" :: Maybe (Url) , "CommandPlugins" :: Maybe (CommandPluginList) , "ServiceRole" :: Maybe (ServiceRole) , "NotificationConfig" :: Maybe (NotificationConfig) } ) -> CommandInvocation
+newCommandInvocation'  customize = (CommandInvocation <<< customize) { "CommandId": Nothing, "CommandPlugins": Nothing, "Comment": Nothing, "DocumentName": Nothing, "InstanceId": Nothing, "InstanceName": Nothing, "NotificationConfig": Nothing, "RequestedDateTime": Nothing, "ServiceRole": Nothing, "StandardErrorUrl": Nothing, "StandardOutputUrl": Nothing, "Status": Nothing, "StatusDetails": Nothing, "TraceOutput": Nothing }
 
 
 
@@ -1107,18 +1106,18 @@ instance encodeCommandMaxResults :: Encode CommandMaxResults where encode = gene
 
 -- | <p>Describes plugin details.</p>
 newtype CommandPlugin = CommandPlugin 
-  { "Name" :: NullOrUndefined (CommandPluginName)
-  , "Status" :: NullOrUndefined (CommandPluginStatus)
-  , "StatusDetails" :: NullOrUndefined (StatusDetails)
-  , "ResponseCode" :: NullOrUndefined (ResponseCode)
-  , "ResponseStartDateTime" :: NullOrUndefined (DateTime)
-  , "ResponseFinishDateTime" :: NullOrUndefined (DateTime)
-  , "Output" :: NullOrUndefined (CommandPluginOutput)
-  , "StandardOutputUrl" :: NullOrUndefined (Url)
-  , "StandardErrorUrl" :: NullOrUndefined (Url)
-  , "OutputS3Region" :: NullOrUndefined (S3Region)
-  , "OutputS3BucketName" :: NullOrUndefined (S3BucketName)
-  , "OutputS3KeyPrefix" :: NullOrUndefined (S3KeyPrefix)
+  { "Name" :: Maybe (CommandPluginName)
+  , "Status" :: Maybe (CommandPluginStatus)
+  , "StatusDetails" :: Maybe (StatusDetails)
+  , "ResponseCode" :: Maybe (ResponseCode)
+  , "ResponseStartDateTime" :: Maybe (DateTime)
+  , "ResponseFinishDateTime" :: Maybe (DateTime)
+  , "Output" :: Maybe (CommandPluginOutput)
+  , "StandardOutputUrl" :: Maybe (Url)
+  , "StandardErrorUrl" :: Maybe (Url)
+  , "OutputS3Region" :: Maybe (S3Region)
+  , "OutputS3BucketName" :: Maybe (S3BucketName)
+  , "OutputS3KeyPrefix" :: Maybe (S3KeyPrefix)
   }
 derive instance newtypeCommandPlugin :: Newtype CommandPlugin _
 derive instance repGenericCommandPlugin :: Generic CommandPlugin _
@@ -1128,12 +1127,12 @@ instance encodeCommandPlugin :: Encode CommandPlugin where encode = genericEncod
 
 -- | Constructs CommandPlugin from required parameters
 newCommandPlugin :: CommandPlugin
-newCommandPlugin  = CommandPlugin { "Name": (NullOrUndefined Nothing), "Output": (NullOrUndefined Nothing), "OutputS3BucketName": (NullOrUndefined Nothing), "OutputS3KeyPrefix": (NullOrUndefined Nothing), "OutputS3Region": (NullOrUndefined Nothing), "ResponseCode": (NullOrUndefined Nothing), "ResponseFinishDateTime": (NullOrUndefined Nothing), "ResponseStartDateTime": (NullOrUndefined Nothing), "StandardErrorUrl": (NullOrUndefined Nothing), "StandardOutputUrl": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "StatusDetails": (NullOrUndefined Nothing) }
+newCommandPlugin  = CommandPlugin { "Name": Nothing, "Output": Nothing, "OutputS3BucketName": Nothing, "OutputS3KeyPrefix": Nothing, "OutputS3Region": Nothing, "ResponseCode": Nothing, "ResponseFinishDateTime": Nothing, "ResponseStartDateTime": Nothing, "StandardErrorUrl": Nothing, "StandardOutputUrl": Nothing, "Status": Nothing, "StatusDetails": Nothing }
 
 -- | Constructs CommandPlugin's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCommandPlugin' :: ( { "Name" :: NullOrUndefined (CommandPluginName) , "Status" :: NullOrUndefined (CommandPluginStatus) , "StatusDetails" :: NullOrUndefined (StatusDetails) , "ResponseCode" :: NullOrUndefined (ResponseCode) , "ResponseStartDateTime" :: NullOrUndefined (DateTime) , "ResponseFinishDateTime" :: NullOrUndefined (DateTime) , "Output" :: NullOrUndefined (CommandPluginOutput) , "StandardOutputUrl" :: NullOrUndefined (Url) , "StandardErrorUrl" :: NullOrUndefined (Url) , "OutputS3Region" :: NullOrUndefined (S3Region) , "OutputS3BucketName" :: NullOrUndefined (S3BucketName) , "OutputS3KeyPrefix" :: NullOrUndefined (S3KeyPrefix) } -> {"Name" :: NullOrUndefined (CommandPluginName) , "Status" :: NullOrUndefined (CommandPluginStatus) , "StatusDetails" :: NullOrUndefined (StatusDetails) , "ResponseCode" :: NullOrUndefined (ResponseCode) , "ResponseStartDateTime" :: NullOrUndefined (DateTime) , "ResponseFinishDateTime" :: NullOrUndefined (DateTime) , "Output" :: NullOrUndefined (CommandPluginOutput) , "StandardOutputUrl" :: NullOrUndefined (Url) , "StandardErrorUrl" :: NullOrUndefined (Url) , "OutputS3Region" :: NullOrUndefined (S3Region) , "OutputS3BucketName" :: NullOrUndefined (S3BucketName) , "OutputS3KeyPrefix" :: NullOrUndefined (S3KeyPrefix) } ) -> CommandPlugin
-newCommandPlugin'  customize = (CommandPlugin <<< customize) { "Name": (NullOrUndefined Nothing), "Output": (NullOrUndefined Nothing), "OutputS3BucketName": (NullOrUndefined Nothing), "OutputS3KeyPrefix": (NullOrUndefined Nothing), "OutputS3Region": (NullOrUndefined Nothing), "ResponseCode": (NullOrUndefined Nothing), "ResponseFinishDateTime": (NullOrUndefined Nothing), "ResponseStartDateTime": (NullOrUndefined Nothing), "StandardErrorUrl": (NullOrUndefined Nothing), "StandardOutputUrl": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "StatusDetails": (NullOrUndefined Nothing) }
+newCommandPlugin' :: ( { "Name" :: Maybe (CommandPluginName) , "Status" :: Maybe (CommandPluginStatus) , "StatusDetails" :: Maybe (StatusDetails) , "ResponseCode" :: Maybe (ResponseCode) , "ResponseStartDateTime" :: Maybe (DateTime) , "ResponseFinishDateTime" :: Maybe (DateTime) , "Output" :: Maybe (CommandPluginOutput) , "StandardOutputUrl" :: Maybe (Url) , "StandardErrorUrl" :: Maybe (Url) , "OutputS3Region" :: Maybe (S3Region) , "OutputS3BucketName" :: Maybe (S3BucketName) , "OutputS3KeyPrefix" :: Maybe (S3KeyPrefix) } -> {"Name" :: Maybe (CommandPluginName) , "Status" :: Maybe (CommandPluginStatus) , "StatusDetails" :: Maybe (StatusDetails) , "ResponseCode" :: Maybe (ResponseCode) , "ResponseStartDateTime" :: Maybe (DateTime) , "ResponseFinishDateTime" :: Maybe (DateTime) , "Output" :: Maybe (CommandPluginOutput) , "StandardOutputUrl" :: Maybe (Url) , "StandardErrorUrl" :: Maybe (Url) , "OutputS3Region" :: Maybe (S3Region) , "OutputS3BucketName" :: Maybe (S3BucketName) , "OutputS3KeyPrefix" :: Maybe (S3KeyPrefix) } ) -> CommandPlugin
+newCommandPlugin'  customize = (CommandPlugin <<< customize) { "Name": Nothing, "Output": Nothing, "OutputS3BucketName": Nothing, "OutputS3KeyPrefix": Nothing, "OutputS3Region": Nothing, "ResponseCode": Nothing, "ResponseFinishDateTime": Nothing, "ResponseStartDateTime": Nothing, "StandardErrorUrl": Nothing, "StandardOutputUrl": Nothing, "Status": Nothing, "StatusDetails": Nothing }
 
 
 
@@ -1212,8 +1211,8 @@ instance encodeComplianceExecutionId :: Encode ComplianceExecutionId where encod
 -- | <p>A summary of the call execution that includes an execution ID, the type of execution (for example, <code>Command</code>), and the date/time of the execution using a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
 newtype ComplianceExecutionSummary = ComplianceExecutionSummary 
   { "ExecutionTime" :: (DateTime)
-  , "ExecutionId" :: NullOrUndefined (ComplianceExecutionId)
-  , "ExecutionType" :: NullOrUndefined (ComplianceExecutionType)
+  , "ExecutionId" :: Maybe (ComplianceExecutionId)
+  , "ExecutionType" :: Maybe (ComplianceExecutionType)
   }
 derive instance newtypeComplianceExecutionSummary :: Newtype ComplianceExecutionSummary _
 derive instance repGenericComplianceExecutionSummary :: Generic ComplianceExecutionSummary _
@@ -1223,12 +1222,12 @@ instance encodeComplianceExecutionSummary :: Encode ComplianceExecutionSummary w
 
 -- | Constructs ComplianceExecutionSummary from required parameters
 newComplianceExecutionSummary :: DateTime -> ComplianceExecutionSummary
-newComplianceExecutionSummary _ExecutionTime = ComplianceExecutionSummary { "ExecutionTime": _ExecutionTime, "ExecutionId": (NullOrUndefined Nothing), "ExecutionType": (NullOrUndefined Nothing) }
+newComplianceExecutionSummary _ExecutionTime = ComplianceExecutionSummary { "ExecutionTime": _ExecutionTime, "ExecutionId": Nothing, "ExecutionType": Nothing }
 
 -- | Constructs ComplianceExecutionSummary's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newComplianceExecutionSummary' :: DateTime -> ( { "ExecutionTime" :: (DateTime) , "ExecutionId" :: NullOrUndefined (ComplianceExecutionId) , "ExecutionType" :: NullOrUndefined (ComplianceExecutionType) } -> {"ExecutionTime" :: (DateTime) , "ExecutionId" :: NullOrUndefined (ComplianceExecutionId) , "ExecutionType" :: NullOrUndefined (ComplianceExecutionType) } ) -> ComplianceExecutionSummary
-newComplianceExecutionSummary' _ExecutionTime customize = (ComplianceExecutionSummary <<< customize) { "ExecutionTime": _ExecutionTime, "ExecutionId": (NullOrUndefined Nothing), "ExecutionType": (NullOrUndefined Nothing) }
+newComplianceExecutionSummary' :: DateTime -> ( { "ExecutionTime" :: (DateTime) , "ExecutionId" :: Maybe (ComplianceExecutionId) , "ExecutionType" :: Maybe (ComplianceExecutionType) } -> {"ExecutionTime" :: (DateTime) , "ExecutionId" :: Maybe (ComplianceExecutionId) , "ExecutionType" :: Maybe (ComplianceExecutionType) } ) -> ComplianceExecutionSummary
+newComplianceExecutionSummary' _ExecutionTime customize = (ComplianceExecutionSummary <<< customize) { "ExecutionTime": _ExecutionTime, "ExecutionId": Nothing, "ExecutionType": Nothing }
 
 
 
@@ -1252,15 +1251,15 @@ instance encodeComplianceFilterValue :: Encode ComplianceFilterValue where encod
 
 -- | <p>Information about the compliance as defined by the resource type. For example, for a patch resource type, <code>Items</code> includes information about the PatchSeverity, Classification, etc.</p>
 newtype ComplianceItem = ComplianceItem 
-  { "ComplianceType" :: NullOrUndefined (ComplianceTypeName)
-  , "ResourceType" :: NullOrUndefined (ComplianceResourceType)
-  , "ResourceId" :: NullOrUndefined (ComplianceResourceId)
-  , "Id" :: NullOrUndefined (ComplianceItemId)
-  , "Title" :: NullOrUndefined (ComplianceItemTitle)
-  , "Status" :: NullOrUndefined (ComplianceStatus)
-  , "Severity" :: NullOrUndefined (ComplianceSeverity)
-  , "ExecutionSummary" :: NullOrUndefined (ComplianceExecutionSummary)
-  , "Details" :: NullOrUndefined (ComplianceItemDetails)
+  { "ComplianceType" :: Maybe (ComplianceTypeName)
+  , "ResourceType" :: Maybe (ComplianceResourceType)
+  , "ResourceId" :: Maybe (ComplianceResourceId)
+  , "Id" :: Maybe (ComplianceItemId)
+  , "Title" :: Maybe (ComplianceItemTitle)
+  , "Status" :: Maybe (ComplianceStatus)
+  , "Severity" :: Maybe (ComplianceSeverity)
+  , "ExecutionSummary" :: Maybe (ComplianceExecutionSummary)
+  , "Details" :: Maybe (ComplianceItemDetails)
   }
 derive instance newtypeComplianceItem :: Newtype ComplianceItem _
 derive instance repGenericComplianceItem :: Generic ComplianceItem _
@@ -1270,12 +1269,12 @@ instance encodeComplianceItem :: Encode ComplianceItem where encode = genericEnc
 
 -- | Constructs ComplianceItem from required parameters
 newComplianceItem :: ComplianceItem
-newComplianceItem  = ComplianceItem { "ComplianceType": (NullOrUndefined Nothing), "Details": (NullOrUndefined Nothing), "ExecutionSummary": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "ResourceId": (NullOrUndefined Nothing), "ResourceType": (NullOrUndefined Nothing), "Severity": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "Title": (NullOrUndefined Nothing) }
+newComplianceItem  = ComplianceItem { "ComplianceType": Nothing, "Details": Nothing, "ExecutionSummary": Nothing, "Id": Nothing, "ResourceId": Nothing, "ResourceType": Nothing, "Severity": Nothing, "Status": Nothing, "Title": Nothing }
 
 -- | Constructs ComplianceItem's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newComplianceItem' :: ( { "ComplianceType" :: NullOrUndefined (ComplianceTypeName) , "ResourceType" :: NullOrUndefined (ComplianceResourceType) , "ResourceId" :: NullOrUndefined (ComplianceResourceId) , "Id" :: NullOrUndefined (ComplianceItemId) , "Title" :: NullOrUndefined (ComplianceItemTitle) , "Status" :: NullOrUndefined (ComplianceStatus) , "Severity" :: NullOrUndefined (ComplianceSeverity) , "ExecutionSummary" :: NullOrUndefined (ComplianceExecutionSummary) , "Details" :: NullOrUndefined (ComplianceItemDetails) } -> {"ComplianceType" :: NullOrUndefined (ComplianceTypeName) , "ResourceType" :: NullOrUndefined (ComplianceResourceType) , "ResourceId" :: NullOrUndefined (ComplianceResourceId) , "Id" :: NullOrUndefined (ComplianceItemId) , "Title" :: NullOrUndefined (ComplianceItemTitle) , "Status" :: NullOrUndefined (ComplianceStatus) , "Severity" :: NullOrUndefined (ComplianceSeverity) , "ExecutionSummary" :: NullOrUndefined (ComplianceExecutionSummary) , "Details" :: NullOrUndefined (ComplianceItemDetails) } ) -> ComplianceItem
-newComplianceItem'  customize = (ComplianceItem <<< customize) { "ComplianceType": (NullOrUndefined Nothing), "Details": (NullOrUndefined Nothing), "ExecutionSummary": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "ResourceId": (NullOrUndefined Nothing), "ResourceType": (NullOrUndefined Nothing), "Severity": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "Title": (NullOrUndefined Nothing) }
+newComplianceItem' :: ( { "ComplianceType" :: Maybe (ComplianceTypeName) , "ResourceType" :: Maybe (ComplianceResourceType) , "ResourceId" :: Maybe (ComplianceResourceId) , "Id" :: Maybe (ComplianceItemId) , "Title" :: Maybe (ComplianceItemTitle) , "Status" :: Maybe (ComplianceStatus) , "Severity" :: Maybe (ComplianceSeverity) , "ExecutionSummary" :: Maybe (ComplianceExecutionSummary) , "Details" :: Maybe (ComplianceItemDetails) } -> {"ComplianceType" :: Maybe (ComplianceTypeName) , "ResourceType" :: Maybe (ComplianceResourceType) , "ResourceId" :: Maybe (ComplianceResourceId) , "Id" :: Maybe (ComplianceItemId) , "Title" :: Maybe (ComplianceItemTitle) , "Status" :: Maybe (ComplianceStatus) , "Severity" :: Maybe (ComplianceSeverity) , "ExecutionSummary" :: Maybe (ComplianceExecutionSummary) , "Details" :: Maybe (ComplianceItemDetails) } ) -> ComplianceItem
+newComplianceItem'  customize = (ComplianceItem <<< customize) { "ComplianceType": Nothing, "Details": Nothing, "ExecutionSummary": Nothing, "Id": Nothing, "ResourceId": Nothing, "ResourceType": Nothing, "Severity": Nothing, "Status": Nothing, "Title": Nothing }
 
 
 
@@ -1299,11 +1298,11 @@ instance encodeComplianceItemDetails :: Encode ComplianceItemDetails where encod
 
 -- | <p>Information about a compliance item.</p>
 newtype ComplianceItemEntry = ComplianceItemEntry 
-  { "Id" :: NullOrUndefined (ComplianceItemId)
-  , "Title" :: NullOrUndefined (ComplianceItemTitle)
+  { "Id" :: Maybe (ComplianceItemId)
+  , "Title" :: Maybe (ComplianceItemTitle)
   , "Severity" :: (ComplianceSeverity)
   , "Status" :: (ComplianceStatus)
-  , "Details" :: NullOrUndefined (ComplianceItemDetails)
+  , "Details" :: Maybe (ComplianceItemDetails)
   }
 derive instance newtypeComplianceItemEntry :: Newtype ComplianceItemEntry _
 derive instance repGenericComplianceItemEntry :: Generic ComplianceItemEntry _
@@ -1313,12 +1312,12 @@ instance encodeComplianceItemEntry :: Encode ComplianceItemEntry where encode = 
 
 -- | Constructs ComplianceItemEntry from required parameters
 newComplianceItemEntry :: ComplianceSeverity -> ComplianceStatus -> ComplianceItemEntry
-newComplianceItemEntry _Severity _Status = ComplianceItemEntry { "Severity": _Severity, "Status": _Status, "Details": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "Title": (NullOrUndefined Nothing) }
+newComplianceItemEntry _Severity _Status = ComplianceItemEntry { "Severity": _Severity, "Status": _Status, "Details": Nothing, "Id": Nothing, "Title": Nothing }
 
 -- | Constructs ComplianceItemEntry's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newComplianceItemEntry' :: ComplianceSeverity -> ComplianceStatus -> ( { "Id" :: NullOrUndefined (ComplianceItemId) , "Title" :: NullOrUndefined (ComplianceItemTitle) , "Severity" :: (ComplianceSeverity) , "Status" :: (ComplianceStatus) , "Details" :: NullOrUndefined (ComplianceItemDetails) } -> {"Id" :: NullOrUndefined (ComplianceItemId) , "Title" :: NullOrUndefined (ComplianceItemTitle) , "Severity" :: (ComplianceSeverity) , "Status" :: (ComplianceStatus) , "Details" :: NullOrUndefined (ComplianceItemDetails) } ) -> ComplianceItemEntry
-newComplianceItemEntry' _Severity _Status customize = (ComplianceItemEntry <<< customize) { "Severity": _Severity, "Status": _Status, "Details": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "Title": (NullOrUndefined Nothing) }
+newComplianceItemEntry' :: ComplianceSeverity -> ComplianceStatus -> ( { "Id" :: Maybe (ComplianceItemId) , "Title" :: Maybe (ComplianceItemTitle) , "Severity" :: (ComplianceSeverity) , "Status" :: (ComplianceStatus) , "Details" :: Maybe (ComplianceItemDetails) } -> {"Id" :: Maybe (ComplianceItemId) , "Title" :: Maybe (ComplianceItemTitle) , "Severity" :: (ComplianceSeverity) , "Status" :: (ComplianceStatus) , "Details" :: Maybe (ComplianceItemDetails) } ) -> ComplianceItemEntry
+newComplianceItemEntry' _Severity _Status customize = (ComplianceItemEntry <<< customize) { "Severity": _Severity, "Status": _Status, "Details": Nothing, "Id": Nothing, "Title": Nothing }
 
 
 
@@ -1423,9 +1422,9 @@ instance encodeComplianceStatus :: Encode ComplianceStatus where encode = generi
 
 -- | <p>One or more filters. Use a filter to return a more specific list of results.</p>
 newtype ComplianceStringFilter = ComplianceStringFilter 
-  { "Key" :: NullOrUndefined (ComplianceStringFilterKey)
-  , "Values" :: NullOrUndefined (ComplianceStringFilterValueList)
-  , "Type" :: NullOrUndefined (ComplianceQueryOperatorType)
+  { "Key" :: Maybe (ComplianceStringFilterKey)
+  , "Values" :: Maybe (ComplianceStringFilterValueList)
+  , "Type" :: Maybe (ComplianceQueryOperatorType)
   }
 derive instance newtypeComplianceStringFilter :: Newtype ComplianceStringFilter _
 derive instance repGenericComplianceStringFilter :: Generic ComplianceStringFilter _
@@ -1435,12 +1434,12 @@ instance encodeComplianceStringFilter :: Encode ComplianceStringFilter where enc
 
 -- | Constructs ComplianceStringFilter from required parameters
 newComplianceStringFilter :: ComplianceStringFilter
-newComplianceStringFilter  = ComplianceStringFilter { "Key": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing), "Values": (NullOrUndefined Nothing) }
+newComplianceStringFilter  = ComplianceStringFilter { "Key": Nothing, "Type": Nothing, "Values": Nothing }
 
 -- | Constructs ComplianceStringFilter's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newComplianceStringFilter' :: ( { "Key" :: NullOrUndefined (ComplianceStringFilterKey) , "Values" :: NullOrUndefined (ComplianceStringFilterValueList) , "Type" :: NullOrUndefined (ComplianceQueryOperatorType) } -> {"Key" :: NullOrUndefined (ComplianceStringFilterKey) , "Values" :: NullOrUndefined (ComplianceStringFilterValueList) , "Type" :: NullOrUndefined (ComplianceQueryOperatorType) } ) -> ComplianceStringFilter
-newComplianceStringFilter'  customize = (ComplianceStringFilter <<< customize) { "Key": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing), "Values": (NullOrUndefined Nothing) }
+newComplianceStringFilter' :: ( { "Key" :: Maybe (ComplianceStringFilterKey) , "Values" :: Maybe (ComplianceStringFilterValueList) , "Type" :: Maybe (ComplianceQueryOperatorType) } -> {"Key" :: Maybe (ComplianceStringFilterKey) , "Values" :: Maybe (ComplianceStringFilterValueList) , "Type" :: Maybe (ComplianceQueryOperatorType) } ) -> ComplianceStringFilter
+newComplianceStringFilter'  customize = (ComplianceStringFilter <<< customize) { "Key": Nothing, "Type": Nothing, "Values": Nothing }
 
 
 
@@ -1482,9 +1481,9 @@ instance encodeComplianceSummaryCount :: Encode ComplianceSummaryCount where enc
 
 -- | <p>A summary of compliance information by compliance type.</p>
 newtype ComplianceSummaryItem = ComplianceSummaryItem 
-  { "ComplianceType" :: NullOrUndefined (ComplianceTypeName)
-  , "CompliantSummary" :: NullOrUndefined (CompliantSummary)
-  , "NonCompliantSummary" :: NullOrUndefined (NonCompliantSummary)
+  { "ComplianceType" :: Maybe (ComplianceTypeName)
+  , "CompliantSummary" :: Maybe (CompliantSummary)
+  , "NonCompliantSummary" :: Maybe (NonCompliantSummary)
   }
 derive instance newtypeComplianceSummaryItem :: Newtype ComplianceSummaryItem _
 derive instance repGenericComplianceSummaryItem :: Generic ComplianceSummaryItem _
@@ -1494,12 +1493,12 @@ instance encodeComplianceSummaryItem :: Encode ComplianceSummaryItem where encod
 
 -- | Constructs ComplianceSummaryItem from required parameters
 newComplianceSummaryItem :: ComplianceSummaryItem
-newComplianceSummaryItem  = ComplianceSummaryItem { "ComplianceType": (NullOrUndefined Nothing), "CompliantSummary": (NullOrUndefined Nothing), "NonCompliantSummary": (NullOrUndefined Nothing) }
+newComplianceSummaryItem  = ComplianceSummaryItem { "ComplianceType": Nothing, "CompliantSummary": Nothing, "NonCompliantSummary": Nothing }
 
 -- | Constructs ComplianceSummaryItem's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newComplianceSummaryItem' :: ( { "ComplianceType" :: NullOrUndefined (ComplianceTypeName) , "CompliantSummary" :: NullOrUndefined (CompliantSummary) , "NonCompliantSummary" :: NullOrUndefined (NonCompliantSummary) } -> {"ComplianceType" :: NullOrUndefined (ComplianceTypeName) , "CompliantSummary" :: NullOrUndefined (CompliantSummary) , "NonCompliantSummary" :: NullOrUndefined (NonCompliantSummary) } ) -> ComplianceSummaryItem
-newComplianceSummaryItem'  customize = (ComplianceSummaryItem <<< customize) { "ComplianceType": (NullOrUndefined Nothing), "CompliantSummary": (NullOrUndefined Nothing), "NonCompliantSummary": (NullOrUndefined Nothing) }
+newComplianceSummaryItem' :: ( { "ComplianceType" :: Maybe (ComplianceTypeName) , "CompliantSummary" :: Maybe (CompliantSummary) , "NonCompliantSummary" :: Maybe (NonCompliantSummary) } -> {"ComplianceType" :: Maybe (ComplianceTypeName) , "CompliantSummary" :: Maybe (CompliantSummary) , "NonCompliantSummary" :: Maybe (NonCompliantSummary) } ) -> ComplianceSummaryItem
+newComplianceSummaryItem'  customize = (ComplianceSummaryItem <<< customize) { "ComplianceType": Nothing, "CompliantSummary": Nothing, "NonCompliantSummary": Nothing }
 
 
 
@@ -1514,7 +1513,7 @@ instance encodeComplianceSummaryItemList :: Encode ComplianceSummaryItemList whe
 
 -- | <p>You specified too many custom compliance types. You can specify a maximum of 10 different types. </p>
 newtype ComplianceTypeCountLimitExceededException = ComplianceTypeCountLimitExceededException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeComplianceTypeCountLimitExceededException :: Newtype ComplianceTypeCountLimitExceededException _
 derive instance repGenericComplianceTypeCountLimitExceededException :: Generic ComplianceTypeCountLimitExceededException _
@@ -1524,12 +1523,12 @@ instance encodeComplianceTypeCountLimitExceededException :: Encode ComplianceTyp
 
 -- | Constructs ComplianceTypeCountLimitExceededException from required parameters
 newComplianceTypeCountLimitExceededException :: ComplianceTypeCountLimitExceededException
-newComplianceTypeCountLimitExceededException  = ComplianceTypeCountLimitExceededException { "Message": (NullOrUndefined Nothing) }
+newComplianceTypeCountLimitExceededException  = ComplianceTypeCountLimitExceededException { "Message": Nothing }
 
 -- | Constructs ComplianceTypeCountLimitExceededException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newComplianceTypeCountLimitExceededException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> ComplianceTypeCountLimitExceededException
-newComplianceTypeCountLimitExceededException'  customize = (ComplianceTypeCountLimitExceededException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newComplianceTypeCountLimitExceededException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> ComplianceTypeCountLimitExceededException
+newComplianceTypeCountLimitExceededException'  customize = (ComplianceTypeCountLimitExceededException <<< customize) { "Message": Nothing }
 
 
 
@@ -1544,8 +1543,8 @@ instance encodeComplianceTypeName :: Encode ComplianceTypeName where encode = ge
 
 -- | <p>A summary of resources that are compliant. The summary is organized according to the resource count for each compliance type.</p>
 newtype CompliantSummary = CompliantSummary 
-  { "CompliantCount" :: NullOrUndefined (ComplianceSummaryCount)
-  , "SeveritySummary" :: NullOrUndefined (SeveritySummary)
+  { "CompliantCount" :: Maybe (ComplianceSummaryCount)
+  , "SeveritySummary" :: Maybe (SeveritySummary)
   }
 derive instance newtypeCompliantSummary :: Newtype CompliantSummary _
 derive instance repGenericCompliantSummary :: Generic CompliantSummary _
@@ -1555,12 +1554,12 @@ instance encodeCompliantSummary :: Encode CompliantSummary where encode = generi
 
 -- | Constructs CompliantSummary from required parameters
 newCompliantSummary :: CompliantSummary
-newCompliantSummary  = CompliantSummary { "CompliantCount": (NullOrUndefined Nothing), "SeveritySummary": (NullOrUndefined Nothing) }
+newCompliantSummary  = CompliantSummary { "CompliantCount": Nothing, "SeveritySummary": Nothing }
 
 -- | Constructs CompliantSummary's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCompliantSummary' :: ( { "CompliantCount" :: NullOrUndefined (ComplianceSummaryCount) , "SeveritySummary" :: NullOrUndefined (SeveritySummary) } -> {"CompliantCount" :: NullOrUndefined (ComplianceSummaryCount) , "SeveritySummary" :: NullOrUndefined (SeveritySummary) } ) -> CompliantSummary
-newCompliantSummary'  customize = (CompliantSummary <<< customize) { "CompliantCount": (NullOrUndefined Nothing), "SeveritySummary": (NullOrUndefined Nothing) }
+newCompliantSummary' :: ( { "CompliantCount" :: Maybe (ComplianceSummaryCount) , "SeveritySummary" :: Maybe (SeveritySummary) } -> {"CompliantCount" :: Maybe (ComplianceSummaryCount) , "SeveritySummary" :: Maybe (SeveritySummary) } ) -> CompliantSummary
+newCompliantSummary'  customize = (CompliantSummary <<< customize) { "CompliantCount": Nothing, "SeveritySummary": Nothing }
 
 
 
@@ -1574,11 +1573,11 @@ instance encodeComputerName :: Encode ComputerName where encode = genericEncode 
 
 
 newtype CreateActivationRequest = CreateActivationRequest 
-  { "Description" :: NullOrUndefined (ActivationDescription)
-  , "DefaultInstanceName" :: NullOrUndefined (DefaultInstanceName)
+  { "Description" :: Maybe (ActivationDescription)
+  , "DefaultInstanceName" :: Maybe (DefaultInstanceName)
   , "IamRole" :: (IamRole)
-  , "RegistrationLimit" :: NullOrUndefined (RegistrationLimit)
-  , "ExpirationDate" :: NullOrUndefined (ExpirationDate)
+  , "RegistrationLimit" :: Maybe (RegistrationLimit)
+  , "ExpirationDate" :: Maybe (ExpirationDate)
   }
 derive instance newtypeCreateActivationRequest :: Newtype CreateActivationRequest _
 derive instance repGenericCreateActivationRequest :: Generic CreateActivationRequest _
@@ -1588,18 +1587,18 @@ instance encodeCreateActivationRequest :: Encode CreateActivationRequest where e
 
 -- | Constructs CreateActivationRequest from required parameters
 newCreateActivationRequest :: IamRole -> CreateActivationRequest
-newCreateActivationRequest _IamRole = CreateActivationRequest { "IamRole": _IamRole, "DefaultInstanceName": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "ExpirationDate": (NullOrUndefined Nothing), "RegistrationLimit": (NullOrUndefined Nothing) }
+newCreateActivationRequest _IamRole = CreateActivationRequest { "IamRole": _IamRole, "DefaultInstanceName": Nothing, "Description": Nothing, "ExpirationDate": Nothing, "RegistrationLimit": Nothing }
 
 -- | Constructs CreateActivationRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateActivationRequest' :: IamRole -> ( { "Description" :: NullOrUndefined (ActivationDescription) , "DefaultInstanceName" :: NullOrUndefined (DefaultInstanceName) , "IamRole" :: (IamRole) , "RegistrationLimit" :: NullOrUndefined (RegistrationLimit) , "ExpirationDate" :: NullOrUndefined (ExpirationDate) } -> {"Description" :: NullOrUndefined (ActivationDescription) , "DefaultInstanceName" :: NullOrUndefined (DefaultInstanceName) , "IamRole" :: (IamRole) , "RegistrationLimit" :: NullOrUndefined (RegistrationLimit) , "ExpirationDate" :: NullOrUndefined (ExpirationDate) } ) -> CreateActivationRequest
-newCreateActivationRequest' _IamRole customize = (CreateActivationRequest <<< customize) { "IamRole": _IamRole, "DefaultInstanceName": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "ExpirationDate": (NullOrUndefined Nothing), "RegistrationLimit": (NullOrUndefined Nothing) }
+newCreateActivationRequest' :: IamRole -> ( { "Description" :: Maybe (ActivationDescription) , "DefaultInstanceName" :: Maybe (DefaultInstanceName) , "IamRole" :: (IamRole) , "RegistrationLimit" :: Maybe (RegistrationLimit) , "ExpirationDate" :: Maybe (ExpirationDate) } -> {"Description" :: Maybe (ActivationDescription) , "DefaultInstanceName" :: Maybe (DefaultInstanceName) , "IamRole" :: (IamRole) , "RegistrationLimit" :: Maybe (RegistrationLimit) , "ExpirationDate" :: Maybe (ExpirationDate) } ) -> CreateActivationRequest
+newCreateActivationRequest' _IamRole customize = (CreateActivationRequest <<< customize) { "IamRole": _IamRole, "DefaultInstanceName": Nothing, "Description": Nothing, "ExpirationDate": Nothing, "RegistrationLimit": Nothing }
 
 
 
 newtype CreateActivationResult = CreateActivationResult 
-  { "ActivationId" :: NullOrUndefined (ActivationId)
-  , "ActivationCode" :: NullOrUndefined (ActivationCode)
+  { "ActivationId" :: Maybe (ActivationId)
+  , "ActivationCode" :: Maybe (ActivationCode)
   }
 derive instance newtypeCreateActivationResult :: Newtype CreateActivationResult _
 derive instance repGenericCreateActivationResult :: Generic CreateActivationResult _
@@ -1609,12 +1608,12 @@ instance encodeCreateActivationResult :: Encode CreateActivationResult where enc
 
 -- | Constructs CreateActivationResult from required parameters
 newCreateActivationResult :: CreateActivationResult
-newCreateActivationResult  = CreateActivationResult { "ActivationCode": (NullOrUndefined Nothing), "ActivationId": (NullOrUndefined Nothing) }
+newCreateActivationResult  = CreateActivationResult { "ActivationCode": Nothing, "ActivationId": Nothing }
 
 -- | Constructs CreateActivationResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateActivationResult' :: ( { "ActivationId" :: NullOrUndefined (ActivationId) , "ActivationCode" :: NullOrUndefined (ActivationCode) } -> {"ActivationId" :: NullOrUndefined (ActivationId) , "ActivationCode" :: NullOrUndefined (ActivationCode) } ) -> CreateActivationResult
-newCreateActivationResult'  customize = (CreateActivationResult <<< customize) { "ActivationCode": (NullOrUndefined Nothing), "ActivationId": (NullOrUndefined Nothing) }
+newCreateActivationResult' :: ( { "ActivationId" :: Maybe (ActivationId) , "ActivationCode" :: Maybe (ActivationCode) } -> {"ActivationId" :: Maybe (ActivationId) , "ActivationCode" :: Maybe (ActivationCode) } ) -> CreateActivationResult
+newCreateActivationResult'  customize = (CreateActivationResult <<< customize) { "ActivationCode": Nothing, "ActivationId": Nothing }
 
 
 
@@ -1650,13 +1649,13 @@ instance encodeCreateAssociationBatchRequestEntries :: Encode CreateAssociationB
 -- | <p>Describes the association of a Systems Manager document and an instance.</p>
 newtype CreateAssociationBatchRequestEntry = CreateAssociationBatchRequestEntry 
   { "Name" :: (DocumentName)
-  , "InstanceId" :: NullOrUndefined (InstanceId)
-  , "Parameters" :: NullOrUndefined (Parameters)
-  , "DocumentVersion" :: NullOrUndefined (DocumentVersion)
-  , "Targets" :: NullOrUndefined (Targets)
-  , "ScheduleExpression" :: NullOrUndefined (ScheduleExpression)
-  , "OutputLocation" :: NullOrUndefined (InstanceAssociationOutputLocation)
-  , "AssociationName" :: NullOrUndefined (AssociationName)
+  , "InstanceId" :: Maybe (InstanceId)
+  , "Parameters" :: Maybe (Parameters)
+  , "DocumentVersion" :: Maybe (DocumentVersion)
+  , "Targets" :: Maybe (Targets)
+  , "ScheduleExpression" :: Maybe (ScheduleExpression)
+  , "OutputLocation" :: Maybe (InstanceAssociationOutputLocation)
+  , "AssociationName" :: Maybe (AssociationName)
   }
 derive instance newtypeCreateAssociationBatchRequestEntry :: Newtype CreateAssociationBatchRequestEntry _
 derive instance repGenericCreateAssociationBatchRequestEntry :: Generic CreateAssociationBatchRequestEntry _
@@ -1666,18 +1665,18 @@ instance encodeCreateAssociationBatchRequestEntry :: Encode CreateAssociationBat
 
 -- | Constructs CreateAssociationBatchRequestEntry from required parameters
 newCreateAssociationBatchRequestEntry :: DocumentName -> CreateAssociationBatchRequestEntry
-newCreateAssociationBatchRequestEntry _Name = CreateAssociationBatchRequestEntry { "Name": _Name, "AssociationName": (NullOrUndefined Nothing), "DocumentVersion": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing), "OutputLocation": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing), "ScheduleExpression": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing) }
+newCreateAssociationBatchRequestEntry _Name = CreateAssociationBatchRequestEntry { "Name": _Name, "AssociationName": Nothing, "DocumentVersion": Nothing, "InstanceId": Nothing, "OutputLocation": Nothing, "Parameters": Nothing, "ScheduleExpression": Nothing, "Targets": Nothing }
 
 -- | Constructs CreateAssociationBatchRequestEntry's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateAssociationBatchRequestEntry' :: DocumentName -> ( { "Name" :: (DocumentName) , "InstanceId" :: NullOrUndefined (InstanceId) , "Parameters" :: NullOrUndefined (Parameters) , "DocumentVersion" :: NullOrUndefined (DocumentVersion) , "Targets" :: NullOrUndefined (Targets) , "ScheduleExpression" :: NullOrUndefined (ScheduleExpression) , "OutputLocation" :: NullOrUndefined (InstanceAssociationOutputLocation) , "AssociationName" :: NullOrUndefined (AssociationName) } -> {"Name" :: (DocumentName) , "InstanceId" :: NullOrUndefined (InstanceId) , "Parameters" :: NullOrUndefined (Parameters) , "DocumentVersion" :: NullOrUndefined (DocumentVersion) , "Targets" :: NullOrUndefined (Targets) , "ScheduleExpression" :: NullOrUndefined (ScheduleExpression) , "OutputLocation" :: NullOrUndefined (InstanceAssociationOutputLocation) , "AssociationName" :: NullOrUndefined (AssociationName) } ) -> CreateAssociationBatchRequestEntry
-newCreateAssociationBatchRequestEntry' _Name customize = (CreateAssociationBatchRequestEntry <<< customize) { "Name": _Name, "AssociationName": (NullOrUndefined Nothing), "DocumentVersion": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing), "OutputLocation": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing), "ScheduleExpression": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing) }
+newCreateAssociationBatchRequestEntry' :: DocumentName -> ( { "Name" :: (DocumentName) , "InstanceId" :: Maybe (InstanceId) , "Parameters" :: Maybe (Parameters) , "DocumentVersion" :: Maybe (DocumentVersion) , "Targets" :: Maybe (Targets) , "ScheduleExpression" :: Maybe (ScheduleExpression) , "OutputLocation" :: Maybe (InstanceAssociationOutputLocation) , "AssociationName" :: Maybe (AssociationName) } -> {"Name" :: (DocumentName) , "InstanceId" :: Maybe (InstanceId) , "Parameters" :: Maybe (Parameters) , "DocumentVersion" :: Maybe (DocumentVersion) , "Targets" :: Maybe (Targets) , "ScheduleExpression" :: Maybe (ScheduleExpression) , "OutputLocation" :: Maybe (InstanceAssociationOutputLocation) , "AssociationName" :: Maybe (AssociationName) } ) -> CreateAssociationBatchRequestEntry
+newCreateAssociationBatchRequestEntry' _Name customize = (CreateAssociationBatchRequestEntry <<< customize) { "Name": _Name, "AssociationName": Nothing, "DocumentVersion": Nothing, "InstanceId": Nothing, "OutputLocation": Nothing, "Parameters": Nothing, "ScheduleExpression": Nothing, "Targets": Nothing }
 
 
 
 newtype CreateAssociationBatchResult = CreateAssociationBatchResult 
-  { "Successful" :: NullOrUndefined (AssociationDescriptionList)
-  , "Failed" :: NullOrUndefined (FailedCreateAssociationList)
+  { "Successful" :: Maybe (AssociationDescriptionList)
+  , "Failed" :: Maybe (FailedCreateAssociationList)
   }
 derive instance newtypeCreateAssociationBatchResult :: Newtype CreateAssociationBatchResult _
 derive instance repGenericCreateAssociationBatchResult :: Generic CreateAssociationBatchResult _
@@ -1687,24 +1686,24 @@ instance encodeCreateAssociationBatchResult :: Encode CreateAssociationBatchResu
 
 -- | Constructs CreateAssociationBatchResult from required parameters
 newCreateAssociationBatchResult :: CreateAssociationBatchResult
-newCreateAssociationBatchResult  = CreateAssociationBatchResult { "Failed": (NullOrUndefined Nothing), "Successful": (NullOrUndefined Nothing) }
+newCreateAssociationBatchResult  = CreateAssociationBatchResult { "Failed": Nothing, "Successful": Nothing }
 
 -- | Constructs CreateAssociationBatchResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateAssociationBatchResult' :: ( { "Successful" :: NullOrUndefined (AssociationDescriptionList) , "Failed" :: NullOrUndefined (FailedCreateAssociationList) } -> {"Successful" :: NullOrUndefined (AssociationDescriptionList) , "Failed" :: NullOrUndefined (FailedCreateAssociationList) } ) -> CreateAssociationBatchResult
-newCreateAssociationBatchResult'  customize = (CreateAssociationBatchResult <<< customize) { "Failed": (NullOrUndefined Nothing), "Successful": (NullOrUndefined Nothing) }
+newCreateAssociationBatchResult' :: ( { "Successful" :: Maybe (AssociationDescriptionList) , "Failed" :: Maybe (FailedCreateAssociationList) } -> {"Successful" :: Maybe (AssociationDescriptionList) , "Failed" :: Maybe (FailedCreateAssociationList) } ) -> CreateAssociationBatchResult
+newCreateAssociationBatchResult'  customize = (CreateAssociationBatchResult <<< customize) { "Failed": Nothing, "Successful": Nothing }
 
 
 
 newtype CreateAssociationRequest = CreateAssociationRequest 
   { "Name" :: (DocumentName)
-  , "DocumentVersion" :: NullOrUndefined (DocumentVersion)
-  , "InstanceId" :: NullOrUndefined (InstanceId)
-  , "Parameters" :: NullOrUndefined (Parameters)
-  , "Targets" :: NullOrUndefined (Targets)
-  , "ScheduleExpression" :: NullOrUndefined (ScheduleExpression)
-  , "OutputLocation" :: NullOrUndefined (InstanceAssociationOutputLocation)
-  , "AssociationName" :: NullOrUndefined (AssociationName)
+  , "DocumentVersion" :: Maybe (DocumentVersion)
+  , "InstanceId" :: Maybe (InstanceId)
+  , "Parameters" :: Maybe (Parameters)
+  , "Targets" :: Maybe (Targets)
+  , "ScheduleExpression" :: Maybe (ScheduleExpression)
+  , "OutputLocation" :: Maybe (InstanceAssociationOutputLocation)
+  , "AssociationName" :: Maybe (AssociationName)
   }
 derive instance newtypeCreateAssociationRequest :: Newtype CreateAssociationRequest _
 derive instance repGenericCreateAssociationRequest :: Generic CreateAssociationRequest _
@@ -1714,17 +1713,17 @@ instance encodeCreateAssociationRequest :: Encode CreateAssociationRequest where
 
 -- | Constructs CreateAssociationRequest from required parameters
 newCreateAssociationRequest :: DocumentName -> CreateAssociationRequest
-newCreateAssociationRequest _Name = CreateAssociationRequest { "Name": _Name, "AssociationName": (NullOrUndefined Nothing), "DocumentVersion": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing), "OutputLocation": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing), "ScheduleExpression": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing) }
+newCreateAssociationRequest _Name = CreateAssociationRequest { "Name": _Name, "AssociationName": Nothing, "DocumentVersion": Nothing, "InstanceId": Nothing, "OutputLocation": Nothing, "Parameters": Nothing, "ScheduleExpression": Nothing, "Targets": Nothing }
 
 -- | Constructs CreateAssociationRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateAssociationRequest' :: DocumentName -> ( { "Name" :: (DocumentName) , "DocumentVersion" :: NullOrUndefined (DocumentVersion) , "InstanceId" :: NullOrUndefined (InstanceId) , "Parameters" :: NullOrUndefined (Parameters) , "Targets" :: NullOrUndefined (Targets) , "ScheduleExpression" :: NullOrUndefined (ScheduleExpression) , "OutputLocation" :: NullOrUndefined (InstanceAssociationOutputLocation) , "AssociationName" :: NullOrUndefined (AssociationName) } -> {"Name" :: (DocumentName) , "DocumentVersion" :: NullOrUndefined (DocumentVersion) , "InstanceId" :: NullOrUndefined (InstanceId) , "Parameters" :: NullOrUndefined (Parameters) , "Targets" :: NullOrUndefined (Targets) , "ScheduleExpression" :: NullOrUndefined (ScheduleExpression) , "OutputLocation" :: NullOrUndefined (InstanceAssociationOutputLocation) , "AssociationName" :: NullOrUndefined (AssociationName) } ) -> CreateAssociationRequest
-newCreateAssociationRequest' _Name customize = (CreateAssociationRequest <<< customize) { "Name": _Name, "AssociationName": (NullOrUndefined Nothing), "DocumentVersion": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing), "OutputLocation": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing), "ScheduleExpression": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing) }
+newCreateAssociationRequest' :: DocumentName -> ( { "Name" :: (DocumentName) , "DocumentVersion" :: Maybe (DocumentVersion) , "InstanceId" :: Maybe (InstanceId) , "Parameters" :: Maybe (Parameters) , "Targets" :: Maybe (Targets) , "ScheduleExpression" :: Maybe (ScheduleExpression) , "OutputLocation" :: Maybe (InstanceAssociationOutputLocation) , "AssociationName" :: Maybe (AssociationName) } -> {"Name" :: (DocumentName) , "DocumentVersion" :: Maybe (DocumentVersion) , "InstanceId" :: Maybe (InstanceId) , "Parameters" :: Maybe (Parameters) , "Targets" :: Maybe (Targets) , "ScheduleExpression" :: Maybe (ScheduleExpression) , "OutputLocation" :: Maybe (InstanceAssociationOutputLocation) , "AssociationName" :: Maybe (AssociationName) } ) -> CreateAssociationRequest
+newCreateAssociationRequest' _Name customize = (CreateAssociationRequest <<< customize) { "Name": _Name, "AssociationName": Nothing, "DocumentVersion": Nothing, "InstanceId": Nothing, "OutputLocation": Nothing, "Parameters": Nothing, "ScheduleExpression": Nothing, "Targets": Nothing }
 
 
 
 newtype CreateAssociationResult = CreateAssociationResult 
-  { "AssociationDescription" :: NullOrUndefined (AssociationDescription)
+  { "AssociationDescription" :: Maybe (AssociationDescription)
   }
 derive instance newtypeCreateAssociationResult :: Newtype CreateAssociationResult _
 derive instance repGenericCreateAssociationResult :: Generic CreateAssociationResult _
@@ -1734,21 +1733,21 @@ instance encodeCreateAssociationResult :: Encode CreateAssociationResult where e
 
 -- | Constructs CreateAssociationResult from required parameters
 newCreateAssociationResult :: CreateAssociationResult
-newCreateAssociationResult  = CreateAssociationResult { "AssociationDescription": (NullOrUndefined Nothing) }
+newCreateAssociationResult  = CreateAssociationResult { "AssociationDescription": Nothing }
 
 -- | Constructs CreateAssociationResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateAssociationResult' :: ( { "AssociationDescription" :: NullOrUndefined (AssociationDescription) } -> {"AssociationDescription" :: NullOrUndefined (AssociationDescription) } ) -> CreateAssociationResult
-newCreateAssociationResult'  customize = (CreateAssociationResult <<< customize) { "AssociationDescription": (NullOrUndefined Nothing) }
+newCreateAssociationResult' :: ( { "AssociationDescription" :: Maybe (AssociationDescription) } -> {"AssociationDescription" :: Maybe (AssociationDescription) } ) -> CreateAssociationResult
+newCreateAssociationResult'  customize = (CreateAssociationResult <<< customize) { "AssociationDescription": Nothing }
 
 
 
 newtype CreateDocumentRequest = CreateDocumentRequest 
   { "Content" :: (DocumentContent)
   , "Name" :: (DocumentName)
-  , "DocumentType" :: NullOrUndefined (DocumentType)
-  , "DocumentFormat" :: NullOrUndefined (DocumentFormat)
-  , "TargetType" :: NullOrUndefined (TargetType)
+  , "DocumentType" :: Maybe (DocumentType)
+  , "DocumentFormat" :: Maybe (DocumentFormat)
+  , "TargetType" :: Maybe (TargetType)
   }
 derive instance newtypeCreateDocumentRequest :: Newtype CreateDocumentRequest _
 derive instance repGenericCreateDocumentRequest :: Generic CreateDocumentRequest _
@@ -1758,17 +1757,17 @@ instance encodeCreateDocumentRequest :: Encode CreateDocumentRequest where encod
 
 -- | Constructs CreateDocumentRequest from required parameters
 newCreateDocumentRequest :: DocumentContent -> DocumentName -> CreateDocumentRequest
-newCreateDocumentRequest _Content _Name = CreateDocumentRequest { "Content": _Content, "Name": _Name, "DocumentFormat": (NullOrUndefined Nothing), "DocumentType": (NullOrUndefined Nothing), "TargetType": (NullOrUndefined Nothing) }
+newCreateDocumentRequest _Content _Name = CreateDocumentRequest { "Content": _Content, "Name": _Name, "DocumentFormat": Nothing, "DocumentType": Nothing, "TargetType": Nothing }
 
 -- | Constructs CreateDocumentRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateDocumentRequest' :: DocumentContent -> DocumentName -> ( { "Content" :: (DocumentContent) , "Name" :: (DocumentName) , "DocumentType" :: NullOrUndefined (DocumentType) , "DocumentFormat" :: NullOrUndefined (DocumentFormat) , "TargetType" :: NullOrUndefined (TargetType) } -> {"Content" :: (DocumentContent) , "Name" :: (DocumentName) , "DocumentType" :: NullOrUndefined (DocumentType) , "DocumentFormat" :: NullOrUndefined (DocumentFormat) , "TargetType" :: NullOrUndefined (TargetType) } ) -> CreateDocumentRequest
-newCreateDocumentRequest' _Content _Name customize = (CreateDocumentRequest <<< customize) { "Content": _Content, "Name": _Name, "DocumentFormat": (NullOrUndefined Nothing), "DocumentType": (NullOrUndefined Nothing), "TargetType": (NullOrUndefined Nothing) }
+newCreateDocumentRequest' :: DocumentContent -> DocumentName -> ( { "Content" :: (DocumentContent) , "Name" :: (DocumentName) , "DocumentType" :: Maybe (DocumentType) , "DocumentFormat" :: Maybe (DocumentFormat) , "TargetType" :: Maybe (TargetType) } -> {"Content" :: (DocumentContent) , "Name" :: (DocumentName) , "DocumentType" :: Maybe (DocumentType) , "DocumentFormat" :: Maybe (DocumentFormat) , "TargetType" :: Maybe (TargetType) } ) -> CreateDocumentRequest
+newCreateDocumentRequest' _Content _Name customize = (CreateDocumentRequest <<< customize) { "Content": _Content, "Name": _Name, "DocumentFormat": Nothing, "DocumentType": Nothing, "TargetType": Nothing }
 
 
 
 newtype CreateDocumentResult = CreateDocumentResult 
-  { "DocumentDescription" :: NullOrUndefined (DocumentDescription)
+  { "DocumentDescription" :: Maybe (DocumentDescription)
   }
 derive instance newtypeCreateDocumentResult :: Newtype CreateDocumentResult _
 derive instance repGenericCreateDocumentResult :: Generic CreateDocumentResult _
@@ -1778,23 +1777,23 @@ instance encodeCreateDocumentResult :: Encode CreateDocumentResult where encode 
 
 -- | Constructs CreateDocumentResult from required parameters
 newCreateDocumentResult :: CreateDocumentResult
-newCreateDocumentResult  = CreateDocumentResult { "DocumentDescription": (NullOrUndefined Nothing) }
+newCreateDocumentResult  = CreateDocumentResult { "DocumentDescription": Nothing }
 
 -- | Constructs CreateDocumentResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateDocumentResult' :: ( { "DocumentDescription" :: NullOrUndefined (DocumentDescription) } -> {"DocumentDescription" :: NullOrUndefined (DocumentDescription) } ) -> CreateDocumentResult
-newCreateDocumentResult'  customize = (CreateDocumentResult <<< customize) { "DocumentDescription": (NullOrUndefined Nothing) }
+newCreateDocumentResult' :: ( { "DocumentDescription" :: Maybe (DocumentDescription) } -> {"DocumentDescription" :: Maybe (DocumentDescription) } ) -> CreateDocumentResult
+newCreateDocumentResult'  customize = (CreateDocumentResult <<< customize) { "DocumentDescription": Nothing }
 
 
 
 newtype CreateMaintenanceWindowRequest = CreateMaintenanceWindowRequest 
   { "Name" :: (MaintenanceWindowName)
-  , "Description" :: NullOrUndefined (MaintenanceWindowDescription)
+  , "Description" :: Maybe (MaintenanceWindowDescription)
   , "Schedule" :: (MaintenanceWindowSchedule)
   , "Duration" :: (MaintenanceWindowDurationHours)
   , "Cutoff" :: (MaintenanceWindowCutoff)
   , "AllowUnassociatedTargets" :: (MaintenanceWindowAllowUnassociatedTargets)
-  , "ClientToken" :: NullOrUndefined (ClientToken)
+  , "ClientToken" :: Maybe (ClientToken)
   }
 derive instance newtypeCreateMaintenanceWindowRequest :: Newtype CreateMaintenanceWindowRequest _
 derive instance repGenericCreateMaintenanceWindowRequest :: Generic CreateMaintenanceWindowRequest _
@@ -1804,17 +1803,17 @@ instance encodeCreateMaintenanceWindowRequest :: Encode CreateMaintenanceWindowR
 
 -- | Constructs CreateMaintenanceWindowRequest from required parameters
 newCreateMaintenanceWindowRequest :: MaintenanceWindowAllowUnassociatedTargets -> MaintenanceWindowCutoff -> MaintenanceWindowDurationHours -> MaintenanceWindowName -> MaintenanceWindowSchedule -> CreateMaintenanceWindowRequest
-newCreateMaintenanceWindowRequest _AllowUnassociatedTargets _Cutoff _Duration _Name _Schedule = CreateMaintenanceWindowRequest { "AllowUnassociatedTargets": _AllowUnassociatedTargets, "Cutoff": _Cutoff, "Duration": _Duration, "Name": _Name, "Schedule": _Schedule, "ClientToken": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing) }
+newCreateMaintenanceWindowRequest _AllowUnassociatedTargets _Cutoff _Duration _Name _Schedule = CreateMaintenanceWindowRequest { "AllowUnassociatedTargets": _AllowUnassociatedTargets, "Cutoff": _Cutoff, "Duration": _Duration, "Name": _Name, "Schedule": _Schedule, "ClientToken": Nothing, "Description": Nothing }
 
 -- | Constructs CreateMaintenanceWindowRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateMaintenanceWindowRequest' :: MaintenanceWindowAllowUnassociatedTargets -> MaintenanceWindowCutoff -> MaintenanceWindowDurationHours -> MaintenanceWindowName -> MaintenanceWindowSchedule -> ( { "Name" :: (MaintenanceWindowName) , "Description" :: NullOrUndefined (MaintenanceWindowDescription) , "Schedule" :: (MaintenanceWindowSchedule) , "Duration" :: (MaintenanceWindowDurationHours) , "Cutoff" :: (MaintenanceWindowCutoff) , "AllowUnassociatedTargets" :: (MaintenanceWindowAllowUnassociatedTargets) , "ClientToken" :: NullOrUndefined (ClientToken) } -> {"Name" :: (MaintenanceWindowName) , "Description" :: NullOrUndefined (MaintenanceWindowDescription) , "Schedule" :: (MaintenanceWindowSchedule) , "Duration" :: (MaintenanceWindowDurationHours) , "Cutoff" :: (MaintenanceWindowCutoff) , "AllowUnassociatedTargets" :: (MaintenanceWindowAllowUnassociatedTargets) , "ClientToken" :: NullOrUndefined (ClientToken) } ) -> CreateMaintenanceWindowRequest
-newCreateMaintenanceWindowRequest' _AllowUnassociatedTargets _Cutoff _Duration _Name _Schedule customize = (CreateMaintenanceWindowRequest <<< customize) { "AllowUnassociatedTargets": _AllowUnassociatedTargets, "Cutoff": _Cutoff, "Duration": _Duration, "Name": _Name, "Schedule": _Schedule, "ClientToken": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing) }
+newCreateMaintenanceWindowRequest' :: MaintenanceWindowAllowUnassociatedTargets -> MaintenanceWindowCutoff -> MaintenanceWindowDurationHours -> MaintenanceWindowName -> MaintenanceWindowSchedule -> ( { "Name" :: (MaintenanceWindowName) , "Description" :: Maybe (MaintenanceWindowDescription) , "Schedule" :: (MaintenanceWindowSchedule) , "Duration" :: (MaintenanceWindowDurationHours) , "Cutoff" :: (MaintenanceWindowCutoff) , "AllowUnassociatedTargets" :: (MaintenanceWindowAllowUnassociatedTargets) , "ClientToken" :: Maybe (ClientToken) } -> {"Name" :: (MaintenanceWindowName) , "Description" :: Maybe (MaintenanceWindowDescription) , "Schedule" :: (MaintenanceWindowSchedule) , "Duration" :: (MaintenanceWindowDurationHours) , "Cutoff" :: (MaintenanceWindowCutoff) , "AllowUnassociatedTargets" :: (MaintenanceWindowAllowUnassociatedTargets) , "ClientToken" :: Maybe (ClientToken) } ) -> CreateMaintenanceWindowRequest
+newCreateMaintenanceWindowRequest' _AllowUnassociatedTargets _Cutoff _Duration _Name _Schedule customize = (CreateMaintenanceWindowRequest <<< customize) { "AllowUnassociatedTargets": _AllowUnassociatedTargets, "Cutoff": _Cutoff, "Duration": _Duration, "Name": _Name, "Schedule": _Schedule, "ClientToken": Nothing, "Description": Nothing }
 
 
 
 newtype CreateMaintenanceWindowResult = CreateMaintenanceWindowResult 
-  { "WindowId" :: NullOrUndefined (MaintenanceWindowId)
+  { "WindowId" :: Maybe (MaintenanceWindowId)
   }
 derive instance newtypeCreateMaintenanceWindowResult :: Newtype CreateMaintenanceWindowResult _
 derive instance repGenericCreateMaintenanceWindowResult :: Generic CreateMaintenanceWindowResult _
@@ -1824,27 +1823,27 @@ instance encodeCreateMaintenanceWindowResult :: Encode CreateMaintenanceWindowRe
 
 -- | Constructs CreateMaintenanceWindowResult from required parameters
 newCreateMaintenanceWindowResult :: CreateMaintenanceWindowResult
-newCreateMaintenanceWindowResult  = CreateMaintenanceWindowResult { "WindowId": (NullOrUndefined Nothing) }
+newCreateMaintenanceWindowResult  = CreateMaintenanceWindowResult { "WindowId": Nothing }
 
 -- | Constructs CreateMaintenanceWindowResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateMaintenanceWindowResult' :: ( { "WindowId" :: NullOrUndefined (MaintenanceWindowId) } -> {"WindowId" :: NullOrUndefined (MaintenanceWindowId) } ) -> CreateMaintenanceWindowResult
-newCreateMaintenanceWindowResult'  customize = (CreateMaintenanceWindowResult <<< customize) { "WindowId": (NullOrUndefined Nothing) }
+newCreateMaintenanceWindowResult' :: ( { "WindowId" :: Maybe (MaintenanceWindowId) } -> {"WindowId" :: Maybe (MaintenanceWindowId) } ) -> CreateMaintenanceWindowResult
+newCreateMaintenanceWindowResult'  customize = (CreateMaintenanceWindowResult <<< customize) { "WindowId": Nothing }
 
 
 
 newtype CreatePatchBaselineRequest = CreatePatchBaselineRequest 
-  { "OperatingSystem" :: NullOrUndefined (OperatingSystem)
+  { "OperatingSystem" :: Maybe (OperatingSystem)
   , "Name" :: (BaselineName)
-  , "GlobalFilters" :: NullOrUndefined (PatchFilterGroup)
-  , "ApprovalRules" :: NullOrUndefined (PatchRuleGroup)
-  , "ApprovedPatches" :: NullOrUndefined (PatchIdList)
-  , "ApprovedPatchesComplianceLevel" :: NullOrUndefined (PatchComplianceLevel)
-  , "ApprovedPatchesEnableNonSecurity" :: NullOrUndefined (Boolean)
-  , "RejectedPatches" :: NullOrUndefined (PatchIdList)
-  , "Description" :: NullOrUndefined (BaselineDescription)
-  , "Sources" :: NullOrUndefined (PatchSourceList)
-  , "ClientToken" :: NullOrUndefined (ClientToken)
+  , "GlobalFilters" :: Maybe (PatchFilterGroup)
+  , "ApprovalRules" :: Maybe (PatchRuleGroup)
+  , "ApprovedPatches" :: Maybe (PatchIdList)
+  , "ApprovedPatchesComplianceLevel" :: Maybe (PatchComplianceLevel)
+  , "ApprovedPatchesEnableNonSecurity" :: Maybe (Boolean)
+  , "RejectedPatches" :: Maybe (PatchIdList)
+  , "Description" :: Maybe (BaselineDescription)
+  , "Sources" :: Maybe (PatchSourceList)
+  , "ClientToken" :: Maybe (ClientToken)
   }
 derive instance newtypeCreatePatchBaselineRequest :: Newtype CreatePatchBaselineRequest _
 derive instance repGenericCreatePatchBaselineRequest :: Generic CreatePatchBaselineRequest _
@@ -1854,17 +1853,17 @@ instance encodeCreatePatchBaselineRequest :: Encode CreatePatchBaselineRequest w
 
 -- | Constructs CreatePatchBaselineRequest from required parameters
 newCreatePatchBaselineRequest :: BaselineName -> CreatePatchBaselineRequest
-newCreatePatchBaselineRequest _Name = CreatePatchBaselineRequest { "Name": _Name, "ApprovalRules": (NullOrUndefined Nothing), "ApprovedPatches": (NullOrUndefined Nothing), "ApprovedPatchesComplianceLevel": (NullOrUndefined Nothing), "ApprovedPatchesEnableNonSecurity": (NullOrUndefined Nothing), "ClientToken": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "GlobalFilters": (NullOrUndefined Nothing), "OperatingSystem": (NullOrUndefined Nothing), "RejectedPatches": (NullOrUndefined Nothing), "Sources": (NullOrUndefined Nothing) }
+newCreatePatchBaselineRequest _Name = CreatePatchBaselineRequest { "Name": _Name, "ApprovalRules": Nothing, "ApprovedPatches": Nothing, "ApprovedPatchesComplianceLevel": Nothing, "ApprovedPatchesEnableNonSecurity": Nothing, "ClientToken": Nothing, "Description": Nothing, "GlobalFilters": Nothing, "OperatingSystem": Nothing, "RejectedPatches": Nothing, "Sources": Nothing }
 
 -- | Constructs CreatePatchBaselineRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreatePatchBaselineRequest' :: BaselineName -> ( { "OperatingSystem" :: NullOrUndefined (OperatingSystem) , "Name" :: (BaselineName) , "GlobalFilters" :: NullOrUndefined (PatchFilterGroup) , "ApprovalRules" :: NullOrUndefined (PatchRuleGroup) , "ApprovedPatches" :: NullOrUndefined (PatchIdList) , "ApprovedPatchesComplianceLevel" :: NullOrUndefined (PatchComplianceLevel) , "ApprovedPatchesEnableNonSecurity" :: NullOrUndefined (Boolean) , "RejectedPatches" :: NullOrUndefined (PatchIdList) , "Description" :: NullOrUndefined (BaselineDescription) , "Sources" :: NullOrUndefined (PatchSourceList) , "ClientToken" :: NullOrUndefined (ClientToken) } -> {"OperatingSystem" :: NullOrUndefined (OperatingSystem) , "Name" :: (BaselineName) , "GlobalFilters" :: NullOrUndefined (PatchFilterGroup) , "ApprovalRules" :: NullOrUndefined (PatchRuleGroup) , "ApprovedPatches" :: NullOrUndefined (PatchIdList) , "ApprovedPatchesComplianceLevel" :: NullOrUndefined (PatchComplianceLevel) , "ApprovedPatchesEnableNonSecurity" :: NullOrUndefined (Boolean) , "RejectedPatches" :: NullOrUndefined (PatchIdList) , "Description" :: NullOrUndefined (BaselineDescription) , "Sources" :: NullOrUndefined (PatchSourceList) , "ClientToken" :: NullOrUndefined (ClientToken) } ) -> CreatePatchBaselineRequest
-newCreatePatchBaselineRequest' _Name customize = (CreatePatchBaselineRequest <<< customize) { "Name": _Name, "ApprovalRules": (NullOrUndefined Nothing), "ApprovedPatches": (NullOrUndefined Nothing), "ApprovedPatchesComplianceLevel": (NullOrUndefined Nothing), "ApprovedPatchesEnableNonSecurity": (NullOrUndefined Nothing), "ClientToken": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "GlobalFilters": (NullOrUndefined Nothing), "OperatingSystem": (NullOrUndefined Nothing), "RejectedPatches": (NullOrUndefined Nothing), "Sources": (NullOrUndefined Nothing) }
+newCreatePatchBaselineRequest' :: BaselineName -> ( { "OperatingSystem" :: Maybe (OperatingSystem) , "Name" :: (BaselineName) , "GlobalFilters" :: Maybe (PatchFilterGroup) , "ApprovalRules" :: Maybe (PatchRuleGroup) , "ApprovedPatches" :: Maybe (PatchIdList) , "ApprovedPatchesComplianceLevel" :: Maybe (PatchComplianceLevel) , "ApprovedPatchesEnableNonSecurity" :: Maybe (Boolean) , "RejectedPatches" :: Maybe (PatchIdList) , "Description" :: Maybe (BaselineDescription) , "Sources" :: Maybe (PatchSourceList) , "ClientToken" :: Maybe (ClientToken) } -> {"OperatingSystem" :: Maybe (OperatingSystem) , "Name" :: (BaselineName) , "GlobalFilters" :: Maybe (PatchFilterGroup) , "ApprovalRules" :: Maybe (PatchRuleGroup) , "ApprovedPatches" :: Maybe (PatchIdList) , "ApprovedPatchesComplianceLevel" :: Maybe (PatchComplianceLevel) , "ApprovedPatchesEnableNonSecurity" :: Maybe (Boolean) , "RejectedPatches" :: Maybe (PatchIdList) , "Description" :: Maybe (BaselineDescription) , "Sources" :: Maybe (PatchSourceList) , "ClientToken" :: Maybe (ClientToken) } ) -> CreatePatchBaselineRequest
+newCreatePatchBaselineRequest' _Name customize = (CreatePatchBaselineRequest <<< customize) { "Name": _Name, "ApprovalRules": Nothing, "ApprovedPatches": Nothing, "ApprovedPatchesComplianceLevel": Nothing, "ApprovedPatchesEnableNonSecurity": Nothing, "ClientToken": Nothing, "Description": Nothing, "GlobalFilters": Nothing, "OperatingSystem": Nothing, "RejectedPatches": Nothing, "Sources": Nothing }
 
 
 
 newtype CreatePatchBaselineResult = CreatePatchBaselineResult 
-  { "BaselineId" :: NullOrUndefined (BaselineId)
+  { "BaselineId" :: Maybe (BaselineId)
   }
 derive instance newtypeCreatePatchBaselineResult :: Newtype CreatePatchBaselineResult _
 derive instance repGenericCreatePatchBaselineResult :: Generic CreatePatchBaselineResult _
@@ -1874,12 +1873,12 @@ instance encodeCreatePatchBaselineResult :: Encode CreatePatchBaselineResult whe
 
 -- | Constructs CreatePatchBaselineResult from required parameters
 newCreatePatchBaselineResult :: CreatePatchBaselineResult
-newCreatePatchBaselineResult  = CreatePatchBaselineResult { "BaselineId": (NullOrUndefined Nothing) }
+newCreatePatchBaselineResult  = CreatePatchBaselineResult { "BaselineId": Nothing }
 
 -- | Constructs CreatePatchBaselineResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreatePatchBaselineResult' :: ( { "BaselineId" :: NullOrUndefined (BaselineId) } -> {"BaselineId" :: NullOrUndefined (BaselineId) } ) -> CreatePatchBaselineResult
-newCreatePatchBaselineResult'  customize = (CreatePatchBaselineResult <<< customize) { "BaselineId": (NullOrUndefined Nothing) }
+newCreatePatchBaselineResult' :: ( { "BaselineId" :: Maybe (BaselineId) } -> {"BaselineId" :: Maybe (BaselineId) } ) -> CreatePatchBaselineResult
+newCreatePatchBaselineResult'  customize = (CreatePatchBaselineResult <<< customize) { "BaselineId": Nothing }
 
 
 
@@ -1924,7 +1923,7 @@ instance encodeCreatedDate :: Encode CreatedDate where encode = genericEncode op
 
 -- | <p>You have exceeded the limit for custom schemas. Delete one or more custom schemas and try again.</p>
 newtype CustomSchemaCountLimitExceededException = CustomSchemaCountLimitExceededException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeCustomSchemaCountLimitExceededException :: Newtype CustomSchemaCountLimitExceededException _
 derive instance repGenericCustomSchemaCountLimitExceededException :: Generic CustomSchemaCountLimitExceededException _
@@ -1934,12 +1933,12 @@ instance encodeCustomSchemaCountLimitExceededException :: Encode CustomSchemaCou
 
 -- | Constructs CustomSchemaCountLimitExceededException from required parameters
 newCustomSchemaCountLimitExceededException :: CustomSchemaCountLimitExceededException
-newCustomSchemaCountLimitExceededException  = CustomSchemaCountLimitExceededException { "Message": (NullOrUndefined Nothing) }
+newCustomSchemaCountLimitExceededException  = CustomSchemaCountLimitExceededException { "Message": Nothing }
 
 -- | Constructs CustomSchemaCountLimitExceededException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCustomSchemaCountLimitExceededException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> CustomSchemaCountLimitExceededException
-newCustomSchemaCountLimitExceededException'  customize = (CustomSchemaCountLimitExceededException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newCustomSchemaCountLimitExceededException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> CustomSchemaCountLimitExceededException
+newCustomSchemaCountLimitExceededException'  customize = (CustomSchemaCountLimitExceededException <<< customize) { "Message": Nothing }
 
 
 
@@ -2000,9 +1999,9 @@ instance encodeDeleteActivationResult :: Encode DeleteActivationResult where enc
 
 
 newtype DeleteAssociationRequest = DeleteAssociationRequest 
-  { "Name" :: NullOrUndefined (DocumentName)
-  , "InstanceId" :: NullOrUndefined (InstanceId)
-  , "AssociationId" :: NullOrUndefined (AssociationId)
+  { "Name" :: Maybe (DocumentName)
+  , "InstanceId" :: Maybe (InstanceId)
+  , "AssociationId" :: Maybe (AssociationId)
   }
 derive instance newtypeDeleteAssociationRequest :: Newtype DeleteAssociationRequest _
 derive instance repGenericDeleteAssociationRequest :: Generic DeleteAssociationRequest _
@@ -2012,12 +2011,12 @@ instance encodeDeleteAssociationRequest :: Encode DeleteAssociationRequest where
 
 -- | Constructs DeleteAssociationRequest from required parameters
 newDeleteAssociationRequest :: DeleteAssociationRequest
-newDeleteAssociationRequest  = DeleteAssociationRequest { "AssociationId": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newDeleteAssociationRequest  = DeleteAssociationRequest { "AssociationId": Nothing, "InstanceId": Nothing, "Name": Nothing }
 
 -- | Constructs DeleteAssociationRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteAssociationRequest' :: ( { "Name" :: NullOrUndefined (DocumentName) , "InstanceId" :: NullOrUndefined (InstanceId) , "AssociationId" :: NullOrUndefined (AssociationId) } -> {"Name" :: NullOrUndefined (DocumentName) , "InstanceId" :: NullOrUndefined (InstanceId) , "AssociationId" :: NullOrUndefined (AssociationId) } ) -> DeleteAssociationRequest
-newDeleteAssociationRequest'  customize = (DeleteAssociationRequest <<< customize) { "AssociationId": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newDeleteAssociationRequest' :: ( { "Name" :: Maybe (DocumentName) , "InstanceId" :: Maybe (InstanceId) , "AssociationId" :: Maybe (AssociationId) } -> {"Name" :: Maybe (DocumentName) , "InstanceId" :: Maybe (InstanceId) , "AssociationId" :: Maybe (AssociationId) } ) -> DeleteAssociationRequest
+newDeleteAssociationRequest'  customize = (DeleteAssociationRequest <<< customize) { "AssociationId": Nothing, "InstanceId": Nothing, "Name": Nothing }
 
 
 
@@ -2080,7 +2079,7 @@ newDeleteMaintenanceWindowRequest' _WindowId customize = (DeleteMaintenanceWindo
 
 
 newtype DeleteMaintenanceWindowResult = DeleteMaintenanceWindowResult 
-  { "WindowId" :: NullOrUndefined (MaintenanceWindowId)
+  { "WindowId" :: Maybe (MaintenanceWindowId)
   }
 derive instance newtypeDeleteMaintenanceWindowResult :: Newtype DeleteMaintenanceWindowResult _
 derive instance repGenericDeleteMaintenanceWindowResult :: Generic DeleteMaintenanceWindowResult _
@@ -2090,12 +2089,12 @@ instance encodeDeleteMaintenanceWindowResult :: Encode DeleteMaintenanceWindowRe
 
 -- | Constructs DeleteMaintenanceWindowResult from required parameters
 newDeleteMaintenanceWindowResult :: DeleteMaintenanceWindowResult
-newDeleteMaintenanceWindowResult  = DeleteMaintenanceWindowResult { "WindowId": (NullOrUndefined Nothing) }
+newDeleteMaintenanceWindowResult  = DeleteMaintenanceWindowResult { "WindowId": Nothing }
 
 -- | Constructs DeleteMaintenanceWindowResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteMaintenanceWindowResult' :: ( { "WindowId" :: NullOrUndefined (MaintenanceWindowId) } -> {"WindowId" :: NullOrUndefined (MaintenanceWindowId) } ) -> DeleteMaintenanceWindowResult
-newDeleteMaintenanceWindowResult'  customize = (DeleteMaintenanceWindowResult <<< customize) { "WindowId": (NullOrUndefined Nothing) }
+newDeleteMaintenanceWindowResult' :: ( { "WindowId" :: Maybe (MaintenanceWindowId) } -> {"WindowId" :: Maybe (MaintenanceWindowId) } ) -> DeleteMaintenanceWindowResult
+newDeleteMaintenanceWindowResult'  customize = (DeleteMaintenanceWindowResult <<< customize) { "WindowId": Nothing }
 
 
 
@@ -2149,8 +2148,8 @@ newDeleteParametersRequest' _Names customize = (DeleteParametersRequest <<< cust
 
 
 newtype DeleteParametersResult = DeleteParametersResult 
-  { "DeletedParameters" :: NullOrUndefined (ParameterNameList)
-  , "InvalidParameters" :: NullOrUndefined (ParameterNameList)
+  { "DeletedParameters" :: Maybe (ParameterNameList)
+  , "InvalidParameters" :: Maybe (ParameterNameList)
   }
 derive instance newtypeDeleteParametersResult :: Newtype DeleteParametersResult _
 derive instance repGenericDeleteParametersResult :: Generic DeleteParametersResult _
@@ -2160,12 +2159,12 @@ instance encodeDeleteParametersResult :: Encode DeleteParametersResult where enc
 
 -- | Constructs DeleteParametersResult from required parameters
 newDeleteParametersResult :: DeleteParametersResult
-newDeleteParametersResult  = DeleteParametersResult { "DeletedParameters": (NullOrUndefined Nothing), "InvalidParameters": (NullOrUndefined Nothing) }
+newDeleteParametersResult  = DeleteParametersResult { "DeletedParameters": Nothing, "InvalidParameters": Nothing }
 
 -- | Constructs DeleteParametersResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteParametersResult' :: ( { "DeletedParameters" :: NullOrUndefined (ParameterNameList) , "InvalidParameters" :: NullOrUndefined (ParameterNameList) } -> {"DeletedParameters" :: NullOrUndefined (ParameterNameList) , "InvalidParameters" :: NullOrUndefined (ParameterNameList) } ) -> DeleteParametersResult
-newDeleteParametersResult'  customize = (DeleteParametersResult <<< customize) { "DeletedParameters": (NullOrUndefined Nothing), "InvalidParameters": (NullOrUndefined Nothing) }
+newDeleteParametersResult' :: ( { "DeletedParameters" :: Maybe (ParameterNameList) , "InvalidParameters" :: Maybe (ParameterNameList) } -> {"DeletedParameters" :: Maybe (ParameterNameList) , "InvalidParameters" :: Maybe (ParameterNameList) } ) -> DeleteParametersResult
+newDeleteParametersResult'  customize = (DeleteParametersResult <<< customize) { "DeletedParameters": Nothing, "InvalidParameters": Nothing }
 
 
 
@@ -2190,7 +2189,7 @@ newDeletePatchBaselineRequest' _BaselineId customize = (DeletePatchBaselineReque
 
 
 newtype DeletePatchBaselineResult = DeletePatchBaselineResult 
-  { "BaselineId" :: NullOrUndefined (BaselineId)
+  { "BaselineId" :: Maybe (BaselineId)
   }
 derive instance newtypeDeletePatchBaselineResult :: Newtype DeletePatchBaselineResult _
 derive instance repGenericDeletePatchBaselineResult :: Generic DeletePatchBaselineResult _
@@ -2200,12 +2199,12 @@ instance encodeDeletePatchBaselineResult :: Encode DeletePatchBaselineResult whe
 
 -- | Constructs DeletePatchBaselineResult from required parameters
 newDeletePatchBaselineResult :: DeletePatchBaselineResult
-newDeletePatchBaselineResult  = DeletePatchBaselineResult { "BaselineId": (NullOrUndefined Nothing) }
+newDeletePatchBaselineResult  = DeletePatchBaselineResult { "BaselineId": Nothing }
 
 -- | Constructs DeletePatchBaselineResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeletePatchBaselineResult' :: ( { "BaselineId" :: NullOrUndefined (BaselineId) } -> {"BaselineId" :: NullOrUndefined (BaselineId) } ) -> DeletePatchBaselineResult
-newDeletePatchBaselineResult'  customize = (DeletePatchBaselineResult <<< customize) { "BaselineId": (NullOrUndefined Nothing) }
+newDeletePatchBaselineResult' :: ( { "BaselineId" :: Maybe (BaselineId) } -> {"BaselineId" :: Maybe (BaselineId) } ) -> DeletePatchBaselineResult
+newDeletePatchBaselineResult'  customize = (DeletePatchBaselineResult <<< customize) { "BaselineId": Nothing }
 
 
 
@@ -2289,8 +2288,8 @@ newDeregisterPatchBaselineForPatchGroupRequest' _BaselineId _PatchGroup customiz
 
 
 newtype DeregisterPatchBaselineForPatchGroupResult = DeregisterPatchBaselineForPatchGroupResult 
-  { "BaselineId" :: NullOrUndefined (BaselineId)
-  , "PatchGroup" :: NullOrUndefined (PatchGroup)
+  { "BaselineId" :: Maybe (BaselineId)
+  , "PatchGroup" :: Maybe (PatchGroup)
   }
 derive instance newtypeDeregisterPatchBaselineForPatchGroupResult :: Newtype DeregisterPatchBaselineForPatchGroupResult _
 derive instance repGenericDeregisterPatchBaselineForPatchGroupResult :: Generic DeregisterPatchBaselineForPatchGroupResult _
@@ -2300,19 +2299,19 @@ instance encodeDeregisterPatchBaselineForPatchGroupResult :: Encode DeregisterPa
 
 -- | Constructs DeregisterPatchBaselineForPatchGroupResult from required parameters
 newDeregisterPatchBaselineForPatchGroupResult :: DeregisterPatchBaselineForPatchGroupResult
-newDeregisterPatchBaselineForPatchGroupResult  = DeregisterPatchBaselineForPatchGroupResult { "BaselineId": (NullOrUndefined Nothing), "PatchGroup": (NullOrUndefined Nothing) }
+newDeregisterPatchBaselineForPatchGroupResult  = DeregisterPatchBaselineForPatchGroupResult { "BaselineId": Nothing, "PatchGroup": Nothing }
 
 -- | Constructs DeregisterPatchBaselineForPatchGroupResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeregisterPatchBaselineForPatchGroupResult' :: ( { "BaselineId" :: NullOrUndefined (BaselineId) , "PatchGroup" :: NullOrUndefined (PatchGroup) } -> {"BaselineId" :: NullOrUndefined (BaselineId) , "PatchGroup" :: NullOrUndefined (PatchGroup) } ) -> DeregisterPatchBaselineForPatchGroupResult
-newDeregisterPatchBaselineForPatchGroupResult'  customize = (DeregisterPatchBaselineForPatchGroupResult <<< customize) { "BaselineId": (NullOrUndefined Nothing), "PatchGroup": (NullOrUndefined Nothing) }
+newDeregisterPatchBaselineForPatchGroupResult' :: ( { "BaselineId" :: Maybe (BaselineId) , "PatchGroup" :: Maybe (PatchGroup) } -> {"BaselineId" :: Maybe (BaselineId) , "PatchGroup" :: Maybe (PatchGroup) } ) -> DeregisterPatchBaselineForPatchGroupResult
+newDeregisterPatchBaselineForPatchGroupResult'  customize = (DeregisterPatchBaselineForPatchGroupResult <<< customize) { "BaselineId": Nothing, "PatchGroup": Nothing }
 
 
 
 newtype DeregisterTargetFromMaintenanceWindowRequest = DeregisterTargetFromMaintenanceWindowRequest 
   { "WindowId" :: (MaintenanceWindowId)
   , "WindowTargetId" :: (MaintenanceWindowTargetId)
-  , "Safe" :: NullOrUndefined (Boolean)
+  , "Safe" :: Maybe (Boolean)
   }
 derive instance newtypeDeregisterTargetFromMaintenanceWindowRequest :: Newtype DeregisterTargetFromMaintenanceWindowRequest _
 derive instance repGenericDeregisterTargetFromMaintenanceWindowRequest :: Generic DeregisterTargetFromMaintenanceWindowRequest _
@@ -2322,18 +2321,18 @@ instance encodeDeregisterTargetFromMaintenanceWindowRequest :: Encode Deregister
 
 -- | Constructs DeregisterTargetFromMaintenanceWindowRequest from required parameters
 newDeregisterTargetFromMaintenanceWindowRequest :: MaintenanceWindowId -> MaintenanceWindowTargetId -> DeregisterTargetFromMaintenanceWindowRequest
-newDeregisterTargetFromMaintenanceWindowRequest _WindowId _WindowTargetId = DeregisterTargetFromMaintenanceWindowRequest { "WindowId": _WindowId, "WindowTargetId": _WindowTargetId, "Safe": (NullOrUndefined Nothing) }
+newDeregisterTargetFromMaintenanceWindowRequest _WindowId _WindowTargetId = DeregisterTargetFromMaintenanceWindowRequest { "WindowId": _WindowId, "WindowTargetId": _WindowTargetId, "Safe": Nothing }
 
 -- | Constructs DeregisterTargetFromMaintenanceWindowRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeregisterTargetFromMaintenanceWindowRequest' :: MaintenanceWindowId -> MaintenanceWindowTargetId -> ( { "WindowId" :: (MaintenanceWindowId) , "WindowTargetId" :: (MaintenanceWindowTargetId) , "Safe" :: NullOrUndefined (Boolean) } -> {"WindowId" :: (MaintenanceWindowId) , "WindowTargetId" :: (MaintenanceWindowTargetId) , "Safe" :: NullOrUndefined (Boolean) } ) -> DeregisterTargetFromMaintenanceWindowRequest
-newDeregisterTargetFromMaintenanceWindowRequest' _WindowId _WindowTargetId customize = (DeregisterTargetFromMaintenanceWindowRequest <<< customize) { "WindowId": _WindowId, "WindowTargetId": _WindowTargetId, "Safe": (NullOrUndefined Nothing) }
+newDeregisterTargetFromMaintenanceWindowRequest' :: MaintenanceWindowId -> MaintenanceWindowTargetId -> ( { "WindowId" :: (MaintenanceWindowId) , "WindowTargetId" :: (MaintenanceWindowTargetId) , "Safe" :: Maybe (Boolean) } -> {"WindowId" :: (MaintenanceWindowId) , "WindowTargetId" :: (MaintenanceWindowTargetId) , "Safe" :: Maybe (Boolean) } ) -> DeregisterTargetFromMaintenanceWindowRequest
+newDeregisterTargetFromMaintenanceWindowRequest' _WindowId _WindowTargetId customize = (DeregisterTargetFromMaintenanceWindowRequest <<< customize) { "WindowId": _WindowId, "WindowTargetId": _WindowTargetId, "Safe": Nothing }
 
 
 
 newtype DeregisterTargetFromMaintenanceWindowResult = DeregisterTargetFromMaintenanceWindowResult 
-  { "WindowId" :: NullOrUndefined (MaintenanceWindowId)
-  , "WindowTargetId" :: NullOrUndefined (MaintenanceWindowTargetId)
+  { "WindowId" :: Maybe (MaintenanceWindowId)
+  , "WindowTargetId" :: Maybe (MaintenanceWindowTargetId)
   }
 derive instance newtypeDeregisterTargetFromMaintenanceWindowResult :: Newtype DeregisterTargetFromMaintenanceWindowResult _
 derive instance repGenericDeregisterTargetFromMaintenanceWindowResult :: Generic DeregisterTargetFromMaintenanceWindowResult _
@@ -2343,12 +2342,12 @@ instance encodeDeregisterTargetFromMaintenanceWindowResult :: Encode DeregisterT
 
 -- | Constructs DeregisterTargetFromMaintenanceWindowResult from required parameters
 newDeregisterTargetFromMaintenanceWindowResult :: DeregisterTargetFromMaintenanceWindowResult
-newDeregisterTargetFromMaintenanceWindowResult  = DeregisterTargetFromMaintenanceWindowResult { "WindowId": (NullOrUndefined Nothing), "WindowTargetId": (NullOrUndefined Nothing) }
+newDeregisterTargetFromMaintenanceWindowResult  = DeregisterTargetFromMaintenanceWindowResult { "WindowId": Nothing, "WindowTargetId": Nothing }
 
 -- | Constructs DeregisterTargetFromMaintenanceWindowResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeregisterTargetFromMaintenanceWindowResult' :: ( { "WindowId" :: NullOrUndefined (MaintenanceWindowId) , "WindowTargetId" :: NullOrUndefined (MaintenanceWindowTargetId) } -> {"WindowId" :: NullOrUndefined (MaintenanceWindowId) , "WindowTargetId" :: NullOrUndefined (MaintenanceWindowTargetId) } ) -> DeregisterTargetFromMaintenanceWindowResult
-newDeregisterTargetFromMaintenanceWindowResult'  customize = (DeregisterTargetFromMaintenanceWindowResult <<< customize) { "WindowId": (NullOrUndefined Nothing), "WindowTargetId": (NullOrUndefined Nothing) }
+newDeregisterTargetFromMaintenanceWindowResult' :: ( { "WindowId" :: Maybe (MaintenanceWindowId) , "WindowTargetId" :: Maybe (MaintenanceWindowTargetId) } -> {"WindowId" :: Maybe (MaintenanceWindowId) , "WindowTargetId" :: Maybe (MaintenanceWindowTargetId) } ) -> DeregisterTargetFromMaintenanceWindowResult
+newDeregisterTargetFromMaintenanceWindowResult'  customize = (DeregisterTargetFromMaintenanceWindowResult <<< customize) { "WindowId": Nothing, "WindowTargetId": Nothing }
 
 
 
@@ -2374,8 +2373,8 @@ newDeregisterTaskFromMaintenanceWindowRequest' _WindowId _WindowTaskId customize
 
 
 newtype DeregisterTaskFromMaintenanceWindowResult = DeregisterTaskFromMaintenanceWindowResult 
-  { "WindowId" :: NullOrUndefined (MaintenanceWindowId)
-  , "WindowTaskId" :: NullOrUndefined (MaintenanceWindowTaskId)
+  { "WindowId" :: Maybe (MaintenanceWindowId)
+  , "WindowTaskId" :: Maybe (MaintenanceWindowTaskId)
   }
 derive instance newtypeDeregisterTaskFromMaintenanceWindowResult :: Newtype DeregisterTaskFromMaintenanceWindowResult _
 derive instance repGenericDeregisterTaskFromMaintenanceWindowResult :: Generic DeregisterTaskFromMaintenanceWindowResult _
@@ -2385,19 +2384,19 @@ instance encodeDeregisterTaskFromMaintenanceWindowResult :: Encode DeregisterTas
 
 -- | Constructs DeregisterTaskFromMaintenanceWindowResult from required parameters
 newDeregisterTaskFromMaintenanceWindowResult :: DeregisterTaskFromMaintenanceWindowResult
-newDeregisterTaskFromMaintenanceWindowResult  = DeregisterTaskFromMaintenanceWindowResult { "WindowId": (NullOrUndefined Nothing), "WindowTaskId": (NullOrUndefined Nothing) }
+newDeregisterTaskFromMaintenanceWindowResult  = DeregisterTaskFromMaintenanceWindowResult { "WindowId": Nothing, "WindowTaskId": Nothing }
 
 -- | Constructs DeregisterTaskFromMaintenanceWindowResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeregisterTaskFromMaintenanceWindowResult' :: ( { "WindowId" :: NullOrUndefined (MaintenanceWindowId) , "WindowTaskId" :: NullOrUndefined (MaintenanceWindowTaskId) } -> {"WindowId" :: NullOrUndefined (MaintenanceWindowId) , "WindowTaskId" :: NullOrUndefined (MaintenanceWindowTaskId) } ) -> DeregisterTaskFromMaintenanceWindowResult
-newDeregisterTaskFromMaintenanceWindowResult'  customize = (DeregisterTaskFromMaintenanceWindowResult <<< customize) { "WindowId": (NullOrUndefined Nothing), "WindowTaskId": (NullOrUndefined Nothing) }
+newDeregisterTaskFromMaintenanceWindowResult' :: ( { "WindowId" :: Maybe (MaintenanceWindowId) , "WindowTaskId" :: Maybe (MaintenanceWindowTaskId) } -> {"WindowId" :: Maybe (MaintenanceWindowId) , "WindowTaskId" :: Maybe (MaintenanceWindowTaskId) } ) -> DeregisterTaskFromMaintenanceWindowResult
+newDeregisterTaskFromMaintenanceWindowResult'  customize = (DeregisterTaskFromMaintenanceWindowResult <<< customize) { "WindowId": Nothing, "WindowTaskId": Nothing }
 
 
 
 -- | <p>Filter for the DescribeActivation API.</p>
 newtype DescribeActivationsFilter = DescribeActivationsFilter 
-  { "FilterKey" :: NullOrUndefined (DescribeActivationsFilterKeys)
-  , "FilterValues" :: NullOrUndefined (StringList)
+  { "FilterKey" :: Maybe (DescribeActivationsFilterKeys)
+  , "FilterValues" :: Maybe (StringList)
   }
 derive instance newtypeDescribeActivationsFilter :: Newtype DescribeActivationsFilter _
 derive instance repGenericDescribeActivationsFilter :: Generic DescribeActivationsFilter _
@@ -2407,12 +2406,12 @@ instance encodeDescribeActivationsFilter :: Encode DescribeActivationsFilter whe
 
 -- | Constructs DescribeActivationsFilter from required parameters
 newDescribeActivationsFilter :: DescribeActivationsFilter
-newDescribeActivationsFilter  = DescribeActivationsFilter { "FilterKey": (NullOrUndefined Nothing), "FilterValues": (NullOrUndefined Nothing) }
+newDescribeActivationsFilter  = DescribeActivationsFilter { "FilterKey": Nothing, "FilterValues": Nothing }
 
 -- | Constructs DescribeActivationsFilter's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeActivationsFilter' :: ( { "FilterKey" :: NullOrUndefined (DescribeActivationsFilterKeys) , "FilterValues" :: NullOrUndefined (StringList) } -> {"FilterKey" :: NullOrUndefined (DescribeActivationsFilterKeys) , "FilterValues" :: NullOrUndefined (StringList) } ) -> DescribeActivationsFilter
-newDescribeActivationsFilter'  customize = (DescribeActivationsFilter <<< customize) { "FilterKey": (NullOrUndefined Nothing), "FilterValues": (NullOrUndefined Nothing) }
+newDescribeActivationsFilter' :: ( { "FilterKey" :: Maybe (DescribeActivationsFilterKeys) , "FilterValues" :: Maybe (StringList) } -> {"FilterKey" :: Maybe (DescribeActivationsFilterKeys) , "FilterValues" :: Maybe (StringList) } ) -> DescribeActivationsFilter
+newDescribeActivationsFilter'  customize = (DescribeActivationsFilter <<< customize) { "FilterKey": Nothing, "FilterValues": Nothing }
 
 
 
@@ -2435,9 +2434,9 @@ instance encodeDescribeActivationsFilterList :: Encode DescribeActivationsFilter
 
 
 newtype DescribeActivationsRequest = DescribeActivationsRequest 
-  { "Filters" :: NullOrUndefined (DescribeActivationsFilterList)
-  , "MaxResults" :: NullOrUndefined (MaxResults)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "Filters" :: Maybe (DescribeActivationsFilterList)
+  , "MaxResults" :: Maybe (MaxResults)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeActivationsRequest :: Newtype DescribeActivationsRequest _
 derive instance repGenericDescribeActivationsRequest :: Generic DescribeActivationsRequest _
@@ -2447,18 +2446,18 @@ instance encodeDescribeActivationsRequest :: Encode DescribeActivationsRequest w
 
 -- | Constructs DescribeActivationsRequest from required parameters
 newDescribeActivationsRequest :: DescribeActivationsRequest
-newDescribeActivationsRequest  = DescribeActivationsRequest { "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeActivationsRequest  = DescribeActivationsRequest { "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribeActivationsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeActivationsRequest' :: ( { "Filters" :: NullOrUndefined (DescribeActivationsFilterList) , "MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Filters" :: NullOrUndefined (DescribeActivationsFilterList) , "MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribeActivationsRequest
-newDescribeActivationsRequest'  customize = (DescribeActivationsRequest <<< customize) { "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeActivationsRequest' :: ( { "Filters" :: Maybe (DescribeActivationsFilterList) , "MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (NextToken) } -> {"Filters" :: Maybe (DescribeActivationsFilterList) , "MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (NextToken) } ) -> DescribeActivationsRequest
+newDescribeActivationsRequest'  customize = (DescribeActivationsRequest <<< customize) { "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype DescribeActivationsResult = DescribeActivationsResult 
-  { "ActivationList" :: NullOrUndefined (ActivationList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "ActivationList" :: Maybe (ActivationList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeActivationsResult :: Newtype DescribeActivationsResult _
 derive instance repGenericDescribeActivationsResult :: Generic DescribeActivationsResult _
@@ -2468,20 +2467,20 @@ instance encodeDescribeActivationsResult :: Encode DescribeActivationsResult whe
 
 -- | Constructs DescribeActivationsResult from required parameters
 newDescribeActivationsResult :: DescribeActivationsResult
-newDescribeActivationsResult  = DescribeActivationsResult { "ActivationList": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeActivationsResult  = DescribeActivationsResult { "ActivationList": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribeActivationsResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeActivationsResult' :: ( { "ActivationList" :: NullOrUndefined (ActivationList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"ActivationList" :: NullOrUndefined (ActivationList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribeActivationsResult
-newDescribeActivationsResult'  customize = (DescribeActivationsResult <<< customize) { "ActivationList": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeActivationsResult' :: ( { "ActivationList" :: Maybe (ActivationList) , "NextToken" :: Maybe (NextToken) } -> {"ActivationList" :: Maybe (ActivationList) , "NextToken" :: Maybe (NextToken) } ) -> DescribeActivationsResult
+newDescribeActivationsResult'  customize = (DescribeActivationsResult <<< customize) { "ActivationList": Nothing, "NextToken": Nothing }
 
 
 
 newtype DescribeAssociationRequest = DescribeAssociationRequest 
-  { "Name" :: NullOrUndefined (DocumentName)
-  , "InstanceId" :: NullOrUndefined (InstanceId)
-  , "AssociationId" :: NullOrUndefined (AssociationId)
-  , "AssociationVersion" :: NullOrUndefined (AssociationVersion)
+  { "Name" :: Maybe (DocumentName)
+  , "InstanceId" :: Maybe (InstanceId)
+  , "AssociationId" :: Maybe (AssociationId)
+  , "AssociationVersion" :: Maybe (AssociationVersion)
   }
 derive instance newtypeDescribeAssociationRequest :: Newtype DescribeAssociationRequest _
 derive instance repGenericDescribeAssociationRequest :: Generic DescribeAssociationRequest _
@@ -2491,17 +2490,17 @@ instance encodeDescribeAssociationRequest :: Encode DescribeAssociationRequest w
 
 -- | Constructs DescribeAssociationRequest from required parameters
 newDescribeAssociationRequest :: DescribeAssociationRequest
-newDescribeAssociationRequest  = DescribeAssociationRequest { "AssociationId": (NullOrUndefined Nothing), "AssociationVersion": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newDescribeAssociationRequest  = DescribeAssociationRequest { "AssociationId": Nothing, "AssociationVersion": Nothing, "InstanceId": Nothing, "Name": Nothing }
 
 -- | Constructs DescribeAssociationRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeAssociationRequest' :: ( { "Name" :: NullOrUndefined (DocumentName) , "InstanceId" :: NullOrUndefined (InstanceId) , "AssociationId" :: NullOrUndefined (AssociationId) , "AssociationVersion" :: NullOrUndefined (AssociationVersion) } -> {"Name" :: NullOrUndefined (DocumentName) , "InstanceId" :: NullOrUndefined (InstanceId) , "AssociationId" :: NullOrUndefined (AssociationId) , "AssociationVersion" :: NullOrUndefined (AssociationVersion) } ) -> DescribeAssociationRequest
-newDescribeAssociationRequest'  customize = (DescribeAssociationRequest <<< customize) { "AssociationId": (NullOrUndefined Nothing), "AssociationVersion": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newDescribeAssociationRequest' :: ( { "Name" :: Maybe (DocumentName) , "InstanceId" :: Maybe (InstanceId) , "AssociationId" :: Maybe (AssociationId) , "AssociationVersion" :: Maybe (AssociationVersion) } -> {"Name" :: Maybe (DocumentName) , "InstanceId" :: Maybe (InstanceId) , "AssociationId" :: Maybe (AssociationId) , "AssociationVersion" :: Maybe (AssociationVersion) } ) -> DescribeAssociationRequest
+newDescribeAssociationRequest'  customize = (DescribeAssociationRequest <<< customize) { "AssociationId": Nothing, "AssociationVersion": Nothing, "InstanceId": Nothing, "Name": Nothing }
 
 
 
 newtype DescribeAssociationResult = DescribeAssociationResult 
-  { "AssociationDescription" :: NullOrUndefined (AssociationDescription)
+  { "AssociationDescription" :: Maybe (AssociationDescription)
   }
 derive instance newtypeDescribeAssociationResult :: Newtype DescribeAssociationResult _
 derive instance repGenericDescribeAssociationResult :: Generic DescribeAssociationResult _
@@ -2511,19 +2510,19 @@ instance encodeDescribeAssociationResult :: Encode DescribeAssociationResult whe
 
 -- | Constructs DescribeAssociationResult from required parameters
 newDescribeAssociationResult :: DescribeAssociationResult
-newDescribeAssociationResult  = DescribeAssociationResult { "AssociationDescription": (NullOrUndefined Nothing) }
+newDescribeAssociationResult  = DescribeAssociationResult { "AssociationDescription": Nothing }
 
 -- | Constructs DescribeAssociationResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeAssociationResult' :: ( { "AssociationDescription" :: NullOrUndefined (AssociationDescription) } -> {"AssociationDescription" :: NullOrUndefined (AssociationDescription) } ) -> DescribeAssociationResult
-newDescribeAssociationResult'  customize = (DescribeAssociationResult <<< customize) { "AssociationDescription": (NullOrUndefined Nothing) }
+newDescribeAssociationResult' :: ( { "AssociationDescription" :: Maybe (AssociationDescription) } -> {"AssociationDescription" :: Maybe (AssociationDescription) } ) -> DescribeAssociationResult
+newDescribeAssociationResult'  customize = (DescribeAssociationResult <<< customize) { "AssociationDescription": Nothing }
 
 
 
 newtype DescribeAutomationExecutionsRequest = DescribeAutomationExecutionsRequest 
-  { "Filters" :: NullOrUndefined (AutomationExecutionFilterList)
-  , "MaxResults" :: NullOrUndefined (MaxResults)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "Filters" :: Maybe (AutomationExecutionFilterList)
+  , "MaxResults" :: Maybe (MaxResults)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeAutomationExecutionsRequest :: Newtype DescribeAutomationExecutionsRequest _
 derive instance repGenericDescribeAutomationExecutionsRequest :: Generic DescribeAutomationExecutionsRequest _
@@ -2533,18 +2532,18 @@ instance encodeDescribeAutomationExecutionsRequest :: Encode DescribeAutomationE
 
 -- | Constructs DescribeAutomationExecutionsRequest from required parameters
 newDescribeAutomationExecutionsRequest :: DescribeAutomationExecutionsRequest
-newDescribeAutomationExecutionsRequest  = DescribeAutomationExecutionsRequest { "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeAutomationExecutionsRequest  = DescribeAutomationExecutionsRequest { "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribeAutomationExecutionsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeAutomationExecutionsRequest' :: ( { "Filters" :: NullOrUndefined (AutomationExecutionFilterList) , "MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Filters" :: NullOrUndefined (AutomationExecutionFilterList) , "MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribeAutomationExecutionsRequest
-newDescribeAutomationExecutionsRequest'  customize = (DescribeAutomationExecutionsRequest <<< customize) { "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeAutomationExecutionsRequest' :: ( { "Filters" :: Maybe (AutomationExecutionFilterList) , "MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (NextToken) } -> {"Filters" :: Maybe (AutomationExecutionFilterList) , "MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (NextToken) } ) -> DescribeAutomationExecutionsRequest
+newDescribeAutomationExecutionsRequest'  customize = (DescribeAutomationExecutionsRequest <<< customize) { "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype DescribeAutomationExecutionsResult = DescribeAutomationExecutionsResult 
-  { "AutomationExecutionMetadataList" :: NullOrUndefined (AutomationExecutionMetadataList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "AutomationExecutionMetadataList" :: Maybe (AutomationExecutionMetadataList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeAutomationExecutionsResult :: Newtype DescribeAutomationExecutionsResult _
 derive instance repGenericDescribeAutomationExecutionsResult :: Generic DescribeAutomationExecutionsResult _
@@ -2554,21 +2553,21 @@ instance encodeDescribeAutomationExecutionsResult :: Encode DescribeAutomationEx
 
 -- | Constructs DescribeAutomationExecutionsResult from required parameters
 newDescribeAutomationExecutionsResult :: DescribeAutomationExecutionsResult
-newDescribeAutomationExecutionsResult  = DescribeAutomationExecutionsResult { "AutomationExecutionMetadataList": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeAutomationExecutionsResult  = DescribeAutomationExecutionsResult { "AutomationExecutionMetadataList": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribeAutomationExecutionsResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeAutomationExecutionsResult' :: ( { "AutomationExecutionMetadataList" :: NullOrUndefined (AutomationExecutionMetadataList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"AutomationExecutionMetadataList" :: NullOrUndefined (AutomationExecutionMetadataList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribeAutomationExecutionsResult
-newDescribeAutomationExecutionsResult'  customize = (DescribeAutomationExecutionsResult <<< customize) { "AutomationExecutionMetadataList": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeAutomationExecutionsResult' :: ( { "AutomationExecutionMetadataList" :: Maybe (AutomationExecutionMetadataList) , "NextToken" :: Maybe (NextToken) } -> {"AutomationExecutionMetadataList" :: Maybe (AutomationExecutionMetadataList) , "NextToken" :: Maybe (NextToken) } ) -> DescribeAutomationExecutionsResult
+newDescribeAutomationExecutionsResult'  customize = (DescribeAutomationExecutionsResult <<< customize) { "AutomationExecutionMetadataList": Nothing, "NextToken": Nothing }
 
 
 
 newtype DescribeAutomationStepExecutionsRequest = DescribeAutomationStepExecutionsRequest 
   { "AutomationExecutionId" :: (AutomationExecutionId)
-  , "Filters" :: NullOrUndefined (StepExecutionFilterList)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (MaxResults)
-  , "ReverseOrder" :: NullOrUndefined (Boolean)
+  , "Filters" :: Maybe (StepExecutionFilterList)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (MaxResults)
+  , "ReverseOrder" :: Maybe (Boolean)
   }
 derive instance newtypeDescribeAutomationStepExecutionsRequest :: Newtype DescribeAutomationStepExecutionsRequest _
 derive instance repGenericDescribeAutomationStepExecutionsRequest :: Generic DescribeAutomationStepExecutionsRequest _
@@ -2578,18 +2577,18 @@ instance encodeDescribeAutomationStepExecutionsRequest :: Encode DescribeAutomat
 
 -- | Constructs DescribeAutomationStepExecutionsRequest from required parameters
 newDescribeAutomationStepExecutionsRequest :: AutomationExecutionId -> DescribeAutomationStepExecutionsRequest
-newDescribeAutomationStepExecutionsRequest _AutomationExecutionId = DescribeAutomationStepExecutionsRequest { "AutomationExecutionId": _AutomationExecutionId, "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "ReverseOrder": (NullOrUndefined Nothing) }
+newDescribeAutomationStepExecutionsRequest _AutomationExecutionId = DescribeAutomationStepExecutionsRequest { "AutomationExecutionId": _AutomationExecutionId, "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing, "ReverseOrder": Nothing }
 
 -- | Constructs DescribeAutomationStepExecutionsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeAutomationStepExecutionsRequest' :: AutomationExecutionId -> ( { "AutomationExecutionId" :: (AutomationExecutionId) , "Filters" :: NullOrUndefined (StepExecutionFilterList) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (MaxResults) , "ReverseOrder" :: NullOrUndefined (Boolean) } -> {"AutomationExecutionId" :: (AutomationExecutionId) , "Filters" :: NullOrUndefined (StepExecutionFilterList) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (MaxResults) , "ReverseOrder" :: NullOrUndefined (Boolean) } ) -> DescribeAutomationStepExecutionsRequest
-newDescribeAutomationStepExecutionsRequest' _AutomationExecutionId customize = (DescribeAutomationStepExecutionsRequest <<< customize) { "AutomationExecutionId": _AutomationExecutionId, "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "ReverseOrder": (NullOrUndefined Nothing) }
+newDescribeAutomationStepExecutionsRequest' :: AutomationExecutionId -> ( { "AutomationExecutionId" :: (AutomationExecutionId) , "Filters" :: Maybe (StepExecutionFilterList) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (MaxResults) , "ReverseOrder" :: Maybe (Boolean) } -> {"AutomationExecutionId" :: (AutomationExecutionId) , "Filters" :: Maybe (StepExecutionFilterList) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (MaxResults) , "ReverseOrder" :: Maybe (Boolean) } ) -> DescribeAutomationStepExecutionsRequest
+newDescribeAutomationStepExecutionsRequest' _AutomationExecutionId customize = (DescribeAutomationStepExecutionsRequest <<< customize) { "AutomationExecutionId": _AutomationExecutionId, "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing, "ReverseOrder": Nothing }
 
 
 
 newtype DescribeAutomationStepExecutionsResult = DescribeAutomationStepExecutionsResult 
-  { "StepExecutions" :: NullOrUndefined (StepExecutionList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "StepExecutions" :: Maybe (StepExecutionList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeAutomationStepExecutionsResult :: Newtype DescribeAutomationStepExecutionsResult _
 derive instance repGenericDescribeAutomationStepExecutionsResult :: Generic DescribeAutomationStepExecutionsResult _
@@ -2599,19 +2598,19 @@ instance encodeDescribeAutomationStepExecutionsResult :: Encode DescribeAutomati
 
 -- | Constructs DescribeAutomationStepExecutionsResult from required parameters
 newDescribeAutomationStepExecutionsResult :: DescribeAutomationStepExecutionsResult
-newDescribeAutomationStepExecutionsResult  = DescribeAutomationStepExecutionsResult { "NextToken": (NullOrUndefined Nothing), "StepExecutions": (NullOrUndefined Nothing) }
+newDescribeAutomationStepExecutionsResult  = DescribeAutomationStepExecutionsResult { "NextToken": Nothing, "StepExecutions": Nothing }
 
 -- | Constructs DescribeAutomationStepExecutionsResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeAutomationStepExecutionsResult' :: ( { "StepExecutions" :: NullOrUndefined (StepExecutionList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"StepExecutions" :: NullOrUndefined (StepExecutionList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribeAutomationStepExecutionsResult
-newDescribeAutomationStepExecutionsResult'  customize = (DescribeAutomationStepExecutionsResult <<< customize) { "NextToken": (NullOrUndefined Nothing), "StepExecutions": (NullOrUndefined Nothing) }
+newDescribeAutomationStepExecutionsResult' :: ( { "StepExecutions" :: Maybe (StepExecutionList) , "NextToken" :: Maybe (NextToken) } -> {"StepExecutions" :: Maybe (StepExecutionList) , "NextToken" :: Maybe (NextToken) } ) -> DescribeAutomationStepExecutionsResult
+newDescribeAutomationStepExecutionsResult'  customize = (DescribeAutomationStepExecutionsResult <<< customize) { "NextToken": Nothing, "StepExecutions": Nothing }
 
 
 
 newtype DescribeAvailablePatchesRequest = DescribeAvailablePatchesRequest 
-  { "Filters" :: NullOrUndefined (PatchOrchestratorFilterList)
-  , "MaxResults" :: NullOrUndefined (PatchBaselineMaxResults)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "Filters" :: Maybe (PatchOrchestratorFilterList)
+  , "MaxResults" :: Maybe (PatchBaselineMaxResults)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeAvailablePatchesRequest :: Newtype DescribeAvailablePatchesRequest _
 derive instance repGenericDescribeAvailablePatchesRequest :: Generic DescribeAvailablePatchesRequest _
@@ -2621,18 +2620,18 @@ instance encodeDescribeAvailablePatchesRequest :: Encode DescribeAvailablePatche
 
 -- | Constructs DescribeAvailablePatchesRequest from required parameters
 newDescribeAvailablePatchesRequest :: DescribeAvailablePatchesRequest
-newDescribeAvailablePatchesRequest  = DescribeAvailablePatchesRequest { "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeAvailablePatchesRequest  = DescribeAvailablePatchesRequest { "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribeAvailablePatchesRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeAvailablePatchesRequest' :: ( { "Filters" :: NullOrUndefined (PatchOrchestratorFilterList) , "MaxResults" :: NullOrUndefined (PatchBaselineMaxResults) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Filters" :: NullOrUndefined (PatchOrchestratorFilterList) , "MaxResults" :: NullOrUndefined (PatchBaselineMaxResults) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribeAvailablePatchesRequest
-newDescribeAvailablePatchesRequest'  customize = (DescribeAvailablePatchesRequest <<< customize) { "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeAvailablePatchesRequest' :: ( { "Filters" :: Maybe (PatchOrchestratorFilterList) , "MaxResults" :: Maybe (PatchBaselineMaxResults) , "NextToken" :: Maybe (NextToken) } -> {"Filters" :: Maybe (PatchOrchestratorFilterList) , "MaxResults" :: Maybe (PatchBaselineMaxResults) , "NextToken" :: Maybe (NextToken) } ) -> DescribeAvailablePatchesRequest
+newDescribeAvailablePatchesRequest'  customize = (DescribeAvailablePatchesRequest <<< customize) { "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype DescribeAvailablePatchesResult = DescribeAvailablePatchesResult 
-  { "Patches" :: NullOrUndefined (PatchList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "Patches" :: Maybe (PatchList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeAvailablePatchesResult :: Newtype DescribeAvailablePatchesResult _
 derive instance repGenericDescribeAvailablePatchesResult :: Generic DescribeAvailablePatchesResult _
@@ -2642,12 +2641,12 @@ instance encodeDescribeAvailablePatchesResult :: Encode DescribeAvailablePatches
 
 -- | Constructs DescribeAvailablePatchesResult from required parameters
 newDescribeAvailablePatchesResult :: DescribeAvailablePatchesResult
-newDescribeAvailablePatchesResult  = DescribeAvailablePatchesResult { "NextToken": (NullOrUndefined Nothing), "Patches": (NullOrUndefined Nothing) }
+newDescribeAvailablePatchesResult  = DescribeAvailablePatchesResult { "NextToken": Nothing, "Patches": Nothing }
 
 -- | Constructs DescribeAvailablePatchesResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeAvailablePatchesResult' :: ( { "Patches" :: NullOrUndefined (PatchList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Patches" :: NullOrUndefined (PatchList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribeAvailablePatchesResult
-newDescribeAvailablePatchesResult'  customize = (DescribeAvailablePatchesResult <<< customize) { "NextToken": (NullOrUndefined Nothing), "Patches": (NullOrUndefined Nothing) }
+newDescribeAvailablePatchesResult' :: ( { "Patches" :: Maybe (PatchList) , "NextToken" :: Maybe (NextToken) } -> {"Patches" :: Maybe (PatchList) , "NextToken" :: Maybe (NextToken) } ) -> DescribeAvailablePatchesResult
+newDescribeAvailablePatchesResult'  customize = (DescribeAvailablePatchesResult <<< customize) { "NextToken": Nothing, "Patches": Nothing }
 
 
 
@@ -2673,7 +2672,7 @@ newDescribeDocumentPermissionRequest' _Name _PermissionType customize = (Describ
 
 
 newtype DescribeDocumentPermissionResponse = DescribeDocumentPermissionResponse 
-  { "AccountIds" :: NullOrUndefined (AccountIdList)
+  { "AccountIds" :: Maybe (AccountIdList)
   }
 derive instance newtypeDescribeDocumentPermissionResponse :: Newtype DescribeDocumentPermissionResponse _
 derive instance repGenericDescribeDocumentPermissionResponse :: Generic DescribeDocumentPermissionResponse _
@@ -2683,18 +2682,18 @@ instance encodeDescribeDocumentPermissionResponse :: Encode DescribeDocumentPerm
 
 -- | Constructs DescribeDocumentPermissionResponse from required parameters
 newDescribeDocumentPermissionResponse :: DescribeDocumentPermissionResponse
-newDescribeDocumentPermissionResponse  = DescribeDocumentPermissionResponse { "AccountIds": (NullOrUndefined Nothing) }
+newDescribeDocumentPermissionResponse  = DescribeDocumentPermissionResponse { "AccountIds": Nothing }
 
 -- | Constructs DescribeDocumentPermissionResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeDocumentPermissionResponse' :: ( { "AccountIds" :: NullOrUndefined (AccountIdList) } -> {"AccountIds" :: NullOrUndefined (AccountIdList) } ) -> DescribeDocumentPermissionResponse
-newDescribeDocumentPermissionResponse'  customize = (DescribeDocumentPermissionResponse <<< customize) { "AccountIds": (NullOrUndefined Nothing) }
+newDescribeDocumentPermissionResponse' :: ( { "AccountIds" :: Maybe (AccountIdList) } -> {"AccountIds" :: Maybe (AccountIdList) } ) -> DescribeDocumentPermissionResponse
+newDescribeDocumentPermissionResponse'  customize = (DescribeDocumentPermissionResponse <<< customize) { "AccountIds": Nothing }
 
 
 
 newtype DescribeDocumentRequest = DescribeDocumentRequest 
   { "Name" :: (DocumentARN)
-  , "DocumentVersion" :: NullOrUndefined (DocumentVersion)
+  , "DocumentVersion" :: Maybe (DocumentVersion)
   }
 derive instance newtypeDescribeDocumentRequest :: Newtype DescribeDocumentRequest _
 derive instance repGenericDescribeDocumentRequest :: Generic DescribeDocumentRequest _
@@ -2704,17 +2703,17 @@ instance encodeDescribeDocumentRequest :: Encode DescribeDocumentRequest where e
 
 -- | Constructs DescribeDocumentRequest from required parameters
 newDescribeDocumentRequest :: DocumentARN -> DescribeDocumentRequest
-newDescribeDocumentRequest _Name = DescribeDocumentRequest { "Name": _Name, "DocumentVersion": (NullOrUndefined Nothing) }
+newDescribeDocumentRequest _Name = DescribeDocumentRequest { "Name": _Name, "DocumentVersion": Nothing }
 
 -- | Constructs DescribeDocumentRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeDocumentRequest' :: DocumentARN -> ( { "Name" :: (DocumentARN) , "DocumentVersion" :: NullOrUndefined (DocumentVersion) } -> {"Name" :: (DocumentARN) , "DocumentVersion" :: NullOrUndefined (DocumentVersion) } ) -> DescribeDocumentRequest
-newDescribeDocumentRequest' _Name customize = (DescribeDocumentRequest <<< customize) { "Name": _Name, "DocumentVersion": (NullOrUndefined Nothing) }
+newDescribeDocumentRequest' :: DocumentARN -> ( { "Name" :: (DocumentARN) , "DocumentVersion" :: Maybe (DocumentVersion) } -> {"Name" :: (DocumentARN) , "DocumentVersion" :: Maybe (DocumentVersion) } ) -> DescribeDocumentRequest
+newDescribeDocumentRequest' _Name customize = (DescribeDocumentRequest <<< customize) { "Name": _Name, "DocumentVersion": Nothing }
 
 
 
 newtype DescribeDocumentResult = DescribeDocumentResult 
-  { "Document" :: NullOrUndefined (DocumentDescription)
+  { "Document" :: Maybe (DocumentDescription)
   }
 derive instance newtypeDescribeDocumentResult :: Newtype DescribeDocumentResult _
 derive instance repGenericDescribeDocumentResult :: Generic DescribeDocumentResult _
@@ -2724,19 +2723,19 @@ instance encodeDescribeDocumentResult :: Encode DescribeDocumentResult where enc
 
 -- | Constructs DescribeDocumentResult from required parameters
 newDescribeDocumentResult :: DescribeDocumentResult
-newDescribeDocumentResult  = DescribeDocumentResult { "Document": (NullOrUndefined Nothing) }
+newDescribeDocumentResult  = DescribeDocumentResult { "Document": Nothing }
 
 -- | Constructs DescribeDocumentResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeDocumentResult' :: ( { "Document" :: NullOrUndefined (DocumentDescription) } -> {"Document" :: NullOrUndefined (DocumentDescription) } ) -> DescribeDocumentResult
-newDescribeDocumentResult'  customize = (DescribeDocumentResult <<< customize) { "Document": (NullOrUndefined Nothing) }
+newDescribeDocumentResult' :: ( { "Document" :: Maybe (DocumentDescription) } -> {"Document" :: Maybe (DocumentDescription) } ) -> DescribeDocumentResult
+newDescribeDocumentResult'  customize = (DescribeDocumentResult <<< customize) { "Document": Nothing }
 
 
 
 newtype DescribeEffectiveInstanceAssociationsRequest = DescribeEffectiveInstanceAssociationsRequest 
   { "InstanceId" :: (InstanceId)
-  , "MaxResults" :: NullOrUndefined (EffectiveInstanceAssociationMaxResults)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  , "MaxResults" :: Maybe (EffectiveInstanceAssociationMaxResults)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeEffectiveInstanceAssociationsRequest :: Newtype DescribeEffectiveInstanceAssociationsRequest _
 derive instance repGenericDescribeEffectiveInstanceAssociationsRequest :: Generic DescribeEffectiveInstanceAssociationsRequest _
@@ -2746,18 +2745,18 @@ instance encodeDescribeEffectiveInstanceAssociationsRequest :: Encode DescribeEf
 
 -- | Constructs DescribeEffectiveInstanceAssociationsRequest from required parameters
 newDescribeEffectiveInstanceAssociationsRequest :: InstanceId -> DescribeEffectiveInstanceAssociationsRequest
-newDescribeEffectiveInstanceAssociationsRequest _InstanceId = DescribeEffectiveInstanceAssociationsRequest { "InstanceId": _InstanceId, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeEffectiveInstanceAssociationsRequest _InstanceId = DescribeEffectiveInstanceAssociationsRequest { "InstanceId": _InstanceId, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribeEffectiveInstanceAssociationsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeEffectiveInstanceAssociationsRequest' :: InstanceId -> ( { "InstanceId" :: (InstanceId) , "MaxResults" :: NullOrUndefined (EffectiveInstanceAssociationMaxResults) , "NextToken" :: NullOrUndefined (NextToken) } -> {"InstanceId" :: (InstanceId) , "MaxResults" :: NullOrUndefined (EffectiveInstanceAssociationMaxResults) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribeEffectiveInstanceAssociationsRequest
-newDescribeEffectiveInstanceAssociationsRequest' _InstanceId customize = (DescribeEffectiveInstanceAssociationsRequest <<< customize) { "InstanceId": _InstanceId, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeEffectiveInstanceAssociationsRequest' :: InstanceId -> ( { "InstanceId" :: (InstanceId) , "MaxResults" :: Maybe (EffectiveInstanceAssociationMaxResults) , "NextToken" :: Maybe (NextToken) } -> {"InstanceId" :: (InstanceId) , "MaxResults" :: Maybe (EffectiveInstanceAssociationMaxResults) , "NextToken" :: Maybe (NextToken) } ) -> DescribeEffectiveInstanceAssociationsRequest
+newDescribeEffectiveInstanceAssociationsRequest' _InstanceId customize = (DescribeEffectiveInstanceAssociationsRequest <<< customize) { "InstanceId": _InstanceId, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype DescribeEffectiveInstanceAssociationsResult = DescribeEffectiveInstanceAssociationsResult 
-  { "Associations" :: NullOrUndefined (InstanceAssociationList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "Associations" :: Maybe (InstanceAssociationList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeEffectiveInstanceAssociationsResult :: Newtype DescribeEffectiveInstanceAssociationsResult _
 derive instance repGenericDescribeEffectiveInstanceAssociationsResult :: Generic DescribeEffectiveInstanceAssociationsResult _
@@ -2767,19 +2766,19 @@ instance encodeDescribeEffectiveInstanceAssociationsResult :: Encode DescribeEff
 
 -- | Constructs DescribeEffectiveInstanceAssociationsResult from required parameters
 newDescribeEffectiveInstanceAssociationsResult :: DescribeEffectiveInstanceAssociationsResult
-newDescribeEffectiveInstanceAssociationsResult  = DescribeEffectiveInstanceAssociationsResult { "Associations": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeEffectiveInstanceAssociationsResult  = DescribeEffectiveInstanceAssociationsResult { "Associations": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribeEffectiveInstanceAssociationsResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeEffectiveInstanceAssociationsResult' :: ( { "Associations" :: NullOrUndefined (InstanceAssociationList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Associations" :: NullOrUndefined (InstanceAssociationList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribeEffectiveInstanceAssociationsResult
-newDescribeEffectiveInstanceAssociationsResult'  customize = (DescribeEffectiveInstanceAssociationsResult <<< customize) { "Associations": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeEffectiveInstanceAssociationsResult' :: ( { "Associations" :: Maybe (InstanceAssociationList) , "NextToken" :: Maybe (NextToken) } -> {"Associations" :: Maybe (InstanceAssociationList) , "NextToken" :: Maybe (NextToken) } ) -> DescribeEffectiveInstanceAssociationsResult
+newDescribeEffectiveInstanceAssociationsResult'  customize = (DescribeEffectiveInstanceAssociationsResult <<< customize) { "Associations": Nothing, "NextToken": Nothing }
 
 
 
 newtype DescribeEffectivePatchesForPatchBaselineRequest = DescribeEffectivePatchesForPatchBaselineRequest 
   { "BaselineId" :: (BaselineId)
-  , "MaxResults" :: NullOrUndefined (PatchBaselineMaxResults)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  , "MaxResults" :: Maybe (PatchBaselineMaxResults)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeEffectivePatchesForPatchBaselineRequest :: Newtype DescribeEffectivePatchesForPatchBaselineRequest _
 derive instance repGenericDescribeEffectivePatchesForPatchBaselineRequest :: Generic DescribeEffectivePatchesForPatchBaselineRequest _
@@ -2789,18 +2788,18 @@ instance encodeDescribeEffectivePatchesForPatchBaselineRequest :: Encode Describ
 
 -- | Constructs DescribeEffectivePatchesForPatchBaselineRequest from required parameters
 newDescribeEffectivePatchesForPatchBaselineRequest :: BaselineId -> DescribeEffectivePatchesForPatchBaselineRequest
-newDescribeEffectivePatchesForPatchBaselineRequest _BaselineId = DescribeEffectivePatchesForPatchBaselineRequest { "BaselineId": _BaselineId, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeEffectivePatchesForPatchBaselineRequest _BaselineId = DescribeEffectivePatchesForPatchBaselineRequest { "BaselineId": _BaselineId, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribeEffectivePatchesForPatchBaselineRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeEffectivePatchesForPatchBaselineRequest' :: BaselineId -> ( { "BaselineId" :: (BaselineId) , "MaxResults" :: NullOrUndefined (PatchBaselineMaxResults) , "NextToken" :: NullOrUndefined (NextToken) } -> {"BaselineId" :: (BaselineId) , "MaxResults" :: NullOrUndefined (PatchBaselineMaxResults) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribeEffectivePatchesForPatchBaselineRequest
-newDescribeEffectivePatchesForPatchBaselineRequest' _BaselineId customize = (DescribeEffectivePatchesForPatchBaselineRequest <<< customize) { "BaselineId": _BaselineId, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeEffectivePatchesForPatchBaselineRequest' :: BaselineId -> ( { "BaselineId" :: (BaselineId) , "MaxResults" :: Maybe (PatchBaselineMaxResults) , "NextToken" :: Maybe (NextToken) } -> {"BaselineId" :: (BaselineId) , "MaxResults" :: Maybe (PatchBaselineMaxResults) , "NextToken" :: Maybe (NextToken) } ) -> DescribeEffectivePatchesForPatchBaselineRequest
+newDescribeEffectivePatchesForPatchBaselineRequest' _BaselineId customize = (DescribeEffectivePatchesForPatchBaselineRequest <<< customize) { "BaselineId": _BaselineId, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype DescribeEffectivePatchesForPatchBaselineResult = DescribeEffectivePatchesForPatchBaselineResult 
-  { "EffectivePatches" :: NullOrUndefined (EffectivePatchList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "EffectivePatches" :: Maybe (EffectivePatchList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeEffectivePatchesForPatchBaselineResult :: Newtype DescribeEffectivePatchesForPatchBaselineResult _
 derive instance repGenericDescribeEffectivePatchesForPatchBaselineResult :: Generic DescribeEffectivePatchesForPatchBaselineResult _
@@ -2810,19 +2809,19 @@ instance encodeDescribeEffectivePatchesForPatchBaselineResult :: Encode Describe
 
 -- | Constructs DescribeEffectivePatchesForPatchBaselineResult from required parameters
 newDescribeEffectivePatchesForPatchBaselineResult :: DescribeEffectivePatchesForPatchBaselineResult
-newDescribeEffectivePatchesForPatchBaselineResult  = DescribeEffectivePatchesForPatchBaselineResult { "EffectivePatches": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeEffectivePatchesForPatchBaselineResult  = DescribeEffectivePatchesForPatchBaselineResult { "EffectivePatches": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribeEffectivePatchesForPatchBaselineResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeEffectivePatchesForPatchBaselineResult' :: ( { "EffectivePatches" :: NullOrUndefined (EffectivePatchList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"EffectivePatches" :: NullOrUndefined (EffectivePatchList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribeEffectivePatchesForPatchBaselineResult
-newDescribeEffectivePatchesForPatchBaselineResult'  customize = (DescribeEffectivePatchesForPatchBaselineResult <<< customize) { "EffectivePatches": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeEffectivePatchesForPatchBaselineResult' :: ( { "EffectivePatches" :: Maybe (EffectivePatchList) , "NextToken" :: Maybe (NextToken) } -> {"EffectivePatches" :: Maybe (EffectivePatchList) , "NextToken" :: Maybe (NextToken) } ) -> DescribeEffectivePatchesForPatchBaselineResult
+newDescribeEffectivePatchesForPatchBaselineResult'  customize = (DescribeEffectivePatchesForPatchBaselineResult <<< customize) { "EffectivePatches": Nothing, "NextToken": Nothing }
 
 
 
 newtype DescribeInstanceAssociationsStatusRequest = DescribeInstanceAssociationsStatusRequest 
   { "InstanceId" :: (InstanceId)
-  , "MaxResults" :: NullOrUndefined (MaxResults)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  , "MaxResults" :: Maybe (MaxResults)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeInstanceAssociationsStatusRequest :: Newtype DescribeInstanceAssociationsStatusRequest _
 derive instance repGenericDescribeInstanceAssociationsStatusRequest :: Generic DescribeInstanceAssociationsStatusRequest _
@@ -2832,18 +2831,18 @@ instance encodeDescribeInstanceAssociationsStatusRequest :: Encode DescribeInsta
 
 -- | Constructs DescribeInstanceAssociationsStatusRequest from required parameters
 newDescribeInstanceAssociationsStatusRequest :: InstanceId -> DescribeInstanceAssociationsStatusRequest
-newDescribeInstanceAssociationsStatusRequest _InstanceId = DescribeInstanceAssociationsStatusRequest { "InstanceId": _InstanceId, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeInstanceAssociationsStatusRequest _InstanceId = DescribeInstanceAssociationsStatusRequest { "InstanceId": _InstanceId, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribeInstanceAssociationsStatusRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeInstanceAssociationsStatusRequest' :: InstanceId -> ( { "InstanceId" :: (InstanceId) , "MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (NextToken) } -> {"InstanceId" :: (InstanceId) , "MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribeInstanceAssociationsStatusRequest
-newDescribeInstanceAssociationsStatusRequest' _InstanceId customize = (DescribeInstanceAssociationsStatusRequest <<< customize) { "InstanceId": _InstanceId, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeInstanceAssociationsStatusRequest' :: InstanceId -> ( { "InstanceId" :: (InstanceId) , "MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (NextToken) } -> {"InstanceId" :: (InstanceId) , "MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (NextToken) } ) -> DescribeInstanceAssociationsStatusRequest
+newDescribeInstanceAssociationsStatusRequest' _InstanceId customize = (DescribeInstanceAssociationsStatusRequest <<< customize) { "InstanceId": _InstanceId, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype DescribeInstanceAssociationsStatusResult = DescribeInstanceAssociationsStatusResult 
-  { "InstanceAssociationStatusInfos" :: NullOrUndefined (InstanceAssociationStatusInfos)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "InstanceAssociationStatusInfos" :: Maybe (InstanceAssociationStatusInfos)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeInstanceAssociationsStatusResult :: Newtype DescribeInstanceAssociationsStatusResult _
 derive instance repGenericDescribeInstanceAssociationsStatusResult :: Generic DescribeInstanceAssociationsStatusResult _
@@ -2853,20 +2852,20 @@ instance encodeDescribeInstanceAssociationsStatusResult :: Encode DescribeInstan
 
 -- | Constructs DescribeInstanceAssociationsStatusResult from required parameters
 newDescribeInstanceAssociationsStatusResult :: DescribeInstanceAssociationsStatusResult
-newDescribeInstanceAssociationsStatusResult  = DescribeInstanceAssociationsStatusResult { "InstanceAssociationStatusInfos": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeInstanceAssociationsStatusResult  = DescribeInstanceAssociationsStatusResult { "InstanceAssociationStatusInfos": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribeInstanceAssociationsStatusResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeInstanceAssociationsStatusResult' :: ( { "InstanceAssociationStatusInfos" :: NullOrUndefined (InstanceAssociationStatusInfos) , "NextToken" :: NullOrUndefined (NextToken) } -> {"InstanceAssociationStatusInfos" :: NullOrUndefined (InstanceAssociationStatusInfos) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribeInstanceAssociationsStatusResult
-newDescribeInstanceAssociationsStatusResult'  customize = (DescribeInstanceAssociationsStatusResult <<< customize) { "InstanceAssociationStatusInfos": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeInstanceAssociationsStatusResult' :: ( { "InstanceAssociationStatusInfos" :: Maybe (InstanceAssociationStatusInfos) , "NextToken" :: Maybe (NextToken) } -> {"InstanceAssociationStatusInfos" :: Maybe (InstanceAssociationStatusInfos) , "NextToken" :: Maybe (NextToken) } ) -> DescribeInstanceAssociationsStatusResult
+newDescribeInstanceAssociationsStatusResult'  customize = (DescribeInstanceAssociationsStatusResult <<< customize) { "InstanceAssociationStatusInfos": Nothing, "NextToken": Nothing }
 
 
 
 newtype DescribeInstanceInformationRequest = DescribeInstanceInformationRequest 
-  { "InstanceInformationFilterList" :: NullOrUndefined (InstanceInformationFilterList)
-  , "Filters" :: NullOrUndefined (InstanceInformationStringFilterList)
-  , "MaxResults" :: NullOrUndefined (MaxResultsEC2Compatible)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "InstanceInformationFilterList" :: Maybe (InstanceInformationFilterList)
+  , "Filters" :: Maybe (InstanceInformationStringFilterList)
+  , "MaxResults" :: Maybe (MaxResultsEC2Compatible)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeInstanceInformationRequest :: Newtype DescribeInstanceInformationRequest _
 derive instance repGenericDescribeInstanceInformationRequest :: Generic DescribeInstanceInformationRequest _
@@ -2876,18 +2875,18 @@ instance encodeDescribeInstanceInformationRequest :: Encode DescribeInstanceInfo
 
 -- | Constructs DescribeInstanceInformationRequest from required parameters
 newDescribeInstanceInformationRequest :: DescribeInstanceInformationRequest
-newDescribeInstanceInformationRequest  = DescribeInstanceInformationRequest { "Filters": (NullOrUndefined Nothing), "InstanceInformationFilterList": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeInstanceInformationRequest  = DescribeInstanceInformationRequest { "Filters": Nothing, "InstanceInformationFilterList": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribeInstanceInformationRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeInstanceInformationRequest' :: ( { "InstanceInformationFilterList" :: NullOrUndefined (InstanceInformationFilterList) , "Filters" :: NullOrUndefined (InstanceInformationStringFilterList) , "MaxResults" :: NullOrUndefined (MaxResultsEC2Compatible) , "NextToken" :: NullOrUndefined (NextToken) } -> {"InstanceInformationFilterList" :: NullOrUndefined (InstanceInformationFilterList) , "Filters" :: NullOrUndefined (InstanceInformationStringFilterList) , "MaxResults" :: NullOrUndefined (MaxResultsEC2Compatible) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribeInstanceInformationRequest
-newDescribeInstanceInformationRequest'  customize = (DescribeInstanceInformationRequest <<< customize) { "Filters": (NullOrUndefined Nothing), "InstanceInformationFilterList": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeInstanceInformationRequest' :: ( { "InstanceInformationFilterList" :: Maybe (InstanceInformationFilterList) , "Filters" :: Maybe (InstanceInformationStringFilterList) , "MaxResults" :: Maybe (MaxResultsEC2Compatible) , "NextToken" :: Maybe (NextToken) } -> {"InstanceInformationFilterList" :: Maybe (InstanceInformationFilterList) , "Filters" :: Maybe (InstanceInformationStringFilterList) , "MaxResults" :: Maybe (MaxResultsEC2Compatible) , "NextToken" :: Maybe (NextToken) } ) -> DescribeInstanceInformationRequest
+newDescribeInstanceInformationRequest'  customize = (DescribeInstanceInformationRequest <<< customize) { "Filters": Nothing, "InstanceInformationFilterList": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype DescribeInstanceInformationResult = DescribeInstanceInformationResult 
-  { "InstanceInformationList" :: NullOrUndefined (InstanceInformationList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "InstanceInformationList" :: Maybe (InstanceInformationList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeInstanceInformationResult :: Newtype DescribeInstanceInformationResult _
 derive instance repGenericDescribeInstanceInformationResult :: Generic DescribeInstanceInformationResult _
@@ -2897,20 +2896,20 @@ instance encodeDescribeInstanceInformationResult :: Encode DescribeInstanceInfor
 
 -- | Constructs DescribeInstanceInformationResult from required parameters
 newDescribeInstanceInformationResult :: DescribeInstanceInformationResult
-newDescribeInstanceInformationResult  = DescribeInstanceInformationResult { "InstanceInformationList": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeInstanceInformationResult  = DescribeInstanceInformationResult { "InstanceInformationList": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribeInstanceInformationResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeInstanceInformationResult' :: ( { "InstanceInformationList" :: NullOrUndefined (InstanceInformationList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"InstanceInformationList" :: NullOrUndefined (InstanceInformationList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribeInstanceInformationResult
-newDescribeInstanceInformationResult'  customize = (DescribeInstanceInformationResult <<< customize) { "InstanceInformationList": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeInstanceInformationResult' :: ( { "InstanceInformationList" :: Maybe (InstanceInformationList) , "NextToken" :: Maybe (NextToken) } -> {"InstanceInformationList" :: Maybe (InstanceInformationList) , "NextToken" :: Maybe (NextToken) } ) -> DescribeInstanceInformationResult
+newDescribeInstanceInformationResult'  customize = (DescribeInstanceInformationResult <<< customize) { "InstanceInformationList": Nothing, "NextToken": Nothing }
 
 
 
 newtype DescribeInstancePatchStatesForPatchGroupRequest = DescribeInstancePatchStatesForPatchGroupRequest 
   { "PatchGroup" :: (PatchGroup)
-  , "Filters" :: NullOrUndefined (InstancePatchStateFilterList)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (PatchComplianceMaxResults)
+  , "Filters" :: Maybe (InstancePatchStateFilterList)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (PatchComplianceMaxResults)
   }
 derive instance newtypeDescribeInstancePatchStatesForPatchGroupRequest :: Newtype DescribeInstancePatchStatesForPatchGroupRequest _
 derive instance repGenericDescribeInstancePatchStatesForPatchGroupRequest :: Generic DescribeInstancePatchStatesForPatchGroupRequest _
@@ -2920,18 +2919,18 @@ instance encodeDescribeInstancePatchStatesForPatchGroupRequest :: Encode Describ
 
 -- | Constructs DescribeInstancePatchStatesForPatchGroupRequest from required parameters
 newDescribeInstancePatchStatesForPatchGroupRequest :: PatchGroup -> DescribeInstancePatchStatesForPatchGroupRequest
-newDescribeInstancePatchStatesForPatchGroupRequest _PatchGroup = DescribeInstancePatchStatesForPatchGroupRequest { "PatchGroup": _PatchGroup, "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeInstancePatchStatesForPatchGroupRequest _PatchGroup = DescribeInstancePatchStatesForPatchGroupRequest { "PatchGroup": _PatchGroup, "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribeInstancePatchStatesForPatchGroupRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeInstancePatchStatesForPatchGroupRequest' :: PatchGroup -> ( { "PatchGroup" :: (PatchGroup) , "Filters" :: NullOrUndefined (InstancePatchStateFilterList) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (PatchComplianceMaxResults) } -> {"PatchGroup" :: (PatchGroup) , "Filters" :: NullOrUndefined (InstancePatchStateFilterList) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (PatchComplianceMaxResults) } ) -> DescribeInstancePatchStatesForPatchGroupRequest
-newDescribeInstancePatchStatesForPatchGroupRequest' _PatchGroup customize = (DescribeInstancePatchStatesForPatchGroupRequest <<< customize) { "PatchGroup": _PatchGroup, "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeInstancePatchStatesForPatchGroupRequest' :: PatchGroup -> ( { "PatchGroup" :: (PatchGroup) , "Filters" :: Maybe (InstancePatchStateFilterList) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (PatchComplianceMaxResults) } -> {"PatchGroup" :: (PatchGroup) , "Filters" :: Maybe (InstancePatchStateFilterList) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (PatchComplianceMaxResults) } ) -> DescribeInstancePatchStatesForPatchGroupRequest
+newDescribeInstancePatchStatesForPatchGroupRequest' _PatchGroup customize = (DescribeInstancePatchStatesForPatchGroupRequest <<< customize) { "PatchGroup": _PatchGroup, "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype DescribeInstancePatchStatesForPatchGroupResult = DescribeInstancePatchStatesForPatchGroupResult 
-  { "InstancePatchStates" :: NullOrUndefined (InstancePatchStatesList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "InstancePatchStates" :: Maybe (InstancePatchStatesList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeInstancePatchStatesForPatchGroupResult :: Newtype DescribeInstancePatchStatesForPatchGroupResult _
 derive instance repGenericDescribeInstancePatchStatesForPatchGroupResult :: Generic DescribeInstancePatchStatesForPatchGroupResult _
@@ -2941,19 +2940,19 @@ instance encodeDescribeInstancePatchStatesForPatchGroupResult :: Encode Describe
 
 -- | Constructs DescribeInstancePatchStatesForPatchGroupResult from required parameters
 newDescribeInstancePatchStatesForPatchGroupResult :: DescribeInstancePatchStatesForPatchGroupResult
-newDescribeInstancePatchStatesForPatchGroupResult  = DescribeInstancePatchStatesForPatchGroupResult { "InstancePatchStates": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeInstancePatchStatesForPatchGroupResult  = DescribeInstancePatchStatesForPatchGroupResult { "InstancePatchStates": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribeInstancePatchStatesForPatchGroupResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeInstancePatchStatesForPatchGroupResult' :: ( { "InstancePatchStates" :: NullOrUndefined (InstancePatchStatesList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"InstancePatchStates" :: NullOrUndefined (InstancePatchStatesList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribeInstancePatchStatesForPatchGroupResult
-newDescribeInstancePatchStatesForPatchGroupResult'  customize = (DescribeInstancePatchStatesForPatchGroupResult <<< customize) { "InstancePatchStates": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeInstancePatchStatesForPatchGroupResult' :: ( { "InstancePatchStates" :: Maybe (InstancePatchStatesList) , "NextToken" :: Maybe (NextToken) } -> {"InstancePatchStates" :: Maybe (InstancePatchStatesList) , "NextToken" :: Maybe (NextToken) } ) -> DescribeInstancePatchStatesForPatchGroupResult
+newDescribeInstancePatchStatesForPatchGroupResult'  customize = (DescribeInstancePatchStatesForPatchGroupResult <<< customize) { "InstancePatchStates": Nothing, "NextToken": Nothing }
 
 
 
 newtype DescribeInstancePatchStatesRequest = DescribeInstancePatchStatesRequest 
   { "InstanceIds" :: (InstanceIdList)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (PatchComplianceMaxResults)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (PatchComplianceMaxResults)
   }
 derive instance newtypeDescribeInstancePatchStatesRequest :: Newtype DescribeInstancePatchStatesRequest _
 derive instance repGenericDescribeInstancePatchStatesRequest :: Generic DescribeInstancePatchStatesRequest _
@@ -2963,18 +2962,18 @@ instance encodeDescribeInstancePatchStatesRequest :: Encode DescribeInstancePatc
 
 -- | Constructs DescribeInstancePatchStatesRequest from required parameters
 newDescribeInstancePatchStatesRequest :: InstanceIdList -> DescribeInstancePatchStatesRequest
-newDescribeInstancePatchStatesRequest _InstanceIds = DescribeInstancePatchStatesRequest { "InstanceIds": _InstanceIds, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeInstancePatchStatesRequest _InstanceIds = DescribeInstancePatchStatesRequest { "InstanceIds": _InstanceIds, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribeInstancePatchStatesRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeInstancePatchStatesRequest' :: InstanceIdList -> ( { "InstanceIds" :: (InstanceIdList) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (PatchComplianceMaxResults) } -> {"InstanceIds" :: (InstanceIdList) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (PatchComplianceMaxResults) } ) -> DescribeInstancePatchStatesRequest
-newDescribeInstancePatchStatesRequest' _InstanceIds customize = (DescribeInstancePatchStatesRequest <<< customize) { "InstanceIds": _InstanceIds, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeInstancePatchStatesRequest' :: InstanceIdList -> ( { "InstanceIds" :: (InstanceIdList) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (PatchComplianceMaxResults) } -> {"InstanceIds" :: (InstanceIdList) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (PatchComplianceMaxResults) } ) -> DescribeInstancePatchStatesRequest
+newDescribeInstancePatchStatesRequest' _InstanceIds customize = (DescribeInstancePatchStatesRequest <<< customize) { "InstanceIds": _InstanceIds, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype DescribeInstancePatchStatesResult = DescribeInstancePatchStatesResult 
-  { "InstancePatchStates" :: NullOrUndefined (InstancePatchStateList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "InstancePatchStates" :: Maybe (InstancePatchStateList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeInstancePatchStatesResult :: Newtype DescribeInstancePatchStatesResult _
 derive instance repGenericDescribeInstancePatchStatesResult :: Generic DescribeInstancePatchStatesResult _
@@ -2984,20 +2983,20 @@ instance encodeDescribeInstancePatchStatesResult :: Encode DescribeInstancePatch
 
 -- | Constructs DescribeInstancePatchStatesResult from required parameters
 newDescribeInstancePatchStatesResult :: DescribeInstancePatchStatesResult
-newDescribeInstancePatchStatesResult  = DescribeInstancePatchStatesResult { "InstancePatchStates": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeInstancePatchStatesResult  = DescribeInstancePatchStatesResult { "InstancePatchStates": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribeInstancePatchStatesResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeInstancePatchStatesResult' :: ( { "InstancePatchStates" :: NullOrUndefined (InstancePatchStateList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"InstancePatchStates" :: NullOrUndefined (InstancePatchStateList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribeInstancePatchStatesResult
-newDescribeInstancePatchStatesResult'  customize = (DescribeInstancePatchStatesResult <<< customize) { "InstancePatchStates": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeInstancePatchStatesResult' :: ( { "InstancePatchStates" :: Maybe (InstancePatchStateList) , "NextToken" :: Maybe (NextToken) } -> {"InstancePatchStates" :: Maybe (InstancePatchStateList) , "NextToken" :: Maybe (NextToken) } ) -> DescribeInstancePatchStatesResult
+newDescribeInstancePatchStatesResult'  customize = (DescribeInstancePatchStatesResult <<< customize) { "InstancePatchStates": Nothing, "NextToken": Nothing }
 
 
 
 newtype DescribeInstancePatchesRequest = DescribeInstancePatchesRequest 
   { "InstanceId" :: (InstanceId)
-  , "Filters" :: NullOrUndefined (PatchOrchestratorFilterList)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (PatchComplianceMaxResults)
+  , "Filters" :: Maybe (PatchOrchestratorFilterList)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (PatchComplianceMaxResults)
   }
 derive instance newtypeDescribeInstancePatchesRequest :: Newtype DescribeInstancePatchesRequest _
 derive instance repGenericDescribeInstancePatchesRequest :: Generic DescribeInstancePatchesRequest _
@@ -3007,18 +3006,18 @@ instance encodeDescribeInstancePatchesRequest :: Encode DescribeInstancePatchesR
 
 -- | Constructs DescribeInstancePatchesRequest from required parameters
 newDescribeInstancePatchesRequest :: InstanceId -> DescribeInstancePatchesRequest
-newDescribeInstancePatchesRequest _InstanceId = DescribeInstancePatchesRequest { "InstanceId": _InstanceId, "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeInstancePatchesRequest _InstanceId = DescribeInstancePatchesRequest { "InstanceId": _InstanceId, "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribeInstancePatchesRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeInstancePatchesRequest' :: InstanceId -> ( { "InstanceId" :: (InstanceId) , "Filters" :: NullOrUndefined (PatchOrchestratorFilterList) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (PatchComplianceMaxResults) } -> {"InstanceId" :: (InstanceId) , "Filters" :: NullOrUndefined (PatchOrchestratorFilterList) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (PatchComplianceMaxResults) } ) -> DescribeInstancePatchesRequest
-newDescribeInstancePatchesRequest' _InstanceId customize = (DescribeInstancePatchesRequest <<< customize) { "InstanceId": _InstanceId, "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeInstancePatchesRequest' :: InstanceId -> ( { "InstanceId" :: (InstanceId) , "Filters" :: Maybe (PatchOrchestratorFilterList) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (PatchComplianceMaxResults) } -> {"InstanceId" :: (InstanceId) , "Filters" :: Maybe (PatchOrchestratorFilterList) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (PatchComplianceMaxResults) } ) -> DescribeInstancePatchesRequest
+newDescribeInstancePatchesRequest' _InstanceId customize = (DescribeInstancePatchesRequest <<< customize) { "InstanceId": _InstanceId, "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype DescribeInstancePatchesResult = DescribeInstancePatchesResult 
-  { "Patches" :: NullOrUndefined (PatchComplianceDataList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "Patches" :: Maybe (PatchComplianceDataList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeInstancePatchesResult :: Newtype DescribeInstancePatchesResult _
 derive instance repGenericDescribeInstancePatchesResult :: Generic DescribeInstancePatchesResult _
@@ -3028,21 +3027,21 @@ instance encodeDescribeInstancePatchesResult :: Encode DescribeInstancePatchesRe
 
 -- | Constructs DescribeInstancePatchesResult from required parameters
 newDescribeInstancePatchesResult :: DescribeInstancePatchesResult
-newDescribeInstancePatchesResult  = DescribeInstancePatchesResult { "NextToken": (NullOrUndefined Nothing), "Patches": (NullOrUndefined Nothing) }
+newDescribeInstancePatchesResult  = DescribeInstancePatchesResult { "NextToken": Nothing, "Patches": Nothing }
 
 -- | Constructs DescribeInstancePatchesResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeInstancePatchesResult' :: ( { "Patches" :: NullOrUndefined (PatchComplianceDataList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Patches" :: NullOrUndefined (PatchComplianceDataList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribeInstancePatchesResult
-newDescribeInstancePatchesResult'  customize = (DescribeInstancePatchesResult <<< customize) { "NextToken": (NullOrUndefined Nothing), "Patches": (NullOrUndefined Nothing) }
+newDescribeInstancePatchesResult' :: ( { "Patches" :: Maybe (PatchComplianceDataList) , "NextToken" :: Maybe (NextToken) } -> {"Patches" :: Maybe (PatchComplianceDataList) , "NextToken" :: Maybe (NextToken) } ) -> DescribeInstancePatchesResult
+newDescribeInstancePatchesResult'  customize = (DescribeInstancePatchesResult <<< customize) { "NextToken": Nothing, "Patches": Nothing }
 
 
 
 newtype DescribeMaintenanceWindowExecutionTaskInvocationsRequest = DescribeMaintenanceWindowExecutionTaskInvocationsRequest 
   { "WindowExecutionId" :: (MaintenanceWindowExecutionId)
   , "TaskId" :: (MaintenanceWindowExecutionTaskId)
-  , "Filters" :: NullOrUndefined (MaintenanceWindowFilterList)
-  , "MaxResults" :: NullOrUndefined (MaintenanceWindowMaxResults)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  , "Filters" :: Maybe (MaintenanceWindowFilterList)
+  , "MaxResults" :: Maybe (MaintenanceWindowMaxResults)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeMaintenanceWindowExecutionTaskInvocationsRequest :: Newtype DescribeMaintenanceWindowExecutionTaskInvocationsRequest _
 derive instance repGenericDescribeMaintenanceWindowExecutionTaskInvocationsRequest :: Generic DescribeMaintenanceWindowExecutionTaskInvocationsRequest _
@@ -3052,18 +3051,18 @@ instance encodeDescribeMaintenanceWindowExecutionTaskInvocationsRequest :: Encod
 
 -- | Constructs DescribeMaintenanceWindowExecutionTaskInvocationsRequest from required parameters
 newDescribeMaintenanceWindowExecutionTaskInvocationsRequest :: MaintenanceWindowExecutionTaskId -> MaintenanceWindowExecutionId -> DescribeMaintenanceWindowExecutionTaskInvocationsRequest
-newDescribeMaintenanceWindowExecutionTaskInvocationsRequest _TaskId _WindowExecutionId = DescribeMaintenanceWindowExecutionTaskInvocationsRequest { "TaskId": _TaskId, "WindowExecutionId": _WindowExecutionId, "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeMaintenanceWindowExecutionTaskInvocationsRequest _TaskId _WindowExecutionId = DescribeMaintenanceWindowExecutionTaskInvocationsRequest { "TaskId": _TaskId, "WindowExecutionId": _WindowExecutionId, "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribeMaintenanceWindowExecutionTaskInvocationsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeMaintenanceWindowExecutionTaskInvocationsRequest' :: MaintenanceWindowExecutionTaskId -> MaintenanceWindowExecutionId -> ( { "WindowExecutionId" :: (MaintenanceWindowExecutionId) , "TaskId" :: (MaintenanceWindowExecutionTaskId) , "Filters" :: NullOrUndefined (MaintenanceWindowFilterList) , "MaxResults" :: NullOrUndefined (MaintenanceWindowMaxResults) , "NextToken" :: NullOrUndefined (NextToken) } -> {"WindowExecutionId" :: (MaintenanceWindowExecutionId) , "TaskId" :: (MaintenanceWindowExecutionTaskId) , "Filters" :: NullOrUndefined (MaintenanceWindowFilterList) , "MaxResults" :: NullOrUndefined (MaintenanceWindowMaxResults) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribeMaintenanceWindowExecutionTaskInvocationsRequest
-newDescribeMaintenanceWindowExecutionTaskInvocationsRequest' _TaskId _WindowExecutionId customize = (DescribeMaintenanceWindowExecutionTaskInvocationsRequest <<< customize) { "TaskId": _TaskId, "WindowExecutionId": _WindowExecutionId, "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeMaintenanceWindowExecutionTaskInvocationsRequest' :: MaintenanceWindowExecutionTaskId -> MaintenanceWindowExecutionId -> ( { "WindowExecutionId" :: (MaintenanceWindowExecutionId) , "TaskId" :: (MaintenanceWindowExecutionTaskId) , "Filters" :: Maybe (MaintenanceWindowFilterList) , "MaxResults" :: Maybe (MaintenanceWindowMaxResults) , "NextToken" :: Maybe (NextToken) } -> {"WindowExecutionId" :: (MaintenanceWindowExecutionId) , "TaskId" :: (MaintenanceWindowExecutionTaskId) , "Filters" :: Maybe (MaintenanceWindowFilterList) , "MaxResults" :: Maybe (MaintenanceWindowMaxResults) , "NextToken" :: Maybe (NextToken) } ) -> DescribeMaintenanceWindowExecutionTaskInvocationsRequest
+newDescribeMaintenanceWindowExecutionTaskInvocationsRequest' _TaskId _WindowExecutionId customize = (DescribeMaintenanceWindowExecutionTaskInvocationsRequest <<< customize) { "TaskId": _TaskId, "WindowExecutionId": _WindowExecutionId, "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype DescribeMaintenanceWindowExecutionTaskInvocationsResult = DescribeMaintenanceWindowExecutionTaskInvocationsResult 
-  { "WindowExecutionTaskInvocationIdentities" :: NullOrUndefined (MaintenanceWindowExecutionTaskInvocationIdentityList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "WindowExecutionTaskInvocationIdentities" :: Maybe (MaintenanceWindowExecutionTaskInvocationIdentityList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeMaintenanceWindowExecutionTaskInvocationsResult :: Newtype DescribeMaintenanceWindowExecutionTaskInvocationsResult _
 derive instance repGenericDescribeMaintenanceWindowExecutionTaskInvocationsResult :: Generic DescribeMaintenanceWindowExecutionTaskInvocationsResult _
@@ -3073,20 +3072,20 @@ instance encodeDescribeMaintenanceWindowExecutionTaskInvocationsResult :: Encode
 
 -- | Constructs DescribeMaintenanceWindowExecutionTaskInvocationsResult from required parameters
 newDescribeMaintenanceWindowExecutionTaskInvocationsResult :: DescribeMaintenanceWindowExecutionTaskInvocationsResult
-newDescribeMaintenanceWindowExecutionTaskInvocationsResult  = DescribeMaintenanceWindowExecutionTaskInvocationsResult { "NextToken": (NullOrUndefined Nothing), "WindowExecutionTaskInvocationIdentities": (NullOrUndefined Nothing) }
+newDescribeMaintenanceWindowExecutionTaskInvocationsResult  = DescribeMaintenanceWindowExecutionTaskInvocationsResult { "NextToken": Nothing, "WindowExecutionTaskInvocationIdentities": Nothing }
 
 -- | Constructs DescribeMaintenanceWindowExecutionTaskInvocationsResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeMaintenanceWindowExecutionTaskInvocationsResult' :: ( { "WindowExecutionTaskInvocationIdentities" :: NullOrUndefined (MaintenanceWindowExecutionTaskInvocationIdentityList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"WindowExecutionTaskInvocationIdentities" :: NullOrUndefined (MaintenanceWindowExecutionTaskInvocationIdentityList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribeMaintenanceWindowExecutionTaskInvocationsResult
-newDescribeMaintenanceWindowExecutionTaskInvocationsResult'  customize = (DescribeMaintenanceWindowExecutionTaskInvocationsResult <<< customize) { "NextToken": (NullOrUndefined Nothing), "WindowExecutionTaskInvocationIdentities": (NullOrUndefined Nothing) }
+newDescribeMaintenanceWindowExecutionTaskInvocationsResult' :: ( { "WindowExecutionTaskInvocationIdentities" :: Maybe (MaintenanceWindowExecutionTaskInvocationIdentityList) , "NextToken" :: Maybe (NextToken) } -> {"WindowExecutionTaskInvocationIdentities" :: Maybe (MaintenanceWindowExecutionTaskInvocationIdentityList) , "NextToken" :: Maybe (NextToken) } ) -> DescribeMaintenanceWindowExecutionTaskInvocationsResult
+newDescribeMaintenanceWindowExecutionTaskInvocationsResult'  customize = (DescribeMaintenanceWindowExecutionTaskInvocationsResult <<< customize) { "NextToken": Nothing, "WindowExecutionTaskInvocationIdentities": Nothing }
 
 
 
 newtype DescribeMaintenanceWindowExecutionTasksRequest = DescribeMaintenanceWindowExecutionTasksRequest 
   { "WindowExecutionId" :: (MaintenanceWindowExecutionId)
-  , "Filters" :: NullOrUndefined (MaintenanceWindowFilterList)
-  , "MaxResults" :: NullOrUndefined (MaintenanceWindowMaxResults)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  , "Filters" :: Maybe (MaintenanceWindowFilterList)
+  , "MaxResults" :: Maybe (MaintenanceWindowMaxResults)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeMaintenanceWindowExecutionTasksRequest :: Newtype DescribeMaintenanceWindowExecutionTasksRequest _
 derive instance repGenericDescribeMaintenanceWindowExecutionTasksRequest :: Generic DescribeMaintenanceWindowExecutionTasksRequest _
@@ -3096,18 +3095,18 @@ instance encodeDescribeMaintenanceWindowExecutionTasksRequest :: Encode Describe
 
 -- | Constructs DescribeMaintenanceWindowExecutionTasksRequest from required parameters
 newDescribeMaintenanceWindowExecutionTasksRequest :: MaintenanceWindowExecutionId -> DescribeMaintenanceWindowExecutionTasksRequest
-newDescribeMaintenanceWindowExecutionTasksRequest _WindowExecutionId = DescribeMaintenanceWindowExecutionTasksRequest { "WindowExecutionId": _WindowExecutionId, "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeMaintenanceWindowExecutionTasksRequest _WindowExecutionId = DescribeMaintenanceWindowExecutionTasksRequest { "WindowExecutionId": _WindowExecutionId, "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribeMaintenanceWindowExecutionTasksRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeMaintenanceWindowExecutionTasksRequest' :: MaintenanceWindowExecutionId -> ( { "WindowExecutionId" :: (MaintenanceWindowExecutionId) , "Filters" :: NullOrUndefined (MaintenanceWindowFilterList) , "MaxResults" :: NullOrUndefined (MaintenanceWindowMaxResults) , "NextToken" :: NullOrUndefined (NextToken) } -> {"WindowExecutionId" :: (MaintenanceWindowExecutionId) , "Filters" :: NullOrUndefined (MaintenanceWindowFilterList) , "MaxResults" :: NullOrUndefined (MaintenanceWindowMaxResults) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribeMaintenanceWindowExecutionTasksRequest
-newDescribeMaintenanceWindowExecutionTasksRequest' _WindowExecutionId customize = (DescribeMaintenanceWindowExecutionTasksRequest <<< customize) { "WindowExecutionId": _WindowExecutionId, "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeMaintenanceWindowExecutionTasksRequest' :: MaintenanceWindowExecutionId -> ( { "WindowExecutionId" :: (MaintenanceWindowExecutionId) , "Filters" :: Maybe (MaintenanceWindowFilterList) , "MaxResults" :: Maybe (MaintenanceWindowMaxResults) , "NextToken" :: Maybe (NextToken) } -> {"WindowExecutionId" :: (MaintenanceWindowExecutionId) , "Filters" :: Maybe (MaintenanceWindowFilterList) , "MaxResults" :: Maybe (MaintenanceWindowMaxResults) , "NextToken" :: Maybe (NextToken) } ) -> DescribeMaintenanceWindowExecutionTasksRequest
+newDescribeMaintenanceWindowExecutionTasksRequest' _WindowExecutionId customize = (DescribeMaintenanceWindowExecutionTasksRequest <<< customize) { "WindowExecutionId": _WindowExecutionId, "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype DescribeMaintenanceWindowExecutionTasksResult = DescribeMaintenanceWindowExecutionTasksResult 
-  { "WindowExecutionTaskIdentities" :: NullOrUndefined (MaintenanceWindowExecutionTaskIdentityList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "WindowExecutionTaskIdentities" :: Maybe (MaintenanceWindowExecutionTaskIdentityList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeMaintenanceWindowExecutionTasksResult :: Newtype DescribeMaintenanceWindowExecutionTasksResult _
 derive instance repGenericDescribeMaintenanceWindowExecutionTasksResult :: Generic DescribeMaintenanceWindowExecutionTasksResult _
@@ -3117,20 +3116,20 @@ instance encodeDescribeMaintenanceWindowExecutionTasksResult :: Encode DescribeM
 
 -- | Constructs DescribeMaintenanceWindowExecutionTasksResult from required parameters
 newDescribeMaintenanceWindowExecutionTasksResult :: DescribeMaintenanceWindowExecutionTasksResult
-newDescribeMaintenanceWindowExecutionTasksResult  = DescribeMaintenanceWindowExecutionTasksResult { "NextToken": (NullOrUndefined Nothing), "WindowExecutionTaskIdentities": (NullOrUndefined Nothing) }
+newDescribeMaintenanceWindowExecutionTasksResult  = DescribeMaintenanceWindowExecutionTasksResult { "NextToken": Nothing, "WindowExecutionTaskIdentities": Nothing }
 
 -- | Constructs DescribeMaintenanceWindowExecutionTasksResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeMaintenanceWindowExecutionTasksResult' :: ( { "WindowExecutionTaskIdentities" :: NullOrUndefined (MaintenanceWindowExecutionTaskIdentityList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"WindowExecutionTaskIdentities" :: NullOrUndefined (MaintenanceWindowExecutionTaskIdentityList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribeMaintenanceWindowExecutionTasksResult
-newDescribeMaintenanceWindowExecutionTasksResult'  customize = (DescribeMaintenanceWindowExecutionTasksResult <<< customize) { "NextToken": (NullOrUndefined Nothing), "WindowExecutionTaskIdentities": (NullOrUndefined Nothing) }
+newDescribeMaintenanceWindowExecutionTasksResult' :: ( { "WindowExecutionTaskIdentities" :: Maybe (MaintenanceWindowExecutionTaskIdentityList) , "NextToken" :: Maybe (NextToken) } -> {"WindowExecutionTaskIdentities" :: Maybe (MaintenanceWindowExecutionTaskIdentityList) , "NextToken" :: Maybe (NextToken) } ) -> DescribeMaintenanceWindowExecutionTasksResult
+newDescribeMaintenanceWindowExecutionTasksResult'  customize = (DescribeMaintenanceWindowExecutionTasksResult <<< customize) { "NextToken": Nothing, "WindowExecutionTaskIdentities": Nothing }
 
 
 
 newtype DescribeMaintenanceWindowExecutionsRequest = DescribeMaintenanceWindowExecutionsRequest 
   { "WindowId" :: (MaintenanceWindowId)
-  , "Filters" :: NullOrUndefined (MaintenanceWindowFilterList)
-  , "MaxResults" :: NullOrUndefined (MaintenanceWindowMaxResults)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  , "Filters" :: Maybe (MaintenanceWindowFilterList)
+  , "MaxResults" :: Maybe (MaintenanceWindowMaxResults)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeMaintenanceWindowExecutionsRequest :: Newtype DescribeMaintenanceWindowExecutionsRequest _
 derive instance repGenericDescribeMaintenanceWindowExecutionsRequest :: Generic DescribeMaintenanceWindowExecutionsRequest _
@@ -3140,18 +3139,18 @@ instance encodeDescribeMaintenanceWindowExecutionsRequest :: Encode DescribeMain
 
 -- | Constructs DescribeMaintenanceWindowExecutionsRequest from required parameters
 newDescribeMaintenanceWindowExecutionsRequest :: MaintenanceWindowId -> DescribeMaintenanceWindowExecutionsRequest
-newDescribeMaintenanceWindowExecutionsRequest _WindowId = DescribeMaintenanceWindowExecutionsRequest { "WindowId": _WindowId, "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeMaintenanceWindowExecutionsRequest _WindowId = DescribeMaintenanceWindowExecutionsRequest { "WindowId": _WindowId, "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribeMaintenanceWindowExecutionsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeMaintenanceWindowExecutionsRequest' :: MaintenanceWindowId -> ( { "WindowId" :: (MaintenanceWindowId) , "Filters" :: NullOrUndefined (MaintenanceWindowFilterList) , "MaxResults" :: NullOrUndefined (MaintenanceWindowMaxResults) , "NextToken" :: NullOrUndefined (NextToken) } -> {"WindowId" :: (MaintenanceWindowId) , "Filters" :: NullOrUndefined (MaintenanceWindowFilterList) , "MaxResults" :: NullOrUndefined (MaintenanceWindowMaxResults) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribeMaintenanceWindowExecutionsRequest
-newDescribeMaintenanceWindowExecutionsRequest' _WindowId customize = (DescribeMaintenanceWindowExecutionsRequest <<< customize) { "WindowId": _WindowId, "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeMaintenanceWindowExecutionsRequest' :: MaintenanceWindowId -> ( { "WindowId" :: (MaintenanceWindowId) , "Filters" :: Maybe (MaintenanceWindowFilterList) , "MaxResults" :: Maybe (MaintenanceWindowMaxResults) , "NextToken" :: Maybe (NextToken) } -> {"WindowId" :: (MaintenanceWindowId) , "Filters" :: Maybe (MaintenanceWindowFilterList) , "MaxResults" :: Maybe (MaintenanceWindowMaxResults) , "NextToken" :: Maybe (NextToken) } ) -> DescribeMaintenanceWindowExecutionsRequest
+newDescribeMaintenanceWindowExecutionsRequest' _WindowId customize = (DescribeMaintenanceWindowExecutionsRequest <<< customize) { "WindowId": _WindowId, "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype DescribeMaintenanceWindowExecutionsResult = DescribeMaintenanceWindowExecutionsResult 
-  { "WindowExecutions" :: NullOrUndefined (MaintenanceWindowExecutionList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "WindowExecutions" :: Maybe (MaintenanceWindowExecutionList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeMaintenanceWindowExecutionsResult :: Newtype DescribeMaintenanceWindowExecutionsResult _
 derive instance repGenericDescribeMaintenanceWindowExecutionsResult :: Generic DescribeMaintenanceWindowExecutionsResult _
@@ -3161,20 +3160,20 @@ instance encodeDescribeMaintenanceWindowExecutionsResult :: Encode DescribeMaint
 
 -- | Constructs DescribeMaintenanceWindowExecutionsResult from required parameters
 newDescribeMaintenanceWindowExecutionsResult :: DescribeMaintenanceWindowExecutionsResult
-newDescribeMaintenanceWindowExecutionsResult  = DescribeMaintenanceWindowExecutionsResult { "NextToken": (NullOrUndefined Nothing), "WindowExecutions": (NullOrUndefined Nothing) }
+newDescribeMaintenanceWindowExecutionsResult  = DescribeMaintenanceWindowExecutionsResult { "NextToken": Nothing, "WindowExecutions": Nothing }
 
 -- | Constructs DescribeMaintenanceWindowExecutionsResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeMaintenanceWindowExecutionsResult' :: ( { "WindowExecutions" :: NullOrUndefined (MaintenanceWindowExecutionList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"WindowExecutions" :: NullOrUndefined (MaintenanceWindowExecutionList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribeMaintenanceWindowExecutionsResult
-newDescribeMaintenanceWindowExecutionsResult'  customize = (DescribeMaintenanceWindowExecutionsResult <<< customize) { "NextToken": (NullOrUndefined Nothing), "WindowExecutions": (NullOrUndefined Nothing) }
+newDescribeMaintenanceWindowExecutionsResult' :: ( { "WindowExecutions" :: Maybe (MaintenanceWindowExecutionList) , "NextToken" :: Maybe (NextToken) } -> {"WindowExecutions" :: Maybe (MaintenanceWindowExecutionList) , "NextToken" :: Maybe (NextToken) } ) -> DescribeMaintenanceWindowExecutionsResult
+newDescribeMaintenanceWindowExecutionsResult'  customize = (DescribeMaintenanceWindowExecutionsResult <<< customize) { "NextToken": Nothing, "WindowExecutions": Nothing }
 
 
 
 newtype DescribeMaintenanceWindowTargetsRequest = DescribeMaintenanceWindowTargetsRequest 
   { "WindowId" :: (MaintenanceWindowId)
-  , "Filters" :: NullOrUndefined (MaintenanceWindowFilterList)
-  , "MaxResults" :: NullOrUndefined (MaintenanceWindowMaxResults)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  , "Filters" :: Maybe (MaintenanceWindowFilterList)
+  , "MaxResults" :: Maybe (MaintenanceWindowMaxResults)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeMaintenanceWindowTargetsRequest :: Newtype DescribeMaintenanceWindowTargetsRequest _
 derive instance repGenericDescribeMaintenanceWindowTargetsRequest :: Generic DescribeMaintenanceWindowTargetsRequest _
@@ -3184,18 +3183,18 @@ instance encodeDescribeMaintenanceWindowTargetsRequest :: Encode DescribeMainten
 
 -- | Constructs DescribeMaintenanceWindowTargetsRequest from required parameters
 newDescribeMaintenanceWindowTargetsRequest :: MaintenanceWindowId -> DescribeMaintenanceWindowTargetsRequest
-newDescribeMaintenanceWindowTargetsRequest _WindowId = DescribeMaintenanceWindowTargetsRequest { "WindowId": _WindowId, "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeMaintenanceWindowTargetsRequest _WindowId = DescribeMaintenanceWindowTargetsRequest { "WindowId": _WindowId, "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribeMaintenanceWindowTargetsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeMaintenanceWindowTargetsRequest' :: MaintenanceWindowId -> ( { "WindowId" :: (MaintenanceWindowId) , "Filters" :: NullOrUndefined (MaintenanceWindowFilterList) , "MaxResults" :: NullOrUndefined (MaintenanceWindowMaxResults) , "NextToken" :: NullOrUndefined (NextToken) } -> {"WindowId" :: (MaintenanceWindowId) , "Filters" :: NullOrUndefined (MaintenanceWindowFilterList) , "MaxResults" :: NullOrUndefined (MaintenanceWindowMaxResults) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribeMaintenanceWindowTargetsRequest
-newDescribeMaintenanceWindowTargetsRequest' _WindowId customize = (DescribeMaintenanceWindowTargetsRequest <<< customize) { "WindowId": _WindowId, "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeMaintenanceWindowTargetsRequest' :: MaintenanceWindowId -> ( { "WindowId" :: (MaintenanceWindowId) , "Filters" :: Maybe (MaintenanceWindowFilterList) , "MaxResults" :: Maybe (MaintenanceWindowMaxResults) , "NextToken" :: Maybe (NextToken) } -> {"WindowId" :: (MaintenanceWindowId) , "Filters" :: Maybe (MaintenanceWindowFilterList) , "MaxResults" :: Maybe (MaintenanceWindowMaxResults) , "NextToken" :: Maybe (NextToken) } ) -> DescribeMaintenanceWindowTargetsRequest
+newDescribeMaintenanceWindowTargetsRequest' _WindowId customize = (DescribeMaintenanceWindowTargetsRequest <<< customize) { "WindowId": _WindowId, "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype DescribeMaintenanceWindowTargetsResult = DescribeMaintenanceWindowTargetsResult 
-  { "Targets" :: NullOrUndefined (MaintenanceWindowTargetList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "Targets" :: Maybe (MaintenanceWindowTargetList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeMaintenanceWindowTargetsResult :: Newtype DescribeMaintenanceWindowTargetsResult _
 derive instance repGenericDescribeMaintenanceWindowTargetsResult :: Generic DescribeMaintenanceWindowTargetsResult _
@@ -3205,20 +3204,20 @@ instance encodeDescribeMaintenanceWindowTargetsResult :: Encode DescribeMaintena
 
 -- | Constructs DescribeMaintenanceWindowTargetsResult from required parameters
 newDescribeMaintenanceWindowTargetsResult :: DescribeMaintenanceWindowTargetsResult
-newDescribeMaintenanceWindowTargetsResult  = DescribeMaintenanceWindowTargetsResult { "NextToken": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing) }
+newDescribeMaintenanceWindowTargetsResult  = DescribeMaintenanceWindowTargetsResult { "NextToken": Nothing, "Targets": Nothing }
 
 -- | Constructs DescribeMaintenanceWindowTargetsResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeMaintenanceWindowTargetsResult' :: ( { "Targets" :: NullOrUndefined (MaintenanceWindowTargetList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Targets" :: NullOrUndefined (MaintenanceWindowTargetList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribeMaintenanceWindowTargetsResult
-newDescribeMaintenanceWindowTargetsResult'  customize = (DescribeMaintenanceWindowTargetsResult <<< customize) { "NextToken": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing) }
+newDescribeMaintenanceWindowTargetsResult' :: ( { "Targets" :: Maybe (MaintenanceWindowTargetList) , "NextToken" :: Maybe (NextToken) } -> {"Targets" :: Maybe (MaintenanceWindowTargetList) , "NextToken" :: Maybe (NextToken) } ) -> DescribeMaintenanceWindowTargetsResult
+newDescribeMaintenanceWindowTargetsResult'  customize = (DescribeMaintenanceWindowTargetsResult <<< customize) { "NextToken": Nothing, "Targets": Nothing }
 
 
 
 newtype DescribeMaintenanceWindowTasksRequest = DescribeMaintenanceWindowTasksRequest 
   { "WindowId" :: (MaintenanceWindowId)
-  , "Filters" :: NullOrUndefined (MaintenanceWindowFilterList)
-  , "MaxResults" :: NullOrUndefined (MaintenanceWindowMaxResults)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  , "Filters" :: Maybe (MaintenanceWindowFilterList)
+  , "MaxResults" :: Maybe (MaintenanceWindowMaxResults)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeMaintenanceWindowTasksRequest :: Newtype DescribeMaintenanceWindowTasksRequest _
 derive instance repGenericDescribeMaintenanceWindowTasksRequest :: Generic DescribeMaintenanceWindowTasksRequest _
@@ -3228,18 +3227,18 @@ instance encodeDescribeMaintenanceWindowTasksRequest :: Encode DescribeMaintenan
 
 -- | Constructs DescribeMaintenanceWindowTasksRequest from required parameters
 newDescribeMaintenanceWindowTasksRequest :: MaintenanceWindowId -> DescribeMaintenanceWindowTasksRequest
-newDescribeMaintenanceWindowTasksRequest _WindowId = DescribeMaintenanceWindowTasksRequest { "WindowId": _WindowId, "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeMaintenanceWindowTasksRequest _WindowId = DescribeMaintenanceWindowTasksRequest { "WindowId": _WindowId, "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribeMaintenanceWindowTasksRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeMaintenanceWindowTasksRequest' :: MaintenanceWindowId -> ( { "WindowId" :: (MaintenanceWindowId) , "Filters" :: NullOrUndefined (MaintenanceWindowFilterList) , "MaxResults" :: NullOrUndefined (MaintenanceWindowMaxResults) , "NextToken" :: NullOrUndefined (NextToken) } -> {"WindowId" :: (MaintenanceWindowId) , "Filters" :: NullOrUndefined (MaintenanceWindowFilterList) , "MaxResults" :: NullOrUndefined (MaintenanceWindowMaxResults) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribeMaintenanceWindowTasksRequest
-newDescribeMaintenanceWindowTasksRequest' _WindowId customize = (DescribeMaintenanceWindowTasksRequest <<< customize) { "WindowId": _WindowId, "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeMaintenanceWindowTasksRequest' :: MaintenanceWindowId -> ( { "WindowId" :: (MaintenanceWindowId) , "Filters" :: Maybe (MaintenanceWindowFilterList) , "MaxResults" :: Maybe (MaintenanceWindowMaxResults) , "NextToken" :: Maybe (NextToken) } -> {"WindowId" :: (MaintenanceWindowId) , "Filters" :: Maybe (MaintenanceWindowFilterList) , "MaxResults" :: Maybe (MaintenanceWindowMaxResults) , "NextToken" :: Maybe (NextToken) } ) -> DescribeMaintenanceWindowTasksRequest
+newDescribeMaintenanceWindowTasksRequest' _WindowId customize = (DescribeMaintenanceWindowTasksRequest <<< customize) { "WindowId": _WindowId, "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype DescribeMaintenanceWindowTasksResult = DescribeMaintenanceWindowTasksResult 
-  { "Tasks" :: NullOrUndefined (MaintenanceWindowTaskList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "Tasks" :: Maybe (MaintenanceWindowTaskList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeMaintenanceWindowTasksResult :: Newtype DescribeMaintenanceWindowTasksResult _
 derive instance repGenericDescribeMaintenanceWindowTasksResult :: Generic DescribeMaintenanceWindowTasksResult _
@@ -3249,19 +3248,19 @@ instance encodeDescribeMaintenanceWindowTasksResult :: Encode DescribeMaintenanc
 
 -- | Constructs DescribeMaintenanceWindowTasksResult from required parameters
 newDescribeMaintenanceWindowTasksResult :: DescribeMaintenanceWindowTasksResult
-newDescribeMaintenanceWindowTasksResult  = DescribeMaintenanceWindowTasksResult { "NextToken": (NullOrUndefined Nothing), "Tasks": (NullOrUndefined Nothing) }
+newDescribeMaintenanceWindowTasksResult  = DescribeMaintenanceWindowTasksResult { "NextToken": Nothing, "Tasks": Nothing }
 
 -- | Constructs DescribeMaintenanceWindowTasksResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeMaintenanceWindowTasksResult' :: ( { "Tasks" :: NullOrUndefined (MaintenanceWindowTaskList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Tasks" :: NullOrUndefined (MaintenanceWindowTaskList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribeMaintenanceWindowTasksResult
-newDescribeMaintenanceWindowTasksResult'  customize = (DescribeMaintenanceWindowTasksResult <<< customize) { "NextToken": (NullOrUndefined Nothing), "Tasks": (NullOrUndefined Nothing) }
+newDescribeMaintenanceWindowTasksResult' :: ( { "Tasks" :: Maybe (MaintenanceWindowTaskList) , "NextToken" :: Maybe (NextToken) } -> {"Tasks" :: Maybe (MaintenanceWindowTaskList) , "NextToken" :: Maybe (NextToken) } ) -> DescribeMaintenanceWindowTasksResult
+newDescribeMaintenanceWindowTasksResult'  customize = (DescribeMaintenanceWindowTasksResult <<< customize) { "NextToken": Nothing, "Tasks": Nothing }
 
 
 
 newtype DescribeMaintenanceWindowsRequest = DescribeMaintenanceWindowsRequest 
-  { "Filters" :: NullOrUndefined (MaintenanceWindowFilterList)
-  , "MaxResults" :: NullOrUndefined (MaintenanceWindowMaxResults)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "Filters" :: Maybe (MaintenanceWindowFilterList)
+  , "MaxResults" :: Maybe (MaintenanceWindowMaxResults)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeMaintenanceWindowsRequest :: Newtype DescribeMaintenanceWindowsRequest _
 derive instance repGenericDescribeMaintenanceWindowsRequest :: Generic DescribeMaintenanceWindowsRequest _
@@ -3271,18 +3270,18 @@ instance encodeDescribeMaintenanceWindowsRequest :: Encode DescribeMaintenanceWi
 
 -- | Constructs DescribeMaintenanceWindowsRequest from required parameters
 newDescribeMaintenanceWindowsRequest :: DescribeMaintenanceWindowsRequest
-newDescribeMaintenanceWindowsRequest  = DescribeMaintenanceWindowsRequest { "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeMaintenanceWindowsRequest  = DescribeMaintenanceWindowsRequest { "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribeMaintenanceWindowsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeMaintenanceWindowsRequest' :: ( { "Filters" :: NullOrUndefined (MaintenanceWindowFilterList) , "MaxResults" :: NullOrUndefined (MaintenanceWindowMaxResults) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Filters" :: NullOrUndefined (MaintenanceWindowFilterList) , "MaxResults" :: NullOrUndefined (MaintenanceWindowMaxResults) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribeMaintenanceWindowsRequest
-newDescribeMaintenanceWindowsRequest'  customize = (DescribeMaintenanceWindowsRequest <<< customize) { "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeMaintenanceWindowsRequest' :: ( { "Filters" :: Maybe (MaintenanceWindowFilterList) , "MaxResults" :: Maybe (MaintenanceWindowMaxResults) , "NextToken" :: Maybe (NextToken) } -> {"Filters" :: Maybe (MaintenanceWindowFilterList) , "MaxResults" :: Maybe (MaintenanceWindowMaxResults) , "NextToken" :: Maybe (NextToken) } ) -> DescribeMaintenanceWindowsRequest
+newDescribeMaintenanceWindowsRequest'  customize = (DescribeMaintenanceWindowsRequest <<< customize) { "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype DescribeMaintenanceWindowsResult = DescribeMaintenanceWindowsResult 
-  { "WindowIdentities" :: NullOrUndefined (MaintenanceWindowIdentityList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "WindowIdentities" :: Maybe (MaintenanceWindowIdentityList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeMaintenanceWindowsResult :: Newtype DescribeMaintenanceWindowsResult _
 derive instance repGenericDescribeMaintenanceWindowsResult :: Generic DescribeMaintenanceWindowsResult _
@@ -3292,20 +3291,20 @@ instance encodeDescribeMaintenanceWindowsResult :: Encode DescribeMaintenanceWin
 
 -- | Constructs DescribeMaintenanceWindowsResult from required parameters
 newDescribeMaintenanceWindowsResult :: DescribeMaintenanceWindowsResult
-newDescribeMaintenanceWindowsResult  = DescribeMaintenanceWindowsResult { "NextToken": (NullOrUndefined Nothing), "WindowIdentities": (NullOrUndefined Nothing) }
+newDescribeMaintenanceWindowsResult  = DescribeMaintenanceWindowsResult { "NextToken": Nothing, "WindowIdentities": Nothing }
 
 -- | Constructs DescribeMaintenanceWindowsResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeMaintenanceWindowsResult' :: ( { "WindowIdentities" :: NullOrUndefined (MaintenanceWindowIdentityList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"WindowIdentities" :: NullOrUndefined (MaintenanceWindowIdentityList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribeMaintenanceWindowsResult
-newDescribeMaintenanceWindowsResult'  customize = (DescribeMaintenanceWindowsResult <<< customize) { "NextToken": (NullOrUndefined Nothing), "WindowIdentities": (NullOrUndefined Nothing) }
+newDescribeMaintenanceWindowsResult' :: ( { "WindowIdentities" :: Maybe (MaintenanceWindowIdentityList) , "NextToken" :: Maybe (NextToken) } -> {"WindowIdentities" :: Maybe (MaintenanceWindowIdentityList) , "NextToken" :: Maybe (NextToken) } ) -> DescribeMaintenanceWindowsResult
+newDescribeMaintenanceWindowsResult'  customize = (DescribeMaintenanceWindowsResult <<< customize) { "NextToken": Nothing, "WindowIdentities": Nothing }
 
 
 
 newtype DescribeParametersRequest = DescribeParametersRequest 
-  { "Filters" :: NullOrUndefined (ParametersFilterList)
-  , "ParameterFilters" :: NullOrUndefined (ParameterStringFilterList)
-  , "MaxResults" :: NullOrUndefined (MaxResults)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "Filters" :: Maybe (ParametersFilterList)
+  , "ParameterFilters" :: Maybe (ParameterStringFilterList)
+  , "MaxResults" :: Maybe (MaxResults)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeParametersRequest :: Newtype DescribeParametersRequest _
 derive instance repGenericDescribeParametersRequest :: Generic DescribeParametersRequest _
@@ -3315,18 +3314,18 @@ instance encodeDescribeParametersRequest :: Encode DescribeParametersRequest whe
 
 -- | Constructs DescribeParametersRequest from required parameters
 newDescribeParametersRequest :: DescribeParametersRequest
-newDescribeParametersRequest  = DescribeParametersRequest { "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "ParameterFilters": (NullOrUndefined Nothing) }
+newDescribeParametersRequest  = DescribeParametersRequest { "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing, "ParameterFilters": Nothing }
 
 -- | Constructs DescribeParametersRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeParametersRequest' :: ( { "Filters" :: NullOrUndefined (ParametersFilterList) , "ParameterFilters" :: NullOrUndefined (ParameterStringFilterList) , "MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Filters" :: NullOrUndefined (ParametersFilterList) , "ParameterFilters" :: NullOrUndefined (ParameterStringFilterList) , "MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribeParametersRequest
-newDescribeParametersRequest'  customize = (DescribeParametersRequest <<< customize) { "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "ParameterFilters": (NullOrUndefined Nothing) }
+newDescribeParametersRequest' :: ( { "Filters" :: Maybe (ParametersFilterList) , "ParameterFilters" :: Maybe (ParameterStringFilterList) , "MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (NextToken) } -> {"Filters" :: Maybe (ParametersFilterList) , "ParameterFilters" :: Maybe (ParameterStringFilterList) , "MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (NextToken) } ) -> DescribeParametersRequest
+newDescribeParametersRequest'  customize = (DescribeParametersRequest <<< customize) { "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing, "ParameterFilters": Nothing }
 
 
 
 newtype DescribeParametersResult = DescribeParametersResult 
-  { "Parameters" :: NullOrUndefined (ParameterMetadataList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "Parameters" :: Maybe (ParameterMetadataList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribeParametersResult :: Newtype DescribeParametersResult _
 derive instance repGenericDescribeParametersResult :: Generic DescribeParametersResult _
@@ -3336,19 +3335,19 @@ instance encodeDescribeParametersResult :: Encode DescribeParametersResult where
 
 -- | Constructs DescribeParametersResult from required parameters
 newDescribeParametersResult :: DescribeParametersResult
-newDescribeParametersResult  = DescribeParametersResult { "NextToken": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing) }
+newDescribeParametersResult  = DescribeParametersResult { "NextToken": Nothing, "Parameters": Nothing }
 
 -- | Constructs DescribeParametersResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeParametersResult' :: ( { "Parameters" :: NullOrUndefined (ParameterMetadataList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Parameters" :: NullOrUndefined (ParameterMetadataList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribeParametersResult
-newDescribeParametersResult'  customize = (DescribeParametersResult <<< customize) { "NextToken": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing) }
+newDescribeParametersResult' :: ( { "Parameters" :: Maybe (ParameterMetadataList) , "NextToken" :: Maybe (NextToken) } -> {"Parameters" :: Maybe (ParameterMetadataList) , "NextToken" :: Maybe (NextToken) } ) -> DescribeParametersResult
+newDescribeParametersResult'  customize = (DescribeParametersResult <<< customize) { "NextToken": Nothing, "Parameters": Nothing }
 
 
 
 newtype DescribePatchBaselinesRequest = DescribePatchBaselinesRequest 
-  { "Filters" :: NullOrUndefined (PatchOrchestratorFilterList)
-  , "MaxResults" :: NullOrUndefined (PatchBaselineMaxResults)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "Filters" :: Maybe (PatchOrchestratorFilterList)
+  , "MaxResults" :: Maybe (PatchBaselineMaxResults)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribePatchBaselinesRequest :: Newtype DescribePatchBaselinesRequest _
 derive instance repGenericDescribePatchBaselinesRequest :: Generic DescribePatchBaselinesRequest _
@@ -3358,18 +3357,18 @@ instance encodeDescribePatchBaselinesRequest :: Encode DescribePatchBaselinesReq
 
 -- | Constructs DescribePatchBaselinesRequest from required parameters
 newDescribePatchBaselinesRequest :: DescribePatchBaselinesRequest
-newDescribePatchBaselinesRequest  = DescribePatchBaselinesRequest { "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribePatchBaselinesRequest  = DescribePatchBaselinesRequest { "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribePatchBaselinesRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribePatchBaselinesRequest' :: ( { "Filters" :: NullOrUndefined (PatchOrchestratorFilterList) , "MaxResults" :: NullOrUndefined (PatchBaselineMaxResults) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Filters" :: NullOrUndefined (PatchOrchestratorFilterList) , "MaxResults" :: NullOrUndefined (PatchBaselineMaxResults) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribePatchBaselinesRequest
-newDescribePatchBaselinesRequest'  customize = (DescribePatchBaselinesRequest <<< customize) { "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribePatchBaselinesRequest' :: ( { "Filters" :: Maybe (PatchOrchestratorFilterList) , "MaxResults" :: Maybe (PatchBaselineMaxResults) , "NextToken" :: Maybe (NextToken) } -> {"Filters" :: Maybe (PatchOrchestratorFilterList) , "MaxResults" :: Maybe (PatchBaselineMaxResults) , "NextToken" :: Maybe (NextToken) } ) -> DescribePatchBaselinesRequest
+newDescribePatchBaselinesRequest'  customize = (DescribePatchBaselinesRequest <<< customize) { "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype DescribePatchBaselinesResult = DescribePatchBaselinesResult 
-  { "BaselineIdentities" :: NullOrUndefined (PatchBaselineIdentityList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "BaselineIdentities" :: Maybe (PatchBaselineIdentityList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribePatchBaselinesResult :: Newtype DescribePatchBaselinesResult _
 derive instance repGenericDescribePatchBaselinesResult :: Generic DescribePatchBaselinesResult _
@@ -3379,12 +3378,12 @@ instance encodeDescribePatchBaselinesResult :: Encode DescribePatchBaselinesResu
 
 -- | Constructs DescribePatchBaselinesResult from required parameters
 newDescribePatchBaselinesResult :: DescribePatchBaselinesResult
-newDescribePatchBaselinesResult  = DescribePatchBaselinesResult { "BaselineIdentities": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribePatchBaselinesResult  = DescribePatchBaselinesResult { "BaselineIdentities": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribePatchBaselinesResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribePatchBaselinesResult' :: ( { "BaselineIdentities" :: NullOrUndefined (PatchBaselineIdentityList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"BaselineIdentities" :: NullOrUndefined (PatchBaselineIdentityList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribePatchBaselinesResult
-newDescribePatchBaselinesResult'  customize = (DescribePatchBaselinesResult <<< customize) { "BaselineIdentities": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribePatchBaselinesResult' :: ( { "BaselineIdentities" :: Maybe (PatchBaselineIdentityList) , "NextToken" :: Maybe (NextToken) } -> {"BaselineIdentities" :: Maybe (PatchBaselineIdentityList) , "NextToken" :: Maybe (NextToken) } ) -> DescribePatchBaselinesResult
+newDescribePatchBaselinesResult'  customize = (DescribePatchBaselinesResult <<< customize) { "BaselineIdentities": Nothing, "NextToken": Nothing }
 
 
 
@@ -3409,12 +3408,12 @@ newDescribePatchGroupStateRequest' _PatchGroup customize = (DescribePatchGroupSt
 
 
 newtype DescribePatchGroupStateResult = DescribePatchGroupStateResult 
-  { "Instances" :: NullOrUndefined (Int)
-  , "InstancesWithInstalledPatches" :: NullOrUndefined (Int)
-  , "InstancesWithInstalledOtherPatches" :: NullOrUndefined (Int)
-  , "InstancesWithMissingPatches" :: NullOrUndefined (Int)
-  , "InstancesWithFailedPatches" :: NullOrUndefined (Int)
-  , "InstancesWithNotApplicablePatches" :: NullOrUndefined (Int)
+  { "Instances" :: Maybe (Int)
+  , "InstancesWithInstalledPatches" :: Maybe (Int)
+  , "InstancesWithInstalledOtherPatches" :: Maybe (Int)
+  , "InstancesWithMissingPatches" :: Maybe (Int)
+  , "InstancesWithFailedPatches" :: Maybe (Int)
+  , "InstancesWithNotApplicablePatches" :: Maybe (Int)
   }
 derive instance newtypeDescribePatchGroupStateResult :: Newtype DescribePatchGroupStateResult _
 derive instance repGenericDescribePatchGroupStateResult :: Generic DescribePatchGroupStateResult _
@@ -3424,19 +3423,19 @@ instance encodeDescribePatchGroupStateResult :: Encode DescribePatchGroupStateRe
 
 -- | Constructs DescribePatchGroupStateResult from required parameters
 newDescribePatchGroupStateResult :: DescribePatchGroupStateResult
-newDescribePatchGroupStateResult  = DescribePatchGroupStateResult { "Instances": (NullOrUndefined Nothing), "InstancesWithFailedPatches": (NullOrUndefined Nothing), "InstancesWithInstalledOtherPatches": (NullOrUndefined Nothing), "InstancesWithInstalledPatches": (NullOrUndefined Nothing), "InstancesWithMissingPatches": (NullOrUndefined Nothing), "InstancesWithNotApplicablePatches": (NullOrUndefined Nothing) }
+newDescribePatchGroupStateResult  = DescribePatchGroupStateResult { "Instances": Nothing, "InstancesWithFailedPatches": Nothing, "InstancesWithInstalledOtherPatches": Nothing, "InstancesWithInstalledPatches": Nothing, "InstancesWithMissingPatches": Nothing, "InstancesWithNotApplicablePatches": Nothing }
 
 -- | Constructs DescribePatchGroupStateResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribePatchGroupStateResult' :: ( { "Instances" :: NullOrUndefined (Int) , "InstancesWithInstalledPatches" :: NullOrUndefined (Int) , "InstancesWithInstalledOtherPatches" :: NullOrUndefined (Int) , "InstancesWithMissingPatches" :: NullOrUndefined (Int) , "InstancesWithFailedPatches" :: NullOrUndefined (Int) , "InstancesWithNotApplicablePatches" :: NullOrUndefined (Int) } -> {"Instances" :: NullOrUndefined (Int) , "InstancesWithInstalledPatches" :: NullOrUndefined (Int) , "InstancesWithInstalledOtherPatches" :: NullOrUndefined (Int) , "InstancesWithMissingPatches" :: NullOrUndefined (Int) , "InstancesWithFailedPatches" :: NullOrUndefined (Int) , "InstancesWithNotApplicablePatches" :: NullOrUndefined (Int) } ) -> DescribePatchGroupStateResult
-newDescribePatchGroupStateResult'  customize = (DescribePatchGroupStateResult <<< customize) { "Instances": (NullOrUndefined Nothing), "InstancesWithFailedPatches": (NullOrUndefined Nothing), "InstancesWithInstalledOtherPatches": (NullOrUndefined Nothing), "InstancesWithInstalledPatches": (NullOrUndefined Nothing), "InstancesWithMissingPatches": (NullOrUndefined Nothing), "InstancesWithNotApplicablePatches": (NullOrUndefined Nothing) }
+newDescribePatchGroupStateResult' :: ( { "Instances" :: Maybe (Int) , "InstancesWithInstalledPatches" :: Maybe (Int) , "InstancesWithInstalledOtherPatches" :: Maybe (Int) , "InstancesWithMissingPatches" :: Maybe (Int) , "InstancesWithFailedPatches" :: Maybe (Int) , "InstancesWithNotApplicablePatches" :: Maybe (Int) } -> {"Instances" :: Maybe (Int) , "InstancesWithInstalledPatches" :: Maybe (Int) , "InstancesWithInstalledOtherPatches" :: Maybe (Int) , "InstancesWithMissingPatches" :: Maybe (Int) , "InstancesWithFailedPatches" :: Maybe (Int) , "InstancesWithNotApplicablePatches" :: Maybe (Int) } ) -> DescribePatchGroupStateResult
+newDescribePatchGroupStateResult'  customize = (DescribePatchGroupStateResult <<< customize) { "Instances": Nothing, "InstancesWithFailedPatches": Nothing, "InstancesWithInstalledOtherPatches": Nothing, "InstancesWithInstalledPatches": Nothing, "InstancesWithMissingPatches": Nothing, "InstancesWithNotApplicablePatches": Nothing }
 
 
 
 newtype DescribePatchGroupsRequest = DescribePatchGroupsRequest 
-  { "MaxResults" :: NullOrUndefined (PatchBaselineMaxResults)
-  , "Filters" :: NullOrUndefined (PatchOrchestratorFilterList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "MaxResults" :: Maybe (PatchBaselineMaxResults)
+  , "Filters" :: Maybe (PatchOrchestratorFilterList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribePatchGroupsRequest :: Newtype DescribePatchGroupsRequest _
 derive instance repGenericDescribePatchGroupsRequest :: Generic DescribePatchGroupsRequest _
@@ -3446,18 +3445,18 @@ instance encodeDescribePatchGroupsRequest :: Encode DescribePatchGroupsRequest w
 
 -- | Constructs DescribePatchGroupsRequest from required parameters
 newDescribePatchGroupsRequest :: DescribePatchGroupsRequest
-newDescribePatchGroupsRequest  = DescribePatchGroupsRequest { "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribePatchGroupsRequest  = DescribePatchGroupsRequest { "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribePatchGroupsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribePatchGroupsRequest' :: ( { "MaxResults" :: NullOrUndefined (PatchBaselineMaxResults) , "Filters" :: NullOrUndefined (PatchOrchestratorFilterList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"MaxResults" :: NullOrUndefined (PatchBaselineMaxResults) , "Filters" :: NullOrUndefined (PatchOrchestratorFilterList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribePatchGroupsRequest
-newDescribePatchGroupsRequest'  customize = (DescribePatchGroupsRequest <<< customize) { "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribePatchGroupsRequest' :: ( { "MaxResults" :: Maybe (PatchBaselineMaxResults) , "Filters" :: Maybe (PatchOrchestratorFilterList) , "NextToken" :: Maybe (NextToken) } -> {"MaxResults" :: Maybe (PatchBaselineMaxResults) , "Filters" :: Maybe (PatchOrchestratorFilterList) , "NextToken" :: Maybe (NextToken) } ) -> DescribePatchGroupsRequest
+newDescribePatchGroupsRequest'  customize = (DescribePatchGroupsRequest <<< customize) { "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype DescribePatchGroupsResult = DescribePatchGroupsResult 
-  { "Mappings" :: NullOrUndefined (PatchGroupPatchBaselineMappingList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "Mappings" :: Maybe (PatchGroupPatchBaselineMappingList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeDescribePatchGroupsResult :: Newtype DescribePatchGroupsResult _
 derive instance repGenericDescribePatchGroupsResult :: Generic DescribePatchGroupsResult _
@@ -3467,12 +3466,12 @@ instance encodeDescribePatchGroupsResult :: Encode DescribePatchGroupsResult whe
 
 -- | Constructs DescribePatchGroupsResult from required parameters
 newDescribePatchGroupsResult :: DescribePatchGroupsResult
-newDescribePatchGroupsResult  = DescribePatchGroupsResult { "Mappings": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribePatchGroupsResult  = DescribePatchGroupsResult { "Mappings": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribePatchGroupsResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribePatchGroupsResult' :: ( { "Mappings" :: NullOrUndefined (PatchGroupPatchBaselineMappingList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Mappings" :: NullOrUndefined (PatchGroupPatchBaselineMappingList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> DescribePatchGroupsResult
-newDescribePatchGroupsResult'  customize = (DescribePatchGroupsResult <<< customize) { "Mappings": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribePatchGroupsResult' :: ( { "Mappings" :: Maybe (PatchGroupPatchBaselineMappingList) , "NextToken" :: Maybe (NextToken) } -> {"Mappings" :: Maybe (PatchGroupPatchBaselineMappingList) , "NextToken" :: Maybe (NextToken) } ) -> DescribePatchGroupsResult
+newDescribePatchGroupsResult'  customize = (DescribePatchGroupsResult <<< customize) { "Mappings": Nothing, "NextToken": Nothing }
 
 
 
@@ -3496,7 +3495,7 @@ instance encodeDocumentARN :: Encode DocumentARN where encode = genericEncode op
 
 -- | <p>The specified document already exists.</p>
 newtype DocumentAlreadyExists = DocumentAlreadyExists 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeDocumentAlreadyExists :: Newtype DocumentAlreadyExists _
 derive instance repGenericDocumentAlreadyExists :: Generic DocumentAlreadyExists _
@@ -3506,12 +3505,12 @@ instance encodeDocumentAlreadyExists :: Encode DocumentAlreadyExists where encod
 
 -- | Constructs DocumentAlreadyExists from required parameters
 newDocumentAlreadyExists :: DocumentAlreadyExists
-newDocumentAlreadyExists  = DocumentAlreadyExists { "Message": (NullOrUndefined Nothing) }
+newDocumentAlreadyExists  = DocumentAlreadyExists { "Message": Nothing }
 
 -- | Constructs DocumentAlreadyExists's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDocumentAlreadyExists' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> DocumentAlreadyExists
-newDocumentAlreadyExists'  customize = (DocumentAlreadyExists <<< customize) { "Message": (NullOrUndefined Nothing) }
+newDocumentAlreadyExists' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> DocumentAlreadyExists
+newDocumentAlreadyExists'  customize = (DocumentAlreadyExists <<< customize) { "Message": Nothing }
 
 
 
@@ -3526,8 +3525,8 @@ instance encodeDocumentContent :: Encode DocumentContent where encode = genericE
 
 -- | <p>A default version of a document.</p>
 newtype DocumentDefaultVersionDescription = DocumentDefaultVersionDescription 
-  { "Name" :: NullOrUndefined (DocumentName)
-  , "DefaultVersion" :: NullOrUndefined (DocumentVersion)
+  { "Name" :: Maybe (DocumentName)
+  , "DefaultVersion" :: Maybe (DocumentVersion)
   }
 derive instance newtypeDocumentDefaultVersionDescription :: Newtype DocumentDefaultVersionDescription _
 derive instance repGenericDocumentDefaultVersionDescription :: Generic DocumentDefaultVersionDescription _
@@ -3537,35 +3536,35 @@ instance encodeDocumentDefaultVersionDescription :: Encode DocumentDefaultVersio
 
 -- | Constructs DocumentDefaultVersionDescription from required parameters
 newDocumentDefaultVersionDescription :: DocumentDefaultVersionDescription
-newDocumentDefaultVersionDescription  = DocumentDefaultVersionDescription { "DefaultVersion": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newDocumentDefaultVersionDescription  = DocumentDefaultVersionDescription { "DefaultVersion": Nothing, "Name": Nothing }
 
 -- | Constructs DocumentDefaultVersionDescription's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDocumentDefaultVersionDescription' :: ( { "Name" :: NullOrUndefined (DocumentName) , "DefaultVersion" :: NullOrUndefined (DocumentVersion) } -> {"Name" :: NullOrUndefined (DocumentName) , "DefaultVersion" :: NullOrUndefined (DocumentVersion) } ) -> DocumentDefaultVersionDescription
-newDocumentDefaultVersionDescription'  customize = (DocumentDefaultVersionDescription <<< customize) { "DefaultVersion": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newDocumentDefaultVersionDescription' :: ( { "Name" :: Maybe (DocumentName) , "DefaultVersion" :: Maybe (DocumentVersion) } -> {"Name" :: Maybe (DocumentName) , "DefaultVersion" :: Maybe (DocumentVersion) } ) -> DocumentDefaultVersionDescription
+newDocumentDefaultVersionDescription'  customize = (DocumentDefaultVersionDescription <<< customize) { "DefaultVersion": Nothing, "Name": Nothing }
 
 
 
 -- | <p>Describes a Systems Manager document. </p>
 newtype DocumentDescription = DocumentDescription 
-  { "Sha1" :: NullOrUndefined (DocumentSha1)
-  , "Hash" :: NullOrUndefined (DocumentHash)
-  , "HashType" :: NullOrUndefined (DocumentHashType)
-  , "Name" :: NullOrUndefined (DocumentARN)
-  , "Owner" :: NullOrUndefined (DocumentOwner)
-  , "CreatedDate" :: NullOrUndefined (DateTime)
-  , "Status" :: NullOrUndefined (DocumentStatus)
-  , "DocumentVersion" :: NullOrUndefined (DocumentVersion)
-  , "Description" :: NullOrUndefined (DescriptionInDocument)
-  , "Parameters" :: NullOrUndefined (DocumentParameterList)
-  , "PlatformTypes" :: NullOrUndefined (PlatformTypeList)
-  , "DocumentType" :: NullOrUndefined (DocumentType)
-  , "SchemaVersion" :: NullOrUndefined (DocumentSchemaVersion)
-  , "LatestVersion" :: NullOrUndefined (DocumentVersion)
-  , "DefaultVersion" :: NullOrUndefined (DocumentVersion)
-  , "DocumentFormat" :: NullOrUndefined (DocumentFormat)
-  , "TargetType" :: NullOrUndefined (TargetType)
-  , "Tags" :: NullOrUndefined (TagList)
+  { "Sha1" :: Maybe (DocumentSha1)
+  , "Hash" :: Maybe (DocumentHash)
+  , "HashType" :: Maybe (DocumentHashType)
+  , "Name" :: Maybe (DocumentARN)
+  , "Owner" :: Maybe (DocumentOwner)
+  , "CreatedDate" :: Maybe (DateTime)
+  , "Status" :: Maybe (DocumentStatus)
+  , "DocumentVersion" :: Maybe (DocumentVersion)
+  , "Description" :: Maybe (DescriptionInDocument)
+  , "Parameters" :: Maybe (DocumentParameterList)
+  , "PlatformTypes" :: Maybe (PlatformTypeList)
+  , "DocumentType" :: Maybe (DocumentType)
+  , "SchemaVersion" :: Maybe (DocumentSchemaVersion)
+  , "LatestVersion" :: Maybe (DocumentVersion)
+  , "DefaultVersion" :: Maybe (DocumentVersion)
+  , "DocumentFormat" :: Maybe (DocumentFormat)
+  , "TargetType" :: Maybe (TargetType)
+  , "Tags" :: Maybe (TagList)
   }
 derive instance newtypeDocumentDescription :: Newtype DocumentDescription _
 derive instance repGenericDocumentDescription :: Generic DocumentDescription _
@@ -3575,12 +3574,12 @@ instance encodeDocumentDescription :: Encode DocumentDescription where encode = 
 
 -- | Constructs DocumentDescription from required parameters
 newDocumentDescription :: DocumentDescription
-newDocumentDescription  = DocumentDescription { "CreatedDate": (NullOrUndefined Nothing), "DefaultVersion": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "DocumentFormat": (NullOrUndefined Nothing), "DocumentType": (NullOrUndefined Nothing), "DocumentVersion": (NullOrUndefined Nothing), "Hash": (NullOrUndefined Nothing), "HashType": (NullOrUndefined Nothing), "LatestVersion": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Owner": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing), "PlatformTypes": (NullOrUndefined Nothing), "SchemaVersion": (NullOrUndefined Nothing), "Sha1": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing), "TargetType": (NullOrUndefined Nothing) }
+newDocumentDescription  = DocumentDescription { "CreatedDate": Nothing, "DefaultVersion": Nothing, "Description": Nothing, "DocumentFormat": Nothing, "DocumentType": Nothing, "DocumentVersion": Nothing, "Hash": Nothing, "HashType": Nothing, "LatestVersion": Nothing, "Name": Nothing, "Owner": Nothing, "Parameters": Nothing, "PlatformTypes": Nothing, "SchemaVersion": Nothing, "Sha1": Nothing, "Status": Nothing, "Tags": Nothing, "TargetType": Nothing }
 
 -- | Constructs DocumentDescription's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDocumentDescription' :: ( { "Sha1" :: NullOrUndefined (DocumentSha1) , "Hash" :: NullOrUndefined (DocumentHash) , "HashType" :: NullOrUndefined (DocumentHashType) , "Name" :: NullOrUndefined (DocumentARN) , "Owner" :: NullOrUndefined (DocumentOwner) , "CreatedDate" :: NullOrUndefined (DateTime) , "Status" :: NullOrUndefined (DocumentStatus) , "DocumentVersion" :: NullOrUndefined (DocumentVersion) , "Description" :: NullOrUndefined (DescriptionInDocument) , "Parameters" :: NullOrUndefined (DocumentParameterList) , "PlatformTypes" :: NullOrUndefined (PlatformTypeList) , "DocumentType" :: NullOrUndefined (DocumentType) , "SchemaVersion" :: NullOrUndefined (DocumentSchemaVersion) , "LatestVersion" :: NullOrUndefined (DocumentVersion) , "DefaultVersion" :: NullOrUndefined (DocumentVersion) , "DocumentFormat" :: NullOrUndefined (DocumentFormat) , "TargetType" :: NullOrUndefined (TargetType) , "Tags" :: NullOrUndefined (TagList) } -> {"Sha1" :: NullOrUndefined (DocumentSha1) , "Hash" :: NullOrUndefined (DocumentHash) , "HashType" :: NullOrUndefined (DocumentHashType) , "Name" :: NullOrUndefined (DocumentARN) , "Owner" :: NullOrUndefined (DocumentOwner) , "CreatedDate" :: NullOrUndefined (DateTime) , "Status" :: NullOrUndefined (DocumentStatus) , "DocumentVersion" :: NullOrUndefined (DocumentVersion) , "Description" :: NullOrUndefined (DescriptionInDocument) , "Parameters" :: NullOrUndefined (DocumentParameterList) , "PlatformTypes" :: NullOrUndefined (PlatformTypeList) , "DocumentType" :: NullOrUndefined (DocumentType) , "SchemaVersion" :: NullOrUndefined (DocumentSchemaVersion) , "LatestVersion" :: NullOrUndefined (DocumentVersion) , "DefaultVersion" :: NullOrUndefined (DocumentVersion) , "DocumentFormat" :: NullOrUndefined (DocumentFormat) , "TargetType" :: NullOrUndefined (TargetType) , "Tags" :: NullOrUndefined (TagList) } ) -> DocumentDescription
-newDocumentDescription'  customize = (DocumentDescription <<< customize) { "CreatedDate": (NullOrUndefined Nothing), "DefaultVersion": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "DocumentFormat": (NullOrUndefined Nothing), "DocumentType": (NullOrUndefined Nothing), "DocumentVersion": (NullOrUndefined Nothing), "Hash": (NullOrUndefined Nothing), "HashType": (NullOrUndefined Nothing), "LatestVersion": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Owner": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing), "PlatformTypes": (NullOrUndefined Nothing), "SchemaVersion": (NullOrUndefined Nothing), "Sha1": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing), "TargetType": (NullOrUndefined Nothing) }
+newDocumentDescription' :: ( { "Sha1" :: Maybe (DocumentSha1) , "Hash" :: Maybe (DocumentHash) , "HashType" :: Maybe (DocumentHashType) , "Name" :: Maybe (DocumentARN) , "Owner" :: Maybe (DocumentOwner) , "CreatedDate" :: Maybe (DateTime) , "Status" :: Maybe (DocumentStatus) , "DocumentVersion" :: Maybe (DocumentVersion) , "Description" :: Maybe (DescriptionInDocument) , "Parameters" :: Maybe (DocumentParameterList) , "PlatformTypes" :: Maybe (PlatformTypeList) , "DocumentType" :: Maybe (DocumentType) , "SchemaVersion" :: Maybe (DocumentSchemaVersion) , "LatestVersion" :: Maybe (DocumentVersion) , "DefaultVersion" :: Maybe (DocumentVersion) , "DocumentFormat" :: Maybe (DocumentFormat) , "TargetType" :: Maybe (TargetType) , "Tags" :: Maybe (TagList) } -> {"Sha1" :: Maybe (DocumentSha1) , "Hash" :: Maybe (DocumentHash) , "HashType" :: Maybe (DocumentHashType) , "Name" :: Maybe (DocumentARN) , "Owner" :: Maybe (DocumentOwner) , "CreatedDate" :: Maybe (DateTime) , "Status" :: Maybe (DocumentStatus) , "DocumentVersion" :: Maybe (DocumentVersion) , "Description" :: Maybe (DescriptionInDocument) , "Parameters" :: Maybe (DocumentParameterList) , "PlatformTypes" :: Maybe (PlatformTypeList) , "DocumentType" :: Maybe (DocumentType) , "SchemaVersion" :: Maybe (DocumentSchemaVersion) , "LatestVersion" :: Maybe (DocumentVersion) , "DefaultVersion" :: Maybe (DocumentVersion) , "DocumentFormat" :: Maybe (DocumentFormat) , "TargetType" :: Maybe (TargetType) , "Tags" :: Maybe (TagList) } ) -> DocumentDescription
+newDocumentDescription'  customize = (DocumentDescription <<< customize) { "CreatedDate": Nothing, "DefaultVersion": Nothing, "Description": Nothing, "DocumentFormat": Nothing, "DocumentType": Nothing, "DocumentVersion": Nothing, "Hash": Nothing, "HashType": Nothing, "LatestVersion": Nothing, "Name": Nothing, "Owner": Nothing, "Parameters": Nothing, "PlatformTypes": Nothing, "SchemaVersion": Nothing, "Sha1": Nothing, "Status": Nothing, "Tags": Nothing, "TargetType": Nothing }
 
 
 
@@ -3662,15 +3661,15 @@ instance encodeDocumentHashType :: Encode DocumentHashType where encode = generi
 
 -- | <p>Describes the name of a Systems Manager document.</p>
 newtype DocumentIdentifier = DocumentIdentifier 
-  { "Name" :: NullOrUndefined (DocumentARN)
-  , "Owner" :: NullOrUndefined (DocumentOwner)
-  , "PlatformTypes" :: NullOrUndefined (PlatformTypeList)
-  , "DocumentVersion" :: NullOrUndefined (DocumentVersion)
-  , "DocumentType" :: NullOrUndefined (DocumentType)
-  , "SchemaVersion" :: NullOrUndefined (DocumentSchemaVersion)
-  , "DocumentFormat" :: NullOrUndefined (DocumentFormat)
-  , "TargetType" :: NullOrUndefined (TargetType)
-  , "Tags" :: NullOrUndefined (TagList)
+  { "Name" :: Maybe (DocumentARN)
+  , "Owner" :: Maybe (DocumentOwner)
+  , "PlatformTypes" :: Maybe (PlatformTypeList)
+  , "DocumentVersion" :: Maybe (DocumentVersion)
+  , "DocumentType" :: Maybe (DocumentType)
+  , "SchemaVersion" :: Maybe (DocumentSchemaVersion)
+  , "DocumentFormat" :: Maybe (DocumentFormat)
+  , "TargetType" :: Maybe (TargetType)
+  , "Tags" :: Maybe (TagList)
   }
 derive instance newtypeDocumentIdentifier :: Newtype DocumentIdentifier _
 derive instance repGenericDocumentIdentifier :: Generic DocumentIdentifier _
@@ -3680,12 +3679,12 @@ instance encodeDocumentIdentifier :: Encode DocumentIdentifier where encode = ge
 
 -- | Constructs DocumentIdentifier from required parameters
 newDocumentIdentifier :: DocumentIdentifier
-newDocumentIdentifier  = DocumentIdentifier { "DocumentFormat": (NullOrUndefined Nothing), "DocumentType": (NullOrUndefined Nothing), "DocumentVersion": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Owner": (NullOrUndefined Nothing), "PlatformTypes": (NullOrUndefined Nothing), "SchemaVersion": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing), "TargetType": (NullOrUndefined Nothing) }
+newDocumentIdentifier  = DocumentIdentifier { "DocumentFormat": Nothing, "DocumentType": Nothing, "DocumentVersion": Nothing, "Name": Nothing, "Owner": Nothing, "PlatformTypes": Nothing, "SchemaVersion": Nothing, "Tags": Nothing, "TargetType": Nothing }
 
 -- | Constructs DocumentIdentifier's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDocumentIdentifier' :: ( { "Name" :: NullOrUndefined (DocumentARN) , "Owner" :: NullOrUndefined (DocumentOwner) , "PlatformTypes" :: NullOrUndefined (PlatformTypeList) , "DocumentVersion" :: NullOrUndefined (DocumentVersion) , "DocumentType" :: NullOrUndefined (DocumentType) , "SchemaVersion" :: NullOrUndefined (DocumentSchemaVersion) , "DocumentFormat" :: NullOrUndefined (DocumentFormat) , "TargetType" :: NullOrUndefined (TargetType) , "Tags" :: NullOrUndefined (TagList) } -> {"Name" :: NullOrUndefined (DocumentARN) , "Owner" :: NullOrUndefined (DocumentOwner) , "PlatformTypes" :: NullOrUndefined (PlatformTypeList) , "DocumentVersion" :: NullOrUndefined (DocumentVersion) , "DocumentType" :: NullOrUndefined (DocumentType) , "SchemaVersion" :: NullOrUndefined (DocumentSchemaVersion) , "DocumentFormat" :: NullOrUndefined (DocumentFormat) , "TargetType" :: NullOrUndefined (TargetType) , "Tags" :: NullOrUndefined (TagList) } ) -> DocumentIdentifier
-newDocumentIdentifier'  customize = (DocumentIdentifier <<< customize) { "DocumentFormat": (NullOrUndefined Nothing), "DocumentType": (NullOrUndefined Nothing), "DocumentVersion": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Owner": (NullOrUndefined Nothing), "PlatformTypes": (NullOrUndefined Nothing), "SchemaVersion": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing), "TargetType": (NullOrUndefined Nothing) }
+newDocumentIdentifier' :: ( { "Name" :: Maybe (DocumentARN) , "Owner" :: Maybe (DocumentOwner) , "PlatformTypes" :: Maybe (PlatformTypeList) , "DocumentVersion" :: Maybe (DocumentVersion) , "DocumentType" :: Maybe (DocumentType) , "SchemaVersion" :: Maybe (DocumentSchemaVersion) , "DocumentFormat" :: Maybe (DocumentFormat) , "TargetType" :: Maybe (TargetType) , "Tags" :: Maybe (TagList) } -> {"Name" :: Maybe (DocumentARN) , "Owner" :: Maybe (DocumentOwner) , "PlatformTypes" :: Maybe (PlatformTypeList) , "DocumentVersion" :: Maybe (DocumentVersion) , "DocumentType" :: Maybe (DocumentType) , "SchemaVersion" :: Maybe (DocumentSchemaVersion) , "DocumentFormat" :: Maybe (DocumentFormat) , "TargetType" :: Maybe (TargetType) , "Tags" :: Maybe (TagList) } ) -> DocumentIdentifier
+newDocumentIdentifier'  customize = (DocumentIdentifier <<< customize) { "DocumentFormat": Nothing, "DocumentType": Nothing, "DocumentVersion": Nothing, "Name": Nothing, "Owner": Nothing, "PlatformTypes": Nothing, "SchemaVersion": Nothing, "Tags": Nothing, "TargetType": Nothing }
 
 
 
@@ -3700,8 +3699,8 @@ instance encodeDocumentIdentifierList :: Encode DocumentIdentifierList where enc
 
 -- | <p>One or more filters. Use a filter to return a more specific list of documents.</p> <p>For keys, you can specify one or more tags that have been applied to a document. </p> <p>Other valid values include Owner, Name, PlatformTypes, and DocumentType.</p> <p>Note that only one Owner can be specified in a request. For example: <code>Key=Owner,Values=Self</code>.</p> <p>If you use Name as a key, you can use a name prefix to return a list of documents. For example, in the AWS CLI, to return a list of all documents that begin with <code>Te</code>, run the following command:</p> <p> <code>aws ssm list-documents --filters Key=Name,Values=Te</code> </p> <p>If you specify more than two keys, only documents that are identified by all the tags are returned in the results. If you specify more than two values for a key, documents that are identified by any of the values are returned in the results.</p> <p>To specify a custom key and value pair, use the format <code>Key=tag:[tagName],Values=[valueName]</code>.</p> <p>For example, if you created a Key called region and are using the AWS CLI to call the <code>list-documents</code> command: </p> <p> <code>aws ssm list-documents --filters Key=tag:region,Values=east,west Key=Owner,Values=Self</code> </p>
 newtype DocumentKeyValuesFilter = DocumentKeyValuesFilter 
-  { "Key" :: NullOrUndefined (DocumentKeyValuesFilterKey)
-  , "Values" :: NullOrUndefined (DocumentKeyValuesFilterValues)
+  { "Key" :: Maybe (DocumentKeyValuesFilterKey)
+  , "Values" :: Maybe (DocumentKeyValuesFilterValues)
   }
 derive instance newtypeDocumentKeyValuesFilter :: Newtype DocumentKeyValuesFilter _
 derive instance repGenericDocumentKeyValuesFilter :: Generic DocumentKeyValuesFilter _
@@ -3711,12 +3710,12 @@ instance encodeDocumentKeyValuesFilter :: Encode DocumentKeyValuesFilter where e
 
 -- | Constructs DocumentKeyValuesFilter from required parameters
 newDocumentKeyValuesFilter :: DocumentKeyValuesFilter
-newDocumentKeyValuesFilter  = DocumentKeyValuesFilter { "Key": (NullOrUndefined Nothing), "Values": (NullOrUndefined Nothing) }
+newDocumentKeyValuesFilter  = DocumentKeyValuesFilter { "Key": Nothing, "Values": Nothing }
 
 -- | Constructs DocumentKeyValuesFilter's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDocumentKeyValuesFilter' :: ( { "Key" :: NullOrUndefined (DocumentKeyValuesFilterKey) , "Values" :: NullOrUndefined (DocumentKeyValuesFilterValues) } -> {"Key" :: NullOrUndefined (DocumentKeyValuesFilterKey) , "Values" :: NullOrUndefined (DocumentKeyValuesFilterValues) } ) -> DocumentKeyValuesFilter
-newDocumentKeyValuesFilter'  customize = (DocumentKeyValuesFilter <<< customize) { "Key": (NullOrUndefined Nothing), "Values": (NullOrUndefined Nothing) }
+newDocumentKeyValuesFilter' :: ( { "Key" :: Maybe (DocumentKeyValuesFilterKey) , "Values" :: Maybe (DocumentKeyValuesFilterValues) } -> {"Key" :: Maybe (DocumentKeyValuesFilterKey) , "Values" :: Maybe (DocumentKeyValuesFilterValues) } ) -> DocumentKeyValuesFilter
+newDocumentKeyValuesFilter'  customize = (DocumentKeyValuesFilter <<< customize) { "Key": Nothing, "Values": Nothing }
 
 
 
@@ -3758,7 +3757,7 @@ instance encodeDocumentKeyValuesFilterValues :: Encode DocumentKeyValuesFilterVa
 
 -- | <p>You can have at most 200 active Systems Manager documents.</p>
 newtype DocumentLimitExceeded = DocumentLimitExceeded 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeDocumentLimitExceeded :: Newtype DocumentLimitExceeded _
 derive instance repGenericDocumentLimitExceeded :: Generic DocumentLimitExceeded _
@@ -3768,12 +3767,12 @@ instance encodeDocumentLimitExceeded :: Encode DocumentLimitExceeded where encod
 
 -- | Constructs DocumentLimitExceeded from required parameters
 newDocumentLimitExceeded :: DocumentLimitExceeded
-newDocumentLimitExceeded  = DocumentLimitExceeded { "Message": (NullOrUndefined Nothing) }
+newDocumentLimitExceeded  = DocumentLimitExceeded { "Message": Nothing }
 
 -- | Constructs DocumentLimitExceeded's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDocumentLimitExceeded' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> DocumentLimitExceeded
-newDocumentLimitExceeded'  customize = (DocumentLimitExceeded <<< customize) { "Message": (NullOrUndefined Nothing) }
+newDocumentLimitExceeded' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> DocumentLimitExceeded
+newDocumentLimitExceeded'  customize = (DocumentLimitExceeded <<< customize) { "Message": Nothing }
 
 
 
@@ -3797,10 +3796,10 @@ instance encodeDocumentOwner :: Encode DocumentOwner where encode = genericEncod
 
 -- | <p>Parameters specified in a System Manager document that execute on the server when the command is run. </p>
 newtype DocumentParameter = DocumentParameter 
-  { "Name" :: NullOrUndefined (DocumentParameterName)
-  , "Type" :: NullOrUndefined (DocumentParameterType)
-  , "Description" :: NullOrUndefined (DocumentParameterDescrption)
-  , "DefaultValue" :: NullOrUndefined (DocumentParameterDefaultValue)
+  { "Name" :: Maybe (DocumentParameterName)
+  , "Type" :: Maybe (DocumentParameterType)
+  , "Description" :: Maybe (DocumentParameterDescrption)
+  , "DefaultValue" :: Maybe (DocumentParameterDefaultValue)
   }
 derive instance newtypeDocumentParameter :: Newtype DocumentParameter _
 derive instance repGenericDocumentParameter :: Generic DocumentParameter _
@@ -3810,12 +3809,12 @@ instance encodeDocumentParameter :: Encode DocumentParameter where encode = gene
 
 -- | Constructs DocumentParameter from required parameters
 newDocumentParameter :: DocumentParameter
-newDocumentParameter  = DocumentParameter { "DefaultValue": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newDocumentParameter  = DocumentParameter { "DefaultValue": Nothing, "Description": Nothing, "Name": Nothing, "Type": Nothing }
 
 -- | Constructs DocumentParameter's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDocumentParameter' :: ( { "Name" :: NullOrUndefined (DocumentParameterName) , "Type" :: NullOrUndefined (DocumentParameterType) , "Description" :: NullOrUndefined (DocumentParameterDescrption) , "DefaultValue" :: NullOrUndefined (DocumentParameterDefaultValue) } -> {"Name" :: NullOrUndefined (DocumentParameterName) , "Type" :: NullOrUndefined (DocumentParameterType) , "Description" :: NullOrUndefined (DocumentParameterDescrption) , "DefaultValue" :: NullOrUndefined (DocumentParameterDefaultValue) } ) -> DocumentParameter
-newDocumentParameter'  customize = (DocumentParameter <<< customize) { "DefaultValue": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newDocumentParameter' :: ( { "Name" :: Maybe (DocumentParameterName) , "Type" :: Maybe (DocumentParameterType) , "Description" :: Maybe (DocumentParameterDescrption) , "DefaultValue" :: Maybe (DocumentParameterDefaultValue) } -> {"Name" :: Maybe (DocumentParameterName) , "Type" :: Maybe (DocumentParameterType) , "Description" :: Maybe (DocumentParameterDescrption) , "DefaultValue" :: Maybe (DocumentParameterDefaultValue) } ) -> DocumentParameter
+newDocumentParameter'  customize = (DocumentParameter <<< customize) { "DefaultValue": Nothing, "Description": Nothing, "Name": Nothing, "Type": Nothing }
 
 
 
@@ -3866,7 +3865,7 @@ instance encodeDocumentParameterType :: Encode DocumentParameterType where encod
 
 -- | <p>The document cannot be shared with more AWS user accounts. You can share a document with a maximum of 20 accounts. You can publicly share up to five documents. If you need to increase this limit, contact AWS Support.</p>
 newtype DocumentPermissionLimit = DocumentPermissionLimit 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeDocumentPermissionLimit :: Newtype DocumentPermissionLimit _
 derive instance repGenericDocumentPermissionLimit :: Generic DocumentPermissionLimit _
@@ -3876,12 +3875,12 @@ instance encodeDocumentPermissionLimit :: Encode DocumentPermissionLimit where e
 
 -- | Constructs DocumentPermissionLimit from required parameters
 newDocumentPermissionLimit :: DocumentPermissionLimit
-newDocumentPermissionLimit  = DocumentPermissionLimit { "Message": (NullOrUndefined Nothing) }
+newDocumentPermissionLimit  = DocumentPermissionLimit { "Message": Nothing }
 
 -- | Constructs DocumentPermissionLimit's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDocumentPermissionLimit' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> DocumentPermissionLimit
-newDocumentPermissionLimit'  customize = (DocumentPermissionLimit <<< customize) { "Message": (NullOrUndefined Nothing) }
+newDocumentPermissionLimit' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> DocumentPermissionLimit
+newDocumentPermissionLimit'  customize = (DocumentPermissionLimit <<< customize) { "Message": Nothing }
 
 
 
@@ -3941,11 +3940,11 @@ instance encodeDocumentVersion :: Encode DocumentVersion where encode = genericE
 
 -- | <p>Version information about the document.</p>
 newtype DocumentVersionInfo = DocumentVersionInfo 
-  { "Name" :: NullOrUndefined (DocumentName)
-  , "DocumentVersion" :: NullOrUndefined (DocumentVersion)
-  , "CreatedDate" :: NullOrUndefined (DateTime)
-  , "IsDefaultVersion" :: NullOrUndefined (Boolean)
-  , "DocumentFormat" :: NullOrUndefined (DocumentFormat)
+  { "Name" :: Maybe (DocumentName)
+  , "DocumentVersion" :: Maybe (DocumentVersion)
+  , "CreatedDate" :: Maybe (DateTime)
+  , "IsDefaultVersion" :: Maybe (Boolean)
+  , "DocumentFormat" :: Maybe (DocumentFormat)
   }
 derive instance newtypeDocumentVersionInfo :: Newtype DocumentVersionInfo _
 derive instance repGenericDocumentVersionInfo :: Generic DocumentVersionInfo _
@@ -3955,18 +3954,18 @@ instance encodeDocumentVersionInfo :: Encode DocumentVersionInfo where encode = 
 
 -- | Constructs DocumentVersionInfo from required parameters
 newDocumentVersionInfo :: DocumentVersionInfo
-newDocumentVersionInfo  = DocumentVersionInfo { "CreatedDate": (NullOrUndefined Nothing), "DocumentFormat": (NullOrUndefined Nothing), "DocumentVersion": (NullOrUndefined Nothing), "IsDefaultVersion": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newDocumentVersionInfo  = DocumentVersionInfo { "CreatedDate": Nothing, "DocumentFormat": Nothing, "DocumentVersion": Nothing, "IsDefaultVersion": Nothing, "Name": Nothing }
 
 -- | Constructs DocumentVersionInfo's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDocumentVersionInfo' :: ( { "Name" :: NullOrUndefined (DocumentName) , "DocumentVersion" :: NullOrUndefined (DocumentVersion) , "CreatedDate" :: NullOrUndefined (DateTime) , "IsDefaultVersion" :: NullOrUndefined (Boolean) , "DocumentFormat" :: NullOrUndefined (DocumentFormat) } -> {"Name" :: NullOrUndefined (DocumentName) , "DocumentVersion" :: NullOrUndefined (DocumentVersion) , "CreatedDate" :: NullOrUndefined (DateTime) , "IsDefaultVersion" :: NullOrUndefined (Boolean) , "DocumentFormat" :: NullOrUndefined (DocumentFormat) } ) -> DocumentVersionInfo
-newDocumentVersionInfo'  customize = (DocumentVersionInfo <<< customize) { "CreatedDate": (NullOrUndefined Nothing), "DocumentFormat": (NullOrUndefined Nothing), "DocumentVersion": (NullOrUndefined Nothing), "IsDefaultVersion": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newDocumentVersionInfo' :: ( { "Name" :: Maybe (DocumentName) , "DocumentVersion" :: Maybe (DocumentVersion) , "CreatedDate" :: Maybe (DateTime) , "IsDefaultVersion" :: Maybe (Boolean) , "DocumentFormat" :: Maybe (DocumentFormat) } -> {"Name" :: Maybe (DocumentName) , "DocumentVersion" :: Maybe (DocumentVersion) , "CreatedDate" :: Maybe (DateTime) , "IsDefaultVersion" :: Maybe (Boolean) , "DocumentFormat" :: Maybe (DocumentFormat) } ) -> DocumentVersionInfo
+newDocumentVersionInfo'  customize = (DocumentVersionInfo <<< customize) { "CreatedDate": Nothing, "DocumentFormat": Nothing, "DocumentVersion": Nothing, "IsDefaultVersion": Nothing, "Name": Nothing }
 
 
 
 -- | <p>The document has too many versions. Delete one or more document versions and try again.</p>
 newtype DocumentVersionLimitExceeded = DocumentVersionLimitExceeded 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeDocumentVersionLimitExceeded :: Newtype DocumentVersionLimitExceeded _
 derive instance repGenericDocumentVersionLimitExceeded :: Generic DocumentVersionLimitExceeded _
@@ -3976,12 +3975,12 @@ instance encodeDocumentVersionLimitExceeded :: Encode DocumentVersionLimitExceed
 
 -- | Constructs DocumentVersionLimitExceeded from required parameters
 newDocumentVersionLimitExceeded :: DocumentVersionLimitExceeded
-newDocumentVersionLimitExceeded  = DocumentVersionLimitExceeded { "Message": (NullOrUndefined Nothing) }
+newDocumentVersionLimitExceeded  = DocumentVersionLimitExceeded { "Message": Nothing }
 
 -- | Constructs DocumentVersionLimitExceeded's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDocumentVersionLimitExceeded' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> DocumentVersionLimitExceeded
-newDocumentVersionLimitExceeded'  customize = (DocumentVersionLimitExceeded <<< customize) { "Message": (NullOrUndefined Nothing) }
+newDocumentVersionLimitExceeded' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> DocumentVersionLimitExceeded
+newDocumentVersionLimitExceeded'  customize = (DocumentVersionLimitExceeded <<< customize) { "Message": Nothing }
 
 
 
@@ -4005,7 +4004,7 @@ instance encodeDocumentVersionNumber :: Encode DocumentVersionNumber where encod
 
 -- | <p>Error returned when the ID specified for a resource, such as a Maintenance Window or Patch baseline, doesn't exist.</p> <p>For information about resource limits in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems Manager Limits</a>.</p>
 newtype DoesNotExistException = DoesNotExistException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeDoesNotExistException :: Newtype DoesNotExistException _
 derive instance repGenericDoesNotExistException :: Generic DoesNotExistException _
@@ -4015,18 +4014,18 @@ instance encodeDoesNotExistException :: Encode DoesNotExistException where encod
 
 -- | Constructs DoesNotExistException from required parameters
 newDoesNotExistException :: DoesNotExistException
-newDoesNotExistException  = DoesNotExistException { "Message": (NullOrUndefined Nothing) }
+newDoesNotExistException  = DoesNotExistException { "Message": Nothing }
 
 -- | Constructs DoesNotExistException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDoesNotExistException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> DoesNotExistException
-newDoesNotExistException'  customize = (DoesNotExistException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newDoesNotExistException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> DoesNotExistException
+newDoesNotExistException'  customize = (DoesNotExistException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The content of the association document matches another document. Change the content of the document and try again.</p>
 newtype DuplicateDocumentContent = DuplicateDocumentContent 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeDuplicateDocumentContent :: Newtype DuplicateDocumentContent _
 derive instance repGenericDuplicateDocumentContent :: Generic DuplicateDocumentContent _
@@ -4036,12 +4035,12 @@ instance encodeDuplicateDocumentContent :: Encode DuplicateDocumentContent where
 
 -- | Constructs DuplicateDocumentContent from required parameters
 newDuplicateDocumentContent :: DuplicateDocumentContent
-newDuplicateDocumentContent  = DuplicateDocumentContent { "Message": (NullOrUndefined Nothing) }
+newDuplicateDocumentContent  = DuplicateDocumentContent { "Message": Nothing }
 
 -- | Constructs DuplicateDocumentContent's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDuplicateDocumentContent' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> DuplicateDocumentContent
-newDuplicateDocumentContent'  customize = (DuplicateDocumentContent <<< customize) { "Message": (NullOrUndefined Nothing) }
+newDuplicateDocumentContent' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> DuplicateDocumentContent
+newDuplicateDocumentContent'  customize = (DuplicateDocumentContent <<< customize) { "Message": Nothing }
 
 
 
@@ -4066,8 +4065,8 @@ instance encodeEffectiveInstanceAssociationMaxResults :: Encode EffectiveInstanc
 
 -- | <p>The EffectivePatch structure defines metadata about a patch along with the approval state of the patch in a particular patch baseline. The approval state includes information about whether the patch is currently approved, due to be approved by a rule, explicitly approved, or explicitly rejected and the date the patch was or will be approved.</p>
 newtype EffectivePatch = EffectivePatch 
-  { "Patch" :: NullOrUndefined (Patch)
-  , "PatchStatus" :: NullOrUndefined (PatchStatus)
+  { "Patch" :: Maybe (Patch)
+  , "PatchStatus" :: Maybe (PatchStatus)
   }
 derive instance newtypeEffectivePatch :: Newtype EffectivePatch _
 derive instance repGenericEffectivePatch :: Generic EffectivePatch _
@@ -4077,12 +4076,12 @@ instance encodeEffectivePatch :: Encode EffectivePatch where encode = genericEnc
 
 -- | Constructs EffectivePatch from required parameters
 newEffectivePatch :: EffectivePatch
-newEffectivePatch  = EffectivePatch { "Patch": (NullOrUndefined Nothing), "PatchStatus": (NullOrUndefined Nothing) }
+newEffectivePatch  = EffectivePatch { "Patch": Nothing, "PatchStatus": Nothing }
 
 -- | Constructs EffectivePatch's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEffectivePatch' :: ( { "Patch" :: NullOrUndefined (Patch) , "PatchStatus" :: NullOrUndefined (PatchStatus) } -> {"Patch" :: NullOrUndefined (Patch) , "PatchStatus" :: NullOrUndefined (PatchStatus) } ) -> EffectivePatch
-newEffectivePatch'  customize = (EffectivePatch <<< customize) { "Patch": (NullOrUndefined Nothing), "PatchStatus": (NullOrUndefined Nothing) }
+newEffectivePatch' :: ( { "Patch" :: Maybe (Patch) , "PatchStatus" :: Maybe (PatchStatus) } -> {"Patch" :: Maybe (Patch) , "PatchStatus" :: Maybe (PatchStatus) } ) -> EffectivePatch
+newEffectivePatch'  customize = (EffectivePatch <<< customize) { "Patch": Nothing, "PatchStatus": Nothing }
 
 
 
@@ -4124,9 +4123,9 @@ instance encodeExpirationDate :: Encode ExpirationDate where encode = genericEnc
 
 -- | <p>Describes a failed association.</p>
 newtype FailedCreateAssociation = FailedCreateAssociation 
-  { "Entry" :: NullOrUndefined (CreateAssociationBatchRequestEntry)
-  , "Message" :: NullOrUndefined (BatchErrorMessage)
-  , "Fault" :: NullOrUndefined (Fault)
+  { "Entry" :: Maybe (CreateAssociationBatchRequestEntry)
+  , "Message" :: Maybe (BatchErrorMessage)
+  , "Fault" :: Maybe (Fault)
   }
 derive instance newtypeFailedCreateAssociation :: Newtype FailedCreateAssociation _
 derive instance repGenericFailedCreateAssociation :: Generic FailedCreateAssociation _
@@ -4136,12 +4135,12 @@ instance encodeFailedCreateAssociation :: Encode FailedCreateAssociation where e
 
 -- | Constructs FailedCreateAssociation from required parameters
 newFailedCreateAssociation :: FailedCreateAssociation
-newFailedCreateAssociation  = FailedCreateAssociation { "Entry": (NullOrUndefined Nothing), "Fault": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing) }
+newFailedCreateAssociation  = FailedCreateAssociation { "Entry": Nothing, "Fault": Nothing, "Message": Nothing }
 
 -- | Constructs FailedCreateAssociation's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newFailedCreateAssociation' :: ( { "Entry" :: NullOrUndefined (CreateAssociationBatchRequestEntry) , "Message" :: NullOrUndefined (BatchErrorMessage) , "Fault" :: NullOrUndefined (Fault) } -> {"Entry" :: NullOrUndefined (CreateAssociationBatchRequestEntry) , "Message" :: NullOrUndefined (BatchErrorMessage) , "Fault" :: NullOrUndefined (Fault) } ) -> FailedCreateAssociation
-newFailedCreateAssociation'  customize = (FailedCreateAssociation <<< customize) { "Entry": (NullOrUndefined Nothing), "Fault": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing) }
+newFailedCreateAssociation' :: ( { "Entry" :: Maybe (CreateAssociationBatchRequestEntry) , "Message" :: Maybe (BatchErrorMessage) , "Fault" :: Maybe (Fault) } -> {"Entry" :: Maybe (CreateAssociationBatchRequestEntry) , "Message" :: Maybe (BatchErrorMessage) , "Fault" :: Maybe (Fault) } ) -> FailedCreateAssociation
+newFailedCreateAssociation'  customize = (FailedCreateAssociation <<< customize) { "Entry": Nothing, "Fault": Nothing, "Message": Nothing }
 
 
 
@@ -4156,9 +4155,9 @@ instance encodeFailedCreateAssociationList :: Encode FailedCreateAssociationList
 
 -- | <p>Information about an Automation failure.</p>
 newtype FailureDetails = FailureDetails 
-  { "FailureStage" :: NullOrUndefined (String)
-  , "FailureType" :: NullOrUndefined (String)
-  , "Details" :: NullOrUndefined (AutomationParameterMap)
+  { "FailureStage" :: Maybe (String)
+  , "FailureType" :: Maybe (String)
+  , "Details" :: Maybe (AutomationParameterMap)
   }
 derive instance newtypeFailureDetails :: Newtype FailureDetails _
 derive instance repGenericFailureDetails :: Generic FailureDetails _
@@ -4168,12 +4167,12 @@ instance encodeFailureDetails :: Encode FailureDetails where encode = genericEnc
 
 -- | Constructs FailureDetails from required parameters
 newFailureDetails :: FailureDetails
-newFailureDetails  = FailureDetails { "Details": (NullOrUndefined Nothing), "FailureStage": (NullOrUndefined Nothing), "FailureType": (NullOrUndefined Nothing) }
+newFailureDetails  = FailureDetails { "Details": Nothing, "FailureStage": Nothing, "FailureType": Nothing }
 
 -- | Constructs FailureDetails's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newFailureDetails' :: ( { "FailureStage" :: NullOrUndefined (String) , "FailureType" :: NullOrUndefined (String) , "Details" :: NullOrUndefined (AutomationParameterMap) } -> {"FailureStage" :: NullOrUndefined (String) , "FailureType" :: NullOrUndefined (String) , "Details" :: NullOrUndefined (AutomationParameterMap) } ) -> FailureDetails
-newFailureDetails'  customize = (FailureDetails <<< customize) { "Details": (NullOrUndefined Nothing), "FailureStage": (NullOrUndefined Nothing), "FailureType": (NullOrUndefined Nothing) }
+newFailureDetails' :: ( { "FailureStage" :: Maybe (String) , "FailureType" :: Maybe (String) , "Details" :: Maybe (AutomationParameterMap) } -> {"FailureStage" :: Maybe (String) , "FailureType" :: Maybe (String) , "Details" :: Maybe (AutomationParameterMap) } ) -> FailureDetails
+newFailureDetails'  customize = (FailureDetails <<< customize) { "Details": Nothing, "FailureStage": Nothing, "FailureType": Nothing }
 
 
 
@@ -4188,7 +4187,7 @@ instance encodeFault :: Encode Fault where encode = genericEncode options
 
 -- | <p>You attempted to register a LAMBDA or STEP_FUNCTION task in a region where the corresponding service is not available. </p>
 newtype FeatureNotAvailableException = FeatureNotAvailableException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeFeatureNotAvailableException :: Newtype FeatureNotAvailableException _
 derive instance repGenericFeatureNotAvailableException :: Generic FeatureNotAvailableException _
@@ -4198,12 +4197,12 @@ instance encodeFeatureNotAvailableException :: Encode FeatureNotAvailableExcepti
 
 -- | Constructs FeatureNotAvailableException from required parameters
 newFeatureNotAvailableException :: FeatureNotAvailableException
-newFeatureNotAvailableException  = FeatureNotAvailableException { "Message": (NullOrUndefined Nothing) }
+newFeatureNotAvailableException  = FeatureNotAvailableException { "Message": Nothing }
 
 -- | Constructs FeatureNotAvailableException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newFeatureNotAvailableException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> FeatureNotAvailableException
-newFeatureNotAvailableException'  customize = (FeatureNotAvailableException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newFeatureNotAvailableException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> FeatureNotAvailableException
+newFeatureNotAvailableException'  customize = (FeatureNotAvailableException <<< customize) { "Message": Nothing }
 
 
 
@@ -4228,7 +4227,7 @@ newGetAutomationExecutionRequest' _AutomationExecutionId customize = (GetAutomat
 
 
 newtype GetAutomationExecutionResult = GetAutomationExecutionResult 
-  { "AutomationExecution" :: NullOrUndefined (AutomationExecution)
+  { "AutomationExecution" :: Maybe (AutomationExecution)
   }
 derive instance newtypeGetAutomationExecutionResult :: Newtype GetAutomationExecutionResult _
 derive instance repGenericGetAutomationExecutionResult :: Generic GetAutomationExecutionResult _
@@ -4238,19 +4237,19 @@ instance encodeGetAutomationExecutionResult :: Encode GetAutomationExecutionResu
 
 -- | Constructs GetAutomationExecutionResult from required parameters
 newGetAutomationExecutionResult :: GetAutomationExecutionResult
-newGetAutomationExecutionResult  = GetAutomationExecutionResult { "AutomationExecution": (NullOrUndefined Nothing) }
+newGetAutomationExecutionResult  = GetAutomationExecutionResult { "AutomationExecution": Nothing }
 
 -- | Constructs GetAutomationExecutionResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetAutomationExecutionResult' :: ( { "AutomationExecution" :: NullOrUndefined (AutomationExecution) } -> {"AutomationExecution" :: NullOrUndefined (AutomationExecution) } ) -> GetAutomationExecutionResult
-newGetAutomationExecutionResult'  customize = (GetAutomationExecutionResult <<< customize) { "AutomationExecution": (NullOrUndefined Nothing) }
+newGetAutomationExecutionResult' :: ( { "AutomationExecution" :: Maybe (AutomationExecution) } -> {"AutomationExecution" :: Maybe (AutomationExecution) } ) -> GetAutomationExecutionResult
+newGetAutomationExecutionResult'  customize = (GetAutomationExecutionResult <<< customize) { "AutomationExecution": Nothing }
 
 
 
 newtype GetCommandInvocationRequest = GetCommandInvocationRequest 
   { "CommandId" :: (CommandId)
   , "InstanceId" :: (InstanceId)
-  , "PluginName" :: NullOrUndefined (CommandPluginName)
+  , "PluginName" :: Maybe (CommandPluginName)
   }
 derive instance newtypeGetCommandInvocationRequest :: Newtype GetCommandInvocationRequest _
 derive instance repGenericGetCommandInvocationRequest :: Generic GetCommandInvocationRequest _
@@ -4260,31 +4259,31 @@ instance encodeGetCommandInvocationRequest :: Encode GetCommandInvocationRequest
 
 -- | Constructs GetCommandInvocationRequest from required parameters
 newGetCommandInvocationRequest :: CommandId -> InstanceId -> GetCommandInvocationRequest
-newGetCommandInvocationRequest _CommandId _InstanceId = GetCommandInvocationRequest { "CommandId": _CommandId, "InstanceId": _InstanceId, "PluginName": (NullOrUndefined Nothing) }
+newGetCommandInvocationRequest _CommandId _InstanceId = GetCommandInvocationRequest { "CommandId": _CommandId, "InstanceId": _InstanceId, "PluginName": Nothing }
 
 -- | Constructs GetCommandInvocationRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetCommandInvocationRequest' :: CommandId -> InstanceId -> ( { "CommandId" :: (CommandId) , "InstanceId" :: (InstanceId) , "PluginName" :: NullOrUndefined (CommandPluginName) } -> {"CommandId" :: (CommandId) , "InstanceId" :: (InstanceId) , "PluginName" :: NullOrUndefined (CommandPluginName) } ) -> GetCommandInvocationRequest
-newGetCommandInvocationRequest' _CommandId _InstanceId customize = (GetCommandInvocationRequest <<< customize) { "CommandId": _CommandId, "InstanceId": _InstanceId, "PluginName": (NullOrUndefined Nothing) }
+newGetCommandInvocationRequest' :: CommandId -> InstanceId -> ( { "CommandId" :: (CommandId) , "InstanceId" :: (InstanceId) , "PluginName" :: Maybe (CommandPluginName) } -> {"CommandId" :: (CommandId) , "InstanceId" :: (InstanceId) , "PluginName" :: Maybe (CommandPluginName) } ) -> GetCommandInvocationRequest
+newGetCommandInvocationRequest' _CommandId _InstanceId customize = (GetCommandInvocationRequest <<< customize) { "CommandId": _CommandId, "InstanceId": _InstanceId, "PluginName": Nothing }
 
 
 
 newtype GetCommandInvocationResult = GetCommandInvocationResult 
-  { "CommandId" :: NullOrUndefined (CommandId)
-  , "InstanceId" :: NullOrUndefined (InstanceId)
-  , "Comment" :: NullOrUndefined (Comment)
-  , "DocumentName" :: NullOrUndefined (DocumentName)
-  , "PluginName" :: NullOrUndefined (CommandPluginName)
-  , "ResponseCode" :: NullOrUndefined (ResponseCode)
-  , "ExecutionStartDateTime" :: NullOrUndefined (StringDateTime)
-  , "ExecutionElapsedTime" :: NullOrUndefined (StringDateTime)
-  , "ExecutionEndDateTime" :: NullOrUndefined (StringDateTime)
-  , "Status" :: NullOrUndefined (CommandInvocationStatus)
-  , "StatusDetails" :: NullOrUndefined (StatusDetails)
-  , "StandardOutputContent" :: NullOrUndefined (StandardOutputContent)
-  , "StandardOutputUrl" :: NullOrUndefined (Url)
-  , "StandardErrorContent" :: NullOrUndefined (StandardErrorContent)
-  , "StandardErrorUrl" :: NullOrUndefined (Url)
+  { "CommandId" :: Maybe (CommandId)
+  , "InstanceId" :: Maybe (InstanceId)
+  , "Comment" :: Maybe (Comment)
+  , "DocumentName" :: Maybe (DocumentName)
+  , "PluginName" :: Maybe (CommandPluginName)
+  , "ResponseCode" :: Maybe (ResponseCode)
+  , "ExecutionStartDateTime" :: Maybe (StringDateTime)
+  , "ExecutionElapsedTime" :: Maybe (StringDateTime)
+  , "ExecutionEndDateTime" :: Maybe (StringDateTime)
+  , "Status" :: Maybe (CommandInvocationStatus)
+  , "StatusDetails" :: Maybe (StatusDetails)
+  , "StandardOutputContent" :: Maybe (StandardOutputContent)
+  , "StandardOutputUrl" :: Maybe (Url)
+  , "StandardErrorContent" :: Maybe (StandardErrorContent)
+  , "StandardErrorUrl" :: Maybe (Url)
   }
 derive instance newtypeGetCommandInvocationResult :: Newtype GetCommandInvocationResult _
 derive instance repGenericGetCommandInvocationResult :: Generic GetCommandInvocationResult _
@@ -4294,17 +4293,17 @@ instance encodeGetCommandInvocationResult :: Encode GetCommandInvocationResult w
 
 -- | Constructs GetCommandInvocationResult from required parameters
 newGetCommandInvocationResult :: GetCommandInvocationResult
-newGetCommandInvocationResult  = GetCommandInvocationResult { "CommandId": (NullOrUndefined Nothing), "Comment": (NullOrUndefined Nothing), "DocumentName": (NullOrUndefined Nothing), "ExecutionElapsedTime": (NullOrUndefined Nothing), "ExecutionEndDateTime": (NullOrUndefined Nothing), "ExecutionStartDateTime": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing), "PluginName": (NullOrUndefined Nothing), "ResponseCode": (NullOrUndefined Nothing), "StandardErrorContent": (NullOrUndefined Nothing), "StandardErrorUrl": (NullOrUndefined Nothing), "StandardOutputContent": (NullOrUndefined Nothing), "StandardOutputUrl": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "StatusDetails": (NullOrUndefined Nothing) }
+newGetCommandInvocationResult  = GetCommandInvocationResult { "CommandId": Nothing, "Comment": Nothing, "DocumentName": Nothing, "ExecutionElapsedTime": Nothing, "ExecutionEndDateTime": Nothing, "ExecutionStartDateTime": Nothing, "InstanceId": Nothing, "PluginName": Nothing, "ResponseCode": Nothing, "StandardErrorContent": Nothing, "StandardErrorUrl": Nothing, "StandardOutputContent": Nothing, "StandardOutputUrl": Nothing, "Status": Nothing, "StatusDetails": Nothing }
 
 -- | Constructs GetCommandInvocationResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetCommandInvocationResult' :: ( { "CommandId" :: NullOrUndefined (CommandId) , "InstanceId" :: NullOrUndefined (InstanceId) , "Comment" :: NullOrUndefined (Comment) , "DocumentName" :: NullOrUndefined (DocumentName) , "PluginName" :: NullOrUndefined (CommandPluginName) , "ResponseCode" :: NullOrUndefined (ResponseCode) , "ExecutionStartDateTime" :: NullOrUndefined (StringDateTime) , "ExecutionElapsedTime" :: NullOrUndefined (StringDateTime) , "ExecutionEndDateTime" :: NullOrUndefined (StringDateTime) , "Status" :: NullOrUndefined (CommandInvocationStatus) , "StatusDetails" :: NullOrUndefined (StatusDetails) , "StandardOutputContent" :: NullOrUndefined (StandardOutputContent) , "StandardOutputUrl" :: NullOrUndefined (Url) , "StandardErrorContent" :: NullOrUndefined (StandardErrorContent) , "StandardErrorUrl" :: NullOrUndefined (Url) } -> {"CommandId" :: NullOrUndefined (CommandId) , "InstanceId" :: NullOrUndefined (InstanceId) , "Comment" :: NullOrUndefined (Comment) , "DocumentName" :: NullOrUndefined (DocumentName) , "PluginName" :: NullOrUndefined (CommandPluginName) , "ResponseCode" :: NullOrUndefined (ResponseCode) , "ExecutionStartDateTime" :: NullOrUndefined (StringDateTime) , "ExecutionElapsedTime" :: NullOrUndefined (StringDateTime) , "ExecutionEndDateTime" :: NullOrUndefined (StringDateTime) , "Status" :: NullOrUndefined (CommandInvocationStatus) , "StatusDetails" :: NullOrUndefined (StatusDetails) , "StandardOutputContent" :: NullOrUndefined (StandardOutputContent) , "StandardOutputUrl" :: NullOrUndefined (Url) , "StandardErrorContent" :: NullOrUndefined (StandardErrorContent) , "StandardErrorUrl" :: NullOrUndefined (Url) } ) -> GetCommandInvocationResult
-newGetCommandInvocationResult'  customize = (GetCommandInvocationResult <<< customize) { "CommandId": (NullOrUndefined Nothing), "Comment": (NullOrUndefined Nothing), "DocumentName": (NullOrUndefined Nothing), "ExecutionElapsedTime": (NullOrUndefined Nothing), "ExecutionEndDateTime": (NullOrUndefined Nothing), "ExecutionStartDateTime": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing), "PluginName": (NullOrUndefined Nothing), "ResponseCode": (NullOrUndefined Nothing), "StandardErrorContent": (NullOrUndefined Nothing), "StandardErrorUrl": (NullOrUndefined Nothing), "StandardOutputContent": (NullOrUndefined Nothing), "StandardOutputUrl": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "StatusDetails": (NullOrUndefined Nothing) }
+newGetCommandInvocationResult' :: ( { "CommandId" :: Maybe (CommandId) , "InstanceId" :: Maybe (InstanceId) , "Comment" :: Maybe (Comment) , "DocumentName" :: Maybe (DocumentName) , "PluginName" :: Maybe (CommandPluginName) , "ResponseCode" :: Maybe (ResponseCode) , "ExecutionStartDateTime" :: Maybe (StringDateTime) , "ExecutionElapsedTime" :: Maybe (StringDateTime) , "ExecutionEndDateTime" :: Maybe (StringDateTime) , "Status" :: Maybe (CommandInvocationStatus) , "StatusDetails" :: Maybe (StatusDetails) , "StandardOutputContent" :: Maybe (StandardOutputContent) , "StandardOutputUrl" :: Maybe (Url) , "StandardErrorContent" :: Maybe (StandardErrorContent) , "StandardErrorUrl" :: Maybe (Url) } -> {"CommandId" :: Maybe (CommandId) , "InstanceId" :: Maybe (InstanceId) , "Comment" :: Maybe (Comment) , "DocumentName" :: Maybe (DocumentName) , "PluginName" :: Maybe (CommandPluginName) , "ResponseCode" :: Maybe (ResponseCode) , "ExecutionStartDateTime" :: Maybe (StringDateTime) , "ExecutionElapsedTime" :: Maybe (StringDateTime) , "ExecutionEndDateTime" :: Maybe (StringDateTime) , "Status" :: Maybe (CommandInvocationStatus) , "StatusDetails" :: Maybe (StatusDetails) , "StandardOutputContent" :: Maybe (StandardOutputContent) , "StandardOutputUrl" :: Maybe (Url) , "StandardErrorContent" :: Maybe (StandardErrorContent) , "StandardErrorUrl" :: Maybe (Url) } ) -> GetCommandInvocationResult
+newGetCommandInvocationResult'  customize = (GetCommandInvocationResult <<< customize) { "CommandId": Nothing, "Comment": Nothing, "DocumentName": Nothing, "ExecutionElapsedTime": Nothing, "ExecutionEndDateTime": Nothing, "ExecutionStartDateTime": Nothing, "InstanceId": Nothing, "PluginName": Nothing, "ResponseCode": Nothing, "StandardErrorContent": Nothing, "StandardErrorUrl": Nothing, "StandardOutputContent": Nothing, "StandardOutputUrl": Nothing, "Status": Nothing, "StatusDetails": Nothing }
 
 
 
 newtype GetDefaultPatchBaselineRequest = GetDefaultPatchBaselineRequest 
-  { "OperatingSystem" :: NullOrUndefined (OperatingSystem)
+  { "OperatingSystem" :: Maybe (OperatingSystem)
   }
 derive instance newtypeGetDefaultPatchBaselineRequest :: Newtype GetDefaultPatchBaselineRequest _
 derive instance repGenericGetDefaultPatchBaselineRequest :: Generic GetDefaultPatchBaselineRequest _
@@ -4314,18 +4313,18 @@ instance encodeGetDefaultPatchBaselineRequest :: Encode GetDefaultPatchBaselineR
 
 -- | Constructs GetDefaultPatchBaselineRequest from required parameters
 newGetDefaultPatchBaselineRequest :: GetDefaultPatchBaselineRequest
-newGetDefaultPatchBaselineRequest  = GetDefaultPatchBaselineRequest { "OperatingSystem": (NullOrUndefined Nothing) }
+newGetDefaultPatchBaselineRequest  = GetDefaultPatchBaselineRequest { "OperatingSystem": Nothing }
 
 -- | Constructs GetDefaultPatchBaselineRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetDefaultPatchBaselineRequest' :: ( { "OperatingSystem" :: NullOrUndefined (OperatingSystem) } -> {"OperatingSystem" :: NullOrUndefined (OperatingSystem) } ) -> GetDefaultPatchBaselineRequest
-newGetDefaultPatchBaselineRequest'  customize = (GetDefaultPatchBaselineRequest <<< customize) { "OperatingSystem": (NullOrUndefined Nothing) }
+newGetDefaultPatchBaselineRequest' :: ( { "OperatingSystem" :: Maybe (OperatingSystem) } -> {"OperatingSystem" :: Maybe (OperatingSystem) } ) -> GetDefaultPatchBaselineRequest
+newGetDefaultPatchBaselineRequest'  customize = (GetDefaultPatchBaselineRequest <<< customize) { "OperatingSystem": Nothing }
 
 
 
 newtype GetDefaultPatchBaselineResult = GetDefaultPatchBaselineResult 
-  { "BaselineId" :: NullOrUndefined (BaselineId)
-  , "OperatingSystem" :: NullOrUndefined (OperatingSystem)
+  { "BaselineId" :: Maybe (BaselineId)
+  , "OperatingSystem" :: Maybe (OperatingSystem)
   }
 derive instance newtypeGetDefaultPatchBaselineResult :: Newtype GetDefaultPatchBaselineResult _
 derive instance repGenericGetDefaultPatchBaselineResult :: Generic GetDefaultPatchBaselineResult _
@@ -4335,12 +4334,12 @@ instance encodeGetDefaultPatchBaselineResult :: Encode GetDefaultPatchBaselineRe
 
 -- | Constructs GetDefaultPatchBaselineResult from required parameters
 newGetDefaultPatchBaselineResult :: GetDefaultPatchBaselineResult
-newGetDefaultPatchBaselineResult  = GetDefaultPatchBaselineResult { "BaselineId": (NullOrUndefined Nothing), "OperatingSystem": (NullOrUndefined Nothing) }
+newGetDefaultPatchBaselineResult  = GetDefaultPatchBaselineResult { "BaselineId": Nothing, "OperatingSystem": Nothing }
 
 -- | Constructs GetDefaultPatchBaselineResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetDefaultPatchBaselineResult' :: ( { "BaselineId" :: NullOrUndefined (BaselineId) , "OperatingSystem" :: NullOrUndefined (OperatingSystem) } -> {"BaselineId" :: NullOrUndefined (BaselineId) , "OperatingSystem" :: NullOrUndefined (OperatingSystem) } ) -> GetDefaultPatchBaselineResult
-newGetDefaultPatchBaselineResult'  customize = (GetDefaultPatchBaselineResult <<< customize) { "BaselineId": (NullOrUndefined Nothing), "OperatingSystem": (NullOrUndefined Nothing) }
+newGetDefaultPatchBaselineResult' :: ( { "BaselineId" :: Maybe (BaselineId) , "OperatingSystem" :: Maybe (OperatingSystem) } -> {"BaselineId" :: Maybe (BaselineId) , "OperatingSystem" :: Maybe (OperatingSystem) } ) -> GetDefaultPatchBaselineResult
+newGetDefaultPatchBaselineResult'  customize = (GetDefaultPatchBaselineResult <<< customize) { "BaselineId": Nothing, "OperatingSystem": Nothing }
 
 
 
@@ -4366,10 +4365,10 @@ newGetDeployablePatchSnapshotForInstanceRequest' _InstanceId _SnapshotId customi
 
 
 newtype GetDeployablePatchSnapshotForInstanceResult = GetDeployablePatchSnapshotForInstanceResult 
-  { "InstanceId" :: NullOrUndefined (InstanceId)
-  , "SnapshotId" :: NullOrUndefined (SnapshotId)
-  , "SnapshotDownloadUrl" :: NullOrUndefined (SnapshotDownloadUrl)
-  , "Product" :: NullOrUndefined (Product)
+  { "InstanceId" :: Maybe (InstanceId)
+  , "SnapshotId" :: Maybe (SnapshotId)
+  , "SnapshotDownloadUrl" :: Maybe (SnapshotDownloadUrl)
+  , "Product" :: Maybe (Product)
   }
 derive instance newtypeGetDeployablePatchSnapshotForInstanceResult :: Newtype GetDeployablePatchSnapshotForInstanceResult _
 derive instance repGenericGetDeployablePatchSnapshotForInstanceResult :: Generic GetDeployablePatchSnapshotForInstanceResult _
@@ -4379,19 +4378,19 @@ instance encodeGetDeployablePatchSnapshotForInstanceResult :: Encode GetDeployab
 
 -- | Constructs GetDeployablePatchSnapshotForInstanceResult from required parameters
 newGetDeployablePatchSnapshotForInstanceResult :: GetDeployablePatchSnapshotForInstanceResult
-newGetDeployablePatchSnapshotForInstanceResult  = GetDeployablePatchSnapshotForInstanceResult { "InstanceId": (NullOrUndefined Nothing), "Product": (NullOrUndefined Nothing), "SnapshotDownloadUrl": (NullOrUndefined Nothing), "SnapshotId": (NullOrUndefined Nothing) }
+newGetDeployablePatchSnapshotForInstanceResult  = GetDeployablePatchSnapshotForInstanceResult { "InstanceId": Nothing, "Product": Nothing, "SnapshotDownloadUrl": Nothing, "SnapshotId": Nothing }
 
 -- | Constructs GetDeployablePatchSnapshotForInstanceResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetDeployablePatchSnapshotForInstanceResult' :: ( { "InstanceId" :: NullOrUndefined (InstanceId) , "SnapshotId" :: NullOrUndefined (SnapshotId) , "SnapshotDownloadUrl" :: NullOrUndefined (SnapshotDownloadUrl) , "Product" :: NullOrUndefined (Product) } -> {"InstanceId" :: NullOrUndefined (InstanceId) , "SnapshotId" :: NullOrUndefined (SnapshotId) , "SnapshotDownloadUrl" :: NullOrUndefined (SnapshotDownloadUrl) , "Product" :: NullOrUndefined (Product) } ) -> GetDeployablePatchSnapshotForInstanceResult
-newGetDeployablePatchSnapshotForInstanceResult'  customize = (GetDeployablePatchSnapshotForInstanceResult <<< customize) { "InstanceId": (NullOrUndefined Nothing), "Product": (NullOrUndefined Nothing), "SnapshotDownloadUrl": (NullOrUndefined Nothing), "SnapshotId": (NullOrUndefined Nothing) }
+newGetDeployablePatchSnapshotForInstanceResult' :: ( { "InstanceId" :: Maybe (InstanceId) , "SnapshotId" :: Maybe (SnapshotId) , "SnapshotDownloadUrl" :: Maybe (SnapshotDownloadUrl) , "Product" :: Maybe (Product) } -> {"InstanceId" :: Maybe (InstanceId) , "SnapshotId" :: Maybe (SnapshotId) , "SnapshotDownloadUrl" :: Maybe (SnapshotDownloadUrl) , "Product" :: Maybe (Product) } ) -> GetDeployablePatchSnapshotForInstanceResult
+newGetDeployablePatchSnapshotForInstanceResult'  customize = (GetDeployablePatchSnapshotForInstanceResult <<< customize) { "InstanceId": Nothing, "Product": Nothing, "SnapshotDownloadUrl": Nothing, "SnapshotId": Nothing }
 
 
 
 newtype GetDocumentRequest = GetDocumentRequest 
   { "Name" :: (DocumentARN)
-  , "DocumentVersion" :: NullOrUndefined (DocumentVersion)
-  , "DocumentFormat" :: NullOrUndefined (DocumentFormat)
+  , "DocumentVersion" :: Maybe (DocumentVersion)
+  , "DocumentFormat" :: Maybe (DocumentFormat)
   }
 derive instance newtypeGetDocumentRequest :: Newtype GetDocumentRequest _
 derive instance repGenericGetDocumentRequest :: Generic GetDocumentRequest _
@@ -4401,21 +4400,21 @@ instance encodeGetDocumentRequest :: Encode GetDocumentRequest where encode = ge
 
 -- | Constructs GetDocumentRequest from required parameters
 newGetDocumentRequest :: DocumentARN -> GetDocumentRequest
-newGetDocumentRequest _Name = GetDocumentRequest { "Name": _Name, "DocumentFormat": (NullOrUndefined Nothing), "DocumentVersion": (NullOrUndefined Nothing) }
+newGetDocumentRequest _Name = GetDocumentRequest { "Name": _Name, "DocumentFormat": Nothing, "DocumentVersion": Nothing }
 
 -- | Constructs GetDocumentRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetDocumentRequest' :: DocumentARN -> ( { "Name" :: (DocumentARN) , "DocumentVersion" :: NullOrUndefined (DocumentVersion) , "DocumentFormat" :: NullOrUndefined (DocumentFormat) } -> {"Name" :: (DocumentARN) , "DocumentVersion" :: NullOrUndefined (DocumentVersion) , "DocumentFormat" :: NullOrUndefined (DocumentFormat) } ) -> GetDocumentRequest
-newGetDocumentRequest' _Name customize = (GetDocumentRequest <<< customize) { "Name": _Name, "DocumentFormat": (NullOrUndefined Nothing), "DocumentVersion": (NullOrUndefined Nothing) }
+newGetDocumentRequest' :: DocumentARN -> ( { "Name" :: (DocumentARN) , "DocumentVersion" :: Maybe (DocumentVersion) , "DocumentFormat" :: Maybe (DocumentFormat) } -> {"Name" :: (DocumentARN) , "DocumentVersion" :: Maybe (DocumentVersion) , "DocumentFormat" :: Maybe (DocumentFormat) } ) -> GetDocumentRequest
+newGetDocumentRequest' _Name customize = (GetDocumentRequest <<< customize) { "Name": _Name, "DocumentFormat": Nothing, "DocumentVersion": Nothing }
 
 
 
 newtype GetDocumentResult = GetDocumentResult 
-  { "Name" :: NullOrUndefined (DocumentARN)
-  , "DocumentVersion" :: NullOrUndefined (DocumentVersion)
-  , "Content" :: NullOrUndefined (DocumentContent)
-  , "DocumentType" :: NullOrUndefined (DocumentType)
-  , "DocumentFormat" :: NullOrUndefined (DocumentFormat)
+  { "Name" :: Maybe (DocumentARN)
+  , "DocumentVersion" :: Maybe (DocumentVersion)
+  , "Content" :: Maybe (DocumentContent)
+  , "DocumentType" :: Maybe (DocumentType)
+  , "DocumentFormat" :: Maybe (DocumentFormat)
   }
 derive instance newtypeGetDocumentResult :: Newtype GetDocumentResult _
 derive instance repGenericGetDocumentResult :: Generic GetDocumentResult _
@@ -4425,21 +4424,21 @@ instance encodeGetDocumentResult :: Encode GetDocumentResult where encode = gene
 
 -- | Constructs GetDocumentResult from required parameters
 newGetDocumentResult :: GetDocumentResult
-newGetDocumentResult  = GetDocumentResult { "Content": (NullOrUndefined Nothing), "DocumentFormat": (NullOrUndefined Nothing), "DocumentType": (NullOrUndefined Nothing), "DocumentVersion": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newGetDocumentResult  = GetDocumentResult { "Content": Nothing, "DocumentFormat": Nothing, "DocumentType": Nothing, "DocumentVersion": Nothing, "Name": Nothing }
 
 -- | Constructs GetDocumentResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetDocumentResult' :: ( { "Name" :: NullOrUndefined (DocumentARN) , "DocumentVersion" :: NullOrUndefined (DocumentVersion) , "Content" :: NullOrUndefined (DocumentContent) , "DocumentType" :: NullOrUndefined (DocumentType) , "DocumentFormat" :: NullOrUndefined (DocumentFormat) } -> {"Name" :: NullOrUndefined (DocumentARN) , "DocumentVersion" :: NullOrUndefined (DocumentVersion) , "Content" :: NullOrUndefined (DocumentContent) , "DocumentType" :: NullOrUndefined (DocumentType) , "DocumentFormat" :: NullOrUndefined (DocumentFormat) } ) -> GetDocumentResult
-newGetDocumentResult'  customize = (GetDocumentResult <<< customize) { "Content": (NullOrUndefined Nothing), "DocumentFormat": (NullOrUndefined Nothing), "DocumentType": (NullOrUndefined Nothing), "DocumentVersion": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newGetDocumentResult' :: ( { "Name" :: Maybe (DocumentARN) , "DocumentVersion" :: Maybe (DocumentVersion) , "Content" :: Maybe (DocumentContent) , "DocumentType" :: Maybe (DocumentType) , "DocumentFormat" :: Maybe (DocumentFormat) } -> {"Name" :: Maybe (DocumentARN) , "DocumentVersion" :: Maybe (DocumentVersion) , "Content" :: Maybe (DocumentContent) , "DocumentType" :: Maybe (DocumentType) , "DocumentFormat" :: Maybe (DocumentFormat) } ) -> GetDocumentResult
+newGetDocumentResult'  customize = (GetDocumentResult <<< customize) { "Content": Nothing, "DocumentFormat": Nothing, "DocumentType": Nothing, "DocumentVersion": Nothing, "Name": Nothing }
 
 
 
 newtype GetInventoryRequest = GetInventoryRequest 
-  { "Filters" :: NullOrUndefined (InventoryFilterList)
-  , "Aggregators" :: NullOrUndefined (InventoryAggregatorList)
-  , "ResultAttributes" :: NullOrUndefined (ResultAttributeList)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (MaxResults)
+  { "Filters" :: Maybe (InventoryFilterList)
+  , "Aggregators" :: Maybe (InventoryAggregatorList)
+  , "ResultAttributes" :: Maybe (ResultAttributeList)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (MaxResults)
   }
 derive instance newtypeGetInventoryRequest :: Newtype GetInventoryRequest _
 derive instance repGenericGetInventoryRequest :: Generic GetInventoryRequest _
@@ -4449,18 +4448,18 @@ instance encodeGetInventoryRequest :: Encode GetInventoryRequest where encode = 
 
 -- | Constructs GetInventoryRequest from required parameters
 newGetInventoryRequest :: GetInventoryRequest
-newGetInventoryRequest  = GetInventoryRequest { "Aggregators": (NullOrUndefined Nothing), "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "ResultAttributes": (NullOrUndefined Nothing) }
+newGetInventoryRequest  = GetInventoryRequest { "Aggregators": Nothing, "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing, "ResultAttributes": Nothing }
 
 -- | Constructs GetInventoryRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetInventoryRequest' :: ( { "Filters" :: NullOrUndefined (InventoryFilterList) , "Aggregators" :: NullOrUndefined (InventoryAggregatorList) , "ResultAttributes" :: NullOrUndefined (ResultAttributeList) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (MaxResults) } -> {"Filters" :: NullOrUndefined (InventoryFilterList) , "Aggregators" :: NullOrUndefined (InventoryAggregatorList) , "ResultAttributes" :: NullOrUndefined (ResultAttributeList) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (MaxResults) } ) -> GetInventoryRequest
-newGetInventoryRequest'  customize = (GetInventoryRequest <<< customize) { "Aggregators": (NullOrUndefined Nothing), "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "ResultAttributes": (NullOrUndefined Nothing) }
+newGetInventoryRequest' :: ( { "Filters" :: Maybe (InventoryFilterList) , "Aggregators" :: Maybe (InventoryAggregatorList) , "ResultAttributes" :: Maybe (ResultAttributeList) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (MaxResults) } -> {"Filters" :: Maybe (InventoryFilterList) , "Aggregators" :: Maybe (InventoryAggregatorList) , "ResultAttributes" :: Maybe (ResultAttributeList) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (MaxResults) } ) -> GetInventoryRequest
+newGetInventoryRequest'  customize = (GetInventoryRequest <<< customize) { "Aggregators": Nothing, "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing, "ResultAttributes": Nothing }
 
 
 
 newtype GetInventoryResult = GetInventoryResult 
-  { "Entities" :: NullOrUndefined (InventoryResultEntityList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "Entities" :: Maybe (InventoryResultEntityList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeGetInventoryResult :: Newtype GetInventoryResult _
 derive instance repGenericGetInventoryResult :: Generic GetInventoryResult _
@@ -4470,12 +4469,12 @@ instance encodeGetInventoryResult :: Encode GetInventoryResult where encode = ge
 
 -- | Constructs GetInventoryResult from required parameters
 newGetInventoryResult :: GetInventoryResult
-newGetInventoryResult  = GetInventoryResult { "Entities": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetInventoryResult  = GetInventoryResult { "Entities": Nothing, "NextToken": Nothing }
 
 -- | Constructs GetInventoryResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetInventoryResult' :: ( { "Entities" :: NullOrUndefined (InventoryResultEntityList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Entities" :: NullOrUndefined (InventoryResultEntityList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> GetInventoryResult
-newGetInventoryResult'  customize = (GetInventoryResult <<< customize) { "Entities": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetInventoryResult' :: ( { "Entities" :: Maybe (InventoryResultEntityList) , "NextToken" :: Maybe (NextToken) } -> {"Entities" :: Maybe (InventoryResultEntityList) , "NextToken" :: Maybe (NextToken) } ) -> GetInventoryResult
+newGetInventoryResult'  customize = (GetInventoryResult <<< customize) { "Entities": Nothing, "NextToken": Nothing }
 
 
 
@@ -4489,11 +4488,11 @@ instance encodeGetInventorySchemaMaxResults :: Encode GetInventorySchemaMaxResul
 
 
 newtype GetInventorySchemaRequest = GetInventorySchemaRequest 
-  { "TypeName" :: NullOrUndefined (InventoryItemTypeNameFilter)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (GetInventorySchemaMaxResults)
-  , "Aggregator" :: NullOrUndefined (AggregatorSchemaOnly)
-  , "SubType" :: NullOrUndefined (IsSubTypeSchema)
+  { "TypeName" :: Maybe (InventoryItemTypeNameFilter)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (GetInventorySchemaMaxResults)
+  , "Aggregator" :: Maybe (AggregatorSchemaOnly)
+  , "SubType" :: Maybe (IsSubTypeSchema)
   }
 derive instance newtypeGetInventorySchemaRequest :: Newtype GetInventorySchemaRequest _
 derive instance repGenericGetInventorySchemaRequest :: Generic GetInventorySchemaRequest _
@@ -4503,18 +4502,18 @@ instance encodeGetInventorySchemaRequest :: Encode GetInventorySchemaRequest whe
 
 -- | Constructs GetInventorySchemaRequest from required parameters
 newGetInventorySchemaRequest :: GetInventorySchemaRequest
-newGetInventorySchemaRequest  = GetInventorySchemaRequest { "Aggregator": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "SubType": (NullOrUndefined Nothing), "TypeName": (NullOrUndefined Nothing) }
+newGetInventorySchemaRequest  = GetInventorySchemaRequest { "Aggregator": Nothing, "MaxResults": Nothing, "NextToken": Nothing, "SubType": Nothing, "TypeName": Nothing }
 
 -- | Constructs GetInventorySchemaRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetInventorySchemaRequest' :: ( { "TypeName" :: NullOrUndefined (InventoryItemTypeNameFilter) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (GetInventorySchemaMaxResults) , "Aggregator" :: NullOrUndefined (AggregatorSchemaOnly) , "SubType" :: NullOrUndefined (IsSubTypeSchema) } -> {"TypeName" :: NullOrUndefined (InventoryItemTypeNameFilter) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (GetInventorySchemaMaxResults) , "Aggregator" :: NullOrUndefined (AggregatorSchemaOnly) , "SubType" :: NullOrUndefined (IsSubTypeSchema) } ) -> GetInventorySchemaRequest
-newGetInventorySchemaRequest'  customize = (GetInventorySchemaRequest <<< customize) { "Aggregator": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "SubType": (NullOrUndefined Nothing), "TypeName": (NullOrUndefined Nothing) }
+newGetInventorySchemaRequest' :: ( { "TypeName" :: Maybe (InventoryItemTypeNameFilter) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (GetInventorySchemaMaxResults) , "Aggregator" :: Maybe (AggregatorSchemaOnly) , "SubType" :: Maybe (IsSubTypeSchema) } -> {"TypeName" :: Maybe (InventoryItemTypeNameFilter) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (GetInventorySchemaMaxResults) , "Aggregator" :: Maybe (AggregatorSchemaOnly) , "SubType" :: Maybe (IsSubTypeSchema) } ) -> GetInventorySchemaRequest
+newGetInventorySchemaRequest'  customize = (GetInventorySchemaRequest <<< customize) { "Aggregator": Nothing, "MaxResults": Nothing, "NextToken": Nothing, "SubType": Nothing, "TypeName": Nothing }
 
 
 
 newtype GetInventorySchemaResult = GetInventorySchemaResult 
-  { "Schemas" :: NullOrUndefined (InventoryItemSchemaResultList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "Schemas" :: Maybe (InventoryItemSchemaResultList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeGetInventorySchemaResult :: Newtype GetInventorySchemaResult _
 derive instance repGenericGetInventorySchemaResult :: Generic GetInventorySchemaResult _
@@ -4524,12 +4523,12 @@ instance encodeGetInventorySchemaResult :: Encode GetInventorySchemaResult where
 
 -- | Constructs GetInventorySchemaResult from required parameters
 newGetInventorySchemaResult :: GetInventorySchemaResult
-newGetInventorySchemaResult  = GetInventorySchemaResult { "NextToken": (NullOrUndefined Nothing), "Schemas": (NullOrUndefined Nothing) }
+newGetInventorySchemaResult  = GetInventorySchemaResult { "NextToken": Nothing, "Schemas": Nothing }
 
 -- | Constructs GetInventorySchemaResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetInventorySchemaResult' :: ( { "Schemas" :: NullOrUndefined (InventoryItemSchemaResultList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Schemas" :: NullOrUndefined (InventoryItemSchemaResultList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> GetInventorySchemaResult
-newGetInventorySchemaResult'  customize = (GetInventorySchemaResult <<< customize) { "NextToken": (NullOrUndefined Nothing), "Schemas": (NullOrUndefined Nothing) }
+newGetInventorySchemaResult' :: ( { "Schemas" :: Maybe (InventoryItemSchemaResultList) , "NextToken" :: Maybe (NextToken) } -> {"Schemas" :: Maybe (InventoryItemSchemaResultList) , "NextToken" :: Maybe (NextToken) } ) -> GetInventorySchemaResult
+newGetInventorySchemaResult'  customize = (GetInventorySchemaResult <<< customize) { "NextToken": Nothing, "Schemas": Nothing }
 
 
 
@@ -4554,12 +4553,12 @@ newGetMaintenanceWindowExecutionRequest' _WindowExecutionId customize = (GetMain
 
 
 newtype GetMaintenanceWindowExecutionResult = GetMaintenanceWindowExecutionResult 
-  { "WindowExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionId)
-  , "TaskIds" :: NullOrUndefined (MaintenanceWindowExecutionTaskIdList)
-  , "Status" :: NullOrUndefined (MaintenanceWindowExecutionStatus)
-  , "StatusDetails" :: NullOrUndefined (MaintenanceWindowExecutionStatusDetails)
-  , "StartTime" :: NullOrUndefined (DateTime)
-  , "EndTime" :: NullOrUndefined (DateTime)
+  { "WindowExecutionId" :: Maybe (MaintenanceWindowExecutionId)
+  , "TaskIds" :: Maybe (MaintenanceWindowExecutionTaskIdList)
+  , "Status" :: Maybe (MaintenanceWindowExecutionStatus)
+  , "StatusDetails" :: Maybe (MaintenanceWindowExecutionStatusDetails)
+  , "StartTime" :: Maybe (DateTime)
+  , "EndTime" :: Maybe (DateTime)
   }
 derive instance newtypeGetMaintenanceWindowExecutionResult :: Newtype GetMaintenanceWindowExecutionResult _
 derive instance repGenericGetMaintenanceWindowExecutionResult :: Generic GetMaintenanceWindowExecutionResult _
@@ -4569,12 +4568,12 @@ instance encodeGetMaintenanceWindowExecutionResult :: Encode GetMaintenanceWindo
 
 -- | Constructs GetMaintenanceWindowExecutionResult from required parameters
 newGetMaintenanceWindowExecutionResult :: GetMaintenanceWindowExecutionResult
-newGetMaintenanceWindowExecutionResult  = GetMaintenanceWindowExecutionResult { "EndTime": (NullOrUndefined Nothing), "StartTime": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "StatusDetails": (NullOrUndefined Nothing), "TaskIds": (NullOrUndefined Nothing), "WindowExecutionId": (NullOrUndefined Nothing) }
+newGetMaintenanceWindowExecutionResult  = GetMaintenanceWindowExecutionResult { "EndTime": Nothing, "StartTime": Nothing, "Status": Nothing, "StatusDetails": Nothing, "TaskIds": Nothing, "WindowExecutionId": Nothing }
 
 -- | Constructs GetMaintenanceWindowExecutionResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetMaintenanceWindowExecutionResult' :: ( { "WindowExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionId) , "TaskIds" :: NullOrUndefined (MaintenanceWindowExecutionTaskIdList) , "Status" :: NullOrUndefined (MaintenanceWindowExecutionStatus) , "StatusDetails" :: NullOrUndefined (MaintenanceWindowExecutionStatusDetails) , "StartTime" :: NullOrUndefined (DateTime) , "EndTime" :: NullOrUndefined (DateTime) } -> {"WindowExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionId) , "TaskIds" :: NullOrUndefined (MaintenanceWindowExecutionTaskIdList) , "Status" :: NullOrUndefined (MaintenanceWindowExecutionStatus) , "StatusDetails" :: NullOrUndefined (MaintenanceWindowExecutionStatusDetails) , "StartTime" :: NullOrUndefined (DateTime) , "EndTime" :: NullOrUndefined (DateTime) } ) -> GetMaintenanceWindowExecutionResult
-newGetMaintenanceWindowExecutionResult'  customize = (GetMaintenanceWindowExecutionResult <<< customize) { "EndTime": (NullOrUndefined Nothing), "StartTime": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "StatusDetails": (NullOrUndefined Nothing), "TaskIds": (NullOrUndefined Nothing), "WindowExecutionId": (NullOrUndefined Nothing) }
+newGetMaintenanceWindowExecutionResult' :: ( { "WindowExecutionId" :: Maybe (MaintenanceWindowExecutionId) , "TaskIds" :: Maybe (MaintenanceWindowExecutionTaskIdList) , "Status" :: Maybe (MaintenanceWindowExecutionStatus) , "StatusDetails" :: Maybe (MaintenanceWindowExecutionStatusDetails) , "StartTime" :: Maybe (DateTime) , "EndTime" :: Maybe (DateTime) } -> {"WindowExecutionId" :: Maybe (MaintenanceWindowExecutionId) , "TaskIds" :: Maybe (MaintenanceWindowExecutionTaskIdList) , "Status" :: Maybe (MaintenanceWindowExecutionStatus) , "StatusDetails" :: Maybe (MaintenanceWindowExecutionStatusDetails) , "StartTime" :: Maybe (DateTime) , "EndTime" :: Maybe (DateTime) } ) -> GetMaintenanceWindowExecutionResult
+newGetMaintenanceWindowExecutionResult'  customize = (GetMaintenanceWindowExecutionResult <<< customize) { "EndTime": Nothing, "StartTime": Nothing, "Status": Nothing, "StatusDetails": Nothing, "TaskIds": Nothing, "WindowExecutionId": Nothing }
 
 
 
@@ -4601,18 +4600,18 @@ newGetMaintenanceWindowExecutionTaskInvocationRequest' _InvocationId _TaskId _Wi
 
 
 newtype GetMaintenanceWindowExecutionTaskInvocationResult = GetMaintenanceWindowExecutionTaskInvocationResult 
-  { "WindowExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionId)
-  , "TaskExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionTaskId)
-  , "InvocationId" :: NullOrUndefined (MaintenanceWindowExecutionTaskInvocationId)
-  , "ExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionTaskExecutionId)
-  , "TaskType" :: NullOrUndefined (MaintenanceWindowTaskType)
-  , "Parameters" :: NullOrUndefined (MaintenanceWindowExecutionTaskInvocationParameters)
-  , "Status" :: NullOrUndefined (MaintenanceWindowExecutionStatus)
-  , "StatusDetails" :: NullOrUndefined (MaintenanceWindowExecutionStatusDetails)
-  , "StartTime" :: NullOrUndefined (DateTime)
-  , "EndTime" :: NullOrUndefined (DateTime)
-  , "OwnerInformation" :: NullOrUndefined (OwnerInformation)
-  , "WindowTargetId" :: NullOrUndefined (MaintenanceWindowTaskTargetId)
+  { "WindowExecutionId" :: Maybe (MaintenanceWindowExecutionId)
+  , "TaskExecutionId" :: Maybe (MaintenanceWindowExecutionTaskId)
+  , "InvocationId" :: Maybe (MaintenanceWindowExecutionTaskInvocationId)
+  , "ExecutionId" :: Maybe (MaintenanceWindowExecutionTaskExecutionId)
+  , "TaskType" :: Maybe (MaintenanceWindowTaskType)
+  , "Parameters" :: Maybe (MaintenanceWindowExecutionTaskInvocationParameters)
+  , "Status" :: Maybe (MaintenanceWindowExecutionStatus)
+  , "StatusDetails" :: Maybe (MaintenanceWindowExecutionStatusDetails)
+  , "StartTime" :: Maybe (DateTime)
+  , "EndTime" :: Maybe (DateTime)
+  , "OwnerInformation" :: Maybe (OwnerInformation)
+  , "WindowTargetId" :: Maybe (MaintenanceWindowTaskTargetId)
   }
 derive instance newtypeGetMaintenanceWindowExecutionTaskInvocationResult :: Newtype GetMaintenanceWindowExecutionTaskInvocationResult _
 derive instance repGenericGetMaintenanceWindowExecutionTaskInvocationResult :: Generic GetMaintenanceWindowExecutionTaskInvocationResult _
@@ -4622,12 +4621,12 @@ instance encodeGetMaintenanceWindowExecutionTaskInvocationResult :: Encode GetMa
 
 -- | Constructs GetMaintenanceWindowExecutionTaskInvocationResult from required parameters
 newGetMaintenanceWindowExecutionTaskInvocationResult :: GetMaintenanceWindowExecutionTaskInvocationResult
-newGetMaintenanceWindowExecutionTaskInvocationResult  = GetMaintenanceWindowExecutionTaskInvocationResult { "EndTime": (NullOrUndefined Nothing), "ExecutionId": (NullOrUndefined Nothing), "InvocationId": (NullOrUndefined Nothing), "OwnerInformation": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing), "StartTime": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "StatusDetails": (NullOrUndefined Nothing), "TaskExecutionId": (NullOrUndefined Nothing), "TaskType": (NullOrUndefined Nothing), "WindowExecutionId": (NullOrUndefined Nothing), "WindowTargetId": (NullOrUndefined Nothing) }
+newGetMaintenanceWindowExecutionTaskInvocationResult  = GetMaintenanceWindowExecutionTaskInvocationResult { "EndTime": Nothing, "ExecutionId": Nothing, "InvocationId": Nothing, "OwnerInformation": Nothing, "Parameters": Nothing, "StartTime": Nothing, "Status": Nothing, "StatusDetails": Nothing, "TaskExecutionId": Nothing, "TaskType": Nothing, "WindowExecutionId": Nothing, "WindowTargetId": Nothing }
 
 -- | Constructs GetMaintenanceWindowExecutionTaskInvocationResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetMaintenanceWindowExecutionTaskInvocationResult' :: ( { "WindowExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionId) , "TaskExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionTaskId) , "InvocationId" :: NullOrUndefined (MaintenanceWindowExecutionTaskInvocationId) , "ExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionTaskExecutionId) , "TaskType" :: NullOrUndefined (MaintenanceWindowTaskType) , "Parameters" :: NullOrUndefined (MaintenanceWindowExecutionTaskInvocationParameters) , "Status" :: NullOrUndefined (MaintenanceWindowExecutionStatus) , "StatusDetails" :: NullOrUndefined (MaintenanceWindowExecutionStatusDetails) , "StartTime" :: NullOrUndefined (DateTime) , "EndTime" :: NullOrUndefined (DateTime) , "OwnerInformation" :: NullOrUndefined (OwnerInformation) , "WindowTargetId" :: NullOrUndefined (MaintenanceWindowTaskTargetId) } -> {"WindowExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionId) , "TaskExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionTaskId) , "InvocationId" :: NullOrUndefined (MaintenanceWindowExecutionTaskInvocationId) , "ExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionTaskExecutionId) , "TaskType" :: NullOrUndefined (MaintenanceWindowTaskType) , "Parameters" :: NullOrUndefined (MaintenanceWindowExecutionTaskInvocationParameters) , "Status" :: NullOrUndefined (MaintenanceWindowExecutionStatus) , "StatusDetails" :: NullOrUndefined (MaintenanceWindowExecutionStatusDetails) , "StartTime" :: NullOrUndefined (DateTime) , "EndTime" :: NullOrUndefined (DateTime) , "OwnerInformation" :: NullOrUndefined (OwnerInformation) , "WindowTargetId" :: NullOrUndefined (MaintenanceWindowTaskTargetId) } ) -> GetMaintenanceWindowExecutionTaskInvocationResult
-newGetMaintenanceWindowExecutionTaskInvocationResult'  customize = (GetMaintenanceWindowExecutionTaskInvocationResult <<< customize) { "EndTime": (NullOrUndefined Nothing), "ExecutionId": (NullOrUndefined Nothing), "InvocationId": (NullOrUndefined Nothing), "OwnerInformation": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing), "StartTime": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "StatusDetails": (NullOrUndefined Nothing), "TaskExecutionId": (NullOrUndefined Nothing), "TaskType": (NullOrUndefined Nothing), "WindowExecutionId": (NullOrUndefined Nothing), "WindowTargetId": (NullOrUndefined Nothing) }
+newGetMaintenanceWindowExecutionTaskInvocationResult' :: ( { "WindowExecutionId" :: Maybe (MaintenanceWindowExecutionId) , "TaskExecutionId" :: Maybe (MaintenanceWindowExecutionTaskId) , "InvocationId" :: Maybe (MaintenanceWindowExecutionTaskInvocationId) , "ExecutionId" :: Maybe (MaintenanceWindowExecutionTaskExecutionId) , "TaskType" :: Maybe (MaintenanceWindowTaskType) , "Parameters" :: Maybe (MaintenanceWindowExecutionTaskInvocationParameters) , "Status" :: Maybe (MaintenanceWindowExecutionStatus) , "StatusDetails" :: Maybe (MaintenanceWindowExecutionStatusDetails) , "StartTime" :: Maybe (DateTime) , "EndTime" :: Maybe (DateTime) , "OwnerInformation" :: Maybe (OwnerInformation) , "WindowTargetId" :: Maybe (MaintenanceWindowTaskTargetId) } -> {"WindowExecutionId" :: Maybe (MaintenanceWindowExecutionId) , "TaskExecutionId" :: Maybe (MaintenanceWindowExecutionTaskId) , "InvocationId" :: Maybe (MaintenanceWindowExecutionTaskInvocationId) , "ExecutionId" :: Maybe (MaintenanceWindowExecutionTaskExecutionId) , "TaskType" :: Maybe (MaintenanceWindowTaskType) , "Parameters" :: Maybe (MaintenanceWindowExecutionTaskInvocationParameters) , "Status" :: Maybe (MaintenanceWindowExecutionStatus) , "StatusDetails" :: Maybe (MaintenanceWindowExecutionStatusDetails) , "StartTime" :: Maybe (DateTime) , "EndTime" :: Maybe (DateTime) , "OwnerInformation" :: Maybe (OwnerInformation) , "WindowTargetId" :: Maybe (MaintenanceWindowTaskTargetId) } ) -> GetMaintenanceWindowExecutionTaskInvocationResult
+newGetMaintenanceWindowExecutionTaskInvocationResult'  customize = (GetMaintenanceWindowExecutionTaskInvocationResult <<< customize) { "EndTime": Nothing, "ExecutionId": Nothing, "InvocationId": Nothing, "OwnerInformation": Nothing, "Parameters": Nothing, "StartTime": Nothing, "Status": Nothing, "StatusDetails": Nothing, "TaskExecutionId": Nothing, "TaskType": Nothing, "WindowExecutionId": Nothing, "WindowTargetId": Nothing }
 
 
 
@@ -4653,19 +4652,19 @@ newGetMaintenanceWindowExecutionTaskRequest' _TaskId _WindowExecutionId customiz
 
 
 newtype GetMaintenanceWindowExecutionTaskResult = GetMaintenanceWindowExecutionTaskResult 
-  { "WindowExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionId)
-  , "TaskExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionTaskId)
-  , "TaskArn" :: NullOrUndefined (MaintenanceWindowTaskArn)
-  , "ServiceRole" :: NullOrUndefined (ServiceRole)
-  , "Type" :: NullOrUndefined (MaintenanceWindowTaskType)
-  , "TaskParameters" :: NullOrUndefined (MaintenanceWindowTaskParametersList)
-  , "Priority" :: NullOrUndefined (MaintenanceWindowTaskPriority)
-  , "MaxConcurrency" :: NullOrUndefined (MaxConcurrency)
-  , "MaxErrors" :: NullOrUndefined (MaxErrors)
-  , "Status" :: NullOrUndefined (MaintenanceWindowExecutionStatus)
-  , "StatusDetails" :: NullOrUndefined (MaintenanceWindowExecutionStatusDetails)
-  , "StartTime" :: NullOrUndefined (DateTime)
-  , "EndTime" :: NullOrUndefined (DateTime)
+  { "WindowExecutionId" :: Maybe (MaintenanceWindowExecutionId)
+  , "TaskExecutionId" :: Maybe (MaintenanceWindowExecutionTaskId)
+  , "TaskArn" :: Maybe (MaintenanceWindowTaskArn)
+  , "ServiceRole" :: Maybe (ServiceRole)
+  , "Type" :: Maybe (MaintenanceWindowTaskType)
+  , "TaskParameters" :: Maybe (MaintenanceWindowTaskParametersList)
+  , "Priority" :: Maybe (MaintenanceWindowTaskPriority)
+  , "MaxConcurrency" :: Maybe (MaxConcurrency)
+  , "MaxErrors" :: Maybe (MaxErrors)
+  , "Status" :: Maybe (MaintenanceWindowExecutionStatus)
+  , "StatusDetails" :: Maybe (MaintenanceWindowExecutionStatusDetails)
+  , "StartTime" :: Maybe (DateTime)
+  , "EndTime" :: Maybe (DateTime)
   }
 derive instance newtypeGetMaintenanceWindowExecutionTaskResult :: Newtype GetMaintenanceWindowExecutionTaskResult _
 derive instance repGenericGetMaintenanceWindowExecutionTaskResult :: Generic GetMaintenanceWindowExecutionTaskResult _
@@ -4675,12 +4674,12 @@ instance encodeGetMaintenanceWindowExecutionTaskResult :: Encode GetMaintenanceW
 
 -- | Constructs GetMaintenanceWindowExecutionTaskResult from required parameters
 newGetMaintenanceWindowExecutionTaskResult :: GetMaintenanceWindowExecutionTaskResult
-newGetMaintenanceWindowExecutionTaskResult  = GetMaintenanceWindowExecutionTaskResult { "EndTime": (NullOrUndefined Nothing), "MaxConcurrency": (NullOrUndefined Nothing), "MaxErrors": (NullOrUndefined Nothing), "Priority": (NullOrUndefined Nothing), "ServiceRole": (NullOrUndefined Nothing), "StartTime": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "StatusDetails": (NullOrUndefined Nothing), "TaskArn": (NullOrUndefined Nothing), "TaskExecutionId": (NullOrUndefined Nothing), "TaskParameters": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing), "WindowExecutionId": (NullOrUndefined Nothing) }
+newGetMaintenanceWindowExecutionTaskResult  = GetMaintenanceWindowExecutionTaskResult { "EndTime": Nothing, "MaxConcurrency": Nothing, "MaxErrors": Nothing, "Priority": Nothing, "ServiceRole": Nothing, "StartTime": Nothing, "Status": Nothing, "StatusDetails": Nothing, "TaskArn": Nothing, "TaskExecutionId": Nothing, "TaskParameters": Nothing, "Type": Nothing, "WindowExecutionId": Nothing }
 
 -- | Constructs GetMaintenanceWindowExecutionTaskResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetMaintenanceWindowExecutionTaskResult' :: ( { "WindowExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionId) , "TaskExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionTaskId) , "TaskArn" :: NullOrUndefined (MaintenanceWindowTaskArn) , "ServiceRole" :: NullOrUndefined (ServiceRole) , "Type" :: NullOrUndefined (MaintenanceWindowTaskType) , "TaskParameters" :: NullOrUndefined (MaintenanceWindowTaskParametersList) , "Priority" :: NullOrUndefined (MaintenanceWindowTaskPriority) , "MaxConcurrency" :: NullOrUndefined (MaxConcurrency) , "MaxErrors" :: NullOrUndefined (MaxErrors) , "Status" :: NullOrUndefined (MaintenanceWindowExecutionStatus) , "StatusDetails" :: NullOrUndefined (MaintenanceWindowExecutionStatusDetails) , "StartTime" :: NullOrUndefined (DateTime) , "EndTime" :: NullOrUndefined (DateTime) } -> {"WindowExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionId) , "TaskExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionTaskId) , "TaskArn" :: NullOrUndefined (MaintenanceWindowTaskArn) , "ServiceRole" :: NullOrUndefined (ServiceRole) , "Type" :: NullOrUndefined (MaintenanceWindowTaskType) , "TaskParameters" :: NullOrUndefined (MaintenanceWindowTaskParametersList) , "Priority" :: NullOrUndefined (MaintenanceWindowTaskPriority) , "MaxConcurrency" :: NullOrUndefined (MaxConcurrency) , "MaxErrors" :: NullOrUndefined (MaxErrors) , "Status" :: NullOrUndefined (MaintenanceWindowExecutionStatus) , "StatusDetails" :: NullOrUndefined (MaintenanceWindowExecutionStatusDetails) , "StartTime" :: NullOrUndefined (DateTime) , "EndTime" :: NullOrUndefined (DateTime) } ) -> GetMaintenanceWindowExecutionTaskResult
-newGetMaintenanceWindowExecutionTaskResult'  customize = (GetMaintenanceWindowExecutionTaskResult <<< customize) { "EndTime": (NullOrUndefined Nothing), "MaxConcurrency": (NullOrUndefined Nothing), "MaxErrors": (NullOrUndefined Nothing), "Priority": (NullOrUndefined Nothing), "ServiceRole": (NullOrUndefined Nothing), "StartTime": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "StatusDetails": (NullOrUndefined Nothing), "TaskArn": (NullOrUndefined Nothing), "TaskExecutionId": (NullOrUndefined Nothing), "TaskParameters": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing), "WindowExecutionId": (NullOrUndefined Nothing) }
+newGetMaintenanceWindowExecutionTaskResult' :: ( { "WindowExecutionId" :: Maybe (MaintenanceWindowExecutionId) , "TaskExecutionId" :: Maybe (MaintenanceWindowExecutionTaskId) , "TaskArn" :: Maybe (MaintenanceWindowTaskArn) , "ServiceRole" :: Maybe (ServiceRole) , "Type" :: Maybe (MaintenanceWindowTaskType) , "TaskParameters" :: Maybe (MaintenanceWindowTaskParametersList) , "Priority" :: Maybe (MaintenanceWindowTaskPriority) , "MaxConcurrency" :: Maybe (MaxConcurrency) , "MaxErrors" :: Maybe (MaxErrors) , "Status" :: Maybe (MaintenanceWindowExecutionStatus) , "StatusDetails" :: Maybe (MaintenanceWindowExecutionStatusDetails) , "StartTime" :: Maybe (DateTime) , "EndTime" :: Maybe (DateTime) } -> {"WindowExecutionId" :: Maybe (MaintenanceWindowExecutionId) , "TaskExecutionId" :: Maybe (MaintenanceWindowExecutionTaskId) , "TaskArn" :: Maybe (MaintenanceWindowTaskArn) , "ServiceRole" :: Maybe (ServiceRole) , "Type" :: Maybe (MaintenanceWindowTaskType) , "TaskParameters" :: Maybe (MaintenanceWindowTaskParametersList) , "Priority" :: Maybe (MaintenanceWindowTaskPriority) , "MaxConcurrency" :: Maybe (MaxConcurrency) , "MaxErrors" :: Maybe (MaxErrors) , "Status" :: Maybe (MaintenanceWindowExecutionStatus) , "StatusDetails" :: Maybe (MaintenanceWindowExecutionStatusDetails) , "StartTime" :: Maybe (DateTime) , "EndTime" :: Maybe (DateTime) } ) -> GetMaintenanceWindowExecutionTaskResult
+newGetMaintenanceWindowExecutionTaskResult'  customize = (GetMaintenanceWindowExecutionTaskResult <<< customize) { "EndTime": Nothing, "MaxConcurrency": Nothing, "MaxErrors": Nothing, "Priority": Nothing, "ServiceRole": Nothing, "StartTime": Nothing, "Status": Nothing, "StatusDetails": Nothing, "TaskArn": Nothing, "TaskExecutionId": Nothing, "TaskParameters": Nothing, "Type": Nothing, "WindowExecutionId": Nothing }
 
 
 
@@ -4705,16 +4704,16 @@ newGetMaintenanceWindowRequest' _WindowId customize = (GetMaintenanceWindowReque
 
 
 newtype GetMaintenanceWindowResult = GetMaintenanceWindowResult 
-  { "WindowId" :: NullOrUndefined (MaintenanceWindowId)
-  , "Name" :: NullOrUndefined (MaintenanceWindowName)
-  , "Description" :: NullOrUndefined (MaintenanceWindowDescription)
-  , "Schedule" :: NullOrUndefined (MaintenanceWindowSchedule)
-  , "Duration" :: NullOrUndefined (MaintenanceWindowDurationHours)
-  , "Cutoff" :: NullOrUndefined (MaintenanceWindowCutoff)
-  , "AllowUnassociatedTargets" :: NullOrUndefined (MaintenanceWindowAllowUnassociatedTargets)
-  , "Enabled" :: NullOrUndefined (MaintenanceWindowEnabled)
-  , "CreatedDate" :: NullOrUndefined (DateTime)
-  , "ModifiedDate" :: NullOrUndefined (DateTime)
+  { "WindowId" :: Maybe (MaintenanceWindowId)
+  , "Name" :: Maybe (MaintenanceWindowName)
+  , "Description" :: Maybe (MaintenanceWindowDescription)
+  , "Schedule" :: Maybe (MaintenanceWindowSchedule)
+  , "Duration" :: Maybe (MaintenanceWindowDurationHours)
+  , "Cutoff" :: Maybe (MaintenanceWindowCutoff)
+  , "AllowUnassociatedTargets" :: Maybe (MaintenanceWindowAllowUnassociatedTargets)
+  , "Enabled" :: Maybe (MaintenanceWindowEnabled)
+  , "CreatedDate" :: Maybe (DateTime)
+  , "ModifiedDate" :: Maybe (DateTime)
   }
 derive instance newtypeGetMaintenanceWindowResult :: Newtype GetMaintenanceWindowResult _
 derive instance repGenericGetMaintenanceWindowResult :: Generic GetMaintenanceWindowResult _
@@ -4724,12 +4723,12 @@ instance encodeGetMaintenanceWindowResult :: Encode GetMaintenanceWindowResult w
 
 -- | Constructs GetMaintenanceWindowResult from required parameters
 newGetMaintenanceWindowResult :: GetMaintenanceWindowResult
-newGetMaintenanceWindowResult  = GetMaintenanceWindowResult { "AllowUnassociatedTargets": (NullOrUndefined Nothing), "CreatedDate": (NullOrUndefined Nothing), "Cutoff": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "Duration": (NullOrUndefined Nothing), "Enabled": (NullOrUndefined Nothing), "ModifiedDate": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Schedule": (NullOrUndefined Nothing), "WindowId": (NullOrUndefined Nothing) }
+newGetMaintenanceWindowResult  = GetMaintenanceWindowResult { "AllowUnassociatedTargets": Nothing, "CreatedDate": Nothing, "Cutoff": Nothing, "Description": Nothing, "Duration": Nothing, "Enabled": Nothing, "ModifiedDate": Nothing, "Name": Nothing, "Schedule": Nothing, "WindowId": Nothing }
 
 -- | Constructs GetMaintenanceWindowResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetMaintenanceWindowResult' :: ( { "WindowId" :: NullOrUndefined (MaintenanceWindowId) , "Name" :: NullOrUndefined (MaintenanceWindowName) , "Description" :: NullOrUndefined (MaintenanceWindowDescription) , "Schedule" :: NullOrUndefined (MaintenanceWindowSchedule) , "Duration" :: NullOrUndefined (MaintenanceWindowDurationHours) , "Cutoff" :: NullOrUndefined (MaintenanceWindowCutoff) , "AllowUnassociatedTargets" :: NullOrUndefined (MaintenanceWindowAllowUnassociatedTargets) , "Enabled" :: NullOrUndefined (MaintenanceWindowEnabled) , "CreatedDate" :: NullOrUndefined (DateTime) , "ModifiedDate" :: NullOrUndefined (DateTime) } -> {"WindowId" :: NullOrUndefined (MaintenanceWindowId) , "Name" :: NullOrUndefined (MaintenanceWindowName) , "Description" :: NullOrUndefined (MaintenanceWindowDescription) , "Schedule" :: NullOrUndefined (MaintenanceWindowSchedule) , "Duration" :: NullOrUndefined (MaintenanceWindowDurationHours) , "Cutoff" :: NullOrUndefined (MaintenanceWindowCutoff) , "AllowUnassociatedTargets" :: NullOrUndefined (MaintenanceWindowAllowUnassociatedTargets) , "Enabled" :: NullOrUndefined (MaintenanceWindowEnabled) , "CreatedDate" :: NullOrUndefined (DateTime) , "ModifiedDate" :: NullOrUndefined (DateTime) } ) -> GetMaintenanceWindowResult
-newGetMaintenanceWindowResult'  customize = (GetMaintenanceWindowResult <<< customize) { "AllowUnassociatedTargets": (NullOrUndefined Nothing), "CreatedDate": (NullOrUndefined Nothing), "Cutoff": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "Duration": (NullOrUndefined Nothing), "Enabled": (NullOrUndefined Nothing), "ModifiedDate": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Schedule": (NullOrUndefined Nothing), "WindowId": (NullOrUndefined Nothing) }
+newGetMaintenanceWindowResult' :: ( { "WindowId" :: Maybe (MaintenanceWindowId) , "Name" :: Maybe (MaintenanceWindowName) , "Description" :: Maybe (MaintenanceWindowDescription) , "Schedule" :: Maybe (MaintenanceWindowSchedule) , "Duration" :: Maybe (MaintenanceWindowDurationHours) , "Cutoff" :: Maybe (MaintenanceWindowCutoff) , "AllowUnassociatedTargets" :: Maybe (MaintenanceWindowAllowUnassociatedTargets) , "Enabled" :: Maybe (MaintenanceWindowEnabled) , "CreatedDate" :: Maybe (DateTime) , "ModifiedDate" :: Maybe (DateTime) } -> {"WindowId" :: Maybe (MaintenanceWindowId) , "Name" :: Maybe (MaintenanceWindowName) , "Description" :: Maybe (MaintenanceWindowDescription) , "Schedule" :: Maybe (MaintenanceWindowSchedule) , "Duration" :: Maybe (MaintenanceWindowDurationHours) , "Cutoff" :: Maybe (MaintenanceWindowCutoff) , "AllowUnassociatedTargets" :: Maybe (MaintenanceWindowAllowUnassociatedTargets) , "Enabled" :: Maybe (MaintenanceWindowEnabled) , "CreatedDate" :: Maybe (DateTime) , "ModifiedDate" :: Maybe (DateTime) } ) -> GetMaintenanceWindowResult
+newGetMaintenanceWindowResult'  customize = (GetMaintenanceWindowResult <<< customize) { "AllowUnassociatedTargets": Nothing, "CreatedDate": Nothing, "Cutoff": Nothing, "Description": Nothing, "Duration": Nothing, "Enabled": Nothing, "ModifiedDate": Nothing, "Name": Nothing, "Schedule": Nothing, "WindowId": Nothing }
 
 
 
@@ -4755,20 +4754,20 @@ newGetMaintenanceWindowTaskRequest' _WindowId _WindowTaskId customize = (GetMain
 
 
 newtype GetMaintenanceWindowTaskResult = GetMaintenanceWindowTaskResult 
-  { "WindowId" :: NullOrUndefined (MaintenanceWindowId)
-  , "WindowTaskId" :: NullOrUndefined (MaintenanceWindowTaskId)
-  , "Targets" :: NullOrUndefined (Targets)
-  , "TaskArn" :: NullOrUndefined (MaintenanceWindowTaskArn)
-  , "ServiceRoleArn" :: NullOrUndefined (ServiceRole)
-  , "TaskType" :: NullOrUndefined (MaintenanceWindowTaskType)
-  , "TaskParameters" :: NullOrUndefined (MaintenanceWindowTaskParameters)
-  , "TaskInvocationParameters" :: NullOrUndefined (MaintenanceWindowTaskInvocationParameters)
-  , "Priority" :: NullOrUndefined (MaintenanceWindowTaskPriority)
-  , "MaxConcurrency" :: NullOrUndefined (MaxConcurrency)
-  , "MaxErrors" :: NullOrUndefined (MaxErrors)
-  , "LoggingInfo" :: NullOrUndefined (LoggingInfo)
-  , "Name" :: NullOrUndefined (MaintenanceWindowName)
-  , "Description" :: NullOrUndefined (MaintenanceWindowDescription)
+  { "WindowId" :: Maybe (MaintenanceWindowId)
+  , "WindowTaskId" :: Maybe (MaintenanceWindowTaskId)
+  , "Targets" :: Maybe (Targets)
+  , "TaskArn" :: Maybe (MaintenanceWindowTaskArn)
+  , "ServiceRoleArn" :: Maybe (ServiceRole)
+  , "TaskType" :: Maybe (MaintenanceWindowTaskType)
+  , "TaskParameters" :: Maybe (MaintenanceWindowTaskParameters)
+  , "TaskInvocationParameters" :: Maybe (MaintenanceWindowTaskInvocationParameters)
+  , "Priority" :: Maybe (MaintenanceWindowTaskPriority)
+  , "MaxConcurrency" :: Maybe (MaxConcurrency)
+  , "MaxErrors" :: Maybe (MaxErrors)
+  , "LoggingInfo" :: Maybe (LoggingInfo)
+  , "Name" :: Maybe (MaintenanceWindowName)
+  , "Description" :: Maybe (MaintenanceWindowDescription)
   }
 derive instance newtypeGetMaintenanceWindowTaskResult :: Newtype GetMaintenanceWindowTaskResult _
 derive instance repGenericGetMaintenanceWindowTaskResult :: Generic GetMaintenanceWindowTaskResult _
@@ -4778,20 +4777,20 @@ instance encodeGetMaintenanceWindowTaskResult :: Encode GetMaintenanceWindowTask
 
 -- | Constructs GetMaintenanceWindowTaskResult from required parameters
 newGetMaintenanceWindowTaskResult :: GetMaintenanceWindowTaskResult
-newGetMaintenanceWindowTaskResult  = GetMaintenanceWindowTaskResult { "Description": (NullOrUndefined Nothing), "LoggingInfo": (NullOrUndefined Nothing), "MaxConcurrency": (NullOrUndefined Nothing), "MaxErrors": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Priority": (NullOrUndefined Nothing), "ServiceRoleArn": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing), "TaskArn": (NullOrUndefined Nothing), "TaskInvocationParameters": (NullOrUndefined Nothing), "TaskParameters": (NullOrUndefined Nothing), "TaskType": (NullOrUndefined Nothing), "WindowId": (NullOrUndefined Nothing), "WindowTaskId": (NullOrUndefined Nothing) }
+newGetMaintenanceWindowTaskResult  = GetMaintenanceWindowTaskResult { "Description": Nothing, "LoggingInfo": Nothing, "MaxConcurrency": Nothing, "MaxErrors": Nothing, "Name": Nothing, "Priority": Nothing, "ServiceRoleArn": Nothing, "Targets": Nothing, "TaskArn": Nothing, "TaskInvocationParameters": Nothing, "TaskParameters": Nothing, "TaskType": Nothing, "WindowId": Nothing, "WindowTaskId": Nothing }
 
 -- | Constructs GetMaintenanceWindowTaskResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetMaintenanceWindowTaskResult' :: ( { "WindowId" :: NullOrUndefined (MaintenanceWindowId) , "WindowTaskId" :: NullOrUndefined (MaintenanceWindowTaskId) , "Targets" :: NullOrUndefined (Targets) , "TaskArn" :: NullOrUndefined (MaintenanceWindowTaskArn) , "ServiceRoleArn" :: NullOrUndefined (ServiceRole) , "TaskType" :: NullOrUndefined (MaintenanceWindowTaskType) , "TaskParameters" :: NullOrUndefined (MaintenanceWindowTaskParameters) , "TaskInvocationParameters" :: NullOrUndefined (MaintenanceWindowTaskInvocationParameters) , "Priority" :: NullOrUndefined (MaintenanceWindowTaskPriority) , "MaxConcurrency" :: NullOrUndefined (MaxConcurrency) , "MaxErrors" :: NullOrUndefined (MaxErrors) , "LoggingInfo" :: NullOrUndefined (LoggingInfo) , "Name" :: NullOrUndefined (MaintenanceWindowName) , "Description" :: NullOrUndefined (MaintenanceWindowDescription) } -> {"WindowId" :: NullOrUndefined (MaintenanceWindowId) , "WindowTaskId" :: NullOrUndefined (MaintenanceWindowTaskId) , "Targets" :: NullOrUndefined (Targets) , "TaskArn" :: NullOrUndefined (MaintenanceWindowTaskArn) , "ServiceRoleArn" :: NullOrUndefined (ServiceRole) , "TaskType" :: NullOrUndefined (MaintenanceWindowTaskType) , "TaskParameters" :: NullOrUndefined (MaintenanceWindowTaskParameters) , "TaskInvocationParameters" :: NullOrUndefined (MaintenanceWindowTaskInvocationParameters) , "Priority" :: NullOrUndefined (MaintenanceWindowTaskPriority) , "MaxConcurrency" :: NullOrUndefined (MaxConcurrency) , "MaxErrors" :: NullOrUndefined (MaxErrors) , "LoggingInfo" :: NullOrUndefined (LoggingInfo) , "Name" :: NullOrUndefined (MaintenanceWindowName) , "Description" :: NullOrUndefined (MaintenanceWindowDescription) } ) -> GetMaintenanceWindowTaskResult
-newGetMaintenanceWindowTaskResult'  customize = (GetMaintenanceWindowTaskResult <<< customize) { "Description": (NullOrUndefined Nothing), "LoggingInfo": (NullOrUndefined Nothing), "MaxConcurrency": (NullOrUndefined Nothing), "MaxErrors": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Priority": (NullOrUndefined Nothing), "ServiceRoleArn": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing), "TaskArn": (NullOrUndefined Nothing), "TaskInvocationParameters": (NullOrUndefined Nothing), "TaskParameters": (NullOrUndefined Nothing), "TaskType": (NullOrUndefined Nothing), "WindowId": (NullOrUndefined Nothing), "WindowTaskId": (NullOrUndefined Nothing) }
+newGetMaintenanceWindowTaskResult' :: ( { "WindowId" :: Maybe (MaintenanceWindowId) , "WindowTaskId" :: Maybe (MaintenanceWindowTaskId) , "Targets" :: Maybe (Targets) , "TaskArn" :: Maybe (MaintenanceWindowTaskArn) , "ServiceRoleArn" :: Maybe (ServiceRole) , "TaskType" :: Maybe (MaintenanceWindowTaskType) , "TaskParameters" :: Maybe (MaintenanceWindowTaskParameters) , "TaskInvocationParameters" :: Maybe (MaintenanceWindowTaskInvocationParameters) , "Priority" :: Maybe (MaintenanceWindowTaskPriority) , "MaxConcurrency" :: Maybe (MaxConcurrency) , "MaxErrors" :: Maybe (MaxErrors) , "LoggingInfo" :: Maybe (LoggingInfo) , "Name" :: Maybe (MaintenanceWindowName) , "Description" :: Maybe (MaintenanceWindowDescription) } -> {"WindowId" :: Maybe (MaintenanceWindowId) , "WindowTaskId" :: Maybe (MaintenanceWindowTaskId) , "Targets" :: Maybe (Targets) , "TaskArn" :: Maybe (MaintenanceWindowTaskArn) , "ServiceRoleArn" :: Maybe (ServiceRole) , "TaskType" :: Maybe (MaintenanceWindowTaskType) , "TaskParameters" :: Maybe (MaintenanceWindowTaskParameters) , "TaskInvocationParameters" :: Maybe (MaintenanceWindowTaskInvocationParameters) , "Priority" :: Maybe (MaintenanceWindowTaskPriority) , "MaxConcurrency" :: Maybe (MaxConcurrency) , "MaxErrors" :: Maybe (MaxErrors) , "LoggingInfo" :: Maybe (LoggingInfo) , "Name" :: Maybe (MaintenanceWindowName) , "Description" :: Maybe (MaintenanceWindowDescription) } ) -> GetMaintenanceWindowTaskResult
+newGetMaintenanceWindowTaskResult'  customize = (GetMaintenanceWindowTaskResult <<< customize) { "Description": Nothing, "LoggingInfo": Nothing, "MaxConcurrency": Nothing, "MaxErrors": Nothing, "Name": Nothing, "Priority": Nothing, "ServiceRoleArn": Nothing, "Targets": Nothing, "TaskArn": Nothing, "TaskInvocationParameters": Nothing, "TaskParameters": Nothing, "TaskType": Nothing, "WindowId": Nothing, "WindowTaskId": Nothing }
 
 
 
 newtype GetParameterHistoryRequest = GetParameterHistoryRequest 
   { "Name" :: (PSParameterName)
-  , "WithDecryption" :: NullOrUndefined (Boolean)
-  , "MaxResults" :: NullOrUndefined (MaxResults)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  , "WithDecryption" :: Maybe (Boolean)
+  , "MaxResults" :: Maybe (MaxResults)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeGetParameterHistoryRequest :: Newtype GetParameterHistoryRequest _
 derive instance repGenericGetParameterHistoryRequest :: Generic GetParameterHistoryRequest _
@@ -4801,18 +4800,18 @@ instance encodeGetParameterHistoryRequest :: Encode GetParameterHistoryRequest w
 
 -- | Constructs GetParameterHistoryRequest from required parameters
 newGetParameterHistoryRequest :: PSParameterName -> GetParameterHistoryRequest
-newGetParameterHistoryRequest _Name = GetParameterHistoryRequest { "Name": _Name, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "WithDecryption": (NullOrUndefined Nothing) }
+newGetParameterHistoryRequest _Name = GetParameterHistoryRequest { "Name": _Name, "MaxResults": Nothing, "NextToken": Nothing, "WithDecryption": Nothing }
 
 -- | Constructs GetParameterHistoryRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetParameterHistoryRequest' :: PSParameterName -> ( { "Name" :: (PSParameterName) , "WithDecryption" :: NullOrUndefined (Boolean) , "MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Name" :: (PSParameterName) , "WithDecryption" :: NullOrUndefined (Boolean) , "MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (NextToken) } ) -> GetParameterHistoryRequest
-newGetParameterHistoryRequest' _Name customize = (GetParameterHistoryRequest <<< customize) { "Name": _Name, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "WithDecryption": (NullOrUndefined Nothing) }
+newGetParameterHistoryRequest' :: PSParameterName -> ( { "Name" :: (PSParameterName) , "WithDecryption" :: Maybe (Boolean) , "MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (NextToken) } -> {"Name" :: (PSParameterName) , "WithDecryption" :: Maybe (Boolean) , "MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (NextToken) } ) -> GetParameterHistoryRequest
+newGetParameterHistoryRequest' _Name customize = (GetParameterHistoryRequest <<< customize) { "Name": _Name, "MaxResults": Nothing, "NextToken": Nothing, "WithDecryption": Nothing }
 
 
 
 newtype GetParameterHistoryResult = GetParameterHistoryResult 
-  { "Parameters" :: NullOrUndefined (ParameterHistoryList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "Parameters" :: Maybe (ParameterHistoryList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeGetParameterHistoryResult :: Newtype GetParameterHistoryResult _
 derive instance repGenericGetParameterHistoryResult :: Generic GetParameterHistoryResult _
@@ -4822,18 +4821,18 @@ instance encodeGetParameterHistoryResult :: Encode GetParameterHistoryResult whe
 
 -- | Constructs GetParameterHistoryResult from required parameters
 newGetParameterHistoryResult :: GetParameterHistoryResult
-newGetParameterHistoryResult  = GetParameterHistoryResult { "NextToken": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing) }
+newGetParameterHistoryResult  = GetParameterHistoryResult { "NextToken": Nothing, "Parameters": Nothing }
 
 -- | Constructs GetParameterHistoryResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetParameterHistoryResult' :: ( { "Parameters" :: NullOrUndefined (ParameterHistoryList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Parameters" :: NullOrUndefined (ParameterHistoryList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> GetParameterHistoryResult
-newGetParameterHistoryResult'  customize = (GetParameterHistoryResult <<< customize) { "NextToken": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing) }
+newGetParameterHistoryResult' :: ( { "Parameters" :: Maybe (ParameterHistoryList) , "NextToken" :: Maybe (NextToken) } -> {"Parameters" :: Maybe (ParameterHistoryList) , "NextToken" :: Maybe (NextToken) } ) -> GetParameterHistoryResult
+newGetParameterHistoryResult'  customize = (GetParameterHistoryResult <<< customize) { "NextToken": Nothing, "Parameters": Nothing }
 
 
 
 newtype GetParameterRequest = GetParameterRequest 
   { "Name" :: (PSParameterName)
-  , "WithDecryption" :: NullOrUndefined (Boolean)
+  , "WithDecryption" :: Maybe (Boolean)
   }
 derive instance newtypeGetParameterRequest :: Newtype GetParameterRequest _
 derive instance repGenericGetParameterRequest :: Generic GetParameterRequest _
@@ -4843,17 +4842,17 @@ instance encodeGetParameterRequest :: Encode GetParameterRequest where encode = 
 
 -- | Constructs GetParameterRequest from required parameters
 newGetParameterRequest :: PSParameterName -> GetParameterRequest
-newGetParameterRequest _Name = GetParameterRequest { "Name": _Name, "WithDecryption": (NullOrUndefined Nothing) }
+newGetParameterRequest _Name = GetParameterRequest { "Name": _Name, "WithDecryption": Nothing }
 
 -- | Constructs GetParameterRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetParameterRequest' :: PSParameterName -> ( { "Name" :: (PSParameterName) , "WithDecryption" :: NullOrUndefined (Boolean) } -> {"Name" :: (PSParameterName) , "WithDecryption" :: NullOrUndefined (Boolean) } ) -> GetParameterRequest
-newGetParameterRequest' _Name customize = (GetParameterRequest <<< customize) { "Name": _Name, "WithDecryption": (NullOrUndefined Nothing) }
+newGetParameterRequest' :: PSParameterName -> ( { "Name" :: (PSParameterName) , "WithDecryption" :: Maybe (Boolean) } -> {"Name" :: (PSParameterName) , "WithDecryption" :: Maybe (Boolean) } ) -> GetParameterRequest
+newGetParameterRequest' _Name customize = (GetParameterRequest <<< customize) { "Name": _Name, "WithDecryption": Nothing }
 
 
 
 newtype GetParameterResult = GetParameterResult 
-  { "Parameter" :: NullOrUndefined (Parameter)
+  { "Parameter" :: Maybe (Parameter)
   }
 derive instance newtypeGetParameterResult :: Newtype GetParameterResult _
 derive instance repGenericGetParameterResult :: Generic GetParameterResult _
@@ -4863,12 +4862,12 @@ instance encodeGetParameterResult :: Encode GetParameterResult where encode = ge
 
 -- | Constructs GetParameterResult from required parameters
 newGetParameterResult :: GetParameterResult
-newGetParameterResult  = GetParameterResult { "Parameter": (NullOrUndefined Nothing) }
+newGetParameterResult  = GetParameterResult { "Parameter": Nothing }
 
 -- | Constructs GetParameterResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetParameterResult' :: ( { "Parameter" :: NullOrUndefined (Parameter) } -> {"Parameter" :: NullOrUndefined (Parameter) } ) -> GetParameterResult
-newGetParameterResult'  customize = (GetParameterResult <<< customize) { "Parameter": (NullOrUndefined Nothing) }
+newGetParameterResult' :: ( { "Parameter" :: Maybe (Parameter) } -> {"Parameter" :: Maybe (Parameter) } ) -> GetParameterResult
+newGetParameterResult'  customize = (GetParameterResult <<< customize) { "Parameter": Nothing }
 
 
 
@@ -4883,11 +4882,11 @@ instance encodeGetParametersByPathMaxResults :: Encode GetParametersByPathMaxRes
 
 newtype GetParametersByPathRequest = GetParametersByPathRequest 
   { "Path" :: (PSParameterName)
-  , "Recursive" :: NullOrUndefined (Boolean)
-  , "ParameterFilters" :: NullOrUndefined (ParameterStringFilterList)
-  , "WithDecryption" :: NullOrUndefined (Boolean)
-  , "MaxResults" :: NullOrUndefined (GetParametersByPathMaxResults)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  , "Recursive" :: Maybe (Boolean)
+  , "ParameterFilters" :: Maybe (ParameterStringFilterList)
+  , "WithDecryption" :: Maybe (Boolean)
+  , "MaxResults" :: Maybe (GetParametersByPathMaxResults)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeGetParametersByPathRequest :: Newtype GetParametersByPathRequest _
 derive instance repGenericGetParametersByPathRequest :: Generic GetParametersByPathRequest _
@@ -4897,18 +4896,18 @@ instance encodeGetParametersByPathRequest :: Encode GetParametersByPathRequest w
 
 -- | Constructs GetParametersByPathRequest from required parameters
 newGetParametersByPathRequest :: PSParameterName -> GetParametersByPathRequest
-newGetParametersByPathRequest _Path = GetParametersByPathRequest { "Path": _Path, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "ParameterFilters": (NullOrUndefined Nothing), "Recursive": (NullOrUndefined Nothing), "WithDecryption": (NullOrUndefined Nothing) }
+newGetParametersByPathRequest _Path = GetParametersByPathRequest { "Path": _Path, "MaxResults": Nothing, "NextToken": Nothing, "ParameterFilters": Nothing, "Recursive": Nothing, "WithDecryption": Nothing }
 
 -- | Constructs GetParametersByPathRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetParametersByPathRequest' :: PSParameterName -> ( { "Path" :: (PSParameterName) , "Recursive" :: NullOrUndefined (Boolean) , "ParameterFilters" :: NullOrUndefined (ParameterStringFilterList) , "WithDecryption" :: NullOrUndefined (Boolean) , "MaxResults" :: NullOrUndefined (GetParametersByPathMaxResults) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Path" :: (PSParameterName) , "Recursive" :: NullOrUndefined (Boolean) , "ParameterFilters" :: NullOrUndefined (ParameterStringFilterList) , "WithDecryption" :: NullOrUndefined (Boolean) , "MaxResults" :: NullOrUndefined (GetParametersByPathMaxResults) , "NextToken" :: NullOrUndefined (NextToken) } ) -> GetParametersByPathRequest
-newGetParametersByPathRequest' _Path customize = (GetParametersByPathRequest <<< customize) { "Path": _Path, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "ParameterFilters": (NullOrUndefined Nothing), "Recursive": (NullOrUndefined Nothing), "WithDecryption": (NullOrUndefined Nothing) }
+newGetParametersByPathRequest' :: PSParameterName -> ( { "Path" :: (PSParameterName) , "Recursive" :: Maybe (Boolean) , "ParameterFilters" :: Maybe (ParameterStringFilterList) , "WithDecryption" :: Maybe (Boolean) , "MaxResults" :: Maybe (GetParametersByPathMaxResults) , "NextToken" :: Maybe (NextToken) } -> {"Path" :: (PSParameterName) , "Recursive" :: Maybe (Boolean) , "ParameterFilters" :: Maybe (ParameterStringFilterList) , "WithDecryption" :: Maybe (Boolean) , "MaxResults" :: Maybe (GetParametersByPathMaxResults) , "NextToken" :: Maybe (NextToken) } ) -> GetParametersByPathRequest
+newGetParametersByPathRequest' _Path customize = (GetParametersByPathRequest <<< customize) { "Path": _Path, "MaxResults": Nothing, "NextToken": Nothing, "ParameterFilters": Nothing, "Recursive": Nothing, "WithDecryption": Nothing }
 
 
 
 newtype GetParametersByPathResult = GetParametersByPathResult 
-  { "Parameters" :: NullOrUndefined (ParameterList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "Parameters" :: Maybe (ParameterList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeGetParametersByPathResult :: Newtype GetParametersByPathResult _
 derive instance repGenericGetParametersByPathResult :: Generic GetParametersByPathResult _
@@ -4918,18 +4917,18 @@ instance encodeGetParametersByPathResult :: Encode GetParametersByPathResult whe
 
 -- | Constructs GetParametersByPathResult from required parameters
 newGetParametersByPathResult :: GetParametersByPathResult
-newGetParametersByPathResult  = GetParametersByPathResult { "NextToken": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing) }
+newGetParametersByPathResult  = GetParametersByPathResult { "NextToken": Nothing, "Parameters": Nothing }
 
 -- | Constructs GetParametersByPathResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetParametersByPathResult' :: ( { "Parameters" :: NullOrUndefined (ParameterList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Parameters" :: NullOrUndefined (ParameterList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> GetParametersByPathResult
-newGetParametersByPathResult'  customize = (GetParametersByPathResult <<< customize) { "NextToken": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing) }
+newGetParametersByPathResult' :: ( { "Parameters" :: Maybe (ParameterList) , "NextToken" :: Maybe (NextToken) } -> {"Parameters" :: Maybe (ParameterList) , "NextToken" :: Maybe (NextToken) } ) -> GetParametersByPathResult
+newGetParametersByPathResult'  customize = (GetParametersByPathResult <<< customize) { "NextToken": Nothing, "Parameters": Nothing }
 
 
 
 newtype GetParametersRequest = GetParametersRequest 
   { "Names" :: (ParameterNameList)
-  , "WithDecryption" :: NullOrUndefined (Boolean)
+  , "WithDecryption" :: Maybe (Boolean)
   }
 derive instance newtypeGetParametersRequest :: Newtype GetParametersRequest _
 derive instance repGenericGetParametersRequest :: Generic GetParametersRequest _
@@ -4939,18 +4938,18 @@ instance encodeGetParametersRequest :: Encode GetParametersRequest where encode 
 
 -- | Constructs GetParametersRequest from required parameters
 newGetParametersRequest :: ParameterNameList -> GetParametersRequest
-newGetParametersRequest _Names = GetParametersRequest { "Names": _Names, "WithDecryption": (NullOrUndefined Nothing) }
+newGetParametersRequest _Names = GetParametersRequest { "Names": _Names, "WithDecryption": Nothing }
 
 -- | Constructs GetParametersRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetParametersRequest' :: ParameterNameList -> ( { "Names" :: (ParameterNameList) , "WithDecryption" :: NullOrUndefined (Boolean) } -> {"Names" :: (ParameterNameList) , "WithDecryption" :: NullOrUndefined (Boolean) } ) -> GetParametersRequest
-newGetParametersRequest' _Names customize = (GetParametersRequest <<< customize) { "Names": _Names, "WithDecryption": (NullOrUndefined Nothing) }
+newGetParametersRequest' :: ParameterNameList -> ( { "Names" :: (ParameterNameList) , "WithDecryption" :: Maybe (Boolean) } -> {"Names" :: (ParameterNameList) , "WithDecryption" :: Maybe (Boolean) } ) -> GetParametersRequest
+newGetParametersRequest' _Names customize = (GetParametersRequest <<< customize) { "Names": _Names, "WithDecryption": Nothing }
 
 
 
 newtype GetParametersResult = GetParametersResult 
-  { "Parameters" :: NullOrUndefined (ParameterList)
-  , "InvalidParameters" :: NullOrUndefined (ParameterNameList)
+  { "Parameters" :: Maybe (ParameterList)
+  , "InvalidParameters" :: Maybe (ParameterNameList)
   }
 derive instance newtypeGetParametersResult :: Newtype GetParametersResult _
 derive instance repGenericGetParametersResult :: Generic GetParametersResult _
@@ -4960,18 +4959,18 @@ instance encodeGetParametersResult :: Encode GetParametersResult where encode = 
 
 -- | Constructs GetParametersResult from required parameters
 newGetParametersResult :: GetParametersResult
-newGetParametersResult  = GetParametersResult { "InvalidParameters": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing) }
+newGetParametersResult  = GetParametersResult { "InvalidParameters": Nothing, "Parameters": Nothing }
 
 -- | Constructs GetParametersResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetParametersResult' :: ( { "Parameters" :: NullOrUndefined (ParameterList) , "InvalidParameters" :: NullOrUndefined (ParameterNameList) } -> {"Parameters" :: NullOrUndefined (ParameterList) , "InvalidParameters" :: NullOrUndefined (ParameterNameList) } ) -> GetParametersResult
-newGetParametersResult'  customize = (GetParametersResult <<< customize) { "InvalidParameters": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing) }
+newGetParametersResult' :: ( { "Parameters" :: Maybe (ParameterList) , "InvalidParameters" :: Maybe (ParameterNameList) } -> {"Parameters" :: Maybe (ParameterList) , "InvalidParameters" :: Maybe (ParameterNameList) } ) -> GetParametersResult
+newGetParametersResult'  customize = (GetParametersResult <<< customize) { "InvalidParameters": Nothing, "Parameters": Nothing }
 
 
 
 newtype GetPatchBaselineForPatchGroupRequest = GetPatchBaselineForPatchGroupRequest 
   { "PatchGroup" :: (PatchGroup)
-  , "OperatingSystem" :: NullOrUndefined (OperatingSystem)
+  , "OperatingSystem" :: Maybe (OperatingSystem)
   }
 derive instance newtypeGetPatchBaselineForPatchGroupRequest :: Newtype GetPatchBaselineForPatchGroupRequest _
 derive instance repGenericGetPatchBaselineForPatchGroupRequest :: Generic GetPatchBaselineForPatchGroupRequest _
@@ -4981,19 +4980,19 @@ instance encodeGetPatchBaselineForPatchGroupRequest :: Encode GetPatchBaselineFo
 
 -- | Constructs GetPatchBaselineForPatchGroupRequest from required parameters
 newGetPatchBaselineForPatchGroupRequest :: PatchGroup -> GetPatchBaselineForPatchGroupRequest
-newGetPatchBaselineForPatchGroupRequest _PatchGroup = GetPatchBaselineForPatchGroupRequest { "PatchGroup": _PatchGroup, "OperatingSystem": (NullOrUndefined Nothing) }
+newGetPatchBaselineForPatchGroupRequest _PatchGroup = GetPatchBaselineForPatchGroupRequest { "PatchGroup": _PatchGroup, "OperatingSystem": Nothing }
 
 -- | Constructs GetPatchBaselineForPatchGroupRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetPatchBaselineForPatchGroupRequest' :: PatchGroup -> ( { "PatchGroup" :: (PatchGroup) , "OperatingSystem" :: NullOrUndefined (OperatingSystem) } -> {"PatchGroup" :: (PatchGroup) , "OperatingSystem" :: NullOrUndefined (OperatingSystem) } ) -> GetPatchBaselineForPatchGroupRequest
-newGetPatchBaselineForPatchGroupRequest' _PatchGroup customize = (GetPatchBaselineForPatchGroupRequest <<< customize) { "PatchGroup": _PatchGroup, "OperatingSystem": (NullOrUndefined Nothing) }
+newGetPatchBaselineForPatchGroupRequest' :: PatchGroup -> ( { "PatchGroup" :: (PatchGroup) , "OperatingSystem" :: Maybe (OperatingSystem) } -> {"PatchGroup" :: (PatchGroup) , "OperatingSystem" :: Maybe (OperatingSystem) } ) -> GetPatchBaselineForPatchGroupRequest
+newGetPatchBaselineForPatchGroupRequest' _PatchGroup customize = (GetPatchBaselineForPatchGroupRequest <<< customize) { "PatchGroup": _PatchGroup, "OperatingSystem": Nothing }
 
 
 
 newtype GetPatchBaselineForPatchGroupResult = GetPatchBaselineForPatchGroupResult 
-  { "BaselineId" :: NullOrUndefined (BaselineId)
-  , "PatchGroup" :: NullOrUndefined (PatchGroup)
-  , "OperatingSystem" :: NullOrUndefined (OperatingSystem)
+  { "BaselineId" :: Maybe (BaselineId)
+  , "PatchGroup" :: Maybe (PatchGroup)
+  , "OperatingSystem" :: Maybe (OperatingSystem)
   }
 derive instance newtypeGetPatchBaselineForPatchGroupResult :: Newtype GetPatchBaselineForPatchGroupResult _
 derive instance repGenericGetPatchBaselineForPatchGroupResult :: Generic GetPatchBaselineForPatchGroupResult _
@@ -5003,12 +5002,12 @@ instance encodeGetPatchBaselineForPatchGroupResult :: Encode GetPatchBaselineFor
 
 -- | Constructs GetPatchBaselineForPatchGroupResult from required parameters
 newGetPatchBaselineForPatchGroupResult :: GetPatchBaselineForPatchGroupResult
-newGetPatchBaselineForPatchGroupResult  = GetPatchBaselineForPatchGroupResult { "BaselineId": (NullOrUndefined Nothing), "OperatingSystem": (NullOrUndefined Nothing), "PatchGroup": (NullOrUndefined Nothing) }
+newGetPatchBaselineForPatchGroupResult  = GetPatchBaselineForPatchGroupResult { "BaselineId": Nothing, "OperatingSystem": Nothing, "PatchGroup": Nothing }
 
 -- | Constructs GetPatchBaselineForPatchGroupResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetPatchBaselineForPatchGroupResult' :: ( { "BaselineId" :: NullOrUndefined (BaselineId) , "PatchGroup" :: NullOrUndefined (PatchGroup) , "OperatingSystem" :: NullOrUndefined (OperatingSystem) } -> {"BaselineId" :: NullOrUndefined (BaselineId) , "PatchGroup" :: NullOrUndefined (PatchGroup) , "OperatingSystem" :: NullOrUndefined (OperatingSystem) } ) -> GetPatchBaselineForPatchGroupResult
-newGetPatchBaselineForPatchGroupResult'  customize = (GetPatchBaselineForPatchGroupResult <<< customize) { "BaselineId": (NullOrUndefined Nothing), "OperatingSystem": (NullOrUndefined Nothing), "PatchGroup": (NullOrUndefined Nothing) }
+newGetPatchBaselineForPatchGroupResult' :: ( { "BaselineId" :: Maybe (BaselineId) , "PatchGroup" :: Maybe (PatchGroup) , "OperatingSystem" :: Maybe (OperatingSystem) } -> {"BaselineId" :: Maybe (BaselineId) , "PatchGroup" :: Maybe (PatchGroup) , "OperatingSystem" :: Maybe (OperatingSystem) } ) -> GetPatchBaselineForPatchGroupResult
+newGetPatchBaselineForPatchGroupResult'  customize = (GetPatchBaselineForPatchGroupResult <<< customize) { "BaselineId": Nothing, "OperatingSystem": Nothing, "PatchGroup": Nothing }
 
 
 
@@ -5033,20 +5032,20 @@ newGetPatchBaselineRequest' _BaselineId customize = (GetPatchBaselineRequest <<<
 
 
 newtype GetPatchBaselineResult = GetPatchBaselineResult 
-  { "BaselineId" :: NullOrUndefined (BaselineId)
-  , "Name" :: NullOrUndefined (BaselineName)
-  , "OperatingSystem" :: NullOrUndefined (OperatingSystem)
-  , "GlobalFilters" :: NullOrUndefined (PatchFilterGroup)
-  , "ApprovalRules" :: NullOrUndefined (PatchRuleGroup)
-  , "ApprovedPatches" :: NullOrUndefined (PatchIdList)
-  , "ApprovedPatchesComplianceLevel" :: NullOrUndefined (PatchComplianceLevel)
-  , "ApprovedPatchesEnableNonSecurity" :: NullOrUndefined (Boolean)
-  , "RejectedPatches" :: NullOrUndefined (PatchIdList)
-  , "PatchGroups" :: NullOrUndefined (PatchGroupList)
-  , "CreatedDate" :: NullOrUndefined (DateTime)
-  , "ModifiedDate" :: NullOrUndefined (DateTime)
-  , "Description" :: NullOrUndefined (BaselineDescription)
-  , "Sources" :: NullOrUndefined (PatchSourceList)
+  { "BaselineId" :: Maybe (BaselineId)
+  , "Name" :: Maybe (BaselineName)
+  , "OperatingSystem" :: Maybe (OperatingSystem)
+  , "GlobalFilters" :: Maybe (PatchFilterGroup)
+  , "ApprovalRules" :: Maybe (PatchRuleGroup)
+  , "ApprovedPatches" :: Maybe (PatchIdList)
+  , "ApprovedPatchesComplianceLevel" :: Maybe (PatchComplianceLevel)
+  , "ApprovedPatchesEnableNonSecurity" :: Maybe (Boolean)
+  , "RejectedPatches" :: Maybe (PatchIdList)
+  , "PatchGroups" :: Maybe (PatchGroupList)
+  , "CreatedDate" :: Maybe (DateTime)
+  , "ModifiedDate" :: Maybe (DateTime)
+  , "Description" :: Maybe (BaselineDescription)
+  , "Sources" :: Maybe (PatchSourceList)
   }
 derive instance newtypeGetPatchBaselineResult :: Newtype GetPatchBaselineResult _
 derive instance repGenericGetPatchBaselineResult :: Generic GetPatchBaselineResult _
@@ -5056,18 +5055,18 @@ instance encodeGetPatchBaselineResult :: Encode GetPatchBaselineResult where enc
 
 -- | Constructs GetPatchBaselineResult from required parameters
 newGetPatchBaselineResult :: GetPatchBaselineResult
-newGetPatchBaselineResult  = GetPatchBaselineResult { "ApprovalRules": (NullOrUndefined Nothing), "ApprovedPatches": (NullOrUndefined Nothing), "ApprovedPatchesComplianceLevel": (NullOrUndefined Nothing), "ApprovedPatchesEnableNonSecurity": (NullOrUndefined Nothing), "BaselineId": (NullOrUndefined Nothing), "CreatedDate": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "GlobalFilters": (NullOrUndefined Nothing), "ModifiedDate": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "OperatingSystem": (NullOrUndefined Nothing), "PatchGroups": (NullOrUndefined Nothing), "RejectedPatches": (NullOrUndefined Nothing), "Sources": (NullOrUndefined Nothing) }
+newGetPatchBaselineResult  = GetPatchBaselineResult { "ApprovalRules": Nothing, "ApprovedPatches": Nothing, "ApprovedPatchesComplianceLevel": Nothing, "ApprovedPatchesEnableNonSecurity": Nothing, "BaselineId": Nothing, "CreatedDate": Nothing, "Description": Nothing, "GlobalFilters": Nothing, "ModifiedDate": Nothing, "Name": Nothing, "OperatingSystem": Nothing, "PatchGroups": Nothing, "RejectedPatches": Nothing, "Sources": Nothing }
 
 -- | Constructs GetPatchBaselineResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetPatchBaselineResult' :: ( { "BaselineId" :: NullOrUndefined (BaselineId) , "Name" :: NullOrUndefined (BaselineName) , "OperatingSystem" :: NullOrUndefined (OperatingSystem) , "GlobalFilters" :: NullOrUndefined (PatchFilterGroup) , "ApprovalRules" :: NullOrUndefined (PatchRuleGroup) , "ApprovedPatches" :: NullOrUndefined (PatchIdList) , "ApprovedPatchesComplianceLevel" :: NullOrUndefined (PatchComplianceLevel) , "ApprovedPatchesEnableNonSecurity" :: NullOrUndefined (Boolean) , "RejectedPatches" :: NullOrUndefined (PatchIdList) , "PatchGroups" :: NullOrUndefined (PatchGroupList) , "CreatedDate" :: NullOrUndefined (DateTime) , "ModifiedDate" :: NullOrUndefined (DateTime) , "Description" :: NullOrUndefined (BaselineDescription) , "Sources" :: NullOrUndefined (PatchSourceList) } -> {"BaselineId" :: NullOrUndefined (BaselineId) , "Name" :: NullOrUndefined (BaselineName) , "OperatingSystem" :: NullOrUndefined (OperatingSystem) , "GlobalFilters" :: NullOrUndefined (PatchFilterGroup) , "ApprovalRules" :: NullOrUndefined (PatchRuleGroup) , "ApprovedPatches" :: NullOrUndefined (PatchIdList) , "ApprovedPatchesComplianceLevel" :: NullOrUndefined (PatchComplianceLevel) , "ApprovedPatchesEnableNonSecurity" :: NullOrUndefined (Boolean) , "RejectedPatches" :: NullOrUndefined (PatchIdList) , "PatchGroups" :: NullOrUndefined (PatchGroupList) , "CreatedDate" :: NullOrUndefined (DateTime) , "ModifiedDate" :: NullOrUndefined (DateTime) , "Description" :: NullOrUndefined (BaselineDescription) , "Sources" :: NullOrUndefined (PatchSourceList) } ) -> GetPatchBaselineResult
-newGetPatchBaselineResult'  customize = (GetPatchBaselineResult <<< customize) { "ApprovalRules": (NullOrUndefined Nothing), "ApprovedPatches": (NullOrUndefined Nothing), "ApprovedPatchesComplianceLevel": (NullOrUndefined Nothing), "ApprovedPatchesEnableNonSecurity": (NullOrUndefined Nothing), "BaselineId": (NullOrUndefined Nothing), "CreatedDate": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "GlobalFilters": (NullOrUndefined Nothing), "ModifiedDate": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "OperatingSystem": (NullOrUndefined Nothing), "PatchGroups": (NullOrUndefined Nothing), "RejectedPatches": (NullOrUndefined Nothing), "Sources": (NullOrUndefined Nothing) }
+newGetPatchBaselineResult' :: ( { "BaselineId" :: Maybe (BaselineId) , "Name" :: Maybe (BaselineName) , "OperatingSystem" :: Maybe (OperatingSystem) , "GlobalFilters" :: Maybe (PatchFilterGroup) , "ApprovalRules" :: Maybe (PatchRuleGroup) , "ApprovedPatches" :: Maybe (PatchIdList) , "ApprovedPatchesComplianceLevel" :: Maybe (PatchComplianceLevel) , "ApprovedPatchesEnableNonSecurity" :: Maybe (Boolean) , "RejectedPatches" :: Maybe (PatchIdList) , "PatchGroups" :: Maybe (PatchGroupList) , "CreatedDate" :: Maybe (DateTime) , "ModifiedDate" :: Maybe (DateTime) , "Description" :: Maybe (BaselineDescription) , "Sources" :: Maybe (PatchSourceList) } -> {"BaselineId" :: Maybe (BaselineId) , "Name" :: Maybe (BaselineName) , "OperatingSystem" :: Maybe (OperatingSystem) , "GlobalFilters" :: Maybe (PatchFilterGroup) , "ApprovalRules" :: Maybe (PatchRuleGroup) , "ApprovedPatches" :: Maybe (PatchIdList) , "ApprovedPatchesComplianceLevel" :: Maybe (PatchComplianceLevel) , "ApprovedPatchesEnableNonSecurity" :: Maybe (Boolean) , "RejectedPatches" :: Maybe (PatchIdList) , "PatchGroups" :: Maybe (PatchGroupList) , "CreatedDate" :: Maybe (DateTime) , "ModifiedDate" :: Maybe (DateTime) , "Description" :: Maybe (BaselineDescription) , "Sources" :: Maybe (PatchSourceList) } ) -> GetPatchBaselineResult
+newGetPatchBaselineResult'  customize = (GetPatchBaselineResult <<< customize) { "ApprovalRules": Nothing, "ApprovedPatches": Nothing, "ApprovedPatchesComplianceLevel": Nothing, "ApprovedPatchesEnableNonSecurity": Nothing, "BaselineId": Nothing, "CreatedDate": Nothing, "Description": Nothing, "GlobalFilters": Nothing, "ModifiedDate": Nothing, "Name": Nothing, "OperatingSystem": Nothing, "PatchGroups": Nothing, "RejectedPatches": Nothing, "Sources": Nothing }
 
 
 
 -- | <p>A hierarchy can have a maximum of 15 levels. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working with Systems Manager Parameters</a>. </p>
 newtype HierarchyLevelLimitExceededException = HierarchyLevelLimitExceededException 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeHierarchyLevelLimitExceededException :: Newtype HierarchyLevelLimitExceededException _
 derive instance repGenericHierarchyLevelLimitExceededException :: Generic HierarchyLevelLimitExceededException _
@@ -5077,18 +5076,18 @@ instance encodeHierarchyLevelLimitExceededException :: Encode HierarchyLevelLimi
 
 -- | Constructs HierarchyLevelLimitExceededException from required parameters
 newHierarchyLevelLimitExceededException :: HierarchyLevelLimitExceededException
-newHierarchyLevelLimitExceededException  = HierarchyLevelLimitExceededException { "message": (NullOrUndefined Nothing) }
+newHierarchyLevelLimitExceededException  = HierarchyLevelLimitExceededException { "message": Nothing }
 
 -- | Constructs HierarchyLevelLimitExceededException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newHierarchyLevelLimitExceededException' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> HierarchyLevelLimitExceededException
-newHierarchyLevelLimitExceededException'  customize = (HierarchyLevelLimitExceededException <<< customize) { "message": (NullOrUndefined Nothing) }
+newHierarchyLevelLimitExceededException' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> HierarchyLevelLimitExceededException
+newHierarchyLevelLimitExceededException'  customize = (HierarchyLevelLimitExceededException <<< customize) { "message": Nothing }
 
 
 
 -- | <p>Parameter Store does not support changing a parameter type in a hierarchy. For example, you can't change a parameter from a String type to a SecureString type. You must create a new, unique parameter.</p>
 newtype HierarchyTypeMismatchException = HierarchyTypeMismatchException 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeHierarchyTypeMismatchException :: Newtype HierarchyTypeMismatchException _
 derive instance repGenericHierarchyTypeMismatchException :: Generic HierarchyTypeMismatchException _
@@ -5098,12 +5097,12 @@ instance encodeHierarchyTypeMismatchException :: Encode HierarchyTypeMismatchExc
 
 -- | Constructs HierarchyTypeMismatchException from required parameters
 newHierarchyTypeMismatchException :: HierarchyTypeMismatchException
-newHierarchyTypeMismatchException  = HierarchyTypeMismatchException { "message": (NullOrUndefined Nothing) }
+newHierarchyTypeMismatchException  = HierarchyTypeMismatchException { "message": Nothing }
 
 -- | Constructs HierarchyTypeMismatchException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newHierarchyTypeMismatchException' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> HierarchyTypeMismatchException
-newHierarchyTypeMismatchException'  customize = (HierarchyTypeMismatchException <<< customize) { "message": (NullOrUndefined Nothing) }
+newHierarchyTypeMismatchException' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> HierarchyTypeMismatchException
+newHierarchyTypeMismatchException'  customize = (HierarchyTypeMismatchException <<< customize) { "message": Nothing }
 
 
 
@@ -5136,7 +5135,7 @@ instance encodeIdempotencyToken :: Encode IdempotencyToken where encode = generi
 
 -- | <p>Error returned when an idempotent operation is retried and the parameters don't match the original call to the API with the same idempotency token. </p>
 newtype IdempotentParameterMismatch = IdempotentParameterMismatch 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeIdempotentParameterMismatch :: Newtype IdempotentParameterMismatch _
 derive instance repGenericIdempotentParameterMismatch :: Generic IdempotentParameterMismatch _
@@ -5146,19 +5145,19 @@ instance encodeIdempotentParameterMismatch :: Encode IdempotentParameterMismatch
 
 -- | Constructs IdempotentParameterMismatch from required parameters
 newIdempotentParameterMismatch :: IdempotentParameterMismatch
-newIdempotentParameterMismatch  = IdempotentParameterMismatch { "Message": (NullOrUndefined Nothing) }
+newIdempotentParameterMismatch  = IdempotentParameterMismatch { "Message": Nothing }
 
 -- | Constructs IdempotentParameterMismatch's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newIdempotentParameterMismatch' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> IdempotentParameterMismatch
-newIdempotentParameterMismatch'  customize = (IdempotentParameterMismatch <<< customize) { "Message": (NullOrUndefined Nothing) }
+newIdempotentParameterMismatch' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> IdempotentParameterMismatch
+newIdempotentParameterMismatch'  customize = (IdempotentParameterMismatch <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>Status information about the aggregated associations.</p>
 newtype InstanceAggregatedAssociationOverview = InstanceAggregatedAssociationOverview 
-  { "DetailedStatus" :: NullOrUndefined (StatusName)
-  , "InstanceAssociationStatusAggregatedCount" :: NullOrUndefined (InstanceAssociationStatusAggregatedCount)
+  { "DetailedStatus" :: Maybe (StatusName)
+  , "InstanceAssociationStatusAggregatedCount" :: Maybe (InstanceAssociationStatusAggregatedCount)
   }
 derive instance newtypeInstanceAggregatedAssociationOverview :: Newtype InstanceAggregatedAssociationOverview _
 derive instance repGenericInstanceAggregatedAssociationOverview :: Generic InstanceAggregatedAssociationOverview _
@@ -5168,21 +5167,21 @@ instance encodeInstanceAggregatedAssociationOverview :: Encode InstanceAggregate
 
 -- | Constructs InstanceAggregatedAssociationOverview from required parameters
 newInstanceAggregatedAssociationOverview :: InstanceAggregatedAssociationOverview
-newInstanceAggregatedAssociationOverview  = InstanceAggregatedAssociationOverview { "DetailedStatus": (NullOrUndefined Nothing), "InstanceAssociationStatusAggregatedCount": (NullOrUndefined Nothing) }
+newInstanceAggregatedAssociationOverview  = InstanceAggregatedAssociationOverview { "DetailedStatus": Nothing, "InstanceAssociationStatusAggregatedCount": Nothing }
 
 -- | Constructs InstanceAggregatedAssociationOverview's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInstanceAggregatedAssociationOverview' :: ( { "DetailedStatus" :: NullOrUndefined (StatusName) , "InstanceAssociationStatusAggregatedCount" :: NullOrUndefined (InstanceAssociationStatusAggregatedCount) } -> {"DetailedStatus" :: NullOrUndefined (StatusName) , "InstanceAssociationStatusAggregatedCount" :: NullOrUndefined (InstanceAssociationStatusAggregatedCount) } ) -> InstanceAggregatedAssociationOverview
-newInstanceAggregatedAssociationOverview'  customize = (InstanceAggregatedAssociationOverview <<< customize) { "DetailedStatus": (NullOrUndefined Nothing), "InstanceAssociationStatusAggregatedCount": (NullOrUndefined Nothing) }
+newInstanceAggregatedAssociationOverview' :: ( { "DetailedStatus" :: Maybe (StatusName) , "InstanceAssociationStatusAggregatedCount" :: Maybe (InstanceAssociationStatusAggregatedCount) } -> {"DetailedStatus" :: Maybe (StatusName) , "InstanceAssociationStatusAggregatedCount" :: Maybe (InstanceAssociationStatusAggregatedCount) } ) -> InstanceAggregatedAssociationOverview
+newInstanceAggregatedAssociationOverview'  customize = (InstanceAggregatedAssociationOverview <<< customize) { "DetailedStatus": Nothing, "InstanceAssociationStatusAggregatedCount": Nothing }
 
 
 
 -- | <p>One or more association documents on the instance. </p>
 newtype InstanceAssociation = InstanceAssociation 
-  { "AssociationId" :: NullOrUndefined (AssociationId)
-  , "InstanceId" :: NullOrUndefined (InstanceId)
-  , "Content" :: NullOrUndefined (DocumentContent)
-  , "AssociationVersion" :: NullOrUndefined (AssociationVersion)
+  { "AssociationId" :: Maybe (AssociationId)
+  , "InstanceId" :: Maybe (InstanceId)
+  , "Content" :: Maybe (DocumentContent)
+  , "AssociationVersion" :: Maybe (AssociationVersion)
   }
 derive instance newtypeInstanceAssociation :: Newtype InstanceAssociation _
 derive instance repGenericInstanceAssociation :: Generic InstanceAssociation _
@@ -5192,12 +5191,12 @@ instance encodeInstanceAssociation :: Encode InstanceAssociation where encode = 
 
 -- | Constructs InstanceAssociation from required parameters
 newInstanceAssociation :: InstanceAssociation
-newInstanceAssociation  = InstanceAssociation { "AssociationId": (NullOrUndefined Nothing), "AssociationVersion": (NullOrUndefined Nothing), "Content": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing) }
+newInstanceAssociation  = InstanceAssociation { "AssociationId": Nothing, "AssociationVersion": Nothing, "Content": Nothing, "InstanceId": Nothing }
 
 -- | Constructs InstanceAssociation's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInstanceAssociation' :: ( { "AssociationId" :: NullOrUndefined (AssociationId) , "InstanceId" :: NullOrUndefined (InstanceId) , "Content" :: NullOrUndefined (DocumentContent) , "AssociationVersion" :: NullOrUndefined (AssociationVersion) } -> {"AssociationId" :: NullOrUndefined (AssociationId) , "InstanceId" :: NullOrUndefined (InstanceId) , "Content" :: NullOrUndefined (DocumentContent) , "AssociationVersion" :: NullOrUndefined (AssociationVersion) } ) -> InstanceAssociation
-newInstanceAssociation'  customize = (InstanceAssociation <<< customize) { "AssociationId": (NullOrUndefined Nothing), "AssociationVersion": (NullOrUndefined Nothing), "Content": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing) }
+newInstanceAssociation' :: ( { "AssociationId" :: Maybe (AssociationId) , "InstanceId" :: Maybe (InstanceId) , "Content" :: Maybe (DocumentContent) , "AssociationVersion" :: Maybe (AssociationVersion) } -> {"AssociationId" :: Maybe (AssociationId) , "InstanceId" :: Maybe (InstanceId) , "Content" :: Maybe (DocumentContent) , "AssociationVersion" :: Maybe (AssociationVersion) } ) -> InstanceAssociation
+newInstanceAssociation'  customize = (InstanceAssociation <<< customize) { "AssociationId": Nothing, "AssociationVersion": Nothing, "Content": Nothing, "InstanceId": Nothing }
 
 
 
@@ -5221,7 +5220,7 @@ instance encodeInstanceAssociationList :: Encode InstanceAssociationList where e
 
 -- | <p>An Amazon S3 bucket where you want to store the results of this request.</p>
 newtype InstanceAssociationOutputLocation = InstanceAssociationOutputLocation 
-  { "S3Location" :: NullOrUndefined (S3OutputLocation)
+  { "S3Location" :: Maybe (S3OutputLocation)
   }
 derive instance newtypeInstanceAssociationOutputLocation :: Newtype InstanceAssociationOutputLocation _
 derive instance repGenericInstanceAssociationOutputLocation :: Generic InstanceAssociationOutputLocation _
@@ -5231,18 +5230,18 @@ instance encodeInstanceAssociationOutputLocation :: Encode InstanceAssociationOu
 
 -- | Constructs InstanceAssociationOutputLocation from required parameters
 newInstanceAssociationOutputLocation :: InstanceAssociationOutputLocation
-newInstanceAssociationOutputLocation  = InstanceAssociationOutputLocation { "S3Location": (NullOrUndefined Nothing) }
+newInstanceAssociationOutputLocation  = InstanceAssociationOutputLocation { "S3Location": Nothing }
 
 -- | Constructs InstanceAssociationOutputLocation's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInstanceAssociationOutputLocation' :: ( { "S3Location" :: NullOrUndefined (S3OutputLocation) } -> {"S3Location" :: NullOrUndefined (S3OutputLocation) } ) -> InstanceAssociationOutputLocation
-newInstanceAssociationOutputLocation'  customize = (InstanceAssociationOutputLocation <<< customize) { "S3Location": (NullOrUndefined Nothing) }
+newInstanceAssociationOutputLocation' :: ( { "S3Location" :: Maybe (S3OutputLocation) } -> {"S3Location" :: Maybe (S3OutputLocation) } ) -> InstanceAssociationOutputLocation
+newInstanceAssociationOutputLocation'  customize = (InstanceAssociationOutputLocation <<< customize) { "S3Location": Nothing }
 
 
 
 -- | <p>The URL of Amazon S3 bucket where you want to store the results of this request.</p>
 newtype InstanceAssociationOutputUrl = InstanceAssociationOutputUrl 
-  { "S3OutputUrl" :: NullOrUndefined (S3OutputUrl)
+  { "S3OutputUrl" :: Maybe (S3OutputUrl)
   }
 derive instance newtypeInstanceAssociationOutputUrl :: Newtype InstanceAssociationOutputUrl _
 derive instance repGenericInstanceAssociationOutputUrl :: Generic InstanceAssociationOutputUrl _
@@ -5252,12 +5251,12 @@ instance encodeInstanceAssociationOutputUrl :: Encode InstanceAssociationOutputU
 
 -- | Constructs InstanceAssociationOutputUrl from required parameters
 newInstanceAssociationOutputUrl :: InstanceAssociationOutputUrl
-newInstanceAssociationOutputUrl  = InstanceAssociationOutputUrl { "S3OutputUrl": (NullOrUndefined Nothing) }
+newInstanceAssociationOutputUrl  = InstanceAssociationOutputUrl { "S3OutputUrl": Nothing }
 
 -- | Constructs InstanceAssociationOutputUrl's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInstanceAssociationOutputUrl' :: ( { "S3OutputUrl" :: NullOrUndefined (S3OutputUrl) } -> {"S3OutputUrl" :: NullOrUndefined (S3OutputUrl) } ) -> InstanceAssociationOutputUrl
-newInstanceAssociationOutputUrl'  customize = (InstanceAssociationOutputUrl <<< customize) { "S3OutputUrl": (NullOrUndefined Nothing) }
+newInstanceAssociationOutputUrl' :: ( { "S3OutputUrl" :: Maybe (S3OutputUrl) } -> {"S3OutputUrl" :: Maybe (S3OutputUrl) } ) -> InstanceAssociationOutputUrl
+newInstanceAssociationOutputUrl'  customize = (InstanceAssociationOutputUrl <<< customize) { "S3OutputUrl": Nothing }
 
 
 
@@ -5272,18 +5271,18 @@ instance encodeInstanceAssociationStatusAggregatedCount :: Encode InstanceAssoci
 
 -- | <p>Status information about the instance association.</p>
 newtype InstanceAssociationStatusInfo = InstanceAssociationStatusInfo 
-  { "AssociationId" :: NullOrUndefined (AssociationId)
-  , "Name" :: NullOrUndefined (DocumentName)
-  , "DocumentVersion" :: NullOrUndefined (DocumentVersion)
-  , "AssociationVersion" :: NullOrUndefined (AssociationVersion)
-  , "InstanceId" :: NullOrUndefined (InstanceId)
-  , "ExecutionDate" :: NullOrUndefined (DateTime)
-  , "Status" :: NullOrUndefined (StatusName)
-  , "DetailedStatus" :: NullOrUndefined (StatusName)
-  , "ExecutionSummary" :: NullOrUndefined (InstanceAssociationExecutionSummary)
-  , "ErrorCode" :: NullOrUndefined (AgentErrorCode)
-  , "OutputUrl" :: NullOrUndefined (InstanceAssociationOutputUrl)
-  , "AssociationName" :: NullOrUndefined (AssociationName)
+  { "AssociationId" :: Maybe (AssociationId)
+  , "Name" :: Maybe (DocumentName)
+  , "DocumentVersion" :: Maybe (DocumentVersion)
+  , "AssociationVersion" :: Maybe (AssociationVersion)
+  , "InstanceId" :: Maybe (InstanceId)
+  , "ExecutionDate" :: Maybe (DateTime)
+  , "Status" :: Maybe (StatusName)
+  , "DetailedStatus" :: Maybe (StatusName)
+  , "ExecutionSummary" :: Maybe (InstanceAssociationExecutionSummary)
+  , "ErrorCode" :: Maybe (AgentErrorCode)
+  , "OutputUrl" :: Maybe (InstanceAssociationOutputUrl)
+  , "AssociationName" :: Maybe (AssociationName)
   }
 derive instance newtypeInstanceAssociationStatusInfo :: Newtype InstanceAssociationStatusInfo _
 derive instance repGenericInstanceAssociationStatusInfo :: Generic InstanceAssociationStatusInfo _
@@ -5293,12 +5292,12 @@ instance encodeInstanceAssociationStatusInfo :: Encode InstanceAssociationStatus
 
 -- | Constructs InstanceAssociationStatusInfo from required parameters
 newInstanceAssociationStatusInfo :: InstanceAssociationStatusInfo
-newInstanceAssociationStatusInfo  = InstanceAssociationStatusInfo { "AssociationId": (NullOrUndefined Nothing), "AssociationName": (NullOrUndefined Nothing), "AssociationVersion": (NullOrUndefined Nothing), "DetailedStatus": (NullOrUndefined Nothing), "DocumentVersion": (NullOrUndefined Nothing), "ErrorCode": (NullOrUndefined Nothing), "ExecutionDate": (NullOrUndefined Nothing), "ExecutionSummary": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "OutputUrl": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newInstanceAssociationStatusInfo  = InstanceAssociationStatusInfo { "AssociationId": Nothing, "AssociationName": Nothing, "AssociationVersion": Nothing, "DetailedStatus": Nothing, "DocumentVersion": Nothing, "ErrorCode": Nothing, "ExecutionDate": Nothing, "ExecutionSummary": Nothing, "InstanceId": Nothing, "Name": Nothing, "OutputUrl": Nothing, "Status": Nothing }
 
 -- | Constructs InstanceAssociationStatusInfo's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInstanceAssociationStatusInfo' :: ( { "AssociationId" :: NullOrUndefined (AssociationId) , "Name" :: NullOrUndefined (DocumentName) , "DocumentVersion" :: NullOrUndefined (DocumentVersion) , "AssociationVersion" :: NullOrUndefined (AssociationVersion) , "InstanceId" :: NullOrUndefined (InstanceId) , "ExecutionDate" :: NullOrUndefined (DateTime) , "Status" :: NullOrUndefined (StatusName) , "DetailedStatus" :: NullOrUndefined (StatusName) , "ExecutionSummary" :: NullOrUndefined (InstanceAssociationExecutionSummary) , "ErrorCode" :: NullOrUndefined (AgentErrorCode) , "OutputUrl" :: NullOrUndefined (InstanceAssociationOutputUrl) , "AssociationName" :: NullOrUndefined (AssociationName) } -> {"AssociationId" :: NullOrUndefined (AssociationId) , "Name" :: NullOrUndefined (DocumentName) , "DocumentVersion" :: NullOrUndefined (DocumentVersion) , "AssociationVersion" :: NullOrUndefined (AssociationVersion) , "InstanceId" :: NullOrUndefined (InstanceId) , "ExecutionDate" :: NullOrUndefined (DateTime) , "Status" :: NullOrUndefined (StatusName) , "DetailedStatus" :: NullOrUndefined (StatusName) , "ExecutionSummary" :: NullOrUndefined (InstanceAssociationExecutionSummary) , "ErrorCode" :: NullOrUndefined (AgentErrorCode) , "OutputUrl" :: NullOrUndefined (InstanceAssociationOutputUrl) , "AssociationName" :: NullOrUndefined (AssociationName) } ) -> InstanceAssociationStatusInfo
-newInstanceAssociationStatusInfo'  customize = (InstanceAssociationStatusInfo <<< customize) { "AssociationId": (NullOrUndefined Nothing), "AssociationName": (NullOrUndefined Nothing), "AssociationVersion": (NullOrUndefined Nothing), "DetailedStatus": (NullOrUndefined Nothing), "DocumentVersion": (NullOrUndefined Nothing), "ErrorCode": (NullOrUndefined Nothing), "ExecutionDate": (NullOrUndefined Nothing), "ExecutionSummary": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "OutputUrl": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newInstanceAssociationStatusInfo' :: ( { "AssociationId" :: Maybe (AssociationId) , "Name" :: Maybe (DocumentName) , "DocumentVersion" :: Maybe (DocumentVersion) , "AssociationVersion" :: Maybe (AssociationVersion) , "InstanceId" :: Maybe (InstanceId) , "ExecutionDate" :: Maybe (DateTime) , "Status" :: Maybe (StatusName) , "DetailedStatus" :: Maybe (StatusName) , "ExecutionSummary" :: Maybe (InstanceAssociationExecutionSummary) , "ErrorCode" :: Maybe (AgentErrorCode) , "OutputUrl" :: Maybe (InstanceAssociationOutputUrl) , "AssociationName" :: Maybe (AssociationName) } -> {"AssociationId" :: Maybe (AssociationId) , "Name" :: Maybe (DocumentName) , "DocumentVersion" :: Maybe (DocumentVersion) , "AssociationVersion" :: Maybe (AssociationVersion) , "InstanceId" :: Maybe (InstanceId) , "ExecutionDate" :: Maybe (DateTime) , "Status" :: Maybe (StatusName) , "DetailedStatus" :: Maybe (StatusName) , "ExecutionSummary" :: Maybe (InstanceAssociationExecutionSummary) , "ErrorCode" :: Maybe (AgentErrorCode) , "OutputUrl" :: Maybe (InstanceAssociationOutputUrl) , "AssociationName" :: Maybe (AssociationName) } ) -> InstanceAssociationStatusInfo
+newInstanceAssociationStatusInfo'  customize = (InstanceAssociationStatusInfo <<< customize) { "AssociationId": Nothing, "AssociationName": Nothing, "AssociationVersion": Nothing, "DetailedStatus": Nothing, "DocumentVersion": Nothing, "ErrorCode": Nothing, "ExecutionDate": Nothing, "ExecutionSummary": Nothing, "InstanceId": Nothing, "Name": Nothing, "OutputUrl": Nothing, "Status": Nothing }
 
 
 
@@ -5340,25 +5339,25 @@ instance encodeInstanceIdList :: Encode InstanceIdList where encode = genericEnc
 
 -- | <p>Describes a filter for a specific list of instances. </p>
 newtype InstanceInformation = InstanceInformation 
-  { "InstanceId" :: NullOrUndefined (InstanceId)
-  , "PingStatus" :: NullOrUndefined (PingStatus)
-  , "LastPingDateTime" :: NullOrUndefined (DateTime)
-  , "AgentVersion" :: NullOrUndefined (Version)
-  , "IsLatestVersion" :: NullOrUndefined (Boolean)
-  , "PlatformType" :: NullOrUndefined (PlatformType)
-  , "PlatformName" :: NullOrUndefined (String)
-  , "PlatformVersion" :: NullOrUndefined (String)
-  , "ActivationId" :: NullOrUndefined (ActivationId)
-  , "IamRole" :: NullOrUndefined (IamRole)
-  , "RegistrationDate" :: NullOrUndefined (DateTime)
-  , "ResourceType" :: NullOrUndefined (ResourceType)
-  , "Name" :: NullOrUndefined (String)
-  , "IPAddress" :: NullOrUndefined (IPAddress)
-  , "ComputerName" :: NullOrUndefined (ComputerName)
-  , "AssociationStatus" :: NullOrUndefined (StatusName)
-  , "LastAssociationExecutionDate" :: NullOrUndefined (DateTime)
-  , "LastSuccessfulAssociationExecutionDate" :: NullOrUndefined (DateTime)
-  , "AssociationOverview" :: NullOrUndefined (InstanceAggregatedAssociationOverview)
+  { "InstanceId" :: Maybe (InstanceId)
+  , "PingStatus" :: Maybe (PingStatus)
+  , "LastPingDateTime" :: Maybe (DateTime)
+  , "AgentVersion" :: Maybe (Version)
+  , "IsLatestVersion" :: Maybe (Boolean)
+  , "PlatformType" :: Maybe (PlatformType)
+  , "PlatformName" :: Maybe (String)
+  , "PlatformVersion" :: Maybe (String)
+  , "ActivationId" :: Maybe (ActivationId)
+  , "IamRole" :: Maybe (IamRole)
+  , "RegistrationDate" :: Maybe (DateTime)
+  , "ResourceType" :: Maybe (ResourceType)
+  , "Name" :: Maybe (String)
+  , "IPAddress" :: Maybe (IPAddress)
+  , "ComputerName" :: Maybe (ComputerName)
+  , "AssociationStatus" :: Maybe (StatusName)
+  , "LastAssociationExecutionDate" :: Maybe (DateTime)
+  , "LastSuccessfulAssociationExecutionDate" :: Maybe (DateTime)
+  , "AssociationOverview" :: Maybe (InstanceAggregatedAssociationOverview)
   }
 derive instance newtypeInstanceInformation :: Newtype InstanceInformation _
 derive instance repGenericInstanceInformation :: Generic InstanceInformation _
@@ -5368,12 +5367,12 @@ instance encodeInstanceInformation :: Encode InstanceInformation where encode = 
 
 -- | Constructs InstanceInformation from required parameters
 newInstanceInformation :: InstanceInformation
-newInstanceInformation  = InstanceInformation { "ActivationId": (NullOrUndefined Nothing), "AgentVersion": (NullOrUndefined Nothing), "AssociationOverview": (NullOrUndefined Nothing), "AssociationStatus": (NullOrUndefined Nothing), "ComputerName": (NullOrUndefined Nothing), "IPAddress": (NullOrUndefined Nothing), "IamRole": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing), "IsLatestVersion": (NullOrUndefined Nothing), "LastAssociationExecutionDate": (NullOrUndefined Nothing), "LastPingDateTime": (NullOrUndefined Nothing), "LastSuccessfulAssociationExecutionDate": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "PingStatus": (NullOrUndefined Nothing), "PlatformName": (NullOrUndefined Nothing), "PlatformType": (NullOrUndefined Nothing), "PlatformVersion": (NullOrUndefined Nothing), "RegistrationDate": (NullOrUndefined Nothing), "ResourceType": (NullOrUndefined Nothing) }
+newInstanceInformation  = InstanceInformation { "ActivationId": Nothing, "AgentVersion": Nothing, "AssociationOverview": Nothing, "AssociationStatus": Nothing, "ComputerName": Nothing, "IPAddress": Nothing, "IamRole": Nothing, "InstanceId": Nothing, "IsLatestVersion": Nothing, "LastAssociationExecutionDate": Nothing, "LastPingDateTime": Nothing, "LastSuccessfulAssociationExecutionDate": Nothing, "Name": Nothing, "PingStatus": Nothing, "PlatformName": Nothing, "PlatformType": Nothing, "PlatformVersion": Nothing, "RegistrationDate": Nothing, "ResourceType": Nothing }
 
 -- | Constructs InstanceInformation's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInstanceInformation' :: ( { "InstanceId" :: NullOrUndefined (InstanceId) , "PingStatus" :: NullOrUndefined (PingStatus) , "LastPingDateTime" :: NullOrUndefined (DateTime) , "AgentVersion" :: NullOrUndefined (Version) , "IsLatestVersion" :: NullOrUndefined (Boolean) , "PlatformType" :: NullOrUndefined (PlatformType) , "PlatformName" :: NullOrUndefined (String) , "PlatformVersion" :: NullOrUndefined (String) , "ActivationId" :: NullOrUndefined (ActivationId) , "IamRole" :: NullOrUndefined (IamRole) , "RegistrationDate" :: NullOrUndefined (DateTime) , "ResourceType" :: NullOrUndefined (ResourceType) , "Name" :: NullOrUndefined (String) , "IPAddress" :: NullOrUndefined (IPAddress) , "ComputerName" :: NullOrUndefined (ComputerName) , "AssociationStatus" :: NullOrUndefined (StatusName) , "LastAssociationExecutionDate" :: NullOrUndefined (DateTime) , "LastSuccessfulAssociationExecutionDate" :: NullOrUndefined (DateTime) , "AssociationOverview" :: NullOrUndefined (InstanceAggregatedAssociationOverview) } -> {"InstanceId" :: NullOrUndefined (InstanceId) , "PingStatus" :: NullOrUndefined (PingStatus) , "LastPingDateTime" :: NullOrUndefined (DateTime) , "AgentVersion" :: NullOrUndefined (Version) , "IsLatestVersion" :: NullOrUndefined (Boolean) , "PlatformType" :: NullOrUndefined (PlatformType) , "PlatformName" :: NullOrUndefined (String) , "PlatformVersion" :: NullOrUndefined (String) , "ActivationId" :: NullOrUndefined (ActivationId) , "IamRole" :: NullOrUndefined (IamRole) , "RegistrationDate" :: NullOrUndefined (DateTime) , "ResourceType" :: NullOrUndefined (ResourceType) , "Name" :: NullOrUndefined (String) , "IPAddress" :: NullOrUndefined (IPAddress) , "ComputerName" :: NullOrUndefined (ComputerName) , "AssociationStatus" :: NullOrUndefined (StatusName) , "LastAssociationExecutionDate" :: NullOrUndefined (DateTime) , "LastSuccessfulAssociationExecutionDate" :: NullOrUndefined (DateTime) , "AssociationOverview" :: NullOrUndefined (InstanceAggregatedAssociationOverview) } ) -> InstanceInformation
-newInstanceInformation'  customize = (InstanceInformation <<< customize) { "ActivationId": (NullOrUndefined Nothing), "AgentVersion": (NullOrUndefined Nothing), "AssociationOverview": (NullOrUndefined Nothing), "AssociationStatus": (NullOrUndefined Nothing), "ComputerName": (NullOrUndefined Nothing), "IPAddress": (NullOrUndefined Nothing), "IamRole": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing), "IsLatestVersion": (NullOrUndefined Nothing), "LastAssociationExecutionDate": (NullOrUndefined Nothing), "LastPingDateTime": (NullOrUndefined Nothing), "LastSuccessfulAssociationExecutionDate": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "PingStatus": (NullOrUndefined Nothing), "PlatformName": (NullOrUndefined Nothing), "PlatformType": (NullOrUndefined Nothing), "PlatformVersion": (NullOrUndefined Nothing), "RegistrationDate": (NullOrUndefined Nothing), "ResourceType": (NullOrUndefined Nothing) }
+newInstanceInformation' :: ( { "InstanceId" :: Maybe (InstanceId) , "PingStatus" :: Maybe (PingStatus) , "LastPingDateTime" :: Maybe (DateTime) , "AgentVersion" :: Maybe (Version) , "IsLatestVersion" :: Maybe (Boolean) , "PlatformType" :: Maybe (PlatformType) , "PlatformName" :: Maybe (String) , "PlatformVersion" :: Maybe (String) , "ActivationId" :: Maybe (ActivationId) , "IamRole" :: Maybe (IamRole) , "RegistrationDate" :: Maybe (DateTime) , "ResourceType" :: Maybe (ResourceType) , "Name" :: Maybe (String) , "IPAddress" :: Maybe (IPAddress) , "ComputerName" :: Maybe (ComputerName) , "AssociationStatus" :: Maybe (StatusName) , "LastAssociationExecutionDate" :: Maybe (DateTime) , "LastSuccessfulAssociationExecutionDate" :: Maybe (DateTime) , "AssociationOverview" :: Maybe (InstanceAggregatedAssociationOverview) } -> {"InstanceId" :: Maybe (InstanceId) , "PingStatus" :: Maybe (PingStatus) , "LastPingDateTime" :: Maybe (DateTime) , "AgentVersion" :: Maybe (Version) , "IsLatestVersion" :: Maybe (Boolean) , "PlatformType" :: Maybe (PlatformType) , "PlatformName" :: Maybe (String) , "PlatformVersion" :: Maybe (String) , "ActivationId" :: Maybe (ActivationId) , "IamRole" :: Maybe (IamRole) , "RegistrationDate" :: Maybe (DateTime) , "ResourceType" :: Maybe (ResourceType) , "Name" :: Maybe (String) , "IPAddress" :: Maybe (IPAddress) , "ComputerName" :: Maybe (ComputerName) , "AssociationStatus" :: Maybe (StatusName) , "LastAssociationExecutionDate" :: Maybe (DateTime) , "LastSuccessfulAssociationExecutionDate" :: Maybe (DateTime) , "AssociationOverview" :: Maybe (InstanceAggregatedAssociationOverview) } ) -> InstanceInformation
+newInstanceInformation'  customize = (InstanceInformation <<< customize) { "ActivationId": Nothing, "AgentVersion": Nothing, "AssociationOverview": Nothing, "AssociationStatus": Nothing, "ComputerName": Nothing, "IPAddress": Nothing, "IamRole": Nothing, "InstanceId": Nothing, "IsLatestVersion": Nothing, "LastAssociationExecutionDate": Nothing, "LastPingDateTime": Nothing, "LastSuccessfulAssociationExecutionDate": Nothing, "Name": Nothing, "PingStatus": Nothing, "PlatformName": Nothing, "PlatformType": Nothing, "PlatformVersion": Nothing, "RegistrationDate": Nothing, "ResourceType": Nothing }
 
 
 
@@ -5489,13 +5488,13 @@ newtype InstancePatchState = InstancePatchState
   { "InstanceId" :: (InstanceId)
   , "PatchGroup" :: (PatchGroup)
   , "BaselineId" :: (BaselineId)
-  , "SnapshotId" :: NullOrUndefined (SnapshotId)
-  , "OwnerInformation" :: NullOrUndefined (OwnerInformation)
-  , "InstalledCount" :: NullOrUndefined (PatchInstalledCount)
-  , "InstalledOtherCount" :: NullOrUndefined (PatchInstalledOtherCount)
-  , "MissingCount" :: NullOrUndefined (PatchMissingCount)
-  , "FailedCount" :: NullOrUndefined (PatchFailedCount)
-  , "NotApplicableCount" :: NullOrUndefined (PatchNotApplicableCount)
+  , "SnapshotId" :: Maybe (SnapshotId)
+  , "OwnerInformation" :: Maybe (OwnerInformation)
+  , "InstalledCount" :: Maybe (PatchInstalledCount)
+  , "InstalledOtherCount" :: Maybe (PatchInstalledOtherCount)
+  , "MissingCount" :: Maybe (PatchMissingCount)
+  , "FailedCount" :: Maybe (PatchFailedCount)
+  , "NotApplicableCount" :: Maybe (PatchNotApplicableCount)
   , "OperationStartTime" :: (DateTime)
   , "OperationEndTime" :: (DateTime)
   , "Operation" :: (PatchOperationType)
@@ -5508,12 +5507,12 @@ instance encodeInstancePatchState :: Encode InstancePatchState where encode = ge
 
 -- | Constructs InstancePatchState from required parameters
 newInstancePatchState :: BaselineId -> InstanceId -> PatchOperationType -> DateTime -> DateTime -> PatchGroup -> InstancePatchState
-newInstancePatchState _BaselineId _InstanceId _Operation _OperationEndTime _OperationStartTime _PatchGroup = InstancePatchState { "BaselineId": _BaselineId, "InstanceId": _InstanceId, "Operation": _Operation, "OperationEndTime": _OperationEndTime, "OperationStartTime": _OperationStartTime, "PatchGroup": _PatchGroup, "FailedCount": (NullOrUndefined Nothing), "InstalledCount": (NullOrUndefined Nothing), "InstalledOtherCount": (NullOrUndefined Nothing), "MissingCount": (NullOrUndefined Nothing), "NotApplicableCount": (NullOrUndefined Nothing), "OwnerInformation": (NullOrUndefined Nothing), "SnapshotId": (NullOrUndefined Nothing) }
+newInstancePatchState _BaselineId _InstanceId _Operation _OperationEndTime _OperationStartTime _PatchGroup = InstancePatchState { "BaselineId": _BaselineId, "InstanceId": _InstanceId, "Operation": _Operation, "OperationEndTime": _OperationEndTime, "OperationStartTime": _OperationStartTime, "PatchGroup": _PatchGroup, "FailedCount": Nothing, "InstalledCount": Nothing, "InstalledOtherCount": Nothing, "MissingCount": Nothing, "NotApplicableCount": Nothing, "OwnerInformation": Nothing, "SnapshotId": Nothing }
 
 -- | Constructs InstancePatchState's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInstancePatchState' :: BaselineId -> InstanceId -> PatchOperationType -> DateTime -> DateTime -> PatchGroup -> ( { "InstanceId" :: (InstanceId) , "PatchGroup" :: (PatchGroup) , "BaselineId" :: (BaselineId) , "SnapshotId" :: NullOrUndefined (SnapshotId) , "OwnerInformation" :: NullOrUndefined (OwnerInformation) , "InstalledCount" :: NullOrUndefined (PatchInstalledCount) , "InstalledOtherCount" :: NullOrUndefined (PatchInstalledOtherCount) , "MissingCount" :: NullOrUndefined (PatchMissingCount) , "FailedCount" :: NullOrUndefined (PatchFailedCount) , "NotApplicableCount" :: NullOrUndefined (PatchNotApplicableCount) , "OperationStartTime" :: (DateTime) , "OperationEndTime" :: (DateTime) , "Operation" :: (PatchOperationType) } -> {"InstanceId" :: (InstanceId) , "PatchGroup" :: (PatchGroup) , "BaselineId" :: (BaselineId) , "SnapshotId" :: NullOrUndefined (SnapshotId) , "OwnerInformation" :: NullOrUndefined (OwnerInformation) , "InstalledCount" :: NullOrUndefined (PatchInstalledCount) , "InstalledOtherCount" :: NullOrUndefined (PatchInstalledOtherCount) , "MissingCount" :: NullOrUndefined (PatchMissingCount) , "FailedCount" :: NullOrUndefined (PatchFailedCount) , "NotApplicableCount" :: NullOrUndefined (PatchNotApplicableCount) , "OperationStartTime" :: (DateTime) , "OperationEndTime" :: (DateTime) , "Operation" :: (PatchOperationType) } ) -> InstancePatchState
-newInstancePatchState' _BaselineId _InstanceId _Operation _OperationEndTime _OperationStartTime _PatchGroup customize = (InstancePatchState <<< customize) { "BaselineId": _BaselineId, "InstanceId": _InstanceId, "Operation": _Operation, "OperationEndTime": _OperationEndTime, "OperationStartTime": _OperationStartTime, "PatchGroup": _PatchGroup, "FailedCount": (NullOrUndefined Nothing), "InstalledCount": (NullOrUndefined Nothing), "InstalledOtherCount": (NullOrUndefined Nothing), "MissingCount": (NullOrUndefined Nothing), "NotApplicableCount": (NullOrUndefined Nothing), "OwnerInformation": (NullOrUndefined Nothing), "SnapshotId": (NullOrUndefined Nothing) }
+newInstancePatchState' :: BaselineId -> InstanceId -> PatchOperationType -> DateTime -> DateTime -> PatchGroup -> ( { "InstanceId" :: (InstanceId) , "PatchGroup" :: (PatchGroup) , "BaselineId" :: (BaselineId) , "SnapshotId" :: Maybe (SnapshotId) , "OwnerInformation" :: Maybe (OwnerInformation) , "InstalledCount" :: Maybe (PatchInstalledCount) , "InstalledOtherCount" :: Maybe (PatchInstalledOtherCount) , "MissingCount" :: Maybe (PatchMissingCount) , "FailedCount" :: Maybe (PatchFailedCount) , "NotApplicableCount" :: Maybe (PatchNotApplicableCount) , "OperationStartTime" :: (DateTime) , "OperationEndTime" :: (DateTime) , "Operation" :: (PatchOperationType) } -> {"InstanceId" :: (InstanceId) , "PatchGroup" :: (PatchGroup) , "BaselineId" :: (BaselineId) , "SnapshotId" :: Maybe (SnapshotId) , "OwnerInformation" :: Maybe (OwnerInformation) , "InstalledCount" :: Maybe (PatchInstalledCount) , "InstalledOtherCount" :: Maybe (PatchInstalledOtherCount) , "MissingCount" :: Maybe (PatchMissingCount) , "FailedCount" :: Maybe (PatchFailedCount) , "NotApplicableCount" :: Maybe (PatchNotApplicableCount) , "OperationStartTime" :: (DateTime) , "OperationEndTime" :: (DateTime) , "Operation" :: (PatchOperationType) } ) -> InstancePatchState
+newInstancePatchState' _BaselineId _InstanceId _Operation _OperationEndTime _OperationStartTime _PatchGroup customize = (InstancePatchState <<< customize) { "BaselineId": _BaselineId, "InstanceId": _InstanceId, "Operation": _Operation, "OperationEndTime": _OperationEndTime, "OperationStartTime": _OperationStartTime, "PatchGroup": _PatchGroup, "FailedCount": Nothing, "InstalledCount": Nothing, "InstalledOtherCount": Nothing, "MissingCount": Nothing, "NotApplicableCount": Nothing, "OwnerInformation": Nothing, "SnapshotId": Nothing }
 
 
 
@@ -5614,7 +5613,7 @@ instance encodeInstanceTagName :: Encode InstanceTagName where encode = genericE
 
 -- | <p>An error occurred on the server side.</p>
 newtype InternalServerError = InternalServerError 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeInternalServerError :: Newtype InternalServerError _
 derive instance repGenericInternalServerError :: Generic InternalServerError _
@@ -5624,18 +5623,18 @@ instance encodeInternalServerError :: Encode InternalServerError where encode = 
 
 -- | Constructs InternalServerError from required parameters
 newInternalServerError :: InternalServerError
-newInternalServerError  = InternalServerError { "Message": (NullOrUndefined Nothing) }
+newInternalServerError  = InternalServerError { "Message": Nothing }
 
 -- | Constructs InternalServerError's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInternalServerError' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> InternalServerError
-newInternalServerError'  customize = (InternalServerError <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInternalServerError' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> InternalServerError
+newInternalServerError'  customize = (InternalServerError <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The activation is not valid. The activation might have been deleted, or the ActivationId and the ActivationCode do not match.</p>
 newtype InvalidActivation = InvalidActivation 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeInvalidActivation :: Newtype InvalidActivation _
 derive instance repGenericInvalidActivation :: Generic InvalidActivation _
@@ -5645,18 +5644,18 @@ instance encodeInvalidActivation :: Encode InvalidActivation where encode = gene
 
 -- | Constructs InvalidActivation from required parameters
 newInvalidActivation :: InvalidActivation
-newInvalidActivation  = InvalidActivation { "Message": (NullOrUndefined Nothing) }
+newInvalidActivation  = InvalidActivation { "Message": Nothing }
 
 -- | Constructs InvalidActivation's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidActivation' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> InvalidActivation
-newInvalidActivation'  customize = (InvalidActivation <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidActivation' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> InvalidActivation
+newInvalidActivation'  customize = (InvalidActivation <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The activation ID is not valid. Verify the you entered the correct ActivationId or ActivationCode and try again.</p>
 newtype InvalidActivationId = InvalidActivationId 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeInvalidActivationId :: Newtype InvalidActivationId _
 derive instance repGenericInvalidActivationId :: Generic InvalidActivationId _
@@ -5666,18 +5665,18 @@ instance encodeInvalidActivationId :: Encode InvalidActivationId where encode = 
 
 -- | Constructs InvalidActivationId from required parameters
 newInvalidActivationId :: InvalidActivationId
-newInvalidActivationId  = InvalidActivationId { "Message": (NullOrUndefined Nothing) }
+newInvalidActivationId  = InvalidActivationId { "Message": Nothing }
 
 -- | Constructs InvalidActivationId's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidActivationId' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> InvalidActivationId
-newInvalidActivationId'  customize = (InvalidActivationId <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidActivationId' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> InvalidActivationId
+newInvalidActivationId'  customize = (InvalidActivationId <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The request does not meet the regular expression requirement.</p>
 newtype InvalidAllowedPatternException = InvalidAllowedPatternException 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeInvalidAllowedPatternException :: Newtype InvalidAllowedPatternException _
 derive instance repGenericInvalidAllowedPatternException :: Generic InvalidAllowedPatternException _
@@ -5687,18 +5686,18 @@ instance encodeInvalidAllowedPatternException :: Encode InvalidAllowedPatternExc
 
 -- | Constructs InvalidAllowedPatternException from required parameters
 newInvalidAllowedPatternException :: InvalidAllowedPatternException
-newInvalidAllowedPatternException  = InvalidAllowedPatternException { "message": (NullOrUndefined Nothing) }
+newInvalidAllowedPatternException  = InvalidAllowedPatternException { "message": Nothing }
 
 -- | Constructs InvalidAllowedPatternException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidAllowedPatternException' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> InvalidAllowedPatternException
-newInvalidAllowedPatternException'  customize = (InvalidAllowedPatternException <<< customize) { "message": (NullOrUndefined Nothing) }
+newInvalidAllowedPatternException' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> InvalidAllowedPatternException
+newInvalidAllowedPatternException'  customize = (InvalidAllowedPatternException <<< customize) { "message": Nothing }
 
 
 
 -- | <p>The version you specified is not valid. Use ListAssociationVersions to view all versions of an association according to the association ID. Or, use the <code>$LATEST</code> parameter to view the latest version of the association.</p>
 newtype InvalidAssociationVersion = InvalidAssociationVersion 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeInvalidAssociationVersion :: Newtype InvalidAssociationVersion _
 derive instance repGenericInvalidAssociationVersion :: Generic InvalidAssociationVersion _
@@ -5708,18 +5707,18 @@ instance encodeInvalidAssociationVersion :: Encode InvalidAssociationVersion whe
 
 -- | Constructs InvalidAssociationVersion from required parameters
 newInvalidAssociationVersion :: InvalidAssociationVersion
-newInvalidAssociationVersion  = InvalidAssociationVersion { "Message": (NullOrUndefined Nothing) }
+newInvalidAssociationVersion  = InvalidAssociationVersion { "Message": Nothing }
 
 -- | Constructs InvalidAssociationVersion's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidAssociationVersion' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> InvalidAssociationVersion
-newInvalidAssociationVersion'  customize = (InvalidAssociationVersion <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidAssociationVersion' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> InvalidAssociationVersion
+newInvalidAssociationVersion'  customize = (InvalidAssociationVersion <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The supplied parameters for invoking the specified Automation document are incorrect. For example, they may not match the set of parameters permitted for the specified Automation document.</p>
 newtype InvalidAutomationExecutionParametersException = InvalidAutomationExecutionParametersException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeInvalidAutomationExecutionParametersException :: Newtype InvalidAutomationExecutionParametersException _
 derive instance repGenericInvalidAutomationExecutionParametersException :: Generic InvalidAutomationExecutionParametersException _
@@ -5729,18 +5728,18 @@ instance encodeInvalidAutomationExecutionParametersException :: Encode InvalidAu
 
 -- | Constructs InvalidAutomationExecutionParametersException from required parameters
 newInvalidAutomationExecutionParametersException :: InvalidAutomationExecutionParametersException
-newInvalidAutomationExecutionParametersException  = InvalidAutomationExecutionParametersException { "Message": (NullOrUndefined Nothing) }
+newInvalidAutomationExecutionParametersException  = InvalidAutomationExecutionParametersException { "Message": Nothing }
 
 -- | Constructs InvalidAutomationExecutionParametersException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidAutomationExecutionParametersException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> InvalidAutomationExecutionParametersException
-newInvalidAutomationExecutionParametersException'  customize = (InvalidAutomationExecutionParametersException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidAutomationExecutionParametersException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> InvalidAutomationExecutionParametersException
+newInvalidAutomationExecutionParametersException'  customize = (InvalidAutomationExecutionParametersException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The signal is not valid for the current Automation execution.</p>
 newtype InvalidAutomationSignalException = InvalidAutomationSignalException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeInvalidAutomationSignalException :: Newtype InvalidAutomationSignalException _
 derive instance repGenericInvalidAutomationSignalException :: Generic InvalidAutomationSignalException _
@@ -5750,18 +5749,18 @@ instance encodeInvalidAutomationSignalException :: Encode InvalidAutomationSigna
 
 -- | Constructs InvalidAutomationSignalException from required parameters
 newInvalidAutomationSignalException :: InvalidAutomationSignalException
-newInvalidAutomationSignalException  = InvalidAutomationSignalException { "Message": (NullOrUndefined Nothing) }
+newInvalidAutomationSignalException  = InvalidAutomationSignalException { "Message": Nothing }
 
 -- | Constructs InvalidAutomationSignalException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidAutomationSignalException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> InvalidAutomationSignalException
-newInvalidAutomationSignalException'  customize = (InvalidAutomationSignalException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidAutomationSignalException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> InvalidAutomationSignalException
+newInvalidAutomationSignalException'  customize = (InvalidAutomationSignalException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The specified update status operation is not valid.</p>
 newtype InvalidAutomationStatusUpdateException = InvalidAutomationStatusUpdateException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeInvalidAutomationStatusUpdateException :: Newtype InvalidAutomationStatusUpdateException _
 derive instance repGenericInvalidAutomationStatusUpdateException :: Generic InvalidAutomationStatusUpdateException _
@@ -5771,12 +5770,12 @@ instance encodeInvalidAutomationStatusUpdateException :: Encode InvalidAutomatio
 
 -- | Constructs InvalidAutomationStatusUpdateException from required parameters
 newInvalidAutomationStatusUpdateException :: InvalidAutomationStatusUpdateException
-newInvalidAutomationStatusUpdateException  = InvalidAutomationStatusUpdateException { "Message": (NullOrUndefined Nothing) }
+newInvalidAutomationStatusUpdateException  = InvalidAutomationStatusUpdateException { "Message": Nothing }
 
 -- | Constructs InvalidAutomationStatusUpdateException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidAutomationStatusUpdateException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> InvalidAutomationStatusUpdateException
-newInvalidAutomationStatusUpdateException'  customize = (InvalidAutomationStatusUpdateException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidAutomationStatusUpdateException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> InvalidAutomationStatusUpdateException
+newInvalidAutomationStatusUpdateException'  customize = (InvalidAutomationStatusUpdateException <<< customize) { "Message": Nothing }
 
 
 
@@ -5791,7 +5790,7 @@ instance encodeInvalidCommandId :: Encode InvalidCommandId where encode = generi
 
 -- | <p>The specified document does not exist.</p>
 newtype InvalidDocument = InvalidDocument 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeInvalidDocument :: Newtype InvalidDocument _
 derive instance repGenericInvalidDocument :: Generic InvalidDocument _
@@ -5801,18 +5800,18 @@ instance encodeInvalidDocument :: Encode InvalidDocument where encode = genericE
 
 -- | Constructs InvalidDocument from required parameters
 newInvalidDocument :: InvalidDocument
-newInvalidDocument  = InvalidDocument { "Message": (NullOrUndefined Nothing) }
+newInvalidDocument  = InvalidDocument { "Message": Nothing }
 
 -- | Constructs InvalidDocument's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidDocument' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> InvalidDocument
-newInvalidDocument'  customize = (InvalidDocument <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidDocument' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> InvalidDocument
+newInvalidDocument'  customize = (InvalidDocument <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The content for the document is not valid.</p>
 newtype InvalidDocumentContent = InvalidDocumentContent 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeInvalidDocumentContent :: Newtype InvalidDocumentContent _
 derive instance repGenericInvalidDocumentContent :: Generic InvalidDocumentContent _
@@ -5822,18 +5821,18 @@ instance encodeInvalidDocumentContent :: Encode InvalidDocumentContent where enc
 
 -- | Constructs InvalidDocumentContent from required parameters
 newInvalidDocumentContent :: InvalidDocumentContent
-newInvalidDocumentContent  = InvalidDocumentContent { "Message": (NullOrUndefined Nothing) }
+newInvalidDocumentContent  = InvalidDocumentContent { "Message": Nothing }
 
 -- | Constructs InvalidDocumentContent's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidDocumentContent' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> InvalidDocumentContent
-newInvalidDocumentContent'  customize = (InvalidDocumentContent <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidDocumentContent' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> InvalidDocumentContent
+newInvalidDocumentContent'  customize = (InvalidDocumentContent <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>You attempted to delete a document while it is still shared. You must stop sharing the document before you can delete it.</p>
 newtype InvalidDocumentOperation = InvalidDocumentOperation 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeInvalidDocumentOperation :: Newtype InvalidDocumentOperation _
 derive instance repGenericInvalidDocumentOperation :: Generic InvalidDocumentOperation _
@@ -5843,18 +5842,18 @@ instance encodeInvalidDocumentOperation :: Encode InvalidDocumentOperation where
 
 -- | Constructs InvalidDocumentOperation from required parameters
 newInvalidDocumentOperation :: InvalidDocumentOperation
-newInvalidDocumentOperation  = InvalidDocumentOperation { "Message": (NullOrUndefined Nothing) }
+newInvalidDocumentOperation  = InvalidDocumentOperation { "Message": Nothing }
 
 -- | Constructs InvalidDocumentOperation's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidDocumentOperation' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> InvalidDocumentOperation
-newInvalidDocumentOperation'  customize = (InvalidDocumentOperation <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidDocumentOperation' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> InvalidDocumentOperation
+newInvalidDocumentOperation'  customize = (InvalidDocumentOperation <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The version of the document schema is not supported.</p>
 newtype InvalidDocumentSchemaVersion = InvalidDocumentSchemaVersion 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeInvalidDocumentSchemaVersion :: Newtype InvalidDocumentSchemaVersion _
 derive instance repGenericInvalidDocumentSchemaVersion :: Generic InvalidDocumentSchemaVersion _
@@ -5864,18 +5863,18 @@ instance encodeInvalidDocumentSchemaVersion :: Encode InvalidDocumentSchemaVersi
 
 -- | Constructs InvalidDocumentSchemaVersion from required parameters
 newInvalidDocumentSchemaVersion :: InvalidDocumentSchemaVersion
-newInvalidDocumentSchemaVersion  = InvalidDocumentSchemaVersion { "Message": (NullOrUndefined Nothing) }
+newInvalidDocumentSchemaVersion  = InvalidDocumentSchemaVersion { "Message": Nothing }
 
 -- | Constructs InvalidDocumentSchemaVersion's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidDocumentSchemaVersion' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> InvalidDocumentSchemaVersion
-newInvalidDocumentSchemaVersion'  customize = (InvalidDocumentSchemaVersion <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidDocumentSchemaVersion' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> InvalidDocumentSchemaVersion
+newInvalidDocumentSchemaVersion'  customize = (InvalidDocumentSchemaVersion <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The document version is not valid or does not exist.</p>
 newtype InvalidDocumentVersion = InvalidDocumentVersion 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeInvalidDocumentVersion :: Newtype InvalidDocumentVersion _
 derive instance repGenericInvalidDocumentVersion :: Generic InvalidDocumentVersion _
@@ -5885,18 +5884,18 @@ instance encodeInvalidDocumentVersion :: Encode InvalidDocumentVersion where enc
 
 -- | Constructs InvalidDocumentVersion from required parameters
 newInvalidDocumentVersion :: InvalidDocumentVersion
-newInvalidDocumentVersion  = InvalidDocumentVersion { "Message": (NullOrUndefined Nothing) }
+newInvalidDocumentVersion  = InvalidDocumentVersion { "Message": Nothing }
 
 -- | Constructs InvalidDocumentVersion's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidDocumentVersion' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> InvalidDocumentVersion
-newInvalidDocumentVersion'  customize = (InvalidDocumentVersion <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidDocumentVersion' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> InvalidDocumentVersion
+newInvalidDocumentVersion'  customize = (InvalidDocumentVersion <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The filter name is not valid. Verify the you entered the correct name and try again.</p>
 newtype InvalidFilter = InvalidFilter 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeInvalidFilter :: Newtype InvalidFilter _
 derive instance repGenericInvalidFilter :: Generic InvalidFilter _
@@ -5906,12 +5905,12 @@ instance encodeInvalidFilter :: Encode InvalidFilter where encode = genericEncod
 
 -- | Constructs InvalidFilter from required parameters
 newInvalidFilter :: InvalidFilter
-newInvalidFilter  = InvalidFilter { "Message": (NullOrUndefined Nothing) }
+newInvalidFilter  = InvalidFilter { "Message": Nothing }
 
 -- | Constructs InvalidFilter's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidFilter' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> InvalidFilter
-newInvalidFilter'  customize = (InvalidFilter <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidFilter' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> InvalidFilter
+newInvalidFilter'  customize = (InvalidFilter <<< customize) { "Message": Nothing }
 
 
 
@@ -5927,7 +5926,7 @@ instance encodeInvalidFilterKey :: Encode InvalidFilterKey where encode = generi
 
 -- | <p>The specified filter option is not valid. Valid options are Equals and BeginsWith. For Path filter, valid options are Recursive and OneLevel.</p>
 newtype InvalidFilterOption = InvalidFilterOption 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeInvalidFilterOption :: Newtype InvalidFilterOption _
 derive instance repGenericInvalidFilterOption :: Generic InvalidFilterOption _
@@ -5937,18 +5936,18 @@ instance encodeInvalidFilterOption :: Encode InvalidFilterOption where encode = 
 
 -- | Constructs InvalidFilterOption from required parameters
 newInvalidFilterOption :: InvalidFilterOption
-newInvalidFilterOption  = InvalidFilterOption { "message": (NullOrUndefined Nothing) }
+newInvalidFilterOption  = InvalidFilterOption { "message": Nothing }
 
 -- | Constructs InvalidFilterOption's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidFilterOption' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> InvalidFilterOption
-newInvalidFilterOption'  customize = (InvalidFilterOption <<< customize) { "message": (NullOrUndefined Nothing) }
+newInvalidFilterOption' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> InvalidFilterOption
+newInvalidFilterOption'  customize = (InvalidFilterOption <<< customize) { "message": Nothing }
 
 
 
 -- | <p>The filter value is not valid. Verify the value and try again.</p>
 newtype InvalidFilterValue = InvalidFilterValue 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeInvalidFilterValue :: Newtype InvalidFilterValue _
 derive instance repGenericInvalidFilterValue :: Generic InvalidFilterValue _
@@ -5958,18 +5957,18 @@ instance encodeInvalidFilterValue :: Encode InvalidFilterValue where encode = ge
 
 -- | Constructs InvalidFilterValue from required parameters
 newInvalidFilterValue :: InvalidFilterValue
-newInvalidFilterValue  = InvalidFilterValue { "Message": (NullOrUndefined Nothing) }
+newInvalidFilterValue  = InvalidFilterValue { "Message": Nothing }
 
 -- | Constructs InvalidFilterValue's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidFilterValue' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> InvalidFilterValue
-newInvalidFilterValue'  customize = (InvalidFilterValue <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidFilterValue' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> InvalidFilterValue
+newInvalidFilterValue'  customize = (InvalidFilterValue <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The following problems can cause this exception:</p> <p>You do not have permission to access the instance.</p> <p>The SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service is running.</p> <p>The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM Agent or EC2Config service.</p> <p>The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states are: Shutting-down and Terminated.</p>
 newtype InvalidInstanceId = InvalidInstanceId 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeInvalidInstanceId :: Newtype InvalidInstanceId _
 derive instance repGenericInvalidInstanceId :: Generic InvalidInstanceId _
@@ -5979,18 +5978,18 @@ instance encodeInvalidInstanceId :: Encode InvalidInstanceId where encode = gene
 
 -- | Constructs InvalidInstanceId from required parameters
 newInvalidInstanceId :: InvalidInstanceId
-newInvalidInstanceId  = InvalidInstanceId { "Message": (NullOrUndefined Nothing) }
+newInvalidInstanceId  = InvalidInstanceId { "Message": Nothing }
 
 -- | Constructs InvalidInstanceId's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidInstanceId' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> InvalidInstanceId
-newInvalidInstanceId'  customize = (InvalidInstanceId <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidInstanceId' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> InvalidInstanceId
+newInvalidInstanceId'  customize = (InvalidInstanceId <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The specified filter value is not valid.</p>
 newtype InvalidInstanceInformationFilterValue = InvalidInstanceInformationFilterValue 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeInvalidInstanceInformationFilterValue :: Newtype InvalidInstanceInformationFilterValue _
 derive instance repGenericInvalidInstanceInformationFilterValue :: Generic InvalidInstanceInformationFilterValue _
@@ -6000,18 +5999,18 @@ instance encodeInvalidInstanceInformationFilterValue :: Encode InvalidInstanceIn
 
 -- | Constructs InvalidInstanceInformationFilterValue from required parameters
 newInvalidInstanceInformationFilterValue :: InvalidInstanceInformationFilterValue
-newInvalidInstanceInformationFilterValue  = InvalidInstanceInformationFilterValue { "message": (NullOrUndefined Nothing) }
+newInvalidInstanceInformationFilterValue  = InvalidInstanceInformationFilterValue { "message": Nothing }
 
 -- | Constructs InvalidInstanceInformationFilterValue's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidInstanceInformationFilterValue' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> InvalidInstanceInformationFilterValue
-newInvalidInstanceInformationFilterValue'  customize = (InvalidInstanceInformationFilterValue <<< customize) { "message": (NullOrUndefined Nothing) }
+newInvalidInstanceInformationFilterValue' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> InvalidInstanceInformationFilterValue
+newInvalidInstanceInformationFilterValue'  customize = (InvalidInstanceInformationFilterValue <<< customize) { "message": Nothing }
 
 
 
 -- | <p>You specified invalid keys or values in the <code>Context</code> attribute for <code>InventoryItem</code>. Verify the keys and values, and try again.</p>
 newtype InvalidInventoryItemContextException = InvalidInventoryItemContextException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeInvalidInventoryItemContextException :: Newtype InvalidInventoryItemContextException _
 derive instance repGenericInvalidInventoryItemContextException :: Generic InvalidInventoryItemContextException _
@@ -6021,19 +6020,19 @@ instance encodeInvalidInventoryItemContextException :: Encode InvalidInventoryIt
 
 -- | Constructs InvalidInventoryItemContextException from required parameters
 newInvalidInventoryItemContextException :: InvalidInventoryItemContextException
-newInvalidInventoryItemContextException  = InvalidInventoryItemContextException { "Message": (NullOrUndefined Nothing) }
+newInvalidInventoryItemContextException  = InvalidInventoryItemContextException { "Message": Nothing }
 
 -- | Constructs InvalidInventoryItemContextException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidInventoryItemContextException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> InvalidInventoryItemContextException
-newInvalidInventoryItemContextException'  customize = (InvalidInventoryItemContextException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidInventoryItemContextException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> InvalidInventoryItemContextException
+newInvalidInventoryItemContextException'  customize = (InvalidInventoryItemContextException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>One or more content items is not valid.</p>
 newtype InvalidItemContentException = InvalidItemContentException 
-  { "TypeName" :: NullOrUndefined (InventoryItemTypeName)
-  , "Message" :: NullOrUndefined (String)
+  { "TypeName" :: Maybe (InventoryItemTypeName)
+  , "Message" :: Maybe (String)
   }
 derive instance newtypeInvalidItemContentException :: Newtype InvalidItemContentException _
 derive instance repGenericInvalidItemContentException :: Generic InvalidItemContentException _
@@ -6043,18 +6042,18 @@ instance encodeInvalidItemContentException :: Encode InvalidItemContentException
 
 -- | Constructs InvalidItemContentException from required parameters
 newInvalidItemContentException :: InvalidItemContentException
-newInvalidItemContentException  = InvalidItemContentException { "Message": (NullOrUndefined Nothing), "TypeName": (NullOrUndefined Nothing) }
+newInvalidItemContentException  = InvalidItemContentException { "Message": Nothing, "TypeName": Nothing }
 
 -- | Constructs InvalidItemContentException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidItemContentException' :: ( { "TypeName" :: NullOrUndefined (InventoryItemTypeName) , "Message" :: NullOrUndefined (String) } -> {"TypeName" :: NullOrUndefined (InventoryItemTypeName) , "Message" :: NullOrUndefined (String) } ) -> InvalidItemContentException
-newInvalidItemContentException'  customize = (InvalidItemContentException <<< customize) { "Message": (NullOrUndefined Nothing), "TypeName": (NullOrUndefined Nothing) }
+newInvalidItemContentException' :: ( { "TypeName" :: Maybe (InventoryItemTypeName) , "Message" :: Maybe (String) } -> {"TypeName" :: Maybe (InventoryItemTypeName) , "Message" :: Maybe (String) } ) -> InvalidItemContentException
+newInvalidItemContentException'  customize = (InvalidItemContentException <<< customize) { "Message": Nothing, "TypeName": Nothing }
 
 
 
 -- | <p>The query key ID is not valid.</p>
 newtype InvalidKeyId = InvalidKeyId 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeInvalidKeyId :: Newtype InvalidKeyId _
 derive instance repGenericInvalidKeyId :: Generic InvalidKeyId _
@@ -6064,18 +6063,18 @@ instance encodeInvalidKeyId :: Encode InvalidKeyId where encode = genericEncode 
 
 -- | Constructs InvalidKeyId from required parameters
 newInvalidKeyId :: InvalidKeyId
-newInvalidKeyId  = InvalidKeyId { "message": (NullOrUndefined Nothing) }
+newInvalidKeyId  = InvalidKeyId { "message": Nothing }
 
 -- | Constructs InvalidKeyId's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidKeyId' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> InvalidKeyId
-newInvalidKeyId'  customize = (InvalidKeyId <<< customize) { "message": (NullOrUndefined Nothing) }
+newInvalidKeyId' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> InvalidKeyId
+newInvalidKeyId'  customize = (InvalidKeyId <<< customize) { "message": Nothing }
 
 
 
 -- | <p>The specified token is not valid.</p>
 newtype InvalidNextToken = InvalidNextToken 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeInvalidNextToken :: Newtype InvalidNextToken _
 derive instance repGenericInvalidNextToken :: Generic InvalidNextToken _
@@ -6085,18 +6084,18 @@ instance encodeInvalidNextToken :: Encode InvalidNextToken where encode = generi
 
 -- | Constructs InvalidNextToken from required parameters
 newInvalidNextToken :: InvalidNextToken
-newInvalidNextToken  = InvalidNextToken { "Message": (NullOrUndefined Nothing) }
+newInvalidNextToken  = InvalidNextToken { "Message": Nothing }
 
 -- | Constructs InvalidNextToken's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidNextToken' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> InvalidNextToken
-newInvalidNextToken'  customize = (InvalidNextToken <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidNextToken' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> InvalidNextToken
+newInvalidNextToken'  customize = (InvalidNextToken <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>One or more configuration items is not valid. Verify that a valid Amazon Resource Name (ARN) was provided for an Amazon SNS topic.</p>
 newtype InvalidNotificationConfig = InvalidNotificationConfig 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeInvalidNotificationConfig :: Newtype InvalidNotificationConfig _
 derive instance repGenericInvalidNotificationConfig :: Generic InvalidNotificationConfig _
@@ -6106,12 +6105,12 @@ instance encodeInvalidNotificationConfig :: Encode InvalidNotificationConfig whe
 
 -- | Constructs InvalidNotificationConfig from required parameters
 newInvalidNotificationConfig :: InvalidNotificationConfig
-newInvalidNotificationConfig  = InvalidNotificationConfig { "Message": (NullOrUndefined Nothing) }
+newInvalidNotificationConfig  = InvalidNotificationConfig { "Message": Nothing }
 
 -- | Constructs InvalidNotificationConfig's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidNotificationConfig' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> InvalidNotificationConfig
-newInvalidNotificationConfig'  customize = (InvalidNotificationConfig <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidNotificationConfig' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> InvalidNotificationConfig
+newInvalidNotificationConfig'  customize = (InvalidNotificationConfig <<< customize) { "Message": Nothing }
 
 
 
@@ -6137,7 +6136,7 @@ instance encodeInvalidOutputLocation :: Encode InvalidOutputLocation where encod
 
 -- | <p>You must specify values for all required parameters in the Systems Manager document. You can only supply values to parameters defined in the Systems Manager document.</p>
 newtype InvalidParameters = InvalidParameters 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeInvalidParameters :: Newtype InvalidParameters _
 derive instance repGenericInvalidParameters :: Generic InvalidParameters _
@@ -6147,18 +6146,18 @@ instance encodeInvalidParameters :: Encode InvalidParameters where encode = gene
 
 -- | Constructs InvalidParameters from required parameters
 newInvalidParameters :: InvalidParameters
-newInvalidParameters  = InvalidParameters { "Message": (NullOrUndefined Nothing) }
+newInvalidParameters  = InvalidParameters { "Message": Nothing }
 
 -- | Constructs InvalidParameters's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidParameters' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> InvalidParameters
-newInvalidParameters'  customize = (InvalidParameters <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidParameters' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> InvalidParameters
+newInvalidParameters'  customize = (InvalidParameters <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The permission type is not supported. <i>Share</i> is the only supported permission type.</p>
 newtype InvalidPermissionType = InvalidPermissionType 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeInvalidPermissionType :: Newtype InvalidPermissionType _
 derive instance repGenericInvalidPermissionType :: Generic InvalidPermissionType _
@@ -6168,12 +6167,12 @@ instance encodeInvalidPermissionType :: Encode InvalidPermissionType where encod
 
 -- | Constructs InvalidPermissionType from required parameters
 newInvalidPermissionType :: InvalidPermissionType
-newInvalidPermissionType  = InvalidPermissionType { "Message": (NullOrUndefined Nothing) }
+newInvalidPermissionType  = InvalidPermissionType { "Message": Nothing }
 
 -- | Constructs InvalidPermissionType's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidPermissionType' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> InvalidPermissionType
-newInvalidPermissionType'  customize = (InvalidPermissionType <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidPermissionType' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> InvalidPermissionType
+newInvalidPermissionType'  customize = (InvalidPermissionType <<< customize) { "Message": Nothing }
 
 
 
@@ -6209,7 +6208,7 @@ instance encodeInvalidResourceType :: Encode InvalidResourceType where encode = 
 
 -- | <p>The specified inventory item result attribute is not valid.</p>
 newtype InvalidResultAttributeException = InvalidResultAttributeException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeInvalidResultAttributeException :: Newtype InvalidResultAttributeException _
 derive instance repGenericInvalidResultAttributeException :: Generic InvalidResultAttributeException _
@@ -6219,18 +6218,18 @@ instance encodeInvalidResultAttributeException :: Encode InvalidResultAttributeE
 
 -- | Constructs InvalidResultAttributeException from required parameters
 newInvalidResultAttributeException :: InvalidResultAttributeException
-newInvalidResultAttributeException  = InvalidResultAttributeException { "Message": (NullOrUndefined Nothing) }
+newInvalidResultAttributeException  = InvalidResultAttributeException { "Message": Nothing }
 
 -- | Constructs InvalidResultAttributeException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidResultAttributeException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> InvalidResultAttributeException
-newInvalidResultAttributeException'  customize = (InvalidResultAttributeException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidResultAttributeException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> InvalidResultAttributeException
+newInvalidResultAttributeException'  customize = (InvalidResultAttributeException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The role name can't contain invalid characters. Also verify that you specified an IAM role for notifications that includes the required trust policy. For information about configuring the IAM role for Run Command notifications, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/rc-sns-notifications.html">Configuring Amazon SNS Notifications for Run Command</a> in the <i>AWS Systems Manager User Guide</i>.</p>
 newtype InvalidRole = InvalidRole 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeInvalidRole :: Newtype InvalidRole _
 derive instance repGenericInvalidRole :: Generic InvalidRole _
@@ -6240,18 +6239,18 @@ instance encodeInvalidRole :: Encode InvalidRole where encode = genericEncode op
 
 -- | Constructs InvalidRole from required parameters
 newInvalidRole :: InvalidRole
-newInvalidRole  = InvalidRole { "Message": (NullOrUndefined Nothing) }
+newInvalidRole  = InvalidRole { "Message": Nothing }
 
 -- | Constructs InvalidRole's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidRole' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> InvalidRole
-newInvalidRole'  customize = (InvalidRole <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidRole' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> InvalidRole
+newInvalidRole'  customize = (InvalidRole <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The schedule is invalid. Verify your cron or rate expression and try again.</p>
 newtype InvalidSchedule = InvalidSchedule 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeInvalidSchedule :: Newtype InvalidSchedule _
 derive instance repGenericInvalidSchedule :: Generic InvalidSchedule _
@@ -6261,18 +6260,18 @@ instance encodeInvalidSchedule :: Encode InvalidSchedule where encode = genericE
 
 -- | Constructs InvalidSchedule from required parameters
 newInvalidSchedule :: InvalidSchedule
-newInvalidSchedule  = InvalidSchedule { "Message": (NullOrUndefined Nothing) }
+newInvalidSchedule  = InvalidSchedule { "Message": Nothing }
 
 -- | Constructs InvalidSchedule's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidSchedule' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> InvalidSchedule
-newInvalidSchedule'  customize = (InvalidSchedule <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidSchedule' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> InvalidSchedule
+newInvalidSchedule'  customize = (InvalidSchedule <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The target is not valid or does not exist. It might not be configured for EC2 Systems Manager or you might not have permission to perform the operation.</p>
 newtype InvalidTarget = InvalidTarget 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeInvalidTarget :: Newtype InvalidTarget _
 derive instance repGenericInvalidTarget :: Generic InvalidTarget _
@@ -6282,18 +6281,18 @@ instance encodeInvalidTarget :: Encode InvalidTarget where encode = genericEncod
 
 -- | Constructs InvalidTarget from required parameters
 newInvalidTarget :: InvalidTarget
-newInvalidTarget  = InvalidTarget { "Message": (NullOrUndefined Nothing) }
+newInvalidTarget  = InvalidTarget { "Message": Nothing }
 
 -- | Constructs InvalidTarget's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidTarget' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> InvalidTarget
-newInvalidTarget'  customize = (InvalidTarget <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidTarget' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> InvalidTarget
+newInvalidTarget'  customize = (InvalidTarget <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The parameter type name is not valid.</p>
 newtype InvalidTypeNameException = InvalidTypeNameException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeInvalidTypeNameException :: Newtype InvalidTypeNameException _
 derive instance repGenericInvalidTypeNameException :: Generic InvalidTypeNameException _
@@ -6303,18 +6302,18 @@ instance encodeInvalidTypeNameException :: Encode InvalidTypeNameException where
 
 -- | Constructs InvalidTypeNameException from required parameters
 newInvalidTypeNameException :: InvalidTypeNameException
-newInvalidTypeNameException  = InvalidTypeNameException { "Message": (NullOrUndefined Nothing) }
+newInvalidTypeNameException  = InvalidTypeNameException { "Message": Nothing }
 
 -- | Constructs InvalidTypeNameException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidTypeNameException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> InvalidTypeNameException
-newInvalidTypeNameException'  customize = (InvalidTypeNameException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidTypeNameException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> InvalidTypeNameException
+newInvalidTypeNameException'  customize = (InvalidTypeNameException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The update is not valid.</p>
 newtype InvalidUpdate = InvalidUpdate 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeInvalidUpdate :: Newtype InvalidUpdate _
 derive instance repGenericInvalidUpdate :: Generic InvalidUpdate _
@@ -6324,18 +6323,18 @@ instance encodeInvalidUpdate :: Encode InvalidUpdate where encode = genericEncod
 
 -- | Constructs InvalidUpdate from required parameters
 newInvalidUpdate :: InvalidUpdate
-newInvalidUpdate  = InvalidUpdate { "Message": (NullOrUndefined Nothing) }
+newInvalidUpdate  = InvalidUpdate { "Message": Nothing }
 
 -- | Constructs InvalidUpdate's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidUpdate' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> InvalidUpdate
-newInvalidUpdate'  customize = (InvalidUpdate <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidUpdate' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> InvalidUpdate
+newInvalidUpdate'  customize = (InvalidUpdate <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>Specifies the inventory type and attribute for the aggregation execution.</p>
 newtype InventoryAggregator = InventoryAggregator 
-  { "Expression" :: NullOrUndefined (InventoryAggregatorExpression)
+  { "Expression" :: Maybe (InventoryAggregatorExpression)
   }
 derive instance newtypeInventoryAggregator :: Newtype InventoryAggregator _
 derive instance repGenericInventoryAggregator :: Generic InventoryAggregator _
@@ -6345,12 +6344,12 @@ instance encodeInventoryAggregator :: Encode InventoryAggregator where encode = 
 
 -- | Constructs InventoryAggregator from required parameters
 newInventoryAggregator :: InventoryAggregator
-newInventoryAggregator  = InventoryAggregator { "Expression": (NullOrUndefined Nothing) }
+newInventoryAggregator  = InventoryAggregator { "Expression": Nothing }
 
 -- | Constructs InventoryAggregator's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInventoryAggregator' :: ( { "Expression" :: NullOrUndefined (InventoryAggregatorExpression) } -> {"Expression" :: NullOrUndefined (InventoryAggregatorExpression) } ) -> InventoryAggregator
-newInventoryAggregator'  customize = (InventoryAggregator <<< customize) { "Expression": (NullOrUndefined Nothing) }
+newInventoryAggregator' :: ( { "Expression" :: Maybe (InventoryAggregatorExpression) } -> {"Expression" :: Maybe (InventoryAggregatorExpression) } ) -> InventoryAggregator
+newInventoryAggregator'  customize = (InventoryAggregator <<< customize) { "Expression": Nothing }
 
 
 
@@ -6385,7 +6384,7 @@ instance encodeInventoryAttributeDataType :: Encode InventoryAttributeDataType w
 newtype InventoryFilter = InventoryFilter 
   { "Key" :: (InventoryFilterKey)
   , "Values" :: (InventoryFilterValueList)
-  , "Type" :: NullOrUndefined (InventoryQueryOperatorType)
+  , "Type" :: Maybe (InventoryQueryOperatorType)
   }
 derive instance newtypeInventoryFilter :: Newtype InventoryFilter _
 derive instance repGenericInventoryFilter :: Generic InventoryFilter _
@@ -6395,12 +6394,12 @@ instance encodeInventoryFilter :: Encode InventoryFilter where encode = genericE
 
 -- | Constructs InventoryFilter from required parameters
 newInventoryFilter :: InventoryFilterKey -> InventoryFilterValueList -> InventoryFilter
-newInventoryFilter _Key _Values = InventoryFilter { "Key": _Key, "Values": _Values, "Type": (NullOrUndefined Nothing) }
+newInventoryFilter _Key _Values = InventoryFilter { "Key": _Key, "Values": _Values, "Type": Nothing }
 
 -- | Constructs InventoryFilter's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInventoryFilter' :: InventoryFilterKey -> InventoryFilterValueList -> ( { "Key" :: (InventoryFilterKey) , "Values" :: (InventoryFilterValueList) , "Type" :: NullOrUndefined (InventoryQueryOperatorType) } -> {"Key" :: (InventoryFilterKey) , "Values" :: (InventoryFilterValueList) , "Type" :: NullOrUndefined (InventoryQueryOperatorType) } ) -> InventoryFilter
-newInventoryFilter' _Key _Values customize = (InventoryFilter <<< customize) { "Key": _Key, "Values": _Values, "Type": (NullOrUndefined Nothing) }
+newInventoryFilter' :: InventoryFilterKey -> InventoryFilterValueList -> ( { "Key" :: (InventoryFilterKey) , "Values" :: (InventoryFilterValueList) , "Type" :: Maybe (InventoryQueryOperatorType) } -> {"Key" :: (InventoryFilterKey) , "Values" :: (InventoryFilterValueList) , "Type" :: Maybe (InventoryQueryOperatorType) } ) -> InventoryFilter
+newInventoryFilter' _Key _Values customize = (InventoryFilter <<< customize) { "Key": _Key, "Values": _Values, "Type": Nothing }
 
 
 
@@ -6445,9 +6444,9 @@ newtype InventoryItem = InventoryItem
   { "TypeName" :: (InventoryItemTypeName)
   , "SchemaVersion" :: (InventoryItemSchemaVersion)
   , "CaptureTime" :: (InventoryItemCaptureTime)
-  , "ContentHash" :: NullOrUndefined (InventoryItemContentHash)
-  , "Content" :: NullOrUndefined (InventoryItemEntryList)
-  , "Context" :: NullOrUndefined (InventoryItemContentContext)
+  , "ContentHash" :: Maybe (InventoryItemContentHash)
+  , "Content" :: Maybe (InventoryItemEntryList)
+  , "Context" :: Maybe (InventoryItemContentContext)
   }
 derive instance newtypeInventoryItem :: Newtype InventoryItem _
 derive instance repGenericInventoryItem :: Generic InventoryItem _
@@ -6457,12 +6456,12 @@ instance encodeInventoryItem :: Encode InventoryItem where encode = genericEncod
 
 -- | Constructs InventoryItem from required parameters
 newInventoryItem :: InventoryItemCaptureTime -> InventoryItemSchemaVersion -> InventoryItemTypeName -> InventoryItem
-newInventoryItem _CaptureTime _SchemaVersion _TypeName = InventoryItem { "CaptureTime": _CaptureTime, "SchemaVersion": _SchemaVersion, "TypeName": _TypeName, "Content": (NullOrUndefined Nothing), "ContentHash": (NullOrUndefined Nothing), "Context": (NullOrUndefined Nothing) }
+newInventoryItem _CaptureTime _SchemaVersion _TypeName = InventoryItem { "CaptureTime": _CaptureTime, "SchemaVersion": _SchemaVersion, "TypeName": _TypeName, "Content": Nothing, "ContentHash": Nothing, "Context": Nothing }
 
 -- | Constructs InventoryItem's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInventoryItem' :: InventoryItemCaptureTime -> InventoryItemSchemaVersion -> InventoryItemTypeName -> ( { "TypeName" :: (InventoryItemTypeName) , "SchemaVersion" :: (InventoryItemSchemaVersion) , "CaptureTime" :: (InventoryItemCaptureTime) , "ContentHash" :: NullOrUndefined (InventoryItemContentHash) , "Content" :: NullOrUndefined (InventoryItemEntryList) , "Context" :: NullOrUndefined (InventoryItemContentContext) } -> {"TypeName" :: (InventoryItemTypeName) , "SchemaVersion" :: (InventoryItemSchemaVersion) , "CaptureTime" :: (InventoryItemCaptureTime) , "ContentHash" :: NullOrUndefined (InventoryItemContentHash) , "Content" :: NullOrUndefined (InventoryItemEntryList) , "Context" :: NullOrUndefined (InventoryItemContentContext) } ) -> InventoryItem
-newInventoryItem' _CaptureTime _SchemaVersion _TypeName customize = (InventoryItem <<< customize) { "CaptureTime": _CaptureTime, "SchemaVersion": _SchemaVersion, "TypeName": _TypeName, "Content": (NullOrUndefined Nothing), "ContentHash": (NullOrUndefined Nothing), "Context": (NullOrUndefined Nothing) }
+newInventoryItem' :: InventoryItemCaptureTime -> InventoryItemSchemaVersion -> InventoryItemTypeName -> ( { "TypeName" :: (InventoryItemTypeName) , "SchemaVersion" :: (InventoryItemSchemaVersion) , "CaptureTime" :: (InventoryItemCaptureTime) , "ContentHash" :: Maybe (InventoryItemContentHash) , "Content" :: Maybe (InventoryItemEntryList) , "Context" :: Maybe (InventoryItemContentContext) } -> {"TypeName" :: (InventoryItemTypeName) , "SchemaVersion" :: (InventoryItemSchemaVersion) , "CaptureTime" :: (InventoryItemCaptureTime) , "ContentHash" :: Maybe (InventoryItemContentHash) , "Content" :: Maybe (InventoryItemEntryList) , "Context" :: Maybe (InventoryItemContentContext) } ) -> InventoryItem
+newInventoryItem' _CaptureTime _SchemaVersion _TypeName customize = (InventoryItem <<< customize) { "CaptureTime": _CaptureTime, "SchemaVersion": _SchemaVersion, "TypeName": _TypeName, "Content": Nothing, "ContentHash": Nothing, "Context": Nothing }
 
 
 
@@ -6563,9 +6562,9 @@ instance encodeInventoryItemList :: Encode InventoryItemList where encode = gene
 -- | <p>The inventory item schema definition. Users can use this to compose inventory query filters.</p>
 newtype InventoryItemSchema = InventoryItemSchema 
   { "TypeName" :: (InventoryItemTypeName)
-  , "Version" :: NullOrUndefined (InventoryItemSchemaVersion)
+  , "Version" :: Maybe (InventoryItemSchemaVersion)
   , "Attributes" :: (InventoryItemAttributeList)
-  , "DisplayName" :: NullOrUndefined (InventoryTypeDisplayName)
+  , "DisplayName" :: Maybe (InventoryTypeDisplayName)
   }
 derive instance newtypeInventoryItemSchema :: Newtype InventoryItemSchema _
 derive instance repGenericInventoryItemSchema :: Generic InventoryItemSchema _
@@ -6575,12 +6574,12 @@ instance encodeInventoryItemSchema :: Encode InventoryItemSchema where encode = 
 
 -- | Constructs InventoryItemSchema from required parameters
 newInventoryItemSchema :: InventoryItemAttributeList -> InventoryItemTypeName -> InventoryItemSchema
-newInventoryItemSchema _Attributes _TypeName = InventoryItemSchema { "Attributes": _Attributes, "TypeName": _TypeName, "DisplayName": (NullOrUndefined Nothing), "Version": (NullOrUndefined Nothing) }
+newInventoryItemSchema _Attributes _TypeName = InventoryItemSchema { "Attributes": _Attributes, "TypeName": _TypeName, "DisplayName": Nothing, "Version": Nothing }
 
 -- | Constructs InventoryItemSchema's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInventoryItemSchema' :: InventoryItemAttributeList -> InventoryItemTypeName -> ( { "TypeName" :: (InventoryItemTypeName) , "Version" :: NullOrUndefined (InventoryItemSchemaVersion) , "Attributes" :: (InventoryItemAttributeList) , "DisplayName" :: NullOrUndefined (InventoryTypeDisplayName) } -> {"TypeName" :: (InventoryItemTypeName) , "Version" :: NullOrUndefined (InventoryItemSchemaVersion) , "Attributes" :: (InventoryItemAttributeList) , "DisplayName" :: NullOrUndefined (InventoryTypeDisplayName) } ) -> InventoryItemSchema
-newInventoryItemSchema' _Attributes _TypeName customize = (InventoryItemSchema <<< customize) { "Attributes": _Attributes, "TypeName": _TypeName, "DisplayName": (NullOrUndefined Nothing), "Version": (NullOrUndefined Nothing) }
+newInventoryItemSchema' :: InventoryItemAttributeList -> InventoryItemTypeName -> ( { "TypeName" :: (InventoryItemTypeName) , "Version" :: Maybe (InventoryItemSchemaVersion) , "Attributes" :: (InventoryItemAttributeList) , "DisplayName" :: Maybe (InventoryTypeDisplayName) } -> {"TypeName" :: (InventoryItemTypeName) , "Version" :: Maybe (InventoryItemSchemaVersion) , "Attributes" :: (InventoryItemAttributeList) , "DisplayName" :: Maybe (InventoryTypeDisplayName) } ) -> InventoryItemSchema
+newInventoryItemSchema' _Attributes _TypeName customize = (InventoryItemSchema <<< customize) { "Attributes": _Attributes, "TypeName": _TypeName, "DisplayName": Nothing, "Version": Nothing }
 
 
 
@@ -6631,8 +6630,8 @@ instance encodeInventoryQueryOperatorType :: Encode InventoryQueryOperatorType w
 
 -- | <p>Inventory query results.</p>
 newtype InventoryResultEntity = InventoryResultEntity 
-  { "Id" :: NullOrUndefined (InventoryResultEntityId)
-  , "Data" :: NullOrUndefined (InventoryResultItemMap)
+  { "Id" :: Maybe (InventoryResultEntityId)
+  , "Data" :: Maybe (InventoryResultItemMap)
   }
 derive instance newtypeInventoryResultEntity :: Newtype InventoryResultEntity _
 derive instance repGenericInventoryResultEntity :: Generic InventoryResultEntity _
@@ -6642,12 +6641,12 @@ instance encodeInventoryResultEntity :: Encode InventoryResultEntity where encod
 
 -- | Constructs InventoryResultEntity from required parameters
 newInventoryResultEntity :: InventoryResultEntity
-newInventoryResultEntity  = InventoryResultEntity { "Data": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing) }
+newInventoryResultEntity  = InventoryResultEntity { "Data": Nothing, "Id": Nothing }
 
 -- | Constructs InventoryResultEntity's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInventoryResultEntity' :: ( { "Id" :: NullOrUndefined (InventoryResultEntityId) , "Data" :: NullOrUndefined (InventoryResultItemMap) } -> {"Id" :: NullOrUndefined (InventoryResultEntityId) , "Data" :: NullOrUndefined (InventoryResultItemMap) } ) -> InventoryResultEntity
-newInventoryResultEntity'  customize = (InventoryResultEntity <<< customize) { "Data": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing) }
+newInventoryResultEntity' :: ( { "Id" :: Maybe (InventoryResultEntityId) , "Data" :: Maybe (InventoryResultItemMap) } -> {"Id" :: Maybe (InventoryResultEntityId) , "Data" :: Maybe (InventoryResultItemMap) } ) -> InventoryResultEntity
+newInventoryResultEntity'  customize = (InventoryResultEntity <<< customize) { "Data": Nothing, "Id": Nothing }
 
 
 
@@ -6673,8 +6672,8 @@ instance encodeInventoryResultEntityList :: Encode InventoryResultEntityList whe
 newtype InventoryResultItem = InventoryResultItem 
   { "TypeName" :: (InventoryItemTypeName)
   , "SchemaVersion" :: (InventoryItemSchemaVersion)
-  , "CaptureTime" :: NullOrUndefined (InventoryItemCaptureTime)
-  , "ContentHash" :: NullOrUndefined (InventoryItemContentHash)
+  , "CaptureTime" :: Maybe (InventoryItemCaptureTime)
+  , "ContentHash" :: Maybe (InventoryItemContentHash)
   , "Content" :: (InventoryItemEntryList)
   }
 derive instance newtypeInventoryResultItem :: Newtype InventoryResultItem _
@@ -6685,12 +6684,12 @@ instance encodeInventoryResultItem :: Encode InventoryResultItem where encode = 
 
 -- | Constructs InventoryResultItem from required parameters
 newInventoryResultItem :: InventoryItemEntryList -> InventoryItemSchemaVersion -> InventoryItemTypeName -> InventoryResultItem
-newInventoryResultItem _Content _SchemaVersion _TypeName = InventoryResultItem { "Content": _Content, "SchemaVersion": _SchemaVersion, "TypeName": _TypeName, "CaptureTime": (NullOrUndefined Nothing), "ContentHash": (NullOrUndefined Nothing) }
+newInventoryResultItem _Content _SchemaVersion _TypeName = InventoryResultItem { "Content": _Content, "SchemaVersion": _SchemaVersion, "TypeName": _TypeName, "CaptureTime": Nothing, "ContentHash": Nothing }
 
 -- | Constructs InventoryResultItem's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInventoryResultItem' :: InventoryItemEntryList -> InventoryItemSchemaVersion -> InventoryItemTypeName -> ( { "TypeName" :: (InventoryItemTypeName) , "SchemaVersion" :: (InventoryItemSchemaVersion) , "CaptureTime" :: NullOrUndefined (InventoryItemCaptureTime) , "ContentHash" :: NullOrUndefined (InventoryItemContentHash) , "Content" :: (InventoryItemEntryList) } -> {"TypeName" :: (InventoryItemTypeName) , "SchemaVersion" :: (InventoryItemSchemaVersion) , "CaptureTime" :: NullOrUndefined (InventoryItemCaptureTime) , "ContentHash" :: NullOrUndefined (InventoryItemContentHash) , "Content" :: (InventoryItemEntryList) } ) -> InventoryResultItem
-newInventoryResultItem' _Content _SchemaVersion _TypeName customize = (InventoryResultItem <<< customize) { "Content": _Content, "SchemaVersion": _SchemaVersion, "TypeName": _TypeName, "CaptureTime": (NullOrUndefined Nothing), "ContentHash": (NullOrUndefined Nothing) }
+newInventoryResultItem' :: InventoryItemEntryList -> InventoryItemSchemaVersion -> InventoryItemTypeName -> ( { "TypeName" :: (InventoryItemTypeName) , "SchemaVersion" :: (InventoryItemSchemaVersion) , "CaptureTime" :: Maybe (InventoryItemCaptureTime) , "ContentHash" :: Maybe (InventoryItemContentHash) , "Content" :: (InventoryItemEntryList) } -> {"TypeName" :: (InventoryItemTypeName) , "SchemaVersion" :: (InventoryItemSchemaVersion) , "CaptureTime" :: Maybe (InventoryItemCaptureTime) , "ContentHash" :: Maybe (InventoryItemContentHash) , "Content" :: (InventoryItemEntryList) } ) -> InventoryResultItem
+newInventoryResultItem' _Content _SchemaVersion _TypeName customize = (InventoryResultItem <<< customize) { "Content": _Content, "SchemaVersion": _SchemaVersion, "TypeName": _TypeName, "CaptureTime": Nothing, "ContentHash": Nothing }
 
 
 
@@ -6751,8 +6750,8 @@ instance encodeIsSubTypeSchema :: Encode IsSubTypeSchema where encode = genericE
 
 -- | <p>The inventory item has invalid content. </p>
 newtype ItemContentMismatchException = ItemContentMismatchException 
-  { "TypeName" :: NullOrUndefined (InventoryItemTypeName)
-  , "Message" :: NullOrUndefined (String)
+  { "TypeName" :: Maybe (InventoryItemTypeName)
+  , "Message" :: Maybe (String)
   }
 derive instance newtypeItemContentMismatchException :: Newtype ItemContentMismatchException _
 derive instance repGenericItemContentMismatchException :: Generic ItemContentMismatchException _
@@ -6762,19 +6761,19 @@ instance encodeItemContentMismatchException :: Encode ItemContentMismatchExcepti
 
 -- | Constructs ItemContentMismatchException from required parameters
 newItemContentMismatchException :: ItemContentMismatchException
-newItemContentMismatchException  = ItemContentMismatchException { "Message": (NullOrUndefined Nothing), "TypeName": (NullOrUndefined Nothing) }
+newItemContentMismatchException  = ItemContentMismatchException { "Message": Nothing, "TypeName": Nothing }
 
 -- | Constructs ItemContentMismatchException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newItemContentMismatchException' :: ( { "TypeName" :: NullOrUndefined (InventoryItemTypeName) , "Message" :: NullOrUndefined (String) } -> {"TypeName" :: NullOrUndefined (InventoryItemTypeName) , "Message" :: NullOrUndefined (String) } ) -> ItemContentMismatchException
-newItemContentMismatchException'  customize = (ItemContentMismatchException <<< customize) { "Message": (NullOrUndefined Nothing), "TypeName": (NullOrUndefined Nothing) }
+newItemContentMismatchException' :: ( { "TypeName" :: Maybe (InventoryItemTypeName) , "Message" :: Maybe (String) } -> {"TypeName" :: Maybe (InventoryItemTypeName) , "Message" :: Maybe (String) } ) -> ItemContentMismatchException
+newItemContentMismatchException'  customize = (ItemContentMismatchException <<< customize) { "Message": Nothing, "TypeName": Nothing }
 
 
 
 -- | <p>The inventory item size has exceeded the size limit.</p>
 newtype ItemSizeLimitExceededException = ItemSizeLimitExceededException 
-  { "TypeName" :: NullOrUndefined (InventoryItemTypeName)
-  , "Message" :: NullOrUndefined (String)
+  { "TypeName" :: Maybe (InventoryItemTypeName)
+  , "Message" :: Maybe (String)
   }
 derive instance newtypeItemSizeLimitExceededException :: Newtype ItemSizeLimitExceededException _
 derive instance repGenericItemSizeLimitExceededException :: Generic ItemSizeLimitExceededException _
@@ -6784,12 +6783,12 @@ instance encodeItemSizeLimitExceededException :: Encode ItemSizeLimitExceededExc
 
 -- | Constructs ItemSizeLimitExceededException from required parameters
 newItemSizeLimitExceededException :: ItemSizeLimitExceededException
-newItemSizeLimitExceededException  = ItemSizeLimitExceededException { "Message": (NullOrUndefined Nothing), "TypeName": (NullOrUndefined Nothing) }
+newItemSizeLimitExceededException  = ItemSizeLimitExceededException { "Message": Nothing, "TypeName": Nothing }
 
 -- | Constructs ItemSizeLimitExceededException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newItemSizeLimitExceededException' :: ( { "TypeName" :: NullOrUndefined (InventoryItemTypeName) , "Message" :: NullOrUndefined (String) } -> {"TypeName" :: NullOrUndefined (InventoryItemTypeName) , "Message" :: NullOrUndefined (String) } ) -> ItemSizeLimitExceededException
-newItemSizeLimitExceededException'  customize = (ItemSizeLimitExceededException <<< customize) { "Message": (NullOrUndefined Nothing), "TypeName": (NullOrUndefined Nothing) }
+newItemSizeLimitExceededException' :: ( { "TypeName" :: Maybe (InventoryItemTypeName) , "Message" :: Maybe (String) } -> {"TypeName" :: Maybe (InventoryItemTypeName) , "Message" :: Maybe (String) } ) -> ItemSizeLimitExceededException
+newItemSizeLimitExceededException'  customize = (ItemSizeLimitExceededException <<< customize) { "Message": Nothing, "TypeName": Nothing }
 
 
 
@@ -6840,8 +6839,8 @@ instance encodeLastSuccessfulResourceDataSyncTime :: Encode LastSuccessfulResour
 
 newtype ListAssociationVersionsRequest = ListAssociationVersionsRequest 
   { "AssociationId" :: (AssociationId)
-  , "MaxResults" :: NullOrUndefined (MaxResults)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  , "MaxResults" :: Maybe (MaxResults)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListAssociationVersionsRequest :: Newtype ListAssociationVersionsRequest _
 derive instance repGenericListAssociationVersionsRequest :: Generic ListAssociationVersionsRequest _
@@ -6851,18 +6850,18 @@ instance encodeListAssociationVersionsRequest :: Encode ListAssociationVersionsR
 
 -- | Constructs ListAssociationVersionsRequest from required parameters
 newListAssociationVersionsRequest :: AssociationId -> ListAssociationVersionsRequest
-newListAssociationVersionsRequest _AssociationId = ListAssociationVersionsRequest { "AssociationId": _AssociationId, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListAssociationVersionsRequest _AssociationId = ListAssociationVersionsRequest { "AssociationId": _AssociationId, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListAssociationVersionsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListAssociationVersionsRequest' :: AssociationId -> ( { "AssociationId" :: (AssociationId) , "MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (NextToken) } -> {"AssociationId" :: (AssociationId) , "MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListAssociationVersionsRequest
-newListAssociationVersionsRequest' _AssociationId customize = (ListAssociationVersionsRequest <<< customize) { "AssociationId": _AssociationId, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListAssociationVersionsRequest' :: AssociationId -> ( { "AssociationId" :: (AssociationId) , "MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (NextToken) } -> {"AssociationId" :: (AssociationId) , "MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (NextToken) } ) -> ListAssociationVersionsRequest
+newListAssociationVersionsRequest' _AssociationId customize = (ListAssociationVersionsRequest <<< customize) { "AssociationId": _AssociationId, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListAssociationVersionsResult = ListAssociationVersionsResult 
-  { "AssociationVersions" :: NullOrUndefined (AssociationVersionList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "AssociationVersions" :: Maybe (AssociationVersionList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListAssociationVersionsResult :: Newtype ListAssociationVersionsResult _
 derive instance repGenericListAssociationVersionsResult :: Generic ListAssociationVersionsResult _
@@ -6872,19 +6871,19 @@ instance encodeListAssociationVersionsResult :: Encode ListAssociationVersionsRe
 
 -- | Constructs ListAssociationVersionsResult from required parameters
 newListAssociationVersionsResult :: ListAssociationVersionsResult
-newListAssociationVersionsResult  = ListAssociationVersionsResult { "AssociationVersions": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListAssociationVersionsResult  = ListAssociationVersionsResult { "AssociationVersions": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListAssociationVersionsResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListAssociationVersionsResult' :: ( { "AssociationVersions" :: NullOrUndefined (AssociationVersionList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"AssociationVersions" :: NullOrUndefined (AssociationVersionList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListAssociationVersionsResult
-newListAssociationVersionsResult'  customize = (ListAssociationVersionsResult <<< customize) { "AssociationVersions": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListAssociationVersionsResult' :: ( { "AssociationVersions" :: Maybe (AssociationVersionList) , "NextToken" :: Maybe (NextToken) } -> {"AssociationVersions" :: Maybe (AssociationVersionList) , "NextToken" :: Maybe (NextToken) } ) -> ListAssociationVersionsResult
+newListAssociationVersionsResult'  customize = (ListAssociationVersionsResult <<< customize) { "AssociationVersions": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListAssociationsRequest = ListAssociationsRequest 
-  { "AssociationFilterList" :: NullOrUndefined (AssociationFilterList)
-  , "MaxResults" :: NullOrUndefined (MaxResults)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "AssociationFilterList" :: Maybe (AssociationFilterList)
+  , "MaxResults" :: Maybe (MaxResults)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListAssociationsRequest :: Newtype ListAssociationsRequest _
 derive instance repGenericListAssociationsRequest :: Generic ListAssociationsRequest _
@@ -6894,18 +6893,18 @@ instance encodeListAssociationsRequest :: Encode ListAssociationsRequest where e
 
 -- | Constructs ListAssociationsRequest from required parameters
 newListAssociationsRequest :: ListAssociationsRequest
-newListAssociationsRequest  = ListAssociationsRequest { "AssociationFilterList": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListAssociationsRequest  = ListAssociationsRequest { "AssociationFilterList": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListAssociationsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListAssociationsRequest' :: ( { "AssociationFilterList" :: NullOrUndefined (AssociationFilterList) , "MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (NextToken) } -> {"AssociationFilterList" :: NullOrUndefined (AssociationFilterList) , "MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListAssociationsRequest
-newListAssociationsRequest'  customize = (ListAssociationsRequest <<< customize) { "AssociationFilterList": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListAssociationsRequest' :: ( { "AssociationFilterList" :: Maybe (AssociationFilterList) , "MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (NextToken) } -> {"AssociationFilterList" :: Maybe (AssociationFilterList) , "MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (NextToken) } ) -> ListAssociationsRequest
+newListAssociationsRequest'  customize = (ListAssociationsRequest <<< customize) { "AssociationFilterList": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListAssociationsResult = ListAssociationsResult 
-  { "Associations" :: NullOrUndefined (AssociationList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "Associations" :: Maybe (AssociationList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListAssociationsResult :: Newtype ListAssociationsResult _
 derive instance repGenericListAssociationsResult :: Generic ListAssociationsResult _
@@ -6915,22 +6914,22 @@ instance encodeListAssociationsResult :: Encode ListAssociationsResult where enc
 
 -- | Constructs ListAssociationsResult from required parameters
 newListAssociationsResult :: ListAssociationsResult
-newListAssociationsResult  = ListAssociationsResult { "Associations": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListAssociationsResult  = ListAssociationsResult { "Associations": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListAssociationsResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListAssociationsResult' :: ( { "Associations" :: NullOrUndefined (AssociationList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Associations" :: NullOrUndefined (AssociationList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListAssociationsResult
-newListAssociationsResult'  customize = (ListAssociationsResult <<< customize) { "Associations": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListAssociationsResult' :: ( { "Associations" :: Maybe (AssociationList) , "NextToken" :: Maybe (NextToken) } -> {"Associations" :: Maybe (AssociationList) , "NextToken" :: Maybe (NextToken) } ) -> ListAssociationsResult
+newListAssociationsResult'  customize = (ListAssociationsResult <<< customize) { "Associations": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListCommandInvocationsRequest = ListCommandInvocationsRequest 
-  { "CommandId" :: NullOrUndefined (CommandId)
-  , "InstanceId" :: NullOrUndefined (InstanceId)
-  , "MaxResults" :: NullOrUndefined (CommandMaxResults)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "Filters" :: NullOrUndefined (CommandFilterList)
-  , "Details" :: NullOrUndefined (Boolean)
+  { "CommandId" :: Maybe (CommandId)
+  , "InstanceId" :: Maybe (InstanceId)
+  , "MaxResults" :: Maybe (CommandMaxResults)
+  , "NextToken" :: Maybe (NextToken)
+  , "Filters" :: Maybe (CommandFilterList)
+  , "Details" :: Maybe (Boolean)
   }
 derive instance newtypeListCommandInvocationsRequest :: Newtype ListCommandInvocationsRequest _
 derive instance repGenericListCommandInvocationsRequest :: Generic ListCommandInvocationsRequest _
@@ -6940,18 +6939,18 @@ instance encodeListCommandInvocationsRequest :: Encode ListCommandInvocationsReq
 
 -- | Constructs ListCommandInvocationsRequest from required parameters
 newListCommandInvocationsRequest :: ListCommandInvocationsRequest
-newListCommandInvocationsRequest  = ListCommandInvocationsRequest { "CommandId": (NullOrUndefined Nothing), "Details": (NullOrUndefined Nothing), "Filters": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListCommandInvocationsRequest  = ListCommandInvocationsRequest { "CommandId": Nothing, "Details": Nothing, "Filters": Nothing, "InstanceId": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListCommandInvocationsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListCommandInvocationsRequest' :: ( { "CommandId" :: NullOrUndefined (CommandId) , "InstanceId" :: NullOrUndefined (InstanceId) , "MaxResults" :: NullOrUndefined (CommandMaxResults) , "NextToken" :: NullOrUndefined (NextToken) , "Filters" :: NullOrUndefined (CommandFilterList) , "Details" :: NullOrUndefined (Boolean) } -> {"CommandId" :: NullOrUndefined (CommandId) , "InstanceId" :: NullOrUndefined (InstanceId) , "MaxResults" :: NullOrUndefined (CommandMaxResults) , "NextToken" :: NullOrUndefined (NextToken) , "Filters" :: NullOrUndefined (CommandFilterList) , "Details" :: NullOrUndefined (Boolean) } ) -> ListCommandInvocationsRequest
-newListCommandInvocationsRequest'  customize = (ListCommandInvocationsRequest <<< customize) { "CommandId": (NullOrUndefined Nothing), "Details": (NullOrUndefined Nothing), "Filters": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListCommandInvocationsRequest' :: ( { "CommandId" :: Maybe (CommandId) , "InstanceId" :: Maybe (InstanceId) , "MaxResults" :: Maybe (CommandMaxResults) , "NextToken" :: Maybe (NextToken) , "Filters" :: Maybe (CommandFilterList) , "Details" :: Maybe (Boolean) } -> {"CommandId" :: Maybe (CommandId) , "InstanceId" :: Maybe (InstanceId) , "MaxResults" :: Maybe (CommandMaxResults) , "NextToken" :: Maybe (NextToken) , "Filters" :: Maybe (CommandFilterList) , "Details" :: Maybe (Boolean) } ) -> ListCommandInvocationsRequest
+newListCommandInvocationsRequest'  customize = (ListCommandInvocationsRequest <<< customize) { "CommandId": Nothing, "Details": Nothing, "Filters": Nothing, "InstanceId": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListCommandInvocationsResult = ListCommandInvocationsResult 
-  { "CommandInvocations" :: NullOrUndefined (CommandInvocationList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "CommandInvocations" :: Maybe (CommandInvocationList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListCommandInvocationsResult :: Newtype ListCommandInvocationsResult _
 derive instance repGenericListCommandInvocationsResult :: Generic ListCommandInvocationsResult _
@@ -6961,21 +6960,21 @@ instance encodeListCommandInvocationsResult :: Encode ListCommandInvocationsResu
 
 -- | Constructs ListCommandInvocationsResult from required parameters
 newListCommandInvocationsResult :: ListCommandInvocationsResult
-newListCommandInvocationsResult  = ListCommandInvocationsResult { "CommandInvocations": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListCommandInvocationsResult  = ListCommandInvocationsResult { "CommandInvocations": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListCommandInvocationsResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListCommandInvocationsResult' :: ( { "CommandInvocations" :: NullOrUndefined (CommandInvocationList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"CommandInvocations" :: NullOrUndefined (CommandInvocationList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListCommandInvocationsResult
-newListCommandInvocationsResult'  customize = (ListCommandInvocationsResult <<< customize) { "CommandInvocations": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListCommandInvocationsResult' :: ( { "CommandInvocations" :: Maybe (CommandInvocationList) , "NextToken" :: Maybe (NextToken) } -> {"CommandInvocations" :: Maybe (CommandInvocationList) , "NextToken" :: Maybe (NextToken) } ) -> ListCommandInvocationsResult
+newListCommandInvocationsResult'  customize = (ListCommandInvocationsResult <<< customize) { "CommandInvocations": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListCommandsRequest = ListCommandsRequest 
-  { "CommandId" :: NullOrUndefined (CommandId)
-  , "InstanceId" :: NullOrUndefined (InstanceId)
-  , "MaxResults" :: NullOrUndefined (CommandMaxResults)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "Filters" :: NullOrUndefined (CommandFilterList)
+  { "CommandId" :: Maybe (CommandId)
+  , "InstanceId" :: Maybe (InstanceId)
+  , "MaxResults" :: Maybe (CommandMaxResults)
+  , "NextToken" :: Maybe (NextToken)
+  , "Filters" :: Maybe (CommandFilterList)
   }
 derive instance newtypeListCommandsRequest :: Newtype ListCommandsRequest _
 derive instance repGenericListCommandsRequest :: Generic ListCommandsRequest _
@@ -6985,18 +6984,18 @@ instance encodeListCommandsRequest :: Encode ListCommandsRequest where encode = 
 
 -- | Constructs ListCommandsRequest from required parameters
 newListCommandsRequest :: ListCommandsRequest
-newListCommandsRequest  = ListCommandsRequest { "CommandId": (NullOrUndefined Nothing), "Filters": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListCommandsRequest  = ListCommandsRequest { "CommandId": Nothing, "Filters": Nothing, "InstanceId": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListCommandsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListCommandsRequest' :: ( { "CommandId" :: NullOrUndefined (CommandId) , "InstanceId" :: NullOrUndefined (InstanceId) , "MaxResults" :: NullOrUndefined (CommandMaxResults) , "NextToken" :: NullOrUndefined (NextToken) , "Filters" :: NullOrUndefined (CommandFilterList) } -> {"CommandId" :: NullOrUndefined (CommandId) , "InstanceId" :: NullOrUndefined (InstanceId) , "MaxResults" :: NullOrUndefined (CommandMaxResults) , "NextToken" :: NullOrUndefined (NextToken) , "Filters" :: NullOrUndefined (CommandFilterList) } ) -> ListCommandsRequest
-newListCommandsRequest'  customize = (ListCommandsRequest <<< customize) { "CommandId": (NullOrUndefined Nothing), "Filters": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListCommandsRequest' :: ( { "CommandId" :: Maybe (CommandId) , "InstanceId" :: Maybe (InstanceId) , "MaxResults" :: Maybe (CommandMaxResults) , "NextToken" :: Maybe (NextToken) , "Filters" :: Maybe (CommandFilterList) } -> {"CommandId" :: Maybe (CommandId) , "InstanceId" :: Maybe (InstanceId) , "MaxResults" :: Maybe (CommandMaxResults) , "NextToken" :: Maybe (NextToken) , "Filters" :: Maybe (CommandFilterList) } ) -> ListCommandsRequest
+newListCommandsRequest'  customize = (ListCommandsRequest <<< customize) { "CommandId": Nothing, "Filters": Nothing, "InstanceId": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListCommandsResult = ListCommandsResult 
-  { "Commands" :: NullOrUndefined (CommandList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "Commands" :: Maybe (CommandList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListCommandsResult :: Newtype ListCommandsResult _
 derive instance repGenericListCommandsResult :: Generic ListCommandsResult _
@@ -7006,21 +7005,21 @@ instance encodeListCommandsResult :: Encode ListCommandsResult where encode = ge
 
 -- | Constructs ListCommandsResult from required parameters
 newListCommandsResult :: ListCommandsResult
-newListCommandsResult  = ListCommandsResult { "Commands": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListCommandsResult  = ListCommandsResult { "Commands": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListCommandsResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListCommandsResult' :: ( { "Commands" :: NullOrUndefined (CommandList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Commands" :: NullOrUndefined (CommandList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListCommandsResult
-newListCommandsResult'  customize = (ListCommandsResult <<< customize) { "Commands": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListCommandsResult' :: ( { "Commands" :: Maybe (CommandList) , "NextToken" :: Maybe (NextToken) } -> {"Commands" :: Maybe (CommandList) , "NextToken" :: Maybe (NextToken) } ) -> ListCommandsResult
+newListCommandsResult'  customize = (ListCommandsResult <<< customize) { "Commands": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListComplianceItemsRequest = ListComplianceItemsRequest 
-  { "Filters" :: NullOrUndefined (ComplianceStringFilterList)
-  , "ResourceIds" :: NullOrUndefined (ComplianceResourceIdList)
-  , "ResourceTypes" :: NullOrUndefined (ComplianceResourceTypeList)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (MaxResults)
+  { "Filters" :: Maybe (ComplianceStringFilterList)
+  , "ResourceIds" :: Maybe (ComplianceResourceIdList)
+  , "ResourceTypes" :: Maybe (ComplianceResourceTypeList)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (MaxResults)
   }
 derive instance newtypeListComplianceItemsRequest :: Newtype ListComplianceItemsRequest _
 derive instance repGenericListComplianceItemsRequest :: Generic ListComplianceItemsRequest _
@@ -7030,18 +7029,18 @@ instance encodeListComplianceItemsRequest :: Encode ListComplianceItemsRequest w
 
 -- | Constructs ListComplianceItemsRequest from required parameters
 newListComplianceItemsRequest :: ListComplianceItemsRequest
-newListComplianceItemsRequest  = ListComplianceItemsRequest { "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "ResourceIds": (NullOrUndefined Nothing), "ResourceTypes": (NullOrUndefined Nothing) }
+newListComplianceItemsRequest  = ListComplianceItemsRequest { "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing, "ResourceIds": Nothing, "ResourceTypes": Nothing }
 
 -- | Constructs ListComplianceItemsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListComplianceItemsRequest' :: ( { "Filters" :: NullOrUndefined (ComplianceStringFilterList) , "ResourceIds" :: NullOrUndefined (ComplianceResourceIdList) , "ResourceTypes" :: NullOrUndefined (ComplianceResourceTypeList) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (MaxResults) } -> {"Filters" :: NullOrUndefined (ComplianceStringFilterList) , "ResourceIds" :: NullOrUndefined (ComplianceResourceIdList) , "ResourceTypes" :: NullOrUndefined (ComplianceResourceTypeList) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (MaxResults) } ) -> ListComplianceItemsRequest
-newListComplianceItemsRequest'  customize = (ListComplianceItemsRequest <<< customize) { "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "ResourceIds": (NullOrUndefined Nothing), "ResourceTypes": (NullOrUndefined Nothing) }
+newListComplianceItemsRequest' :: ( { "Filters" :: Maybe (ComplianceStringFilterList) , "ResourceIds" :: Maybe (ComplianceResourceIdList) , "ResourceTypes" :: Maybe (ComplianceResourceTypeList) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (MaxResults) } -> {"Filters" :: Maybe (ComplianceStringFilterList) , "ResourceIds" :: Maybe (ComplianceResourceIdList) , "ResourceTypes" :: Maybe (ComplianceResourceTypeList) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (MaxResults) } ) -> ListComplianceItemsRequest
+newListComplianceItemsRequest'  customize = (ListComplianceItemsRequest <<< customize) { "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing, "ResourceIds": Nothing, "ResourceTypes": Nothing }
 
 
 
 newtype ListComplianceItemsResult = ListComplianceItemsResult 
-  { "ComplianceItems" :: NullOrUndefined (ComplianceItemList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "ComplianceItems" :: Maybe (ComplianceItemList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListComplianceItemsResult :: Newtype ListComplianceItemsResult _
 derive instance repGenericListComplianceItemsResult :: Generic ListComplianceItemsResult _
@@ -7051,19 +7050,19 @@ instance encodeListComplianceItemsResult :: Encode ListComplianceItemsResult whe
 
 -- | Constructs ListComplianceItemsResult from required parameters
 newListComplianceItemsResult :: ListComplianceItemsResult
-newListComplianceItemsResult  = ListComplianceItemsResult { "ComplianceItems": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListComplianceItemsResult  = ListComplianceItemsResult { "ComplianceItems": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListComplianceItemsResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListComplianceItemsResult' :: ( { "ComplianceItems" :: NullOrUndefined (ComplianceItemList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"ComplianceItems" :: NullOrUndefined (ComplianceItemList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListComplianceItemsResult
-newListComplianceItemsResult'  customize = (ListComplianceItemsResult <<< customize) { "ComplianceItems": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListComplianceItemsResult' :: ( { "ComplianceItems" :: Maybe (ComplianceItemList) , "NextToken" :: Maybe (NextToken) } -> {"ComplianceItems" :: Maybe (ComplianceItemList) , "NextToken" :: Maybe (NextToken) } ) -> ListComplianceItemsResult
+newListComplianceItemsResult'  customize = (ListComplianceItemsResult <<< customize) { "ComplianceItems": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListComplianceSummariesRequest = ListComplianceSummariesRequest 
-  { "Filters" :: NullOrUndefined (ComplianceStringFilterList)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (MaxResults)
+  { "Filters" :: Maybe (ComplianceStringFilterList)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (MaxResults)
   }
 derive instance newtypeListComplianceSummariesRequest :: Newtype ListComplianceSummariesRequest _
 derive instance repGenericListComplianceSummariesRequest :: Generic ListComplianceSummariesRequest _
@@ -7073,18 +7072,18 @@ instance encodeListComplianceSummariesRequest :: Encode ListComplianceSummariesR
 
 -- | Constructs ListComplianceSummariesRequest from required parameters
 newListComplianceSummariesRequest :: ListComplianceSummariesRequest
-newListComplianceSummariesRequest  = ListComplianceSummariesRequest { "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListComplianceSummariesRequest  = ListComplianceSummariesRequest { "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListComplianceSummariesRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListComplianceSummariesRequest' :: ( { "Filters" :: NullOrUndefined (ComplianceStringFilterList) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (MaxResults) } -> {"Filters" :: NullOrUndefined (ComplianceStringFilterList) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (MaxResults) } ) -> ListComplianceSummariesRequest
-newListComplianceSummariesRequest'  customize = (ListComplianceSummariesRequest <<< customize) { "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListComplianceSummariesRequest' :: ( { "Filters" :: Maybe (ComplianceStringFilterList) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (MaxResults) } -> {"Filters" :: Maybe (ComplianceStringFilterList) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (MaxResults) } ) -> ListComplianceSummariesRequest
+newListComplianceSummariesRequest'  customize = (ListComplianceSummariesRequest <<< customize) { "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListComplianceSummariesResult = ListComplianceSummariesResult 
-  { "ComplianceSummaryItems" :: NullOrUndefined (ComplianceSummaryItemList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "ComplianceSummaryItems" :: Maybe (ComplianceSummaryItemList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListComplianceSummariesResult :: Newtype ListComplianceSummariesResult _
 derive instance repGenericListComplianceSummariesResult :: Generic ListComplianceSummariesResult _
@@ -7094,19 +7093,19 @@ instance encodeListComplianceSummariesResult :: Encode ListComplianceSummariesRe
 
 -- | Constructs ListComplianceSummariesResult from required parameters
 newListComplianceSummariesResult :: ListComplianceSummariesResult
-newListComplianceSummariesResult  = ListComplianceSummariesResult { "ComplianceSummaryItems": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListComplianceSummariesResult  = ListComplianceSummariesResult { "ComplianceSummaryItems": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListComplianceSummariesResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListComplianceSummariesResult' :: ( { "ComplianceSummaryItems" :: NullOrUndefined (ComplianceSummaryItemList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"ComplianceSummaryItems" :: NullOrUndefined (ComplianceSummaryItemList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListComplianceSummariesResult
-newListComplianceSummariesResult'  customize = (ListComplianceSummariesResult <<< customize) { "ComplianceSummaryItems": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListComplianceSummariesResult' :: ( { "ComplianceSummaryItems" :: Maybe (ComplianceSummaryItemList) , "NextToken" :: Maybe (NextToken) } -> {"ComplianceSummaryItems" :: Maybe (ComplianceSummaryItemList) , "NextToken" :: Maybe (NextToken) } ) -> ListComplianceSummariesResult
+newListComplianceSummariesResult'  customize = (ListComplianceSummariesResult <<< customize) { "ComplianceSummaryItems": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListDocumentVersionsRequest = ListDocumentVersionsRequest 
   { "Name" :: (DocumentName)
-  , "MaxResults" :: NullOrUndefined (MaxResults)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  , "MaxResults" :: Maybe (MaxResults)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListDocumentVersionsRequest :: Newtype ListDocumentVersionsRequest _
 derive instance repGenericListDocumentVersionsRequest :: Generic ListDocumentVersionsRequest _
@@ -7116,18 +7115,18 @@ instance encodeListDocumentVersionsRequest :: Encode ListDocumentVersionsRequest
 
 -- | Constructs ListDocumentVersionsRequest from required parameters
 newListDocumentVersionsRequest :: DocumentName -> ListDocumentVersionsRequest
-newListDocumentVersionsRequest _Name = ListDocumentVersionsRequest { "Name": _Name, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListDocumentVersionsRequest _Name = ListDocumentVersionsRequest { "Name": _Name, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListDocumentVersionsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListDocumentVersionsRequest' :: DocumentName -> ( { "Name" :: (DocumentName) , "MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Name" :: (DocumentName) , "MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListDocumentVersionsRequest
-newListDocumentVersionsRequest' _Name customize = (ListDocumentVersionsRequest <<< customize) { "Name": _Name, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListDocumentVersionsRequest' :: DocumentName -> ( { "Name" :: (DocumentName) , "MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (NextToken) } -> {"Name" :: (DocumentName) , "MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (NextToken) } ) -> ListDocumentVersionsRequest
+newListDocumentVersionsRequest' _Name customize = (ListDocumentVersionsRequest <<< customize) { "Name": _Name, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListDocumentVersionsResult = ListDocumentVersionsResult 
-  { "DocumentVersions" :: NullOrUndefined (DocumentVersionList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "DocumentVersions" :: Maybe (DocumentVersionList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListDocumentVersionsResult :: Newtype ListDocumentVersionsResult _
 derive instance repGenericListDocumentVersionsResult :: Generic ListDocumentVersionsResult _
@@ -7137,20 +7136,20 @@ instance encodeListDocumentVersionsResult :: Encode ListDocumentVersionsResult w
 
 -- | Constructs ListDocumentVersionsResult from required parameters
 newListDocumentVersionsResult :: ListDocumentVersionsResult
-newListDocumentVersionsResult  = ListDocumentVersionsResult { "DocumentVersions": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListDocumentVersionsResult  = ListDocumentVersionsResult { "DocumentVersions": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListDocumentVersionsResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListDocumentVersionsResult' :: ( { "DocumentVersions" :: NullOrUndefined (DocumentVersionList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"DocumentVersions" :: NullOrUndefined (DocumentVersionList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListDocumentVersionsResult
-newListDocumentVersionsResult'  customize = (ListDocumentVersionsResult <<< customize) { "DocumentVersions": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListDocumentVersionsResult' :: ( { "DocumentVersions" :: Maybe (DocumentVersionList) , "NextToken" :: Maybe (NextToken) } -> {"DocumentVersions" :: Maybe (DocumentVersionList) , "NextToken" :: Maybe (NextToken) } ) -> ListDocumentVersionsResult
+newListDocumentVersionsResult'  customize = (ListDocumentVersionsResult <<< customize) { "DocumentVersions": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListDocumentsRequest = ListDocumentsRequest 
-  { "DocumentFilterList" :: NullOrUndefined (DocumentFilterList)
-  , "Filters" :: NullOrUndefined (DocumentKeyValuesFilterList)
-  , "MaxResults" :: NullOrUndefined (MaxResults)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "DocumentFilterList" :: Maybe (DocumentFilterList)
+  , "Filters" :: Maybe (DocumentKeyValuesFilterList)
+  , "MaxResults" :: Maybe (MaxResults)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListDocumentsRequest :: Newtype ListDocumentsRequest _
 derive instance repGenericListDocumentsRequest :: Generic ListDocumentsRequest _
@@ -7160,18 +7159,18 @@ instance encodeListDocumentsRequest :: Encode ListDocumentsRequest where encode 
 
 -- | Constructs ListDocumentsRequest from required parameters
 newListDocumentsRequest :: ListDocumentsRequest
-newListDocumentsRequest  = ListDocumentsRequest { "DocumentFilterList": (NullOrUndefined Nothing), "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListDocumentsRequest  = ListDocumentsRequest { "DocumentFilterList": Nothing, "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListDocumentsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListDocumentsRequest' :: ( { "DocumentFilterList" :: NullOrUndefined (DocumentFilterList) , "Filters" :: NullOrUndefined (DocumentKeyValuesFilterList) , "MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (NextToken) } -> {"DocumentFilterList" :: NullOrUndefined (DocumentFilterList) , "Filters" :: NullOrUndefined (DocumentKeyValuesFilterList) , "MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListDocumentsRequest
-newListDocumentsRequest'  customize = (ListDocumentsRequest <<< customize) { "DocumentFilterList": (NullOrUndefined Nothing), "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListDocumentsRequest' :: ( { "DocumentFilterList" :: Maybe (DocumentFilterList) , "Filters" :: Maybe (DocumentKeyValuesFilterList) , "MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (NextToken) } -> {"DocumentFilterList" :: Maybe (DocumentFilterList) , "Filters" :: Maybe (DocumentKeyValuesFilterList) , "MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (NextToken) } ) -> ListDocumentsRequest
+newListDocumentsRequest'  customize = (ListDocumentsRequest <<< customize) { "DocumentFilterList": Nothing, "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListDocumentsResult = ListDocumentsResult 
-  { "DocumentIdentifiers" :: NullOrUndefined (DocumentIdentifierList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "DocumentIdentifiers" :: Maybe (DocumentIdentifierList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListDocumentsResult :: Newtype ListDocumentsResult _
 derive instance repGenericListDocumentsResult :: Generic ListDocumentsResult _
@@ -7181,21 +7180,21 @@ instance encodeListDocumentsResult :: Encode ListDocumentsResult where encode = 
 
 -- | Constructs ListDocumentsResult from required parameters
 newListDocumentsResult :: ListDocumentsResult
-newListDocumentsResult  = ListDocumentsResult { "DocumentIdentifiers": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListDocumentsResult  = ListDocumentsResult { "DocumentIdentifiers": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListDocumentsResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListDocumentsResult' :: ( { "DocumentIdentifiers" :: NullOrUndefined (DocumentIdentifierList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"DocumentIdentifiers" :: NullOrUndefined (DocumentIdentifierList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListDocumentsResult
-newListDocumentsResult'  customize = (ListDocumentsResult <<< customize) { "DocumentIdentifiers": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListDocumentsResult' :: ( { "DocumentIdentifiers" :: Maybe (DocumentIdentifierList) , "NextToken" :: Maybe (NextToken) } -> {"DocumentIdentifiers" :: Maybe (DocumentIdentifierList) , "NextToken" :: Maybe (NextToken) } ) -> ListDocumentsResult
+newListDocumentsResult'  customize = (ListDocumentsResult <<< customize) { "DocumentIdentifiers": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListInventoryEntriesRequest = ListInventoryEntriesRequest 
   { "InstanceId" :: (InstanceId)
   , "TypeName" :: (InventoryItemTypeName)
-  , "Filters" :: NullOrUndefined (InventoryFilterList)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (MaxResults)
+  , "Filters" :: Maybe (InventoryFilterList)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (MaxResults)
   }
 derive instance newtypeListInventoryEntriesRequest :: Newtype ListInventoryEntriesRequest _
 derive instance repGenericListInventoryEntriesRequest :: Generic ListInventoryEntriesRequest _
@@ -7205,22 +7204,22 @@ instance encodeListInventoryEntriesRequest :: Encode ListInventoryEntriesRequest
 
 -- | Constructs ListInventoryEntriesRequest from required parameters
 newListInventoryEntriesRequest :: InstanceId -> InventoryItemTypeName -> ListInventoryEntriesRequest
-newListInventoryEntriesRequest _InstanceId _TypeName = ListInventoryEntriesRequest { "InstanceId": _InstanceId, "TypeName": _TypeName, "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListInventoryEntriesRequest _InstanceId _TypeName = ListInventoryEntriesRequest { "InstanceId": _InstanceId, "TypeName": _TypeName, "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListInventoryEntriesRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListInventoryEntriesRequest' :: InstanceId -> InventoryItemTypeName -> ( { "InstanceId" :: (InstanceId) , "TypeName" :: (InventoryItemTypeName) , "Filters" :: NullOrUndefined (InventoryFilterList) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (MaxResults) } -> {"InstanceId" :: (InstanceId) , "TypeName" :: (InventoryItemTypeName) , "Filters" :: NullOrUndefined (InventoryFilterList) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (MaxResults) } ) -> ListInventoryEntriesRequest
-newListInventoryEntriesRequest' _InstanceId _TypeName customize = (ListInventoryEntriesRequest <<< customize) { "InstanceId": _InstanceId, "TypeName": _TypeName, "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListInventoryEntriesRequest' :: InstanceId -> InventoryItemTypeName -> ( { "InstanceId" :: (InstanceId) , "TypeName" :: (InventoryItemTypeName) , "Filters" :: Maybe (InventoryFilterList) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (MaxResults) } -> {"InstanceId" :: (InstanceId) , "TypeName" :: (InventoryItemTypeName) , "Filters" :: Maybe (InventoryFilterList) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (MaxResults) } ) -> ListInventoryEntriesRequest
+newListInventoryEntriesRequest' _InstanceId _TypeName customize = (ListInventoryEntriesRequest <<< customize) { "InstanceId": _InstanceId, "TypeName": _TypeName, "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListInventoryEntriesResult = ListInventoryEntriesResult 
-  { "TypeName" :: NullOrUndefined (InventoryItemTypeName)
-  , "InstanceId" :: NullOrUndefined (InstanceId)
-  , "SchemaVersion" :: NullOrUndefined (InventoryItemSchemaVersion)
-  , "CaptureTime" :: NullOrUndefined (InventoryItemCaptureTime)
-  , "Entries" :: NullOrUndefined (InventoryItemEntryList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "TypeName" :: Maybe (InventoryItemTypeName)
+  , "InstanceId" :: Maybe (InstanceId)
+  , "SchemaVersion" :: Maybe (InventoryItemSchemaVersion)
+  , "CaptureTime" :: Maybe (InventoryItemCaptureTime)
+  , "Entries" :: Maybe (InventoryItemEntryList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListInventoryEntriesResult :: Newtype ListInventoryEntriesResult _
 derive instance repGenericListInventoryEntriesResult :: Generic ListInventoryEntriesResult _
@@ -7230,19 +7229,19 @@ instance encodeListInventoryEntriesResult :: Encode ListInventoryEntriesResult w
 
 -- | Constructs ListInventoryEntriesResult from required parameters
 newListInventoryEntriesResult :: ListInventoryEntriesResult
-newListInventoryEntriesResult  = ListInventoryEntriesResult { "CaptureTime": (NullOrUndefined Nothing), "Entries": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "SchemaVersion": (NullOrUndefined Nothing), "TypeName": (NullOrUndefined Nothing) }
+newListInventoryEntriesResult  = ListInventoryEntriesResult { "CaptureTime": Nothing, "Entries": Nothing, "InstanceId": Nothing, "NextToken": Nothing, "SchemaVersion": Nothing, "TypeName": Nothing }
 
 -- | Constructs ListInventoryEntriesResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListInventoryEntriesResult' :: ( { "TypeName" :: NullOrUndefined (InventoryItemTypeName) , "InstanceId" :: NullOrUndefined (InstanceId) , "SchemaVersion" :: NullOrUndefined (InventoryItemSchemaVersion) , "CaptureTime" :: NullOrUndefined (InventoryItemCaptureTime) , "Entries" :: NullOrUndefined (InventoryItemEntryList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"TypeName" :: NullOrUndefined (InventoryItemTypeName) , "InstanceId" :: NullOrUndefined (InstanceId) , "SchemaVersion" :: NullOrUndefined (InventoryItemSchemaVersion) , "CaptureTime" :: NullOrUndefined (InventoryItemCaptureTime) , "Entries" :: NullOrUndefined (InventoryItemEntryList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListInventoryEntriesResult
-newListInventoryEntriesResult'  customize = (ListInventoryEntriesResult <<< customize) { "CaptureTime": (NullOrUndefined Nothing), "Entries": (NullOrUndefined Nothing), "InstanceId": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "SchemaVersion": (NullOrUndefined Nothing), "TypeName": (NullOrUndefined Nothing) }
+newListInventoryEntriesResult' :: ( { "TypeName" :: Maybe (InventoryItemTypeName) , "InstanceId" :: Maybe (InstanceId) , "SchemaVersion" :: Maybe (InventoryItemSchemaVersion) , "CaptureTime" :: Maybe (InventoryItemCaptureTime) , "Entries" :: Maybe (InventoryItemEntryList) , "NextToken" :: Maybe (NextToken) } -> {"TypeName" :: Maybe (InventoryItemTypeName) , "InstanceId" :: Maybe (InstanceId) , "SchemaVersion" :: Maybe (InventoryItemSchemaVersion) , "CaptureTime" :: Maybe (InventoryItemCaptureTime) , "Entries" :: Maybe (InventoryItemEntryList) , "NextToken" :: Maybe (NextToken) } ) -> ListInventoryEntriesResult
+newListInventoryEntriesResult'  customize = (ListInventoryEntriesResult <<< customize) { "CaptureTime": Nothing, "Entries": Nothing, "InstanceId": Nothing, "NextToken": Nothing, "SchemaVersion": Nothing, "TypeName": Nothing }
 
 
 
 newtype ListResourceComplianceSummariesRequest = ListResourceComplianceSummariesRequest 
-  { "Filters" :: NullOrUndefined (ComplianceStringFilterList)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (MaxResults)
+  { "Filters" :: Maybe (ComplianceStringFilterList)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (MaxResults)
   }
 derive instance newtypeListResourceComplianceSummariesRequest :: Newtype ListResourceComplianceSummariesRequest _
 derive instance repGenericListResourceComplianceSummariesRequest :: Generic ListResourceComplianceSummariesRequest _
@@ -7252,18 +7251,18 @@ instance encodeListResourceComplianceSummariesRequest :: Encode ListResourceComp
 
 -- | Constructs ListResourceComplianceSummariesRequest from required parameters
 newListResourceComplianceSummariesRequest :: ListResourceComplianceSummariesRequest
-newListResourceComplianceSummariesRequest  = ListResourceComplianceSummariesRequest { "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListResourceComplianceSummariesRequest  = ListResourceComplianceSummariesRequest { "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListResourceComplianceSummariesRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListResourceComplianceSummariesRequest' :: ( { "Filters" :: NullOrUndefined (ComplianceStringFilterList) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (MaxResults) } -> {"Filters" :: NullOrUndefined (ComplianceStringFilterList) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (MaxResults) } ) -> ListResourceComplianceSummariesRequest
-newListResourceComplianceSummariesRequest'  customize = (ListResourceComplianceSummariesRequest <<< customize) { "Filters": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListResourceComplianceSummariesRequest' :: ( { "Filters" :: Maybe (ComplianceStringFilterList) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (MaxResults) } -> {"Filters" :: Maybe (ComplianceStringFilterList) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (MaxResults) } ) -> ListResourceComplianceSummariesRequest
+newListResourceComplianceSummariesRequest'  customize = (ListResourceComplianceSummariesRequest <<< customize) { "Filters": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListResourceComplianceSummariesResult = ListResourceComplianceSummariesResult 
-  { "ResourceComplianceSummaryItems" :: NullOrUndefined (ResourceComplianceSummaryItemList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "ResourceComplianceSummaryItems" :: Maybe (ResourceComplianceSummaryItemList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListResourceComplianceSummariesResult :: Newtype ListResourceComplianceSummariesResult _
 derive instance repGenericListResourceComplianceSummariesResult :: Generic ListResourceComplianceSummariesResult _
@@ -7273,18 +7272,18 @@ instance encodeListResourceComplianceSummariesResult :: Encode ListResourceCompl
 
 -- | Constructs ListResourceComplianceSummariesResult from required parameters
 newListResourceComplianceSummariesResult :: ListResourceComplianceSummariesResult
-newListResourceComplianceSummariesResult  = ListResourceComplianceSummariesResult { "NextToken": (NullOrUndefined Nothing), "ResourceComplianceSummaryItems": (NullOrUndefined Nothing) }
+newListResourceComplianceSummariesResult  = ListResourceComplianceSummariesResult { "NextToken": Nothing, "ResourceComplianceSummaryItems": Nothing }
 
 -- | Constructs ListResourceComplianceSummariesResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListResourceComplianceSummariesResult' :: ( { "ResourceComplianceSummaryItems" :: NullOrUndefined (ResourceComplianceSummaryItemList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"ResourceComplianceSummaryItems" :: NullOrUndefined (ResourceComplianceSummaryItemList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListResourceComplianceSummariesResult
-newListResourceComplianceSummariesResult'  customize = (ListResourceComplianceSummariesResult <<< customize) { "NextToken": (NullOrUndefined Nothing), "ResourceComplianceSummaryItems": (NullOrUndefined Nothing) }
+newListResourceComplianceSummariesResult' :: ( { "ResourceComplianceSummaryItems" :: Maybe (ResourceComplianceSummaryItemList) , "NextToken" :: Maybe (NextToken) } -> {"ResourceComplianceSummaryItems" :: Maybe (ResourceComplianceSummaryItemList) , "NextToken" :: Maybe (NextToken) } ) -> ListResourceComplianceSummariesResult
+newListResourceComplianceSummariesResult'  customize = (ListResourceComplianceSummariesResult <<< customize) { "NextToken": Nothing, "ResourceComplianceSummaryItems": Nothing }
 
 
 
 newtype ListResourceDataSyncRequest = ListResourceDataSyncRequest 
-  { "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (MaxResults)
+  { "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (MaxResults)
   }
 derive instance newtypeListResourceDataSyncRequest :: Newtype ListResourceDataSyncRequest _
 derive instance repGenericListResourceDataSyncRequest :: Generic ListResourceDataSyncRequest _
@@ -7294,18 +7293,18 @@ instance encodeListResourceDataSyncRequest :: Encode ListResourceDataSyncRequest
 
 -- | Constructs ListResourceDataSyncRequest from required parameters
 newListResourceDataSyncRequest :: ListResourceDataSyncRequest
-newListResourceDataSyncRequest  = ListResourceDataSyncRequest { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListResourceDataSyncRequest  = ListResourceDataSyncRequest { "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListResourceDataSyncRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListResourceDataSyncRequest' :: ( { "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (MaxResults) } -> {"NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (MaxResults) } ) -> ListResourceDataSyncRequest
-newListResourceDataSyncRequest'  customize = (ListResourceDataSyncRequest <<< customize) { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListResourceDataSyncRequest' :: ( { "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (MaxResults) } -> {"NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (MaxResults) } ) -> ListResourceDataSyncRequest
+newListResourceDataSyncRequest'  customize = (ListResourceDataSyncRequest <<< customize) { "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListResourceDataSyncResult = ListResourceDataSyncResult 
-  { "ResourceDataSyncItems" :: NullOrUndefined (ResourceDataSyncItemList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "ResourceDataSyncItems" :: Maybe (ResourceDataSyncItemList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListResourceDataSyncResult :: Newtype ListResourceDataSyncResult _
 derive instance repGenericListResourceDataSyncResult :: Generic ListResourceDataSyncResult _
@@ -7315,12 +7314,12 @@ instance encodeListResourceDataSyncResult :: Encode ListResourceDataSyncResult w
 
 -- | Constructs ListResourceDataSyncResult from required parameters
 newListResourceDataSyncResult :: ListResourceDataSyncResult
-newListResourceDataSyncResult  = ListResourceDataSyncResult { "NextToken": (NullOrUndefined Nothing), "ResourceDataSyncItems": (NullOrUndefined Nothing) }
+newListResourceDataSyncResult  = ListResourceDataSyncResult { "NextToken": Nothing, "ResourceDataSyncItems": Nothing }
 
 -- | Constructs ListResourceDataSyncResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListResourceDataSyncResult' :: ( { "ResourceDataSyncItems" :: NullOrUndefined (ResourceDataSyncItemList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"ResourceDataSyncItems" :: NullOrUndefined (ResourceDataSyncItemList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListResourceDataSyncResult
-newListResourceDataSyncResult'  customize = (ListResourceDataSyncResult <<< customize) { "NextToken": (NullOrUndefined Nothing), "ResourceDataSyncItems": (NullOrUndefined Nothing) }
+newListResourceDataSyncResult' :: ( { "ResourceDataSyncItems" :: Maybe (ResourceDataSyncItemList) , "NextToken" :: Maybe (NextToken) } -> {"ResourceDataSyncItems" :: Maybe (ResourceDataSyncItemList) , "NextToken" :: Maybe (NextToken) } ) -> ListResourceDataSyncResult
+newListResourceDataSyncResult'  customize = (ListResourceDataSyncResult <<< customize) { "NextToken": Nothing, "ResourceDataSyncItems": Nothing }
 
 
 
@@ -7346,7 +7345,7 @@ newListTagsForResourceRequest' _ResourceId _ResourceType customize = (ListTagsFo
 
 
 newtype ListTagsForResourceResult = ListTagsForResourceResult 
-  { "TagList" :: NullOrUndefined (TagList)
+  { "TagList" :: Maybe (TagList)
   }
 derive instance newtypeListTagsForResourceResult :: Newtype ListTagsForResourceResult _
 derive instance repGenericListTagsForResourceResult :: Generic ListTagsForResourceResult _
@@ -7356,19 +7355,19 @@ instance encodeListTagsForResourceResult :: Encode ListTagsForResourceResult whe
 
 -- | Constructs ListTagsForResourceResult from required parameters
 newListTagsForResourceResult :: ListTagsForResourceResult
-newListTagsForResourceResult  = ListTagsForResourceResult { "TagList": (NullOrUndefined Nothing) }
+newListTagsForResourceResult  = ListTagsForResourceResult { "TagList": Nothing }
 
 -- | Constructs ListTagsForResourceResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListTagsForResourceResult' :: ( { "TagList" :: NullOrUndefined (TagList) } -> {"TagList" :: NullOrUndefined (TagList) } ) -> ListTagsForResourceResult
-newListTagsForResourceResult'  customize = (ListTagsForResourceResult <<< customize) { "TagList": (NullOrUndefined Nothing) }
+newListTagsForResourceResult' :: ( { "TagList" :: Maybe (TagList) } -> {"TagList" :: Maybe (TagList) } ) -> ListTagsForResourceResult
+newListTagsForResourceResult'  customize = (ListTagsForResourceResult <<< customize) { "TagList": Nothing }
 
 
 
 -- | <p>Information about an Amazon S3 bucket to write instance-level logs to.</p>
 newtype LoggingInfo = LoggingInfo 
   { "S3BucketName" :: (S3BucketName)
-  , "S3KeyPrefix" :: NullOrUndefined (S3KeyPrefix)
+  , "S3KeyPrefix" :: Maybe (S3KeyPrefix)
   , "S3Region" :: (S3Region)
   }
 derive instance newtypeLoggingInfo :: Newtype LoggingInfo _
@@ -7379,12 +7378,12 @@ instance encodeLoggingInfo :: Encode LoggingInfo where encode = genericEncode op
 
 -- | Constructs LoggingInfo from required parameters
 newLoggingInfo :: S3BucketName -> S3Region -> LoggingInfo
-newLoggingInfo _S3BucketName _S3Region = LoggingInfo { "S3BucketName": _S3BucketName, "S3Region": _S3Region, "S3KeyPrefix": (NullOrUndefined Nothing) }
+newLoggingInfo _S3BucketName _S3Region = LoggingInfo { "S3BucketName": _S3BucketName, "S3Region": _S3Region, "S3KeyPrefix": Nothing }
 
 -- | Constructs LoggingInfo's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newLoggingInfo' :: S3BucketName -> S3Region -> ( { "S3BucketName" :: (S3BucketName) , "S3KeyPrefix" :: NullOrUndefined (S3KeyPrefix) , "S3Region" :: (S3Region) } -> {"S3BucketName" :: (S3BucketName) , "S3KeyPrefix" :: NullOrUndefined (S3KeyPrefix) , "S3Region" :: (S3Region) } ) -> LoggingInfo
-newLoggingInfo' _S3BucketName _S3Region customize = (LoggingInfo <<< customize) { "S3BucketName": _S3BucketName, "S3Region": _S3Region, "S3KeyPrefix": (NullOrUndefined Nothing) }
+newLoggingInfo' :: S3BucketName -> S3Region -> ( { "S3BucketName" :: (S3BucketName) , "S3KeyPrefix" :: Maybe (S3KeyPrefix) , "S3Region" :: (S3Region) } -> {"S3BucketName" :: (S3BucketName) , "S3KeyPrefix" :: Maybe (S3KeyPrefix) , "S3Region" :: (S3Region) } ) -> LoggingInfo
+newLoggingInfo' _S3BucketName _S3Region customize = (LoggingInfo <<< customize) { "S3BucketName": _S3BucketName, "S3Region": _S3Region, "S3KeyPrefix": Nothing }
 
 
 
@@ -7399,8 +7398,8 @@ instance encodeMaintenanceWindowAllowUnassociatedTargets :: Encode MaintenanceWi
 
 -- | <p>The parameters for an AUTOMATION task type.</p>
 newtype MaintenanceWindowAutomationParameters = MaintenanceWindowAutomationParameters 
-  { "DocumentVersion" :: NullOrUndefined (DocumentVersion)
-  , "Parameters" :: NullOrUndefined (AutomationParameterMap)
+  { "DocumentVersion" :: Maybe (DocumentVersion)
+  , "Parameters" :: Maybe (AutomationParameterMap)
   }
 derive instance newtypeMaintenanceWindowAutomationParameters :: Newtype MaintenanceWindowAutomationParameters _
 derive instance repGenericMaintenanceWindowAutomationParameters :: Generic MaintenanceWindowAutomationParameters _
@@ -7410,12 +7409,12 @@ instance encodeMaintenanceWindowAutomationParameters :: Encode MaintenanceWindow
 
 -- | Constructs MaintenanceWindowAutomationParameters from required parameters
 newMaintenanceWindowAutomationParameters :: MaintenanceWindowAutomationParameters
-newMaintenanceWindowAutomationParameters  = MaintenanceWindowAutomationParameters { "DocumentVersion": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing) }
+newMaintenanceWindowAutomationParameters  = MaintenanceWindowAutomationParameters { "DocumentVersion": Nothing, "Parameters": Nothing }
 
 -- | Constructs MaintenanceWindowAutomationParameters's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMaintenanceWindowAutomationParameters' :: ( { "DocumentVersion" :: NullOrUndefined (DocumentVersion) , "Parameters" :: NullOrUndefined (AutomationParameterMap) } -> {"DocumentVersion" :: NullOrUndefined (DocumentVersion) , "Parameters" :: NullOrUndefined (AutomationParameterMap) } ) -> MaintenanceWindowAutomationParameters
-newMaintenanceWindowAutomationParameters'  customize = (MaintenanceWindowAutomationParameters <<< customize) { "DocumentVersion": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing) }
+newMaintenanceWindowAutomationParameters' :: ( { "DocumentVersion" :: Maybe (DocumentVersion) , "Parameters" :: Maybe (AutomationParameterMap) } -> {"DocumentVersion" :: Maybe (DocumentVersion) , "Parameters" :: Maybe (AutomationParameterMap) } ) -> MaintenanceWindowAutomationParameters
+newMaintenanceWindowAutomationParameters'  customize = (MaintenanceWindowAutomationParameters <<< customize) { "DocumentVersion": Nothing, "Parameters": Nothing }
 
 
 
@@ -7457,12 +7456,12 @@ instance encodeMaintenanceWindowEnabled :: Encode MaintenanceWindowEnabled where
 
 -- | <p>Describes the information about an execution of a Maintenance Window. </p>
 newtype MaintenanceWindowExecution = MaintenanceWindowExecution 
-  { "WindowId" :: NullOrUndefined (MaintenanceWindowId)
-  , "WindowExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionId)
-  , "Status" :: NullOrUndefined (MaintenanceWindowExecutionStatus)
-  , "StatusDetails" :: NullOrUndefined (MaintenanceWindowExecutionStatusDetails)
-  , "StartTime" :: NullOrUndefined (DateTime)
-  , "EndTime" :: NullOrUndefined (DateTime)
+  { "WindowId" :: Maybe (MaintenanceWindowId)
+  , "WindowExecutionId" :: Maybe (MaintenanceWindowExecutionId)
+  , "Status" :: Maybe (MaintenanceWindowExecutionStatus)
+  , "StatusDetails" :: Maybe (MaintenanceWindowExecutionStatusDetails)
+  , "StartTime" :: Maybe (DateTime)
+  , "EndTime" :: Maybe (DateTime)
   }
 derive instance newtypeMaintenanceWindowExecution :: Newtype MaintenanceWindowExecution _
 derive instance repGenericMaintenanceWindowExecution :: Generic MaintenanceWindowExecution _
@@ -7472,12 +7471,12 @@ instance encodeMaintenanceWindowExecution :: Encode MaintenanceWindowExecution w
 
 -- | Constructs MaintenanceWindowExecution from required parameters
 newMaintenanceWindowExecution :: MaintenanceWindowExecution
-newMaintenanceWindowExecution  = MaintenanceWindowExecution { "EndTime": (NullOrUndefined Nothing), "StartTime": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "StatusDetails": (NullOrUndefined Nothing), "WindowExecutionId": (NullOrUndefined Nothing), "WindowId": (NullOrUndefined Nothing) }
+newMaintenanceWindowExecution  = MaintenanceWindowExecution { "EndTime": Nothing, "StartTime": Nothing, "Status": Nothing, "StatusDetails": Nothing, "WindowExecutionId": Nothing, "WindowId": Nothing }
 
 -- | Constructs MaintenanceWindowExecution's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMaintenanceWindowExecution' :: ( { "WindowId" :: NullOrUndefined (MaintenanceWindowId) , "WindowExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionId) , "Status" :: NullOrUndefined (MaintenanceWindowExecutionStatus) , "StatusDetails" :: NullOrUndefined (MaintenanceWindowExecutionStatusDetails) , "StartTime" :: NullOrUndefined (DateTime) , "EndTime" :: NullOrUndefined (DateTime) } -> {"WindowId" :: NullOrUndefined (MaintenanceWindowId) , "WindowExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionId) , "Status" :: NullOrUndefined (MaintenanceWindowExecutionStatus) , "StatusDetails" :: NullOrUndefined (MaintenanceWindowExecutionStatusDetails) , "StartTime" :: NullOrUndefined (DateTime) , "EndTime" :: NullOrUndefined (DateTime) } ) -> MaintenanceWindowExecution
-newMaintenanceWindowExecution'  customize = (MaintenanceWindowExecution <<< customize) { "EndTime": (NullOrUndefined Nothing), "StartTime": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "StatusDetails": (NullOrUndefined Nothing), "WindowExecutionId": (NullOrUndefined Nothing), "WindowId": (NullOrUndefined Nothing) }
+newMaintenanceWindowExecution' :: ( { "WindowId" :: Maybe (MaintenanceWindowId) , "WindowExecutionId" :: Maybe (MaintenanceWindowExecutionId) , "Status" :: Maybe (MaintenanceWindowExecutionStatus) , "StatusDetails" :: Maybe (MaintenanceWindowExecutionStatusDetails) , "StartTime" :: Maybe (DateTime) , "EndTime" :: Maybe (DateTime) } -> {"WindowId" :: Maybe (MaintenanceWindowId) , "WindowExecutionId" :: Maybe (MaintenanceWindowExecutionId) , "Status" :: Maybe (MaintenanceWindowExecutionStatus) , "StatusDetails" :: Maybe (MaintenanceWindowExecutionStatusDetails) , "StartTime" :: Maybe (DateTime) , "EndTime" :: Maybe (DateTime) } ) -> MaintenanceWindowExecution
+newMaintenanceWindowExecution'  customize = (MaintenanceWindowExecution <<< customize) { "EndTime": Nothing, "StartTime": Nothing, "Status": Nothing, "StatusDetails": Nothing, "WindowExecutionId": Nothing, "WindowId": Nothing }
 
 
 
@@ -7546,14 +7545,14 @@ instance encodeMaintenanceWindowExecutionTaskIdList :: Encode MaintenanceWindowE
 
 -- | <p>Information about a task execution performed as part of a Maintenance Window execution.</p>
 newtype MaintenanceWindowExecutionTaskIdentity = MaintenanceWindowExecutionTaskIdentity 
-  { "WindowExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionId)
-  , "TaskExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionTaskId)
-  , "Status" :: NullOrUndefined (MaintenanceWindowExecutionStatus)
-  , "StatusDetails" :: NullOrUndefined (MaintenanceWindowExecutionStatusDetails)
-  , "StartTime" :: NullOrUndefined (DateTime)
-  , "EndTime" :: NullOrUndefined (DateTime)
-  , "TaskArn" :: NullOrUndefined (MaintenanceWindowTaskArn)
-  , "TaskType" :: NullOrUndefined (MaintenanceWindowTaskType)
+  { "WindowExecutionId" :: Maybe (MaintenanceWindowExecutionId)
+  , "TaskExecutionId" :: Maybe (MaintenanceWindowExecutionTaskId)
+  , "Status" :: Maybe (MaintenanceWindowExecutionStatus)
+  , "StatusDetails" :: Maybe (MaintenanceWindowExecutionStatusDetails)
+  , "StartTime" :: Maybe (DateTime)
+  , "EndTime" :: Maybe (DateTime)
+  , "TaskArn" :: Maybe (MaintenanceWindowTaskArn)
+  , "TaskType" :: Maybe (MaintenanceWindowTaskType)
   }
 derive instance newtypeMaintenanceWindowExecutionTaskIdentity :: Newtype MaintenanceWindowExecutionTaskIdentity _
 derive instance repGenericMaintenanceWindowExecutionTaskIdentity :: Generic MaintenanceWindowExecutionTaskIdentity _
@@ -7563,12 +7562,12 @@ instance encodeMaintenanceWindowExecutionTaskIdentity :: Encode MaintenanceWindo
 
 -- | Constructs MaintenanceWindowExecutionTaskIdentity from required parameters
 newMaintenanceWindowExecutionTaskIdentity :: MaintenanceWindowExecutionTaskIdentity
-newMaintenanceWindowExecutionTaskIdentity  = MaintenanceWindowExecutionTaskIdentity { "EndTime": (NullOrUndefined Nothing), "StartTime": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "StatusDetails": (NullOrUndefined Nothing), "TaskArn": (NullOrUndefined Nothing), "TaskExecutionId": (NullOrUndefined Nothing), "TaskType": (NullOrUndefined Nothing), "WindowExecutionId": (NullOrUndefined Nothing) }
+newMaintenanceWindowExecutionTaskIdentity  = MaintenanceWindowExecutionTaskIdentity { "EndTime": Nothing, "StartTime": Nothing, "Status": Nothing, "StatusDetails": Nothing, "TaskArn": Nothing, "TaskExecutionId": Nothing, "TaskType": Nothing, "WindowExecutionId": Nothing }
 
 -- | Constructs MaintenanceWindowExecutionTaskIdentity's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMaintenanceWindowExecutionTaskIdentity' :: ( { "WindowExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionId) , "TaskExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionTaskId) , "Status" :: NullOrUndefined (MaintenanceWindowExecutionStatus) , "StatusDetails" :: NullOrUndefined (MaintenanceWindowExecutionStatusDetails) , "StartTime" :: NullOrUndefined (DateTime) , "EndTime" :: NullOrUndefined (DateTime) , "TaskArn" :: NullOrUndefined (MaintenanceWindowTaskArn) , "TaskType" :: NullOrUndefined (MaintenanceWindowTaskType) } -> {"WindowExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionId) , "TaskExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionTaskId) , "Status" :: NullOrUndefined (MaintenanceWindowExecutionStatus) , "StatusDetails" :: NullOrUndefined (MaintenanceWindowExecutionStatusDetails) , "StartTime" :: NullOrUndefined (DateTime) , "EndTime" :: NullOrUndefined (DateTime) , "TaskArn" :: NullOrUndefined (MaintenanceWindowTaskArn) , "TaskType" :: NullOrUndefined (MaintenanceWindowTaskType) } ) -> MaintenanceWindowExecutionTaskIdentity
-newMaintenanceWindowExecutionTaskIdentity'  customize = (MaintenanceWindowExecutionTaskIdentity <<< customize) { "EndTime": (NullOrUndefined Nothing), "StartTime": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "StatusDetails": (NullOrUndefined Nothing), "TaskArn": (NullOrUndefined Nothing), "TaskExecutionId": (NullOrUndefined Nothing), "TaskType": (NullOrUndefined Nothing), "WindowExecutionId": (NullOrUndefined Nothing) }
+newMaintenanceWindowExecutionTaskIdentity' :: ( { "WindowExecutionId" :: Maybe (MaintenanceWindowExecutionId) , "TaskExecutionId" :: Maybe (MaintenanceWindowExecutionTaskId) , "Status" :: Maybe (MaintenanceWindowExecutionStatus) , "StatusDetails" :: Maybe (MaintenanceWindowExecutionStatusDetails) , "StartTime" :: Maybe (DateTime) , "EndTime" :: Maybe (DateTime) , "TaskArn" :: Maybe (MaintenanceWindowTaskArn) , "TaskType" :: Maybe (MaintenanceWindowTaskType) } -> {"WindowExecutionId" :: Maybe (MaintenanceWindowExecutionId) , "TaskExecutionId" :: Maybe (MaintenanceWindowExecutionTaskId) , "Status" :: Maybe (MaintenanceWindowExecutionStatus) , "StatusDetails" :: Maybe (MaintenanceWindowExecutionStatusDetails) , "StartTime" :: Maybe (DateTime) , "EndTime" :: Maybe (DateTime) , "TaskArn" :: Maybe (MaintenanceWindowTaskArn) , "TaskType" :: Maybe (MaintenanceWindowTaskType) } ) -> MaintenanceWindowExecutionTaskIdentity
+newMaintenanceWindowExecutionTaskIdentity'  customize = (MaintenanceWindowExecutionTaskIdentity <<< customize) { "EndTime": Nothing, "StartTime": Nothing, "Status": Nothing, "StatusDetails": Nothing, "TaskArn": Nothing, "TaskExecutionId": Nothing, "TaskType": Nothing, "WindowExecutionId": Nothing }
 
 
 
@@ -7592,18 +7591,18 @@ instance encodeMaintenanceWindowExecutionTaskInvocationId :: Encode MaintenanceW
 
 -- | <p>Describes the information about a task invocation for a particular target as part of a task execution performed as part of a Maintenance Window execution.</p>
 newtype MaintenanceWindowExecutionTaskInvocationIdentity = MaintenanceWindowExecutionTaskInvocationIdentity 
-  { "WindowExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionId)
-  , "TaskExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionTaskId)
-  , "InvocationId" :: NullOrUndefined (MaintenanceWindowExecutionTaskInvocationId)
-  , "ExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionTaskExecutionId)
-  , "TaskType" :: NullOrUndefined (MaintenanceWindowTaskType)
-  , "Parameters" :: NullOrUndefined (MaintenanceWindowExecutionTaskInvocationParameters)
-  , "Status" :: NullOrUndefined (MaintenanceWindowExecutionStatus)
-  , "StatusDetails" :: NullOrUndefined (MaintenanceWindowExecutionStatusDetails)
-  , "StartTime" :: NullOrUndefined (DateTime)
-  , "EndTime" :: NullOrUndefined (DateTime)
-  , "OwnerInformation" :: NullOrUndefined (OwnerInformation)
-  , "WindowTargetId" :: NullOrUndefined (MaintenanceWindowTaskTargetId)
+  { "WindowExecutionId" :: Maybe (MaintenanceWindowExecutionId)
+  , "TaskExecutionId" :: Maybe (MaintenanceWindowExecutionTaskId)
+  , "InvocationId" :: Maybe (MaintenanceWindowExecutionTaskInvocationId)
+  , "ExecutionId" :: Maybe (MaintenanceWindowExecutionTaskExecutionId)
+  , "TaskType" :: Maybe (MaintenanceWindowTaskType)
+  , "Parameters" :: Maybe (MaintenanceWindowExecutionTaskInvocationParameters)
+  , "Status" :: Maybe (MaintenanceWindowExecutionStatus)
+  , "StatusDetails" :: Maybe (MaintenanceWindowExecutionStatusDetails)
+  , "StartTime" :: Maybe (DateTime)
+  , "EndTime" :: Maybe (DateTime)
+  , "OwnerInformation" :: Maybe (OwnerInformation)
+  , "WindowTargetId" :: Maybe (MaintenanceWindowTaskTargetId)
   }
 derive instance newtypeMaintenanceWindowExecutionTaskInvocationIdentity :: Newtype MaintenanceWindowExecutionTaskInvocationIdentity _
 derive instance repGenericMaintenanceWindowExecutionTaskInvocationIdentity :: Generic MaintenanceWindowExecutionTaskInvocationIdentity _
@@ -7613,12 +7612,12 @@ instance encodeMaintenanceWindowExecutionTaskInvocationIdentity :: Encode Mainte
 
 -- | Constructs MaintenanceWindowExecutionTaskInvocationIdentity from required parameters
 newMaintenanceWindowExecutionTaskInvocationIdentity :: MaintenanceWindowExecutionTaskInvocationIdentity
-newMaintenanceWindowExecutionTaskInvocationIdentity  = MaintenanceWindowExecutionTaskInvocationIdentity { "EndTime": (NullOrUndefined Nothing), "ExecutionId": (NullOrUndefined Nothing), "InvocationId": (NullOrUndefined Nothing), "OwnerInformation": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing), "StartTime": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "StatusDetails": (NullOrUndefined Nothing), "TaskExecutionId": (NullOrUndefined Nothing), "TaskType": (NullOrUndefined Nothing), "WindowExecutionId": (NullOrUndefined Nothing), "WindowTargetId": (NullOrUndefined Nothing) }
+newMaintenanceWindowExecutionTaskInvocationIdentity  = MaintenanceWindowExecutionTaskInvocationIdentity { "EndTime": Nothing, "ExecutionId": Nothing, "InvocationId": Nothing, "OwnerInformation": Nothing, "Parameters": Nothing, "StartTime": Nothing, "Status": Nothing, "StatusDetails": Nothing, "TaskExecutionId": Nothing, "TaskType": Nothing, "WindowExecutionId": Nothing, "WindowTargetId": Nothing }
 
 -- | Constructs MaintenanceWindowExecutionTaskInvocationIdentity's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMaintenanceWindowExecutionTaskInvocationIdentity' :: ( { "WindowExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionId) , "TaskExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionTaskId) , "InvocationId" :: NullOrUndefined (MaintenanceWindowExecutionTaskInvocationId) , "ExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionTaskExecutionId) , "TaskType" :: NullOrUndefined (MaintenanceWindowTaskType) , "Parameters" :: NullOrUndefined (MaintenanceWindowExecutionTaskInvocationParameters) , "Status" :: NullOrUndefined (MaintenanceWindowExecutionStatus) , "StatusDetails" :: NullOrUndefined (MaintenanceWindowExecutionStatusDetails) , "StartTime" :: NullOrUndefined (DateTime) , "EndTime" :: NullOrUndefined (DateTime) , "OwnerInformation" :: NullOrUndefined (OwnerInformation) , "WindowTargetId" :: NullOrUndefined (MaintenanceWindowTaskTargetId) } -> {"WindowExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionId) , "TaskExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionTaskId) , "InvocationId" :: NullOrUndefined (MaintenanceWindowExecutionTaskInvocationId) , "ExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionTaskExecutionId) , "TaskType" :: NullOrUndefined (MaintenanceWindowTaskType) , "Parameters" :: NullOrUndefined (MaintenanceWindowExecutionTaskInvocationParameters) , "Status" :: NullOrUndefined (MaintenanceWindowExecutionStatus) , "StatusDetails" :: NullOrUndefined (MaintenanceWindowExecutionStatusDetails) , "StartTime" :: NullOrUndefined (DateTime) , "EndTime" :: NullOrUndefined (DateTime) , "OwnerInformation" :: NullOrUndefined (OwnerInformation) , "WindowTargetId" :: NullOrUndefined (MaintenanceWindowTaskTargetId) } ) -> MaintenanceWindowExecutionTaskInvocationIdentity
-newMaintenanceWindowExecutionTaskInvocationIdentity'  customize = (MaintenanceWindowExecutionTaskInvocationIdentity <<< customize) { "EndTime": (NullOrUndefined Nothing), "ExecutionId": (NullOrUndefined Nothing), "InvocationId": (NullOrUndefined Nothing), "OwnerInformation": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing), "StartTime": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "StatusDetails": (NullOrUndefined Nothing), "TaskExecutionId": (NullOrUndefined Nothing), "TaskType": (NullOrUndefined Nothing), "WindowExecutionId": (NullOrUndefined Nothing), "WindowTargetId": (NullOrUndefined Nothing) }
+newMaintenanceWindowExecutionTaskInvocationIdentity' :: ( { "WindowExecutionId" :: Maybe (MaintenanceWindowExecutionId) , "TaskExecutionId" :: Maybe (MaintenanceWindowExecutionTaskId) , "InvocationId" :: Maybe (MaintenanceWindowExecutionTaskInvocationId) , "ExecutionId" :: Maybe (MaintenanceWindowExecutionTaskExecutionId) , "TaskType" :: Maybe (MaintenanceWindowTaskType) , "Parameters" :: Maybe (MaintenanceWindowExecutionTaskInvocationParameters) , "Status" :: Maybe (MaintenanceWindowExecutionStatus) , "StatusDetails" :: Maybe (MaintenanceWindowExecutionStatusDetails) , "StartTime" :: Maybe (DateTime) , "EndTime" :: Maybe (DateTime) , "OwnerInformation" :: Maybe (OwnerInformation) , "WindowTargetId" :: Maybe (MaintenanceWindowTaskTargetId) } -> {"WindowExecutionId" :: Maybe (MaintenanceWindowExecutionId) , "TaskExecutionId" :: Maybe (MaintenanceWindowExecutionTaskId) , "InvocationId" :: Maybe (MaintenanceWindowExecutionTaskInvocationId) , "ExecutionId" :: Maybe (MaintenanceWindowExecutionTaskExecutionId) , "TaskType" :: Maybe (MaintenanceWindowTaskType) , "Parameters" :: Maybe (MaintenanceWindowExecutionTaskInvocationParameters) , "Status" :: Maybe (MaintenanceWindowExecutionStatus) , "StatusDetails" :: Maybe (MaintenanceWindowExecutionStatusDetails) , "StartTime" :: Maybe (DateTime) , "EndTime" :: Maybe (DateTime) , "OwnerInformation" :: Maybe (OwnerInformation) , "WindowTargetId" :: Maybe (MaintenanceWindowTaskTargetId) } ) -> MaintenanceWindowExecutionTaskInvocationIdentity
+newMaintenanceWindowExecutionTaskInvocationIdentity'  customize = (MaintenanceWindowExecutionTaskInvocationIdentity <<< customize) { "EndTime": Nothing, "ExecutionId": Nothing, "InvocationId": Nothing, "OwnerInformation": Nothing, "Parameters": Nothing, "StartTime": Nothing, "Status": Nothing, "StatusDetails": Nothing, "TaskExecutionId": Nothing, "TaskType": Nothing, "WindowExecutionId": Nothing, "WindowTargetId": Nothing }
 
 
 
@@ -7642,8 +7641,8 @@ instance encodeMaintenanceWindowExecutionTaskInvocationParameters :: Encode Main
 
 -- | <p>Filter used in the request.</p>
 newtype MaintenanceWindowFilter = MaintenanceWindowFilter 
-  { "Key" :: NullOrUndefined (MaintenanceWindowFilterKey)
-  , "Values" :: NullOrUndefined (MaintenanceWindowFilterValues)
+  { "Key" :: Maybe (MaintenanceWindowFilterKey)
+  , "Values" :: Maybe (MaintenanceWindowFilterValues)
   }
 derive instance newtypeMaintenanceWindowFilter :: Newtype MaintenanceWindowFilter _
 derive instance repGenericMaintenanceWindowFilter :: Generic MaintenanceWindowFilter _
@@ -7653,12 +7652,12 @@ instance encodeMaintenanceWindowFilter :: Encode MaintenanceWindowFilter where e
 
 -- | Constructs MaintenanceWindowFilter from required parameters
 newMaintenanceWindowFilter :: MaintenanceWindowFilter
-newMaintenanceWindowFilter  = MaintenanceWindowFilter { "Key": (NullOrUndefined Nothing), "Values": (NullOrUndefined Nothing) }
+newMaintenanceWindowFilter  = MaintenanceWindowFilter { "Key": Nothing, "Values": Nothing }
 
 -- | Constructs MaintenanceWindowFilter's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMaintenanceWindowFilter' :: ( { "Key" :: NullOrUndefined (MaintenanceWindowFilterKey) , "Values" :: NullOrUndefined (MaintenanceWindowFilterValues) } -> {"Key" :: NullOrUndefined (MaintenanceWindowFilterKey) , "Values" :: NullOrUndefined (MaintenanceWindowFilterValues) } ) -> MaintenanceWindowFilter
-newMaintenanceWindowFilter'  customize = (MaintenanceWindowFilter <<< customize) { "Key": (NullOrUndefined Nothing), "Values": (NullOrUndefined Nothing) }
+newMaintenanceWindowFilter' :: ( { "Key" :: Maybe (MaintenanceWindowFilterKey) , "Values" :: Maybe (MaintenanceWindowFilterValues) } -> {"Key" :: Maybe (MaintenanceWindowFilterKey) , "Values" :: Maybe (MaintenanceWindowFilterValues) } ) -> MaintenanceWindowFilter
+newMaintenanceWindowFilter'  customize = (MaintenanceWindowFilter <<< customize) { "Key": Nothing, "Values": Nothing }
 
 
 
@@ -7709,12 +7708,12 @@ instance encodeMaintenanceWindowId :: Encode MaintenanceWindowId where encode = 
 
 -- | <p>Information about the Maintenance Window.</p>
 newtype MaintenanceWindowIdentity = MaintenanceWindowIdentity 
-  { "WindowId" :: NullOrUndefined (MaintenanceWindowId)
-  , "Name" :: NullOrUndefined (MaintenanceWindowName)
-  , "Description" :: NullOrUndefined (MaintenanceWindowDescription)
-  , "Enabled" :: NullOrUndefined (MaintenanceWindowEnabled)
-  , "Duration" :: NullOrUndefined (MaintenanceWindowDurationHours)
-  , "Cutoff" :: NullOrUndefined (MaintenanceWindowCutoff)
+  { "WindowId" :: Maybe (MaintenanceWindowId)
+  , "Name" :: Maybe (MaintenanceWindowName)
+  , "Description" :: Maybe (MaintenanceWindowDescription)
+  , "Enabled" :: Maybe (MaintenanceWindowEnabled)
+  , "Duration" :: Maybe (MaintenanceWindowDurationHours)
+  , "Cutoff" :: Maybe (MaintenanceWindowCutoff)
   }
 derive instance newtypeMaintenanceWindowIdentity :: Newtype MaintenanceWindowIdentity _
 derive instance repGenericMaintenanceWindowIdentity :: Generic MaintenanceWindowIdentity _
@@ -7724,12 +7723,12 @@ instance encodeMaintenanceWindowIdentity :: Encode MaintenanceWindowIdentity whe
 
 -- | Constructs MaintenanceWindowIdentity from required parameters
 newMaintenanceWindowIdentity :: MaintenanceWindowIdentity
-newMaintenanceWindowIdentity  = MaintenanceWindowIdentity { "Cutoff": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "Duration": (NullOrUndefined Nothing), "Enabled": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "WindowId": (NullOrUndefined Nothing) }
+newMaintenanceWindowIdentity  = MaintenanceWindowIdentity { "Cutoff": Nothing, "Description": Nothing, "Duration": Nothing, "Enabled": Nothing, "Name": Nothing, "WindowId": Nothing }
 
 -- | Constructs MaintenanceWindowIdentity's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMaintenanceWindowIdentity' :: ( { "WindowId" :: NullOrUndefined (MaintenanceWindowId) , "Name" :: NullOrUndefined (MaintenanceWindowName) , "Description" :: NullOrUndefined (MaintenanceWindowDescription) , "Enabled" :: NullOrUndefined (MaintenanceWindowEnabled) , "Duration" :: NullOrUndefined (MaintenanceWindowDurationHours) , "Cutoff" :: NullOrUndefined (MaintenanceWindowCutoff) } -> {"WindowId" :: NullOrUndefined (MaintenanceWindowId) , "Name" :: NullOrUndefined (MaintenanceWindowName) , "Description" :: NullOrUndefined (MaintenanceWindowDescription) , "Enabled" :: NullOrUndefined (MaintenanceWindowEnabled) , "Duration" :: NullOrUndefined (MaintenanceWindowDurationHours) , "Cutoff" :: NullOrUndefined (MaintenanceWindowCutoff) } ) -> MaintenanceWindowIdentity
-newMaintenanceWindowIdentity'  customize = (MaintenanceWindowIdentity <<< customize) { "Cutoff": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "Duration": (NullOrUndefined Nothing), "Enabled": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "WindowId": (NullOrUndefined Nothing) }
+newMaintenanceWindowIdentity' :: ( { "WindowId" :: Maybe (MaintenanceWindowId) , "Name" :: Maybe (MaintenanceWindowName) , "Description" :: Maybe (MaintenanceWindowDescription) , "Enabled" :: Maybe (MaintenanceWindowEnabled) , "Duration" :: Maybe (MaintenanceWindowDurationHours) , "Cutoff" :: Maybe (MaintenanceWindowCutoff) } -> {"WindowId" :: Maybe (MaintenanceWindowId) , "Name" :: Maybe (MaintenanceWindowName) , "Description" :: Maybe (MaintenanceWindowDescription) , "Enabled" :: Maybe (MaintenanceWindowEnabled) , "Duration" :: Maybe (MaintenanceWindowDurationHours) , "Cutoff" :: Maybe (MaintenanceWindowCutoff) } ) -> MaintenanceWindowIdentity
+newMaintenanceWindowIdentity'  customize = (MaintenanceWindowIdentity <<< customize) { "Cutoff": Nothing, "Description": Nothing, "Duration": Nothing, "Enabled": Nothing, "Name": Nothing, "WindowId": Nothing }
 
 
 
@@ -7753,9 +7752,9 @@ instance encodeMaintenanceWindowLambdaClientContext :: Encode MaintenanceWindowL
 
 -- | <p>The parameters for a LAMBDA task type.</p>
 newtype MaintenanceWindowLambdaParameters = MaintenanceWindowLambdaParameters 
-  { "ClientContext" :: NullOrUndefined (MaintenanceWindowLambdaClientContext)
-  , "Qualifier" :: NullOrUndefined (MaintenanceWindowLambdaQualifier)
-  , "Payload" :: NullOrUndefined (MaintenanceWindowLambdaPayload)
+  { "ClientContext" :: Maybe (MaintenanceWindowLambdaClientContext)
+  , "Qualifier" :: Maybe (MaintenanceWindowLambdaQualifier)
+  , "Payload" :: Maybe (MaintenanceWindowLambdaPayload)
   }
 derive instance newtypeMaintenanceWindowLambdaParameters :: Newtype MaintenanceWindowLambdaParameters _
 derive instance repGenericMaintenanceWindowLambdaParameters :: Generic MaintenanceWindowLambdaParameters _
@@ -7765,12 +7764,12 @@ instance encodeMaintenanceWindowLambdaParameters :: Encode MaintenanceWindowLamb
 
 -- | Constructs MaintenanceWindowLambdaParameters from required parameters
 newMaintenanceWindowLambdaParameters :: MaintenanceWindowLambdaParameters
-newMaintenanceWindowLambdaParameters  = MaintenanceWindowLambdaParameters { "ClientContext": (NullOrUndefined Nothing), "Payload": (NullOrUndefined Nothing), "Qualifier": (NullOrUndefined Nothing) }
+newMaintenanceWindowLambdaParameters  = MaintenanceWindowLambdaParameters { "ClientContext": Nothing, "Payload": Nothing, "Qualifier": Nothing }
 
 -- | Constructs MaintenanceWindowLambdaParameters's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMaintenanceWindowLambdaParameters' :: ( { "ClientContext" :: NullOrUndefined (MaintenanceWindowLambdaClientContext) , "Qualifier" :: NullOrUndefined (MaintenanceWindowLambdaQualifier) , "Payload" :: NullOrUndefined (MaintenanceWindowLambdaPayload) } -> {"ClientContext" :: NullOrUndefined (MaintenanceWindowLambdaClientContext) , "Qualifier" :: NullOrUndefined (MaintenanceWindowLambdaQualifier) , "Payload" :: NullOrUndefined (MaintenanceWindowLambdaPayload) } ) -> MaintenanceWindowLambdaParameters
-newMaintenanceWindowLambdaParameters'  customize = (MaintenanceWindowLambdaParameters <<< customize) { "ClientContext": (NullOrUndefined Nothing), "Payload": (NullOrUndefined Nothing), "Qualifier": (NullOrUndefined Nothing) }
+newMaintenanceWindowLambdaParameters' :: ( { "ClientContext" :: Maybe (MaintenanceWindowLambdaClientContext) , "Qualifier" :: Maybe (MaintenanceWindowLambdaQualifier) , "Payload" :: Maybe (MaintenanceWindowLambdaPayload) } -> {"ClientContext" :: Maybe (MaintenanceWindowLambdaClientContext) , "Qualifier" :: Maybe (MaintenanceWindowLambdaQualifier) , "Payload" :: Maybe (MaintenanceWindowLambdaPayload) } ) -> MaintenanceWindowLambdaParameters
+newMaintenanceWindowLambdaParameters'  customize = (MaintenanceWindowLambdaParameters <<< customize) { "ClientContext": Nothing, "Payload": Nothing, "Qualifier": Nothing }
 
 
 
@@ -7821,15 +7820,15 @@ instance encodeMaintenanceWindowResourceType :: Encode MaintenanceWindowResource
 
 -- | <p>The parameters for a RUN_COMMAND task type.</p>
 newtype MaintenanceWindowRunCommandParameters = MaintenanceWindowRunCommandParameters 
-  { "Comment" :: NullOrUndefined (Comment)
-  , "DocumentHash" :: NullOrUndefined (DocumentHash)
-  , "DocumentHashType" :: NullOrUndefined (DocumentHashType)
-  , "NotificationConfig" :: NullOrUndefined (NotificationConfig)
-  , "OutputS3BucketName" :: NullOrUndefined (S3BucketName)
-  , "OutputS3KeyPrefix" :: NullOrUndefined (S3KeyPrefix)
-  , "Parameters" :: NullOrUndefined (Parameters)
-  , "ServiceRoleArn" :: NullOrUndefined (ServiceRole)
-  , "TimeoutSeconds" :: NullOrUndefined (TimeoutSeconds)
+  { "Comment" :: Maybe (Comment)
+  , "DocumentHash" :: Maybe (DocumentHash)
+  , "DocumentHashType" :: Maybe (DocumentHashType)
+  , "NotificationConfig" :: Maybe (NotificationConfig)
+  , "OutputS3BucketName" :: Maybe (S3BucketName)
+  , "OutputS3KeyPrefix" :: Maybe (S3KeyPrefix)
+  , "Parameters" :: Maybe (Parameters)
+  , "ServiceRoleArn" :: Maybe (ServiceRole)
+  , "TimeoutSeconds" :: Maybe (TimeoutSeconds)
   }
 derive instance newtypeMaintenanceWindowRunCommandParameters :: Newtype MaintenanceWindowRunCommandParameters _
 derive instance repGenericMaintenanceWindowRunCommandParameters :: Generic MaintenanceWindowRunCommandParameters _
@@ -7839,12 +7838,12 @@ instance encodeMaintenanceWindowRunCommandParameters :: Encode MaintenanceWindow
 
 -- | Constructs MaintenanceWindowRunCommandParameters from required parameters
 newMaintenanceWindowRunCommandParameters :: MaintenanceWindowRunCommandParameters
-newMaintenanceWindowRunCommandParameters  = MaintenanceWindowRunCommandParameters { "Comment": (NullOrUndefined Nothing), "DocumentHash": (NullOrUndefined Nothing), "DocumentHashType": (NullOrUndefined Nothing), "NotificationConfig": (NullOrUndefined Nothing), "OutputS3BucketName": (NullOrUndefined Nothing), "OutputS3KeyPrefix": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing), "ServiceRoleArn": (NullOrUndefined Nothing), "TimeoutSeconds": (NullOrUndefined Nothing) }
+newMaintenanceWindowRunCommandParameters  = MaintenanceWindowRunCommandParameters { "Comment": Nothing, "DocumentHash": Nothing, "DocumentHashType": Nothing, "NotificationConfig": Nothing, "OutputS3BucketName": Nothing, "OutputS3KeyPrefix": Nothing, "Parameters": Nothing, "ServiceRoleArn": Nothing, "TimeoutSeconds": Nothing }
 
 -- | Constructs MaintenanceWindowRunCommandParameters's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMaintenanceWindowRunCommandParameters' :: ( { "Comment" :: NullOrUndefined (Comment) , "DocumentHash" :: NullOrUndefined (DocumentHash) , "DocumentHashType" :: NullOrUndefined (DocumentHashType) , "NotificationConfig" :: NullOrUndefined (NotificationConfig) , "OutputS3BucketName" :: NullOrUndefined (S3BucketName) , "OutputS3KeyPrefix" :: NullOrUndefined (S3KeyPrefix) , "Parameters" :: NullOrUndefined (Parameters) , "ServiceRoleArn" :: NullOrUndefined (ServiceRole) , "TimeoutSeconds" :: NullOrUndefined (TimeoutSeconds) } -> {"Comment" :: NullOrUndefined (Comment) , "DocumentHash" :: NullOrUndefined (DocumentHash) , "DocumentHashType" :: NullOrUndefined (DocumentHashType) , "NotificationConfig" :: NullOrUndefined (NotificationConfig) , "OutputS3BucketName" :: NullOrUndefined (S3BucketName) , "OutputS3KeyPrefix" :: NullOrUndefined (S3KeyPrefix) , "Parameters" :: NullOrUndefined (Parameters) , "ServiceRoleArn" :: NullOrUndefined (ServiceRole) , "TimeoutSeconds" :: NullOrUndefined (TimeoutSeconds) } ) -> MaintenanceWindowRunCommandParameters
-newMaintenanceWindowRunCommandParameters'  customize = (MaintenanceWindowRunCommandParameters <<< customize) { "Comment": (NullOrUndefined Nothing), "DocumentHash": (NullOrUndefined Nothing), "DocumentHashType": (NullOrUndefined Nothing), "NotificationConfig": (NullOrUndefined Nothing), "OutputS3BucketName": (NullOrUndefined Nothing), "OutputS3KeyPrefix": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing), "ServiceRoleArn": (NullOrUndefined Nothing), "TimeoutSeconds": (NullOrUndefined Nothing) }
+newMaintenanceWindowRunCommandParameters' :: ( { "Comment" :: Maybe (Comment) , "DocumentHash" :: Maybe (DocumentHash) , "DocumentHashType" :: Maybe (DocumentHashType) , "NotificationConfig" :: Maybe (NotificationConfig) , "OutputS3BucketName" :: Maybe (S3BucketName) , "OutputS3KeyPrefix" :: Maybe (S3KeyPrefix) , "Parameters" :: Maybe (Parameters) , "ServiceRoleArn" :: Maybe (ServiceRole) , "TimeoutSeconds" :: Maybe (TimeoutSeconds) } -> {"Comment" :: Maybe (Comment) , "DocumentHash" :: Maybe (DocumentHash) , "DocumentHashType" :: Maybe (DocumentHashType) , "NotificationConfig" :: Maybe (NotificationConfig) , "OutputS3BucketName" :: Maybe (S3BucketName) , "OutputS3KeyPrefix" :: Maybe (S3KeyPrefix) , "Parameters" :: Maybe (Parameters) , "ServiceRoleArn" :: Maybe (ServiceRole) , "TimeoutSeconds" :: Maybe (TimeoutSeconds) } ) -> MaintenanceWindowRunCommandParameters
+newMaintenanceWindowRunCommandParameters'  customize = (MaintenanceWindowRunCommandParameters <<< customize) { "Comment": Nothing, "DocumentHash": Nothing, "DocumentHashType": Nothing, "NotificationConfig": Nothing, "OutputS3BucketName": Nothing, "OutputS3KeyPrefix": Nothing, "Parameters": Nothing, "ServiceRoleArn": Nothing, "TimeoutSeconds": Nothing }
 
 
 
@@ -7877,8 +7876,8 @@ instance encodeMaintenanceWindowStepFunctionsName :: Encode MaintenanceWindowSte
 
 -- | <p>The parameters for the STEP_FUNCTION execution.</p>
 newtype MaintenanceWindowStepFunctionsParameters = MaintenanceWindowStepFunctionsParameters 
-  { "Input" :: NullOrUndefined (MaintenanceWindowStepFunctionsInput)
-  , "Name" :: NullOrUndefined (MaintenanceWindowStepFunctionsName)
+  { "Input" :: Maybe (MaintenanceWindowStepFunctionsInput)
+  , "Name" :: Maybe (MaintenanceWindowStepFunctionsName)
   }
 derive instance newtypeMaintenanceWindowStepFunctionsParameters :: Newtype MaintenanceWindowStepFunctionsParameters _
 derive instance repGenericMaintenanceWindowStepFunctionsParameters :: Generic MaintenanceWindowStepFunctionsParameters _
@@ -7888,24 +7887,24 @@ instance encodeMaintenanceWindowStepFunctionsParameters :: Encode MaintenanceWin
 
 -- | Constructs MaintenanceWindowStepFunctionsParameters from required parameters
 newMaintenanceWindowStepFunctionsParameters :: MaintenanceWindowStepFunctionsParameters
-newMaintenanceWindowStepFunctionsParameters  = MaintenanceWindowStepFunctionsParameters { "Input": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newMaintenanceWindowStepFunctionsParameters  = MaintenanceWindowStepFunctionsParameters { "Input": Nothing, "Name": Nothing }
 
 -- | Constructs MaintenanceWindowStepFunctionsParameters's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMaintenanceWindowStepFunctionsParameters' :: ( { "Input" :: NullOrUndefined (MaintenanceWindowStepFunctionsInput) , "Name" :: NullOrUndefined (MaintenanceWindowStepFunctionsName) } -> {"Input" :: NullOrUndefined (MaintenanceWindowStepFunctionsInput) , "Name" :: NullOrUndefined (MaintenanceWindowStepFunctionsName) } ) -> MaintenanceWindowStepFunctionsParameters
-newMaintenanceWindowStepFunctionsParameters'  customize = (MaintenanceWindowStepFunctionsParameters <<< customize) { "Input": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newMaintenanceWindowStepFunctionsParameters' :: ( { "Input" :: Maybe (MaintenanceWindowStepFunctionsInput) , "Name" :: Maybe (MaintenanceWindowStepFunctionsName) } -> {"Input" :: Maybe (MaintenanceWindowStepFunctionsInput) , "Name" :: Maybe (MaintenanceWindowStepFunctionsName) } ) -> MaintenanceWindowStepFunctionsParameters
+newMaintenanceWindowStepFunctionsParameters'  customize = (MaintenanceWindowStepFunctionsParameters <<< customize) { "Input": Nothing, "Name": Nothing }
 
 
 
 -- | <p>The target registered with the Maintenance Window.</p>
 newtype MaintenanceWindowTarget = MaintenanceWindowTarget 
-  { "WindowId" :: NullOrUndefined (MaintenanceWindowId)
-  , "WindowTargetId" :: NullOrUndefined (MaintenanceWindowTargetId)
-  , "ResourceType" :: NullOrUndefined (MaintenanceWindowResourceType)
-  , "Targets" :: NullOrUndefined (Targets)
-  , "OwnerInformation" :: NullOrUndefined (OwnerInformation)
-  , "Name" :: NullOrUndefined (MaintenanceWindowName)
-  , "Description" :: NullOrUndefined (MaintenanceWindowDescription)
+  { "WindowId" :: Maybe (MaintenanceWindowId)
+  , "WindowTargetId" :: Maybe (MaintenanceWindowTargetId)
+  , "ResourceType" :: Maybe (MaintenanceWindowResourceType)
+  , "Targets" :: Maybe (Targets)
+  , "OwnerInformation" :: Maybe (OwnerInformation)
+  , "Name" :: Maybe (MaintenanceWindowName)
+  , "Description" :: Maybe (MaintenanceWindowDescription)
   }
 derive instance newtypeMaintenanceWindowTarget :: Newtype MaintenanceWindowTarget _
 derive instance repGenericMaintenanceWindowTarget :: Generic MaintenanceWindowTarget _
@@ -7915,12 +7914,12 @@ instance encodeMaintenanceWindowTarget :: Encode MaintenanceWindowTarget where e
 
 -- | Constructs MaintenanceWindowTarget from required parameters
 newMaintenanceWindowTarget :: MaintenanceWindowTarget
-newMaintenanceWindowTarget  = MaintenanceWindowTarget { "Description": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "OwnerInformation": (NullOrUndefined Nothing), "ResourceType": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing), "WindowId": (NullOrUndefined Nothing), "WindowTargetId": (NullOrUndefined Nothing) }
+newMaintenanceWindowTarget  = MaintenanceWindowTarget { "Description": Nothing, "Name": Nothing, "OwnerInformation": Nothing, "ResourceType": Nothing, "Targets": Nothing, "WindowId": Nothing, "WindowTargetId": Nothing }
 
 -- | Constructs MaintenanceWindowTarget's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMaintenanceWindowTarget' :: ( { "WindowId" :: NullOrUndefined (MaintenanceWindowId) , "WindowTargetId" :: NullOrUndefined (MaintenanceWindowTargetId) , "ResourceType" :: NullOrUndefined (MaintenanceWindowResourceType) , "Targets" :: NullOrUndefined (Targets) , "OwnerInformation" :: NullOrUndefined (OwnerInformation) , "Name" :: NullOrUndefined (MaintenanceWindowName) , "Description" :: NullOrUndefined (MaintenanceWindowDescription) } -> {"WindowId" :: NullOrUndefined (MaintenanceWindowId) , "WindowTargetId" :: NullOrUndefined (MaintenanceWindowTargetId) , "ResourceType" :: NullOrUndefined (MaintenanceWindowResourceType) , "Targets" :: NullOrUndefined (Targets) , "OwnerInformation" :: NullOrUndefined (OwnerInformation) , "Name" :: NullOrUndefined (MaintenanceWindowName) , "Description" :: NullOrUndefined (MaintenanceWindowDescription) } ) -> MaintenanceWindowTarget
-newMaintenanceWindowTarget'  customize = (MaintenanceWindowTarget <<< customize) { "Description": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "OwnerInformation": (NullOrUndefined Nothing), "ResourceType": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing), "WindowId": (NullOrUndefined Nothing), "WindowTargetId": (NullOrUndefined Nothing) }
+newMaintenanceWindowTarget' :: ( { "WindowId" :: Maybe (MaintenanceWindowId) , "WindowTargetId" :: Maybe (MaintenanceWindowTargetId) , "ResourceType" :: Maybe (MaintenanceWindowResourceType) , "Targets" :: Maybe (Targets) , "OwnerInformation" :: Maybe (OwnerInformation) , "Name" :: Maybe (MaintenanceWindowName) , "Description" :: Maybe (MaintenanceWindowDescription) } -> {"WindowId" :: Maybe (MaintenanceWindowId) , "WindowTargetId" :: Maybe (MaintenanceWindowTargetId) , "ResourceType" :: Maybe (MaintenanceWindowResourceType) , "Targets" :: Maybe (Targets) , "OwnerInformation" :: Maybe (OwnerInformation) , "Name" :: Maybe (MaintenanceWindowName) , "Description" :: Maybe (MaintenanceWindowDescription) } ) -> MaintenanceWindowTarget
+newMaintenanceWindowTarget'  customize = (MaintenanceWindowTarget <<< customize) { "Description": Nothing, "Name": Nothing, "OwnerInformation": Nothing, "ResourceType": Nothing, "Targets": Nothing, "WindowId": Nothing, "WindowTargetId": Nothing }
 
 
 
@@ -7944,19 +7943,19 @@ instance encodeMaintenanceWindowTargetList :: Encode MaintenanceWindowTargetList
 
 -- | <p>Information about a task defined for a Maintenance Window.</p>
 newtype MaintenanceWindowTask = MaintenanceWindowTask 
-  { "WindowId" :: NullOrUndefined (MaintenanceWindowId)
-  , "WindowTaskId" :: NullOrUndefined (MaintenanceWindowTaskId)
-  , "TaskArn" :: NullOrUndefined (MaintenanceWindowTaskArn)
-  , "Type" :: NullOrUndefined (MaintenanceWindowTaskType)
-  , "Targets" :: NullOrUndefined (Targets)
-  , "TaskParameters" :: NullOrUndefined (MaintenanceWindowTaskParameters)
-  , "Priority" :: NullOrUndefined (MaintenanceWindowTaskPriority)
-  , "LoggingInfo" :: NullOrUndefined (LoggingInfo)
-  , "ServiceRoleArn" :: NullOrUndefined (ServiceRole)
-  , "MaxConcurrency" :: NullOrUndefined (MaxConcurrency)
-  , "MaxErrors" :: NullOrUndefined (MaxErrors)
-  , "Name" :: NullOrUndefined (MaintenanceWindowName)
-  , "Description" :: NullOrUndefined (MaintenanceWindowDescription)
+  { "WindowId" :: Maybe (MaintenanceWindowId)
+  , "WindowTaskId" :: Maybe (MaintenanceWindowTaskId)
+  , "TaskArn" :: Maybe (MaintenanceWindowTaskArn)
+  , "Type" :: Maybe (MaintenanceWindowTaskType)
+  , "Targets" :: Maybe (Targets)
+  , "TaskParameters" :: Maybe (MaintenanceWindowTaskParameters)
+  , "Priority" :: Maybe (MaintenanceWindowTaskPriority)
+  , "LoggingInfo" :: Maybe (LoggingInfo)
+  , "ServiceRoleArn" :: Maybe (ServiceRole)
+  , "MaxConcurrency" :: Maybe (MaxConcurrency)
+  , "MaxErrors" :: Maybe (MaxErrors)
+  , "Name" :: Maybe (MaintenanceWindowName)
+  , "Description" :: Maybe (MaintenanceWindowDescription)
   }
 derive instance newtypeMaintenanceWindowTask :: Newtype MaintenanceWindowTask _
 derive instance repGenericMaintenanceWindowTask :: Generic MaintenanceWindowTask _
@@ -7966,12 +7965,12 @@ instance encodeMaintenanceWindowTask :: Encode MaintenanceWindowTask where encod
 
 -- | Constructs MaintenanceWindowTask from required parameters
 newMaintenanceWindowTask :: MaintenanceWindowTask
-newMaintenanceWindowTask  = MaintenanceWindowTask { "Description": (NullOrUndefined Nothing), "LoggingInfo": (NullOrUndefined Nothing), "MaxConcurrency": (NullOrUndefined Nothing), "MaxErrors": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Priority": (NullOrUndefined Nothing), "ServiceRoleArn": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing), "TaskArn": (NullOrUndefined Nothing), "TaskParameters": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing), "WindowId": (NullOrUndefined Nothing), "WindowTaskId": (NullOrUndefined Nothing) }
+newMaintenanceWindowTask  = MaintenanceWindowTask { "Description": Nothing, "LoggingInfo": Nothing, "MaxConcurrency": Nothing, "MaxErrors": Nothing, "Name": Nothing, "Priority": Nothing, "ServiceRoleArn": Nothing, "Targets": Nothing, "TaskArn": Nothing, "TaskParameters": Nothing, "Type": Nothing, "WindowId": Nothing, "WindowTaskId": Nothing }
 
 -- | Constructs MaintenanceWindowTask's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMaintenanceWindowTask' :: ( { "WindowId" :: NullOrUndefined (MaintenanceWindowId) , "WindowTaskId" :: NullOrUndefined (MaintenanceWindowTaskId) , "TaskArn" :: NullOrUndefined (MaintenanceWindowTaskArn) , "Type" :: NullOrUndefined (MaintenanceWindowTaskType) , "Targets" :: NullOrUndefined (Targets) , "TaskParameters" :: NullOrUndefined (MaintenanceWindowTaskParameters) , "Priority" :: NullOrUndefined (MaintenanceWindowTaskPriority) , "LoggingInfo" :: NullOrUndefined (LoggingInfo) , "ServiceRoleArn" :: NullOrUndefined (ServiceRole) , "MaxConcurrency" :: NullOrUndefined (MaxConcurrency) , "MaxErrors" :: NullOrUndefined (MaxErrors) , "Name" :: NullOrUndefined (MaintenanceWindowName) , "Description" :: NullOrUndefined (MaintenanceWindowDescription) } -> {"WindowId" :: NullOrUndefined (MaintenanceWindowId) , "WindowTaskId" :: NullOrUndefined (MaintenanceWindowTaskId) , "TaskArn" :: NullOrUndefined (MaintenanceWindowTaskArn) , "Type" :: NullOrUndefined (MaintenanceWindowTaskType) , "Targets" :: NullOrUndefined (Targets) , "TaskParameters" :: NullOrUndefined (MaintenanceWindowTaskParameters) , "Priority" :: NullOrUndefined (MaintenanceWindowTaskPriority) , "LoggingInfo" :: NullOrUndefined (LoggingInfo) , "ServiceRoleArn" :: NullOrUndefined (ServiceRole) , "MaxConcurrency" :: NullOrUndefined (MaxConcurrency) , "MaxErrors" :: NullOrUndefined (MaxErrors) , "Name" :: NullOrUndefined (MaintenanceWindowName) , "Description" :: NullOrUndefined (MaintenanceWindowDescription) } ) -> MaintenanceWindowTask
-newMaintenanceWindowTask'  customize = (MaintenanceWindowTask <<< customize) { "Description": (NullOrUndefined Nothing), "LoggingInfo": (NullOrUndefined Nothing), "MaxConcurrency": (NullOrUndefined Nothing), "MaxErrors": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Priority": (NullOrUndefined Nothing), "ServiceRoleArn": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing), "TaskArn": (NullOrUndefined Nothing), "TaskParameters": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing), "WindowId": (NullOrUndefined Nothing), "WindowTaskId": (NullOrUndefined Nothing) }
+newMaintenanceWindowTask' :: ( { "WindowId" :: Maybe (MaintenanceWindowId) , "WindowTaskId" :: Maybe (MaintenanceWindowTaskId) , "TaskArn" :: Maybe (MaintenanceWindowTaskArn) , "Type" :: Maybe (MaintenanceWindowTaskType) , "Targets" :: Maybe (Targets) , "TaskParameters" :: Maybe (MaintenanceWindowTaskParameters) , "Priority" :: Maybe (MaintenanceWindowTaskPriority) , "LoggingInfo" :: Maybe (LoggingInfo) , "ServiceRoleArn" :: Maybe (ServiceRole) , "MaxConcurrency" :: Maybe (MaxConcurrency) , "MaxErrors" :: Maybe (MaxErrors) , "Name" :: Maybe (MaintenanceWindowName) , "Description" :: Maybe (MaintenanceWindowDescription) } -> {"WindowId" :: Maybe (MaintenanceWindowId) , "WindowTaskId" :: Maybe (MaintenanceWindowTaskId) , "TaskArn" :: Maybe (MaintenanceWindowTaskArn) , "Type" :: Maybe (MaintenanceWindowTaskType) , "Targets" :: Maybe (Targets) , "TaskParameters" :: Maybe (MaintenanceWindowTaskParameters) , "Priority" :: Maybe (MaintenanceWindowTaskPriority) , "LoggingInfo" :: Maybe (LoggingInfo) , "ServiceRoleArn" :: Maybe (ServiceRole) , "MaxConcurrency" :: Maybe (MaxConcurrency) , "MaxErrors" :: Maybe (MaxErrors) , "Name" :: Maybe (MaintenanceWindowName) , "Description" :: Maybe (MaintenanceWindowDescription) } ) -> MaintenanceWindowTask
+newMaintenanceWindowTask'  customize = (MaintenanceWindowTask <<< customize) { "Description": Nothing, "LoggingInfo": Nothing, "MaxConcurrency": Nothing, "MaxErrors": Nothing, "Name": Nothing, "Priority": Nothing, "ServiceRoleArn": Nothing, "Targets": Nothing, "TaskArn": Nothing, "TaskParameters": Nothing, "Type": Nothing, "WindowId": Nothing, "WindowTaskId": Nothing }
 
 
 
@@ -7995,10 +7994,10 @@ instance encodeMaintenanceWindowTaskId :: Encode MaintenanceWindowTaskId where e
 
 -- | <p>The parameters for task execution.</p>
 newtype MaintenanceWindowTaskInvocationParameters = MaintenanceWindowTaskInvocationParameters 
-  { "RunCommand" :: NullOrUndefined (MaintenanceWindowRunCommandParameters)
-  , "Automation" :: NullOrUndefined (MaintenanceWindowAutomationParameters)
-  , "StepFunctions" :: NullOrUndefined (MaintenanceWindowStepFunctionsParameters)
-  , "Lambda" :: NullOrUndefined (MaintenanceWindowLambdaParameters)
+  { "RunCommand" :: Maybe (MaintenanceWindowRunCommandParameters)
+  , "Automation" :: Maybe (MaintenanceWindowAutomationParameters)
+  , "StepFunctions" :: Maybe (MaintenanceWindowStepFunctionsParameters)
+  , "Lambda" :: Maybe (MaintenanceWindowLambdaParameters)
   }
 derive instance newtypeMaintenanceWindowTaskInvocationParameters :: Newtype MaintenanceWindowTaskInvocationParameters _
 derive instance repGenericMaintenanceWindowTaskInvocationParameters :: Generic MaintenanceWindowTaskInvocationParameters _
@@ -8008,12 +8007,12 @@ instance encodeMaintenanceWindowTaskInvocationParameters :: Encode MaintenanceWi
 
 -- | Constructs MaintenanceWindowTaskInvocationParameters from required parameters
 newMaintenanceWindowTaskInvocationParameters :: MaintenanceWindowTaskInvocationParameters
-newMaintenanceWindowTaskInvocationParameters  = MaintenanceWindowTaskInvocationParameters { "Automation": (NullOrUndefined Nothing), "Lambda": (NullOrUndefined Nothing), "RunCommand": (NullOrUndefined Nothing), "StepFunctions": (NullOrUndefined Nothing) }
+newMaintenanceWindowTaskInvocationParameters  = MaintenanceWindowTaskInvocationParameters { "Automation": Nothing, "Lambda": Nothing, "RunCommand": Nothing, "StepFunctions": Nothing }
 
 -- | Constructs MaintenanceWindowTaskInvocationParameters's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMaintenanceWindowTaskInvocationParameters' :: ( { "RunCommand" :: NullOrUndefined (MaintenanceWindowRunCommandParameters) , "Automation" :: NullOrUndefined (MaintenanceWindowAutomationParameters) , "StepFunctions" :: NullOrUndefined (MaintenanceWindowStepFunctionsParameters) , "Lambda" :: NullOrUndefined (MaintenanceWindowLambdaParameters) } -> {"RunCommand" :: NullOrUndefined (MaintenanceWindowRunCommandParameters) , "Automation" :: NullOrUndefined (MaintenanceWindowAutomationParameters) , "StepFunctions" :: NullOrUndefined (MaintenanceWindowStepFunctionsParameters) , "Lambda" :: NullOrUndefined (MaintenanceWindowLambdaParameters) } ) -> MaintenanceWindowTaskInvocationParameters
-newMaintenanceWindowTaskInvocationParameters'  customize = (MaintenanceWindowTaskInvocationParameters <<< customize) { "Automation": (NullOrUndefined Nothing), "Lambda": (NullOrUndefined Nothing), "RunCommand": (NullOrUndefined Nothing), "StepFunctions": (NullOrUndefined Nothing) }
+newMaintenanceWindowTaskInvocationParameters' :: ( { "RunCommand" :: Maybe (MaintenanceWindowRunCommandParameters) , "Automation" :: Maybe (MaintenanceWindowAutomationParameters) , "StepFunctions" :: Maybe (MaintenanceWindowStepFunctionsParameters) , "Lambda" :: Maybe (MaintenanceWindowLambdaParameters) } -> {"RunCommand" :: Maybe (MaintenanceWindowRunCommandParameters) , "Automation" :: Maybe (MaintenanceWindowAutomationParameters) , "StepFunctions" :: Maybe (MaintenanceWindowStepFunctionsParameters) , "Lambda" :: Maybe (MaintenanceWindowLambdaParameters) } ) -> MaintenanceWindowTaskInvocationParameters
+newMaintenanceWindowTaskInvocationParameters'  customize = (MaintenanceWindowTaskInvocationParameters <<< customize) { "Automation": Nothing, "Lambda": Nothing, "RunCommand": Nothing, "StepFunctions": Nothing }
 
 
 
@@ -8046,7 +8045,7 @@ instance encodeMaintenanceWindowTaskParameterValue :: Encode MaintenanceWindowTa
 
 -- | <p>Defines the values for a task parameter.</p>
 newtype MaintenanceWindowTaskParameterValueExpression = MaintenanceWindowTaskParameterValueExpression 
-  { "Values" :: NullOrUndefined (MaintenanceWindowTaskParameterValueList)
+  { "Values" :: Maybe (MaintenanceWindowTaskParameterValueList)
   }
 derive instance newtypeMaintenanceWindowTaskParameterValueExpression :: Newtype MaintenanceWindowTaskParameterValueExpression _
 derive instance repGenericMaintenanceWindowTaskParameterValueExpression :: Generic MaintenanceWindowTaskParameterValueExpression _
@@ -8056,12 +8055,12 @@ instance encodeMaintenanceWindowTaskParameterValueExpression :: Encode Maintenan
 
 -- | Constructs MaintenanceWindowTaskParameterValueExpression from required parameters
 newMaintenanceWindowTaskParameterValueExpression :: MaintenanceWindowTaskParameterValueExpression
-newMaintenanceWindowTaskParameterValueExpression  = MaintenanceWindowTaskParameterValueExpression { "Values": (NullOrUndefined Nothing) }
+newMaintenanceWindowTaskParameterValueExpression  = MaintenanceWindowTaskParameterValueExpression { "Values": Nothing }
 
 -- | Constructs MaintenanceWindowTaskParameterValueExpression's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMaintenanceWindowTaskParameterValueExpression' :: ( { "Values" :: NullOrUndefined (MaintenanceWindowTaskParameterValueList) } -> {"Values" :: NullOrUndefined (MaintenanceWindowTaskParameterValueList) } ) -> MaintenanceWindowTaskParameterValueExpression
-newMaintenanceWindowTaskParameterValueExpression'  customize = (MaintenanceWindowTaskParameterValueExpression <<< customize) { "Values": (NullOrUndefined Nothing) }
+newMaintenanceWindowTaskParameterValueExpression' :: ( { "Values" :: Maybe (MaintenanceWindowTaskParameterValueList) } -> {"Values" :: Maybe (MaintenanceWindowTaskParameterValueList) } ) -> MaintenanceWindowTaskParameterValueExpression
+newMaintenanceWindowTaskParameterValueExpression'  customize = (MaintenanceWindowTaskParameterValueExpression <<< customize) { "Values": Nothing }
 
 
 
@@ -8139,7 +8138,7 @@ instance encodeMaxConcurrency :: Encode MaxConcurrency where encode = genericEnc
 
 -- | <p>The size limit of a document is 64 KB.</p>
 newtype MaxDocumentSizeExceeded = MaxDocumentSizeExceeded 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeMaxDocumentSizeExceeded :: Newtype MaxDocumentSizeExceeded _
 derive instance repGenericMaxDocumentSizeExceeded :: Generic MaxDocumentSizeExceeded _
@@ -8149,12 +8148,12 @@ instance encodeMaxDocumentSizeExceeded :: Encode MaxDocumentSizeExceeded where e
 
 -- | Constructs MaxDocumentSizeExceeded from required parameters
 newMaxDocumentSizeExceeded :: MaxDocumentSizeExceeded
-newMaxDocumentSizeExceeded  = MaxDocumentSizeExceeded { "Message": (NullOrUndefined Nothing) }
+newMaxDocumentSizeExceeded  = MaxDocumentSizeExceeded { "Message": Nothing }
 
 -- | Constructs MaxDocumentSizeExceeded's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMaxDocumentSizeExceeded' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> MaxDocumentSizeExceeded
-newMaxDocumentSizeExceeded'  customize = (MaxDocumentSizeExceeded <<< customize) { "Message": (NullOrUndefined Nothing) }
+newMaxDocumentSizeExceeded' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> MaxDocumentSizeExceeded
+newMaxDocumentSizeExceeded'  customize = (MaxDocumentSizeExceeded <<< customize) { "Message": Nothing }
 
 
 
@@ -8188,8 +8187,8 @@ instance encodeMaxResultsEC2Compatible :: Encode MaxResultsEC2Compatible where e
 newtype ModifyDocumentPermissionRequest = ModifyDocumentPermissionRequest 
   { "Name" :: (DocumentName)
   , "PermissionType" :: (DocumentPermissionType)
-  , "AccountIdsToAdd" :: NullOrUndefined (AccountIdList)
-  , "AccountIdsToRemove" :: NullOrUndefined (AccountIdList)
+  , "AccountIdsToAdd" :: Maybe (AccountIdList)
+  , "AccountIdsToRemove" :: Maybe (AccountIdList)
   }
 derive instance newtypeModifyDocumentPermissionRequest :: Newtype ModifyDocumentPermissionRequest _
 derive instance repGenericModifyDocumentPermissionRequest :: Generic ModifyDocumentPermissionRequest _
@@ -8199,12 +8198,12 @@ instance encodeModifyDocumentPermissionRequest :: Encode ModifyDocumentPermissio
 
 -- | Constructs ModifyDocumentPermissionRequest from required parameters
 newModifyDocumentPermissionRequest :: DocumentName -> DocumentPermissionType -> ModifyDocumentPermissionRequest
-newModifyDocumentPermissionRequest _Name _PermissionType = ModifyDocumentPermissionRequest { "Name": _Name, "PermissionType": _PermissionType, "AccountIdsToAdd": (NullOrUndefined Nothing), "AccountIdsToRemove": (NullOrUndefined Nothing) }
+newModifyDocumentPermissionRequest _Name _PermissionType = ModifyDocumentPermissionRequest { "Name": _Name, "PermissionType": _PermissionType, "AccountIdsToAdd": Nothing, "AccountIdsToRemove": Nothing }
 
 -- | Constructs ModifyDocumentPermissionRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newModifyDocumentPermissionRequest' :: DocumentName -> DocumentPermissionType -> ( { "Name" :: (DocumentName) , "PermissionType" :: (DocumentPermissionType) , "AccountIdsToAdd" :: NullOrUndefined (AccountIdList) , "AccountIdsToRemove" :: NullOrUndefined (AccountIdList) } -> {"Name" :: (DocumentName) , "PermissionType" :: (DocumentPermissionType) , "AccountIdsToAdd" :: NullOrUndefined (AccountIdList) , "AccountIdsToRemove" :: NullOrUndefined (AccountIdList) } ) -> ModifyDocumentPermissionRequest
-newModifyDocumentPermissionRequest' _Name _PermissionType customize = (ModifyDocumentPermissionRequest <<< customize) { "Name": _Name, "PermissionType": _PermissionType, "AccountIdsToAdd": (NullOrUndefined Nothing), "AccountIdsToRemove": (NullOrUndefined Nothing) }
+newModifyDocumentPermissionRequest' :: DocumentName -> DocumentPermissionType -> ( { "Name" :: (DocumentName) , "PermissionType" :: (DocumentPermissionType) , "AccountIdsToAdd" :: Maybe (AccountIdList) , "AccountIdsToRemove" :: Maybe (AccountIdList) } -> {"Name" :: (DocumentName) , "PermissionType" :: (DocumentPermissionType) , "AccountIdsToAdd" :: Maybe (AccountIdList) , "AccountIdsToRemove" :: Maybe (AccountIdList) } ) -> ModifyDocumentPermissionRequest
+newModifyDocumentPermissionRequest' _Name _PermissionType customize = (ModifyDocumentPermissionRequest <<< customize) { "Name": _Name, "PermissionType": _PermissionType, "AccountIdsToAdd": Nothing, "AccountIdsToRemove": Nothing }
 
 
 
@@ -8228,8 +8227,8 @@ instance encodeNextToken :: Encode NextToken where encode = genericEncode option
 
 -- | <p>A summary of resources that are not compliant. The summary is organized according to resource type.</p>
 newtype NonCompliantSummary = NonCompliantSummary 
-  { "NonCompliantCount" :: NullOrUndefined (ComplianceSummaryCount)
-  , "SeveritySummary" :: NullOrUndefined (SeveritySummary)
+  { "NonCompliantCount" :: Maybe (ComplianceSummaryCount)
+  , "SeveritySummary" :: Maybe (SeveritySummary)
   }
 derive instance newtypeNonCompliantSummary :: Newtype NonCompliantSummary _
 derive instance repGenericNonCompliantSummary :: Generic NonCompliantSummary _
@@ -8239,12 +8238,12 @@ instance encodeNonCompliantSummary :: Encode NonCompliantSummary where encode = 
 
 -- | Constructs NonCompliantSummary from required parameters
 newNonCompliantSummary :: NonCompliantSummary
-newNonCompliantSummary  = NonCompliantSummary { "NonCompliantCount": (NullOrUndefined Nothing), "SeveritySummary": (NullOrUndefined Nothing) }
+newNonCompliantSummary  = NonCompliantSummary { "NonCompliantCount": Nothing, "SeveritySummary": Nothing }
 
 -- | Constructs NonCompliantSummary's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newNonCompliantSummary' :: ( { "NonCompliantCount" :: NullOrUndefined (ComplianceSummaryCount) , "SeveritySummary" :: NullOrUndefined (SeveritySummary) } -> {"NonCompliantCount" :: NullOrUndefined (ComplianceSummaryCount) , "SeveritySummary" :: NullOrUndefined (SeveritySummary) } ) -> NonCompliantSummary
-newNonCompliantSummary'  customize = (NonCompliantSummary <<< customize) { "NonCompliantCount": (NullOrUndefined Nothing), "SeveritySummary": (NullOrUndefined Nothing) }
+newNonCompliantSummary' :: ( { "NonCompliantCount" :: Maybe (ComplianceSummaryCount) , "SeveritySummary" :: Maybe (SeveritySummary) } -> {"NonCompliantCount" :: Maybe (ComplianceSummaryCount) , "SeveritySummary" :: Maybe (SeveritySummary) } ) -> NonCompliantSummary
+newNonCompliantSummary'  customize = (NonCompliantSummary <<< customize) { "NonCompliantCount": Nothing, "SeveritySummary": Nothing }
 
 
 
@@ -8268,9 +8267,9 @@ instance encodeNotificationArn :: Encode NotificationArn where encode = genericE
 
 -- | <p>Configurations for sending notifications.</p>
 newtype NotificationConfig = NotificationConfig 
-  { "NotificationArn" :: NullOrUndefined (NotificationArn)
-  , "NotificationEvents" :: NullOrUndefined (NotificationEventList)
-  , "NotificationType" :: NullOrUndefined (NotificationType)
+  { "NotificationArn" :: Maybe (NotificationArn)
+  , "NotificationEvents" :: Maybe (NotificationEventList)
+  , "NotificationType" :: Maybe (NotificationType)
   }
 derive instance newtypeNotificationConfig :: Newtype NotificationConfig _
 derive instance repGenericNotificationConfig :: Generic NotificationConfig _
@@ -8280,12 +8279,12 @@ instance encodeNotificationConfig :: Encode NotificationConfig where encode = ge
 
 -- | Constructs NotificationConfig from required parameters
 newNotificationConfig :: NotificationConfig
-newNotificationConfig  = NotificationConfig { "NotificationArn": (NullOrUndefined Nothing), "NotificationEvents": (NullOrUndefined Nothing), "NotificationType": (NullOrUndefined Nothing) }
+newNotificationConfig  = NotificationConfig { "NotificationArn": Nothing, "NotificationEvents": Nothing, "NotificationType": Nothing }
 
 -- | Constructs NotificationConfig's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newNotificationConfig' :: ( { "NotificationArn" :: NullOrUndefined (NotificationArn) , "NotificationEvents" :: NullOrUndefined (NotificationEventList) , "NotificationType" :: NullOrUndefined (NotificationType) } -> {"NotificationArn" :: NullOrUndefined (NotificationArn) , "NotificationEvents" :: NullOrUndefined (NotificationEventList) , "NotificationType" :: NullOrUndefined (NotificationType) } ) -> NotificationConfig
-newNotificationConfig'  customize = (NotificationConfig <<< customize) { "NotificationArn": (NullOrUndefined Nothing), "NotificationEvents": (NullOrUndefined Nothing), "NotificationType": (NullOrUndefined Nothing) }
+newNotificationConfig' :: ( { "NotificationArn" :: Maybe (NotificationArn) , "NotificationEvents" :: Maybe (NotificationEventList) , "NotificationType" :: Maybe (NotificationType) } -> {"NotificationArn" :: Maybe (NotificationArn) , "NotificationEvents" :: Maybe (NotificationEventList) , "NotificationType" :: Maybe (NotificationType) } ) -> NotificationConfig
+newNotificationConfig'  customize = (NotificationConfig <<< customize) { "NotificationArn": Nothing, "NotificationEvents": Nothing, "NotificationType": Nothing }
 
 
 
@@ -8363,10 +8362,10 @@ instance encodePSParameterVersion :: Encode PSParameterVersion where encode = ge
 
 -- | <p>An Amazon EC2 Systems Manager parameter in Parameter Store.</p>
 newtype Parameter = Parameter 
-  { "Name" :: NullOrUndefined (PSParameterName)
-  , "Type" :: NullOrUndefined (ParameterType)
-  , "Value" :: NullOrUndefined (PSParameterValue)
-  , "Version" :: NullOrUndefined (PSParameterVersion)
+  { "Name" :: Maybe (PSParameterName)
+  , "Type" :: Maybe (ParameterType)
+  , "Value" :: Maybe (PSParameterValue)
+  , "Version" :: Maybe (PSParameterVersion)
   }
 derive instance newtypeParameter :: Newtype Parameter _
 derive instance repGenericParameter :: Generic Parameter _
@@ -8376,18 +8375,18 @@ instance encodeParameter :: Encode Parameter where encode = genericEncode option
 
 -- | Constructs Parameter from required parameters
 newParameter :: Parameter
-newParameter  = Parameter { "Name": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing), "Version": (NullOrUndefined Nothing) }
+newParameter  = Parameter { "Name": Nothing, "Type": Nothing, "Value": Nothing, "Version": Nothing }
 
 -- | Constructs Parameter's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newParameter' :: ( { "Name" :: NullOrUndefined (PSParameterName) , "Type" :: NullOrUndefined (ParameterType) , "Value" :: NullOrUndefined (PSParameterValue) , "Version" :: NullOrUndefined (PSParameterVersion) } -> {"Name" :: NullOrUndefined (PSParameterName) , "Type" :: NullOrUndefined (ParameterType) , "Value" :: NullOrUndefined (PSParameterValue) , "Version" :: NullOrUndefined (PSParameterVersion) } ) -> Parameter
-newParameter'  customize = (Parameter <<< customize) { "Name": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing), "Version": (NullOrUndefined Nothing) }
+newParameter' :: ( { "Name" :: Maybe (PSParameterName) , "Type" :: Maybe (ParameterType) , "Value" :: Maybe (PSParameterValue) , "Version" :: Maybe (PSParameterVersion) } -> {"Name" :: Maybe (PSParameterName) , "Type" :: Maybe (ParameterType) , "Value" :: Maybe (PSParameterValue) , "Version" :: Maybe (PSParameterVersion) } ) -> Parameter
+newParameter'  customize = (Parameter <<< customize) { "Name": Nothing, "Type": Nothing, "Value": Nothing, "Version": Nothing }
 
 
 
 -- | <p>The parameter already exists. You can't create duplicate parameters.</p>
 newtype ParameterAlreadyExists = ParameterAlreadyExists 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeParameterAlreadyExists :: Newtype ParameterAlreadyExists _
 derive instance repGenericParameterAlreadyExists :: Generic ParameterAlreadyExists _
@@ -8397,12 +8396,12 @@ instance encodeParameterAlreadyExists :: Encode ParameterAlreadyExists where enc
 
 -- | Constructs ParameterAlreadyExists from required parameters
 newParameterAlreadyExists :: ParameterAlreadyExists
-newParameterAlreadyExists  = ParameterAlreadyExists { "message": (NullOrUndefined Nothing) }
+newParameterAlreadyExists  = ParameterAlreadyExists { "message": Nothing }
 
 -- | Constructs ParameterAlreadyExists's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newParameterAlreadyExists' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> ParameterAlreadyExists
-newParameterAlreadyExists'  customize = (ParameterAlreadyExists <<< customize) { "message": (NullOrUndefined Nothing) }
+newParameterAlreadyExists' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> ParameterAlreadyExists
+newParameterAlreadyExists'  customize = (ParameterAlreadyExists <<< customize) { "message": Nothing }
 
 
 
@@ -8417,15 +8416,15 @@ instance encodeParameterDescription :: Encode ParameterDescription where encode 
 
 -- | <p>Information about parameter usage.</p>
 newtype ParameterHistory = ParameterHistory 
-  { "Name" :: NullOrUndefined (PSParameterName)
-  , "Type" :: NullOrUndefined (ParameterType)
-  , "KeyId" :: NullOrUndefined (ParameterKeyId)
-  , "LastModifiedDate" :: NullOrUndefined (DateTime)
-  , "LastModifiedUser" :: NullOrUndefined (String)
-  , "Description" :: NullOrUndefined (ParameterDescription)
-  , "Value" :: NullOrUndefined (PSParameterValue)
-  , "AllowedPattern" :: NullOrUndefined (AllowedPattern)
-  , "Version" :: NullOrUndefined (PSParameterVersion)
+  { "Name" :: Maybe (PSParameterName)
+  , "Type" :: Maybe (ParameterType)
+  , "KeyId" :: Maybe (ParameterKeyId)
+  , "LastModifiedDate" :: Maybe (DateTime)
+  , "LastModifiedUser" :: Maybe (String)
+  , "Description" :: Maybe (ParameterDescription)
+  , "Value" :: Maybe (PSParameterValue)
+  , "AllowedPattern" :: Maybe (AllowedPattern)
+  , "Version" :: Maybe (PSParameterVersion)
   }
 derive instance newtypeParameterHistory :: Newtype ParameterHistory _
 derive instance repGenericParameterHistory :: Generic ParameterHistory _
@@ -8435,12 +8434,12 @@ instance encodeParameterHistory :: Encode ParameterHistory where encode = generi
 
 -- | Constructs ParameterHistory from required parameters
 newParameterHistory :: ParameterHistory
-newParameterHistory  = ParameterHistory { "AllowedPattern": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "KeyId": (NullOrUndefined Nothing), "LastModifiedDate": (NullOrUndefined Nothing), "LastModifiedUser": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing), "Version": (NullOrUndefined Nothing) }
+newParameterHistory  = ParameterHistory { "AllowedPattern": Nothing, "Description": Nothing, "KeyId": Nothing, "LastModifiedDate": Nothing, "LastModifiedUser": Nothing, "Name": Nothing, "Type": Nothing, "Value": Nothing, "Version": Nothing }
 
 -- | Constructs ParameterHistory's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newParameterHistory' :: ( { "Name" :: NullOrUndefined (PSParameterName) , "Type" :: NullOrUndefined (ParameterType) , "KeyId" :: NullOrUndefined (ParameterKeyId) , "LastModifiedDate" :: NullOrUndefined (DateTime) , "LastModifiedUser" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (ParameterDescription) , "Value" :: NullOrUndefined (PSParameterValue) , "AllowedPattern" :: NullOrUndefined (AllowedPattern) , "Version" :: NullOrUndefined (PSParameterVersion) } -> {"Name" :: NullOrUndefined (PSParameterName) , "Type" :: NullOrUndefined (ParameterType) , "KeyId" :: NullOrUndefined (ParameterKeyId) , "LastModifiedDate" :: NullOrUndefined (DateTime) , "LastModifiedUser" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (ParameterDescription) , "Value" :: NullOrUndefined (PSParameterValue) , "AllowedPattern" :: NullOrUndefined (AllowedPattern) , "Version" :: NullOrUndefined (PSParameterVersion) } ) -> ParameterHistory
-newParameterHistory'  customize = (ParameterHistory <<< customize) { "AllowedPattern": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "KeyId": (NullOrUndefined Nothing), "LastModifiedDate": (NullOrUndefined Nothing), "LastModifiedUser": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing), "Version": (NullOrUndefined Nothing) }
+newParameterHistory' :: ( { "Name" :: Maybe (PSParameterName) , "Type" :: Maybe (ParameterType) , "KeyId" :: Maybe (ParameterKeyId) , "LastModifiedDate" :: Maybe (DateTime) , "LastModifiedUser" :: Maybe (String) , "Description" :: Maybe (ParameterDescription) , "Value" :: Maybe (PSParameterValue) , "AllowedPattern" :: Maybe (AllowedPattern) , "Version" :: Maybe (PSParameterVersion) } -> {"Name" :: Maybe (PSParameterName) , "Type" :: Maybe (ParameterType) , "KeyId" :: Maybe (ParameterKeyId) , "LastModifiedDate" :: Maybe (DateTime) , "LastModifiedUser" :: Maybe (String) , "Description" :: Maybe (ParameterDescription) , "Value" :: Maybe (PSParameterValue) , "AllowedPattern" :: Maybe (AllowedPattern) , "Version" :: Maybe (PSParameterVersion) } ) -> ParameterHistory
+newParameterHistory'  customize = (ParameterHistory <<< customize) { "AllowedPattern": Nothing, "Description": Nothing, "KeyId": Nothing, "LastModifiedDate": Nothing, "LastModifiedUser": Nothing, "Name": Nothing, "Type": Nothing, "Value": Nothing, "Version": Nothing }
 
 
 
@@ -8464,7 +8463,7 @@ instance encodeParameterKeyId :: Encode ParameterKeyId where encode = genericEnc
 
 -- | <p>You have exceeded the number of parameters for this AWS account. Delete one or more parameters and try again.</p>
 newtype ParameterLimitExceeded = ParameterLimitExceeded 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeParameterLimitExceeded :: Newtype ParameterLimitExceeded _
 derive instance repGenericParameterLimitExceeded :: Generic ParameterLimitExceeded _
@@ -8474,12 +8473,12 @@ instance encodeParameterLimitExceeded :: Encode ParameterLimitExceeded where enc
 
 -- | Constructs ParameterLimitExceeded from required parameters
 newParameterLimitExceeded :: ParameterLimitExceeded
-newParameterLimitExceeded  = ParameterLimitExceeded { "message": (NullOrUndefined Nothing) }
+newParameterLimitExceeded  = ParameterLimitExceeded { "message": Nothing }
 
 -- | Constructs ParameterLimitExceeded's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newParameterLimitExceeded' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> ParameterLimitExceeded
-newParameterLimitExceeded'  customize = (ParameterLimitExceeded <<< customize) { "message": (NullOrUndefined Nothing) }
+newParameterLimitExceeded' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> ParameterLimitExceeded
+newParameterLimitExceeded'  customize = (ParameterLimitExceeded <<< customize) { "message": Nothing }
 
 
 
@@ -8494,7 +8493,7 @@ instance encodeParameterList :: Encode ParameterList where encode = genericEncod
 
 -- | <p>The parameter exceeded the maximum number of allowed versions.</p>
 newtype ParameterMaxVersionLimitExceeded = ParameterMaxVersionLimitExceeded 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeParameterMaxVersionLimitExceeded :: Newtype ParameterMaxVersionLimitExceeded _
 derive instance repGenericParameterMaxVersionLimitExceeded :: Generic ParameterMaxVersionLimitExceeded _
@@ -8504,25 +8503,25 @@ instance encodeParameterMaxVersionLimitExceeded :: Encode ParameterMaxVersionLim
 
 -- | Constructs ParameterMaxVersionLimitExceeded from required parameters
 newParameterMaxVersionLimitExceeded :: ParameterMaxVersionLimitExceeded
-newParameterMaxVersionLimitExceeded  = ParameterMaxVersionLimitExceeded { "message": (NullOrUndefined Nothing) }
+newParameterMaxVersionLimitExceeded  = ParameterMaxVersionLimitExceeded { "message": Nothing }
 
 -- | Constructs ParameterMaxVersionLimitExceeded's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newParameterMaxVersionLimitExceeded' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> ParameterMaxVersionLimitExceeded
-newParameterMaxVersionLimitExceeded'  customize = (ParameterMaxVersionLimitExceeded <<< customize) { "message": (NullOrUndefined Nothing) }
+newParameterMaxVersionLimitExceeded' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> ParameterMaxVersionLimitExceeded
+newParameterMaxVersionLimitExceeded'  customize = (ParameterMaxVersionLimitExceeded <<< customize) { "message": Nothing }
 
 
 
 -- | <p>Metada includes information like the ARN of the last user and the date/time the parameter was last used.</p>
 newtype ParameterMetadata = ParameterMetadata 
-  { "Name" :: NullOrUndefined (PSParameterName)
-  , "Type" :: NullOrUndefined (ParameterType)
-  , "KeyId" :: NullOrUndefined (ParameterKeyId)
-  , "LastModifiedDate" :: NullOrUndefined (DateTime)
-  , "LastModifiedUser" :: NullOrUndefined (String)
-  , "Description" :: NullOrUndefined (ParameterDescription)
-  , "AllowedPattern" :: NullOrUndefined (AllowedPattern)
-  , "Version" :: NullOrUndefined (PSParameterVersion)
+  { "Name" :: Maybe (PSParameterName)
+  , "Type" :: Maybe (ParameterType)
+  , "KeyId" :: Maybe (ParameterKeyId)
+  , "LastModifiedDate" :: Maybe (DateTime)
+  , "LastModifiedUser" :: Maybe (String)
+  , "Description" :: Maybe (ParameterDescription)
+  , "AllowedPattern" :: Maybe (AllowedPattern)
+  , "Version" :: Maybe (PSParameterVersion)
   }
 derive instance newtypeParameterMetadata :: Newtype ParameterMetadata _
 derive instance repGenericParameterMetadata :: Generic ParameterMetadata _
@@ -8532,12 +8531,12 @@ instance encodeParameterMetadata :: Encode ParameterMetadata where encode = gene
 
 -- | Constructs ParameterMetadata from required parameters
 newParameterMetadata :: ParameterMetadata
-newParameterMetadata  = ParameterMetadata { "AllowedPattern": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "KeyId": (NullOrUndefined Nothing), "LastModifiedDate": (NullOrUndefined Nothing), "LastModifiedUser": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing), "Version": (NullOrUndefined Nothing) }
+newParameterMetadata  = ParameterMetadata { "AllowedPattern": Nothing, "Description": Nothing, "KeyId": Nothing, "LastModifiedDate": Nothing, "LastModifiedUser": Nothing, "Name": Nothing, "Type": Nothing, "Version": Nothing }
 
 -- | Constructs ParameterMetadata's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newParameterMetadata' :: ( { "Name" :: NullOrUndefined (PSParameterName) , "Type" :: NullOrUndefined (ParameterType) , "KeyId" :: NullOrUndefined (ParameterKeyId) , "LastModifiedDate" :: NullOrUndefined (DateTime) , "LastModifiedUser" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (ParameterDescription) , "AllowedPattern" :: NullOrUndefined (AllowedPattern) , "Version" :: NullOrUndefined (PSParameterVersion) } -> {"Name" :: NullOrUndefined (PSParameterName) , "Type" :: NullOrUndefined (ParameterType) , "KeyId" :: NullOrUndefined (ParameterKeyId) , "LastModifiedDate" :: NullOrUndefined (DateTime) , "LastModifiedUser" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (ParameterDescription) , "AllowedPattern" :: NullOrUndefined (AllowedPattern) , "Version" :: NullOrUndefined (PSParameterVersion) } ) -> ParameterMetadata
-newParameterMetadata'  customize = (ParameterMetadata <<< customize) { "AllowedPattern": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "KeyId": (NullOrUndefined Nothing), "LastModifiedDate": (NullOrUndefined Nothing), "LastModifiedUser": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing), "Version": (NullOrUndefined Nothing) }
+newParameterMetadata' :: ( { "Name" :: Maybe (PSParameterName) , "Type" :: Maybe (ParameterType) , "KeyId" :: Maybe (ParameterKeyId) , "LastModifiedDate" :: Maybe (DateTime) , "LastModifiedUser" :: Maybe (String) , "Description" :: Maybe (ParameterDescription) , "AllowedPattern" :: Maybe (AllowedPattern) , "Version" :: Maybe (PSParameterVersion) } -> {"Name" :: Maybe (PSParameterName) , "Type" :: Maybe (ParameterType) , "KeyId" :: Maybe (ParameterKeyId) , "LastModifiedDate" :: Maybe (DateTime) , "LastModifiedUser" :: Maybe (String) , "Description" :: Maybe (ParameterDescription) , "AllowedPattern" :: Maybe (AllowedPattern) , "Version" :: Maybe (PSParameterVersion) } ) -> ParameterMetadata
+newParameterMetadata'  customize = (ParameterMetadata <<< customize) { "AllowedPattern": Nothing, "Description": Nothing, "KeyId": Nothing, "LastModifiedDate": Nothing, "LastModifiedUser": Nothing, "Name": Nothing, "Type": Nothing, "Version": Nothing }
 
 
 
@@ -8570,7 +8569,7 @@ instance encodeParameterNameList :: Encode ParameterNameList where encode = gene
 
 -- | <p>The parameter could not be found. Verify the name and try again.</p>
 newtype ParameterNotFound = ParameterNotFound 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeParameterNotFound :: Newtype ParameterNotFound _
 derive instance repGenericParameterNotFound :: Generic ParameterNotFound _
@@ -8580,18 +8579,18 @@ instance encodeParameterNotFound :: Encode ParameterNotFound where encode = gene
 
 -- | Constructs ParameterNotFound from required parameters
 newParameterNotFound :: ParameterNotFound
-newParameterNotFound  = ParameterNotFound { "message": (NullOrUndefined Nothing) }
+newParameterNotFound  = ParameterNotFound { "message": Nothing }
 
 -- | Constructs ParameterNotFound's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newParameterNotFound' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> ParameterNotFound
-newParameterNotFound'  customize = (ParameterNotFound <<< customize) { "message": (NullOrUndefined Nothing) }
+newParameterNotFound' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> ParameterNotFound
+newParameterNotFound'  customize = (ParameterNotFound <<< customize) { "message": Nothing }
 
 
 
 -- | <p>The parameter name is not valid.</p>
 newtype ParameterPatternMismatchException = ParameterPatternMismatchException 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeParameterPatternMismatchException :: Newtype ParameterPatternMismatchException _
 derive instance repGenericParameterPatternMismatchException :: Generic ParameterPatternMismatchException _
@@ -8601,20 +8600,20 @@ instance encodeParameterPatternMismatchException :: Encode ParameterPatternMisma
 
 -- | Constructs ParameterPatternMismatchException from required parameters
 newParameterPatternMismatchException :: ParameterPatternMismatchException
-newParameterPatternMismatchException  = ParameterPatternMismatchException { "message": (NullOrUndefined Nothing) }
+newParameterPatternMismatchException  = ParameterPatternMismatchException { "message": Nothing }
 
 -- | Constructs ParameterPatternMismatchException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newParameterPatternMismatchException' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> ParameterPatternMismatchException
-newParameterPatternMismatchException'  customize = (ParameterPatternMismatchException <<< customize) { "message": (NullOrUndefined Nothing) }
+newParameterPatternMismatchException' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> ParameterPatternMismatchException
+newParameterPatternMismatchException'  customize = (ParameterPatternMismatchException <<< customize) { "message": Nothing }
 
 
 
 -- | <p>One or more filters. Use a filter to return a more specific list of results.</p>
 newtype ParameterStringFilter = ParameterStringFilter 
   { "Key" :: (ParameterStringFilterKey)
-  , "Option" :: NullOrUndefined (ParameterStringQueryOption)
-  , "Values" :: NullOrUndefined (ParameterStringFilterValueList)
+  , "Option" :: Maybe (ParameterStringQueryOption)
+  , "Values" :: Maybe (ParameterStringFilterValueList)
   }
 derive instance newtypeParameterStringFilter :: Newtype ParameterStringFilter _
 derive instance repGenericParameterStringFilter :: Generic ParameterStringFilter _
@@ -8624,12 +8623,12 @@ instance encodeParameterStringFilter :: Encode ParameterStringFilter where encod
 
 -- | Constructs ParameterStringFilter from required parameters
 newParameterStringFilter :: ParameterStringFilterKey -> ParameterStringFilter
-newParameterStringFilter _Key = ParameterStringFilter { "Key": _Key, "Option": (NullOrUndefined Nothing), "Values": (NullOrUndefined Nothing) }
+newParameterStringFilter _Key = ParameterStringFilter { "Key": _Key, "Option": Nothing, "Values": Nothing }
 
 -- | Constructs ParameterStringFilter's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newParameterStringFilter' :: ParameterStringFilterKey -> ( { "Key" :: (ParameterStringFilterKey) , "Option" :: NullOrUndefined (ParameterStringQueryOption) , "Values" :: NullOrUndefined (ParameterStringFilterValueList) } -> {"Key" :: (ParameterStringFilterKey) , "Option" :: NullOrUndefined (ParameterStringQueryOption) , "Values" :: NullOrUndefined (ParameterStringFilterValueList) } ) -> ParameterStringFilter
-newParameterStringFilter' _Key customize = (ParameterStringFilter <<< customize) { "Key": _Key, "Option": (NullOrUndefined Nothing), "Values": (NullOrUndefined Nothing) }
+newParameterStringFilter' :: ParameterStringFilterKey -> ( { "Key" :: (ParameterStringFilterKey) , "Option" :: Maybe (ParameterStringQueryOption) , "Values" :: Maybe (ParameterStringFilterValueList) } -> {"Key" :: (ParameterStringFilterKey) , "Option" :: Maybe (ParameterStringQueryOption) , "Values" :: Maybe (ParameterStringFilterValueList) } ) -> ParameterStringFilter
+newParameterStringFilter' _Key customize = (ParameterStringFilter <<< customize) { "Key": _Key, "Option": Nothing, "Values": Nothing }
 
 
 
@@ -8707,7 +8706,7 @@ instance encodeParameterValueList :: Encode ParameterValueList where encode = ge
 
 -- | <p>The specified parameter version was not found. Verify the parameter name and version, and try again.</p>
 newtype ParameterVersionNotFound = ParameterVersionNotFound 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeParameterVersionNotFound :: Newtype ParameterVersionNotFound _
 derive instance repGenericParameterVersionNotFound :: Generic ParameterVersionNotFound _
@@ -8717,12 +8716,12 @@ instance encodeParameterVersionNotFound :: Encode ParameterVersionNotFound where
 
 -- | Constructs ParameterVersionNotFound from required parameters
 newParameterVersionNotFound :: ParameterVersionNotFound
-newParameterVersionNotFound  = ParameterVersionNotFound { "message": (NullOrUndefined Nothing) }
+newParameterVersionNotFound  = ParameterVersionNotFound { "message": Nothing }
 
 -- | Constructs ParameterVersionNotFound's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newParameterVersionNotFound' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> ParameterVersionNotFound
-newParameterVersionNotFound'  customize = (ParameterVersionNotFound <<< customize) { "message": (NullOrUndefined Nothing) }
+newParameterVersionNotFound' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> ParameterVersionNotFound
+newParameterVersionNotFound'  customize = (ParameterVersionNotFound <<< customize) { "message": Nothing }
 
 
 
@@ -8795,19 +8794,19 @@ instance encodeParametersFilterValueList :: Encode ParametersFilterValueList whe
 
 -- | <p>Represents metadata about a patch.</p>
 newtype Patch = Patch 
-  { "Id" :: NullOrUndefined (PatchId)
-  , "ReleaseDate" :: NullOrUndefined (DateTime)
-  , "Title" :: NullOrUndefined (PatchTitle)
-  , "Description" :: NullOrUndefined (PatchDescription)
-  , "ContentUrl" :: NullOrUndefined (PatchContentUrl)
-  , "Vendor" :: NullOrUndefined (PatchVendor)
-  , "ProductFamily" :: NullOrUndefined (PatchProductFamily)
-  , "Product" :: NullOrUndefined (PatchProduct)
-  , "Classification" :: NullOrUndefined (PatchClassification)
-  , "MsrcSeverity" :: NullOrUndefined (PatchMsrcSeverity)
-  , "KbNumber" :: NullOrUndefined (PatchKbNumber)
-  , "MsrcNumber" :: NullOrUndefined (PatchMsrcNumber)
-  , "Language" :: NullOrUndefined (PatchLanguage)
+  { "Id" :: Maybe (PatchId)
+  , "ReleaseDate" :: Maybe (DateTime)
+  , "Title" :: Maybe (PatchTitle)
+  , "Description" :: Maybe (PatchDescription)
+  , "ContentUrl" :: Maybe (PatchContentUrl)
+  , "Vendor" :: Maybe (PatchVendor)
+  , "ProductFamily" :: Maybe (PatchProductFamily)
+  , "Product" :: Maybe (PatchProduct)
+  , "Classification" :: Maybe (PatchClassification)
+  , "MsrcSeverity" :: Maybe (PatchMsrcSeverity)
+  , "KbNumber" :: Maybe (PatchKbNumber)
+  , "MsrcNumber" :: Maybe (PatchMsrcNumber)
+  , "Language" :: Maybe (PatchLanguage)
   }
 derive instance newtypePatch :: Newtype Patch _
 derive instance repGenericPatch :: Generic Patch _
@@ -8817,22 +8816,22 @@ instance encodePatch :: Encode Patch where encode = genericEncode options
 
 -- | Constructs Patch from required parameters
 newPatch :: Patch
-newPatch  = Patch { "Classification": (NullOrUndefined Nothing), "ContentUrl": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "KbNumber": (NullOrUndefined Nothing), "Language": (NullOrUndefined Nothing), "MsrcNumber": (NullOrUndefined Nothing), "MsrcSeverity": (NullOrUndefined Nothing), "Product": (NullOrUndefined Nothing), "ProductFamily": (NullOrUndefined Nothing), "ReleaseDate": (NullOrUndefined Nothing), "Title": (NullOrUndefined Nothing), "Vendor": (NullOrUndefined Nothing) }
+newPatch  = Patch { "Classification": Nothing, "ContentUrl": Nothing, "Description": Nothing, "Id": Nothing, "KbNumber": Nothing, "Language": Nothing, "MsrcNumber": Nothing, "MsrcSeverity": Nothing, "Product": Nothing, "ProductFamily": Nothing, "ReleaseDate": Nothing, "Title": Nothing, "Vendor": Nothing }
 
 -- | Constructs Patch's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPatch' :: ( { "Id" :: NullOrUndefined (PatchId) , "ReleaseDate" :: NullOrUndefined (DateTime) , "Title" :: NullOrUndefined (PatchTitle) , "Description" :: NullOrUndefined (PatchDescription) , "ContentUrl" :: NullOrUndefined (PatchContentUrl) , "Vendor" :: NullOrUndefined (PatchVendor) , "ProductFamily" :: NullOrUndefined (PatchProductFamily) , "Product" :: NullOrUndefined (PatchProduct) , "Classification" :: NullOrUndefined (PatchClassification) , "MsrcSeverity" :: NullOrUndefined (PatchMsrcSeverity) , "KbNumber" :: NullOrUndefined (PatchKbNumber) , "MsrcNumber" :: NullOrUndefined (PatchMsrcNumber) , "Language" :: NullOrUndefined (PatchLanguage) } -> {"Id" :: NullOrUndefined (PatchId) , "ReleaseDate" :: NullOrUndefined (DateTime) , "Title" :: NullOrUndefined (PatchTitle) , "Description" :: NullOrUndefined (PatchDescription) , "ContentUrl" :: NullOrUndefined (PatchContentUrl) , "Vendor" :: NullOrUndefined (PatchVendor) , "ProductFamily" :: NullOrUndefined (PatchProductFamily) , "Product" :: NullOrUndefined (PatchProduct) , "Classification" :: NullOrUndefined (PatchClassification) , "MsrcSeverity" :: NullOrUndefined (PatchMsrcSeverity) , "KbNumber" :: NullOrUndefined (PatchKbNumber) , "MsrcNumber" :: NullOrUndefined (PatchMsrcNumber) , "Language" :: NullOrUndefined (PatchLanguage) } ) -> Patch
-newPatch'  customize = (Patch <<< customize) { "Classification": (NullOrUndefined Nothing), "ContentUrl": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "KbNumber": (NullOrUndefined Nothing), "Language": (NullOrUndefined Nothing), "MsrcNumber": (NullOrUndefined Nothing), "MsrcSeverity": (NullOrUndefined Nothing), "Product": (NullOrUndefined Nothing), "ProductFamily": (NullOrUndefined Nothing), "ReleaseDate": (NullOrUndefined Nothing), "Title": (NullOrUndefined Nothing), "Vendor": (NullOrUndefined Nothing) }
+newPatch' :: ( { "Id" :: Maybe (PatchId) , "ReleaseDate" :: Maybe (DateTime) , "Title" :: Maybe (PatchTitle) , "Description" :: Maybe (PatchDescription) , "ContentUrl" :: Maybe (PatchContentUrl) , "Vendor" :: Maybe (PatchVendor) , "ProductFamily" :: Maybe (PatchProductFamily) , "Product" :: Maybe (PatchProduct) , "Classification" :: Maybe (PatchClassification) , "MsrcSeverity" :: Maybe (PatchMsrcSeverity) , "KbNumber" :: Maybe (PatchKbNumber) , "MsrcNumber" :: Maybe (PatchMsrcNumber) , "Language" :: Maybe (PatchLanguage) } -> {"Id" :: Maybe (PatchId) , "ReleaseDate" :: Maybe (DateTime) , "Title" :: Maybe (PatchTitle) , "Description" :: Maybe (PatchDescription) , "ContentUrl" :: Maybe (PatchContentUrl) , "Vendor" :: Maybe (PatchVendor) , "ProductFamily" :: Maybe (PatchProductFamily) , "Product" :: Maybe (PatchProduct) , "Classification" :: Maybe (PatchClassification) , "MsrcSeverity" :: Maybe (PatchMsrcSeverity) , "KbNumber" :: Maybe (PatchKbNumber) , "MsrcNumber" :: Maybe (PatchMsrcNumber) , "Language" :: Maybe (PatchLanguage) } ) -> Patch
+newPatch'  customize = (Patch <<< customize) { "Classification": Nothing, "ContentUrl": Nothing, "Description": Nothing, "Id": Nothing, "KbNumber": Nothing, "Language": Nothing, "MsrcNumber": Nothing, "MsrcSeverity": Nothing, "Product": Nothing, "ProductFamily": Nothing, "ReleaseDate": Nothing, "Title": Nothing, "Vendor": Nothing }
 
 
 
 -- | <p>Defines the basic information about a patch baseline.</p>
 newtype PatchBaselineIdentity = PatchBaselineIdentity 
-  { "BaselineId" :: NullOrUndefined (BaselineId)
-  , "BaselineName" :: NullOrUndefined (BaselineName)
-  , "OperatingSystem" :: NullOrUndefined (OperatingSystem)
-  , "BaselineDescription" :: NullOrUndefined (BaselineDescription)
-  , "DefaultBaseline" :: NullOrUndefined (DefaultBaseline)
+  { "BaselineId" :: Maybe (BaselineId)
+  , "BaselineName" :: Maybe (BaselineName)
+  , "OperatingSystem" :: Maybe (OperatingSystem)
+  , "BaselineDescription" :: Maybe (BaselineDescription)
+  , "DefaultBaseline" :: Maybe (DefaultBaseline)
   }
 derive instance newtypePatchBaselineIdentity :: Newtype PatchBaselineIdentity _
 derive instance repGenericPatchBaselineIdentity :: Generic PatchBaselineIdentity _
@@ -8842,12 +8841,12 @@ instance encodePatchBaselineIdentity :: Encode PatchBaselineIdentity where encod
 
 -- | Constructs PatchBaselineIdentity from required parameters
 newPatchBaselineIdentity :: PatchBaselineIdentity
-newPatchBaselineIdentity  = PatchBaselineIdentity { "BaselineDescription": (NullOrUndefined Nothing), "BaselineId": (NullOrUndefined Nothing), "BaselineName": (NullOrUndefined Nothing), "DefaultBaseline": (NullOrUndefined Nothing), "OperatingSystem": (NullOrUndefined Nothing) }
+newPatchBaselineIdentity  = PatchBaselineIdentity { "BaselineDescription": Nothing, "BaselineId": Nothing, "BaselineName": Nothing, "DefaultBaseline": Nothing, "OperatingSystem": Nothing }
 
 -- | Constructs PatchBaselineIdentity's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPatchBaselineIdentity' :: ( { "BaselineId" :: NullOrUndefined (BaselineId) , "BaselineName" :: NullOrUndefined (BaselineName) , "OperatingSystem" :: NullOrUndefined (OperatingSystem) , "BaselineDescription" :: NullOrUndefined (BaselineDescription) , "DefaultBaseline" :: NullOrUndefined (DefaultBaseline) } -> {"BaselineId" :: NullOrUndefined (BaselineId) , "BaselineName" :: NullOrUndefined (BaselineName) , "OperatingSystem" :: NullOrUndefined (OperatingSystem) , "BaselineDescription" :: NullOrUndefined (BaselineDescription) , "DefaultBaseline" :: NullOrUndefined (DefaultBaseline) } ) -> PatchBaselineIdentity
-newPatchBaselineIdentity'  customize = (PatchBaselineIdentity <<< customize) { "BaselineDescription": (NullOrUndefined Nothing), "BaselineId": (NullOrUndefined Nothing), "BaselineName": (NullOrUndefined Nothing), "DefaultBaseline": (NullOrUndefined Nothing), "OperatingSystem": (NullOrUndefined Nothing) }
+newPatchBaselineIdentity' :: ( { "BaselineId" :: Maybe (BaselineId) , "BaselineName" :: Maybe (BaselineName) , "OperatingSystem" :: Maybe (OperatingSystem) , "BaselineDescription" :: Maybe (BaselineDescription) , "DefaultBaseline" :: Maybe (DefaultBaseline) } -> {"BaselineId" :: Maybe (BaselineId) , "BaselineName" :: Maybe (BaselineName) , "OperatingSystem" :: Maybe (OperatingSystem) , "BaselineDescription" :: Maybe (BaselineDescription) , "DefaultBaseline" :: Maybe (DefaultBaseline) } ) -> PatchBaselineIdentity
+newPatchBaselineIdentity'  customize = (PatchBaselineIdentity <<< customize) { "BaselineDescription": Nothing, "BaselineId": Nothing, "BaselineName": Nothing, "DefaultBaseline": Nothing, "OperatingSystem": Nothing }
 
 
 
@@ -9075,8 +9074,8 @@ instance encodePatchGroupList :: Encode PatchGroupList where encode = genericEnc
 
 -- | <p>The mapping between a patch group and the patch baseline the patch group is registered with.</p>
 newtype PatchGroupPatchBaselineMapping = PatchGroupPatchBaselineMapping 
-  { "PatchGroup" :: NullOrUndefined (PatchGroup)
-  , "BaselineIdentity" :: NullOrUndefined (PatchBaselineIdentity)
+  { "PatchGroup" :: Maybe (PatchGroup)
+  , "BaselineIdentity" :: Maybe (PatchBaselineIdentity)
   }
 derive instance newtypePatchGroupPatchBaselineMapping :: Newtype PatchGroupPatchBaselineMapping _
 derive instance repGenericPatchGroupPatchBaselineMapping :: Generic PatchGroupPatchBaselineMapping _
@@ -9086,12 +9085,12 @@ instance encodePatchGroupPatchBaselineMapping :: Encode PatchGroupPatchBaselineM
 
 -- | Constructs PatchGroupPatchBaselineMapping from required parameters
 newPatchGroupPatchBaselineMapping :: PatchGroupPatchBaselineMapping
-newPatchGroupPatchBaselineMapping  = PatchGroupPatchBaselineMapping { "BaselineIdentity": (NullOrUndefined Nothing), "PatchGroup": (NullOrUndefined Nothing) }
+newPatchGroupPatchBaselineMapping  = PatchGroupPatchBaselineMapping { "BaselineIdentity": Nothing, "PatchGroup": Nothing }
 
 -- | Constructs PatchGroupPatchBaselineMapping's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPatchGroupPatchBaselineMapping' :: ( { "PatchGroup" :: NullOrUndefined (PatchGroup) , "BaselineIdentity" :: NullOrUndefined (PatchBaselineIdentity) } -> {"PatchGroup" :: NullOrUndefined (PatchGroup) , "BaselineIdentity" :: NullOrUndefined (PatchBaselineIdentity) } ) -> PatchGroupPatchBaselineMapping
-newPatchGroupPatchBaselineMapping'  customize = (PatchGroupPatchBaselineMapping <<< customize) { "BaselineIdentity": (NullOrUndefined Nothing), "PatchGroup": (NullOrUndefined Nothing) }
+newPatchGroupPatchBaselineMapping' :: ( { "PatchGroup" :: Maybe (PatchGroup) , "BaselineIdentity" :: Maybe (PatchBaselineIdentity) } -> {"PatchGroup" :: Maybe (PatchGroup) , "BaselineIdentity" :: Maybe (PatchBaselineIdentity) } ) -> PatchGroupPatchBaselineMapping
+newPatchGroupPatchBaselineMapping'  customize = (PatchGroupPatchBaselineMapping <<< customize) { "BaselineIdentity": Nothing, "PatchGroup": Nothing }
 
 
 
@@ -9214,8 +9213,8 @@ instance encodePatchOperationType :: Encode PatchOperationType where encode = ge
 
 -- | <p>Defines a filter used in Patch Manager APIs.</p>
 newtype PatchOrchestratorFilter = PatchOrchestratorFilter 
-  { "Key" :: NullOrUndefined (PatchOrchestratorFilterKey)
-  , "Values" :: NullOrUndefined (PatchOrchestratorFilterValues)
+  { "Key" :: Maybe (PatchOrchestratorFilterKey)
+  , "Values" :: Maybe (PatchOrchestratorFilterValues)
   }
 derive instance newtypePatchOrchestratorFilter :: Newtype PatchOrchestratorFilter _
 derive instance repGenericPatchOrchestratorFilter :: Generic PatchOrchestratorFilter _
@@ -9225,12 +9224,12 @@ instance encodePatchOrchestratorFilter :: Encode PatchOrchestratorFilter where e
 
 -- | Constructs PatchOrchestratorFilter from required parameters
 newPatchOrchestratorFilter :: PatchOrchestratorFilter
-newPatchOrchestratorFilter  = PatchOrchestratorFilter { "Key": (NullOrUndefined Nothing), "Values": (NullOrUndefined Nothing) }
+newPatchOrchestratorFilter  = PatchOrchestratorFilter { "Key": Nothing, "Values": Nothing }
 
 -- | Constructs PatchOrchestratorFilter's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPatchOrchestratorFilter' :: ( { "Key" :: NullOrUndefined (PatchOrchestratorFilterKey) , "Values" :: NullOrUndefined (PatchOrchestratorFilterValues) } -> {"Key" :: NullOrUndefined (PatchOrchestratorFilterKey) , "Values" :: NullOrUndefined (PatchOrchestratorFilterValues) } ) -> PatchOrchestratorFilter
-newPatchOrchestratorFilter'  customize = (PatchOrchestratorFilter <<< customize) { "Key": (NullOrUndefined Nothing), "Values": (NullOrUndefined Nothing) }
+newPatchOrchestratorFilter' :: ( { "Key" :: Maybe (PatchOrchestratorFilterKey) , "Values" :: Maybe (PatchOrchestratorFilterValues) } -> {"Key" :: Maybe (PatchOrchestratorFilterKey) , "Values" :: Maybe (PatchOrchestratorFilterValues) } ) -> PatchOrchestratorFilter
+newPatchOrchestratorFilter'  customize = (PatchOrchestratorFilter <<< customize) { "Key": Nothing, "Values": Nothing }
 
 
 
@@ -9291,9 +9290,9 @@ instance encodePatchProductFamily :: Encode PatchProductFamily where encode = ge
 -- | <p>Defines an approval rule for a patch baseline.</p>
 newtype PatchRule = PatchRule 
   { "PatchFilterGroup" :: (PatchFilterGroup)
-  , "ComplianceLevel" :: NullOrUndefined (PatchComplianceLevel)
+  , "ComplianceLevel" :: Maybe (PatchComplianceLevel)
   , "ApproveAfterDays" :: (ApproveAfterDays)
-  , "EnableNonSecurity" :: NullOrUndefined (Boolean)
+  , "EnableNonSecurity" :: Maybe (Boolean)
   }
 derive instance newtypePatchRule :: Newtype PatchRule _
 derive instance repGenericPatchRule :: Generic PatchRule _
@@ -9303,12 +9302,12 @@ instance encodePatchRule :: Encode PatchRule where encode = genericEncode option
 
 -- | Constructs PatchRule from required parameters
 newPatchRule :: ApproveAfterDays -> PatchFilterGroup -> PatchRule
-newPatchRule _ApproveAfterDays _PatchFilterGroup = PatchRule { "ApproveAfterDays": _ApproveAfterDays, "PatchFilterGroup": _PatchFilterGroup, "ComplianceLevel": (NullOrUndefined Nothing), "EnableNonSecurity": (NullOrUndefined Nothing) }
+newPatchRule _ApproveAfterDays _PatchFilterGroup = PatchRule { "ApproveAfterDays": _ApproveAfterDays, "PatchFilterGroup": _PatchFilterGroup, "ComplianceLevel": Nothing, "EnableNonSecurity": Nothing }
 
 -- | Constructs PatchRule's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPatchRule' :: ApproveAfterDays -> PatchFilterGroup -> ( { "PatchFilterGroup" :: (PatchFilterGroup) , "ComplianceLevel" :: NullOrUndefined (PatchComplianceLevel) , "ApproveAfterDays" :: (ApproveAfterDays) , "EnableNonSecurity" :: NullOrUndefined (Boolean) } -> {"PatchFilterGroup" :: (PatchFilterGroup) , "ComplianceLevel" :: NullOrUndefined (PatchComplianceLevel) , "ApproveAfterDays" :: (ApproveAfterDays) , "EnableNonSecurity" :: NullOrUndefined (Boolean) } ) -> PatchRule
-newPatchRule' _ApproveAfterDays _PatchFilterGroup customize = (PatchRule <<< customize) { "ApproveAfterDays": _ApproveAfterDays, "PatchFilterGroup": _PatchFilterGroup, "ComplianceLevel": (NullOrUndefined Nothing), "EnableNonSecurity": (NullOrUndefined Nothing) }
+newPatchRule' :: ApproveAfterDays -> PatchFilterGroup -> ( { "PatchFilterGroup" :: (PatchFilterGroup) , "ComplianceLevel" :: Maybe (PatchComplianceLevel) , "ApproveAfterDays" :: (ApproveAfterDays) , "EnableNonSecurity" :: Maybe (Boolean) } -> {"PatchFilterGroup" :: (PatchFilterGroup) , "ComplianceLevel" :: Maybe (PatchComplianceLevel) , "ApproveAfterDays" :: (ApproveAfterDays) , "EnableNonSecurity" :: Maybe (Boolean) } ) -> PatchRule
+newPatchRule' _ApproveAfterDays _PatchFilterGroup customize = (PatchRule <<< customize) { "ApproveAfterDays": _ApproveAfterDays, "PatchFilterGroup": _PatchFilterGroup, "ComplianceLevel": Nothing, "EnableNonSecurity": Nothing }
 
 
 
@@ -9421,9 +9420,9 @@ instance encodePatchSourceProductList :: Encode PatchSourceProductList where enc
 
 -- | <p>Information about the approval status of a patch.</p>
 newtype PatchStatus = PatchStatus 
-  { "DeploymentStatus" :: NullOrUndefined (PatchDeploymentStatus)
-  , "ComplianceLevel" :: NullOrUndefined (PatchComplianceLevel)
-  , "ApprovalDate" :: NullOrUndefined (DateTime)
+  { "DeploymentStatus" :: Maybe (PatchDeploymentStatus)
+  , "ComplianceLevel" :: Maybe (PatchComplianceLevel)
+  , "ApprovalDate" :: Maybe (DateTime)
   }
 derive instance newtypePatchStatus :: Newtype PatchStatus _
 derive instance repGenericPatchStatus :: Generic PatchStatus _
@@ -9433,12 +9432,12 @@ instance encodePatchStatus :: Encode PatchStatus where encode = genericEncode op
 
 -- | Constructs PatchStatus from required parameters
 newPatchStatus :: PatchStatus
-newPatchStatus  = PatchStatus { "ApprovalDate": (NullOrUndefined Nothing), "ComplianceLevel": (NullOrUndefined Nothing), "DeploymentStatus": (NullOrUndefined Nothing) }
+newPatchStatus  = PatchStatus { "ApprovalDate": Nothing, "ComplianceLevel": Nothing, "DeploymentStatus": Nothing }
 
 -- | Constructs PatchStatus's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPatchStatus' :: ( { "DeploymentStatus" :: NullOrUndefined (PatchDeploymentStatus) , "ComplianceLevel" :: NullOrUndefined (PatchComplianceLevel) , "ApprovalDate" :: NullOrUndefined (DateTime) } -> {"DeploymentStatus" :: NullOrUndefined (PatchDeploymentStatus) , "ComplianceLevel" :: NullOrUndefined (PatchComplianceLevel) , "ApprovalDate" :: NullOrUndefined (DateTime) } ) -> PatchStatus
-newPatchStatus'  customize = (PatchStatus <<< customize) { "ApprovalDate": (NullOrUndefined Nothing), "ComplianceLevel": (NullOrUndefined Nothing), "DeploymentStatus": (NullOrUndefined Nothing) }
+newPatchStatus' :: ( { "DeploymentStatus" :: Maybe (PatchDeploymentStatus) , "ComplianceLevel" :: Maybe (PatchComplianceLevel) , "ApprovalDate" :: Maybe (DateTime) } -> {"DeploymentStatus" :: Maybe (PatchDeploymentStatus) , "ComplianceLevel" :: Maybe (PatchComplianceLevel) , "ApprovalDate" :: Maybe (DateTime) } ) -> PatchStatus
+newPatchStatus'  customize = (PatchStatus <<< customize) { "ApprovalDate": Nothing, "ComplianceLevel": Nothing, "DeploymentStatus": Nothing }
 
 
 
@@ -9502,7 +9501,7 @@ newtype PutComplianceItemsRequest = PutComplianceItemsRequest
   , "ComplianceType" :: (ComplianceTypeName)
   , "ExecutionSummary" :: (ComplianceExecutionSummary)
   , "Items" :: (ComplianceItemEntryList)
-  , "ItemContentHash" :: NullOrUndefined (ComplianceItemContentHash)
+  , "ItemContentHash" :: Maybe (ComplianceItemContentHash)
   }
 derive instance newtypePutComplianceItemsRequest :: Newtype PutComplianceItemsRequest _
 derive instance repGenericPutComplianceItemsRequest :: Generic PutComplianceItemsRequest _
@@ -9512,12 +9511,12 @@ instance encodePutComplianceItemsRequest :: Encode PutComplianceItemsRequest whe
 
 -- | Constructs PutComplianceItemsRequest from required parameters
 newPutComplianceItemsRequest :: ComplianceTypeName -> ComplianceExecutionSummary -> ComplianceItemEntryList -> ComplianceResourceId -> ComplianceResourceType -> PutComplianceItemsRequest
-newPutComplianceItemsRequest _ComplianceType _ExecutionSummary _Items _ResourceId _ResourceType = PutComplianceItemsRequest { "ComplianceType": _ComplianceType, "ExecutionSummary": _ExecutionSummary, "Items": _Items, "ResourceId": _ResourceId, "ResourceType": _ResourceType, "ItemContentHash": (NullOrUndefined Nothing) }
+newPutComplianceItemsRequest _ComplianceType _ExecutionSummary _Items _ResourceId _ResourceType = PutComplianceItemsRequest { "ComplianceType": _ComplianceType, "ExecutionSummary": _ExecutionSummary, "Items": _Items, "ResourceId": _ResourceId, "ResourceType": _ResourceType, "ItemContentHash": Nothing }
 
 -- | Constructs PutComplianceItemsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPutComplianceItemsRequest' :: ComplianceTypeName -> ComplianceExecutionSummary -> ComplianceItemEntryList -> ComplianceResourceId -> ComplianceResourceType -> ( { "ResourceId" :: (ComplianceResourceId) , "ResourceType" :: (ComplianceResourceType) , "ComplianceType" :: (ComplianceTypeName) , "ExecutionSummary" :: (ComplianceExecutionSummary) , "Items" :: (ComplianceItemEntryList) , "ItemContentHash" :: NullOrUndefined (ComplianceItemContentHash) } -> {"ResourceId" :: (ComplianceResourceId) , "ResourceType" :: (ComplianceResourceType) , "ComplianceType" :: (ComplianceTypeName) , "ExecutionSummary" :: (ComplianceExecutionSummary) , "Items" :: (ComplianceItemEntryList) , "ItemContentHash" :: NullOrUndefined (ComplianceItemContentHash) } ) -> PutComplianceItemsRequest
-newPutComplianceItemsRequest' _ComplianceType _ExecutionSummary _Items _ResourceId _ResourceType customize = (PutComplianceItemsRequest <<< customize) { "ComplianceType": _ComplianceType, "ExecutionSummary": _ExecutionSummary, "Items": _Items, "ResourceId": _ResourceId, "ResourceType": _ResourceType, "ItemContentHash": (NullOrUndefined Nothing) }
+newPutComplianceItemsRequest' :: ComplianceTypeName -> ComplianceExecutionSummary -> ComplianceItemEntryList -> ComplianceResourceId -> ComplianceResourceType -> ( { "ResourceId" :: (ComplianceResourceId) , "ResourceType" :: (ComplianceResourceType) , "ComplianceType" :: (ComplianceTypeName) , "ExecutionSummary" :: (ComplianceExecutionSummary) , "Items" :: (ComplianceItemEntryList) , "ItemContentHash" :: Maybe (ComplianceItemContentHash) } -> {"ResourceId" :: (ComplianceResourceId) , "ResourceType" :: (ComplianceResourceType) , "ComplianceType" :: (ComplianceTypeName) , "ExecutionSummary" :: (ComplianceExecutionSummary) , "Items" :: (ComplianceItemEntryList) , "ItemContentHash" :: Maybe (ComplianceItemContentHash) } ) -> PutComplianceItemsRequest
+newPutComplianceItemsRequest' _ComplianceType _ExecutionSummary _Items _ResourceId _ResourceType customize = (PutComplianceItemsRequest <<< customize) { "ComplianceType": _ComplianceType, "ExecutionSummary": _ExecutionSummary, "Items": _Items, "ResourceId": _ResourceId, "ResourceType": _ResourceType, "ItemContentHash": Nothing }
 
 
 
@@ -9562,12 +9561,12 @@ instance encodePutInventoryResult :: Encode PutInventoryResult where encode = ge
 
 newtype PutParameterRequest = PutParameterRequest 
   { "Name" :: (PSParameterName)
-  , "Description" :: NullOrUndefined (ParameterDescription)
+  , "Description" :: Maybe (ParameterDescription)
   , "Value" :: (PSParameterValue)
   , "Type" :: (ParameterType)
-  , "KeyId" :: NullOrUndefined (ParameterKeyId)
-  , "Overwrite" :: NullOrUndefined (Boolean)
-  , "AllowedPattern" :: NullOrUndefined (AllowedPattern)
+  , "KeyId" :: Maybe (ParameterKeyId)
+  , "Overwrite" :: Maybe (Boolean)
+  , "AllowedPattern" :: Maybe (AllowedPattern)
   }
 derive instance newtypePutParameterRequest :: Newtype PutParameterRequest _
 derive instance repGenericPutParameterRequest :: Generic PutParameterRequest _
@@ -9577,17 +9576,17 @@ instance encodePutParameterRequest :: Encode PutParameterRequest where encode = 
 
 -- | Constructs PutParameterRequest from required parameters
 newPutParameterRequest :: PSParameterName -> ParameterType -> PSParameterValue -> PutParameterRequest
-newPutParameterRequest _Name _Type _Value = PutParameterRequest { "Name": _Name, "Type": _Type, "Value": _Value, "AllowedPattern": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "KeyId": (NullOrUndefined Nothing), "Overwrite": (NullOrUndefined Nothing) }
+newPutParameterRequest _Name _Type _Value = PutParameterRequest { "Name": _Name, "Type": _Type, "Value": _Value, "AllowedPattern": Nothing, "Description": Nothing, "KeyId": Nothing, "Overwrite": Nothing }
 
 -- | Constructs PutParameterRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPutParameterRequest' :: PSParameterName -> ParameterType -> PSParameterValue -> ( { "Name" :: (PSParameterName) , "Description" :: NullOrUndefined (ParameterDescription) , "Value" :: (PSParameterValue) , "Type" :: (ParameterType) , "KeyId" :: NullOrUndefined (ParameterKeyId) , "Overwrite" :: NullOrUndefined (Boolean) , "AllowedPattern" :: NullOrUndefined (AllowedPattern) } -> {"Name" :: (PSParameterName) , "Description" :: NullOrUndefined (ParameterDescription) , "Value" :: (PSParameterValue) , "Type" :: (ParameterType) , "KeyId" :: NullOrUndefined (ParameterKeyId) , "Overwrite" :: NullOrUndefined (Boolean) , "AllowedPattern" :: NullOrUndefined (AllowedPattern) } ) -> PutParameterRequest
-newPutParameterRequest' _Name _Type _Value customize = (PutParameterRequest <<< customize) { "Name": _Name, "Type": _Type, "Value": _Value, "AllowedPattern": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "KeyId": (NullOrUndefined Nothing), "Overwrite": (NullOrUndefined Nothing) }
+newPutParameterRequest' :: PSParameterName -> ParameterType -> PSParameterValue -> ( { "Name" :: (PSParameterName) , "Description" :: Maybe (ParameterDescription) , "Value" :: (PSParameterValue) , "Type" :: (ParameterType) , "KeyId" :: Maybe (ParameterKeyId) , "Overwrite" :: Maybe (Boolean) , "AllowedPattern" :: Maybe (AllowedPattern) } -> {"Name" :: (PSParameterName) , "Description" :: Maybe (ParameterDescription) , "Value" :: (PSParameterValue) , "Type" :: (ParameterType) , "KeyId" :: Maybe (ParameterKeyId) , "Overwrite" :: Maybe (Boolean) , "AllowedPattern" :: Maybe (AllowedPattern) } ) -> PutParameterRequest
+newPutParameterRequest' _Name _Type _Value customize = (PutParameterRequest <<< customize) { "Name": _Name, "Type": _Type, "Value": _Value, "AllowedPattern": Nothing, "Description": Nothing, "KeyId": Nothing, "Overwrite": Nothing }
 
 
 
 newtype PutParameterResult = PutParameterResult 
-  { "Version" :: NullOrUndefined (PSParameterVersion)
+  { "Version" :: Maybe (PSParameterVersion)
   }
 derive instance newtypePutParameterResult :: Newtype PutParameterResult _
 derive instance repGenericPutParameterResult :: Generic PutParameterResult _
@@ -9597,12 +9596,12 @@ instance encodePutParameterResult :: Encode PutParameterResult where encode = ge
 
 -- | Constructs PutParameterResult from required parameters
 newPutParameterResult :: PutParameterResult
-newPutParameterResult  = PutParameterResult { "Version": (NullOrUndefined Nothing) }
+newPutParameterResult  = PutParameterResult { "Version": Nothing }
 
 -- | Constructs PutParameterResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPutParameterResult' :: ( { "Version" :: NullOrUndefined (PSParameterVersion) } -> {"Version" :: NullOrUndefined (PSParameterVersion) } ) -> PutParameterResult
-newPutParameterResult'  customize = (PutParameterResult <<< customize) { "Version": (NullOrUndefined Nothing) }
+newPutParameterResult' :: ( { "Version" :: Maybe (PSParameterVersion) } -> {"Version" :: Maybe (PSParameterVersion) } ) -> PutParameterResult
+newPutParameterResult'  customize = (PutParameterResult <<< customize) { "Version": Nothing }
 
 
 
@@ -9627,7 +9626,7 @@ newRegisterDefaultPatchBaselineRequest' _BaselineId customize = (RegisterDefault
 
 
 newtype RegisterDefaultPatchBaselineResult = RegisterDefaultPatchBaselineResult 
-  { "BaselineId" :: NullOrUndefined (BaselineId)
+  { "BaselineId" :: Maybe (BaselineId)
   }
 derive instance newtypeRegisterDefaultPatchBaselineResult :: Newtype RegisterDefaultPatchBaselineResult _
 derive instance repGenericRegisterDefaultPatchBaselineResult :: Generic RegisterDefaultPatchBaselineResult _
@@ -9637,12 +9636,12 @@ instance encodeRegisterDefaultPatchBaselineResult :: Encode RegisterDefaultPatch
 
 -- | Constructs RegisterDefaultPatchBaselineResult from required parameters
 newRegisterDefaultPatchBaselineResult :: RegisterDefaultPatchBaselineResult
-newRegisterDefaultPatchBaselineResult  = RegisterDefaultPatchBaselineResult { "BaselineId": (NullOrUndefined Nothing) }
+newRegisterDefaultPatchBaselineResult  = RegisterDefaultPatchBaselineResult { "BaselineId": Nothing }
 
 -- | Constructs RegisterDefaultPatchBaselineResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRegisterDefaultPatchBaselineResult' :: ( { "BaselineId" :: NullOrUndefined (BaselineId) } -> {"BaselineId" :: NullOrUndefined (BaselineId) } ) -> RegisterDefaultPatchBaselineResult
-newRegisterDefaultPatchBaselineResult'  customize = (RegisterDefaultPatchBaselineResult <<< customize) { "BaselineId": (NullOrUndefined Nothing) }
+newRegisterDefaultPatchBaselineResult' :: ( { "BaselineId" :: Maybe (BaselineId) } -> {"BaselineId" :: Maybe (BaselineId) } ) -> RegisterDefaultPatchBaselineResult
+newRegisterDefaultPatchBaselineResult'  customize = (RegisterDefaultPatchBaselineResult <<< customize) { "BaselineId": Nothing }
 
 
 
@@ -9668,8 +9667,8 @@ newRegisterPatchBaselineForPatchGroupRequest' _BaselineId _PatchGroup customize 
 
 
 newtype RegisterPatchBaselineForPatchGroupResult = RegisterPatchBaselineForPatchGroupResult 
-  { "BaselineId" :: NullOrUndefined (BaselineId)
-  , "PatchGroup" :: NullOrUndefined (PatchGroup)
+  { "BaselineId" :: Maybe (BaselineId)
+  , "PatchGroup" :: Maybe (PatchGroup)
   }
 derive instance newtypeRegisterPatchBaselineForPatchGroupResult :: Newtype RegisterPatchBaselineForPatchGroupResult _
 derive instance repGenericRegisterPatchBaselineForPatchGroupResult :: Generic RegisterPatchBaselineForPatchGroupResult _
@@ -9679,12 +9678,12 @@ instance encodeRegisterPatchBaselineForPatchGroupResult :: Encode RegisterPatchB
 
 -- | Constructs RegisterPatchBaselineForPatchGroupResult from required parameters
 newRegisterPatchBaselineForPatchGroupResult :: RegisterPatchBaselineForPatchGroupResult
-newRegisterPatchBaselineForPatchGroupResult  = RegisterPatchBaselineForPatchGroupResult { "BaselineId": (NullOrUndefined Nothing), "PatchGroup": (NullOrUndefined Nothing) }
+newRegisterPatchBaselineForPatchGroupResult  = RegisterPatchBaselineForPatchGroupResult { "BaselineId": Nothing, "PatchGroup": Nothing }
 
 -- | Constructs RegisterPatchBaselineForPatchGroupResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRegisterPatchBaselineForPatchGroupResult' :: ( { "BaselineId" :: NullOrUndefined (BaselineId) , "PatchGroup" :: NullOrUndefined (PatchGroup) } -> {"BaselineId" :: NullOrUndefined (BaselineId) , "PatchGroup" :: NullOrUndefined (PatchGroup) } ) -> RegisterPatchBaselineForPatchGroupResult
-newRegisterPatchBaselineForPatchGroupResult'  customize = (RegisterPatchBaselineForPatchGroupResult <<< customize) { "BaselineId": (NullOrUndefined Nothing), "PatchGroup": (NullOrUndefined Nothing) }
+newRegisterPatchBaselineForPatchGroupResult' :: ( { "BaselineId" :: Maybe (BaselineId) , "PatchGroup" :: Maybe (PatchGroup) } -> {"BaselineId" :: Maybe (BaselineId) , "PatchGroup" :: Maybe (PatchGroup) } ) -> RegisterPatchBaselineForPatchGroupResult
+newRegisterPatchBaselineForPatchGroupResult'  customize = (RegisterPatchBaselineForPatchGroupResult <<< customize) { "BaselineId": Nothing, "PatchGroup": Nothing }
 
 
 
@@ -9692,10 +9691,10 @@ newtype RegisterTargetWithMaintenanceWindowRequest = RegisterTargetWithMaintenan
   { "WindowId" :: (MaintenanceWindowId)
   , "ResourceType" :: (MaintenanceWindowResourceType)
   , "Targets" :: (Targets)
-  , "OwnerInformation" :: NullOrUndefined (OwnerInformation)
-  , "Name" :: NullOrUndefined (MaintenanceWindowName)
-  , "Description" :: NullOrUndefined (MaintenanceWindowDescription)
-  , "ClientToken" :: NullOrUndefined (ClientToken)
+  , "OwnerInformation" :: Maybe (OwnerInformation)
+  , "Name" :: Maybe (MaintenanceWindowName)
+  , "Description" :: Maybe (MaintenanceWindowDescription)
+  , "ClientToken" :: Maybe (ClientToken)
   }
 derive instance newtypeRegisterTargetWithMaintenanceWindowRequest :: Newtype RegisterTargetWithMaintenanceWindowRequest _
 derive instance repGenericRegisterTargetWithMaintenanceWindowRequest :: Generic RegisterTargetWithMaintenanceWindowRequest _
@@ -9705,17 +9704,17 @@ instance encodeRegisterTargetWithMaintenanceWindowRequest :: Encode RegisterTarg
 
 -- | Constructs RegisterTargetWithMaintenanceWindowRequest from required parameters
 newRegisterTargetWithMaintenanceWindowRequest :: MaintenanceWindowResourceType -> Targets -> MaintenanceWindowId -> RegisterTargetWithMaintenanceWindowRequest
-newRegisterTargetWithMaintenanceWindowRequest _ResourceType _Targets _WindowId = RegisterTargetWithMaintenanceWindowRequest { "ResourceType": _ResourceType, "Targets": _Targets, "WindowId": _WindowId, "ClientToken": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "OwnerInformation": (NullOrUndefined Nothing) }
+newRegisterTargetWithMaintenanceWindowRequest _ResourceType _Targets _WindowId = RegisterTargetWithMaintenanceWindowRequest { "ResourceType": _ResourceType, "Targets": _Targets, "WindowId": _WindowId, "ClientToken": Nothing, "Description": Nothing, "Name": Nothing, "OwnerInformation": Nothing }
 
 -- | Constructs RegisterTargetWithMaintenanceWindowRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRegisterTargetWithMaintenanceWindowRequest' :: MaintenanceWindowResourceType -> Targets -> MaintenanceWindowId -> ( { "WindowId" :: (MaintenanceWindowId) , "ResourceType" :: (MaintenanceWindowResourceType) , "Targets" :: (Targets) , "OwnerInformation" :: NullOrUndefined (OwnerInformation) , "Name" :: NullOrUndefined (MaintenanceWindowName) , "Description" :: NullOrUndefined (MaintenanceWindowDescription) , "ClientToken" :: NullOrUndefined (ClientToken) } -> {"WindowId" :: (MaintenanceWindowId) , "ResourceType" :: (MaintenanceWindowResourceType) , "Targets" :: (Targets) , "OwnerInformation" :: NullOrUndefined (OwnerInformation) , "Name" :: NullOrUndefined (MaintenanceWindowName) , "Description" :: NullOrUndefined (MaintenanceWindowDescription) , "ClientToken" :: NullOrUndefined (ClientToken) } ) -> RegisterTargetWithMaintenanceWindowRequest
-newRegisterTargetWithMaintenanceWindowRequest' _ResourceType _Targets _WindowId customize = (RegisterTargetWithMaintenanceWindowRequest <<< customize) { "ResourceType": _ResourceType, "Targets": _Targets, "WindowId": _WindowId, "ClientToken": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "OwnerInformation": (NullOrUndefined Nothing) }
+newRegisterTargetWithMaintenanceWindowRequest' :: MaintenanceWindowResourceType -> Targets -> MaintenanceWindowId -> ( { "WindowId" :: (MaintenanceWindowId) , "ResourceType" :: (MaintenanceWindowResourceType) , "Targets" :: (Targets) , "OwnerInformation" :: Maybe (OwnerInformation) , "Name" :: Maybe (MaintenanceWindowName) , "Description" :: Maybe (MaintenanceWindowDescription) , "ClientToken" :: Maybe (ClientToken) } -> {"WindowId" :: (MaintenanceWindowId) , "ResourceType" :: (MaintenanceWindowResourceType) , "Targets" :: (Targets) , "OwnerInformation" :: Maybe (OwnerInformation) , "Name" :: Maybe (MaintenanceWindowName) , "Description" :: Maybe (MaintenanceWindowDescription) , "ClientToken" :: Maybe (ClientToken) } ) -> RegisterTargetWithMaintenanceWindowRequest
+newRegisterTargetWithMaintenanceWindowRequest' _ResourceType _Targets _WindowId customize = (RegisterTargetWithMaintenanceWindowRequest <<< customize) { "ResourceType": _ResourceType, "Targets": _Targets, "WindowId": _WindowId, "ClientToken": Nothing, "Description": Nothing, "Name": Nothing, "OwnerInformation": Nothing }
 
 
 
 newtype RegisterTargetWithMaintenanceWindowResult = RegisterTargetWithMaintenanceWindowResult 
-  { "WindowTargetId" :: NullOrUndefined (MaintenanceWindowTargetId)
+  { "WindowTargetId" :: Maybe (MaintenanceWindowTargetId)
   }
 derive instance newtypeRegisterTargetWithMaintenanceWindowResult :: Newtype RegisterTargetWithMaintenanceWindowResult _
 derive instance repGenericRegisterTargetWithMaintenanceWindowResult :: Generic RegisterTargetWithMaintenanceWindowResult _
@@ -9725,12 +9724,12 @@ instance encodeRegisterTargetWithMaintenanceWindowResult :: Encode RegisterTarge
 
 -- | Constructs RegisterTargetWithMaintenanceWindowResult from required parameters
 newRegisterTargetWithMaintenanceWindowResult :: RegisterTargetWithMaintenanceWindowResult
-newRegisterTargetWithMaintenanceWindowResult  = RegisterTargetWithMaintenanceWindowResult { "WindowTargetId": (NullOrUndefined Nothing) }
+newRegisterTargetWithMaintenanceWindowResult  = RegisterTargetWithMaintenanceWindowResult { "WindowTargetId": Nothing }
 
 -- | Constructs RegisterTargetWithMaintenanceWindowResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRegisterTargetWithMaintenanceWindowResult' :: ( { "WindowTargetId" :: NullOrUndefined (MaintenanceWindowTargetId) } -> {"WindowTargetId" :: NullOrUndefined (MaintenanceWindowTargetId) } ) -> RegisterTargetWithMaintenanceWindowResult
-newRegisterTargetWithMaintenanceWindowResult'  customize = (RegisterTargetWithMaintenanceWindowResult <<< customize) { "WindowTargetId": (NullOrUndefined Nothing) }
+newRegisterTargetWithMaintenanceWindowResult' :: ( { "WindowTargetId" :: Maybe (MaintenanceWindowTargetId) } -> {"WindowTargetId" :: Maybe (MaintenanceWindowTargetId) } ) -> RegisterTargetWithMaintenanceWindowResult
+newRegisterTargetWithMaintenanceWindowResult'  customize = (RegisterTargetWithMaintenanceWindowResult <<< customize) { "WindowTargetId": Nothing }
 
 
 
@@ -9740,15 +9739,15 @@ newtype RegisterTaskWithMaintenanceWindowRequest = RegisterTaskWithMaintenanceWi
   , "TaskArn" :: (MaintenanceWindowTaskArn)
   , "ServiceRoleArn" :: (ServiceRole)
   , "TaskType" :: (MaintenanceWindowTaskType)
-  , "TaskParameters" :: NullOrUndefined (MaintenanceWindowTaskParameters)
-  , "TaskInvocationParameters" :: NullOrUndefined (MaintenanceWindowTaskInvocationParameters)
-  , "Priority" :: NullOrUndefined (MaintenanceWindowTaskPriority)
+  , "TaskParameters" :: Maybe (MaintenanceWindowTaskParameters)
+  , "TaskInvocationParameters" :: Maybe (MaintenanceWindowTaskInvocationParameters)
+  , "Priority" :: Maybe (MaintenanceWindowTaskPriority)
   , "MaxConcurrency" :: (MaxConcurrency)
   , "MaxErrors" :: (MaxErrors)
-  , "LoggingInfo" :: NullOrUndefined (LoggingInfo)
-  , "Name" :: NullOrUndefined (MaintenanceWindowName)
-  , "Description" :: NullOrUndefined (MaintenanceWindowDescription)
-  , "ClientToken" :: NullOrUndefined (ClientToken)
+  , "LoggingInfo" :: Maybe (LoggingInfo)
+  , "Name" :: Maybe (MaintenanceWindowName)
+  , "Description" :: Maybe (MaintenanceWindowDescription)
+  , "ClientToken" :: Maybe (ClientToken)
   }
 derive instance newtypeRegisterTaskWithMaintenanceWindowRequest :: Newtype RegisterTaskWithMaintenanceWindowRequest _
 derive instance repGenericRegisterTaskWithMaintenanceWindowRequest :: Generic RegisterTaskWithMaintenanceWindowRequest _
@@ -9758,17 +9757,17 @@ instance encodeRegisterTaskWithMaintenanceWindowRequest :: Encode RegisterTaskWi
 
 -- | Constructs RegisterTaskWithMaintenanceWindowRequest from required parameters
 newRegisterTaskWithMaintenanceWindowRequest :: MaxConcurrency -> MaxErrors -> ServiceRole -> Targets -> MaintenanceWindowTaskArn -> MaintenanceWindowTaskType -> MaintenanceWindowId -> RegisterTaskWithMaintenanceWindowRequest
-newRegisterTaskWithMaintenanceWindowRequest _MaxConcurrency _MaxErrors _ServiceRoleArn _Targets _TaskArn _TaskType _WindowId = RegisterTaskWithMaintenanceWindowRequest { "MaxConcurrency": _MaxConcurrency, "MaxErrors": _MaxErrors, "ServiceRoleArn": _ServiceRoleArn, "Targets": _Targets, "TaskArn": _TaskArn, "TaskType": _TaskType, "WindowId": _WindowId, "ClientToken": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "LoggingInfo": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Priority": (NullOrUndefined Nothing), "TaskInvocationParameters": (NullOrUndefined Nothing), "TaskParameters": (NullOrUndefined Nothing) }
+newRegisterTaskWithMaintenanceWindowRequest _MaxConcurrency _MaxErrors _ServiceRoleArn _Targets _TaskArn _TaskType _WindowId = RegisterTaskWithMaintenanceWindowRequest { "MaxConcurrency": _MaxConcurrency, "MaxErrors": _MaxErrors, "ServiceRoleArn": _ServiceRoleArn, "Targets": _Targets, "TaskArn": _TaskArn, "TaskType": _TaskType, "WindowId": _WindowId, "ClientToken": Nothing, "Description": Nothing, "LoggingInfo": Nothing, "Name": Nothing, "Priority": Nothing, "TaskInvocationParameters": Nothing, "TaskParameters": Nothing }
 
 -- | Constructs RegisterTaskWithMaintenanceWindowRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRegisterTaskWithMaintenanceWindowRequest' :: MaxConcurrency -> MaxErrors -> ServiceRole -> Targets -> MaintenanceWindowTaskArn -> MaintenanceWindowTaskType -> MaintenanceWindowId -> ( { "WindowId" :: (MaintenanceWindowId) , "Targets" :: (Targets) , "TaskArn" :: (MaintenanceWindowTaskArn) , "ServiceRoleArn" :: (ServiceRole) , "TaskType" :: (MaintenanceWindowTaskType) , "TaskParameters" :: NullOrUndefined (MaintenanceWindowTaskParameters) , "TaskInvocationParameters" :: NullOrUndefined (MaintenanceWindowTaskInvocationParameters) , "Priority" :: NullOrUndefined (MaintenanceWindowTaskPriority) , "MaxConcurrency" :: (MaxConcurrency) , "MaxErrors" :: (MaxErrors) , "LoggingInfo" :: NullOrUndefined (LoggingInfo) , "Name" :: NullOrUndefined (MaintenanceWindowName) , "Description" :: NullOrUndefined (MaintenanceWindowDescription) , "ClientToken" :: NullOrUndefined (ClientToken) } -> {"WindowId" :: (MaintenanceWindowId) , "Targets" :: (Targets) , "TaskArn" :: (MaintenanceWindowTaskArn) , "ServiceRoleArn" :: (ServiceRole) , "TaskType" :: (MaintenanceWindowTaskType) , "TaskParameters" :: NullOrUndefined (MaintenanceWindowTaskParameters) , "TaskInvocationParameters" :: NullOrUndefined (MaintenanceWindowTaskInvocationParameters) , "Priority" :: NullOrUndefined (MaintenanceWindowTaskPriority) , "MaxConcurrency" :: (MaxConcurrency) , "MaxErrors" :: (MaxErrors) , "LoggingInfo" :: NullOrUndefined (LoggingInfo) , "Name" :: NullOrUndefined (MaintenanceWindowName) , "Description" :: NullOrUndefined (MaintenanceWindowDescription) , "ClientToken" :: NullOrUndefined (ClientToken) } ) -> RegisterTaskWithMaintenanceWindowRequest
-newRegisterTaskWithMaintenanceWindowRequest' _MaxConcurrency _MaxErrors _ServiceRoleArn _Targets _TaskArn _TaskType _WindowId customize = (RegisterTaskWithMaintenanceWindowRequest <<< customize) { "MaxConcurrency": _MaxConcurrency, "MaxErrors": _MaxErrors, "ServiceRoleArn": _ServiceRoleArn, "Targets": _Targets, "TaskArn": _TaskArn, "TaskType": _TaskType, "WindowId": _WindowId, "ClientToken": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "LoggingInfo": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Priority": (NullOrUndefined Nothing), "TaskInvocationParameters": (NullOrUndefined Nothing), "TaskParameters": (NullOrUndefined Nothing) }
+newRegisterTaskWithMaintenanceWindowRequest' :: MaxConcurrency -> MaxErrors -> ServiceRole -> Targets -> MaintenanceWindowTaskArn -> MaintenanceWindowTaskType -> MaintenanceWindowId -> ( { "WindowId" :: (MaintenanceWindowId) , "Targets" :: (Targets) , "TaskArn" :: (MaintenanceWindowTaskArn) , "ServiceRoleArn" :: (ServiceRole) , "TaskType" :: (MaintenanceWindowTaskType) , "TaskParameters" :: Maybe (MaintenanceWindowTaskParameters) , "TaskInvocationParameters" :: Maybe (MaintenanceWindowTaskInvocationParameters) , "Priority" :: Maybe (MaintenanceWindowTaskPriority) , "MaxConcurrency" :: (MaxConcurrency) , "MaxErrors" :: (MaxErrors) , "LoggingInfo" :: Maybe (LoggingInfo) , "Name" :: Maybe (MaintenanceWindowName) , "Description" :: Maybe (MaintenanceWindowDescription) , "ClientToken" :: Maybe (ClientToken) } -> {"WindowId" :: (MaintenanceWindowId) , "Targets" :: (Targets) , "TaskArn" :: (MaintenanceWindowTaskArn) , "ServiceRoleArn" :: (ServiceRole) , "TaskType" :: (MaintenanceWindowTaskType) , "TaskParameters" :: Maybe (MaintenanceWindowTaskParameters) , "TaskInvocationParameters" :: Maybe (MaintenanceWindowTaskInvocationParameters) , "Priority" :: Maybe (MaintenanceWindowTaskPriority) , "MaxConcurrency" :: (MaxConcurrency) , "MaxErrors" :: (MaxErrors) , "LoggingInfo" :: Maybe (LoggingInfo) , "Name" :: Maybe (MaintenanceWindowName) , "Description" :: Maybe (MaintenanceWindowDescription) , "ClientToken" :: Maybe (ClientToken) } ) -> RegisterTaskWithMaintenanceWindowRequest
+newRegisterTaskWithMaintenanceWindowRequest' _MaxConcurrency _MaxErrors _ServiceRoleArn _Targets _TaskArn _TaskType _WindowId customize = (RegisterTaskWithMaintenanceWindowRequest <<< customize) { "MaxConcurrency": _MaxConcurrency, "MaxErrors": _MaxErrors, "ServiceRoleArn": _ServiceRoleArn, "Targets": _Targets, "TaskArn": _TaskArn, "TaskType": _TaskType, "WindowId": _WindowId, "ClientToken": Nothing, "Description": Nothing, "LoggingInfo": Nothing, "Name": Nothing, "Priority": Nothing, "TaskInvocationParameters": Nothing, "TaskParameters": Nothing }
 
 
 
 newtype RegisterTaskWithMaintenanceWindowResult = RegisterTaskWithMaintenanceWindowResult 
-  { "WindowTaskId" :: NullOrUndefined (MaintenanceWindowTaskId)
+  { "WindowTaskId" :: Maybe (MaintenanceWindowTaskId)
   }
 derive instance newtypeRegisterTaskWithMaintenanceWindowResult :: Newtype RegisterTaskWithMaintenanceWindowResult _
 derive instance repGenericRegisterTaskWithMaintenanceWindowResult :: Generic RegisterTaskWithMaintenanceWindowResult _
@@ -9778,12 +9777,12 @@ instance encodeRegisterTaskWithMaintenanceWindowResult :: Encode RegisterTaskWit
 
 -- | Constructs RegisterTaskWithMaintenanceWindowResult from required parameters
 newRegisterTaskWithMaintenanceWindowResult :: RegisterTaskWithMaintenanceWindowResult
-newRegisterTaskWithMaintenanceWindowResult  = RegisterTaskWithMaintenanceWindowResult { "WindowTaskId": (NullOrUndefined Nothing) }
+newRegisterTaskWithMaintenanceWindowResult  = RegisterTaskWithMaintenanceWindowResult { "WindowTaskId": Nothing }
 
 -- | Constructs RegisterTaskWithMaintenanceWindowResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRegisterTaskWithMaintenanceWindowResult' :: ( { "WindowTaskId" :: NullOrUndefined (MaintenanceWindowTaskId) } -> {"WindowTaskId" :: NullOrUndefined (MaintenanceWindowTaskId) } ) -> RegisterTaskWithMaintenanceWindowResult
-newRegisterTaskWithMaintenanceWindowResult'  customize = (RegisterTaskWithMaintenanceWindowResult <<< customize) { "WindowTaskId": (NullOrUndefined Nothing) }
+newRegisterTaskWithMaintenanceWindowResult' :: ( { "WindowTaskId" :: Maybe (MaintenanceWindowTaskId) } -> {"WindowTaskId" :: Maybe (MaintenanceWindowTaskId) } ) -> RegisterTaskWithMaintenanceWindowResult
+newRegisterTaskWithMaintenanceWindowResult'  customize = (RegisterTaskWithMaintenanceWindowResult <<< customize) { "WindowTaskId": Nothing }
 
 
 
@@ -9838,8 +9837,8 @@ instance encodeRemoveTagsFromResourceResult :: Encode RemoveTagsFromResourceResu
 
 -- | <p>Information about targets that resolved during the Automation execution.</p>
 newtype ResolvedTargets = ResolvedTargets 
-  { "ParameterValues" :: NullOrUndefined (TargetParameterList)
-  , "Truncated" :: NullOrUndefined (Boolean)
+  { "ParameterValues" :: Maybe (TargetParameterList)
+  , "Truncated" :: Maybe (Boolean)
   }
 derive instance newtypeResolvedTargets :: Newtype ResolvedTargets _
 derive instance repGenericResolvedTargets :: Generic ResolvedTargets _
@@ -9849,25 +9848,25 @@ instance encodeResolvedTargets :: Encode ResolvedTargets where encode = genericE
 
 -- | Constructs ResolvedTargets from required parameters
 newResolvedTargets :: ResolvedTargets
-newResolvedTargets  = ResolvedTargets { "ParameterValues": (NullOrUndefined Nothing), "Truncated": (NullOrUndefined Nothing) }
+newResolvedTargets  = ResolvedTargets { "ParameterValues": Nothing, "Truncated": Nothing }
 
 -- | Constructs ResolvedTargets's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newResolvedTargets' :: ( { "ParameterValues" :: NullOrUndefined (TargetParameterList) , "Truncated" :: NullOrUndefined (Boolean) } -> {"ParameterValues" :: NullOrUndefined (TargetParameterList) , "Truncated" :: NullOrUndefined (Boolean) } ) -> ResolvedTargets
-newResolvedTargets'  customize = (ResolvedTargets <<< customize) { "ParameterValues": (NullOrUndefined Nothing), "Truncated": (NullOrUndefined Nothing) }
+newResolvedTargets' :: ( { "ParameterValues" :: Maybe (TargetParameterList) , "Truncated" :: Maybe (Boolean) } -> {"ParameterValues" :: Maybe (TargetParameterList) , "Truncated" :: Maybe (Boolean) } ) -> ResolvedTargets
+newResolvedTargets'  customize = (ResolvedTargets <<< customize) { "ParameterValues": Nothing, "Truncated": Nothing }
 
 
 
 -- | <p>Compliance summary information for a specific resource. </p>
 newtype ResourceComplianceSummaryItem = ResourceComplianceSummaryItem 
-  { "ComplianceType" :: NullOrUndefined (ComplianceTypeName)
-  , "ResourceType" :: NullOrUndefined (ComplianceResourceType)
-  , "ResourceId" :: NullOrUndefined (ComplianceResourceId)
-  , "Status" :: NullOrUndefined (ComplianceStatus)
-  , "OverallSeverity" :: NullOrUndefined (ComplianceSeverity)
-  , "ExecutionSummary" :: NullOrUndefined (ComplianceExecutionSummary)
-  , "CompliantSummary" :: NullOrUndefined (CompliantSummary)
-  , "NonCompliantSummary" :: NullOrUndefined (NonCompliantSummary)
+  { "ComplianceType" :: Maybe (ComplianceTypeName)
+  , "ResourceType" :: Maybe (ComplianceResourceType)
+  , "ResourceId" :: Maybe (ComplianceResourceId)
+  , "Status" :: Maybe (ComplianceStatus)
+  , "OverallSeverity" :: Maybe (ComplianceSeverity)
+  , "ExecutionSummary" :: Maybe (ComplianceExecutionSummary)
+  , "CompliantSummary" :: Maybe (CompliantSummary)
+  , "NonCompliantSummary" :: Maybe (NonCompliantSummary)
   }
 derive instance newtypeResourceComplianceSummaryItem :: Newtype ResourceComplianceSummaryItem _
 derive instance repGenericResourceComplianceSummaryItem :: Generic ResourceComplianceSummaryItem _
@@ -9877,12 +9876,12 @@ instance encodeResourceComplianceSummaryItem :: Encode ResourceComplianceSummary
 
 -- | Constructs ResourceComplianceSummaryItem from required parameters
 newResourceComplianceSummaryItem :: ResourceComplianceSummaryItem
-newResourceComplianceSummaryItem  = ResourceComplianceSummaryItem { "ComplianceType": (NullOrUndefined Nothing), "CompliantSummary": (NullOrUndefined Nothing), "ExecutionSummary": (NullOrUndefined Nothing), "NonCompliantSummary": (NullOrUndefined Nothing), "OverallSeverity": (NullOrUndefined Nothing), "ResourceId": (NullOrUndefined Nothing), "ResourceType": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newResourceComplianceSummaryItem  = ResourceComplianceSummaryItem { "ComplianceType": Nothing, "CompliantSummary": Nothing, "ExecutionSummary": Nothing, "NonCompliantSummary": Nothing, "OverallSeverity": Nothing, "ResourceId": Nothing, "ResourceType": Nothing, "Status": Nothing }
 
 -- | Constructs ResourceComplianceSummaryItem's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newResourceComplianceSummaryItem' :: ( { "ComplianceType" :: NullOrUndefined (ComplianceTypeName) , "ResourceType" :: NullOrUndefined (ComplianceResourceType) , "ResourceId" :: NullOrUndefined (ComplianceResourceId) , "Status" :: NullOrUndefined (ComplianceStatus) , "OverallSeverity" :: NullOrUndefined (ComplianceSeverity) , "ExecutionSummary" :: NullOrUndefined (ComplianceExecutionSummary) , "CompliantSummary" :: NullOrUndefined (CompliantSummary) , "NonCompliantSummary" :: NullOrUndefined (NonCompliantSummary) } -> {"ComplianceType" :: NullOrUndefined (ComplianceTypeName) , "ResourceType" :: NullOrUndefined (ComplianceResourceType) , "ResourceId" :: NullOrUndefined (ComplianceResourceId) , "Status" :: NullOrUndefined (ComplianceStatus) , "OverallSeverity" :: NullOrUndefined (ComplianceSeverity) , "ExecutionSummary" :: NullOrUndefined (ComplianceExecutionSummary) , "CompliantSummary" :: NullOrUndefined (CompliantSummary) , "NonCompliantSummary" :: NullOrUndefined (NonCompliantSummary) } ) -> ResourceComplianceSummaryItem
-newResourceComplianceSummaryItem'  customize = (ResourceComplianceSummaryItem <<< customize) { "ComplianceType": (NullOrUndefined Nothing), "CompliantSummary": (NullOrUndefined Nothing), "ExecutionSummary": (NullOrUndefined Nothing), "NonCompliantSummary": (NullOrUndefined Nothing), "OverallSeverity": (NullOrUndefined Nothing), "ResourceId": (NullOrUndefined Nothing), "ResourceType": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newResourceComplianceSummaryItem' :: ( { "ComplianceType" :: Maybe (ComplianceTypeName) , "ResourceType" :: Maybe (ComplianceResourceType) , "ResourceId" :: Maybe (ComplianceResourceId) , "Status" :: Maybe (ComplianceStatus) , "OverallSeverity" :: Maybe (ComplianceSeverity) , "ExecutionSummary" :: Maybe (ComplianceExecutionSummary) , "CompliantSummary" :: Maybe (CompliantSummary) , "NonCompliantSummary" :: Maybe (NonCompliantSummary) } -> {"ComplianceType" :: Maybe (ComplianceTypeName) , "ResourceType" :: Maybe (ComplianceResourceType) , "ResourceId" :: Maybe (ComplianceResourceId) , "Status" :: Maybe (ComplianceStatus) , "OverallSeverity" :: Maybe (ComplianceSeverity) , "ExecutionSummary" :: Maybe (ComplianceExecutionSummary) , "CompliantSummary" :: Maybe (CompliantSummary) , "NonCompliantSummary" :: Maybe (NonCompliantSummary) } ) -> ResourceComplianceSummaryItem
+newResourceComplianceSummaryItem'  customize = (ResourceComplianceSummaryItem <<< customize) { "ComplianceType": Nothing, "CompliantSummary": Nothing, "ExecutionSummary": Nothing, "NonCompliantSummary": Nothing, "OverallSeverity": Nothing, "ResourceId": Nothing, "ResourceType": Nothing, "Status": Nothing }
 
 
 
@@ -9906,7 +9905,7 @@ instance encodeResourceDataSyncAWSKMSKeyARN :: Encode ResourceDataSyncAWSKMSKeyA
 
 -- | <p>A sync configuration with the same name already exists.</p>
 newtype ResourceDataSyncAlreadyExistsException = ResourceDataSyncAlreadyExistsException 
-  { "SyncName" :: NullOrUndefined (ResourceDataSyncName)
+  { "SyncName" :: Maybe (ResourceDataSyncName)
   }
 derive instance newtypeResourceDataSyncAlreadyExistsException :: Newtype ResourceDataSyncAlreadyExistsException _
 derive instance repGenericResourceDataSyncAlreadyExistsException :: Generic ResourceDataSyncAlreadyExistsException _
@@ -9916,18 +9915,18 @@ instance encodeResourceDataSyncAlreadyExistsException :: Encode ResourceDataSync
 
 -- | Constructs ResourceDataSyncAlreadyExistsException from required parameters
 newResourceDataSyncAlreadyExistsException :: ResourceDataSyncAlreadyExistsException
-newResourceDataSyncAlreadyExistsException  = ResourceDataSyncAlreadyExistsException { "SyncName": (NullOrUndefined Nothing) }
+newResourceDataSyncAlreadyExistsException  = ResourceDataSyncAlreadyExistsException { "SyncName": Nothing }
 
 -- | Constructs ResourceDataSyncAlreadyExistsException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newResourceDataSyncAlreadyExistsException' :: ( { "SyncName" :: NullOrUndefined (ResourceDataSyncName) } -> {"SyncName" :: NullOrUndefined (ResourceDataSyncName) } ) -> ResourceDataSyncAlreadyExistsException
-newResourceDataSyncAlreadyExistsException'  customize = (ResourceDataSyncAlreadyExistsException <<< customize) { "SyncName": (NullOrUndefined Nothing) }
+newResourceDataSyncAlreadyExistsException' :: ( { "SyncName" :: Maybe (ResourceDataSyncName) } -> {"SyncName" :: Maybe (ResourceDataSyncName) } ) -> ResourceDataSyncAlreadyExistsException
+newResourceDataSyncAlreadyExistsException'  customize = (ResourceDataSyncAlreadyExistsException <<< customize) { "SyncName": Nothing }
 
 
 
 -- | <p>You have exceeded the allowed maximum sync configurations.</p>
 newtype ResourceDataSyncCountExceededException = ResourceDataSyncCountExceededException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeResourceDataSyncCountExceededException :: Newtype ResourceDataSyncCountExceededException _
 derive instance repGenericResourceDataSyncCountExceededException :: Generic ResourceDataSyncCountExceededException _
@@ -9937,12 +9936,12 @@ instance encodeResourceDataSyncCountExceededException :: Encode ResourceDataSync
 
 -- | Constructs ResourceDataSyncCountExceededException from required parameters
 newResourceDataSyncCountExceededException :: ResourceDataSyncCountExceededException
-newResourceDataSyncCountExceededException  = ResourceDataSyncCountExceededException { "Message": (NullOrUndefined Nothing) }
+newResourceDataSyncCountExceededException  = ResourceDataSyncCountExceededException { "Message": Nothing }
 
 -- | Constructs ResourceDataSyncCountExceededException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newResourceDataSyncCountExceededException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> ResourceDataSyncCountExceededException
-newResourceDataSyncCountExceededException'  customize = (ResourceDataSyncCountExceededException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newResourceDataSyncCountExceededException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> ResourceDataSyncCountExceededException
+newResourceDataSyncCountExceededException'  customize = (ResourceDataSyncCountExceededException <<< customize) { "Message": Nothing }
 
 
 
@@ -9957,7 +9956,7 @@ instance encodeResourceDataSyncCreatedTime :: Encode ResourceDataSyncCreatedTime
 
 -- | <p>The specified sync configuration is invalid.</p>
 newtype ResourceDataSyncInvalidConfigurationException = ResourceDataSyncInvalidConfigurationException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeResourceDataSyncInvalidConfigurationException :: Newtype ResourceDataSyncInvalidConfigurationException _
 derive instance repGenericResourceDataSyncInvalidConfigurationException :: Generic ResourceDataSyncInvalidConfigurationException _
@@ -9967,24 +9966,24 @@ instance encodeResourceDataSyncInvalidConfigurationException :: Encode ResourceD
 
 -- | Constructs ResourceDataSyncInvalidConfigurationException from required parameters
 newResourceDataSyncInvalidConfigurationException :: ResourceDataSyncInvalidConfigurationException
-newResourceDataSyncInvalidConfigurationException  = ResourceDataSyncInvalidConfigurationException { "Message": (NullOrUndefined Nothing) }
+newResourceDataSyncInvalidConfigurationException  = ResourceDataSyncInvalidConfigurationException { "Message": Nothing }
 
 -- | Constructs ResourceDataSyncInvalidConfigurationException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newResourceDataSyncInvalidConfigurationException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> ResourceDataSyncInvalidConfigurationException
-newResourceDataSyncInvalidConfigurationException'  customize = (ResourceDataSyncInvalidConfigurationException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newResourceDataSyncInvalidConfigurationException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> ResourceDataSyncInvalidConfigurationException
+newResourceDataSyncInvalidConfigurationException'  customize = (ResourceDataSyncInvalidConfigurationException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>Information about a Resource Data Sync configuration, including its current status and last successful sync.</p>
 newtype ResourceDataSyncItem = ResourceDataSyncItem 
-  { "SyncName" :: NullOrUndefined (ResourceDataSyncName)
-  , "S3Destination" :: NullOrUndefined (ResourceDataSyncS3Destination)
-  , "LastSyncTime" :: NullOrUndefined (LastResourceDataSyncTime)
-  , "LastSuccessfulSyncTime" :: NullOrUndefined (LastSuccessfulResourceDataSyncTime)
-  , "LastStatus" :: NullOrUndefined (LastResourceDataSyncStatus)
-  , "SyncCreatedTime" :: NullOrUndefined (ResourceDataSyncCreatedTime)
-  , "LastSyncStatusMessage" :: NullOrUndefined (LastResourceDataSyncMessage)
+  { "SyncName" :: Maybe (ResourceDataSyncName)
+  , "S3Destination" :: Maybe (ResourceDataSyncS3Destination)
+  , "LastSyncTime" :: Maybe (LastResourceDataSyncTime)
+  , "LastSuccessfulSyncTime" :: Maybe (LastSuccessfulResourceDataSyncTime)
+  , "LastStatus" :: Maybe (LastResourceDataSyncStatus)
+  , "SyncCreatedTime" :: Maybe (ResourceDataSyncCreatedTime)
+  , "LastSyncStatusMessage" :: Maybe (LastResourceDataSyncMessage)
   }
 derive instance newtypeResourceDataSyncItem :: Newtype ResourceDataSyncItem _
 derive instance repGenericResourceDataSyncItem :: Generic ResourceDataSyncItem _
@@ -9994,12 +9993,12 @@ instance encodeResourceDataSyncItem :: Encode ResourceDataSyncItem where encode 
 
 -- | Constructs ResourceDataSyncItem from required parameters
 newResourceDataSyncItem :: ResourceDataSyncItem
-newResourceDataSyncItem  = ResourceDataSyncItem { "LastStatus": (NullOrUndefined Nothing), "LastSuccessfulSyncTime": (NullOrUndefined Nothing), "LastSyncStatusMessage": (NullOrUndefined Nothing), "LastSyncTime": (NullOrUndefined Nothing), "S3Destination": (NullOrUndefined Nothing), "SyncCreatedTime": (NullOrUndefined Nothing), "SyncName": (NullOrUndefined Nothing) }
+newResourceDataSyncItem  = ResourceDataSyncItem { "LastStatus": Nothing, "LastSuccessfulSyncTime": Nothing, "LastSyncStatusMessage": Nothing, "LastSyncTime": Nothing, "S3Destination": Nothing, "SyncCreatedTime": Nothing, "SyncName": Nothing }
 
 -- | Constructs ResourceDataSyncItem's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newResourceDataSyncItem' :: ( { "SyncName" :: NullOrUndefined (ResourceDataSyncName) , "S3Destination" :: NullOrUndefined (ResourceDataSyncS3Destination) , "LastSyncTime" :: NullOrUndefined (LastResourceDataSyncTime) , "LastSuccessfulSyncTime" :: NullOrUndefined (LastSuccessfulResourceDataSyncTime) , "LastStatus" :: NullOrUndefined (LastResourceDataSyncStatus) , "SyncCreatedTime" :: NullOrUndefined (ResourceDataSyncCreatedTime) , "LastSyncStatusMessage" :: NullOrUndefined (LastResourceDataSyncMessage) } -> {"SyncName" :: NullOrUndefined (ResourceDataSyncName) , "S3Destination" :: NullOrUndefined (ResourceDataSyncS3Destination) , "LastSyncTime" :: NullOrUndefined (LastResourceDataSyncTime) , "LastSuccessfulSyncTime" :: NullOrUndefined (LastSuccessfulResourceDataSyncTime) , "LastStatus" :: NullOrUndefined (LastResourceDataSyncStatus) , "SyncCreatedTime" :: NullOrUndefined (ResourceDataSyncCreatedTime) , "LastSyncStatusMessage" :: NullOrUndefined (LastResourceDataSyncMessage) } ) -> ResourceDataSyncItem
-newResourceDataSyncItem'  customize = (ResourceDataSyncItem <<< customize) { "LastStatus": (NullOrUndefined Nothing), "LastSuccessfulSyncTime": (NullOrUndefined Nothing), "LastSyncStatusMessage": (NullOrUndefined Nothing), "LastSyncTime": (NullOrUndefined Nothing), "S3Destination": (NullOrUndefined Nothing), "SyncCreatedTime": (NullOrUndefined Nothing), "SyncName": (NullOrUndefined Nothing) }
+newResourceDataSyncItem' :: ( { "SyncName" :: Maybe (ResourceDataSyncName) , "S3Destination" :: Maybe (ResourceDataSyncS3Destination) , "LastSyncTime" :: Maybe (LastResourceDataSyncTime) , "LastSuccessfulSyncTime" :: Maybe (LastSuccessfulResourceDataSyncTime) , "LastStatus" :: Maybe (LastResourceDataSyncStatus) , "SyncCreatedTime" :: Maybe (ResourceDataSyncCreatedTime) , "LastSyncStatusMessage" :: Maybe (LastResourceDataSyncMessage) } -> {"SyncName" :: Maybe (ResourceDataSyncName) , "S3Destination" :: Maybe (ResourceDataSyncS3Destination) , "LastSyncTime" :: Maybe (LastResourceDataSyncTime) , "LastSuccessfulSyncTime" :: Maybe (LastSuccessfulResourceDataSyncTime) , "LastStatus" :: Maybe (LastResourceDataSyncStatus) , "SyncCreatedTime" :: Maybe (ResourceDataSyncCreatedTime) , "LastSyncStatusMessage" :: Maybe (LastResourceDataSyncMessage) } ) -> ResourceDataSyncItem
+newResourceDataSyncItem'  customize = (ResourceDataSyncItem <<< customize) { "LastStatus": Nothing, "LastSuccessfulSyncTime": Nothing, "LastSyncStatusMessage": Nothing, "LastSyncTime": Nothing, "S3Destination": Nothing, "SyncCreatedTime": Nothing, "SyncName": Nothing }
 
 
 
@@ -10023,7 +10022,7 @@ instance encodeResourceDataSyncName :: Encode ResourceDataSyncName where encode 
 
 -- | <p>The specified sync name was not found.</p>
 newtype ResourceDataSyncNotFoundException = ResourceDataSyncNotFoundException 
-  { "SyncName" :: NullOrUndefined (ResourceDataSyncName)
+  { "SyncName" :: Maybe (ResourceDataSyncName)
   }
 derive instance newtypeResourceDataSyncNotFoundException :: Newtype ResourceDataSyncNotFoundException _
 derive instance repGenericResourceDataSyncNotFoundException :: Generic ResourceDataSyncNotFoundException _
@@ -10033,12 +10032,12 @@ instance encodeResourceDataSyncNotFoundException :: Encode ResourceDataSyncNotFo
 
 -- | Constructs ResourceDataSyncNotFoundException from required parameters
 newResourceDataSyncNotFoundException :: ResourceDataSyncNotFoundException
-newResourceDataSyncNotFoundException  = ResourceDataSyncNotFoundException { "SyncName": (NullOrUndefined Nothing) }
+newResourceDataSyncNotFoundException  = ResourceDataSyncNotFoundException { "SyncName": Nothing }
 
 -- | Constructs ResourceDataSyncNotFoundException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newResourceDataSyncNotFoundException' :: ( { "SyncName" :: NullOrUndefined (ResourceDataSyncName) } -> {"SyncName" :: NullOrUndefined (ResourceDataSyncName) } ) -> ResourceDataSyncNotFoundException
-newResourceDataSyncNotFoundException'  customize = (ResourceDataSyncNotFoundException <<< customize) { "SyncName": (NullOrUndefined Nothing) }
+newResourceDataSyncNotFoundException' :: ( { "SyncName" :: Maybe (ResourceDataSyncName) } -> {"SyncName" :: Maybe (ResourceDataSyncName) } ) -> ResourceDataSyncNotFoundException
+newResourceDataSyncNotFoundException'  customize = (ResourceDataSyncNotFoundException <<< customize) { "SyncName": Nothing }
 
 
 
@@ -10054,10 +10053,10 @@ instance encodeResourceDataSyncS3BucketName :: Encode ResourceDataSyncS3BucketNa
 -- | <p>Information about the target Amazon S3 bucket for the Resource Data Sync.</p>
 newtype ResourceDataSyncS3Destination = ResourceDataSyncS3Destination 
   { "BucketName" :: (ResourceDataSyncS3BucketName)
-  , "Prefix" :: NullOrUndefined (ResourceDataSyncS3Prefix)
+  , "Prefix" :: Maybe (ResourceDataSyncS3Prefix)
   , "SyncFormat" :: (ResourceDataSyncS3Format)
   , "Region" :: (ResourceDataSyncS3Region)
-  , "AWSKMSKeyARN" :: NullOrUndefined (ResourceDataSyncAWSKMSKeyARN)
+  , "AWSKMSKeyARN" :: Maybe (ResourceDataSyncAWSKMSKeyARN)
   }
 derive instance newtypeResourceDataSyncS3Destination :: Newtype ResourceDataSyncS3Destination _
 derive instance repGenericResourceDataSyncS3Destination :: Generic ResourceDataSyncS3Destination _
@@ -10067,12 +10066,12 @@ instance encodeResourceDataSyncS3Destination :: Encode ResourceDataSyncS3Destina
 
 -- | Constructs ResourceDataSyncS3Destination from required parameters
 newResourceDataSyncS3Destination :: ResourceDataSyncS3BucketName -> ResourceDataSyncS3Region -> ResourceDataSyncS3Format -> ResourceDataSyncS3Destination
-newResourceDataSyncS3Destination _BucketName _Region _SyncFormat = ResourceDataSyncS3Destination { "BucketName": _BucketName, "Region": _Region, "SyncFormat": _SyncFormat, "AWSKMSKeyARN": (NullOrUndefined Nothing), "Prefix": (NullOrUndefined Nothing) }
+newResourceDataSyncS3Destination _BucketName _Region _SyncFormat = ResourceDataSyncS3Destination { "BucketName": _BucketName, "Region": _Region, "SyncFormat": _SyncFormat, "AWSKMSKeyARN": Nothing, "Prefix": Nothing }
 
 -- | Constructs ResourceDataSyncS3Destination's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newResourceDataSyncS3Destination' :: ResourceDataSyncS3BucketName -> ResourceDataSyncS3Region -> ResourceDataSyncS3Format -> ( { "BucketName" :: (ResourceDataSyncS3BucketName) , "Prefix" :: NullOrUndefined (ResourceDataSyncS3Prefix) , "SyncFormat" :: (ResourceDataSyncS3Format) , "Region" :: (ResourceDataSyncS3Region) , "AWSKMSKeyARN" :: NullOrUndefined (ResourceDataSyncAWSKMSKeyARN) } -> {"BucketName" :: (ResourceDataSyncS3BucketName) , "Prefix" :: NullOrUndefined (ResourceDataSyncS3Prefix) , "SyncFormat" :: (ResourceDataSyncS3Format) , "Region" :: (ResourceDataSyncS3Region) , "AWSKMSKeyARN" :: NullOrUndefined (ResourceDataSyncAWSKMSKeyARN) } ) -> ResourceDataSyncS3Destination
-newResourceDataSyncS3Destination' _BucketName _Region _SyncFormat customize = (ResourceDataSyncS3Destination <<< customize) { "BucketName": _BucketName, "Region": _Region, "SyncFormat": _SyncFormat, "AWSKMSKeyARN": (NullOrUndefined Nothing), "Prefix": (NullOrUndefined Nothing) }
+newResourceDataSyncS3Destination' :: ResourceDataSyncS3BucketName -> ResourceDataSyncS3Region -> ResourceDataSyncS3Format -> ( { "BucketName" :: (ResourceDataSyncS3BucketName) , "Prefix" :: Maybe (ResourceDataSyncS3Prefix) , "SyncFormat" :: (ResourceDataSyncS3Format) , "Region" :: (ResourceDataSyncS3Region) , "AWSKMSKeyARN" :: Maybe (ResourceDataSyncAWSKMSKeyARN) } -> {"BucketName" :: (ResourceDataSyncS3BucketName) , "Prefix" :: Maybe (ResourceDataSyncS3Prefix) , "SyncFormat" :: (ResourceDataSyncS3Format) , "Region" :: (ResourceDataSyncS3Region) , "AWSKMSKeyARN" :: Maybe (ResourceDataSyncAWSKMSKeyARN) } ) -> ResourceDataSyncS3Destination
+newResourceDataSyncS3Destination' _BucketName _Region _SyncFormat customize = (ResourceDataSyncS3Destination <<< customize) { "BucketName": _BucketName, "Region": _Region, "SyncFormat": _SyncFormat, "AWSKMSKeyARN": Nothing, "Prefix": Nothing }
 
 
 
@@ -10114,7 +10113,7 @@ instance encodeResourceId :: Encode ResourceId where encode = genericEncode opti
 
 -- | <p>Error returned if an attempt is made to delete a patch baseline that is registered for a patch group.</p>
 newtype ResourceInUseException = ResourceInUseException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeResourceInUseException :: Newtype ResourceInUseException _
 derive instance repGenericResourceInUseException :: Generic ResourceInUseException _
@@ -10124,18 +10123,18 @@ instance encodeResourceInUseException :: Encode ResourceInUseException where enc
 
 -- | Constructs ResourceInUseException from required parameters
 newResourceInUseException :: ResourceInUseException
-newResourceInUseException  = ResourceInUseException { "Message": (NullOrUndefined Nothing) }
+newResourceInUseException  = ResourceInUseException { "Message": Nothing }
 
 -- | Constructs ResourceInUseException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newResourceInUseException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> ResourceInUseException
-newResourceInUseException'  customize = (ResourceInUseException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newResourceInUseException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> ResourceInUseException
+newResourceInUseException'  customize = (ResourceInUseException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>Error returned when the caller has exceeded the default resource limits. For example, too many Maintenance Windows or Patch baselines have been created.</p> <p>For information about resource limits in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems Manager Limits</a>.</p>
 newtype ResourceLimitExceededException = ResourceLimitExceededException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeResourceLimitExceededException :: Newtype ResourceLimitExceededException _
 derive instance repGenericResourceLimitExceededException :: Generic ResourceLimitExceededException _
@@ -10145,12 +10144,12 @@ instance encodeResourceLimitExceededException :: Encode ResourceLimitExceededExc
 
 -- | Constructs ResourceLimitExceededException from required parameters
 newResourceLimitExceededException :: ResourceLimitExceededException
-newResourceLimitExceededException  = ResourceLimitExceededException { "Message": (NullOrUndefined Nothing) }
+newResourceLimitExceededException  = ResourceLimitExceededException { "Message": Nothing }
 
 -- | Constructs ResourceLimitExceededException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newResourceLimitExceededException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> ResourceLimitExceededException
-newResourceLimitExceededException'  customize = (ResourceLimitExceededException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newResourceLimitExceededException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> ResourceLimitExceededException
+newResourceLimitExceededException'  customize = (ResourceLimitExceededException <<< customize) { "Message": Nothing }
 
 
 
@@ -10231,9 +10230,9 @@ instance encodeS3KeyPrefix :: Encode S3KeyPrefix where encode = genericEncode op
 
 -- | <p>An Amazon S3 bucket where you want to store the results of this request.</p>
 newtype S3OutputLocation = S3OutputLocation 
-  { "OutputS3Region" :: NullOrUndefined (S3Region)
-  , "OutputS3BucketName" :: NullOrUndefined (S3BucketName)
-  , "OutputS3KeyPrefix" :: NullOrUndefined (S3KeyPrefix)
+  { "OutputS3Region" :: Maybe (S3Region)
+  , "OutputS3BucketName" :: Maybe (S3BucketName)
+  , "OutputS3KeyPrefix" :: Maybe (S3KeyPrefix)
   }
 derive instance newtypeS3OutputLocation :: Newtype S3OutputLocation _
 derive instance repGenericS3OutputLocation :: Generic S3OutputLocation _
@@ -10243,18 +10242,18 @@ instance encodeS3OutputLocation :: Encode S3OutputLocation where encode = generi
 
 -- | Constructs S3OutputLocation from required parameters
 newS3OutputLocation :: S3OutputLocation
-newS3OutputLocation  = S3OutputLocation { "OutputS3BucketName": (NullOrUndefined Nothing), "OutputS3KeyPrefix": (NullOrUndefined Nothing), "OutputS3Region": (NullOrUndefined Nothing) }
+newS3OutputLocation  = S3OutputLocation { "OutputS3BucketName": Nothing, "OutputS3KeyPrefix": Nothing, "OutputS3Region": Nothing }
 
 -- | Constructs S3OutputLocation's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newS3OutputLocation' :: ( { "OutputS3Region" :: NullOrUndefined (S3Region) , "OutputS3BucketName" :: NullOrUndefined (S3BucketName) , "OutputS3KeyPrefix" :: NullOrUndefined (S3KeyPrefix) } -> {"OutputS3Region" :: NullOrUndefined (S3Region) , "OutputS3BucketName" :: NullOrUndefined (S3BucketName) , "OutputS3KeyPrefix" :: NullOrUndefined (S3KeyPrefix) } ) -> S3OutputLocation
-newS3OutputLocation'  customize = (S3OutputLocation <<< customize) { "OutputS3BucketName": (NullOrUndefined Nothing), "OutputS3KeyPrefix": (NullOrUndefined Nothing), "OutputS3Region": (NullOrUndefined Nothing) }
+newS3OutputLocation' :: ( { "OutputS3Region" :: Maybe (S3Region) , "OutputS3BucketName" :: Maybe (S3BucketName) , "OutputS3KeyPrefix" :: Maybe (S3KeyPrefix) } -> {"OutputS3Region" :: Maybe (S3Region) , "OutputS3BucketName" :: Maybe (S3BucketName) , "OutputS3KeyPrefix" :: Maybe (S3KeyPrefix) } ) -> S3OutputLocation
+newS3OutputLocation'  customize = (S3OutputLocation <<< customize) { "OutputS3BucketName": Nothing, "OutputS3KeyPrefix": Nothing, "OutputS3Region": Nothing }
 
 
 
 -- | <p>A URL for the Amazon S3 bucket where you want to store the results of this request.</p>
 newtype S3OutputUrl = S3OutputUrl 
-  { "OutputUrl" :: NullOrUndefined (Url)
+  { "OutputUrl" :: Maybe (Url)
   }
 derive instance newtypeS3OutputUrl :: Newtype S3OutputUrl _
 derive instance repGenericS3OutputUrl :: Generic S3OutputUrl _
@@ -10264,12 +10263,12 @@ instance encodeS3OutputUrl :: Encode S3OutputUrl where encode = genericEncode op
 
 -- | Constructs S3OutputUrl from required parameters
 newS3OutputUrl :: S3OutputUrl
-newS3OutputUrl  = S3OutputUrl { "OutputUrl": (NullOrUndefined Nothing) }
+newS3OutputUrl  = S3OutputUrl { "OutputUrl": Nothing }
 
 -- | Constructs S3OutputUrl's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newS3OutputUrl' :: ( { "OutputUrl" :: NullOrUndefined (Url) } -> {"OutputUrl" :: NullOrUndefined (Url) } ) -> S3OutputUrl
-newS3OutputUrl'  customize = (S3OutputUrl <<< customize) { "OutputUrl": (NullOrUndefined Nothing) }
+newS3OutputUrl' :: ( { "OutputUrl" :: Maybe (Url) } -> {"OutputUrl" :: Maybe (Url) } ) -> S3OutputUrl
+newS3OutputUrl'  customize = (S3OutputUrl <<< customize) { "OutputUrl": Nothing }
 
 
 
@@ -10294,7 +10293,7 @@ instance encodeScheduleExpression :: Encode ScheduleExpression where encode = ge
 newtype SendAutomationSignalRequest = SendAutomationSignalRequest 
   { "AutomationExecutionId" :: (AutomationExecutionId)
   , "SignalType" :: (SignalType)
-  , "Payload" :: NullOrUndefined (AutomationParameterMap)
+  , "Payload" :: Maybe (AutomationParameterMap)
   }
 derive instance newtypeSendAutomationSignalRequest :: Newtype SendAutomationSignalRequest _
 derive instance repGenericSendAutomationSignalRequest :: Generic SendAutomationSignalRequest _
@@ -10304,12 +10303,12 @@ instance encodeSendAutomationSignalRequest :: Encode SendAutomationSignalRequest
 
 -- | Constructs SendAutomationSignalRequest from required parameters
 newSendAutomationSignalRequest :: AutomationExecutionId -> SignalType -> SendAutomationSignalRequest
-newSendAutomationSignalRequest _AutomationExecutionId _SignalType = SendAutomationSignalRequest { "AutomationExecutionId": _AutomationExecutionId, "SignalType": _SignalType, "Payload": (NullOrUndefined Nothing) }
+newSendAutomationSignalRequest _AutomationExecutionId _SignalType = SendAutomationSignalRequest { "AutomationExecutionId": _AutomationExecutionId, "SignalType": _SignalType, "Payload": Nothing }
 
 -- | Constructs SendAutomationSignalRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSendAutomationSignalRequest' :: AutomationExecutionId -> SignalType -> ( { "AutomationExecutionId" :: (AutomationExecutionId) , "SignalType" :: (SignalType) , "Payload" :: NullOrUndefined (AutomationParameterMap) } -> {"AutomationExecutionId" :: (AutomationExecutionId) , "SignalType" :: (SignalType) , "Payload" :: NullOrUndefined (AutomationParameterMap) } ) -> SendAutomationSignalRequest
-newSendAutomationSignalRequest' _AutomationExecutionId _SignalType customize = (SendAutomationSignalRequest <<< customize) { "AutomationExecutionId": _AutomationExecutionId, "SignalType": _SignalType, "Payload": (NullOrUndefined Nothing) }
+newSendAutomationSignalRequest' :: AutomationExecutionId -> SignalType -> ( { "AutomationExecutionId" :: (AutomationExecutionId) , "SignalType" :: (SignalType) , "Payload" :: Maybe (AutomationParameterMap) } -> {"AutomationExecutionId" :: (AutomationExecutionId) , "SignalType" :: (SignalType) , "Payload" :: Maybe (AutomationParameterMap) } ) -> SendAutomationSignalRequest
+newSendAutomationSignalRequest' _AutomationExecutionId _SignalType customize = (SendAutomationSignalRequest <<< customize) { "AutomationExecutionId": _AutomationExecutionId, "SignalType": _SignalType, "Payload": Nothing }
 
 
 
@@ -10323,21 +10322,21 @@ instance encodeSendAutomationSignalResult :: Encode SendAutomationSignalResult w
 
 
 newtype SendCommandRequest = SendCommandRequest 
-  { "InstanceIds" :: NullOrUndefined (InstanceIdList)
-  , "Targets" :: NullOrUndefined (Targets)
+  { "InstanceIds" :: Maybe (InstanceIdList)
+  , "Targets" :: Maybe (Targets)
   , "DocumentName" :: (DocumentARN)
-  , "DocumentHash" :: NullOrUndefined (DocumentHash)
-  , "DocumentHashType" :: NullOrUndefined (DocumentHashType)
-  , "TimeoutSeconds" :: NullOrUndefined (TimeoutSeconds)
-  , "Comment" :: NullOrUndefined (Comment)
-  , "Parameters" :: NullOrUndefined (Parameters)
-  , "OutputS3Region" :: NullOrUndefined (S3Region)
-  , "OutputS3BucketName" :: NullOrUndefined (S3BucketName)
-  , "OutputS3KeyPrefix" :: NullOrUndefined (S3KeyPrefix)
-  , "MaxConcurrency" :: NullOrUndefined (MaxConcurrency)
-  , "MaxErrors" :: NullOrUndefined (MaxErrors)
-  , "ServiceRoleArn" :: NullOrUndefined (ServiceRole)
-  , "NotificationConfig" :: NullOrUndefined (NotificationConfig)
+  , "DocumentHash" :: Maybe (DocumentHash)
+  , "DocumentHashType" :: Maybe (DocumentHashType)
+  , "TimeoutSeconds" :: Maybe (TimeoutSeconds)
+  , "Comment" :: Maybe (Comment)
+  , "Parameters" :: Maybe (Parameters)
+  , "OutputS3Region" :: Maybe (S3Region)
+  , "OutputS3BucketName" :: Maybe (S3BucketName)
+  , "OutputS3KeyPrefix" :: Maybe (S3KeyPrefix)
+  , "MaxConcurrency" :: Maybe (MaxConcurrency)
+  , "MaxErrors" :: Maybe (MaxErrors)
+  , "ServiceRoleArn" :: Maybe (ServiceRole)
+  , "NotificationConfig" :: Maybe (NotificationConfig)
   }
 derive instance newtypeSendCommandRequest :: Newtype SendCommandRequest _
 derive instance repGenericSendCommandRequest :: Generic SendCommandRequest _
@@ -10347,17 +10346,17 @@ instance encodeSendCommandRequest :: Encode SendCommandRequest where encode = ge
 
 -- | Constructs SendCommandRequest from required parameters
 newSendCommandRequest :: DocumentARN -> SendCommandRequest
-newSendCommandRequest _DocumentName = SendCommandRequest { "DocumentName": _DocumentName, "Comment": (NullOrUndefined Nothing), "DocumentHash": (NullOrUndefined Nothing), "DocumentHashType": (NullOrUndefined Nothing), "InstanceIds": (NullOrUndefined Nothing), "MaxConcurrency": (NullOrUndefined Nothing), "MaxErrors": (NullOrUndefined Nothing), "NotificationConfig": (NullOrUndefined Nothing), "OutputS3BucketName": (NullOrUndefined Nothing), "OutputS3KeyPrefix": (NullOrUndefined Nothing), "OutputS3Region": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing), "ServiceRoleArn": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing), "TimeoutSeconds": (NullOrUndefined Nothing) }
+newSendCommandRequest _DocumentName = SendCommandRequest { "DocumentName": _DocumentName, "Comment": Nothing, "DocumentHash": Nothing, "DocumentHashType": Nothing, "InstanceIds": Nothing, "MaxConcurrency": Nothing, "MaxErrors": Nothing, "NotificationConfig": Nothing, "OutputS3BucketName": Nothing, "OutputS3KeyPrefix": Nothing, "OutputS3Region": Nothing, "Parameters": Nothing, "ServiceRoleArn": Nothing, "Targets": Nothing, "TimeoutSeconds": Nothing }
 
 -- | Constructs SendCommandRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSendCommandRequest' :: DocumentARN -> ( { "InstanceIds" :: NullOrUndefined (InstanceIdList) , "Targets" :: NullOrUndefined (Targets) , "DocumentName" :: (DocumentARN) , "DocumentHash" :: NullOrUndefined (DocumentHash) , "DocumentHashType" :: NullOrUndefined (DocumentHashType) , "TimeoutSeconds" :: NullOrUndefined (TimeoutSeconds) , "Comment" :: NullOrUndefined (Comment) , "Parameters" :: NullOrUndefined (Parameters) , "OutputS3Region" :: NullOrUndefined (S3Region) , "OutputS3BucketName" :: NullOrUndefined (S3BucketName) , "OutputS3KeyPrefix" :: NullOrUndefined (S3KeyPrefix) , "MaxConcurrency" :: NullOrUndefined (MaxConcurrency) , "MaxErrors" :: NullOrUndefined (MaxErrors) , "ServiceRoleArn" :: NullOrUndefined (ServiceRole) , "NotificationConfig" :: NullOrUndefined (NotificationConfig) } -> {"InstanceIds" :: NullOrUndefined (InstanceIdList) , "Targets" :: NullOrUndefined (Targets) , "DocumentName" :: (DocumentARN) , "DocumentHash" :: NullOrUndefined (DocumentHash) , "DocumentHashType" :: NullOrUndefined (DocumentHashType) , "TimeoutSeconds" :: NullOrUndefined (TimeoutSeconds) , "Comment" :: NullOrUndefined (Comment) , "Parameters" :: NullOrUndefined (Parameters) , "OutputS3Region" :: NullOrUndefined (S3Region) , "OutputS3BucketName" :: NullOrUndefined (S3BucketName) , "OutputS3KeyPrefix" :: NullOrUndefined (S3KeyPrefix) , "MaxConcurrency" :: NullOrUndefined (MaxConcurrency) , "MaxErrors" :: NullOrUndefined (MaxErrors) , "ServiceRoleArn" :: NullOrUndefined (ServiceRole) , "NotificationConfig" :: NullOrUndefined (NotificationConfig) } ) -> SendCommandRequest
-newSendCommandRequest' _DocumentName customize = (SendCommandRequest <<< customize) { "DocumentName": _DocumentName, "Comment": (NullOrUndefined Nothing), "DocumentHash": (NullOrUndefined Nothing), "DocumentHashType": (NullOrUndefined Nothing), "InstanceIds": (NullOrUndefined Nothing), "MaxConcurrency": (NullOrUndefined Nothing), "MaxErrors": (NullOrUndefined Nothing), "NotificationConfig": (NullOrUndefined Nothing), "OutputS3BucketName": (NullOrUndefined Nothing), "OutputS3KeyPrefix": (NullOrUndefined Nothing), "OutputS3Region": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing), "ServiceRoleArn": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing), "TimeoutSeconds": (NullOrUndefined Nothing) }
+newSendCommandRequest' :: DocumentARN -> ( { "InstanceIds" :: Maybe (InstanceIdList) , "Targets" :: Maybe (Targets) , "DocumentName" :: (DocumentARN) , "DocumentHash" :: Maybe (DocumentHash) , "DocumentHashType" :: Maybe (DocumentHashType) , "TimeoutSeconds" :: Maybe (TimeoutSeconds) , "Comment" :: Maybe (Comment) , "Parameters" :: Maybe (Parameters) , "OutputS3Region" :: Maybe (S3Region) , "OutputS3BucketName" :: Maybe (S3BucketName) , "OutputS3KeyPrefix" :: Maybe (S3KeyPrefix) , "MaxConcurrency" :: Maybe (MaxConcurrency) , "MaxErrors" :: Maybe (MaxErrors) , "ServiceRoleArn" :: Maybe (ServiceRole) , "NotificationConfig" :: Maybe (NotificationConfig) } -> {"InstanceIds" :: Maybe (InstanceIdList) , "Targets" :: Maybe (Targets) , "DocumentName" :: (DocumentARN) , "DocumentHash" :: Maybe (DocumentHash) , "DocumentHashType" :: Maybe (DocumentHashType) , "TimeoutSeconds" :: Maybe (TimeoutSeconds) , "Comment" :: Maybe (Comment) , "Parameters" :: Maybe (Parameters) , "OutputS3Region" :: Maybe (S3Region) , "OutputS3BucketName" :: Maybe (S3BucketName) , "OutputS3KeyPrefix" :: Maybe (S3KeyPrefix) , "MaxConcurrency" :: Maybe (MaxConcurrency) , "MaxErrors" :: Maybe (MaxErrors) , "ServiceRoleArn" :: Maybe (ServiceRole) , "NotificationConfig" :: Maybe (NotificationConfig) } ) -> SendCommandRequest
+newSendCommandRequest' _DocumentName customize = (SendCommandRequest <<< customize) { "DocumentName": _DocumentName, "Comment": Nothing, "DocumentHash": Nothing, "DocumentHashType": Nothing, "InstanceIds": Nothing, "MaxConcurrency": Nothing, "MaxErrors": Nothing, "NotificationConfig": Nothing, "OutputS3BucketName": Nothing, "OutputS3KeyPrefix": Nothing, "OutputS3Region": Nothing, "Parameters": Nothing, "ServiceRoleArn": Nothing, "Targets": Nothing, "TimeoutSeconds": Nothing }
 
 
 
 newtype SendCommandResult = SendCommandResult 
-  { "Command" :: NullOrUndefined (Command)
+  { "Command" :: Maybe (Command)
   }
 derive instance newtypeSendCommandResult :: Newtype SendCommandResult _
 derive instance repGenericSendCommandResult :: Generic SendCommandResult _
@@ -10367,12 +10366,12 @@ instance encodeSendCommandResult :: Encode SendCommandResult where encode = gene
 
 -- | Constructs SendCommandResult from required parameters
 newSendCommandResult :: SendCommandResult
-newSendCommandResult  = SendCommandResult { "Command": (NullOrUndefined Nothing) }
+newSendCommandResult  = SendCommandResult { "Command": Nothing }
 
 -- | Constructs SendCommandResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSendCommandResult' :: ( { "Command" :: NullOrUndefined (Command) } -> {"Command" :: NullOrUndefined (Command) } ) -> SendCommandResult
-newSendCommandResult'  customize = (SendCommandResult <<< customize) { "Command": (NullOrUndefined Nothing) }
+newSendCommandResult' :: ( { "Command" :: Maybe (Command) } -> {"Command" :: Maybe (Command) } ) -> SendCommandResult
+newSendCommandResult'  customize = (SendCommandResult <<< customize) { "Command": Nothing }
 
 
 
@@ -10387,12 +10386,12 @@ instance encodeServiceRole :: Encode ServiceRole where encode = genericEncode op
 
 -- | <p>The number of managed instances found for each patch severity level defined in the request filter.</p>
 newtype SeveritySummary = SeveritySummary 
-  { "CriticalCount" :: NullOrUndefined (ComplianceSummaryCount)
-  , "HighCount" :: NullOrUndefined (ComplianceSummaryCount)
-  , "MediumCount" :: NullOrUndefined (ComplianceSummaryCount)
-  , "LowCount" :: NullOrUndefined (ComplianceSummaryCount)
-  , "InformationalCount" :: NullOrUndefined (ComplianceSummaryCount)
-  , "UnspecifiedCount" :: NullOrUndefined (ComplianceSummaryCount)
+  { "CriticalCount" :: Maybe (ComplianceSummaryCount)
+  , "HighCount" :: Maybe (ComplianceSummaryCount)
+  , "MediumCount" :: Maybe (ComplianceSummaryCount)
+  , "LowCount" :: Maybe (ComplianceSummaryCount)
+  , "InformationalCount" :: Maybe (ComplianceSummaryCount)
+  , "UnspecifiedCount" :: Maybe (ComplianceSummaryCount)
   }
 derive instance newtypeSeveritySummary :: Newtype SeveritySummary _
 derive instance repGenericSeveritySummary :: Generic SeveritySummary _
@@ -10402,12 +10401,12 @@ instance encodeSeveritySummary :: Encode SeveritySummary where encode = genericE
 
 -- | Constructs SeveritySummary from required parameters
 newSeveritySummary :: SeveritySummary
-newSeveritySummary  = SeveritySummary { "CriticalCount": (NullOrUndefined Nothing), "HighCount": (NullOrUndefined Nothing), "InformationalCount": (NullOrUndefined Nothing), "LowCount": (NullOrUndefined Nothing), "MediumCount": (NullOrUndefined Nothing), "UnspecifiedCount": (NullOrUndefined Nothing) }
+newSeveritySummary  = SeveritySummary { "CriticalCount": Nothing, "HighCount": Nothing, "InformationalCount": Nothing, "LowCount": Nothing, "MediumCount": Nothing, "UnspecifiedCount": Nothing }
 
 -- | Constructs SeveritySummary's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSeveritySummary' :: ( { "CriticalCount" :: NullOrUndefined (ComplianceSummaryCount) , "HighCount" :: NullOrUndefined (ComplianceSummaryCount) , "MediumCount" :: NullOrUndefined (ComplianceSummaryCount) , "LowCount" :: NullOrUndefined (ComplianceSummaryCount) , "InformationalCount" :: NullOrUndefined (ComplianceSummaryCount) , "UnspecifiedCount" :: NullOrUndefined (ComplianceSummaryCount) } -> {"CriticalCount" :: NullOrUndefined (ComplianceSummaryCount) , "HighCount" :: NullOrUndefined (ComplianceSummaryCount) , "MediumCount" :: NullOrUndefined (ComplianceSummaryCount) , "LowCount" :: NullOrUndefined (ComplianceSummaryCount) , "InformationalCount" :: NullOrUndefined (ComplianceSummaryCount) , "UnspecifiedCount" :: NullOrUndefined (ComplianceSummaryCount) } ) -> SeveritySummary
-newSeveritySummary'  customize = (SeveritySummary <<< customize) { "CriticalCount": (NullOrUndefined Nothing), "HighCount": (NullOrUndefined Nothing), "InformationalCount": (NullOrUndefined Nothing), "LowCount": (NullOrUndefined Nothing), "MediumCount": (NullOrUndefined Nothing), "UnspecifiedCount": (NullOrUndefined Nothing) }
+newSeveritySummary' :: ( { "CriticalCount" :: Maybe (ComplianceSummaryCount) , "HighCount" :: Maybe (ComplianceSummaryCount) , "MediumCount" :: Maybe (ComplianceSummaryCount) , "LowCount" :: Maybe (ComplianceSummaryCount) , "InformationalCount" :: Maybe (ComplianceSummaryCount) , "UnspecifiedCount" :: Maybe (ComplianceSummaryCount) } -> {"CriticalCount" :: Maybe (ComplianceSummaryCount) , "HighCount" :: Maybe (ComplianceSummaryCount) , "MediumCount" :: Maybe (ComplianceSummaryCount) , "LowCount" :: Maybe (ComplianceSummaryCount) , "InformationalCount" :: Maybe (ComplianceSummaryCount) , "UnspecifiedCount" :: Maybe (ComplianceSummaryCount) } ) -> SeveritySummary
+newSeveritySummary'  customize = (SeveritySummary <<< customize) { "CriticalCount": Nothing, "HighCount": Nothing, "InformationalCount": Nothing, "LowCount": Nothing, "MediumCount": Nothing, "UnspecifiedCount": Nothing }
 
 
 
@@ -10458,14 +10457,14 @@ instance encodeStandardOutputContent :: Encode StandardOutputContent where encod
 
 newtype StartAutomationExecutionRequest = StartAutomationExecutionRequest 
   { "DocumentName" :: (DocumentARN)
-  , "DocumentVersion" :: NullOrUndefined (DocumentVersion)
-  , "Parameters" :: NullOrUndefined (AutomationParameterMap)
-  , "ClientToken" :: NullOrUndefined (IdempotencyToken)
-  , "Mode" :: NullOrUndefined (ExecutionMode)
-  , "TargetParameterName" :: NullOrUndefined (AutomationParameterKey)
-  , "Targets" :: NullOrUndefined (Targets)
-  , "MaxConcurrency" :: NullOrUndefined (MaxConcurrency)
-  , "MaxErrors" :: NullOrUndefined (MaxErrors)
+  , "DocumentVersion" :: Maybe (DocumentVersion)
+  , "Parameters" :: Maybe (AutomationParameterMap)
+  , "ClientToken" :: Maybe (IdempotencyToken)
+  , "Mode" :: Maybe (ExecutionMode)
+  , "TargetParameterName" :: Maybe (AutomationParameterKey)
+  , "Targets" :: Maybe (Targets)
+  , "MaxConcurrency" :: Maybe (MaxConcurrency)
+  , "MaxErrors" :: Maybe (MaxErrors)
   }
 derive instance newtypeStartAutomationExecutionRequest :: Newtype StartAutomationExecutionRequest _
 derive instance repGenericStartAutomationExecutionRequest :: Generic StartAutomationExecutionRequest _
@@ -10475,17 +10474,17 @@ instance encodeStartAutomationExecutionRequest :: Encode StartAutomationExecutio
 
 -- | Constructs StartAutomationExecutionRequest from required parameters
 newStartAutomationExecutionRequest :: DocumentARN -> StartAutomationExecutionRequest
-newStartAutomationExecutionRequest _DocumentName = StartAutomationExecutionRequest { "DocumentName": _DocumentName, "ClientToken": (NullOrUndefined Nothing), "DocumentVersion": (NullOrUndefined Nothing), "MaxConcurrency": (NullOrUndefined Nothing), "MaxErrors": (NullOrUndefined Nothing), "Mode": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing), "TargetParameterName": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing) }
+newStartAutomationExecutionRequest _DocumentName = StartAutomationExecutionRequest { "DocumentName": _DocumentName, "ClientToken": Nothing, "DocumentVersion": Nothing, "MaxConcurrency": Nothing, "MaxErrors": Nothing, "Mode": Nothing, "Parameters": Nothing, "TargetParameterName": Nothing, "Targets": Nothing }
 
 -- | Constructs StartAutomationExecutionRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStartAutomationExecutionRequest' :: DocumentARN -> ( { "DocumentName" :: (DocumentARN) , "DocumentVersion" :: NullOrUndefined (DocumentVersion) , "Parameters" :: NullOrUndefined (AutomationParameterMap) , "ClientToken" :: NullOrUndefined (IdempotencyToken) , "Mode" :: NullOrUndefined (ExecutionMode) , "TargetParameterName" :: NullOrUndefined (AutomationParameterKey) , "Targets" :: NullOrUndefined (Targets) , "MaxConcurrency" :: NullOrUndefined (MaxConcurrency) , "MaxErrors" :: NullOrUndefined (MaxErrors) } -> {"DocumentName" :: (DocumentARN) , "DocumentVersion" :: NullOrUndefined (DocumentVersion) , "Parameters" :: NullOrUndefined (AutomationParameterMap) , "ClientToken" :: NullOrUndefined (IdempotencyToken) , "Mode" :: NullOrUndefined (ExecutionMode) , "TargetParameterName" :: NullOrUndefined (AutomationParameterKey) , "Targets" :: NullOrUndefined (Targets) , "MaxConcurrency" :: NullOrUndefined (MaxConcurrency) , "MaxErrors" :: NullOrUndefined (MaxErrors) } ) -> StartAutomationExecutionRequest
-newStartAutomationExecutionRequest' _DocumentName customize = (StartAutomationExecutionRequest <<< customize) { "DocumentName": _DocumentName, "ClientToken": (NullOrUndefined Nothing), "DocumentVersion": (NullOrUndefined Nothing), "MaxConcurrency": (NullOrUndefined Nothing), "MaxErrors": (NullOrUndefined Nothing), "Mode": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing), "TargetParameterName": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing) }
+newStartAutomationExecutionRequest' :: DocumentARN -> ( { "DocumentName" :: (DocumentARN) , "DocumentVersion" :: Maybe (DocumentVersion) , "Parameters" :: Maybe (AutomationParameterMap) , "ClientToken" :: Maybe (IdempotencyToken) , "Mode" :: Maybe (ExecutionMode) , "TargetParameterName" :: Maybe (AutomationParameterKey) , "Targets" :: Maybe (Targets) , "MaxConcurrency" :: Maybe (MaxConcurrency) , "MaxErrors" :: Maybe (MaxErrors) } -> {"DocumentName" :: (DocumentARN) , "DocumentVersion" :: Maybe (DocumentVersion) , "Parameters" :: Maybe (AutomationParameterMap) , "ClientToken" :: Maybe (IdempotencyToken) , "Mode" :: Maybe (ExecutionMode) , "TargetParameterName" :: Maybe (AutomationParameterKey) , "Targets" :: Maybe (Targets) , "MaxConcurrency" :: Maybe (MaxConcurrency) , "MaxErrors" :: Maybe (MaxErrors) } ) -> StartAutomationExecutionRequest
+newStartAutomationExecutionRequest' _DocumentName customize = (StartAutomationExecutionRequest <<< customize) { "DocumentName": _DocumentName, "ClientToken": Nothing, "DocumentVersion": Nothing, "MaxConcurrency": Nothing, "MaxErrors": Nothing, "Mode": Nothing, "Parameters": Nothing, "TargetParameterName": Nothing, "Targets": Nothing }
 
 
 
 newtype StartAutomationExecutionResult = StartAutomationExecutionResult 
-  { "AutomationExecutionId" :: NullOrUndefined (AutomationExecutionId)
+  { "AutomationExecutionId" :: Maybe (AutomationExecutionId)
   }
 derive instance newtypeStartAutomationExecutionResult :: Newtype StartAutomationExecutionResult _
 derive instance repGenericStartAutomationExecutionResult :: Generic StartAutomationExecutionResult _
@@ -10495,12 +10494,12 @@ instance encodeStartAutomationExecutionResult :: Encode StartAutomationExecution
 
 -- | Constructs StartAutomationExecutionResult from required parameters
 newStartAutomationExecutionResult :: StartAutomationExecutionResult
-newStartAutomationExecutionResult  = StartAutomationExecutionResult { "AutomationExecutionId": (NullOrUndefined Nothing) }
+newStartAutomationExecutionResult  = StartAutomationExecutionResult { "AutomationExecutionId": Nothing }
 
 -- | Constructs StartAutomationExecutionResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStartAutomationExecutionResult' :: ( { "AutomationExecutionId" :: NullOrUndefined (AutomationExecutionId) } -> {"AutomationExecutionId" :: NullOrUndefined (AutomationExecutionId) } ) -> StartAutomationExecutionResult
-newStartAutomationExecutionResult'  customize = (StartAutomationExecutionResult <<< customize) { "AutomationExecutionId": (NullOrUndefined Nothing) }
+newStartAutomationExecutionResult' :: ( { "AutomationExecutionId" :: Maybe (AutomationExecutionId) } -> {"AutomationExecutionId" :: Maybe (AutomationExecutionId) } ) -> StartAutomationExecutionResult
+newStartAutomationExecutionResult'  customize = (StartAutomationExecutionResult <<< customize) { "AutomationExecutionId": Nothing }
 
 
 
@@ -10552,22 +10551,22 @@ instance encodeStatusUnchanged :: Encode StatusUnchanged where encode = genericE
 
 -- | <p>Detailed information about an the execution state of an Automation step.</p>
 newtype StepExecution = StepExecution 
-  { "StepName" :: NullOrUndefined (String)
-  , "Action" :: NullOrUndefined (AutomationActionName)
-  , "TimeoutSeconds" :: NullOrUndefined (Number)
-  , "OnFailure" :: NullOrUndefined (String)
-  , "MaxAttempts" :: NullOrUndefined (Int)
-  , "ExecutionStartTime" :: NullOrUndefined (DateTime)
-  , "ExecutionEndTime" :: NullOrUndefined (DateTime)
-  , "StepStatus" :: NullOrUndefined (AutomationExecutionStatus)
-  , "ResponseCode" :: NullOrUndefined (String)
-  , "Inputs" :: NullOrUndefined (NormalStringMap)
-  , "Outputs" :: NullOrUndefined (AutomationParameterMap)
-  , "Response" :: NullOrUndefined (String)
-  , "FailureMessage" :: NullOrUndefined (String)
-  , "FailureDetails" :: NullOrUndefined (FailureDetails)
-  , "StepExecutionId" :: NullOrUndefined (String)
-  , "OverriddenParameters" :: NullOrUndefined (AutomationParameterMap)
+  { "StepName" :: Maybe (String)
+  , "Action" :: Maybe (AutomationActionName)
+  , "TimeoutSeconds" :: Maybe (Number)
+  , "OnFailure" :: Maybe (String)
+  , "MaxAttempts" :: Maybe (Int)
+  , "ExecutionStartTime" :: Maybe (DateTime)
+  , "ExecutionEndTime" :: Maybe (DateTime)
+  , "StepStatus" :: Maybe (AutomationExecutionStatus)
+  , "ResponseCode" :: Maybe (String)
+  , "Inputs" :: Maybe (NormalStringMap)
+  , "Outputs" :: Maybe (AutomationParameterMap)
+  , "Response" :: Maybe (String)
+  , "FailureMessage" :: Maybe (String)
+  , "FailureDetails" :: Maybe (FailureDetails)
+  , "StepExecutionId" :: Maybe (String)
+  , "OverriddenParameters" :: Maybe (AutomationParameterMap)
   }
 derive instance newtypeStepExecution :: Newtype StepExecution _
 derive instance repGenericStepExecution :: Generic StepExecution _
@@ -10577,12 +10576,12 @@ instance encodeStepExecution :: Encode StepExecution where encode = genericEncod
 
 -- | Constructs StepExecution from required parameters
 newStepExecution :: StepExecution
-newStepExecution  = StepExecution { "Action": (NullOrUndefined Nothing), "ExecutionEndTime": (NullOrUndefined Nothing), "ExecutionStartTime": (NullOrUndefined Nothing), "FailureDetails": (NullOrUndefined Nothing), "FailureMessage": (NullOrUndefined Nothing), "Inputs": (NullOrUndefined Nothing), "MaxAttempts": (NullOrUndefined Nothing), "OnFailure": (NullOrUndefined Nothing), "Outputs": (NullOrUndefined Nothing), "OverriddenParameters": (NullOrUndefined Nothing), "Response": (NullOrUndefined Nothing), "ResponseCode": (NullOrUndefined Nothing), "StepExecutionId": (NullOrUndefined Nothing), "StepName": (NullOrUndefined Nothing), "StepStatus": (NullOrUndefined Nothing), "TimeoutSeconds": (NullOrUndefined Nothing) }
+newStepExecution  = StepExecution { "Action": Nothing, "ExecutionEndTime": Nothing, "ExecutionStartTime": Nothing, "FailureDetails": Nothing, "FailureMessage": Nothing, "Inputs": Nothing, "MaxAttempts": Nothing, "OnFailure": Nothing, "Outputs": Nothing, "OverriddenParameters": Nothing, "Response": Nothing, "ResponseCode": Nothing, "StepExecutionId": Nothing, "StepName": Nothing, "StepStatus": Nothing, "TimeoutSeconds": Nothing }
 
 -- | Constructs StepExecution's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStepExecution' :: ( { "StepName" :: NullOrUndefined (String) , "Action" :: NullOrUndefined (AutomationActionName) , "TimeoutSeconds" :: NullOrUndefined (Number) , "OnFailure" :: NullOrUndefined (String) , "MaxAttempts" :: NullOrUndefined (Int) , "ExecutionStartTime" :: NullOrUndefined (DateTime) , "ExecutionEndTime" :: NullOrUndefined (DateTime) , "StepStatus" :: NullOrUndefined (AutomationExecutionStatus) , "ResponseCode" :: NullOrUndefined (String) , "Inputs" :: NullOrUndefined (NormalStringMap) , "Outputs" :: NullOrUndefined (AutomationParameterMap) , "Response" :: NullOrUndefined (String) , "FailureMessage" :: NullOrUndefined (String) , "FailureDetails" :: NullOrUndefined (FailureDetails) , "StepExecutionId" :: NullOrUndefined (String) , "OverriddenParameters" :: NullOrUndefined (AutomationParameterMap) } -> {"StepName" :: NullOrUndefined (String) , "Action" :: NullOrUndefined (AutomationActionName) , "TimeoutSeconds" :: NullOrUndefined (Number) , "OnFailure" :: NullOrUndefined (String) , "MaxAttempts" :: NullOrUndefined (Int) , "ExecutionStartTime" :: NullOrUndefined (DateTime) , "ExecutionEndTime" :: NullOrUndefined (DateTime) , "StepStatus" :: NullOrUndefined (AutomationExecutionStatus) , "ResponseCode" :: NullOrUndefined (String) , "Inputs" :: NullOrUndefined (NormalStringMap) , "Outputs" :: NullOrUndefined (AutomationParameterMap) , "Response" :: NullOrUndefined (String) , "FailureMessage" :: NullOrUndefined (String) , "FailureDetails" :: NullOrUndefined (FailureDetails) , "StepExecutionId" :: NullOrUndefined (String) , "OverriddenParameters" :: NullOrUndefined (AutomationParameterMap) } ) -> StepExecution
-newStepExecution'  customize = (StepExecution <<< customize) { "Action": (NullOrUndefined Nothing), "ExecutionEndTime": (NullOrUndefined Nothing), "ExecutionStartTime": (NullOrUndefined Nothing), "FailureDetails": (NullOrUndefined Nothing), "FailureMessage": (NullOrUndefined Nothing), "Inputs": (NullOrUndefined Nothing), "MaxAttempts": (NullOrUndefined Nothing), "OnFailure": (NullOrUndefined Nothing), "Outputs": (NullOrUndefined Nothing), "OverriddenParameters": (NullOrUndefined Nothing), "Response": (NullOrUndefined Nothing), "ResponseCode": (NullOrUndefined Nothing), "StepExecutionId": (NullOrUndefined Nothing), "StepName": (NullOrUndefined Nothing), "StepStatus": (NullOrUndefined Nothing), "TimeoutSeconds": (NullOrUndefined Nothing) }
+newStepExecution' :: ( { "StepName" :: Maybe (String) , "Action" :: Maybe (AutomationActionName) , "TimeoutSeconds" :: Maybe (Number) , "OnFailure" :: Maybe (String) , "MaxAttempts" :: Maybe (Int) , "ExecutionStartTime" :: Maybe (DateTime) , "ExecutionEndTime" :: Maybe (DateTime) , "StepStatus" :: Maybe (AutomationExecutionStatus) , "ResponseCode" :: Maybe (String) , "Inputs" :: Maybe (NormalStringMap) , "Outputs" :: Maybe (AutomationParameterMap) , "Response" :: Maybe (String) , "FailureMessage" :: Maybe (String) , "FailureDetails" :: Maybe (FailureDetails) , "StepExecutionId" :: Maybe (String) , "OverriddenParameters" :: Maybe (AutomationParameterMap) } -> {"StepName" :: Maybe (String) , "Action" :: Maybe (AutomationActionName) , "TimeoutSeconds" :: Maybe (Number) , "OnFailure" :: Maybe (String) , "MaxAttempts" :: Maybe (Int) , "ExecutionStartTime" :: Maybe (DateTime) , "ExecutionEndTime" :: Maybe (DateTime) , "StepStatus" :: Maybe (AutomationExecutionStatus) , "ResponseCode" :: Maybe (String) , "Inputs" :: Maybe (NormalStringMap) , "Outputs" :: Maybe (AutomationParameterMap) , "Response" :: Maybe (String) , "FailureMessage" :: Maybe (String) , "FailureDetails" :: Maybe (FailureDetails) , "StepExecutionId" :: Maybe (String) , "OverriddenParameters" :: Maybe (AutomationParameterMap) } ) -> StepExecution
+newStepExecution'  customize = (StepExecution <<< customize) { "Action": Nothing, "ExecutionEndTime": Nothing, "ExecutionStartTime": Nothing, "FailureDetails": Nothing, "FailureMessage": Nothing, "Inputs": Nothing, "MaxAttempts": Nothing, "OnFailure": Nothing, "Outputs": Nothing, "OverriddenParameters": Nothing, "Response": Nothing, "ResponseCode": Nothing, "StepExecutionId": Nothing, "StepName": Nothing, "StepStatus": Nothing, "TimeoutSeconds": Nothing }
 
 
 
@@ -10655,7 +10654,7 @@ instance encodeStepExecutionList :: Encode StepExecutionList where encode = gene
 
 newtype StopAutomationExecutionRequest = StopAutomationExecutionRequest 
   { "AutomationExecutionId" :: (AutomationExecutionId)
-  , "Type" :: NullOrUndefined (StopType)
+  , "Type" :: Maybe (StopType)
   }
 derive instance newtypeStopAutomationExecutionRequest :: Newtype StopAutomationExecutionRequest _
 derive instance repGenericStopAutomationExecutionRequest :: Generic StopAutomationExecutionRequest _
@@ -10665,12 +10664,12 @@ instance encodeStopAutomationExecutionRequest :: Encode StopAutomationExecutionR
 
 -- | Constructs StopAutomationExecutionRequest from required parameters
 newStopAutomationExecutionRequest :: AutomationExecutionId -> StopAutomationExecutionRequest
-newStopAutomationExecutionRequest _AutomationExecutionId = StopAutomationExecutionRequest { "AutomationExecutionId": _AutomationExecutionId, "Type": (NullOrUndefined Nothing) }
+newStopAutomationExecutionRequest _AutomationExecutionId = StopAutomationExecutionRequest { "AutomationExecutionId": _AutomationExecutionId, "Type": Nothing }
 
 -- | Constructs StopAutomationExecutionRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStopAutomationExecutionRequest' :: AutomationExecutionId -> ( { "AutomationExecutionId" :: (AutomationExecutionId) , "Type" :: NullOrUndefined (StopType) } -> {"AutomationExecutionId" :: (AutomationExecutionId) , "Type" :: NullOrUndefined (StopType) } ) -> StopAutomationExecutionRequest
-newStopAutomationExecutionRequest' _AutomationExecutionId customize = (StopAutomationExecutionRequest <<< customize) { "AutomationExecutionId": _AutomationExecutionId, "Type": (NullOrUndefined Nothing) }
+newStopAutomationExecutionRequest' :: AutomationExecutionId -> ( { "AutomationExecutionId" :: (AutomationExecutionId) , "Type" :: Maybe (StopType) } -> {"AutomationExecutionId" :: (AutomationExecutionId) , "Type" :: Maybe (StopType) } ) -> StopAutomationExecutionRequest
+newStopAutomationExecutionRequest' _AutomationExecutionId customize = (StopAutomationExecutionRequest <<< customize) { "AutomationExecutionId": _AutomationExecutionId, "Type": Nothing }
 
 
 
@@ -10712,7 +10711,7 @@ instance encodeStringList :: Encode StringList where encode = genericEncode opti
 
 -- | <p>The sub-type count exceeded the limit for the inventory type.</p>
 newtype SubTypeCountLimitExceededException = SubTypeCountLimitExceededException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeSubTypeCountLimitExceededException :: Newtype SubTypeCountLimitExceededException _
 derive instance repGenericSubTypeCountLimitExceededException :: Generic SubTypeCountLimitExceededException _
@@ -10722,12 +10721,12 @@ instance encodeSubTypeCountLimitExceededException :: Encode SubTypeCountLimitExc
 
 -- | Constructs SubTypeCountLimitExceededException from required parameters
 newSubTypeCountLimitExceededException :: SubTypeCountLimitExceededException
-newSubTypeCountLimitExceededException  = SubTypeCountLimitExceededException { "Message": (NullOrUndefined Nothing) }
+newSubTypeCountLimitExceededException  = SubTypeCountLimitExceededException { "Message": Nothing }
 
 -- | Constructs SubTypeCountLimitExceededException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSubTypeCountLimitExceededException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> SubTypeCountLimitExceededException
-newSubTypeCountLimitExceededException'  customize = (SubTypeCountLimitExceededException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newSubTypeCountLimitExceededException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> SubTypeCountLimitExceededException
+newSubTypeCountLimitExceededException'  customize = (SubTypeCountLimitExceededException <<< customize) { "Message": Nothing }
 
 
 
@@ -10782,8 +10781,8 @@ instance encodeTagValue :: Encode TagValue where encode = genericEncode options
 
 -- | <p>An array of search criteria that targets instances using a Key,Value combination that you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in the call.</p> <p/>
 newtype Target = Target 
-  { "Key" :: NullOrUndefined (TargetKey)
-  , "Values" :: NullOrUndefined (TargetValues)
+  { "Key" :: Maybe (TargetKey)
+  , "Values" :: Maybe (TargetValues)
   }
 derive instance newtypeTarget :: Newtype Target _
 derive instance repGenericTarget :: Generic Target _
@@ -10793,12 +10792,12 @@ instance encodeTarget :: Encode Target where encode = genericEncode options
 
 -- | Constructs Target from required parameters
 newTarget :: Target
-newTarget  = Target { "Key": (NullOrUndefined Nothing), "Values": (NullOrUndefined Nothing) }
+newTarget  = Target { "Key": Nothing, "Values": Nothing }
 
 -- | Constructs Target's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTarget' :: ( { "Key" :: NullOrUndefined (TargetKey) , "Values" :: NullOrUndefined (TargetValues) } -> {"Key" :: NullOrUndefined (TargetKey) , "Values" :: NullOrUndefined (TargetValues) } ) -> Target
-newTarget'  customize = (Target <<< customize) { "Key": (NullOrUndefined Nothing), "Values": (NullOrUndefined Nothing) }
+newTarget' :: ( { "Key" :: Maybe (TargetKey) , "Values" :: Maybe (TargetValues) } -> {"Key" :: Maybe (TargetKey) , "Values" :: Maybe (TargetValues) } ) -> Target
+newTarget'  customize = (Target <<< customize) { "Key": Nothing, "Values": Nothing }
 
 
 
@@ -10813,7 +10812,7 @@ instance encodeTargetCount :: Encode TargetCount where encode = genericEncode op
 
 -- | <p>You specified the <code>Safe</code> option for the DeregisterTargetFromMaintenanceWindow operation, but the target is still referenced in a task.</p>
 newtype TargetInUseException = TargetInUseException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeTargetInUseException :: Newtype TargetInUseException _
 derive instance repGenericTargetInUseException :: Generic TargetInUseException _
@@ -10823,12 +10822,12 @@ instance encodeTargetInUseException :: Encode TargetInUseException where encode 
 
 -- | Constructs TargetInUseException from required parameters
 newTargetInUseException :: TargetInUseException
-newTargetInUseException  = TargetInUseException { "Message": (NullOrUndefined Nothing) }
+newTargetInUseException  = TargetInUseException { "Message": Nothing }
 
 -- | Constructs TargetInUseException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTargetInUseException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> TargetInUseException
-newTargetInUseException'  customize = (TargetInUseException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newTargetInUseException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> TargetInUseException
+newTargetInUseException'  customize = (TargetInUseException <<< customize) { "Message": Nothing }
 
 
 
@@ -10907,7 +10906,7 @@ instance encodeTooManyTagsError :: Encode TooManyTagsError where encode = generi
 
 -- | <p>There are concurrent updates for a resource that supports one update at a time.</p>
 newtype TooManyUpdates = TooManyUpdates 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeTooManyUpdates :: Newtype TooManyUpdates _
 derive instance repGenericTooManyUpdates :: Generic TooManyUpdates _
@@ -10917,18 +10916,18 @@ instance encodeTooManyUpdates :: Encode TooManyUpdates where encode = genericEnc
 
 -- | Constructs TooManyUpdates from required parameters
 newTooManyUpdates :: TooManyUpdates
-newTooManyUpdates  = TooManyUpdates { "Message": (NullOrUndefined Nothing) }
+newTooManyUpdates  = TooManyUpdates { "Message": Nothing }
 
 -- | Constructs TooManyUpdates's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTooManyUpdates' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> TooManyUpdates
-newTooManyUpdates'  customize = (TooManyUpdates <<< customize) { "Message": (NullOrUndefined Nothing) }
+newTooManyUpdates' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> TooManyUpdates
+newTooManyUpdates'  customize = (TooManyUpdates <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The size of inventory data has exceeded the total size limit for the resource.</p>
 newtype TotalSizeLimitExceededException = TotalSizeLimitExceededException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeTotalSizeLimitExceededException :: Newtype TotalSizeLimitExceededException _
 derive instance repGenericTotalSizeLimitExceededException :: Generic TotalSizeLimitExceededException _
@@ -10938,19 +10937,19 @@ instance encodeTotalSizeLimitExceededException :: Encode TotalSizeLimitExceededE
 
 -- | Constructs TotalSizeLimitExceededException from required parameters
 newTotalSizeLimitExceededException :: TotalSizeLimitExceededException
-newTotalSizeLimitExceededException  = TotalSizeLimitExceededException { "Message": (NullOrUndefined Nothing) }
+newTotalSizeLimitExceededException  = TotalSizeLimitExceededException { "Message": Nothing }
 
 -- | Constructs TotalSizeLimitExceededException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTotalSizeLimitExceededException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> TotalSizeLimitExceededException
-newTotalSizeLimitExceededException'  customize = (TotalSizeLimitExceededException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newTotalSizeLimitExceededException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> TotalSizeLimitExceededException
+newTotalSizeLimitExceededException'  customize = (TotalSizeLimitExceededException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The <code>Context</code> attribute that you specified for the <code>InventoryItem</code> is not allowed for this inventory type. You can only use the <code>Context</code> attribute with inventory types like <code>AWS:ComplianceItem</code>.</p>
 newtype UnsupportedInventoryItemContextException = UnsupportedInventoryItemContextException 
-  { "TypeName" :: NullOrUndefined (InventoryItemTypeName)
-  , "Message" :: NullOrUndefined (String)
+  { "TypeName" :: Maybe (InventoryItemTypeName)
+  , "Message" :: Maybe (String)
   }
 derive instance newtypeUnsupportedInventoryItemContextException :: Newtype UnsupportedInventoryItemContextException _
 derive instance repGenericUnsupportedInventoryItemContextException :: Generic UnsupportedInventoryItemContextException _
@@ -10960,18 +10959,18 @@ instance encodeUnsupportedInventoryItemContextException :: Encode UnsupportedInv
 
 -- | Constructs UnsupportedInventoryItemContextException from required parameters
 newUnsupportedInventoryItemContextException :: UnsupportedInventoryItemContextException
-newUnsupportedInventoryItemContextException  = UnsupportedInventoryItemContextException { "Message": (NullOrUndefined Nothing), "TypeName": (NullOrUndefined Nothing) }
+newUnsupportedInventoryItemContextException  = UnsupportedInventoryItemContextException { "Message": Nothing, "TypeName": Nothing }
 
 -- | Constructs UnsupportedInventoryItemContextException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUnsupportedInventoryItemContextException' :: ( { "TypeName" :: NullOrUndefined (InventoryItemTypeName) , "Message" :: NullOrUndefined (String) } -> {"TypeName" :: NullOrUndefined (InventoryItemTypeName) , "Message" :: NullOrUndefined (String) } ) -> UnsupportedInventoryItemContextException
-newUnsupportedInventoryItemContextException'  customize = (UnsupportedInventoryItemContextException <<< customize) { "Message": (NullOrUndefined Nothing), "TypeName": (NullOrUndefined Nothing) }
+newUnsupportedInventoryItemContextException' :: ( { "TypeName" :: Maybe (InventoryItemTypeName) , "Message" :: Maybe (String) } -> {"TypeName" :: Maybe (InventoryItemTypeName) , "Message" :: Maybe (String) } ) -> UnsupportedInventoryItemContextException
+newUnsupportedInventoryItemContextException'  customize = (UnsupportedInventoryItemContextException <<< customize) { "Message": Nothing, "TypeName": Nothing }
 
 
 
 -- | <p>Inventory item type schema version has to match supported versions in the service. Check output of GetInventorySchema to see the available schema version for each type.</p>
 newtype UnsupportedInventorySchemaVersionException = UnsupportedInventorySchemaVersionException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeUnsupportedInventorySchemaVersionException :: Newtype UnsupportedInventorySchemaVersionException _
 derive instance repGenericUnsupportedInventorySchemaVersionException :: Generic UnsupportedInventorySchemaVersionException _
@@ -10981,18 +10980,18 @@ instance encodeUnsupportedInventorySchemaVersionException :: Encode UnsupportedI
 
 -- | Constructs UnsupportedInventorySchemaVersionException from required parameters
 newUnsupportedInventorySchemaVersionException :: UnsupportedInventorySchemaVersionException
-newUnsupportedInventorySchemaVersionException  = UnsupportedInventorySchemaVersionException { "Message": (NullOrUndefined Nothing) }
+newUnsupportedInventorySchemaVersionException  = UnsupportedInventorySchemaVersionException { "Message": Nothing }
 
 -- | Constructs UnsupportedInventorySchemaVersionException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUnsupportedInventorySchemaVersionException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> UnsupportedInventorySchemaVersionException
-newUnsupportedInventorySchemaVersionException'  customize = (UnsupportedInventorySchemaVersionException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newUnsupportedInventorySchemaVersionException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> UnsupportedInventorySchemaVersionException
+newUnsupportedInventorySchemaVersionException'  customize = (UnsupportedInventorySchemaVersionException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The operating systems you specified is not supported, or the operation is not supported for the operating system. Valid operating systems include: Windows, AmazonLinux, RedhatEnterpriseLinux, and Ubuntu.</p>
 newtype UnsupportedOperatingSystem = UnsupportedOperatingSystem 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeUnsupportedOperatingSystem :: Newtype UnsupportedOperatingSystem _
 derive instance repGenericUnsupportedOperatingSystem :: Generic UnsupportedOperatingSystem _
@@ -11002,18 +11001,18 @@ instance encodeUnsupportedOperatingSystem :: Encode UnsupportedOperatingSystem w
 
 -- | Constructs UnsupportedOperatingSystem from required parameters
 newUnsupportedOperatingSystem :: UnsupportedOperatingSystem
-newUnsupportedOperatingSystem  = UnsupportedOperatingSystem { "Message": (NullOrUndefined Nothing) }
+newUnsupportedOperatingSystem  = UnsupportedOperatingSystem { "Message": Nothing }
 
 -- | Constructs UnsupportedOperatingSystem's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUnsupportedOperatingSystem' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> UnsupportedOperatingSystem
-newUnsupportedOperatingSystem'  customize = (UnsupportedOperatingSystem <<< customize) { "Message": (NullOrUndefined Nothing) }
+newUnsupportedOperatingSystem' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> UnsupportedOperatingSystem
+newUnsupportedOperatingSystem'  customize = (UnsupportedOperatingSystem <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The parameter type is not supported.</p>
 newtype UnsupportedParameterType = UnsupportedParameterType 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeUnsupportedParameterType :: Newtype UnsupportedParameterType _
 derive instance repGenericUnsupportedParameterType :: Generic UnsupportedParameterType _
@@ -11023,18 +11022,18 @@ instance encodeUnsupportedParameterType :: Encode UnsupportedParameterType where
 
 -- | Constructs UnsupportedParameterType from required parameters
 newUnsupportedParameterType :: UnsupportedParameterType
-newUnsupportedParameterType  = UnsupportedParameterType { "message": (NullOrUndefined Nothing) }
+newUnsupportedParameterType  = UnsupportedParameterType { "message": Nothing }
 
 -- | Constructs UnsupportedParameterType's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUnsupportedParameterType' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> UnsupportedParameterType
-newUnsupportedParameterType'  customize = (UnsupportedParameterType <<< customize) { "message": (NullOrUndefined Nothing) }
+newUnsupportedParameterType' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> UnsupportedParameterType
+newUnsupportedParameterType'  customize = (UnsupportedParameterType <<< customize) { "message": Nothing }
 
 
 
 -- | <p>The document does not support the platform type of the given instance ID(s). For example, you sent an document for a Windows instance to a Linux instance.</p>
 newtype UnsupportedPlatformType = UnsupportedPlatformType 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeUnsupportedPlatformType :: Newtype UnsupportedPlatformType _
 derive instance repGenericUnsupportedPlatformType :: Generic UnsupportedPlatformType _
@@ -11044,25 +11043,25 @@ instance encodeUnsupportedPlatformType :: Encode UnsupportedPlatformType where e
 
 -- | Constructs UnsupportedPlatformType from required parameters
 newUnsupportedPlatformType :: UnsupportedPlatformType
-newUnsupportedPlatformType  = UnsupportedPlatformType { "Message": (NullOrUndefined Nothing) }
+newUnsupportedPlatformType  = UnsupportedPlatformType { "Message": Nothing }
 
 -- | Constructs UnsupportedPlatformType's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUnsupportedPlatformType' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> UnsupportedPlatformType
-newUnsupportedPlatformType'  customize = (UnsupportedPlatformType <<< customize) { "Message": (NullOrUndefined Nothing) }
+newUnsupportedPlatformType' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> UnsupportedPlatformType
+newUnsupportedPlatformType'  customize = (UnsupportedPlatformType <<< customize) { "Message": Nothing }
 
 
 
 newtype UpdateAssociationRequest = UpdateAssociationRequest 
   { "AssociationId" :: (AssociationId)
-  , "Parameters" :: NullOrUndefined (Parameters)
-  , "DocumentVersion" :: NullOrUndefined (DocumentVersion)
-  , "ScheduleExpression" :: NullOrUndefined (ScheduleExpression)
-  , "OutputLocation" :: NullOrUndefined (InstanceAssociationOutputLocation)
-  , "Name" :: NullOrUndefined (DocumentName)
-  , "Targets" :: NullOrUndefined (Targets)
-  , "AssociationName" :: NullOrUndefined (AssociationName)
-  , "AssociationVersion" :: NullOrUndefined (AssociationVersion)
+  , "Parameters" :: Maybe (Parameters)
+  , "DocumentVersion" :: Maybe (DocumentVersion)
+  , "ScheduleExpression" :: Maybe (ScheduleExpression)
+  , "OutputLocation" :: Maybe (InstanceAssociationOutputLocation)
+  , "Name" :: Maybe (DocumentName)
+  , "Targets" :: Maybe (Targets)
+  , "AssociationName" :: Maybe (AssociationName)
+  , "AssociationVersion" :: Maybe (AssociationVersion)
   }
 derive instance newtypeUpdateAssociationRequest :: Newtype UpdateAssociationRequest _
 derive instance repGenericUpdateAssociationRequest :: Generic UpdateAssociationRequest _
@@ -11072,17 +11071,17 @@ instance encodeUpdateAssociationRequest :: Encode UpdateAssociationRequest where
 
 -- | Constructs UpdateAssociationRequest from required parameters
 newUpdateAssociationRequest :: AssociationId -> UpdateAssociationRequest
-newUpdateAssociationRequest _AssociationId = UpdateAssociationRequest { "AssociationId": _AssociationId, "AssociationName": (NullOrUndefined Nothing), "AssociationVersion": (NullOrUndefined Nothing), "DocumentVersion": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "OutputLocation": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing), "ScheduleExpression": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing) }
+newUpdateAssociationRequest _AssociationId = UpdateAssociationRequest { "AssociationId": _AssociationId, "AssociationName": Nothing, "AssociationVersion": Nothing, "DocumentVersion": Nothing, "Name": Nothing, "OutputLocation": Nothing, "Parameters": Nothing, "ScheduleExpression": Nothing, "Targets": Nothing }
 
 -- | Constructs UpdateAssociationRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateAssociationRequest' :: AssociationId -> ( { "AssociationId" :: (AssociationId) , "Parameters" :: NullOrUndefined (Parameters) , "DocumentVersion" :: NullOrUndefined (DocumentVersion) , "ScheduleExpression" :: NullOrUndefined (ScheduleExpression) , "OutputLocation" :: NullOrUndefined (InstanceAssociationOutputLocation) , "Name" :: NullOrUndefined (DocumentName) , "Targets" :: NullOrUndefined (Targets) , "AssociationName" :: NullOrUndefined (AssociationName) , "AssociationVersion" :: NullOrUndefined (AssociationVersion) } -> {"AssociationId" :: (AssociationId) , "Parameters" :: NullOrUndefined (Parameters) , "DocumentVersion" :: NullOrUndefined (DocumentVersion) , "ScheduleExpression" :: NullOrUndefined (ScheduleExpression) , "OutputLocation" :: NullOrUndefined (InstanceAssociationOutputLocation) , "Name" :: NullOrUndefined (DocumentName) , "Targets" :: NullOrUndefined (Targets) , "AssociationName" :: NullOrUndefined (AssociationName) , "AssociationVersion" :: NullOrUndefined (AssociationVersion) } ) -> UpdateAssociationRequest
-newUpdateAssociationRequest' _AssociationId customize = (UpdateAssociationRequest <<< customize) { "AssociationId": _AssociationId, "AssociationName": (NullOrUndefined Nothing), "AssociationVersion": (NullOrUndefined Nothing), "DocumentVersion": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "OutputLocation": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing), "ScheduleExpression": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing) }
+newUpdateAssociationRequest' :: AssociationId -> ( { "AssociationId" :: (AssociationId) , "Parameters" :: Maybe (Parameters) , "DocumentVersion" :: Maybe (DocumentVersion) , "ScheduleExpression" :: Maybe (ScheduleExpression) , "OutputLocation" :: Maybe (InstanceAssociationOutputLocation) , "Name" :: Maybe (DocumentName) , "Targets" :: Maybe (Targets) , "AssociationName" :: Maybe (AssociationName) , "AssociationVersion" :: Maybe (AssociationVersion) } -> {"AssociationId" :: (AssociationId) , "Parameters" :: Maybe (Parameters) , "DocumentVersion" :: Maybe (DocumentVersion) , "ScheduleExpression" :: Maybe (ScheduleExpression) , "OutputLocation" :: Maybe (InstanceAssociationOutputLocation) , "Name" :: Maybe (DocumentName) , "Targets" :: Maybe (Targets) , "AssociationName" :: Maybe (AssociationName) , "AssociationVersion" :: Maybe (AssociationVersion) } ) -> UpdateAssociationRequest
+newUpdateAssociationRequest' _AssociationId customize = (UpdateAssociationRequest <<< customize) { "AssociationId": _AssociationId, "AssociationName": Nothing, "AssociationVersion": Nothing, "DocumentVersion": Nothing, "Name": Nothing, "OutputLocation": Nothing, "Parameters": Nothing, "ScheduleExpression": Nothing, "Targets": Nothing }
 
 
 
 newtype UpdateAssociationResult = UpdateAssociationResult 
-  { "AssociationDescription" :: NullOrUndefined (AssociationDescription)
+  { "AssociationDescription" :: Maybe (AssociationDescription)
   }
 derive instance newtypeUpdateAssociationResult :: Newtype UpdateAssociationResult _
 derive instance repGenericUpdateAssociationResult :: Generic UpdateAssociationResult _
@@ -11092,12 +11091,12 @@ instance encodeUpdateAssociationResult :: Encode UpdateAssociationResult where e
 
 -- | Constructs UpdateAssociationResult from required parameters
 newUpdateAssociationResult :: UpdateAssociationResult
-newUpdateAssociationResult  = UpdateAssociationResult { "AssociationDescription": (NullOrUndefined Nothing) }
+newUpdateAssociationResult  = UpdateAssociationResult { "AssociationDescription": Nothing }
 
 -- | Constructs UpdateAssociationResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateAssociationResult' :: ( { "AssociationDescription" :: NullOrUndefined (AssociationDescription) } -> {"AssociationDescription" :: NullOrUndefined (AssociationDescription) } ) -> UpdateAssociationResult
-newUpdateAssociationResult'  customize = (UpdateAssociationResult <<< customize) { "AssociationDescription": (NullOrUndefined Nothing) }
+newUpdateAssociationResult' :: ( { "AssociationDescription" :: Maybe (AssociationDescription) } -> {"AssociationDescription" :: Maybe (AssociationDescription) } ) -> UpdateAssociationResult
+newUpdateAssociationResult'  customize = (UpdateAssociationResult <<< customize) { "AssociationDescription": Nothing }
 
 
 
@@ -11124,7 +11123,7 @@ newUpdateAssociationStatusRequest' _AssociationStatus _InstanceId _Name customiz
 
 
 newtype UpdateAssociationStatusResult = UpdateAssociationStatusResult 
-  { "AssociationDescription" :: NullOrUndefined (AssociationDescription)
+  { "AssociationDescription" :: Maybe (AssociationDescription)
   }
 derive instance newtypeUpdateAssociationStatusResult :: Newtype UpdateAssociationStatusResult _
 derive instance repGenericUpdateAssociationStatusResult :: Generic UpdateAssociationStatusResult _
@@ -11134,12 +11133,12 @@ instance encodeUpdateAssociationStatusResult :: Encode UpdateAssociationStatusRe
 
 -- | Constructs UpdateAssociationStatusResult from required parameters
 newUpdateAssociationStatusResult :: UpdateAssociationStatusResult
-newUpdateAssociationStatusResult  = UpdateAssociationStatusResult { "AssociationDescription": (NullOrUndefined Nothing) }
+newUpdateAssociationStatusResult  = UpdateAssociationStatusResult { "AssociationDescription": Nothing }
 
 -- | Constructs UpdateAssociationStatusResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateAssociationStatusResult' :: ( { "AssociationDescription" :: NullOrUndefined (AssociationDescription) } -> {"AssociationDescription" :: NullOrUndefined (AssociationDescription) } ) -> UpdateAssociationStatusResult
-newUpdateAssociationStatusResult'  customize = (UpdateAssociationStatusResult <<< customize) { "AssociationDescription": (NullOrUndefined Nothing) }
+newUpdateAssociationStatusResult' :: ( { "AssociationDescription" :: Maybe (AssociationDescription) } -> {"AssociationDescription" :: Maybe (AssociationDescription) } ) -> UpdateAssociationStatusResult
+newUpdateAssociationStatusResult'  customize = (UpdateAssociationStatusResult <<< customize) { "AssociationDescription": Nothing }
 
 
 
@@ -11165,7 +11164,7 @@ newUpdateDocumentDefaultVersionRequest' _DocumentVersion _Name customize = (Upda
 
 
 newtype UpdateDocumentDefaultVersionResult = UpdateDocumentDefaultVersionResult 
-  { "Description" :: NullOrUndefined (DocumentDefaultVersionDescription)
+  { "Description" :: Maybe (DocumentDefaultVersionDescription)
   }
 derive instance newtypeUpdateDocumentDefaultVersionResult :: Newtype UpdateDocumentDefaultVersionResult _
 derive instance repGenericUpdateDocumentDefaultVersionResult :: Generic UpdateDocumentDefaultVersionResult _
@@ -11175,21 +11174,21 @@ instance encodeUpdateDocumentDefaultVersionResult :: Encode UpdateDocumentDefaul
 
 -- | Constructs UpdateDocumentDefaultVersionResult from required parameters
 newUpdateDocumentDefaultVersionResult :: UpdateDocumentDefaultVersionResult
-newUpdateDocumentDefaultVersionResult  = UpdateDocumentDefaultVersionResult { "Description": (NullOrUndefined Nothing) }
+newUpdateDocumentDefaultVersionResult  = UpdateDocumentDefaultVersionResult { "Description": Nothing }
 
 -- | Constructs UpdateDocumentDefaultVersionResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateDocumentDefaultVersionResult' :: ( { "Description" :: NullOrUndefined (DocumentDefaultVersionDescription) } -> {"Description" :: NullOrUndefined (DocumentDefaultVersionDescription) } ) -> UpdateDocumentDefaultVersionResult
-newUpdateDocumentDefaultVersionResult'  customize = (UpdateDocumentDefaultVersionResult <<< customize) { "Description": (NullOrUndefined Nothing) }
+newUpdateDocumentDefaultVersionResult' :: ( { "Description" :: Maybe (DocumentDefaultVersionDescription) } -> {"Description" :: Maybe (DocumentDefaultVersionDescription) } ) -> UpdateDocumentDefaultVersionResult
+newUpdateDocumentDefaultVersionResult'  customize = (UpdateDocumentDefaultVersionResult <<< customize) { "Description": Nothing }
 
 
 
 newtype UpdateDocumentRequest = UpdateDocumentRequest 
   { "Content" :: (DocumentContent)
   , "Name" :: (DocumentName)
-  , "DocumentVersion" :: NullOrUndefined (DocumentVersion)
-  , "DocumentFormat" :: NullOrUndefined (DocumentFormat)
-  , "TargetType" :: NullOrUndefined (TargetType)
+  , "DocumentVersion" :: Maybe (DocumentVersion)
+  , "DocumentFormat" :: Maybe (DocumentFormat)
+  , "TargetType" :: Maybe (TargetType)
   }
 derive instance newtypeUpdateDocumentRequest :: Newtype UpdateDocumentRequest _
 derive instance repGenericUpdateDocumentRequest :: Generic UpdateDocumentRequest _
@@ -11199,17 +11198,17 @@ instance encodeUpdateDocumentRequest :: Encode UpdateDocumentRequest where encod
 
 -- | Constructs UpdateDocumentRequest from required parameters
 newUpdateDocumentRequest :: DocumentContent -> DocumentName -> UpdateDocumentRequest
-newUpdateDocumentRequest _Content _Name = UpdateDocumentRequest { "Content": _Content, "Name": _Name, "DocumentFormat": (NullOrUndefined Nothing), "DocumentVersion": (NullOrUndefined Nothing), "TargetType": (NullOrUndefined Nothing) }
+newUpdateDocumentRequest _Content _Name = UpdateDocumentRequest { "Content": _Content, "Name": _Name, "DocumentFormat": Nothing, "DocumentVersion": Nothing, "TargetType": Nothing }
 
 -- | Constructs UpdateDocumentRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateDocumentRequest' :: DocumentContent -> DocumentName -> ( { "Content" :: (DocumentContent) , "Name" :: (DocumentName) , "DocumentVersion" :: NullOrUndefined (DocumentVersion) , "DocumentFormat" :: NullOrUndefined (DocumentFormat) , "TargetType" :: NullOrUndefined (TargetType) } -> {"Content" :: (DocumentContent) , "Name" :: (DocumentName) , "DocumentVersion" :: NullOrUndefined (DocumentVersion) , "DocumentFormat" :: NullOrUndefined (DocumentFormat) , "TargetType" :: NullOrUndefined (TargetType) } ) -> UpdateDocumentRequest
-newUpdateDocumentRequest' _Content _Name customize = (UpdateDocumentRequest <<< customize) { "Content": _Content, "Name": _Name, "DocumentFormat": (NullOrUndefined Nothing), "DocumentVersion": (NullOrUndefined Nothing), "TargetType": (NullOrUndefined Nothing) }
+newUpdateDocumentRequest' :: DocumentContent -> DocumentName -> ( { "Content" :: (DocumentContent) , "Name" :: (DocumentName) , "DocumentVersion" :: Maybe (DocumentVersion) , "DocumentFormat" :: Maybe (DocumentFormat) , "TargetType" :: Maybe (TargetType) } -> {"Content" :: (DocumentContent) , "Name" :: (DocumentName) , "DocumentVersion" :: Maybe (DocumentVersion) , "DocumentFormat" :: Maybe (DocumentFormat) , "TargetType" :: Maybe (TargetType) } ) -> UpdateDocumentRequest
+newUpdateDocumentRequest' _Content _Name customize = (UpdateDocumentRequest <<< customize) { "Content": _Content, "Name": _Name, "DocumentFormat": Nothing, "DocumentVersion": Nothing, "TargetType": Nothing }
 
 
 
 newtype UpdateDocumentResult = UpdateDocumentResult 
-  { "DocumentDescription" :: NullOrUndefined (DocumentDescription)
+  { "DocumentDescription" :: Maybe (DocumentDescription)
   }
 derive instance newtypeUpdateDocumentResult :: Newtype UpdateDocumentResult _
 derive instance repGenericUpdateDocumentResult :: Generic UpdateDocumentResult _
@@ -11219,25 +11218,25 @@ instance encodeUpdateDocumentResult :: Encode UpdateDocumentResult where encode 
 
 -- | Constructs UpdateDocumentResult from required parameters
 newUpdateDocumentResult :: UpdateDocumentResult
-newUpdateDocumentResult  = UpdateDocumentResult { "DocumentDescription": (NullOrUndefined Nothing) }
+newUpdateDocumentResult  = UpdateDocumentResult { "DocumentDescription": Nothing }
 
 -- | Constructs UpdateDocumentResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateDocumentResult' :: ( { "DocumentDescription" :: NullOrUndefined (DocumentDescription) } -> {"DocumentDescription" :: NullOrUndefined (DocumentDescription) } ) -> UpdateDocumentResult
-newUpdateDocumentResult'  customize = (UpdateDocumentResult <<< customize) { "DocumentDescription": (NullOrUndefined Nothing) }
+newUpdateDocumentResult' :: ( { "DocumentDescription" :: Maybe (DocumentDescription) } -> {"DocumentDescription" :: Maybe (DocumentDescription) } ) -> UpdateDocumentResult
+newUpdateDocumentResult'  customize = (UpdateDocumentResult <<< customize) { "DocumentDescription": Nothing }
 
 
 
 newtype UpdateMaintenanceWindowRequest = UpdateMaintenanceWindowRequest 
   { "WindowId" :: (MaintenanceWindowId)
-  , "Name" :: NullOrUndefined (MaintenanceWindowName)
-  , "Description" :: NullOrUndefined (MaintenanceWindowDescription)
-  , "Schedule" :: NullOrUndefined (MaintenanceWindowSchedule)
-  , "Duration" :: NullOrUndefined (MaintenanceWindowDurationHours)
-  , "Cutoff" :: NullOrUndefined (MaintenanceWindowCutoff)
-  , "AllowUnassociatedTargets" :: NullOrUndefined (MaintenanceWindowAllowUnassociatedTargets)
-  , "Enabled" :: NullOrUndefined (MaintenanceWindowEnabled)
-  , "Replace" :: NullOrUndefined (Boolean)
+  , "Name" :: Maybe (MaintenanceWindowName)
+  , "Description" :: Maybe (MaintenanceWindowDescription)
+  , "Schedule" :: Maybe (MaintenanceWindowSchedule)
+  , "Duration" :: Maybe (MaintenanceWindowDurationHours)
+  , "Cutoff" :: Maybe (MaintenanceWindowCutoff)
+  , "AllowUnassociatedTargets" :: Maybe (MaintenanceWindowAllowUnassociatedTargets)
+  , "Enabled" :: Maybe (MaintenanceWindowEnabled)
+  , "Replace" :: Maybe (Boolean)
   }
 derive instance newtypeUpdateMaintenanceWindowRequest :: Newtype UpdateMaintenanceWindowRequest _
 derive instance repGenericUpdateMaintenanceWindowRequest :: Generic UpdateMaintenanceWindowRequest _
@@ -11247,24 +11246,24 @@ instance encodeUpdateMaintenanceWindowRequest :: Encode UpdateMaintenanceWindowR
 
 -- | Constructs UpdateMaintenanceWindowRequest from required parameters
 newUpdateMaintenanceWindowRequest :: MaintenanceWindowId -> UpdateMaintenanceWindowRequest
-newUpdateMaintenanceWindowRequest _WindowId = UpdateMaintenanceWindowRequest { "WindowId": _WindowId, "AllowUnassociatedTargets": (NullOrUndefined Nothing), "Cutoff": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "Duration": (NullOrUndefined Nothing), "Enabled": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Replace": (NullOrUndefined Nothing), "Schedule": (NullOrUndefined Nothing) }
+newUpdateMaintenanceWindowRequest _WindowId = UpdateMaintenanceWindowRequest { "WindowId": _WindowId, "AllowUnassociatedTargets": Nothing, "Cutoff": Nothing, "Description": Nothing, "Duration": Nothing, "Enabled": Nothing, "Name": Nothing, "Replace": Nothing, "Schedule": Nothing }
 
 -- | Constructs UpdateMaintenanceWindowRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateMaintenanceWindowRequest' :: MaintenanceWindowId -> ( { "WindowId" :: (MaintenanceWindowId) , "Name" :: NullOrUndefined (MaintenanceWindowName) , "Description" :: NullOrUndefined (MaintenanceWindowDescription) , "Schedule" :: NullOrUndefined (MaintenanceWindowSchedule) , "Duration" :: NullOrUndefined (MaintenanceWindowDurationHours) , "Cutoff" :: NullOrUndefined (MaintenanceWindowCutoff) , "AllowUnassociatedTargets" :: NullOrUndefined (MaintenanceWindowAllowUnassociatedTargets) , "Enabled" :: NullOrUndefined (MaintenanceWindowEnabled) , "Replace" :: NullOrUndefined (Boolean) } -> {"WindowId" :: (MaintenanceWindowId) , "Name" :: NullOrUndefined (MaintenanceWindowName) , "Description" :: NullOrUndefined (MaintenanceWindowDescription) , "Schedule" :: NullOrUndefined (MaintenanceWindowSchedule) , "Duration" :: NullOrUndefined (MaintenanceWindowDurationHours) , "Cutoff" :: NullOrUndefined (MaintenanceWindowCutoff) , "AllowUnassociatedTargets" :: NullOrUndefined (MaintenanceWindowAllowUnassociatedTargets) , "Enabled" :: NullOrUndefined (MaintenanceWindowEnabled) , "Replace" :: NullOrUndefined (Boolean) } ) -> UpdateMaintenanceWindowRequest
-newUpdateMaintenanceWindowRequest' _WindowId customize = (UpdateMaintenanceWindowRequest <<< customize) { "WindowId": _WindowId, "AllowUnassociatedTargets": (NullOrUndefined Nothing), "Cutoff": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "Duration": (NullOrUndefined Nothing), "Enabled": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Replace": (NullOrUndefined Nothing), "Schedule": (NullOrUndefined Nothing) }
+newUpdateMaintenanceWindowRequest' :: MaintenanceWindowId -> ( { "WindowId" :: (MaintenanceWindowId) , "Name" :: Maybe (MaintenanceWindowName) , "Description" :: Maybe (MaintenanceWindowDescription) , "Schedule" :: Maybe (MaintenanceWindowSchedule) , "Duration" :: Maybe (MaintenanceWindowDurationHours) , "Cutoff" :: Maybe (MaintenanceWindowCutoff) , "AllowUnassociatedTargets" :: Maybe (MaintenanceWindowAllowUnassociatedTargets) , "Enabled" :: Maybe (MaintenanceWindowEnabled) , "Replace" :: Maybe (Boolean) } -> {"WindowId" :: (MaintenanceWindowId) , "Name" :: Maybe (MaintenanceWindowName) , "Description" :: Maybe (MaintenanceWindowDescription) , "Schedule" :: Maybe (MaintenanceWindowSchedule) , "Duration" :: Maybe (MaintenanceWindowDurationHours) , "Cutoff" :: Maybe (MaintenanceWindowCutoff) , "AllowUnassociatedTargets" :: Maybe (MaintenanceWindowAllowUnassociatedTargets) , "Enabled" :: Maybe (MaintenanceWindowEnabled) , "Replace" :: Maybe (Boolean) } ) -> UpdateMaintenanceWindowRequest
+newUpdateMaintenanceWindowRequest' _WindowId customize = (UpdateMaintenanceWindowRequest <<< customize) { "WindowId": _WindowId, "AllowUnassociatedTargets": Nothing, "Cutoff": Nothing, "Description": Nothing, "Duration": Nothing, "Enabled": Nothing, "Name": Nothing, "Replace": Nothing, "Schedule": Nothing }
 
 
 
 newtype UpdateMaintenanceWindowResult = UpdateMaintenanceWindowResult 
-  { "WindowId" :: NullOrUndefined (MaintenanceWindowId)
-  , "Name" :: NullOrUndefined (MaintenanceWindowName)
-  , "Description" :: NullOrUndefined (MaintenanceWindowDescription)
-  , "Schedule" :: NullOrUndefined (MaintenanceWindowSchedule)
-  , "Duration" :: NullOrUndefined (MaintenanceWindowDurationHours)
-  , "Cutoff" :: NullOrUndefined (MaintenanceWindowCutoff)
-  , "AllowUnassociatedTargets" :: NullOrUndefined (MaintenanceWindowAllowUnassociatedTargets)
-  , "Enabled" :: NullOrUndefined (MaintenanceWindowEnabled)
+  { "WindowId" :: Maybe (MaintenanceWindowId)
+  , "Name" :: Maybe (MaintenanceWindowName)
+  , "Description" :: Maybe (MaintenanceWindowDescription)
+  , "Schedule" :: Maybe (MaintenanceWindowSchedule)
+  , "Duration" :: Maybe (MaintenanceWindowDurationHours)
+  , "Cutoff" :: Maybe (MaintenanceWindowCutoff)
+  , "AllowUnassociatedTargets" :: Maybe (MaintenanceWindowAllowUnassociatedTargets)
+  , "Enabled" :: Maybe (MaintenanceWindowEnabled)
   }
 derive instance newtypeUpdateMaintenanceWindowResult :: Newtype UpdateMaintenanceWindowResult _
 derive instance repGenericUpdateMaintenanceWindowResult :: Generic UpdateMaintenanceWindowResult _
@@ -11274,23 +11273,23 @@ instance encodeUpdateMaintenanceWindowResult :: Encode UpdateMaintenanceWindowRe
 
 -- | Constructs UpdateMaintenanceWindowResult from required parameters
 newUpdateMaintenanceWindowResult :: UpdateMaintenanceWindowResult
-newUpdateMaintenanceWindowResult  = UpdateMaintenanceWindowResult { "AllowUnassociatedTargets": (NullOrUndefined Nothing), "Cutoff": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "Duration": (NullOrUndefined Nothing), "Enabled": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Schedule": (NullOrUndefined Nothing), "WindowId": (NullOrUndefined Nothing) }
+newUpdateMaintenanceWindowResult  = UpdateMaintenanceWindowResult { "AllowUnassociatedTargets": Nothing, "Cutoff": Nothing, "Description": Nothing, "Duration": Nothing, "Enabled": Nothing, "Name": Nothing, "Schedule": Nothing, "WindowId": Nothing }
 
 -- | Constructs UpdateMaintenanceWindowResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateMaintenanceWindowResult' :: ( { "WindowId" :: NullOrUndefined (MaintenanceWindowId) , "Name" :: NullOrUndefined (MaintenanceWindowName) , "Description" :: NullOrUndefined (MaintenanceWindowDescription) , "Schedule" :: NullOrUndefined (MaintenanceWindowSchedule) , "Duration" :: NullOrUndefined (MaintenanceWindowDurationHours) , "Cutoff" :: NullOrUndefined (MaintenanceWindowCutoff) , "AllowUnassociatedTargets" :: NullOrUndefined (MaintenanceWindowAllowUnassociatedTargets) , "Enabled" :: NullOrUndefined (MaintenanceWindowEnabled) } -> {"WindowId" :: NullOrUndefined (MaintenanceWindowId) , "Name" :: NullOrUndefined (MaintenanceWindowName) , "Description" :: NullOrUndefined (MaintenanceWindowDescription) , "Schedule" :: NullOrUndefined (MaintenanceWindowSchedule) , "Duration" :: NullOrUndefined (MaintenanceWindowDurationHours) , "Cutoff" :: NullOrUndefined (MaintenanceWindowCutoff) , "AllowUnassociatedTargets" :: NullOrUndefined (MaintenanceWindowAllowUnassociatedTargets) , "Enabled" :: NullOrUndefined (MaintenanceWindowEnabled) } ) -> UpdateMaintenanceWindowResult
-newUpdateMaintenanceWindowResult'  customize = (UpdateMaintenanceWindowResult <<< customize) { "AllowUnassociatedTargets": (NullOrUndefined Nothing), "Cutoff": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "Duration": (NullOrUndefined Nothing), "Enabled": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Schedule": (NullOrUndefined Nothing), "WindowId": (NullOrUndefined Nothing) }
+newUpdateMaintenanceWindowResult' :: ( { "WindowId" :: Maybe (MaintenanceWindowId) , "Name" :: Maybe (MaintenanceWindowName) , "Description" :: Maybe (MaintenanceWindowDescription) , "Schedule" :: Maybe (MaintenanceWindowSchedule) , "Duration" :: Maybe (MaintenanceWindowDurationHours) , "Cutoff" :: Maybe (MaintenanceWindowCutoff) , "AllowUnassociatedTargets" :: Maybe (MaintenanceWindowAllowUnassociatedTargets) , "Enabled" :: Maybe (MaintenanceWindowEnabled) } -> {"WindowId" :: Maybe (MaintenanceWindowId) , "Name" :: Maybe (MaintenanceWindowName) , "Description" :: Maybe (MaintenanceWindowDescription) , "Schedule" :: Maybe (MaintenanceWindowSchedule) , "Duration" :: Maybe (MaintenanceWindowDurationHours) , "Cutoff" :: Maybe (MaintenanceWindowCutoff) , "AllowUnassociatedTargets" :: Maybe (MaintenanceWindowAllowUnassociatedTargets) , "Enabled" :: Maybe (MaintenanceWindowEnabled) } ) -> UpdateMaintenanceWindowResult
+newUpdateMaintenanceWindowResult'  customize = (UpdateMaintenanceWindowResult <<< customize) { "AllowUnassociatedTargets": Nothing, "Cutoff": Nothing, "Description": Nothing, "Duration": Nothing, "Enabled": Nothing, "Name": Nothing, "Schedule": Nothing, "WindowId": Nothing }
 
 
 
 newtype UpdateMaintenanceWindowTargetRequest = UpdateMaintenanceWindowTargetRequest 
   { "WindowId" :: (MaintenanceWindowId)
   , "WindowTargetId" :: (MaintenanceWindowTargetId)
-  , "Targets" :: NullOrUndefined (Targets)
-  , "OwnerInformation" :: NullOrUndefined (OwnerInformation)
-  , "Name" :: NullOrUndefined (MaintenanceWindowName)
-  , "Description" :: NullOrUndefined (MaintenanceWindowDescription)
-  , "Replace" :: NullOrUndefined (Boolean)
+  , "Targets" :: Maybe (Targets)
+  , "OwnerInformation" :: Maybe (OwnerInformation)
+  , "Name" :: Maybe (MaintenanceWindowName)
+  , "Description" :: Maybe (MaintenanceWindowDescription)
+  , "Replace" :: Maybe (Boolean)
   }
 derive instance newtypeUpdateMaintenanceWindowTargetRequest :: Newtype UpdateMaintenanceWindowTargetRequest _
 derive instance repGenericUpdateMaintenanceWindowTargetRequest :: Generic UpdateMaintenanceWindowTargetRequest _
@@ -11300,22 +11299,22 @@ instance encodeUpdateMaintenanceWindowTargetRequest :: Encode UpdateMaintenanceW
 
 -- | Constructs UpdateMaintenanceWindowTargetRequest from required parameters
 newUpdateMaintenanceWindowTargetRequest :: MaintenanceWindowId -> MaintenanceWindowTargetId -> UpdateMaintenanceWindowTargetRequest
-newUpdateMaintenanceWindowTargetRequest _WindowId _WindowTargetId = UpdateMaintenanceWindowTargetRequest { "WindowId": _WindowId, "WindowTargetId": _WindowTargetId, "Description": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "OwnerInformation": (NullOrUndefined Nothing), "Replace": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing) }
+newUpdateMaintenanceWindowTargetRequest _WindowId _WindowTargetId = UpdateMaintenanceWindowTargetRequest { "WindowId": _WindowId, "WindowTargetId": _WindowTargetId, "Description": Nothing, "Name": Nothing, "OwnerInformation": Nothing, "Replace": Nothing, "Targets": Nothing }
 
 -- | Constructs UpdateMaintenanceWindowTargetRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateMaintenanceWindowTargetRequest' :: MaintenanceWindowId -> MaintenanceWindowTargetId -> ( { "WindowId" :: (MaintenanceWindowId) , "WindowTargetId" :: (MaintenanceWindowTargetId) , "Targets" :: NullOrUndefined (Targets) , "OwnerInformation" :: NullOrUndefined (OwnerInformation) , "Name" :: NullOrUndefined (MaintenanceWindowName) , "Description" :: NullOrUndefined (MaintenanceWindowDescription) , "Replace" :: NullOrUndefined (Boolean) } -> {"WindowId" :: (MaintenanceWindowId) , "WindowTargetId" :: (MaintenanceWindowTargetId) , "Targets" :: NullOrUndefined (Targets) , "OwnerInformation" :: NullOrUndefined (OwnerInformation) , "Name" :: NullOrUndefined (MaintenanceWindowName) , "Description" :: NullOrUndefined (MaintenanceWindowDescription) , "Replace" :: NullOrUndefined (Boolean) } ) -> UpdateMaintenanceWindowTargetRequest
-newUpdateMaintenanceWindowTargetRequest' _WindowId _WindowTargetId customize = (UpdateMaintenanceWindowTargetRequest <<< customize) { "WindowId": _WindowId, "WindowTargetId": _WindowTargetId, "Description": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "OwnerInformation": (NullOrUndefined Nothing), "Replace": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing) }
+newUpdateMaintenanceWindowTargetRequest' :: MaintenanceWindowId -> MaintenanceWindowTargetId -> ( { "WindowId" :: (MaintenanceWindowId) , "WindowTargetId" :: (MaintenanceWindowTargetId) , "Targets" :: Maybe (Targets) , "OwnerInformation" :: Maybe (OwnerInformation) , "Name" :: Maybe (MaintenanceWindowName) , "Description" :: Maybe (MaintenanceWindowDescription) , "Replace" :: Maybe (Boolean) } -> {"WindowId" :: (MaintenanceWindowId) , "WindowTargetId" :: (MaintenanceWindowTargetId) , "Targets" :: Maybe (Targets) , "OwnerInformation" :: Maybe (OwnerInformation) , "Name" :: Maybe (MaintenanceWindowName) , "Description" :: Maybe (MaintenanceWindowDescription) , "Replace" :: Maybe (Boolean) } ) -> UpdateMaintenanceWindowTargetRequest
+newUpdateMaintenanceWindowTargetRequest' _WindowId _WindowTargetId customize = (UpdateMaintenanceWindowTargetRequest <<< customize) { "WindowId": _WindowId, "WindowTargetId": _WindowTargetId, "Description": Nothing, "Name": Nothing, "OwnerInformation": Nothing, "Replace": Nothing, "Targets": Nothing }
 
 
 
 newtype UpdateMaintenanceWindowTargetResult = UpdateMaintenanceWindowTargetResult 
-  { "WindowId" :: NullOrUndefined (MaintenanceWindowId)
-  , "WindowTargetId" :: NullOrUndefined (MaintenanceWindowTargetId)
-  , "Targets" :: NullOrUndefined (Targets)
-  , "OwnerInformation" :: NullOrUndefined (OwnerInformation)
-  , "Name" :: NullOrUndefined (MaintenanceWindowName)
-  , "Description" :: NullOrUndefined (MaintenanceWindowDescription)
+  { "WindowId" :: Maybe (MaintenanceWindowId)
+  , "WindowTargetId" :: Maybe (MaintenanceWindowTargetId)
+  , "Targets" :: Maybe (Targets)
+  , "OwnerInformation" :: Maybe (OwnerInformation)
+  , "Name" :: Maybe (MaintenanceWindowName)
+  , "Description" :: Maybe (MaintenanceWindowDescription)
   }
 derive instance newtypeUpdateMaintenanceWindowTargetResult :: Newtype UpdateMaintenanceWindowTargetResult _
 derive instance repGenericUpdateMaintenanceWindowTargetResult :: Generic UpdateMaintenanceWindowTargetResult _
@@ -11325,30 +11324,30 @@ instance encodeUpdateMaintenanceWindowTargetResult :: Encode UpdateMaintenanceWi
 
 -- | Constructs UpdateMaintenanceWindowTargetResult from required parameters
 newUpdateMaintenanceWindowTargetResult :: UpdateMaintenanceWindowTargetResult
-newUpdateMaintenanceWindowTargetResult  = UpdateMaintenanceWindowTargetResult { "Description": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "OwnerInformation": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing), "WindowId": (NullOrUndefined Nothing), "WindowTargetId": (NullOrUndefined Nothing) }
+newUpdateMaintenanceWindowTargetResult  = UpdateMaintenanceWindowTargetResult { "Description": Nothing, "Name": Nothing, "OwnerInformation": Nothing, "Targets": Nothing, "WindowId": Nothing, "WindowTargetId": Nothing }
 
 -- | Constructs UpdateMaintenanceWindowTargetResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateMaintenanceWindowTargetResult' :: ( { "WindowId" :: NullOrUndefined (MaintenanceWindowId) , "WindowTargetId" :: NullOrUndefined (MaintenanceWindowTargetId) , "Targets" :: NullOrUndefined (Targets) , "OwnerInformation" :: NullOrUndefined (OwnerInformation) , "Name" :: NullOrUndefined (MaintenanceWindowName) , "Description" :: NullOrUndefined (MaintenanceWindowDescription) } -> {"WindowId" :: NullOrUndefined (MaintenanceWindowId) , "WindowTargetId" :: NullOrUndefined (MaintenanceWindowTargetId) , "Targets" :: NullOrUndefined (Targets) , "OwnerInformation" :: NullOrUndefined (OwnerInformation) , "Name" :: NullOrUndefined (MaintenanceWindowName) , "Description" :: NullOrUndefined (MaintenanceWindowDescription) } ) -> UpdateMaintenanceWindowTargetResult
-newUpdateMaintenanceWindowTargetResult'  customize = (UpdateMaintenanceWindowTargetResult <<< customize) { "Description": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "OwnerInformation": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing), "WindowId": (NullOrUndefined Nothing), "WindowTargetId": (NullOrUndefined Nothing) }
+newUpdateMaintenanceWindowTargetResult' :: ( { "WindowId" :: Maybe (MaintenanceWindowId) , "WindowTargetId" :: Maybe (MaintenanceWindowTargetId) , "Targets" :: Maybe (Targets) , "OwnerInformation" :: Maybe (OwnerInformation) , "Name" :: Maybe (MaintenanceWindowName) , "Description" :: Maybe (MaintenanceWindowDescription) } -> {"WindowId" :: Maybe (MaintenanceWindowId) , "WindowTargetId" :: Maybe (MaintenanceWindowTargetId) , "Targets" :: Maybe (Targets) , "OwnerInformation" :: Maybe (OwnerInformation) , "Name" :: Maybe (MaintenanceWindowName) , "Description" :: Maybe (MaintenanceWindowDescription) } ) -> UpdateMaintenanceWindowTargetResult
+newUpdateMaintenanceWindowTargetResult'  customize = (UpdateMaintenanceWindowTargetResult <<< customize) { "Description": Nothing, "Name": Nothing, "OwnerInformation": Nothing, "Targets": Nothing, "WindowId": Nothing, "WindowTargetId": Nothing }
 
 
 
 newtype UpdateMaintenanceWindowTaskRequest = UpdateMaintenanceWindowTaskRequest 
   { "WindowId" :: (MaintenanceWindowId)
   , "WindowTaskId" :: (MaintenanceWindowTaskId)
-  , "Targets" :: NullOrUndefined (Targets)
-  , "TaskArn" :: NullOrUndefined (MaintenanceWindowTaskArn)
-  , "ServiceRoleArn" :: NullOrUndefined (ServiceRole)
-  , "TaskParameters" :: NullOrUndefined (MaintenanceWindowTaskParameters)
-  , "TaskInvocationParameters" :: NullOrUndefined (MaintenanceWindowTaskInvocationParameters)
-  , "Priority" :: NullOrUndefined (MaintenanceWindowTaskPriority)
-  , "MaxConcurrency" :: NullOrUndefined (MaxConcurrency)
-  , "MaxErrors" :: NullOrUndefined (MaxErrors)
-  , "LoggingInfo" :: NullOrUndefined (LoggingInfo)
-  , "Name" :: NullOrUndefined (MaintenanceWindowName)
-  , "Description" :: NullOrUndefined (MaintenanceWindowDescription)
-  , "Replace" :: NullOrUndefined (Boolean)
+  , "Targets" :: Maybe (Targets)
+  , "TaskArn" :: Maybe (MaintenanceWindowTaskArn)
+  , "ServiceRoleArn" :: Maybe (ServiceRole)
+  , "TaskParameters" :: Maybe (MaintenanceWindowTaskParameters)
+  , "TaskInvocationParameters" :: Maybe (MaintenanceWindowTaskInvocationParameters)
+  , "Priority" :: Maybe (MaintenanceWindowTaskPriority)
+  , "MaxConcurrency" :: Maybe (MaxConcurrency)
+  , "MaxErrors" :: Maybe (MaxErrors)
+  , "LoggingInfo" :: Maybe (LoggingInfo)
+  , "Name" :: Maybe (MaintenanceWindowName)
+  , "Description" :: Maybe (MaintenanceWindowDescription)
+  , "Replace" :: Maybe (Boolean)
   }
 derive instance newtypeUpdateMaintenanceWindowTaskRequest :: Newtype UpdateMaintenanceWindowTaskRequest _
 derive instance repGenericUpdateMaintenanceWindowTaskRequest :: Generic UpdateMaintenanceWindowTaskRequest _
@@ -11358,29 +11357,29 @@ instance encodeUpdateMaintenanceWindowTaskRequest :: Encode UpdateMaintenanceWin
 
 -- | Constructs UpdateMaintenanceWindowTaskRequest from required parameters
 newUpdateMaintenanceWindowTaskRequest :: MaintenanceWindowId -> MaintenanceWindowTaskId -> UpdateMaintenanceWindowTaskRequest
-newUpdateMaintenanceWindowTaskRequest _WindowId _WindowTaskId = UpdateMaintenanceWindowTaskRequest { "WindowId": _WindowId, "WindowTaskId": _WindowTaskId, "Description": (NullOrUndefined Nothing), "LoggingInfo": (NullOrUndefined Nothing), "MaxConcurrency": (NullOrUndefined Nothing), "MaxErrors": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Priority": (NullOrUndefined Nothing), "Replace": (NullOrUndefined Nothing), "ServiceRoleArn": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing), "TaskArn": (NullOrUndefined Nothing), "TaskInvocationParameters": (NullOrUndefined Nothing), "TaskParameters": (NullOrUndefined Nothing) }
+newUpdateMaintenanceWindowTaskRequest _WindowId _WindowTaskId = UpdateMaintenanceWindowTaskRequest { "WindowId": _WindowId, "WindowTaskId": _WindowTaskId, "Description": Nothing, "LoggingInfo": Nothing, "MaxConcurrency": Nothing, "MaxErrors": Nothing, "Name": Nothing, "Priority": Nothing, "Replace": Nothing, "ServiceRoleArn": Nothing, "Targets": Nothing, "TaskArn": Nothing, "TaskInvocationParameters": Nothing, "TaskParameters": Nothing }
 
 -- | Constructs UpdateMaintenanceWindowTaskRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateMaintenanceWindowTaskRequest' :: MaintenanceWindowId -> MaintenanceWindowTaskId -> ( { "WindowId" :: (MaintenanceWindowId) , "WindowTaskId" :: (MaintenanceWindowTaskId) , "Targets" :: NullOrUndefined (Targets) , "TaskArn" :: NullOrUndefined (MaintenanceWindowTaskArn) , "ServiceRoleArn" :: NullOrUndefined (ServiceRole) , "TaskParameters" :: NullOrUndefined (MaintenanceWindowTaskParameters) , "TaskInvocationParameters" :: NullOrUndefined (MaintenanceWindowTaskInvocationParameters) , "Priority" :: NullOrUndefined (MaintenanceWindowTaskPriority) , "MaxConcurrency" :: NullOrUndefined (MaxConcurrency) , "MaxErrors" :: NullOrUndefined (MaxErrors) , "LoggingInfo" :: NullOrUndefined (LoggingInfo) , "Name" :: NullOrUndefined (MaintenanceWindowName) , "Description" :: NullOrUndefined (MaintenanceWindowDescription) , "Replace" :: NullOrUndefined (Boolean) } -> {"WindowId" :: (MaintenanceWindowId) , "WindowTaskId" :: (MaintenanceWindowTaskId) , "Targets" :: NullOrUndefined (Targets) , "TaskArn" :: NullOrUndefined (MaintenanceWindowTaskArn) , "ServiceRoleArn" :: NullOrUndefined (ServiceRole) , "TaskParameters" :: NullOrUndefined (MaintenanceWindowTaskParameters) , "TaskInvocationParameters" :: NullOrUndefined (MaintenanceWindowTaskInvocationParameters) , "Priority" :: NullOrUndefined (MaintenanceWindowTaskPriority) , "MaxConcurrency" :: NullOrUndefined (MaxConcurrency) , "MaxErrors" :: NullOrUndefined (MaxErrors) , "LoggingInfo" :: NullOrUndefined (LoggingInfo) , "Name" :: NullOrUndefined (MaintenanceWindowName) , "Description" :: NullOrUndefined (MaintenanceWindowDescription) , "Replace" :: NullOrUndefined (Boolean) } ) -> UpdateMaintenanceWindowTaskRequest
-newUpdateMaintenanceWindowTaskRequest' _WindowId _WindowTaskId customize = (UpdateMaintenanceWindowTaskRequest <<< customize) { "WindowId": _WindowId, "WindowTaskId": _WindowTaskId, "Description": (NullOrUndefined Nothing), "LoggingInfo": (NullOrUndefined Nothing), "MaxConcurrency": (NullOrUndefined Nothing), "MaxErrors": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Priority": (NullOrUndefined Nothing), "Replace": (NullOrUndefined Nothing), "ServiceRoleArn": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing), "TaskArn": (NullOrUndefined Nothing), "TaskInvocationParameters": (NullOrUndefined Nothing), "TaskParameters": (NullOrUndefined Nothing) }
+newUpdateMaintenanceWindowTaskRequest' :: MaintenanceWindowId -> MaintenanceWindowTaskId -> ( { "WindowId" :: (MaintenanceWindowId) , "WindowTaskId" :: (MaintenanceWindowTaskId) , "Targets" :: Maybe (Targets) , "TaskArn" :: Maybe (MaintenanceWindowTaskArn) , "ServiceRoleArn" :: Maybe (ServiceRole) , "TaskParameters" :: Maybe (MaintenanceWindowTaskParameters) , "TaskInvocationParameters" :: Maybe (MaintenanceWindowTaskInvocationParameters) , "Priority" :: Maybe (MaintenanceWindowTaskPriority) , "MaxConcurrency" :: Maybe (MaxConcurrency) , "MaxErrors" :: Maybe (MaxErrors) , "LoggingInfo" :: Maybe (LoggingInfo) , "Name" :: Maybe (MaintenanceWindowName) , "Description" :: Maybe (MaintenanceWindowDescription) , "Replace" :: Maybe (Boolean) } -> {"WindowId" :: (MaintenanceWindowId) , "WindowTaskId" :: (MaintenanceWindowTaskId) , "Targets" :: Maybe (Targets) , "TaskArn" :: Maybe (MaintenanceWindowTaskArn) , "ServiceRoleArn" :: Maybe (ServiceRole) , "TaskParameters" :: Maybe (MaintenanceWindowTaskParameters) , "TaskInvocationParameters" :: Maybe (MaintenanceWindowTaskInvocationParameters) , "Priority" :: Maybe (MaintenanceWindowTaskPriority) , "MaxConcurrency" :: Maybe (MaxConcurrency) , "MaxErrors" :: Maybe (MaxErrors) , "LoggingInfo" :: Maybe (LoggingInfo) , "Name" :: Maybe (MaintenanceWindowName) , "Description" :: Maybe (MaintenanceWindowDescription) , "Replace" :: Maybe (Boolean) } ) -> UpdateMaintenanceWindowTaskRequest
+newUpdateMaintenanceWindowTaskRequest' _WindowId _WindowTaskId customize = (UpdateMaintenanceWindowTaskRequest <<< customize) { "WindowId": _WindowId, "WindowTaskId": _WindowTaskId, "Description": Nothing, "LoggingInfo": Nothing, "MaxConcurrency": Nothing, "MaxErrors": Nothing, "Name": Nothing, "Priority": Nothing, "Replace": Nothing, "ServiceRoleArn": Nothing, "Targets": Nothing, "TaskArn": Nothing, "TaskInvocationParameters": Nothing, "TaskParameters": Nothing }
 
 
 
 newtype UpdateMaintenanceWindowTaskResult = UpdateMaintenanceWindowTaskResult 
-  { "WindowId" :: NullOrUndefined (MaintenanceWindowId)
-  , "WindowTaskId" :: NullOrUndefined (MaintenanceWindowTaskId)
-  , "Targets" :: NullOrUndefined (Targets)
-  , "TaskArn" :: NullOrUndefined (MaintenanceWindowTaskArn)
-  , "ServiceRoleArn" :: NullOrUndefined (ServiceRole)
-  , "TaskParameters" :: NullOrUndefined (MaintenanceWindowTaskParameters)
-  , "TaskInvocationParameters" :: NullOrUndefined (MaintenanceWindowTaskInvocationParameters)
-  , "Priority" :: NullOrUndefined (MaintenanceWindowTaskPriority)
-  , "MaxConcurrency" :: NullOrUndefined (MaxConcurrency)
-  , "MaxErrors" :: NullOrUndefined (MaxErrors)
-  , "LoggingInfo" :: NullOrUndefined (LoggingInfo)
-  , "Name" :: NullOrUndefined (MaintenanceWindowName)
-  , "Description" :: NullOrUndefined (MaintenanceWindowDescription)
+  { "WindowId" :: Maybe (MaintenanceWindowId)
+  , "WindowTaskId" :: Maybe (MaintenanceWindowTaskId)
+  , "Targets" :: Maybe (Targets)
+  , "TaskArn" :: Maybe (MaintenanceWindowTaskArn)
+  , "ServiceRoleArn" :: Maybe (ServiceRole)
+  , "TaskParameters" :: Maybe (MaintenanceWindowTaskParameters)
+  , "TaskInvocationParameters" :: Maybe (MaintenanceWindowTaskInvocationParameters)
+  , "Priority" :: Maybe (MaintenanceWindowTaskPriority)
+  , "MaxConcurrency" :: Maybe (MaxConcurrency)
+  , "MaxErrors" :: Maybe (MaxErrors)
+  , "LoggingInfo" :: Maybe (LoggingInfo)
+  , "Name" :: Maybe (MaintenanceWindowName)
+  , "Description" :: Maybe (MaintenanceWindowDescription)
   }
 derive instance newtypeUpdateMaintenanceWindowTaskResult :: Newtype UpdateMaintenanceWindowTaskResult _
 derive instance repGenericUpdateMaintenanceWindowTaskResult :: Generic UpdateMaintenanceWindowTaskResult _
@@ -11390,12 +11389,12 @@ instance encodeUpdateMaintenanceWindowTaskResult :: Encode UpdateMaintenanceWind
 
 -- | Constructs UpdateMaintenanceWindowTaskResult from required parameters
 newUpdateMaintenanceWindowTaskResult :: UpdateMaintenanceWindowTaskResult
-newUpdateMaintenanceWindowTaskResult  = UpdateMaintenanceWindowTaskResult { "Description": (NullOrUndefined Nothing), "LoggingInfo": (NullOrUndefined Nothing), "MaxConcurrency": (NullOrUndefined Nothing), "MaxErrors": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Priority": (NullOrUndefined Nothing), "ServiceRoleArn": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing), "TaskArn": (NullOrUndefined Nothing), "TaskInvocationParameters": (NullOrUndefined Nothing), "TaskParameters": (NullOrUndefined Nothing), "WindowId": (NullOrUndefined Nothing), "WindowTaskId": (NullOrUndefined Nothing) }
+newUpdateMaintenanceWindowTaskResult  = UpdateMaintenanceWindowTaskResult { "Description": Nothing, "LoggingInfo": Nothing, "MaxConcurrency": Nothing, "MaxErrors": Nothing, "Name": Nothing, "Priority": Nothing, "ServiceRoleArn": Nothing, "Targets": Nothing, "TaskArn": Nothing, "TaskInvocationParameters": Nothing, "TaskParameters": Nothing, "WindowId": Nothing, "WindowTaskId": Nothing }
 
 -- | Constructs UpdateMaintenanceWindowTaskResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateMaintenanceWindowTaskResult' :: ( { "WindowId" :: NullOrUndefined (MaintenanceWindowId) , "WindowTaskId" :: NullOrUndefined (MaintenanceWindowTaskId) , "Targets" :: NullOrUndefined (Targets) , "TaskArn" :: NullOrUndefined (MaintenanceWindowTaskArn) , "ServiceRoleArn" :: NullOrUndefined (ServiceRole) , "TaskParameters" :: NullOrUndefined (MaintenanceWindowTaskParameters) , "TaskInvocationParameters" :: NullOrUndefined (MaintenanceWindowTaskInvocationParameters) , "Priority" :: NullOrUndefined (MaintenanceWindowTaskPriority) , "MaxConcurrency" :: NullOrUndefined (MaxConcurrency) , "MaxErrors" :: NullOrUndefined (MaxErrors) , "LoggingInfo" :: NullOrUndefined (LoggingInfo) , "Name" :: NullOrUndefined (MaintenanceWindowName) , "Description" :: NullOrUndefined (MaintenanceWindowDescription) } -> {"WindowId" :: NullOrUndefined (MaintenanceWindowId) , "WindowTaskId" :: NullOrUndefined (MaintenanceWindowTaskId) , "Targets" :: NullOrUndefined (Targets) , "TaskArn" :: NullOrUndefined (MaintenanceWindowTaskArn) , "ServiceRoleArn" :: NullOrUndefined (ServiceRole) , "TaskParameters" :: NullOrUndefined (MaintenanceWindowTaskParameters) , "TaskInvocationParameters" :: NullOrUndefined (MaintenanceWindowTaskInvocationParameters) , "Priority" :: NullOrUndefined (MaintenanceWindowTaskPriority) , "MaxConcurrency" :: NullOrUndefined (MaxConcurrency) , "MaxErrors" :: NullOrUndefined (MaxErrors) , "LoggingInfo" :: NullOrUndefined (LoggingInfo) , "Name" :: NullOrUndefined (MaintenanceWindowName) , "Description" :: NullOrUndefined (MaintenanceWindowDescription) } ) -> UpdateMaintenanceWindowTaskResult
-newUpdateMaintenanceWindowTaskResult'  customize = (UpdateMaintenanceWindowTaskResult <<< customize) { "Description": (NullOrUndefined Nothing), "LoggingInfo": (NullOrUndefined Nothing), "MaxConcurrency": (NullOrUndefined Nothing), "MaxErrors": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Priority": (NullOrUndefined Nothing), "ServiceRoleArn": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing), "TaskArn": (NullOrUndefined Nothing), "TaskInvocationParameters": (NullOrUndefined Nothing), "TaskParameters": (NullOrUndefined Nothing), "WindowId": (NullOrUndefined Nothing), "WindowTaskId": (NullOrUndefined Nothing) }
+newUpdateMaintenanceWindowTaskResult' :: ( { "WindowId" :: Maybe (MaintenanceWindowId) , "WindowTaskId" :: Maybe (MaintenanceWindowTaskId) , "Targets" :: Maybe (Targets) , "TaskArn" :: Maybe (MaintenanceWindowTaskArn) , "ServiceRoleArn" :: Maybe (ServiceRole) , "TaskParameters" :: Maybe (MaintenanceWindowTaskParameters) , "TaskInvocationParameters" :: Maybe (MaintenanceWindowTaskInvocationParameters) , "Priority" :: Maybe (MaintenanceWindowTaskPriority) , "MaxConcurrency" :: Maybe (MaxConcurrency) , "MaxErrors" :: Maybe (MaxErrors) , "LoggingInfo" :: Maybe (LoggingInfo) , "Name" :: Maybe (MaintenanceWindowName) , "Description" :: Maybe (MaintenanceWindowDescription) } -> {"WindowId" :: Maybe (MaintenanceWindowId) , "WindowTaskId" :: Maybe (MaintenanceWindowTaskId) , "Targets" :: Maybe (Targets) , "TaskArn" :: Maybe (MaintenanceWindowTaskArn) , "ServiceRoleArn" :: Maybe (ServiceRole) , "TaskParameters" :: Maybe (MaintenanceWindowTaskParameters) , "TaskInvocationParameters" :: Maybe (MaintenanceWindowTaskInvocationParameters) , "Priority" :: Maybe (MaintenanceWindowTaskPriority) , "MaxConcurrency" :: Maybe (MaxConcurrency) , "MaxErrors" :: Maybe (MaxErrors) , "LoggingInfo" :: Maybe (LoggingInfo) , "Name" :: Maybe (MaintenanceWindowName) , "Description" :: Maybe (MaintenanceWindowDescription) } ) -> UpdateMaintenanceWindowTaskResult
+newUpdateMaintenanceWindowTaskResult'  customize = (UpdateMaintenanceWindowTaskResult <<< customize) { "Description": Nothing, "LoggingInfo": Nothing, "MaxConcurrency": Nothing, "MaxErrors": Nothing, "Name": Nothing, "Priority": Nothing, "ServiceRoleArn": Nothing, "Targets": Nothing, "TaskArn": Nothing, "TaskInvocationParameters": Nothing, "TaskParameters": Nothing, "WindowId": Nothing, "WindowTaskId": Nothing }
 
 
 
@@ -11431,16 +11430,16 @@ instance encodeUpdateManagedInstanceRoleResult :: Encode UpdateManagedInstanceRo
 
 newtype UpdatePatchBaselineRequest = UpdatePatchBaselineRequest 
   { "BaselineId" :: (BaselineId)
-  , "Name" :: NullOrUndefined (BaselineName)
-  , "GlobalFilters" :: NullOrUndefined (PatchFilterGroup)
-  , "ApprovalRules" :: NullOrUndefined (PatchRuleGroup)
-  , "ApprovedPatches" :: NullOrUndefined (PatchIdList)
-  , "ApprovedPatchesComplianceLevel" :: NullOrUndefined (PatchComplianceLevel)
-  , "ApprovedPatchesEnableNonSecurity" :: NullOrUndefined (Boolean)
-  , "RejectedPatches" :: NullOrUndefined (PatchIdList)
-  , "Description" :: NullOrUndefined (BaselineDescription)
-  , "Sources" :: NullOrUndefined (PatchSourceList)
-  , "Replace" :: NullOrUndefined (Boolean)
+  , "Name" :: Maybe (BaselineName)
+  , "GlobalFilters" :: Maybe (PatchFilterGroup)
+  , "ApprovalRules" :: Maybe (PatchRuleGroup)
+  , "ApprovedPatches" :: Maybe (PatchIdList)
+  , "ApprovedPatchesComplianceLevel" :: Maybe (PatchComplianceLevel)
+  , "ApprovedPatchesEnableNonSecurity" :: Maybe (Boolean)
+  , "RejectedPatches" :: Maybe (PatchIdList)
+  , "Description" :: Maybe (BaselineDescription)
+  , "Sources" :: Maybe (PatchSourceList)
+  , "Replace" :: Maybe (Boolean)
   }
 derive instance newtypeUpdatePatchBaselineRequest :: Newtype UpdatePatchBaselineRequest _
 derive instance repGenericUpdatePatchBaselineRequest :: Generic UpdatePatchBaselineRequest _
@@ -11450,29 +11449,29 @@ instance encodeUpdatePatchBaselineRequest :: Encode UpdatePatchBaselineRequest w
 
 -- | Constructs UpdatePatchBaselineRequest from required parameters
 newUpdatePatchBaselineRequest :: BaselineId -> UpdatePatchBaselineRequest
-newUpdatePatchBaselineRequest _BaselineId = UpdatePatchBaselineRequest { "BaselineId": _BaselineId, "ApprovalRules": (NullOrUndefined Nothing), "ApprovedPatches": (NullOrUndefined Nothing), "ApprovedPatchesComplianceLevel": (NullOrUndefined Nothing), "ApprovedPatchesEnableNonSecurity": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "GlobalFilters": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "RejectedPatches": (NullOrUndefined Nothing), "Replace": (NullOrUndefined Nothing), "Sources": (NullOrUndefined Nothing) }
+newUpdatePatchBaselineRequest _BaselineId = UpdatePatchBaselineRequest { "BaselineId": _BaselineId, "ApprovalRules": Nothing, "ApprovedPatches": Nothing, "ApprovedPatchesComplianceLevel": Nothing, "ApprovedPatchesEnableNonSecurity": Nothing, "Description": Nothing, "GlobalFilters": Nothing, "Name": Nothing, "RejectedPatches": Nothing, "Replace": Nothing, "Sources": Nothing }
 
 -- | Constructs UpdatePatchBaselineRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdatePatchBaselineRequest' :: BaselineId -> ( { "BaselineId" :: (BaselineId) , "Name" :: NullOrUndefined (BaselineName) , "GlobalFilters" :: NullOrUndefined (PatchFilterGroup) , "ApprovalRules" :: NullOrUndefined (PatchRuleGroup) , "ApprovedPatches" :: NullOrUndefined (PatchIdList) , "ApprovedPatchesComplianceLevel" :: NullOrUndefined (PatchComplianceLevel) , "ApprovedPatchesEnableNonSecurity" :: NullOrUndefined (Boolean) , "RejectedPatches" :: NullOrUndefined (PatchIdList) , "Description" :: NullOrUndefined (BaselineDescription) , "Sources" :: NullOrUndefined (PatchSourceList) , "Replace" :: NullOrUndefined (Boolean) } -> {"BaselineId" :: (BaselineId) , "Name" :: NullOrUndefined (BaselineName) , "GlobalFilters" :: NullOrUndefined (PatchFilterGroup) , "ApprovalRules" :: NullOrUndefined (PatchRuleGroup) , "ApprovedPatches" :: NullOrUndefined (PatchIdList) , "ApprovedPatchesComplianceLevel" :: NullOrUndefined (PatchComplianceLevel) , "ApprovedPatchesEnableNonSecurity" :: NullOrUndefined (Boolean) , "RejectedPatches" :: NullOrUndefined (PatchIdList) , "Description" :: NullOrUndefined (BaselineDescription) , "Sources" :: NullOrUndefined (PatchSourceList) , "Replace" :: NullOrUndefined (Boolean) } ) -> UpdatePatchBaselineRequest
-newUpdatePatchBaselineRequest' _BaselineId customize = (UpdatePatchBaselineRequest <<< customize) { "BaselineId": _BaselineId, "ApprovalRules": (NullOrUndefined Nothing), "ApprovedPatches": (NullOrUndefined Nothing), "ApprovedPatchesComplianceLevel": (NullOrUndefined Nothing), "ApprovedPatchesEnableNonSecurity": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "GlobalFilters": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "RejectedPatches": (NullOrUndefined Nothing), "Replace": (NullOrUndefined Nothing), "Sources": (NullOrUndefined Nothing) }
+newUpdatePatchBaselineRequest' :: BaselineId -> ( { "BaselineId" :: (BaselineId) , "Name" :: Maybe (BaselineName) , "GlobalFilters" :: Maybe (PatchFilterGroup) , "ApprovalRules" :: Maybe (PatchRuleGroup) , "ApprovedPatches" :: Maybe (PatchIdList) , "ApprovedPatchesComplianceLevel" :: Maybe (PatchComplianceLevel) , "ApprovedPatchesEnableNonSecurity" :: Maybe (Boolean) , "RejectedPatches" :: Maybe (PatchIdList) , "Description" :: Maybe (BaselineDescription) , "Sources" :: Maybe (PatchSourceList) , "Replace" :: Maybe (Boolean) } -> {"BaselineId" :: (BaselineId) , "Name" :: Maybe (BaselineName) , "GlobalFilters" :: Maybe (PatchFilterGroup) , "ApprovalRules" :: Maybe (PatchRuleGroup) , "ApprovedPatches" :: Maybe (PatchIdList) , "ApprovedPatchesComplianceLevel" :: Maybe (PatchComplianceLevel) , "ApprovedPatchesEnableNonSecurity" :: Maybe (Boolean) , "RejectedPatches" :: Maybe (PatchIdList) , "Description" :: Maybe (BaselineDescription) , "Sources" :: Maybe (PatchSourceList) , "Replace" :: Maybe (Boolean) } ) -> UpdatePatchBaselineRequest
+newUpdatePatchBaselineRequest' _BaselineId customize = (UpdatePatchBaselineRequest <<< customize) { "BaselineId": _BaselineId, "ApprovalRules": Nothing, "ApprovedPatches": Nothing, "ApprovedPatchesComplianceLevel": Nothing, "ApprovedPatchesEnableNonSecurity": Nothing, "Description": Nothing, "GlobalFilters": Nothing, "Name": Nothing, "RejectedPatches": Nothing, "Replace": Nothing, "Sources": Nothing }
 
 
 
 newtype UpdatePatchBaselineResult = UpdatePatchBaselineResult 
-  { "BaselineId" :: NullOrUndefined (BaselineId)
-  , "Name" :: NullOrUndefined (BaselineName)
-  , "OperatingSystem" :: NullOrUndefined (OperatingSystem)
-  , "GlobalFilters" :: NullOrUndefined (PatchFilterGroup)
-  , "ApprovalRules" :: NullOrUndefined (PatchRuleGroup)
-  , "ApprovedPatches" :: NullOrUndefined (PatchIdList)
-  , "ApprovedPatchesComplianceLevel" :: NullOrUndefined (PatchComplianceLevel)
-  , "ApprovedPatchesEnableNonSecurity" :: NullOrUndefined (Boolean)
-  , "RejectedPatches" :: NullOrUndefined (PatchIdList)
-  , "CreatedDate" :: NullOrUndefined (DateTime)
-  , "ModifiedDate" :: NullOrUndefined (DateTime)
-  , "Description" :: NullOrUndefined (BaselineDescription)
-  , "Sources" :: NullOrUndefined (PatchSourceList)
+  { "BaselineId" :: Maybe (BaselineId)
+  , "Name" :: Maybe (BaselineName)
+  , "OperatingSystem" :: Maybe (OperatingSystem)
+  , "GlobalFilters" :: Maybe (PatchFilterGroup)
+  , "ApprovalRules" :: Maybe (PatchRuleGroup)
+  , "ApprovedPatches" :: Maybe (PatchIdList)
+  , "ApprovedPatchesComplianceLevel" :: Maybe (PatchComplianceLevel)
+  , "ApprovedPatchesEnableNonSecurity" :: Maybe (Boolean)
+  , "RejectedPatches" :: Maybe (PatchIdList)
+  , "CreatedDate" :: Maybe (DateTime)
+  , "ModifiedDate" :: Maybe (DateTime)
+  , "Description" :: Maybe (BaselineDescription)
+  , "Sources" :: Maybe (PatchSourceList)
   }
 derive instance newtypeUpdatePatchBaselineResult :: Newtype UpdatePatchBaselineResult _
 derive instance repGenericUpdatePatchBaselineResult :: Generic UpdatePatchBaselineResult _
@@ -11482,12 +11481,12 @@ instance encodeUpdatePatchBaselineResult :: Encode UpdatePatchBaselineResult whe
 
 -- | Constructs UpdatePatchBaselineResult from required parameters
 newUpdatePatchBaselineResult :: UpdatePatchBaselineResult
-newUpdatePatchBaselineResult  = UpdatePatchBaselineResult { "ApprovalRules": (NullOrUndefined Nothing), "ApprovedPatches": (NullOrUndefined Nothing), "ApprovedPatchesComplianceLevel": (NullOrUndefined Nothing), "ApprovedPatchesEnableNonSecurity": (NullOrUndefined Nothing), "BaselineId": (NullOrUndefined Nothing), "CreatedDate": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "GlobalFilters": (NullOrUndefined Nothing), "ModifiedDate": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "OperatingSystem": (NullOrUndefined Nothing), "RejectedPatches": (NullOrUndefined Nothing), "Sources": (NullOrUndefined Nothing) }
+newUpdatePatchBaselineResult  = UpdatePatchBaselineResult { "ApprovalRules": Nothing, "ApprovedPatches": Nothing, "ApprovedPatchesComplianceLevel": Nothing, "ApprovedPatchesEnableNonSecurity": Nothing, "BaselineId": Nothing, "CreatedDate": Nothing, "Description": Nothing, "GlobalFilters": Nothing, "ModifiedDate": Nothing, "Name": Nothing, "OperatingSystem": Nothing, "RejectedPatches": Nothing, "Sources": Nothing }
 
 -- | Constructs UpdatePatchBaselineResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdatePatchBaselineResult' :: ( { "BaselineId" :: NullOrUndefined (BaselineId) , "Name" :: NullOrUndefined (BaselineName) , "OperatingSystem" :: NullOrUndefined (OperatingSystem) , "GlobalFilters" :: NullOrUndefined (PatchFilterGroup) , "ApprovalRules" :: NullOrUndefined (PatchRuleGroup) , "ApprovedPatches" :: NullOrUndefined (PatchIdList) , "ApprovedPatchesComplianceLevel" :: NullOrUndefined (PatchComplianceLevel) , "ApprovedPatchesEnableNonSecurity" :: NullOrUndefined (Boolean) , "RejectedPatches" :: NullOrUndefined (PatchIdList) , "CreatedDate" :: NullOrUndefined (DateTime) , "ModifiedDate" :: NullOrUndefined (DateTime) , "Description" :: NullOrUndefined (BaselineDescription) , "Sources" :: NullOrUndefined (PatchSourceList) } -> {"BaselineId" :: NullOrUndefined (BaselineId) , "Name" :: NullOrUndefined (BaselineName) , "OperatingSystem" :: NullOrUndefined (OperatingSystem) , "GlobalFilters" :: NullOrUndefined (PatchFilterGroup) , "ApprovalRules" :: NullOrUndefined (PatchRuleGroup) , "ApprovedPatches" :: NullOrUndefined (PatchIdList) , "ApprovedPatchesComplianceLevel" :: NullOrUndefined (PatchComplianceLevel) , "ApprovedPatchesEnableNonSecurity" :: NullOrUndefined (Boolean) , "RejectedPatches" :: NullOrUndefined (PatchIdList) , "CreatedDate" :: NullOrUndefined (DateTime) , "ModifiedDate" :: NullOrUndefined (DateTime) , "Description" :: NullOrUndefined (BaselineDescription) , "Sources" :: NullOrUndefined (PatchSourceList) } ) -> UpdatePatchBaselineResult
-newUpdatePatchBaselineResult'  customize = (UpdatePatchBaselineResult <<< customize) { "ApprovalRules": (NullOrUndefined Nothing), "ApprovedPatches": (NullOrUndefined Nothing), "ApprovedPatchesComplianceLevel": (NullOrUndefined Nothing), "ApprovedPatchesEnableNonSecurity": (NullOrUndefined Nothing), "BaselineId": (NullOrUndefined Nothing), "CreatedDate": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "GlobalFilters": (NullOrUndefined Nothing), "ModifiedDate": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "OperatingSystem": (NullOrUndefined Nothing), "RejectedPatches": (NullOrUndefined Nothing), "Sources": (NullOrUndefined Nothing) }
+newUpdatePatchBaselineResult' :: ( { "BaselineId" :: Maybe (BaselineId) , "Name" :: Maybe (BaselineName) , "OperatingSystem" :: Maybe (OperatingSystem) , "GlobalFilters" :: Maybe (PatchFilterGroup) , "ApprovalRules" :: Maybe (PatchRuleGroup) , "ApprovedPatches" :: Maybe (PatchIdList) , "ApprovedPatchesComplianceLevel" :: Maybe (PatchComplianceLevel) , "ApprovedPatchesEnableNonSecurity" :: Maybe (Boolean) , "RejectedPatches" :: Maybe (PatchIdList) , "CreatedDate" :: Maybe (DateTime) , "ModifiedDate" :: Maybe (DateTime) , "Description" :: Maybe (BaselineDescription) , "Sources" :: Maybe (PatchSourceList) } -> {"BaselineId" :: Maybe (BaselineId) , "Name" :: Maybe (BaselineName) , "OperatingSystem" :: Maybe (OperatingSystem) , "GlobalFilters" :: Maybe (PatchFilterGroup) , "ApprovalRules" :: Maybe (PatchRuleGroup) , "ApprovedPatches" :: Maybe (PatchIdList) , "ApprovedPatchesComplianceLevel" :: Maybe (PatchComplianceLevel) , "ApprovedPatchesEnableNonSecurity" :: Maybe (Boolean) , "RejectedPatches" :: Maybe (PatchIdList) , "CreatedDate" :: Maybe (DateTime) , "ModifiedDate" :: Maybe (DateTime) , "Description" :: Maybe (BaselineDescription) , "Sources" :: Maybe (PatchSourceList) } ) -> UpdatePatchBaselineResult
+newUpdatePatchBaselineResult'  customize = (UpdatePatchBaselineResult <<< customize) { "ApprovalRules": Nothing, "ApprovedPatches": Nothing, "ApprovedPatchesComplianceLevel": Nothing, "ApprovedPatchesEnableNonSecurity": Nothing, "BaselineId": Nothing, "CreatedDate": Nothing, "Description": Nothing, "GlobalFilters": Nothing, "ModifiedDate": Nothing, "Name": Nothing, "OperatingSystem": Nothing, "RejectedPatches": Nothing, "Sources": Nothing }
 
 
 

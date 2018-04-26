@@ -42,7 +42,7 @@ Encode AccountIdList
 
 ``` purescript
 newtype Activation
-  = Activation { "ActivationId" :: NullOrUndefined (ActivationId), "Description" :: NullOrUndefined (ActivationDescription), "DefaultInstanceName" :: NullOrUndefined (DefaultInstanceName), "IamRole" :: NullOrUndefined (IamRole), "RegistrationLimit" :: NullOrUndefined (RegistrationLimit), "RegistrationsCount" :: NullOrUndefined (RegistrationsCount), "ExpirationDate" :: NullOrUndefined (ExpirationDate), "Expired" :: NullOrUndefined (Boolean), "CreatedDate" :: NullOrUndefined (CreatedDate) }
+  = Activation { "ActivationId" :: Maybe (ActivationId), "Description" :: Maybe (ActivationDescription), "DefaultInstanceName" :: Maybe (DefaultInstanceName), "IamRole" :: Maybe (IamRole), "RegistrationLimit" :: Maybe (RegistrationLimit), "RegistrationsCount" :: Maybe (RegistrationsCount), "ExpirationDate" :: Maybe (ExpirationDate), "Expired" :: Maybe (Boolean), "CreatedDate" :: Maybe (CreatedDate) }
 ```
 
 <p>An activation registers one or more on-premises servers or virtual machines (VMs) with AWS so that you can configure those servers or VMs using Run Command. A server or VM that has been registered with AWS is called a managed instance.</p>
@@ -67,7 +67,7 @@ Constructs Activation from required parameters
 #### `newActivation'`
 
 ``` purescript
-newActivation' :: ({ "ActivationId" :: NullOrUndefined (ActivationId), "Description" :: NullOrUndefined (ActivationDescription), "DefaultInstanceName" :: NullOrUndefined (DefaultInstanceName), "IamRole" :: NullOrUndefined (IamRole), "RegistrationLimit" :: NullOrUndefined (RegistrationLimit), "RegistrationsCount" :: NullOrUndefined (RegistrationsCount), "ExpirationDate" :: NullOrUndefined (ExpirationDate), "Expired" :: NullOrUndefined (Boolean), "CreatedDate" :: NullOrUndefined (CreatedDate) } -> { "ActivationId" :: NullOrUndefined (ActivationId), "Description" :: NullOrUndefined (ActivationDescription), "DefaultInstanceName" :: NullOrUndefined (DefaultInstanceName), "IamRole" :: NullOrUndefined (IamRole), "RegistrationLimit" :: NullOrUndefined (RegistrationLimit), "RegistrationsCount" :: NullOrUndefined (RegistrationsCount), "ExpirationDate" :: NullOrUndefined (ExpirationDate), "Expired" :: NullOrUndefined (Boolean), "CreatedDate" :: NullOrUndefined (CreatedDate) }) -> Activation
+newActivation' :: ({ "ActivationId" :: Maybe (ActivationId), "Description" :: Maybe (ActivationDescription), "DefaultInstanceName" :: Maybe (DefaultInstanceName), "IamRole" :: Maybe (IamRole), "RegistrationLimit" :: Maybe (RegistrationLimit), "RegistrationsCount" :: Maybe (RegistrationsCount), "ExpirationDate" :: Maybe (ExpirationDate), "Expired" :: Maybe (Boolean), "CreatedDate" :: Maybe (CreatedDate) } -> { "ActivationId" :: Maybe (ActivationId), "Description" :: Maybe (ActivationDescription), "DefaultInstanceName" :: Maybe (DefaultInstanceName), "IamRole" :: Maybe (IamRole), "RegistrationLimit" :: Maybe (RegistrationLimit), "RegistrationsCount" :: Maybe (RegistrationsCount), "ExpirationDate" :: Maybe (ExpirationDate), "Expired" :: Maybe (Boolean), "CreatedDate" :: Maybe (CreatedDate) }) -> Activation
 ```
 
 Constructs Activation's fields from required parameters
@@ -236,7 +236,7 @@ Encode AllowedPattern
 
 ``` purescript
 newtype AlreadyExistsException
-  = AlreadyExistsException { "Message" :: NullOrUndefined (String) }
+  = AlreadyExistsException { "Message" :: Maybe (String) }
 ```
 
 <p>Error returned if an attempt is made to register a patch group with a patch baseline that is already registered with a different patch baseline.</p>
@@ -261,7 +261,7 @@ Constructs AlreadyExistsException from required parameters
 #### `newAlreadyExistsException'`
 
 ``` purescript
-newAlreadyExistsException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> AlreadyExistsException
+newAlreadyExistsException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> AlreadyExistsException
 ```
 
 Constructs AlreadyExistsException's fields from required parameters
@@ -304,7 +304,7 @@ Encode AssociatedInstances
 
 ``` purescript
 newtype Association
-  = Association { "Name" :: NullOrUndefined (DocumentName), "InstanceId" :: NullOrUndefined (InstanceId), "AssociationId" :: NullOrUndefined (AssociationId), "AssociationVersion" :: NullOrUndefined (AssociationVersion), "DocumentVersion" :: NullOrUndefined (DocumentVersion), "Targets" :: NullOrUndefined (Targets), "LastExecutionDate" :: NullOrUndefined (DateTime), "Overview" :: NullOrUndefined (AssociationOverview), "ScheduleExpression" :: NullOrUndefined (ScheduleExpression), "AssociationName" :: NullOrUndefined (AssociationName) }
+  = Association { "Name" :: Maybe (DocumentName), "InstanceId" :: Maybe (InstanceId), "AssociationId" :: Maybe (AssociationId), "AssociationVersion" :: Maybe (AssociationVersion), "DocumentVersion" :: Maybe (DocumentVersion), "Targets" :: Maybe (Targets), "LastExecutionDate" :: Maybe (DateTime), "Overview" :: Maybe (AssociationOverview), "ScheduleExpression" :: Maybe (ScheduleExpression), "AssociationName" :: Maybe (AssociationName) }
 ```
 
 <p>Describes an association of a Systems Manager document and an instance.</p>
@@ -329,7 +329,7 @@ Constructs Association from required parameters
 #### `newAssociation'`
 
 ``` purescript
-newAssociation' :: ({ "Name" :: NullOrUndefined (DocumentName), "InstanceId" :: NullOrUndefined (InstanceId), "AssociationId" :: NullOrUndefined (AssociationId), "AssociationVersion" :: NullOrUndefined (AssociationVersion), "DocumentVersion" :: NullOrUndefined (DocumentVersion), "Targets" :: NullOrUndefined (Targets), "LastExecutionDate" :: NullOrUndefined (DateTime), "Overview" :: NullOrUndefined (AssociationOverview), "ScheduleExpression" :: NullOrUndefined (ScheduleExpression), "AssociationName" :: NullOrUndefined (AssociationName) } -> { "Name" :: NullOrUndefined (DocumentName), "InstanceId" :: NullOrUndefined (InstanceId), "AssociationId" :: NullOrUndefined (AssociationId), "AssociationVersion" :: NullOrUndefined (AssociationVersion), "DocumentVersion" :: NullOrUndefined (DocumentVersion), "Targets" :: NullOrUndefined (Targets), "LastExecutionDate" :: NullOrUndefined (DateTime), "Overview" :: NullOrUndefined (AssociationOverview), "ScheduleExpression" :: NullOrUndefined (ScheduleExpression), "AssociationName" :: NullOrUndefined (AssociationName) }) -> Association
+newAssociation' :: ({ "Name" :: Maybe (DocumentName), "InstanceId" :: Maybe (InstanceId), "AssociationId" :: Maybe (AssociationId), "AssociationVersion" :: Maybe (AssociationVersion), "DocumentVersion" :: Maybe (DocumentVersion), "Targets" :: Maybe (Targets), "LastExecutionDate" :: Maybe (DateTime), "Overview" :: Maybe (AssociationOverview), "ScheduleExpression" :: Maybe (ScheduleExpression), "AssociationName" :: Maybe (AssociationName) } -> { "Name" :: Maybe (DocumentName), "InstanceId" :: Maybe (InstanceId), "AssociationId" :: Maybe (AssociationId), "AssociationVersion" :: Maybe (AssociationVersion), "DocumentVersion" :: Maybe (DocumentVersion), "Targets" :: Maybe (Targets), "LastExecutionDate" :: Maybe (DateTime), "Overview" :: Maybe (AssociationOverview), "ScheduleExpression" :: Maybe (ScheduleExpression), "AssociationName" :: Maybe (AssociationName) }) -> Association
 ```
 
 Constructs Association's fields from required parameters
@@ -356,7 +356,7 @@ Encode AssociationAlreadyExists
 
 ``` purescript
 newtype AssociationDescription
-  = AssociationDescription { "Name" :: NullOrUndefined (DocumentName), "InstanceId" :: NullOrUndefined (InstanceId), "AssociationVersion" :: NullOrUndefined (AssociationVersion), "Date" :: NullOrUndefined (DateTime), "LastUpdateAssociationDate" :: NullOrUndefined (DateTime), "Status" :: NullOrUndefined (AssociationStatus), "Overview" :: NullOrUndefined (AssociationOverview), "DocumentVersion" :: NullOrUndefined (DocumentVersion), "Parameters" :: NullOrUndefined (Parameters), "AssociationId" :: NullOrUndefined (AssociationId), "Targets" :: NullOrUndefined (Targets), "ScheduleExpression" :: NullOrUndefined (ScheduleExpression), "OutputLocation" :: NullOrUndefined (InstanceAssociationOutputLocation), "LastExecutionDate" :: NullOrUndefined (DateTime), "LastSuccessfulExecutionDate" :: NullOrUndefined (DateTime), "AssociationName" :: NullOrUndefined (AssociationName) }
+  = AssociationDescription { "Name" :: Maybe (DocumentName), "InstanceId" :: Maybe (InstanceId), "AssociationVersion" :: Maybe (AssociationVersion), "Date" :: Maybe (DateTime), "LastUpdateAssociationDate" :: Maybe (DateTime), "Status" :: Maybe (AssociationStatus), "Overview" :: Maybe (AssociationOverview), "DocumentVersion" :: Maybe (DocumentVersion), "Parameters" :: Maybe (Parameters), "AssociationId" :: Maybe (AssociationId), "Targets" :: Maybe (Targets), "ScheduleExpression" :: Maybe (ScheduleExpression), "OutputLocation" :: Maybe (InstanceAssociationOutputLocation), "LastExecutionDate" :: Maybe (DateTime), "LastSuccessfulExecutionDate" :: Maybe (DateTime), "AssociationName" :: Maybe (AssociationName) }
 ```
 
 <p>Describes the parameters for a document.</p>
@@ -381,7 +381,7 @@ Constructs AssociationDescription from required parameters
 #### `newAssociationDescription'`
 
 ``` purescript
-newAssociationDescription' :: ({ "Name" :: NullOrUndefined (DocumentName), "InstanceId" :: NullOrUndefined (InstanceId), "AssociationVersion" :: NullOrUndefined (AssociationVersion), "Date" :: NullOrUndefined (DateTime), "LastUpdateAssociationDate" :: NullOrUndefined (DateTime), "Status" :: NullOrUndefined (AssociationStatus), "Overview" :: NullOrUndefined (AssociationOverview), "DocumentVersion" :: NullOrUndefined (DocumentVersion), "Parameters" :: NullOrUndefined (Parameters), "AssociationId" :: NullOrUndefined (AssociationId), "Targets" :: NullOrUndefined (Targets), "ScheduleExpression" :: NullOrUndefined (ScheduleExpression), "OutputLocation" :: NullOrUndefined (InstanceAssociationOutputLocation), "LastExecutionDate" :: NullOrUndefined (DateTime), "LastSuccessfulExecutionDate" :: NullOrUndefined (DateTime), "AssociationName" :: NullOrUndefined (AssociationName) } -> { "Name" :: NullOrUndefined (DocumentName), "InstanceId" :: NullOrUndefined (InstanceId), "AssociationVersion" :: NullOrUndefined (AssociationVersion), "Date" :: NullOrUndefined (DateTime), "LastUpdateAssociationDate" :: NullOrUndefined (DateTime), "Status" :: NullOrUndefined (AssociationStatus), "Overview" :: NullOrUndefined (AssociationOverview), "DocumentVersion" :: NullOrUndefined (DocumentVersion), "Parameters" :: NullOrUndefined (Parameters), "AssociationId" :: NullOrUndefined (AssociationId), "Targets" :: NullOrUndefined (Targets), "ScheduleExpression" :: NullOrUndefined (ScheduleExpression), "OutputLocation" :: NullOrUndefined (InstanceAssociationOutputLocation), "LastExecutionDate" :: NullOrUndefined (DateTime), "LastSuccessfulExecutionDate" :: NullOrUndefined (DateTime), "AssociationName" :: NullOrUndefined (AssociationName) }) -> AssociationDescription
+newAssociationDescription' :: ({ "Name" :: Maybe (DocumentName), "InstanceId" :: Maybe (InstanceId), "AssociationVersion" :: Maybe (AssociationVersion), "Date" :: Maybe (DateTime), "LastUpdateAssociationDate" :: Maybe (DateTime), "Status" :: Maybe (AssociationStatus), "Overview" :: Maybe (AssociationOverview), "DocumentVersion" :: Maybe (DocumentVersion), "Parameters" :: Maybe (Parameters), "AssociationId" :: Maybe (AssociationId), "Targets" :: Maybe (Targets), "ScheduleExpression" :: Maybe (ScheduleExpression), "OutputLocation" :: Maybe (InstanceAssociationOutputLocation), "LastExecutionDate" :: Maybe (DateTime), "LastSuccessfulExecutionDate" :: Maybe (DateTime), "AssociationName" :: Maybe (AssociationName) } -> { "Name" :: Maybe (DocumentName), "InstanceId" :: Maybe (InstanceId), "AssociationVersion" :: Maybe (AssociationVersion), "Date" :: Maybe (DateTime), "LastUpdateAssociationDate" :: Maybe (DateTime), "Status" :: Maybe (AssociationStatus), "Overview" :: Maybe (AssociationOverview), "DocumentVersion" :: Maybe (DocumentVersion), "Parameters" :: Maybe (Parameters), "AssociationId" :: Maybe (AssociationId), "Targets" :: Maybe (Targets), "ScheduleExpression" :: Maybe (ScheduleExpression), "OutputLocation" :: Maybe (InstanceAssociationOutputLocation), "LastExecutionDate" :: Maybe (DateTime), "LastSuccessfulExecutionDate" :: Maybe (DateTime), "AssociationName" :: Maybe (AssociationName) }) -> AssociationDescription
 ```
 
 Constructs AssociationDescription's fields from required parameters
@@ -406,7 +406,7 @@ Encode AssociationDescriptionList
 
 ``` purescript
 newtype AssociationDoesNotExist
-  = AssociationDoesNotExist { "Message" :: NullOrUndefined (String) }
+  = AssociationDoesNotExist { "Message" :: Maybe (String) }
 ```
 
 <p>The specified association does not exist.</p>
@@ -431,7 +431,7 @@ Constructs AssociationDoesNotExist from required parameters
 #### `newAssociationDoesNotExist'`
 
 ``` purescript
-newAssociationDoesNotExist' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> AssociationDoesNotExist
+newAssociationDoesNotExist' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> AssociationDoesNotExist
 ```
 
 Constructs AssociationDoesNotExist's fields from required parameters
@@ -588,7 +588,7 @@ Encode AssociationName
 
 ``` purescript
 newtype AssociationOverview
-  = AssociationOverview { "Status" :: NullOrUndefined (StatusName), "DetailedStatus" :: NullOrUndefined (StatusName), "AssociationStatusAggregatedCount" :: NullOrUndefined (AssociationStatusAggregatedCount) }
+  = AssociationOverview { "Status" :: Maybe (StatusName), "DetailedStatus" :: Maybe (StatusName), "AssociationStatusAggregatedCount" :: Maybe (AssociationStatusAggregatedCount) }
 ```
 
 <p>Information about the association.</p>
@@ -613,7 +613,7 @@ Constructs AssociationOverview from required parameters
 #### `newAssociationOverview'`
 
 ``` purescript
-newAssociationOverview' :: ({ "Status" :: NullOrUndefined (StatusName), "DetailedStatus" :: NullOrUndefined (StatusName), "AssociationStatusAggregatedCount" :: NullOrUndefined (AssociationStatusAggregatedCount) } -> { "Status" :: NullOrUndefined (StatusName), "DetailedStatus" :: NullOrUndefined (StatusName), "AssociationStatusAggregatedCount" :: NullOrUndefined (AssociationStatusAggregatedCount) }) -> AssociationOverview
+newAssociationOverview' :: ({ "Status" :: Maybe (StatusName), "DetailedStatus" :: Maybe (StatusName), "AssociationStatusAggregatedCount" :: Maybe (AssociationStatusAggregatedCount) } -> { "Status" :: Maybe (StatusName), "DetailedStatus" :: Maybe (StatusName), "AssociationStatusAggregatedCount" :: Maybe (AssociationStatusAggregatedCount) }) -> AssociationOverview
 ```
 
 Constructs AssociationOverview's fields from required parameters
@@ -622,7 +622,7 @@ Constructs AssociationOverview's fields from required parameters
 
 ``` purescript
 newtype AssociationStatus
-  = AssociationStatus { "Date" :: DateTime, "Name" :: AssociationStatusName, "Message" :: StatusMessage, "AdditionalInfo" :: NullOrUndefined (StatusAdditionalInfo) }
+  = AssociationStatus { "Date" :: DateTime, "Name" :: AssociationStatusName, "Message" :: StatusMessage, "AdditionalInfo" :: Maybe (StatusAdditionalInfo) }
 ```
 
 <p>Describes an association status.</p>
@@ -647,7 +647,7 @@ Constructs AssociationStatus from required parameters
 #### `newAssociationStatus'`
 
 ``` purescript
-newAssociationStatus' :: DateTime -> StatusMessage -> AssociationStatusName -> ({ "Date" :: DateTime, "Name" :: AssociationStatusName, "Message" :: StatusMessage, "AdditionalInfo" :: NullOrUndefined (StatusAdditionalInfo) } -> { "Date" :: DateTime, "Name" :: AssociationStatusName, "Message" :: StatusMessage, "AdditionalInfo" :: NullOrUndefined (StatusAdditionalInfo) }) -> AssociationStatus
+newAssociationStatus' :: DateTime -> StatusMessage -> AssociationStatusName -> ({ "Date" :: DateTime, "Name" :: AssociationStatusName, "Message" :: StatusMessage, "AdditionalInfo" :: Maybe (StatusAdditionalInfo) } -> { "Date" :: DateTime, "Name" :: AssociationStatusName, "Message" :: StatusMessage, "AdditionalInfo" :: Maybe (StatusAdditionalInfo) }) -> AssociationStatus
 ```
 
 Constructs AssociationStatus's fields from required parameters
@@ -704,7 +704,7 @@ Encode AssociationVersion
 
 ``` purescript
 newtype AssociationVersionInfo
-  = AssociationVersionInfo { "AssociationId" :: NullOrUndefined (AssociationId), "AssociationVersion" :: NullOrUndefined (AssociationVersion), "CreatedDate" :: NullOrUndefined (DateTime), "Name" :: NullOrUndefined (DocumentName), "DocumentVersion" :: NullOrUndefined (DocumentVersion), "Parameters" :: NullOrUndefined (Parameters), "Targets" :: NullOrUndefined (Targets), "ScheduleExpression" :: NullOrUndefined (ScheduleExpression), "OutputLocation" :: NullOrUndefined (InstanceAssociationOutputLocation), "AssociationName" :: NullOrUndefined (AssociationName) }
+  = AssociationVersionInfo { "AssociationId" :: Maybe (AssociationId), "AssociationVersion" :: Maybe (AssociationVersion), "CreatedDate" :: Maybe (DateTime), "Name" :: Maybe (DocumentName), "DocumentVersion" :: Maybe (DocumentVersion), "Parameters" :: Maybe (Parameters), "Targets" :: Maybe (Targets), "ScheduleExpression" :: Maybe (ScheduleExpression), "OutputLocation" :: Maybe (InstanceAssociationOutputLocation), "AssociationName" :: Maybe (AssociationName) }
 ```
 
 <p>Information about the association version.</p>
@@ -729,7 +729,7 @@ Constructs AssociationVersionInfo from required parameters
 #### `newAssociationVersionInfo'`
 
 ``` purescript
-newAssociationVersionInfo' :: ({ "AssociationId" :: NullOrUndefined (AssociationId), "AssociationVersion" :: NullOrUndefined (AssociationVersion), "CreatedDate" :: NullOrUndefined (DateTime), "Name" :: NullOrUndefined (DocumentName), "DocumentVersion" :: NullOrUndefined (DocumentVersion), "Parameters" :: NullOrUndefined (Parameters), "Targets" :: NullOrUndefined (Targets), "ScheduleExpression" :: NullOrUndefined (ScheduleExpression), "OutputLocation" :: NullOrUndefined (InstanceAssociationOutputLocation), "AssociationName" :: NullOrUndefined (AssociationName) } -> { "AssociationId" :: NullOrUndefined (AssociationId), "AssociationVersion" :: NullOrUndefined (AssociationVersion), "CreatedDate" :: NullOrUndefined (DateTime), "Name" :: NullOrUndefined (DocumentName), "DocumentVersion" :: NullOrUndefined (DocumentVersion), "Parameters" :: NullOrUndefined (Parameters), "Targets" :: NullOrUndefined (Targets), "ScheduleExpression" :: NullOrUndefined (ScheduleExpression), "OutputLocation" :: NullOrUndefined (InstanceAssociationOutputLocation), "AssociationName" :: NullOrUndefined (AssociationName) }) -> AssociationVersionInfo
+newAssociationVersionInfo' :: ({ "AssociationId" :: Maybe (AssociationId), "AssociationVersion" :: Maybe (AssociationVersion), "CreatedDate" :: Maybe (DateTime), "Name" :: Maybe (DocumentName), "DocumentVersion" :: Maybe (DocumentVersion), "Parameters" :: Maybe (Parameters), "Targets" :: Maybe (Targets), "ScheduleExpression" :: Maybe (ScheduleExpression), "OutputLocation" :: Maybe (InstanceAssociationOutputLocation), "AssociationName" :: Maybe (AssociationName) } -> { "AssociationId" :: Maybe (AssociationId), "AssociationVersion" :: Maybe (AssociationVersion), "CreatedDate" :: Maybe (DateTime), "Name" :: Maybe (DocumentName), "DocumentVersion" :: Maybe (DocumentVersion), "Parameters" :: Maybe (Parameters), "Targets" :: Maybe (Targets), "ScheduleExpression" :: Maybe (ScheduleExpression), "OutputLocation" :: Maybe (InstanceAssociationOutputLocation), "AssociationName" :: Maybe (AssociationName) }) -> AssociationVersionInfo
 ```
 
 Constructs AssociationVersionInfo's fields from required parameters
@@ -738,7 +738,7 @@ Constructs AssociationVersionInfo's fields from required parameters
 
 ``` purescript
 newtype AssociationVersionLimitExceeded
-  = AssociationVersionLimitExceeded { "Message" :: NullOrUndefined (String) }
+  = AssociationVersionLimitExceeded { "Message" :: Maybe (String) }
 ```
 
 <p>You have reached the maximum number versions allowed for an association. Each association has a limit of 1,000 versions. </p>
@@ -763,7 +763,7 @@ Constructs AssociationVersionLimitExceeded from required parameters
 #### `newAssociationVersionLimitExceeded'`
 
 ``` purescript
-newAssociationVersionLimitExceeded' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> AssociationVersionLimitExceeded
+newAssociationVersionLimitExceeded' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> AssociationVersionLimitExceeded
 ```
 
 Constructs AssociationVersionLimitExceeded's fields from required parameters
@@ -836,7 +836,7 @@ Encode AutomationActionName
 
 ``` purescript
 newtype AutomationDefinitionNotFoundException
-  = AutomationDefinitionNotFoundException { "Message" :: NullOrUndefined (String) }
+  = AutomationDefinitionNotFoundException { "Message" :: Maybe (String) }
 ```
 
 <p>An Automation document with the specified name could not be found.</p>
@@ -861,7 +861,7 @@ Constructs AutomationDefinitionNotFoundException from required parameters
 #### `newAutomationDefinitionNotFoundException'`
 
 ``` purescript
-newAutomationDefinitionNotFoundException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> AutomationDefinitionNotFoundException
+newAutomationDefinitionNotFoundException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> AutomationDefinitionNotFoundException
 ```
 
 Constructs AutomationDefinitionNotFoundException's fields from required parameters
@@ -870,7 +870,7 @@ Constructs AutomationDefinitionNotFoundException's fields from required paramete
 
 ``` purescript
 newtype AutomationDefinitionVersionNotFoundException
-  = AutomationDefinitionVersionNotFoundException { "Message" :: NullOrUndefined (String) }
+  = AutomationDefinitionVersionNotFoundException { "Message" :: Maybe (String) }
 ```
 
 <p>An Automation document with the specified name and version could not be found.</p>
@@ -895,7 +895,7 @@ Constructs AutomationDefinitionVersionNotFoundException from required parameters
 #### `newAutomationDefinitionVersionNotFoundException'`
 
 ``` purescript
-newAutomationDefinitionVersionNotFoundException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> AutomationDefinitionVersionNotFoundException
+newAutomationDefinitionVersionNotFoundException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> AutomationDefinitionVersionNotFoundException
 ```
 
 Constructs AutomationDefinitionVersionNotFoundException's fields from required parameters
@@ -904,7 +904,7 @@ Constructs AutomationDefinitionVersionNotFoundException's fields from required p
 
 ``` purescript
 newtype AutomationExecution
-  = AutomationExecution { "AutomationExecutionId" :: NullOrUndefined (AutomationExecutionId), "DocumentName" :: NullOrUndefined (DocumentName), "DocumentVersion" :: NullOrUndefined (DocumentVersion), "ExecutionStartTime" :: NullOrUndefined (DateTime), "ExecutionEndTime" :: NullOrUndefined (DateTime), "AutomationExecutionStatus" :: NullOrUndefined (AutomationExecutionStatus), "StepExecutions" :: NullOrUndefined (StepExecutionList), "StepExecutionsTruncated" :: NullOrUndefined (Boolean), "Parameters" :: NullOrUndefined (AutomationParameterMap), "Outputs" :: NullOrUndefined (AutomationParameterMap), "FailureMessage" :: NullOrUndefined (String), "Mode" :: NullOrUndefined (ExecutionMode), "ParentAutomationExecutionId" :: NullOrUndefined (AutomationExecutionId), "ExecutedBy" :: NullOrUndefined (String), "CurrentStepName" :: NullOrUndefined (String), "CurrentAction" :: NullOrUndefined (String), "TargetParameterName" :: NullOrUndefined (AutomationParameterKey), "Targets" :: NullOrUndefined (Targets), "ResolvedTargets" :: NullOrUndefined (ResolvedTargets), "MaxConcurrency" :: NullOrUndefined (MaxConcurrency), "MaxErrors" :: NullOrUndefined (MaxErrors), "Target" :: NullOrUndefined (String) }
+  = AutomationExecution { "AutomationExecutionId" :: Maybe (AutomationExecutionId), "DocumentName" :: Maybe (DocumentName), "DocumentVersion" :: Maybe (DocumentVersion), "ExecutionStartTime" :: Maybe (DateTime), "ExecutionEndTime" :: Maybe (DateTime), "AutomationExecutionStatus" :: Maybe (AutomationExecutionStatus), "StepExecutions" :: Maybe (StepExecutionList), "StepExecutionsTruncated" :: Maybe (Boolean), "Parameters" :: Maybe (AutomationParameterMap), "Outputs" :: Maybe (AutomationParameterMap), "FailureMessage" :: Maybe (String), "Mode" :: Maybe (ExecutionMode), "ParentAutomationExecutionId" :: Maybe (AutomationExecutionId), "ExecutedBy" :: Maybe (String), "CurrentStepName" :: Maybe (String), "CurrentAction" :: Maybe (String), "TargetParameterName" :: Maybe (AutomationParameterKey), "Targets" :: Maybe (Targets), "ResolvedTargets" :: Maybe (ResolvedTargets), "MaxConcurrency" :: Maybe (MaxConcurrency), "MaxErrors" :: Maybe (MaxErrors), "Target" :: Maybe (String) }
 ```
 
 <p>Detailed information about the current state of an individual Automation execution.</p>
@@ -929,7 +929,7 @@ Constructs AutomationExecution from required parameters
 #### `newAutomationExecution'`
 
 ``` purescript
-newAutomationExecution' :: ({ "AutomationExecutionId" :: NullOrUndefined (AutomationExecutionId), "DocumentName" :: NullOrUndefined (DocumentName), "DocumentVersion" :: NullOrUndefined (DocumentVersion), "ExecutionStartTime" :: NullOrUndefined (DateTime), "ExecutionEndTime" :: NullOrUndefined (DateTime), "AutomationExecutionStatus" :: NullOrUndefined (AutomationExecutionStatus), "StepExecutions" :: NullOrUndefined (StepExecutionList), "StepExecutionsTruncated" :: NullOrUndefined (Boolean), "Parameters" :: NullOrUndefined (AutomationParameterMap), "Outputs" :: NullOrUndefined (AutomationParameterMap), "FailureMessage" :: NullOrUndefined (String), "Mode" :: NullOrUndefined (ExecutionMode), "ParentAutomationExecutionId" :: NullOrUndefined (AutomationExecutionId), "ExecutedBy" :: NullOrUndefined (String), "CurrentStepName" :: NullOrUndefined (String), "CurrentAction" :: NullOrUndefined (String), "TargetParameterName" :: NullOrUndefined (AutomationParameterKey), "Targets" :: NullOrUndefined (Targets), "ResolvedTargets" :: NullOrUndefined (ResolvedTargets), "MaxConcurrency" :: NullOrUndefined (MaxConcurrency), "MaxErrors" :: NullOrUndefined (MaxErrors), "Target" :: NullOrUndefined (String) } -> { "AutomationExecutionId" :: NullOrUndefined (AutomationExecutionId), "DocumentName" :: NullOrUndefined (DocumentName), "DocumentVersion" :: NullOrUndefined (DocumentVersion), "ExecutionStartTime" :: NullOrUndefined (DateTime), "ExecutionEndTime" :: NullOrUndefined (DateTime), "AutomationExecutionStatus" :: NullOrUndefined (AutomationExecutionStatus), "StepExecutions" :: NullOrUndefined (StepExecutionList), "StepExecutionsTruncated" :: NullOrUndefined (Boolean), "Parameters" :: NullOrUndefined (AutomationParameterMap), "Outputs" :: NullOrUndefined (AutomationParameterMap), "FailureMessage" :: NullOrUndefined (String), "Mode" :: NullOrUndefined (ExecutionMode), "ParentAutomationExecutionId" :: NullOrUndefined (AutomationExecutionId), "ExecutedBy" :: NullOrUndefined (String), "CurrentStepName" :: NullOrUndefined (String), "CurrentAction" :: NullOrUndefined (String), "TargetParameterName" :: NullOrUndefined (AutomationParameterKey), "Targets" :: NullOrUndefined (Targets), "ResolvedTargets" :: NullOrUndefined (ResolvedTargets), "MaxConcurrency" :: NullOrUndefined (MaxConcurrency), "MaxErrors" :: NullOrUndefined (MaxErrors), "Target" :: NullOrUndefined (String) }) -> AutomationExecution
+newAutomationExecution' :: ({ "AutomationExecutionId" :: Maybe (AutomationExecutionId), "DocumentName" :: Maybe (DocumentName), "DocumentVersion" :: Maybe (DocumentVersion), "ExecutionStartTime" :: Maybe (DateTime), "ExecutionEndTime" :: Maybe (DateTime), "AutomationExecutionStatus" :: Maybe (AutomationExecutionStatus), "StepExecutions" :: Maybe (StepExecutionList), "StepExecutionsTruncated" :: Maybe (Boolean), "Parameters" :: Maybe (AutomationParameterMap), "Outputs" :: Maybe (AutomationParameterMap), "FailureMessage" :: Maybe (String), "Mode" :: Maybe (ExecutionMode), "ParentAutomationExecutionId" :: Maybe (AutomationExecutionId), "ExecutedBy" :: Maybe (String), "CurrentStepName" :: Maybe (String), "CurrentAction" :: Maybe (String), "TargetParameterName" :: Maybe (AutomationParameterKey), "Targets" :: Maybe (Targets), "ResolvedTargets" :: Maybe (ResolvedTargets), "MaxConcurrency" :: Maybe (MaxConcurrency), "MaxErrors" :: Maybe (MaxErrors), "Target" :: Maybe (String) } -> { "AutomationExecutionId" :: Maybe (AutomationExecutionId), "DocumentName" :: Maybe (DocumentName), "DocumentVersion" :: Maybe (DocumentVersion), "ExecutionStartTime" :: Maybe (DateTime), "ExecutionEndTime" :: Maybe (DateTime), "AutomationExecutionStatus" :: Maybe (AutomationExecutionStatus), "StepExecutions" :: Maybe (StepExecutionList), "StepExecutionsTruncated" :: Maybe (Boolean), "Parameters" :: Maybe (AutomationParameterMap), "Outputs" :: Maybe (AutomationParameterMap), "FailureMessage" :: Maybe (String), "Mode" :: Maybe (ExecutionMode), "ParentAutomationExecutionId" :: Maybe (AutomationExecutionId), "ExecutedBy" :: Maybe (String), "CurrentStepName" :: Maybe (String), "CurrentAction" :: Maybe (String), "TargetParameterName" :: Maybe (AutomationParameterKey), "Targets" :: Maybe (Targets), "ResolvedTargets" :: Maybe (ResolvedTargets), "MaxConcurrency" :: Maybe (MaxConcurrency), "MaxErrors" :: Maybe (MaxErrors), "Target" :: Maybe (String) }) -> AutomationExecution
 ```
 
 Constructs AutomationExecution's fields from required parameters
@@ -1052,7 +1052,7 @@ Encode AutomationExecutionId
 
 ``` purescript
 newtype AutomationExecutionLimitExceededException
-  = AutomationExecutionLimitExceededException { "Message" :: NullOrUndefined (String) }
+  = AutomationExecutionLimitExceededException { "Message" :: Maybe (String) }
 ```
 
 <p>The number of simultaneously running Automation executions exceeded the allowable limit.</p>
@@ -1077,7 +1077,7 @@ Constructs AutomationExecutionLimitExceededException from required parameters
 #### `newAutomationExecutionLimitExceededException'`
 
 ``` purescript
-newAutomationExecutionLimitExceededException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> AutomationExecutionLimitExceededException
+newAutomationExecutionLimitExceededException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> AutomationExecutionLimitExceededException
 ```
 
 Constructs AutomationExecutionLimitExceededException's fields from required parameters
@@ -1086,7 +1086,7 @@ Constructs AutomationExecutionLimitExceededException's fields from required para
 
 ``` purescript
 newtype AutomationExecutionMetadata
-  = AutomationExecutionMetadata { "AutomationExecutionId" :: NullOrUndefined (AutomationExecutionId), "DocumentName" :: NullOrUndefined (DocumentName), "DocumentVersion" :: NullOrUndefined (DocumentVersion), "AutomationExecutionStatus" :: NullOrUndefined (AutomationExecutionStatus), "ExecutionStartTime" :: NullOrUndefined (DateTime), "ExecutionEndTime" :: NullOrUndefined (DateTime), "ExecutedBy" :: NullOrUndefined (String), "LogFile" :: NullOrUndefined (String), "Outputs" :: NullOrUndefined (AutomationParameterMap), "Mode" :: NullOrUndefined (ExecutionMode), "ParentAutomationExecutionId" :: NullOrUndefined (AutomationExecutionId), "CurrentStepName" :: NullOrUndefined (String), "CurrentAction" :: NullOrUndefined (String), "FailureMessage" :: NullOrUndefined (String), "TargetParameterName" :: NullOrUndefined (AutomationParameterKey), "Targets" :: NullOrUndefined (Targets), "ResolvedTargets" :: NullOrUndefined (ResolvedTargets), "MaxConcurrency" :: NullOrUndefined (MaxConcurrency), "MaxErrors" :: NullOrUndefined (MaxErrors), "Target" :: NullOrUndefined (String) }
+  = AutomationExecutionMetadata { "AutomationExecutionId" :: Maybe (AutomationExecutionId), "DocumentName" :: Maybe (DocumentName), "DocumentVersion" :: Maybe (DocumentVersion), "AutomationExecutionStatus" :: Maybe (AutomationExecutionStatus), "ExecutionStartTime" :: Maybe (DateTime), "ExecutionEndTime" :: Maybe (DateTime), "ExecutedBy" :: Maybe (String), "LogFile" :: Maybe (String), "Outputs" :: Maybe (AutomationParameterMap), "Mode" :: Maybe (ExecutionMode), "ParentAutomationExecutionId" :: Maybe (AutomationExecutionId), "CurrentStepName" :: Maybe (String), "CurrentAction" :: Maybe (String), "FailureMessage" :: Maybe (String), "TargetParameterName" :: Maybe (AutomationParameterKey), "Targets" :: Maybe (Targets), "ResolvedTargets" :: Maybe (ResolvedTargets), "MaxConcurrency" :: Maybe (MaxConcurrency), "MaxErrors" :: Maybe (MaxErrors), "Target" :: Maybe (String) }
 ```
 
 <p>Details about a specific Automation execution.</p>
@@ -1111,7 +1111,7 @@ Constructs AutomationExecutionMetadata from required parameters
 #### `newAutomationExecutionMetadata'`
 
 ``` purescript
-newAutomationExecutionMetadata' :: ({ "AutomationExecutionId" :: NullOrUndefined (AutomationExecutionId), "DocumentName" :: NullOrUndefined (DocumentName), "DocumentVersion" :: NullOrUndefined (DocumentVersion), "AutomationExecutionStatus" :: NullOrUndefined (AutomationExecutionStatus), "ExecutionStartTime" :: NullOrUndefined (DateTime), "ExecutionEndTime" :: NullOrUndefined (DateTime), "ExecutedBy" :: NullOrUndefined (String), "LogFile" :: NullOrUndefined (String), "Outputs" :: NullOrUndefined (AutomationParameterMap), "Mode" :: NullOrUndefined (ExecutionMode), "ParentAutomationExecutionId" :: NullOrUndefined (AutomationExecutionId), "CurrentStepName" :: NullOrUndefined (String), "CurrentAction" :: NullOrUndefined (String), "FailureMessage" :: NullOrUndefined (String), "TargetParameterName" :: NullOrUndefined (AutomationParameterKey), "Targets" :: NullOrUndefined (Targets), "ResolvedTargets" :: NullOrUndefined (ResolvedTargets), "MaxConcurrency" :: NullOrUndefined (MaxConcurrency), "MaxErrors" :: NullOrUndefined (MaxErrors), "Target" :: NullOrUndefined (String) } -> { "AutomationExecutionId" :: NullOrUndefined (AutomationExecutionId), "DocumentName" :: NullOrUndefined (DocumentName), "DocumentVersion" :: NullOrUndefined (DocumentVersion), "AutomationExecutionStatus" :: NullOrUndefined (AutomationExecutionStatus), "ExecutionStartTime" :: NullOrUndefined (DateTime), "ExecutionEndTime" :: NullOrUndefined (DateTime), "ExecutedBy" :: NullOrUndefined (String), "LogFile" :: NullOrUndefined (String), "Outputs" :: NullOrUndefined (AutomationParameterMap), "Mode" :: NullOrUndefined (ExecutionMode), "ParentAutomationExecutionId" :: NullOrUndefined (AutomationExecutionId), "CurrentStepName" :: NullOrUndefined (String), "CurrentAction" :: NullOrUndefined (String), "FailureMessage" :: NullOrUndefined (String), "TargetParameterName" :: NullOrUndefined (AutomationParameterKey), "Targets" :: NullOrUndefined (Targets), "ResolvedTargets" :: NullOrUndefined (ResolvedTargets), "MaxConcurrency" :: NullOrUndefined (MaxConcurrency), "MaxErrors" :: NullOrUndefined (MaxErrors), "Target" :: NullOrUndefined (String) }) -> AutomationExecutionMetadata
+newAutomationExecutionMetadata' :: ({ "AutomationExecutionId" :: Maybe (AutomationExecutionId), "DocumentName" :: Maybe (DocumentName), "DocumentVersion" :: Maybe (DocumentVersion), "AutomationExecutionStatus" :: Maybe (AutomationExecutionStatus), "ExecutionStartTime" :: Maybe (DateTime), "ExecutionEndTime" :: Maybe (DateTime), "ExecutedBy" :: Maybe (String), "LogFile" :: Maybe (String), "Outputs" :: Maybe (AutomationParameterMap), "Mode" :: Maybe (ExecutionMode), "ParentAutomationExecutionId" :: Maybe (AutomationExecutionId), "CurrentStepName" :: Maybe (String), "CurrentAction" :: Maybe (String), "FailureMessage" :: Maybe (String), "TargetParameterName" :: Maybe (AutomationParameterKey), "Targets" :: Maybe (Targets), "ResolvedTargets" :: Maybe (ResolvedTargets), "MaxConcurrency" :: Maybe (MaxConcurrency), "MaxErrors" :: Maybe (MaxErrors), "Target" :: Maybe (String) } -> { "AutomationExecutionId" :: Maybe (AutomationExecutionId), "DocumentName" :: Maybe (DocumentName), "DocumentVersion" :: Maybe (DocumentVersion), "AutomationExecutionStatus" :: Maybe (AutomationExecutionStatus), "ExecutionStartTime" :: Maybe (DateTime), "ExecutionEndTime" :: Maybe (DateTime), "ExecutedBy" :: Maybe (String), "LogFile" :: Maybe (String), "Outputs" :: Maybe (AutomationParameterMap), "Mode" :: Maybe (ExecutionMode), "ParentAutomationExecutionId" :: Maybe (AutomationExecutionId), "CurrentStepName" :: Maybe (String), "CurrentAction" :: Maybe (String), "FailureMessage" :: Maybe (String), "TargetParameterName" :: Maybe (AutomationParameterKey), "Targets" :: Maybe (Targets), "ResolvedTargets" :: Maybe (ResolvedTargets), "MaxConcurrency" :: Maybe (MaxConcurrency), "MaxErrors" :: Maybe (MaxErrors), "Target" :: Maybe (String) }) -> AutomationExecutionMetadata
 ```
 
 Constructs AutomationExecutionMetadata's fields from required parameters
@@ -1136,7 +1136,7 @@ Encode AutomationExecutionMetadataList
 
 ``` purescript
 newtype AutomationExecutionNotFoundException
-  = AutomationExecutionNotFoundException { "Message" :: NullOrUndefined (String) }
+  = AutomationExecutionNotFoundException { "Message" :: Maybe (String) }
 ```
 
 <p>There is no automation execution information for the requested automation execution ID.</p>
@@ -1161,7 +1161,7 @@ Constructs AutomationExecutionNotFoundException from required parameters
 #### `newAutomationExecutionNotFoundException'`
 
 ``` purescript
-newAutomationExecutionNotFoundException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> AutomationExecutionNotFoundException
+newAutomationExecutionNotFoundException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> AutomationExecutionNotFoundException
 ```
 
 Constructs AutomationExecutionNotFoundException's fields from required parameters
@@ -1250,7 +1250,7 @@ Encode AutomationParameterValueList
 
 ``` purescript
 newtype AutomationStepNotFoundException
-  = AutomationStepNotFoundException { "Message" :: NullOrUndefined (String) }
+  = AutomationStepNotFoundException { "Message" :: Maybe (String) }
 ```
 
 <p>The specified step name and execution ID don't exist. Verify the information and try again.</p>
@@ -1275,7 +1275,7 @@ Constructs AutomationStepNotFoundException from required parameters
 #### `newAutomationStepNotFoundException'`
 
 ``` purescript
-newAutomationStepNotFoundException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> AutomationStepNotFoundException
+newAutomationStepNotFoundException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> AutomationStepNotFoundException
 ```
 
 Constructs AutomationStepNotFoundException's fields from required parameters
@@ -1348,7 +1348,7 @@ Encode BatchErrorMessage
 
 ``` purescript
 newtype CancelCommandRequest
-  = CancelCommandRequest { "CommandId" :: CommandId, "InstanceIds" :: NullOrUndefined (InstanceIdList) }
+  = CancelCommandRequest { "CommandId" :: CommandId, "InstanceIds" :: Maybe (InstanceIdList) }
 ```
 
 <p/>
@@ -1373,7 +1373,7 @@ Constructs CancelCommandRequest from required parameters
 #### `newCancelCommandRequest'`
 
 ``` purescript
-newCancelCommandRequest' :: CommandId -> ({ "CommandId" :: CommandId, "InstanceIds" :: NullOrUndefined (InstanceIdList) } -> { "CommandId" :: CommandId, "InstanceIds" :: NullOrUndefined (InstanceIdList) }) -> CancelCommandRequest
+newCancelCommandRequest' :: CommandId -> ({ "CommandId" :: CommandId, "InstanceIds" :: Maybe (InstanceIdList) } -> { "CommandId" :: CommandId, "InstanceIds" :: Maybe (InstanceIdList) }) -> CancelCommandRequest
 ```
 
 Constructs CancelCommandRequest's fields from required parameters
@@ -1416,7 +1416,7 @@ Encode ClientToken
 
 ``` purescript
 newtype Command
-  = Command { "CommandId" :: NullOrUndefined (CommandId), "DocumentName" :: NullOrUndefined (DocumentName), "Comment" :: NullOrUndefined (Comment), "ExpiresAfter" :: NullOrUndefined (DateTime), "Parameters" :: NullOrUndefined (Parameters), "InstanceIds" :: NullOrUndefined (InstanceIdList), "Targets" :: NullOrUndefined (Targets), "RequestedDateTime" :: NullOrUndefined (DateTime), "Status" :: NullOrUndefined (CommandStatus), "StatusDetails" :: NullOrUndefined (StatusDetails), "OutputS3Region" :: NullOrUndefined (S3Region), "OutputS3BucketName" :: NullOrUndefined (S3BucketName), "OutputS3KeyPrefix" :: NullOrUndefined (S3KeyPrefix), "MaxConcurrency" :: NullOrUndefined (MaxConcurrency), "MaxErrors" :: NullOrUndefined (MaxErrors), "TargetCount" :: NullOrUndefined (TargetCount), "CompletedCount" :: NullOrUndefined (CompletedCount), "ErrorCount" :: NullOrUndefined (ErrorCount), "ServiceRole" :: NullOrUndefined (ServiceRole), "NotificationConfig" :: NullOrUndefined (NotificationConfig) }
+  = Command { "CommandId" :: Maybe (CommandId), "DocumentName" :: Maybe (DocumentName), "Comment" :: Maybe (Comment), "ExpiresAfter" :: Maybe (DateTime), "Parameters" :: Maybe (Parameters), "InstanceIds" :: Maybe (InstanceIdList), "Targets" :: Maybe (Targets), "RequestedDateTime" :: Maybe (DateTime), "Status" :: Maybe (CommandStatus), "StatusDetails" :: Maybe (StatusDetails), "OutputS3Region" :: Maybe (S3Region), "OutputS3BucketName" :: Maybe (S3BucketName), "OutputS3KeyPrefix" :: Maybe (S3KeyPrefix), "MaxConcurrency" :: Maybe (MaxConcurrency), "MaxErrors" :: Maybe (MaxErrors), "TargetCount" :: Maybe (TargetCount), "CompletedCount" :: Maybe (CompletedCount), "ErrorCount" :: Maybe (ErrorCount), "ServiceRole" :: Maybe (ServiceRole), "NotificationConfig" :: Maybe (NotificationConfig) }
 ```
 
 <p>Describes a command request.</p>
@@ -1441,7 +1441,7 @@ Constructs Command from required parameters
 #### `newCommand'`
 
 ``` purescript
-newCommand' :: ({ "CommandId" :: NullOrUndefined (CommandId), "DocumentName" :: NullOrUndefined (DocumentName), "Comment" :: NullOrUndefined (Comment), "ExpiresAfter" :: NullOrUndefined (DateTime), "Parameters" :: NullOrUndefined (Parameters), "InstanceIds" :: NullOrUndefined (InstanceIdList), "Targets" :: NullOrUndefined (Targets), "RequestedDateTime" :: NullOrUndefined (DateTime), "Status" :: NullOrUndefined (CommandStatus), "StatusDetails" :: NullOrUndefined (StatusDetails), "OutputS3Region" :: NullOrUndefined (S3Region), "OutputS3BucketName" :: NullOrUndefined (S3BucketName), "OutputS3KeyPrefix" :: NullOrUndefined (S3KeyPrefix), "MaxConcurrency" :: NullOrUndefined (MaxConcurrency), "MaxErrors" :: NullOrUndefined (MaxErrors), "TargetCount" :: NullOrUndefined (TargetCount), "CompletedCount" :: NullOrUndefined (CompletedCount), "ErrorCount" :: NullOrUndefined (ErrorCount), "ServiceRole" :: NullOrUndefined (ServiceRole), "NotificationConfig" :: NullOrUndefined (NotificationConfig) } -> { "CommandId" :: NullOrUndefined (CommandId), "DocumentName" :: NullOrUndefined (DocumentName), "Comment" :: NullOrUndefined (Comment), "ExpiresAfter" :: NullOrUndefined (DateTime), "Parameters" :: NullOrUndefined (Parameters), "InstanceIds" :: NullOrUndefined (InstanceIdList), "Targets" :: NullOrUndefined (Targets), "RequestedDateTime" :: NullOrUndefined (DateTime), "Status" :: NullOrUndefined (CommandStatus), "StatusDetails" :: NullOrUndefined (StatusDetails), "OutputS3Region" :: NullOrUndefined (S3Region), "OutputS3BucketName" :: NullOrUndefined (S3BucketName), "OutputS3KeyPrefix" :: NullOrUndefined (S3KeyPrefix), "MaxConcurrency" :: NullOrUndefined (MaxConcurrency), "MaxErrors" :: NullOrUndefined (MaxErrors), "TargetCount" :: NullOrUndefined (TargetCount), "CompletedCount" :: NullOrUndefined (CompletedCount), "ErrorCount" :: NullOrUndefined (ErrorCount), "ServiceRole" :: NullOrUndefined (ServiceRole), "NotificationConfig" :: NullOrUndefined (NotificationConfig) }) -> Command
+newCommand' :: ({ "CommandId" :: Maybe (CommandId), "DocumentName" :: Maybe (DocumentName), "Comment" :: Maybe (Comment), "ExpiresAfter" :: Maybe (DateTime), "Parameters" :: Maybe (Parameters), "InstanceIds" :: Maybe (InstanceIdList), "Targets" :: Maybe (Targets), "RequestedDateTime" :: Maybe (DateTime), "Status" :: Maybe (CommandStatus), "StatusDetails" :: Maybe (StatusDetails), "OutputS3Region" :: Maybe (S3Region), "OutputS3BucketName" :: Maybe (S3BucketName), "OutputS3KeyPrefix" :: Maybe (S3KeyPrefix), "MaxConcurrency" :: Maybe (MaxConcurrency), "MaxErrors" :: Maybe (MaxErrors), "TargetCount" :: Maybe (TargetCount), "CompletedCount" :: Maybe (CompletedCount), "ErrorCount" :: Maybe (ErrorCount), "ServiceRole" :: Maybe (ServiceRole), "NotificationConfig" :: Maybe (NotificationConfig) } -> { "CommandId" :: Maybe (CommandId), "DocumentName" :: Maybe (DocumentName), "Comment" :: Maybe (Comment), "ExpiresAfter" :: Maybe (DateTime), "Parameters" :: Maybe (Parameters), "InstanceIds" :: Maybe (InstanceIdList), "Targets" :: Maybe (Targets), "RequestedDateTime" :: Maybe (DateTime), "Status" :: Maybe (CommandStatus), "StatusDetails" :: Maybe (StatusDetails), "OutputS3Region" :: Maybe (S3Region), "OutputS3BucketName" :: Maybe (S3BucketName), "OutputS3KeyPrefix" :: Maybe (S3KeyPrefix), "MaxConcurrency" :: Maybe (MaxConcurrency), "MaxErrors" :: Maybe (MaxErrors), "TargetCount" :: Maybe (TargetCount), "CompletedCount" :: Maybe (CompletedCount), "ErrorCount" :: Maybe (ErrorCount), "ServiceRole" :: Maybe (ServiceRole), "NotificationConfig" :: Maybe (NotificationConfig) }) -> Command
 ```
 
 Constructs Command's fields from required parameters
@@ -1548,7 +1548,7 @@ Encode CommandId
 
 ``` purescript
 newtype CommandInvocation
-  = CommandInvocation { "CommandId" :: NullOrUndefined (CommandId), "InstanceId" :: NullOrUndefined (InstanceId), "InstanceName" :: NullOrUndefined (InstanceTagName), "Comment" :: NullOrUndefined (Comment), "DocumentName" :: NullOrUndefined (DocumentName), "RequestedDateTime" :: NullOrUndefined (DateTime), "Status" :: NullOrUndefined (CommandInvocationStatus), "StatusDetails" :: NullOrUndefined (StatusDetails), "TraceOutput" :: NullOrUndefined (InvocationTraceOutput), "StandardOutputUrl" :: NullOrUndefined (Url), "StandardErrorUrl" :: NullOrUndefined (Url), "CommandPlugins" :: NullOrUndefined (CommandPluginList), "ServiceRole" :: NullOrUndefined (ServiceRole), "NotificationConfig" :: NullOrUndefined (NotificationConfig) }
+  = CommandInvocation { "CommandId" :: Maybe (CommandId), "InstanceId" :: Maybe (InstanceId), "InstanceName" :: Maybe (InstanceTagName), "Comment" :: Maybe (Comment), "DocumentName" :: Maybe (DocumentName), "RequestedDateTime" :: Maybe (DateTime), "Status" :: Maybe (CommandInvocationStatus), "StatusDetails" :: Maybe (StatusDetails), "TraceOutput" :: Maybe (InvocationTraceOutput), "StandardOutputUrl" :: Maybe (Url), "StandardErrorUrl" :: Maybe (Url), "CommandPlugins" :: Maybe (CommandPluginList), "ServiceRole" :: Maybe (ServiceRole), "NotificationConfig" :: Maybe (NotificationConfig) }
 ```
 
 <p>An invocation is copy of a command sent to a specific instance. A command can apply to one or more instances. A command invocation applies to one instance. For example, if a user executes SendCommand against three instances, then a command invocation is created for each requested instance ID. A command invocation returns status and detail information about a command you executed. </p>
@@ -1573,7 +1573,7 @@ Constructs CommandInvocation from required parameters
 #### `newCommandInvocation'`
 
 ``` purescript
-newCommandInvocation' :: ({ "CommandId" :: NullOrUndefined (CommandId), "InstanceId" :: NullOrUndefined (InstanceId), "InstanceName" :: NullOrUndefined (InstanceTagName), "Comment" :: NullOrUndefined (Comment), "DocumentName" :: NullOrUndefined (DocumentName), "RequestedDateTime" :: NullOrUndefined (DateTime), "Status" :: NullOrUndefined (CommandInvocationStatus), "StatusDetails" :: NullOrUndefined (StatusDetails), "TraceOutput" :: NullOrUndefined (InvocationTraceOutput), "StandardOutputUrl" :: NullOrUndefined (Url), "StandardErrorUrl" :: NullOrUndefined (Url), "CommandPlugins" :: NullOrUndefined (CommandPluginList), "ServiceRole" :: NullOrUndefined (ServiceRole), "NotificationConfig" :: NullOrUndefined (NotificationConfig) } -> { "CommandId" :: NullOrUndefined (CommandId), "InstanceId" :: NullOrUndefined (InstanceId), "InstanceName" :: NullOrUndefined (InstanceTagName), "Comment" :: NullOrUndefined (Comment), "DocumentName" :: NullOrUndefined (DocumentName), "RequestedDateTime" :: NullOrUndefined (DateTime), "Status" :: NullOrUndefined (CommandInvocationStatus), "StatusDetails" :: NullOrUndefined (StatusDetails), "TraceOutput" :: NullOrUndefined (InvocationTraceOutput), "StandardOutputUrl" :: NullOrUndefined (Url), "StandardErrorUrl" :: NullOrUndefined (Url), "CommandPlugins" :: NullOrUndefined (CommandPluginList), "ServiceRole" :: NullOrUndefined (ServiceRole), "NotificationConfig" :: NullOrUndefined (NotificationConfig) }) -> CommandInvocation
+newCommandInvocation' :: ({ "CommandId" :: Maybe (CommandId), "InstanceId" :: Maybe (InstanceId), "InstanceName" :: Maybe (InstanceTagName), "Comment" :: Maybe (Comment), "DocumentName" :: Maybe (DocumentName), "RequestedDateTime" :: Maybe (DateTime), "Status" :: Maybe (CommandInvocationStatus), "StatusDetails" :: Maybe (StatusDetails), "TraceOutput" :: Maybe (InvocationTraceOutput), "StandardOutputUrl" :: Maybe (Url), "StandardErrorUrl" :: Maybe (Url), "CommandPlugins" :: Maybe (CommandPluginList), "ServiceRole" :: Maybe (ServiceRole), "NotificationConfig" :: Maybe (NotificationConfig) } -> { "CommandId" :: Maybe (CommandId), "InstanceId" :: Maybe (InstanceId), "InstanceName" :: Maybe (InstanceTagName), "Comment" :: Maybe (Comment), "DocumentName" :: Maybe (DocumentName), "RequestedDateTime" :: Maybe (DateTime), "Status" :: Maybe (CommandInvocationStatus), "StatusDetails" :: Maybe (StatusDetails), "TraceOutput" :: Maybe (InvocationTraceOutput), "StandardOutputUrl" :: Maybe (Url), "StandardErrorUrl" :: Maybe (Url), "CommandPlugins" :: Maybe (CommandPluginList), "ServiceRole" :: Maybe (ServiceRole), "NotificationConfig" :: Maybe (NotificationConfig) }) -> CommandInvocation
 ```
 
 Constructs CommandInvocation's fields from required parameters
@@ -1646,7 +1646,7 @@ Encode CommandMaxResults
 
 ``` purescript
 newtype CommandPlugin
-  = CommandPlugin { "Name" :: NullOrUndefined (CommandPluginName), "Status" :: NullOrUndefined (CommandPluginStatus), "StatusDetails" :: NullOrUndefined (StatusDetails), "ResponseCode" :: NullOrUndefined (ResponseCode), "ResponseStartDateTime" :: NullOrUndefined (DateTime), "ResponseFinishDateTime" :: NullOrUndefined (DateTime), "Output" :: NullOrUndefined (CommandPluginOutput), "StandardOutputUrl" :: NullOrUndefined (Url), "StandardErrorUrl" :: NullOrUndefined (Url), "OutputS3Region" :: NullOrUndefined (S3Region), "OutputS3BucketName" :: NullOrUndefined (S3BucketName), "OutputS3KeyPrefix" :: NullOrUndefined (S3KeyPrefix) }
+  = CommandPlugin { "Name" :: Maybe (CommandPluginName), "Status" :: Maybe (CommandPluginStatus), "StatusDetails" :: Maybe (StatusDetails), "ResponseCode" :: Maybe (ResponseCode), "ResponseStartDateTime" :: Maybe (DateTime), "ResponseFinishDateTime" :: Maybe (DateTime), "Output" :: Maybe (CommandPluginOutput), "StandardOutputUrl" :: Maybe (Url), "StandardErrorUrl" :: Maybe (Url), "OutputS3Region" :: Maybe (S3Region), "OutputS3BucketName" :: Maybe (S3BucketName), "OutputS3KeyPrefix" :: Maybe (S3KeyPrefix) }
 ```
 
 <p>Describes plugin details.</p>
@@ -1671,7 +1671,7 @@ Constructs CommandPlugin from required parameters
 #### `newCommandPlugin'`
 
 ``` purescript
-newCommandPlugin' :: ({ "Name" :: NullOrUndefined (CommandPluginName), "Status" :: NullOrUndefined (CommandPluginStatus), "StatusDetails" :: NullOrUndefined (StatusDetails), "ResponseCode" :: NullOrUndefined (ResponseCode), "ResponseStartDateTime" :: NullOrUndefined (DateTime), "ResponseFinishDateTime" :: NullOrUndefined (DateTime), "Output" :: NullOrUndefined (CommandPluginOutput), "StandardOutputUrl" :: NullOrUndefined (Url), "StandardErrorUrl" :: NullOrUndefined (Url), "OutputS3Region" :: NullOrUndefined (S3Region), "OutputS3BucketName" :: NullOrUndefined (S3BucketName), "OutputS3KeyPrefix" :: NullOrUndefined (S3KeyPrefix) } -> { "Name" :: NullOrUndefined (CommandPluginName), "Status" :: NullOrUndefined (CommandPluginStatus), "StatusDetails" :: NullOrUndefined (StatusDetails), "ResponseCode" :: NullOrUndefined (ResponseCode), "ResponseStartDateTime" :: NullOrUndefined (DateTime), "ResponseFinishDateTime" :: NullOrUndefined (DateTime), "Output" :: NullOrUndefined (CommandPluginOutput), "StandardOutputUrl" :: NullOrUndefined (Url), "StandardErrorUrl" :: NullOrUndefined (Url), "OutputS3Region" :: NullOrUndefined (S3Region), "OutputS3BucketName" :: NullOrUndefined (S3BucketName), "OutputS3KeyPrefix" :: NullOrUndefined (S3KeyPrefix) }) -> CommandPlugin
+newCommandPlugin' :: ({ "Name" :: Maybe (CommandPluginName), "Status" :: Maybe (CommandPluginStatus), "StatusDetails" :: Maybe (StatusDetails), "ResponseCode" :: Maybe (ResponseCode), "ResponseStartDateTime" :: Maybe (DateTime), "ResponseFinishDateTime" :: Maybe (DateTime), "Output" :: Maybe (CommandPluginOutput), "StandardOutputUrl" :: Maybe (Url), "StandardErrorUrl" :: Maybe (Url), "OutputS3Region" :: Maybe (S3Region), "OutputS3BucketName" :: Maybe (S3BucketName), "OutputS3KeyPrefix" :: Maybe (S3KeyPrefix) } -> { "Name" :: Maybe (CommandPluginName), "Status" :: Maybe (CommandPluginStatus), "StatusDetails" :: Maybe (StatusDetails), "ResponseCode" :: Maybe (ResponseCode), "ResponseStartDateTime" :: Maybe (DateTime), "ResponseFinishDateTime" :: Maybe (DateTime), "Output" :: Maybe (CommandPluginOutput), "StandardOutputUrl" :: Maybe (Url), "StandardErrorUrl" :: Maybe (Url), "OutputS3Region" :: Maybe (S3Region), "OutputS3BucketName" :: Maybe (S3BucketName), "OutputS3KeyPrefix" :: Maybe (S3KeyPrefix) }) -> CommandPlugin
 ```
 
 Constructs CommandPlugin's fields from required parameters
@@ -1808,7 +1808,7 @@ Encode ComplianceExecutionId
 
 ``` purescript
 newtype ComplianceExecutionSummary
-  = ComplianceExecutionSummary { "ExecutionTime" :: DateTime, "ExecutionId" :: NullOrUndefined (ComplianceExecutionId), "ExecutionType" :: NullOrUndefined (ComplianceExecutionType) }
+  = ComplianceExecutionSummary { "ExecutionTime" :: DateTime, "ExecutionId" :: Maybe (ComplianceExecutionId), "ExecutionType" :: Maybe (ComplianceExecutionType) }
 ```
 
 <p>A summary of the call execution that includes an execution ID, the type of execution (for example, <code>Command</code>), and the date/time of the execution using a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
@@ -1833,7 +1833,7 @@ Constructs ComplianceExecutionSummary from required parameters
 #### `newComplianceExecutionSummary'`
 
 ``` purescript
-newComplianceExecutionSummary' :: DateTime -> ({ "ExecutionTime" :: DateTime, "ExecutionId" :: NullOrUndefined (ComplianceExecutionId), "ExecutionType" :: NullOrUndefined (ComplianceExecutionType) } -> { "ExecutionTime" :: DateTime, "ExecutionId" :: NullOrUndefined (ComplianceExecutionId), "ExecutionType" :: NullOrUndefined (ComplianceExecutionType) }) -> ComplianceExecutionSummary
+newComplianceExecutionSummary' :: DateTime -> ({ "ExecutionTime" :: DateTime, "ExecutionId" :: Maybe (ComplianceExecutionId), "ExecutionType" :: Maybe (ComplianceExecutionType) } -> { "ExecutionTime" :: DateTime, "ExecutionId" :: Maybe (ComplianceExecutionId), "ExecutionType" :: Maybe (ComplianceExecutionType) }) -> ComplianceExecutionSummary
 ```
 
 Constructs ComplianceExecutionSummary's fields from required parameters
@@ -1874,7 +1874,7 @@ Encode ComplianceFilterValue
 
 ``` purescript
 newtype ComplianceItem
-  = ComplianceItem { "ComplianceType" :: NullOrUndefined (ComplianceTypeName), "ResourceType" :: NullOrUndefined (ComplianceResourceType), "ResourceId" :: NullOrUndefined (ComplianceResourceId), "Id" :: NullOrUndefined (ComplianceItemId), "Title" :: NullOrUndefined (ComplianceItemTitle), "Status" :: NullOrUndefined (ComplianceStatus), "Severity" :: NullOrUndefined (ComplianceSeverity), "ExecutionSummary" :: NullOrUndefined (ComplianceExecutionSummary), "Details" :: NullOrUndefined (ComplianceItemDetails) }
+  = ComplianceItem { "ComplianceType" :: Maybe (ComplianceTypeName), "ResourceType" :: Maybe (ComplianceResourceType), "ResourceId" :: Maybe (ComplianceResourceId), "Id" :: Maybe (ComplianceItemId), "Title" :: Maybe (ComplianceItemTitle), "Status" :: Maybe (ComplianceStatus), "Severity" :: Maybe (ComplianceSeverity), "ExecutionSummary" :: Maybe (ComplianceExecutionSummary), "Details" :: Maybe (ComplianceItemDetails) }
 ```
 
 <p>Information about the compliance as defined by the resource type. For example, for a patch resource type, <code>Items</code> includes information about the PatchSeverity, Classification, etc.</p>
@@ -1899,7 +1899,7 @@ Constructs ComplianceItem from required parameters
 #### `newComplianceItem'`
 
 ``` purescript
-newComplianceItem' :: ({ "ComplianceType" :: NullOrUndefined (ComplianceTypeName), "ResourceType" :: NullOrUndefined (ComplianceResourceType), "ResourceId" :: NullOrUndefined (ComplianceResourceId), "Id" :: NullOrUndefined (ComplianceItemId), "Title" :: NullOrUndefined (ComplianceItemTitle), "Status" :: NullOrUndefined (ComplianceStatus), "Severity" :: NullOrUndefined (ComplianceSeverity), "ExecutionSummary" :: NullOrUndefined (ComplianceExecutionSummary), "Details" :: NullOrUndefined (ComplianceItemDetails) } -> { "ComplianceType" :: NullOrUndefined (ComplianceTypeName), "ResourceType" :: NullOrUndefined (ComplianceResourceType), "ResourceId" :: NullOrUndefined (ComplianceResourceId), "Id" :: NullOrUndefined (ComplianceItemId), "Title" :: NullOrUndefined (ComplianceItemTitle), "Status" :: NullOrUndefined (ComplianceStatus), "Severity" :: NullOrUndefined (ComplianceSeverity), "ExecutionSummary" :: NullOrUndefined (ComplianceExecutionSummary), "Details" :: NullOrUndefined (ComplianceItemDetails) }) -> ComplianceItem
+newComplianceItem' :: ({ "ComplianceType" :: Maybe (ComplianceTypeName), "ResourceType" :: Maybe (ComplianceResourceType), "ResourceId" :: Maybe (ComplianceResourceId), "Id" :: Maybe (ComplianceItemId), "Title" :: Maybe (ComplianceItemTitle), "Status" :: Maybe (ComplianceStatus), "Severity" :: Maybe (ComplianceSeverity), "ExecutionSummary" :: Maybe (ComplianceExecutionSummary), "Details" :: Maybe (ComplianceItemDetails) } -> { "ComplianceType" :: Maybe (ComplianceTypeName), "ResourceType" :: Maybe (ComplianceResourceType), "ResourceId" :: Maybe (ComplianceResourceId), "Id" :: Maybe (ComplianceItemId), "Title" :: Maybe (ComplianceItemTitle), "Status" :: Maybe (ComplianceStatus), "Severity" :: Maybe (ComplianceSeverity), "ExecutionSummary" :: Maybe (ComplianceExecutionSummary), "Details" :: Maybe (ComplianceItemDetails) }) -> ComplianceItem
 ```
 
 Constructs ComplianceItem's fields from required parameters
@@ -1940,7 +1940,7 @@ Encode ComplianceItemDetails
 
 ``` purescript
 newtype ComplianceItemEntry
-  = ComplianceItemEntry { "Id" :: NullOrUndefined (ComplianceItemId), "Title" :: NullOrUndefined (ComplianceItemTitle), "Severity" :: ComplianceSeverity, "Status" :: ComplianceStatus, "Details" :: NullOrUndefined (ComplianceItemDetails) }
+  = ComplianceItemEntry { "Id" :: Maybe (ComplianceItemId), "Title" :: Maybe (ComplianceItemTitle), "Severity" :: ComplianceSeverity, "Status" :: ComplianceStatus, "Details" :: Maybe (ComplianceItemDetails) }
 ```
 
 <p>Information about a compliance item.</p>
@@ -1965,7 +1965,7 @@ Constructs ComplianceItemEntry from required parameters
 #### `newComplianceItemEntry'`
 
 ``` purescript
-newComplianceItemEntry' :: ComplianceSeverity -> ComplianceStatus -> ({ "Id" :: NullOrUndefined (ComplianceItemId), "Title" :: NullOrUndefined (ComplianceItemTitle), "Severity" :: ComplianceSeverity, "Status" :: ComplianceStatus, "Details" :: NullOrUndefined (ComplianceItemDetails) } -> { "Id" :: NullOrUndefined (ComplianceItemId), "Title" :: NullOrUndefined (ComplianceItemTitle), "Severity" :: ComplianceSeverity, "Status" :: ComplianceStatus, "Details" :: NullOrUndefined (ComplianceItemDetails) }) -> ComplianceItemEntry
+newComplianceItemEntry' :: ComplianceSeverity -> ComplianceStatus -> ({ "Id" :: Maybe (ComplianceItemId), "Title" :: Maybe (ComplianceItemTitle), "Severity" :: ComplianceSeverity, "Status" :: ComplianceStatus, "Details" :: Maybe (ComplianceItemDetails) } -> { "Id" :: Maybe (ComplianceItemId), "Title" :: Maybe (ComplianceItemTitle), "Severity" :: ComplianceSeverity, "Status" :: ComplianceStatus, "Details" :: Maybe (ComplianceItemDetails) }) -> ComplianceItemEntry
 ```
 
 Constructs ComplianceItemEntry's fields from required parameters
@@ -2150,7 +2150,7 @@ Encode ComplianceStatus
 
 ``` purescript
 newtype ComplianceStringFilter
-  = ComplianceStringFilter { "Key" :: NullOrUndefined (ComplianceStringFilterKey), "Values" :: NullOrUndefined (ComplianceStringFilterValueList), "Type" :: NullOrUndefined (ComplianceQueryOperatorType) }
+  = ComplianceStringFilter { "Key" :: Maybe (ComplianceStringFilterKey), "Values" :: Maybe (ComplianceStringFilterValueList), "Type" :: Maybe (ComplianceQueryOperatorType) }
 ```
 
 <p>One or more filters. Use a filter to return a more specific list of results.</p>
@@ -2175,7 +2175,7 @@ Constructs ComplianceStringFilter from required parameters
 #### `newComplianceStringFilter'`
 
 ``` purescript
-newComplianceStringFilter' :: ({ "Key" :: NullOrUndefined (ComplianceStringFilterKey), "Values" :: NullOrUndefined (ComplianceStringFilterValueList), "Type" :: NullOrUndefined (ComplianceQueryOperatorType) } -> { "Key" :: NullOrUndefined (ComplianceStringFilterKey), "Values" :: NullOrUndefined (ComplianceStringFilterValueList), "Type" :: NullOrUndefined (ComplianceQueryOperatorType) }) -> ComplianceStringFilter
+newComplianceStringFilter' :: ({ "Key" :: Maybe (ComplianceStringFilterKey), "Values" :: Maybe (ComplianceStringFilterValueList), "Type" :: Maybe (ComplianceQueryOperatorType) } -> { "Key" :: Maybe (ComplianceStringFilterKey), "Values" :: Maybe (ComplianceStringFilterValueList), "Type" :: Maybe (ComplianceQueryOperatorType) }) -> ComplianceStringFilter
 ```
 
 Constructs ComplianceStringFilter's fields from required parameters
@@ -2248,7 +2248,7 @@ Encode ComplianceSummaryCount
 
 ``` purescript
 newtype ComplianceSummaryItem
-  = ComplianceSummaryItem { "ComplianceType" :: NullOrUndefined (ComplianceTypeName), "CompliantSummary" :: NullOrUndefined (CompliantSummary), "NonCompliantSummary" :: NullOrUndefined (NonCompliantSummary) }
+  = ComplianceSummaryItem { "ComplianceType" :: Maybe (ComplianceTypeName), "CompliantSummary" :: Maybe (CompliantSummary), "NonCompliantSummary" :: Maybe (NonCompliantSummary) }
 ```
 
 <p>A summary of compliance information by compliance type.</p>
@@ -2273,7 +2273,7 @@ Constructs ComplianceSummaryItem from required parameters
 #### `newComplianceSummaryItem'`
 
 ``` purescript
-newComplianceSummaryItem' :: ({ "ComplianceType" :: NullOrUndefined (ComplianceTypeName), "CompliantSummary" :: NullOrUndefined (CompliantSummary), "NonCompliantSummary" :: NullOrUndefined (NonCompliantSummary) } -> { "ComplianceType" :: NullOrUndefined (ComplianceTypeName), "CompliantSummary" :: NullOrUndefined (CompliantSummary), "NonCompliantSummary" :: NullOrUndefined (NonCompliantSummary) }) -> ComplianceSummaryItem
+newComplianceSummaryItem' :: ({ "ComplianceType" :: Maybe (ComplianceTypeName), "CompliantSummary" :: Maybe (CompliantSummary), "NonCompliantSummary" :: Maybe (NonCompliantSummary) } -> { "ComplianceType" :: Maybe (ComplianceTypeName), "CompliantSummary" :: Maybe (CompliantSummary), "NonCompliantSummary" :: Maybe (NonCompliantSummary) }) -> ComplianceSummaryItem
 ```
 
 Constructs ComplianceSummaryItem's fields from required parameters
@@ -2298,7 +2298,7 @@ Encode ComplianceSummaryItemList
 
 ``` purescript
 newtype ComplianceTypeCountLimitExceededException
-  = ComplianceTypeCountLimitExceededException { "Message" :: NullOrUndefined (String) }
+  = ComplianceTypeCountLimitExceededException { "Message" :: Maybe (String) }
 ```
 
 <p>You specified too many custom compliance types. You can specify a maximum of 10 different types. </p>
@@ -2323,7 +2323,7 @@ Constructs ComplianceTypeCountLimitExceededException from required parameters
 #### `newComplianceTypeCountLimitExceededException'`
 
 ``` purescript
-newComplianceTypeCountLimitExceededException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> ComplianceTypeCountLimitExceededException
+newComplianceTypeCountLimitExceededException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> ComplianceTypeCountLimitExceededException
 ```
 
 Constructs ComplianceTypeCountLimitExceededException's fields from required parameters
@@ -2348,7 +2348,7 @@ Encode ComplianceTypeName
 
 ``` purescript
 newtype CompliantSummary
-  = CompliantSummary { "CompliantCount" :: NullOrUndefined (ComplianceSummaryCount), "SeveritySummary" :: NullOrUndefined (SeveritySummary) }
+  = CompliantSummary { "CompliantCount" :: Maybe (ComplianceSummaryCount), "SeveritySummary" :: Maybe (SeveritySummary) }
 ```
 
 <p>A summary of resources that are compliant. The summary is organized according to the resource count for each compliance type.</p>
@@ -2373,7 +2373,7 @@ Constructs CompliantSummary from required parameters
 #### `newCompliantSummary'`
 
 ``` purescript
-newCompliantSummary' :: ({ "CompliantCount" :: NullOrUndefined (ComplianceSummaryCount), "SeveritySummary" :: NullOrUndefined (SeveritySummary) } -> { "CompliantCount" :: NullOrUndefined (ComplianceSummaryCount), "SeveritySummary" :: NullOrUndefined (SeveritySummary) }) -> CompliantSummary
+newCompliantSummary' :: ({ "CompliantCount" :: Maybe (ComplianceSummaryCount), "SeveritySummary" :: Maybe (SeveritySummary) } -> { "CompliantCount" :: Maybe (ComplianceSummaryCount), "SeveritySummary" :: Maybe (SeveritySummary) }) -> CompliantSummary
 ```
 
 Constructs CompliantSummary's fields from required parameters
@@ -2398,7 +2398,7 @@ Encode ComputerName
 
 ``` purescript
 newtype CreateActivationRequest
-  = CreateActivationRequest { "Description" :: NullOrUndefined (ActivationDescription), "DefaultInstanceName" :: NullOrUndefined (DefaultInstanceName), "IamRole" :: IamRole, "RegistrationLimit" :: NullOrUndefined (RegistrationLimit), "ExpirationDate" :: NullOrUndefined (ExpirationDate) }
+  = CreateActivationRequest { "Description" :: Maybe (ActivationDescription), "DefaultInstanceName" :: Maybe (DefaultInstanceName), "IamRole" :: IamRole, "RegistrationLimit" :: Maybe (RegistrationLimit), "ExpirationDate" :: Maybe (ExpirationDate) }
 ```
 
 ##### Instances
@@ -2421,7 +2421,7 @@ Constructs CreateActivationRequest from required parameters
 #### `newCreateActivationRequest'`
 
 ``` purescript
-newCreateActivationRequest' :: IamRole -> ({ "Description" :: NullOrUndefined (ActivationDescription), "DefaultInstanceName" :: NullOrUndefined (DefaultInstanceName), "IamRole" :: IamRole, "RegistrationLimit" :: NullOrUndefined (RegistrationLimit), "ExpirationDate" :: NullOrUndefined (ExpirationDate) } -> { "Description" :: NullOrUndefined (ActivationDescription), "DefaultInstanceName" :: NullOrUndefined (DefaultInstanceName), "IamRole" :: IamRole, "RegistrationLimit" :: NullOrUndefined (RegistrationLimit), "ExpirationDate" :: NullOrUndefined (ExpirationDate) }) -> CreateActivationRequest
+newCreateActivationRequest' :: IamRole -> ({ "Description" :: Maybe (ActivationDescription), "DefaultInstanceName" :: Maybe (DefaultInstanceName), "IamRole" :: IamRole, "RegistrationLimit" :: Maybe (RegistrationLimit), "ExpirationDate" :: Maybe (ExpirationDate) } -> { "Description" :: Maybe (ActivationDescription), "DefaultInstanceName" :: Maybe (DefaultInstanceName), "IamRole" :: IamRole, "RegistrationLimit" :: Maybe (RegistrationLimit), "ExpirationDate" :: Maybe (ExpirationDate) }) -> CreateActivationRequest
 ```
 
 Constructs CreateActivationRequest's fields from required parameters
@@ -2430,7 +2430,7 @@ Constructs CreateActivationRequest's fields from required parameters
 
 ``` purescript
 newtype CreateActivationResult
-  = CreateActivationResult { "ActivationId" :: NullOrUndefined (ActivationId), "ActivationCode" :: NullOrUndefined (ActivationCode) }
+  = CreateActivationResult { "ActivationId" :: Maybe (ActivationId), "ActivationCode" :: Maybe (ActivationCode) }
 ```
 
 ##### Instances
@@ -2453,7 +2453,7 @@ Constructs CreateActivationResult from required parameters
 #### `newCreateActivationResult'`
 
 ``` purescript
-newCreateActivationResult' :: ({ "ActivationId" :: NullOrUndefined (ActivationId), "ActivationCode" :: NullOrUndefined (ActivationCode) } -> { "ActivationId" :: NullOrUndefined (ActivationId), "ActivationCode" :: NullOrUndefined (ActivationCode) }) -> CreateActivationResult
+newCreateActivationResult' :: ({ "ActivationId" :: Maybe (ActivationId), "ActivationCode" :: Maybe (ActivationCode) } -> { "ActivationId" :: Maybe (ActivationId), "ActivationCode" :: Maybe (ActivationCode) }) -> CreateActivationResult
 ```
 
 Constructs CreateActivationResult's fields from required parameters
@@ -2510,7 +2510,7 @@ Encode CreateAssociationBatchRequestEntries
 
 ``` purescript
 newtype CreateAssociationBatchRequestEntry
-  = CreateAssociationBatchRequestEntry { "Name" :: DocumentName, "InstanceId" :: NullOrUndefined (InstanceId), "Parameters" :: NullOrUndefined (Parameters), "DocumentVersion" :: NullOrUndefined (DocumentVersion), "Targets" :: NullOrUndefined (Targets), "ScheduleExpression" :: NullOrUndefined (ScheduleExpression), "OutputLocation" :: NullOrUndefined (InstanceAssociationOutputLocation), "AssociationName" :: NullOrUndefined (AssociationName) }
+  = CreateAssociationBatchRequestEntry { "Name" :: DocumentName, "InstanceId" :: Maybe (InstanceId), "Parameters" :: Maybe (Parameters), "DocumentVersion" :: Maybe (DocumentVersion), "Targets" :: Maybe (Targets), "ScheduleExpression" :: Maybe (ScheduleExpression), "OutputLocation" :: Maybe (InstanceAssociationOutputLocation), "AssociationName" :: Maybe (AssociationName) }
 ```
 
 <p>Describes the association of a Systems Manager document and an instance.</p>
@@ -2535,7 +2535,7 @@ Constructs CreateAssociationBatchRequestEntry from required parameters
 #### `newCreateAssociationBatchRequestEntry'`
 
 ``` purescript
-newCreateAssociationBatchRequestEntry' :: DocumentName -> ({ "Name" :: DocumentName, "InstanceId" :: NullOrUndefined (InstanceId), "Parameters" :: NullOrUndefined (Parameters), "DocumentVersion" :: NullOrUndefined (DocumentVersion), "Targets" :: NullOrUndefined (Targets), "ScheduleExpression" :: NullOrUndefined (ScheduleExpression), "OutputLocation" :: NullOrUndefined (InstanceAssociationOutputLocation), "AssociationName" :: NullOrUndefined (AssociationName) } -> { "Name" :: DocumentName, "InstanceId" :: NullOrUndefined (InstanceId), "Parameters" :: NullOrUndefined (Parameters), "DocumentVersion" :: NullOrUndefined (DocumentVersion), "Targets" :: NullOrUndefined (Targets), "ScheduleExpression" :: NullOrUndefined (ScheduleExpression), "OutputLocation" :: NullOrUndefined (InstanceAssociationOutputLocation), "AssociationName" :: NullOrUndefined (AssociationName) }) -> CreateAssociationBatchRequestEntry
+newCreateAssociationBatchRequestEntry' :: DocumentName -> ({ "Name" :: DocumentName, "InstanceId" :: Maybe (InstanceId), "Parameters" :: Maybe (Parameters), "DocumentVersion" :: Maybe (DocumentVersion), "Targets" :: Maybe (Targets), "ScheduleExpression" :: Maybe (ScheduleExpression), "OutputLocation" :: Maybe (InstanceAssociationOutputLocation), "AssociationName" :: Maybe (AssociationName) } -> { "Name" :: DocumentName, "InstanceId" :: Maybe (InstanceId), "Parameters" :: Maybe (Parameters), "DocumentVersion" :: Maybe (DocumentVersion), "Targets" :: Maybe (Targets), "ScheduleExpression" :: Maybe (ScheduleExpression), "OutputLocation" :: Maybe (InstanceAssociationOutputLocation), "AssociationName" :: Maybe (AssociationName) }) -> CreateAssociationBatchRequestEntry
 ```
 
 Constructs CreateAssociationBatchRequestEntry's fields from required parameters
@@ -2544,7 +2544,7 @@ Constructs CreateAssociationBatchRequestEntry's fields from required parameters
 
 ``` purescript
 newtype CreateAssociationBatchResult
-  = CreateAssociationBatchResult { "Successful" :: NullOrUndefined (AssociationDescriptionList), "Failed" :: NullOrUndefined (FailedCreateAssociationList) }
+  = CreateAssociationBatchResult { "Successful" :: Maybe (AssociationDescriptionList), "Failed" :: Maybe (FailedCreateAssociationList) }
 ```
 
 ##### Instances
@@ -2567,7 +2567,7 @@ Constructs CreateAssociationBatchResult from required parameters
 #### `newCreateAssociationBatchResult'`
 
 ``` purescript
-newCreateAssociationBatchResult' :: ({ "Successful" :: NullOrUndefined (AssociationDescriptionList), "Failed" :: NullOrUndefined (FailedCreateAssociationList) } -> { "Successful" :: NullOrUndefined (AssociationDescriptionList), "Failed" :: NullOrUndefined (FailedCreateAssociationList) }) -> CreateAssociationBatchResult
+newCreateAssociationBatchResult' :: ({ "Successful" :: Maybe (AssociationDescriptionList), "Failed" :: Maybe (FailedCreateAssociationList) } -> { "Successful" :: Maybe (AssociationDescriptionList), "Failed" :: Maybe (FailedCreateAssociationList) }) -> CreateAssociationBatchResult
 ```
 
 Constructs CreateAssociationBatchResult's fields from required parameters
@@ -2576,7 +2576,7 @@ Constructs CreateAssociationBatchResult's fields from required parameters
 
 ``` purescript
 newtype CreateAssociationRequest
-  = CreateAssociationRequest { "Name" :: DocumentName, "DocumentVersion" :: NullOrUndefined (DocumentVersion), "InstanceId" :: NullOrUndefined (InstanceId), "Parameters" :: NullOrUndefined (Parameters), "Targets" :: NullOrUndefined (Targets), "ScheduleExpression" :: NullOrUndefined (ScheduleExpression), "OutputLocation" :: NullOrUndefined (InstanceAssociationOutputLocation), "AssociationName" :: NullOrUndefined (AssociationName) }
+  = CreateAssociationRequest { "Name" :: DocumentName, "DocumentVersion" :: Maybe (DocumentVersion), "InstanceId" :: Maybe (InstanceId), "Parameters" :: Maybe (Parameters), "Targets" :: Maybe (Targets), "ScheduleExpression" :: Maybe (ScheduleExpression), "OutputLocation" :: Maybe (InstanceAssociationOutputLocation), "AssociationName" :: Maybe (AssociationName) }
 ```
 
 ##### Instances
@@ -2599,7 +2599,7 @@ Constructs CreateAssociationRequest from required parameters
 #### `newCreateAssociationRequest'`
 
 ``` purescript
-newCreateAssociationRequest' :: DocumentName -> ({ "Name" :: DocumentName, "DocumentVersion" :: NullOrUndefined (DocumentVersion), "InstanceId" :: NullOrUndefined (InstanceId), "Parameters" :: NullOrUndefined (Parameters), "Targets" :: NullOrUndefined (Targets), "ScheduleExpression" :: NullOrUndefined (ScheduleExpression), "OutputLocation" :: NullOrUndefined (InstanceAssociationOutputLocation), "AssociationName" :: NullOrUndefined (AssociationName) } -> { "Name" :: DocumentName, "DocumentVersion" :: NullOrUndefined (DocumentVersion), "InstanceId" :: NullOrUndefined (InstanceId), "Parameters" :: NullOrUndefined (Parameters), "Targets" :: NullOrUndefined (Targets), "ScheduleExpression" :: NullOrUndefined (ScheduleExpression), "OutputLocation" :: NullOrUndefined (InstanceAssociationOutputLocation), "AssociationName" :: NullOrUndefined (AssociationName) }) -> CreateAssociationRequest
+newCreateAssociationRequest' :: DocumentName -> ({ "Name" :: DocumentName, "DocumentVersion" :: Maybe (DocumentVersion), "InstanceId" :: Maybe (InstanceId), "Parameters" :: Maybe (Parameters), "Targets" :: Maybe (Targets), "ScheduleExpression" :: Maybe (ScheduleExpression), "OutputLocation" :: Maybe (InstanceAssociationOutputLocation), "AssociationName" :: Maybe (AssociationName) } -> { "Name" :: DocumentName, "DocumentVersion" :: Maybe (DocumentVersion), "InstanceId" :: Maybe (InstanceId), "Parameters" :: Maybe (Parameters), "Targets" :: Maybe (Targets), "ScheduleExpression" :: Maybe (ScheduleExpression), "OutputLocation" :: Maybe (InstanceAssociationOutputLocation), "AssociationName" :: Maybe (AssociationName) }) -> CreateAssociationRequest
 ```
 
 Constructs CreateAssociationRequest's fields from required parameters
@@ -2608,7 +2608,7 @@ Constructs CreateAssociationRequest's fields from required parameters
 
 ``` purescript
 newtype CreateAssociationResult
-  = CreateAssociationResult { "AssociationDescription" :: NullOrUndefined (AssociationDescription) }
+  = CreateAssociationResult { "AssociationDescription" :: Maybe (AssociationDescription) }
 ```
 
 ##### Instances
@@ -2631,7 +2631,7 @@ Constructs CreateAssociationResult from required parameters
 #### `newCreateAssociationResult'`
 
 ``` purescript
-newCreateAssociationResult' :: ({ "AssociationDescription" :: NullOrUndefined (AssociationDescription) } -> { "AssociationDescription" :: NullOrUndefined (AssociationDescription) }) -> CreateAssociationResult
+newCreateAssociationResult' :: ({ "AssociationDescription" :: Maybe (AssociationDescription) } -> { "AssociationDescription" :: Maybe (AssociationDescription) }) -> CreateAssociationResult
 ```
 
 Constructs CreateAssociationResult's fields from required parameters
@@ -2640,7 +2640,7 @@ Constructs CreateAssociationResult's fields from required parameters
 
 ``` purescript
 newtype CreateDocumentRequest
-  = CreateDocumentRequest { "Content" :: DocumentContent, "Name" :: DocumentName, "DocumentType" :: NullOrUndefined (DocumentType), "DocumentFormat" :: NullOrUndefined (DocumentFormat), "TargetType" :: NullOrUndefined (TargetType) }
+  = CreateDocumentRequest { "Content" :: DocumentContent, "Name" :: DocumentName, "DocumentType" :: Maybe (DocumentType), "DocumentFormat" :: Maybe (DocumentFormat), "TargetType" :: Maybe (TargetType) }
 ```
 
 ##### Instances
@@ -2663,7 +2663,7 @@ Constructs CreateDocumentRequest from required parameters
 #### `newCreateDocumentRequest'`
 
 ``` purescript
-newCreateDocumentRequest' :: DocumentContent -> DocumentName -> ({ "Content" :: DocumentContent, "Name" :: DocumentName, "DocumentType" :: NullOrUndefined (DocumentType), "DocumentFormat" :: NullOrUndefined (DocumentFormat), "TargetType" :: NullOrUndefined (TargetType) } -> { "Content" :: DocumentContent, "Name" :: DocumentName, "DocumentType" :: NullOrUndefined (DocumentType), "DocumentFormat" :: NullOrUndefined (DocumentFormat), "TargetType" :: NullOrUndefined (TargetType) }) -> CreateDocumentRequest
+newCreateDocumentRequest' :: DocumentContent -> DocumentName -> ({ "Content" :: DocumentContent, "Name" :: DocumentName, "DocumentType" :: Maybe (DocumentType), "DocumentFormat" :: Maybe (DocumentFormat), "TargetType" :: Maybe (TargetType) } -> { "Content" :: DocumentContent, "Name" :: DocumentName, "DocumentType" :: Maybe (DocumentType), "DocumentFormat" :: Maybe (DocumentFormat), "TargetType" :: Maybe (TargetType) }) -> CreateDocumentRequest
 ```
 
 Constructs CreateDocumentRequest's fields from required parameters
@@ -2672,7 +2672,7 @@ Constructs CreateDocumentRequest's fields from required parameters
 
 ``` purescript
 newtype CreateDocumentResult
-  = CreateDocumentResult { "DocumentDescription" :: NullOrUndefined (DocumentDescription) }
+  = CreateDocumentResult { "DocumentDescription" :: Maybe (DocumentDescription) }
 ```
 
 ##### Instances
@@ -2695,7 +2695,7 @@ Constructs CreateDocumentResult from required parameters
 #### `newCreateDocumentResult'`
 
 ``` purescript
-newCreateDocumentResult' :: ({ "DocumentDescription" :: NullOrUndefined (DocumentDescription) } -> { "DocumentDescription" :: NullOrUndefined (DocumentDescription) }) -> CreateDocumentResult
+newCreateDocumentResult' :: ({ "DocumentDescription" :: Maybe (DocumentDescription) } -> { "DocumentDescription" :: Maybe (DocumentDescription) }) -> CreateDocumentResult
 ```
 
 Constructs CreateDocumentResult's fields from required parameters
@@ -2704,7 +2704,7 @@ Constructs CreateDocumentResult's fields from required parameters
 
 ``` purescript
 newtype CreateMaintenanceWindowRequest
-  = CreateMaintenanceWindowRequest { "Name" :: MaintenanceWindowName, "Description" :: NullOrUndefined (MaintenanceWindowDescription), "Schedule" :: MaintenanceWindowSchedule, "Duration" :: MaintenanceWindowDurationHours, "Cutoff" :: MaintenanceWindowCutoff, "AllowUnassociatedTargets" :: MaintenanceWindowAllowUnassociatedTargets, "ClientToken" :: NullOrUndefined (ClientToken) }
+  = CreateMaintenanceWindowRequest { "Name" :: MaintenanceWindowName, "Description" :: Maybe (MaintenanceWindowDescription), "Schedule" :: MaintenanceWindowSchedule, "Duration" :: MaintenanceWindowDurationHours, "Cutoff" :: MaintenanceWindowCutoff, "AllowUnassociatedTargets" :: MaintenanceWindowAllowUnassociatedTargets, "ClientToken" :: Maybe (ClientToken) }
 ```
 
 ##### Instances
@@ -2727,7 +2727,7 @@ Constructs CreateMaintenanceWindowRequest from required parameters
 #### `newCreateMaintenanceWindowRequest'`
 
 ``` purescript
-newCreateMaintenanceWindowRequest' :: MaintenanceWindowAllowUnassociatedTargets -> MaintenanceWindowCutoff -> MaintenanceWindowDurationHours -> MaintenanceWindowName -> MaintenanceWindowSchedule -> ({ "Name" :: MaintenanceWindowName, "Description" :: NullOrUndefined (MaintenanceWindowDescription), "Schedule" :: MaintenanceWindowSchedule, "Duration" :: MaintenanceWindowDurationHours, "Cutoff" :: MaintenanceWindowCutoff, "AllowUnassociatedTargets" :: MaintenanceWindowAllowUnassociatedTargets, "ClientToken" :: NullOrUndefined (ClientToken) } -> { "Name" :: MaintenanceWindowName, "Description" :: NullOrUndefined (MaintenanceWindowDescription), "Schedule" :: MaintenanceWindowSchedule, "Duration" :: MaintenanceWindowDurationHours, "Cutoff" :: MaintenanceWindowCutoff, "AllowUnassociatedTargets" :: MaintenanceWindowAllowUnassociatedTargets, "ClientToken" :: NullOrUndefined (ClientToken) }) -> CreateMaintenanceWindowRequest
+newCreateMaintenanceWindowRequest' :: MaintenanceWindowAllowUnassociatedTargets -> MaintenanceWindowCutoff -> MaintenanceWindowDurationHours -> MaintenanceWindowName -> MaintenanceWindowSchedule -> ({ "Name" :: MaintenanceWindowName, "Description" :: Maybe (MaintenanceWindowDescription), "Schedule" :: MaintenanceWindowSchedule, "Duration" :: MaintenanceWindowDurationHours, "Cutoff" :: MaintenanceWindowCutoff, "AllowUnassociatedTargets" :: MaintenanceWindowAllowUnassociatedTargets, "ClientToken" :: Maybe (ClientToken) } -> { "Name" :: MaintenanceWindowName, "Description" :: Maybe (MaintenanceWindowDescription), "Schedule" :: MaintenanceWindowSchedule, "Duration" :: MaintenanceWindowDurationHours, "Cutoff" :: MaintenanceWindowCutoff, "AllowUnassociatedTargets" :: MaintenanceWindowAllowUnassociatedTargets, "ClientToken" :: Maybe (ClientToken) }) -> CreateMaintenanceWindowRequest
 ```
 
 Constructs CreateMaintenanceWindowRequest's fields from required parameters
@@ -2736,7 +2736,7 @@ Constructs CreateMaintenanceWindowRequest's fields from required parameters
 
 ``` purescript
 newtype CreateMaintenanceWindowResult
-  = CreateMaintenanceWindowResult { "WindowId" :: NullOrUndefined (MaintenanceWindowId) }
+  = CreateMaintenanceWindowResult { "WindowId" :: Maybe (MaintenanceWindowId) }
 ```
 
 ##### Instances
@@ -2759,7 +2759,7 @@ Constructs CreateMaintenanceWindowResult from required parameters
 #### `newCreateMaintenanceWindowResult'`
 
 ``` purescript
-newCreateMaintenanceWindowResult' :: ({ "WindowId" :: NullOrUndefined (MaintenanceWindowId) } -> { "WindowId" :: NullOrUndefined (MaintenanceWindowId) }) -> CreateMaintenanceWindowResult
+newCreateMaintenanceWindowResult' :: ({ "WindowId" :: Maybe (MaintenanceWindowId) } -> { "WindowId" :: Maybe (MaintenanceWindowId) }) -> CreateMaintenanceWindowResult
 ```
 
 Constructs CreateMaintenanceWindowResult's fields from required parameters
@@ -2768,7 +2768,7 @@ Constructs CreateMaintenanceWindowResult's fields from required parameters
 
 ``` purescript
 newtype CreatePatchBaselineRequest
-  = CreatePatchBaselineRequest { "OperatingSystem" :: NullOrUndefined (OperatingSystem), "Name" :: BaselineName, "GlobalFilters" :: NullOrUndefined (PatchFilterGroup), "ApprovalRules" :: NullOrUndefined (PatchRuleGroup), "ApprovedPatches" :: NullOrUndefined (PatchIdList), "ApprovedPatchesComplianceLevel" :: NullOrUndefined (PatchComplianceLevel), "ApprovedPatchesEnableNonSecurity" :: NullOrUndefined (Boolean), "RejectedPatches" :: NullOrUndefined (PatchIdList), "Description" :: NullOrUndefined (BaselineDescription), "Sources" :: NullOrUndefined (PatchSourceList), "ClientToken" :: NullOrUndefined (ClientToken) }
+  = CreatePatchBaselineRequest { "OperatingSystem" :: Maybe (OperatingSystem), "Name" :: BaselineName, "GlobalFilters" :: Maybe (PatchFilterGroup), "ApprovalRules" :: Maybe (PatchRuleGroup), "ApprovedPatches" :: Maybe (PatchIdList), "ApprovedPatchesComplianceLevel" :: Maybe (PatchComplianceLevel), "ApprovedPatchesEnableNonSecurity" :: Maybe (Boolean), "RejectedPatches" :: Maybe (PatchIdList), "Description" :: Maybe (BaselineDescription), "Sources" :: Maybe (PatchSourceList), "ClientToken" :: Maybe (ClientToken) }
 ```
 
 ##### Instances
@@ -2791,7 +2791,7 @@ Constructs CreatePatchBaselineRequest from required parameters
 #### `newCreatePatchBaselineRequest'`
 
 ``` purescript
-newCreatePatchBaselineRequest' :: BaselineName -> ({ "OperatingSystem" :: NullOrUndefined (OperatingSystem), "Name" :: BaselineName, "GlobalFilters" :: NullOrUndefined (PatchFilterGroup), "ApprovalRules" :: NullOrUndefined (PatchRuleGroup), "ApprovedPatches" :: NullOrUndefined (PatchIdList), "ApprovedPatchesComplianceLevel" :: NullOrUndefined (PatchComplianceLevel), "ApprovedPatchesEnableNonSecurity" :: NullOrUndefined (Boolean), "RejectedPatches" :: NullOrUndefined (PatchIdList), "Description" :: NullOrUndefined (BaselineDescription), "Sources" :: NullOrUndefined (PatchSourceList), "ClientToken" :: NullOrUndefined (ClientToken) } -> { "OperatingSystem" :: NullOrUndefined (OperatingSystem), "Name" :: BaselineName, "GlobalFilters" :: NullOrUndefined (PatchFilterGroup), "ApprovalRules" :: NullOrUndefined (PatchRuleGroup), "ApprovedPatches" :: NullOrUndefined (PatchIdList), "ApprovedPatchesComplianceLevel" :: NullOrUndefined (PatchComplianceLevel), "ApprovedPatchesEnableNonSecurity" :: NullOrUndefined (Boolean), "RejectedPatches" :: NullOrUndefined (PatchIdList), "Description" :: NullOrUndefined (BaselineDescription), "Sources" :: NullOrUndefined (PatchSourceList), "ClientToken" :: NullOrUndefined (ClientToken) }) -> CreatePatchBaselineRequest
+newCreatePatchBaselineRequest' :: BaselineName -> ({ "OperatingSystem" :: Maybe (OperatingSystem), "Name" :: BaselineName, "GlobalFilters" :: Maybe (PatchFilterGroup), "ApprovalRules" :: Maybe (PatchRuleGroup), "ApprovedPatches" :: Maybe (PatchIdList), "ApprovedPatchesComplianceLevel" :: Maybe (PatchComplianceLevel), "ApprovedPatchesEnableNonSecurity" :: Maybe (Boolean), "RejectedPatches" :: Maybe (PatchIdList), "Description" :: Maybe (BaselineDescription), "Sources" :: Maybe (PatchSourceList), "ClientToken" :: Maybe (ClientToken) } -> { "OperatingSystem" :: Maybe (OperatingSystem), "Name" :: BaselineName, "GlobalFilters" :: Maybe (PatchFilterGroup), "ApprovalRules" :: Maybe (PatchRuleGroup), "ApprovedPatches" :: Maybe (PatchIdList), "ApprovedPatchesComplianceLevel" :: Maybe (PatchComplianceLevel), "ApprovedPatchesEnableNonSecurity" :: Maybe (Boolean), "RejectedPatches" :: Maybe (PatchIdList), "Description" :: Maybe (BaselineDescription), "Sources" :: Maybe (PatchSourceList), "ClientToken" :: Maybe (ClientToken) }) -> CreatePatchBaselineRequest
 ```
 
 Constructs CreatePatchBaselineRequest's fields from required parameters
@@ -2800,7 +2800,7 @@ Constructs CreatePatchBaselineRequest's fields from required parameters
 
 ``` purescript
 newtype CreatePatchBaselineResult
-  = CreatePatchBaselineResult { "BaselineId" :: NullOrUndefined (BaselineId) }
+  = CreatePatchBaselineResult { "BaselineId" :: Maybe (BaselineId) }
 ```
 
 ##### Instances
@@ -2823,7 +2823,7 @@ Constructs CreatePatchBaselineResult from required parameters
 #### `newCreatePatchBaselineResult'`
 
 ``` purescript
-newCreatePatchBaselineResult' :: ({ "BaselineId" :: NullOrUndefined (BaselineId) } -> { "BaselineId" :: NullOrUndefined (BaselineId) }) -> CreatePatchBaselineResult
+newCreatePatchBaselineResult' :: ({ "BaselineId" :: Maybe (BaselineId) } -> { "BaselineId" :: Maybe (BaselineId) }) -> CreatePatchBaselineResult
 ```
 
 Constructs CreatePatchBaselineResult's fields from required parameters
@@ -2896,7 +2896,7 @@ Encode CreatedDate
 
 ``` purescript
 newtype CustomSchemaCountLimitExceededException
-  = CustomSchemaCountLimitExceededException { "Message" :: NullOrUndefined (String) }
+  = CustomSchemaCountLimitExceededException { "Message" :: Maybe (String) }
 ```
 
 <p>You have exceeded the limit for custom schemas. Delete one or more custom schemas and try again.</p>
@@ -2921,7 +2921,7 @@ Constructs CustomSchemaCountLimitExceededException from required parameters
 #### `newCustomSchemaCountLimitExceededException'`
 
 ``` purescript
-newCustomSchemaCountLimitExceededException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> CustomSchemaCountLimitExceededException
+newCustomSchemaCountLimitExceededException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> CustomSchemaCountLimitExceededException
 ```
 
 Constructs CustomSchemaCountLimitExceededException's fields from required parameters
@@ -3026,7 +3026,7 @@ Encode DeleteActivationResult
 
 ``` purescript
 newtype DeleteAssociationRequest
-  = DeleteAssociationRequest { "Name" :: NullOrUndefined (DocumentName), "InstanceId" :: NullOrUndefined (InstanceId), "AssociationId" :: NullOrUndefined (AssociationId) }
+  = DeleteAssociationRequest { "Name" :: Maybe (DocumentName), "InstanceId" :: Maybe (InstanceId), "AssociationId" :: Maybe (AssociationId) }
 ```
 
 ##### Instances
@@ -3049,7 +3049,7 @@ Constructs DeleteAssociationRequest from required parameters
 #### `newDeleteAssociationRequest'`
 
 ``` purescript
-newDeleteAssociationRequest' :: ({ "Name" :: NullOrUndefined (DocumentName), "InstanceId" :: NullOrUndefined (InstanceId), "AssociationId" :: NullOrUndefined (AssociationId) } -> { "Name" :: NullOrUndefined (DocumentName), "InstanceId" :: NullOrUndefined (InstanceId), "AssociationId" :: NullOrUndefined (AssociationId) }) -> DeleteAssociationRequest
+newDeleteAssociationRequest' :: ({ "Name" :: Maybe (DocumentName), "InstanceId" :: Maybe (InstanceId), "AssociationId" :: Maybe (AssociationId) } -> { "Name" :: Maybe (DocumentName), "InstanceId" :: Maybe (InstanceId), "AssociationId" :: Maybe (AssociationId) }) -> DeleteAssociationRequest
 ```
 
 Constructs DeleteAssociationRequest's fields from required parameters
@@ -3154,7 +3154,7 @@ Constructs DeleteMaintenanceWindowRequest's fields from required parameters
 
 ``` purescript
 newtype DeleteMaintenanceWindowResult
-  = DeleteMaintenanceWindowResult { "WindowId" :: NullOrUndefined (MaintenanceWindowId) }
+  = DeleteMaintenanceWindowResult { "WindowId" :: Maybe (MaintenanceWindowId) }
 ```
 
 ##### Instances
@@ -3177,7 +3177,7 @@ Constructs DeleteMaintenanceWindowResult from required parameters
 #### `newDeleteMaintenanceWindowResult'`
 
 ``` purescript
-newDeleteMaintenanceWindowResult' :: ({ "WindowId" :: NullOrUndefined (MaintenanceWindowId) } -> { "WindowId" :: NullOrUndefined (MaintenanceWindowId) }) -> DeleteMaintenanceWindowResult
+newDeleteMaintenanceWindowResult' :: ({ "WindowId" :: Maybe (MaintenanceWindowId) } -> { "WindowId" :: Maybe (MaintenanceWindowId) }) -> DeleteMaintenanceWindowResult
 ```
 
 Constructs DeleteMaintenanceWindowResult's fields from required parameters
@@ -3266,7 +3266,7 @@ Constructs DeleteParametersRequest's fields from required parameters
 
 ``` purescript
 newtype DeleteParametersResult
-  = DeleteParametersResult { "DeletedParameters" :: NullOrUndefined (ParameterNameList), "InvalidParameters" :: NullOrUndefined (ParameterNameList) }
+  = DeleteParametersResult { "DeletedParameters" :: Maybe (ParameterNameList), "InvalidParameters" :: Maybe (ParameterNameList) }
 ```
 
 ##### Instances
@@ -3289,7 +3289,7 @@ Constructs DeleteParametersResult from required parameters
 #### `newDeleteParametersResult'`
 
 ``` purescript
-newDeleteParametersResult' :: ({ "DeletedParameters" :: NullOrUndefined (ParameterNameList), "InvalidParameters" :: NullOrUndefined (ParameterNameList) } -> { "DeletedParameters" :: NullOrUndefined (ParameterNameList), "InvalidParameters" :: NullOrUndefined (ParameterNameList) }) -> DeleteParametersResult
+newDeleteParametersResult' :: ({ "DeletedParameters" :: Maybe (ParameterNameList), "InvalidParameters" :: Maybe (ParameterNameList) } -> { "DeletedParameters" :: Maybe (ParameterNameList), "InvalidParameters" :: Maybe (ParameterNameList) }) -> DeleteParametersResult
 ```
 
 Constructs DeleteParametersResult's fields from required parameters
@@ -3330,7 +3330,7 @@ Constructs DeletePatchBaselineRequest's fields from required parameters
 
 ``` purescript
 newtype DeletePatchBaselineResult
-  = DeletePatchBaselineResult { "BaselineId" :: NullOrUndefined (BaselineId) }
+  = DeletePatchBaselineResult { "BaselineId" :: Maybe (BaselineId) }
 ```
 
 ##### Instances
@@ -3353,7 +3353,7 @@ Constructs DeletePatchBaselineResult from required parameters
 #### `newDeletePatchBaselineResult'`
 
 ``` purescript
-newDeletePatchBaselineResult' :: ({ "BaselineId" :: NullOrUndefined (BaselineId) } -> { "BaselineId" :: NullOrUndefined (BaselineId) }) -> DeletePatchBaselineResult
+newDeletePatchBaselineResult' :: ({ "BaselineId" :: Maybe (BaselineId) } -> { "BaselineId" :: Maybe (BaselineId) }) -> DeletePatchBaselineResult
 ```
 
 Constructs DeletePatchBaselineResult's fields from required parameters
@@ -3490,7 +3490,7 @@ Constructs DeregisterPatchBaselineForPatchGroupRequest's fields from required pa
 
 ``` purescript
 newtype DeregisterPatchBaselineForPatchGroupResult
-  = DeregisterPatchBaselineForPatchGroupResult { "BaselineId" :: NullOrUndefined (BaselineId), "PatchGroup" :: NullOrUndefined (PatchGroup) }
+  = DeregisterPatchBaselineForPatchGroupResult { "BaselineId" :: Maybe (BaselineId), "PatchGroup" :: Maybe (PatchGroup) }
 ```
 
 ##### Instances
@@ -3513,7 +3513,7 @@ Constructs DeregisterPatchBaselineForPatchGroupResult from required parameters
 #### `newDeregisterPatchBaselineForPatchGroupResult'`
 
 ``` purescript
-newDeregisterPatchBaselineForPatchGroupResult' :: ({ "BaselineId" :: NullOrUndefined (BaselineId), "PatchGroup" :: NullOrUndefined (PatchGroup) } -> { "BaselineId" :: NullOrUndefined (BaselineId), "PatchGroup" :: NullOrUndefined (PatchGroup) }) -> DeregisterPatchBaselineForPatchGroupResult
+newDeregisterPatchBaselineForPatchGroupResult' :: ({ "BaselineId" :: Maybe (BaselineId), "PatchGroup" :: Maybe (PatchGroup) } -> { "BaselineId" :: Maybe (BaselineId), "PatchGroup" :: Maybe (PatchGroup) }) -> DeregisterPatchBaselineForPatchGroupResult
 ```
 
 Constructs DeregisterPatchBaselineForPatchGroupResult's fields from required parameters
@@ -3522,7 +3522,7 @@ Constructs DeregisterPatchBaselineForPatchGroupResult's fields from required par
 
 ``` purescript
 newtype DeregisterTargetFromMaintenanceWindowRequest
-  = DeregisterTargetFromMaintenanceWindowRequest { "WindowId" :: MaintenanceWindowId, "WindowTargetId" :: MaintenanceWindowTargetId, "Safe" :: NullOrUndefined (Boolean) }
+  = DeregisterTargetFromMaintenanceWindowRequest { "WindowId" :: MaintenanceWindowId, "WindowTargetId" :: MaintenanceWindowTargetId, "Safe" :: Maybe (Boolean) }
 ```
 
 ##### Instances
@@ -3545,7 +3545,7 @@ Constructs DeregisterTargetFromMaintenanceWindowRequest from required parameters
 #### `newDeregisterTargetFromMaintenanceWindowRequest'`
 
 ``` purescript
-newDeregisterTargetFromMaintenanceWindowRequest' :: MaintenanceWindowId -> MaintenanceWindowTargetId -> ({ "WindowId" :: MaintenanceWindowId, "WindowTargetId" :: MaintenanceWindowTargetId, "Safe" :: NullOrUndefined (Boolean) } -> { "WindowId" :: MaintenanceWindowId, "WindowTargetId" :: MaintenanceWindowTargetId, "Safe" :: NullOrUndefined (Boolean) }) -> DeregisterTargetFromMaintenanceWindowRequest
+newDeregisterTargetFromMaintenanceWindowRequest' :: MaintenanceWindowId -> MaintenanceWindowTargetId -> ({ "WindowId" :: MaintenanceWindowId, "WindowTargetId" :: MaintenanceWindowTargetId, "Safe" :: Maybe (Boolean) } -> { "WindowId" :: MaintenanceWindowId, "WindowTargetId" :: MaintenanceWindowTargetId, "Safe" :: Maybe (Boolean) }) -> DeregisterTargetFromMaintenanceWindowRequest
 ```
 
 Constructs DeregisterTargetFromMaintenanceWindowRequest's fields from required parameters
@@ -3554,7 +3554,7 @@ Constructs DeregisterTargetFromMaintenanceWindowRequest's fields from required p
 
 ``` purescript
 newtype DeregisterTargetFromMaintenanceWindowResult
-  = DeregisterTargetFromMaintenanceWindowResult { "WindowId" :: NullOrUndefined (MaintenanceWindowId), "WindowTargetId" :: NullOrUndefined (MaintenanceWindowTargetId) }
+  = DeregisterTargetFromMaintenanceWindowResult { "WindowId" :: Maybe (MaintenanceWindowId), "WindowTargetId" :: Maybe (MaintenanceWindowTargetId) }
 ```
 
 ##### Instances
@@ -3577,7 +3577,7 @@ Constructs DeregisterTargetFromMaintenanceWindowResult from required parameters
 #### `newDeregisterTargetFromMaintenanceWindowResult'`
 
 ``` purescript
-newDeregisterTargetFromMaintenanceWindowResult' :: ({ "WindowId" :: NullOrUndefined (MaintenanceWindowId), "WindowTargetId" :: NullOrUndefined (MaintenanceWindowTargetId) } -> { "WindowId" :: NullOrUndefined (MaintenanceWindowId), "WindowTargetId" :: NullOrUndefined (MaintenanceWindowTargetId) }) -> DeregisterTargetFromMaintenanceWindowResult
+newDeregisterTargetFromMaintenanceWindowResult' :: ({ "WindowId" :: Maybe (MaintenanceWindowId), "WindowTargetId" :: Maybe (MaintenanceWindowTargetId) } -> { "WindowId" :: Maybe (MaintenanceWindowId), "WindowTargetId" :: Maybe (MaintenanceWindowTargetId) }) -> DeregisterTargetFromMaintenanceWindowResult
 ```
 
 Constructs DeregisterTargetFromMaintenanceWindowResult's fields from required parameters
@@ -3618,7 +3618,7 @@ Constructs DeregisterTaskFromMaintenanceWindowRequest's fields from required par
 
 ``` purescript
 newtype DeregisterTaskFromMaintenanceWindowResult
-  = DeregisterTaskFromMaintenanceWindowResult { "WindowId" :: NullOrUndefined (MaintenanceWindowId), "WindowTaskId" :: NullOrUndefined (MaintenanceWindowTaskId) }
+  = DeregisterTaskFromMaintenanceWindowResult { "WindowId" :: Maybe (MaintenanceWindowId), "WindowTaskId" :: Maybe (MaintenanceWindowTaskId) }
 ```
 
 ##### Instances
@@ -3641,7 +3641,7 @@ Constructs DeregisterTaskFromMaintenanceWindowResult from required parameters
 #### `newDeregisterTaskFromMaintenanceWindowResult'`
 
 ``` purescript
-newDeregisterTaskFromMaintenanceWindowResult' :: ({ "WindowId" :: NullOrUndefined (MaintenanceWindowId), "WindowTaskId" :: NullOrUndefined (MaintenanceWindowTaskId) } -> { "WindowId" :: NullOrUndefined (MaintenanceWindowId), "WindowTaskId" :: NullOrUndefined (MaintenanceWindowTaskId) }) -> DeregisterTaskFromMaintenanceWindowResult
+newDeregisterTaskFromMaintenanceWindowResult' :: ({ "WindowId" :: Maybe (MaintenanceWindowId), "WindowTaskId" :: Maybe (MaintenanceWindowTaskId) } -> { "WindowId" :: Maybe (MaintenanceWindowId), "WindowTaskId" :: Maybe (MaintenanceWindowTaskId) }) -> DeregisterTaskFromMaintenanceWindowResult
 ```
 
 Constructs DeregisterTaskFromMaintenanceWindowResult's fields from required parameters
@@ -3650,7 +3650,7 @@ Constructs DeregisterTaskFromMaintenanceWindowResult's fields from required para
 
 ``` purescript
 newtype DescribeActivationsFilter
-  = DescribeActivationsFilter { "FilterKey" :: NullOrUndefined (DescribeActivationsFilterKeys), "FilterValues" :: NullOrUndefined (StringList) }
+  = DescribeActivationsFilter { "FilterKey" :: Maybe (DescribeActivationsFilterKeys), "FilterValues" :: Maybe (StringList) }
 ```
 
 <p>Filter for the DescribeActivation API.</p>
@@ -3675,7 +3675,7 @@ Constructs DescribeActivationsFilter from required parameters
 #### `newDescribeActivationsFilter'`
 
 ``` purescript
-newDescribeActivationsFilter' :: ({ "FilterKey" :: NullOrUndefined (DescribeActivationsFilterKeys), "FilterValues" :: NullOrUndefined (StringList) } -> { "FilterKey" :: NullOrUndefined (DescribeActivationsFilterKeys), "FilterValues" :: NullOrUndefined (StringList) }) -> DescribeActivationsFilter
+newDescribeActivationsFilter' :: ({ "FilterKey" :: Maybe (DescribeActivationsFilterKeys), "FilterValues" :: Maybe (StringList) } -> { "FilterKey" :: Maybe (DescribeActivationsFilterKeys), "FilterValues" :: Maybe (StringList) }) -> DescribeActivationsFilter
 ```
 
 Constructs DescribeActivationsFilter's fields from required parameters
@@ -3716,7 +3716,7 @@ Encode DescribeActivationsFilterList
 
 ``` purescript
 newtype DescribeActivationsRequest
-  = DescribeActivationsRequest { "Filters" :: NullOrUndefined (DescribeActivationsFilterList), "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribeActivationsRequest { "Filters" :: Maybe (DescribeActivationsFilterList), "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -3739,7 +3739,7 @@ Constructs DescribeActivationsRequest from required parameters
 #### `newDescribeActivationsRequest'`
 
 ``` purescript
-newDescribeActivationsRequest' :: ({ "Filters" :: NullOrUndefined (DescribeActivationsFilterList), "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (NextToken) } -> { "Filters" :: NullOrUndefined (DescribeActivationsFilterList), "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribeActivationsRequest
+newDescribeActivationsRequest' :: ({ "Filters" :: Maybe (DescribeActivationsFilterList), "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (NextToken) } -> { "Filters" :: Maybe (DescribeActivationsFilterList), "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (NextToken) }) -> DescribeActivationsRequest
 ```
 
 Constructs DescribeActivationsRequest's fields from required parameters
@@ -3748,7 +3748,7 @@ Constructs DescribeActivationsRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeActivationsResult
-  = DescribeActivationsResult { "ActivationList" :: NullOrUndefined (ActivationList), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribeActivationsResult { "ActivationList" :: Maybe (ActivationList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -3771,7 +3771,7 @@ Constructs DescribeActivationsResult from required parameters
 #### `newDescribeActivationsResult'`
 
 ``` purescript
-newDescribeActivationsResult' :: ({ "ActivationList" :: NullOrUndefined (ActivationList), "NextToken" :: NullOrUndefined (NextToken) } -> { "ActivationList" :: NullOrUndefined (ActivationList), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribeActivationsResult
+newDescribeActivationsResult' :: ({ "ActivationList" :: Maybe (ActivationList), "NextToken" :: Maybe (NextToken) } -> { "ActivationList" :: Maybe (ActivationList), "NextToken" :: Maybe (NextToken) }) -> DescribeActivationsResult
 ```
 
 Constructs DescribeActivationsResult's fields from required parameters
@@ -3780,7 +3780,7 @@ Constructs DescribeActivationsResult's fields from required parameters
 
 ``` purescript
 newtype DescribeAssociationRequest
-  = DescribeAssociationRequest { "Name" :: NullOrUndefined (DocumentName), "InstanceId" :: NullOrUndefined (InstanceId), "AssociationId" :: NullOrUndefined (AssociationId), "AssociationVersion" :: NullOrUndefined (AssociationVersion) }
+  = DescribeAssociationRequest { "Name" :: Maybe (DocumentName), "InstanceId" :: Maybe (InstanceId), "AssociationId" :: Maybe (AssociationId), "AssociationVersion" :: Maybe (AssociationVersion) }
 ```
 
 ##### Instances
@@ -3803,7 +3803,7 @@ Constructs DescribeAssociationRequest from required parameters
 #### `newDescribeAssociationRequest'`
 
 ``` purescript
-newDescribeAssociationRequest' :: ({ "Name" :: NullOrUndefined (DocumentName), "InstanceId" :: NullOrUndefined (InstanceId), "AssociationId" :: NullOrUndefined (AssociationId), "AssociationVersion" :: NullOrUndefined (AssociationVersion) } -> { "Name" :: NullOrUndefined (DocumentName), "InstanceId" :: NullOrUndefined (InstanceId), "AssociationId" :: NullOrUndefined (AssociationId), "AssociationVersion" :: NullOrUndefined (AssociationVersion) }) -> DescribeAssociationRequest
+newDescribeAssociationRequest' :: ({ "Name" :: Maybe (DocumentName), "InstanceId" :: Maybe (InstanceId), "AssociationId" :: Maybe (AssociationId), "AssociationVersion" :: Maybe (AssociationVersion) } -> { "Name" :: Maybe (DocumentName), "InstanceId" :: Maybe (InstanceId), "AssociationId" :: Maybe (AssociationId), "AssociationVersion" :: Maybe (AssociationVersion) }) -> DescribeAssociationRequest
 ```
 
 Constructs DescribeAssociationRequest's fields from required parameters
@@ -3812,7 +3812,7 @@ Constructs DescribeAssociationRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeAssociationResult
-  = DescribeAssociationResult { "AssociationDescription" :: NullOrUndefined (AssociationDescription) }
+  = DescribeAssociationResult { "AssociationDescription" :: Maybe (AssociationDescription) }
 ```
 
 ##### Instances
@@ -3835,7 +3835,7 @@ Constructs DescribeAssociationResult from required parameters
 #### `newDescribeAssociationResult'`
 
 ``` purescript
-newDescribeAssociationResult' :: ({ "AssociationDescription" :: NullOrUndefined (AssociationDescription) } -> { "AssociationDescription" :: NullOrUndefined (AssociationDescription) }) -> DescribeAssociationResult
+newDescribeAssociationResult' :: ({ "AssociationDescription" :: Maybe (AssociationDescription) } -> { "AssociationDescription" :: Maybe (AssociationDescription) }) -> DescribeAssociationResult
 ```
 
 Constructs DescribeAssociationResult's fields from required parameters
@@ -3844,7 +3844,7 @@ Constructs DescribeAssociationResult's fields from required parameters
 
 ``` purescript
 newtype DescribeAutomationExecutionsRequest
-  = DescribeAutomationExecutionsRequest { "Filters" :: NullOrUndefined (AutomationExecutionFilterList), "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribeAutomationExecutionsRequest { "Filters" :: Maybe (AutomationExecutionFilterList), "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -3867,7 +3867,7 @@ Constructs DescribeAutomationExecutionsRequest from required parameters
 #### `newDescribeAutomationExecutionsRequest'`
 
 ``` purescript
-newDescribeAutomationExecutionsRequest' :: ({ "Filters" :: NullOrUndefined (AutomationExecutionFilterList), "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (NextToken) } -> { "Filters" :: NullOrUndefined (AutomationExecutionFilterList), "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribeAutomationExecutionsRequest
+newDescribeAutomationExecutionsRequest' :: ({ "Filters" :: Maybe (AutomationExecutionFilterList), "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (NextToken) } -> { "Filters" :: Maybe (AutomationExecutionFilterList), "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (NextToken) }) -> DescribeAutomationExecutionsRequest
 ```
 
 Constructs DescribeAutomationExecutionsRequest's fields from required parameters
@@ -3876,7 +3876,7 @@ Constructs DescribeAutomationExecutionsRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeAutomationExecutionsResult
-  = DescribeAutomationExecutionsResult { "AutomationExecutionMetadataList" :: NullOrUndefined (AutomationExecutionMetadataList), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribeAutomationExecutionsResult { "AutomationExecutionMetadataList" :: Maybe (AutomationExecutionMetadataList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -3899,7 +3899,7 @@ Constructs DescribeAutomationExecutionsResult from required parameters
 #### `newDescribeAutomationExecutionsResult'`
 
 ``` purescript
-newDescribeAutomationExecutionsResult' :: ({ "AutomationExecutionMetadataList" :: NullOrUndefined (AutomationExecutionMetadataList), "NextToken" :: NullOrUndefined (NextToken) } -> { "AutomationExecutionMetadataList" :: NullOrUndefined (AutomationExecutionMetadataList), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribeAutomationExecutionsResult
+newDescribeAutomationExecutionsResult' :: ({ "AutomationExecutionMetadataList" :: Maybe (AutomationExecutionMetadataList), "NextToken" :: Maybe (NextToken) } -> { "AutomationExecutionMetadataList" :: Maybe (AutomationExecutionMetadataList), "NextToken" :: Maybe (NextToken) }) -> DescribeAutomationExecutionsResult
 ```
 
 Constructs DescribeAutomationExecutionsResult's fields from required parameters
@@ -3908,7 +3908,7 @@ Constructs DescribeAutomationExecutionsResult's fields from required parameters
 
 ``` purescript
 newtype DescribeAutomationStepExecutionsRequest
-  = DescribeAutomationStepExecutionsRequest { "AutomationExecutionId" :: AutomationExecutionId, "Filters" :: NullOrUndefined (StepExecutionFilterList), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults), "ReverseOrder" :: NullOrUndefined (Boolean) }
+  = DescribeAutomationStepExecutionsRequest { "AutomationExecutionId" :: AutomationExecutionId, "Filters" :: Maybe (StepExecutionFilterList), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults), "ReverseOrder" :: Maybe (Boolean) }
 ```
 
 ##### Instances
@@ -3931,7 +3931,7 @@ Constructs DescribeAutomationStepExecutionsRequest from required parameters
 #### `newDescribeAutomationStepExecutionsRequest'`
 
 ``` purescript
-newDescribeAutomationStepExecutionsRequest' :: AutomationExecutionId -> ({ "AutomationExecutionId" :: AutomationExecutionId, "Filters" :: NullOrUndefined (StepExecutionFilterList), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults), "ReverseOrder" :: NullOrUndefined (Boolean) } -> { "AutomationExecutionId" :: AutomationExecutionId, "Filters" :: NullOrUndefined (StepExecutionFilterList), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults), "ReverseOrder" :: NullOrUndefined (Boolean) }) -> DescribeAutomationStepExecutionsRequest
+newDescribeAutomationStepExecutionsRequest' :: AutomationExecutionId -> ({ "AutomationExecutionId" :: AutomationExecutionId, "Filters" :: Maybe (StepExecutionFilterList), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults), "ReverseOrder" :: Maybe (Boolean) } -> { "AutomationExecutionId" :: AutomationExecutionId, "Filters" :: Maybe (StepExecutionFilterList), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults), "ReverseOrder" :: Maybe (Boolean) }) -> DescribeAutomationStepExecutionsRequest
 ```
 
 Constructs DescribeAutomationStepExecutionsRequest's fields from required parameters
@@ -3940,7 +3940,7 @@ Constructs DescribeAutomationStepExecutionsRequest's fields from required parame
 
 ``` purescript
 newtype DescribeAutomationStepExecutionsResult
-  = DescribeAutomationStepExecutionsResult { "StepExecutions" :: NullOrUndefined (StepExecutionList), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribeAutomationStepExecutionsResult { "StepExecutions" :: Maybe (StepExecutionList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -3963,7 +3963,7 @@ Constructs DescribeAutomationStepExecutionsResult from required parameters
 #### `newDescribeAutomationStepExecutionsResult'`
 
 ``` purescript
-newDescribeAutomationStepExecutionsResult' :: ({ "StepExecutions" :: NullOrUndefined (StepExecutionList), "NextToken" :: NullOrUndefined (NextToken) } -> { "StepExecutions" :: NullOrUndefined (StepExecutionList), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribeAutomationStepExecutionsResult
+newDescribeAutomationStepExecutionsResult' :: ({ "StepExecutions" :: Maybe (StepExecutionList), "NextToken" :: Maybe (NextToken) } -> { "StepExecutions" :: Maybe (StepExecutionList), "NextToken" :: Maybe (NextToken) }) -> DescribeAutomationStepExecutionsResult
 ```
 
 Constructs DescribeAutomationStepExecutionsResult's fields from required parameters
@@ -3972,7 +3972,7 @@ Constructs DescribeAutomationStepExecutionsResult's fields from required paramet
 
 ``` purescript
 newtype DescribeAvailablePatchesRequest
-  = DescribeAvailablePatchesRequest { "Filters" :: NullOrUndefined (PatchOrchestratorFilterList), "MaxResults" :: NullOrUndefined (PatchBaselineMaxResults), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribeAvailablePatchesRequest { "Filters" :: Maybe (PatchOrchestratorFilterList), "MaxResults" :: Maybe (PatchBaselineMaxResults), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -3995,7 +3995,7 @@ Constructs DescribeAvailablePatchesRequest from required parameters
 #### `newDescribeAvailablePatchesRequest'`
 
 ``` purescript
-newDescribeAvailablePatchesRequest' :: ({ "Filters" :: NullOrUndefined (PatchOrchestratorFilterList), "MaxResults" :: NullOrUndefined (PatchBaselineMaxResults), "NextToken" :: NullOrUndefined (NextToken) } -> { "Filters" :: NullOrUndefined (PatchOrchestratorFilterList), "MaxResults" :: NullOrUndefined (PatchBaselineMaxResults), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribeAvailablePatchesRequest
+newDescribeAvailablePatchesRequest' :: ({ "Filters" :: Maybe (PatchOrchestratorFilterList), "MaxResults" :: Maybe (PatchBaselineMaxResults), "NextToken" :: Maybe (NextToken) } -> { "Filters" :: Maybe (PatchOrchestratorFilterList), "MaxResults" :: Maybe (PatchBaselineMaxResults), "NextToken" :: Maybe (NextToken) }) -> DescribeAvailablePatchesRequest
 ```
 
 Constructs DescribeAvailablePatchesRequest's fields from required parameters
@@ -4004,7 +4004,7 @@ Constructs DescribeAvailablePatchesRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeAvailablePatchesResult
-  = DescribeAvailablePatchesResult { "Patches" :: NullOrUndefined (PatchList), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribeAvailablePatchesResult { "Patches" :: Maybe (PatchList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -4027,7 +4027,7 @@ Constructs DescribeAvailablePatchesResult from required parameters
 #### `newDescribeAvailablePatchesResult'`
 
 ``` purescript
-newDescribeAvailablePatchesResult' :: ({ "Patches" :: NullOrUndefined (PatchList), "NextToken" :: NullOrUndefined (NextToken) } -> { "Patches" :: NullOrUndefined (PatchList), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribeAvailablePatchesResult
+newDescribeAvailablePatchesResult' :: ({ "Patches" :: Maybe (PatchList), "NextToken" :: Maybe (NextToken) } -> { "Patches" :: Maybe (PatchList), "NextToken" :: Maybe (NextToken) }) -> DescribeAvailablePatchesResult
 ```
 
 Constructs DescribeAvailablePatchesResult's fields from required parameters
@@ -4068,7 +4068,7 @@ Constructs DescribeDocumentPermissionRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeDocumentPermissionResponse
-  = DescribeDocumentPermissionResponse { "AccountIds" :: NullOrUndefined (AccountIdList) }
+  = DescribeDocumentPermissionResponse { "AccountIds" :: Maybe (AccountIdList) }
 ```
 
 ##### Instances
@@ -4091,7 +4091,7 @@ Constructs DescribeDocumentPermissionResponse from required parameters
 #### `newDescribeDocumentPermissionResponse'`
 
 ``` purescript
-newDescribeDocumentPermissionResponse' :: ({ "AccountIds" :: NullOrUndefined (AccountIdList) } -> { "AccountIds" :: NullOrUndefined (AccountIdList) }) -> DescribeDocumentPermissionResponse
+newDescribeDocumentPermissionResponse' :: ({ "AccountIds" :: Maybe (AccountIdList) } -> { "AccountIds" :: Maybe (AccountIdList) }) -> DescribeDocumentPermissionResponse
 ```
 
 Constructs DescribeDocumentPermissionResponse's fields from required parameters
@@ -4100,7 +4100,7 @@ Constructs DescribeDocumentPermissionResponse's fields from required parameters
 
 ``` purescript
 newtype DescribeDocumentRequest
-  = DescribeDocumentRequest { "Name" :: DocumentARN, "DocumentVersion" :: NullOrUndefined (DocumentVersion) }
+  = DescribeDocumentRequest { "Name" :: DocumentARN, "DocumentVersion" :: Maybe (DocumentVersion) }
 ```
 
 ##### Instances
@@ -4123,7 +4123,7 @@ Constructs DescribeDocumentRequest from required parameters
 #### `newDescribeDocumentRequest'`
 
 ``` purescript
-newDescribeDocumentRequest' :: DocumentARN -> ({ "Name" :: DocumentARN, "DocumentVersion" :: NullOrUndefined (DocumentVersion) } -> { "Name" :: DocumentARN, "DocumentVersion" :: NullOrUndefined (DocumentVersion) }) -> DescribeDocumentRequest
+newDescribeDocumentRequest' :: DocumentARN -> ({ "Name" :: DocumentARN, "DocumentVersion" :: Maybe (DocumentVersion) } -> { "Name" :: DocumentARN, "DocumentVersion" :: Maybe (DocumentVersion) }) -> DescribeDocumentRequest
 ```
 
 Constructs DescribeDocumentRequest's fields from required parameters
@@ -4132,7 +4132,7 @@ Constructs DescribeDocumentRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeDocumentResult
-  = DescribeDocumentResult { "Document" :: NullOrUndefined (DocumentDescription) }
+  = DescribeDocumentResult { "Document" :: Maybe (DocumentDescription) }
 ```
 
 ##### Instances
@@ -4155,7 +4155,7 @@ Constructs DescribeDocumentResult from required parameters
 #### `newDescribeDocumentResult'`
 
 ``` purescript
-newDescribeDocumentResult' :: ({ "Document" :: NullOrUndefined (DocumentDescription) } -> { "Document" :: NullOrUndefined (DocumentDescription) }) -> DescribeDocumentResult
+newDescribeDocumentResult' :: ({ "Document" :: Maybe (DocumentDescription) } -> { "Document" :: Maybe (DocumentDescription) }) -> DescribeDocumentResult
 ```
 
 Constructs DescribeDocumentResult's fields from required parameters
@@ -4164,7 +4164,7 @@ Constructs DescribeDocumentResult's fields from required parameters
 
 ``` purescript
 newtype DescribeEffectiveInstanceAssociationsRequest
-  = DescribeEffectiveInstanceAssociationsRequest { "InstanceId" :: InstanceId, "MaxResults" :: NullOrUndefined (EffectiveInstanceAssociationMaxResults), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribeEffectiveInstanceAssociationsRequest { "InstanceId" :: InstanceId, "MaxResults" :: Maybe (EffectiveInstanceAssociationMaxResults), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -4187,7 +4187,7 @@ Constructs DescribeEffectiveInstanceAssociationsRequest from required parameters
 #### `newDescribeEffectiveInstanceAssociationsRequest'`
 
 ``` purescript
-newDescribeEffectiveInstanceAssociationsRequest' :: InstanceId -> ({ "InstanceId" :: InstanceId, "MaxResults" :: NullOrUndefined (EffectiveInstanceAssociationMaxResults), "NextToken" :: NullOrUndefined (NextToken) } -> { "InstanceId" :: InstanceId, "MaxResults" :: NullOrUndefined (EffectiveInstanceAssociationMaxResults), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribeEffectiveInstanceAssociationsRequest
+newDescribeEffectiveInstanceAssociationsRequest' :: InstanceId -> ({ "InstanceId" :: InstanceId, "MaxResults" :: Maybe (EffectiveInstanceAssociationMaxResults), "NextToken" :: Maybe (NextToken) } -> { "InstanceId" :: InstanceId, "MaxResults" :: Maybe (EffectiveInstanceAssociationMaxResults), "NextToken" :: Maybe (NextToken) }) -> DescribeEffectiveInstanceAssociationsRequest
 ```
 
 Constructs DescribeEffectiveInstanceAssociationsRequest's fields from required parameters
@@ -4196,7 +4196,7 @@ Constructs DescribeEffectiveInstanceAssociationsRequest's fields from required p
 
 ``` purescript
 newtype DescribeEffectiveInstanceAssociationsResult
-  = DescribeEffectiveInstanceAssociationsResult { "Associations" :: NullOrUndefined (InstanceAssociationList), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribeEffectiveInstanceAssociationsResult { "Associations" :: Maybe (InstanceAssociationList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -4219,7 +4219,7 @@ Constructs DescribeEffectiveInstanceAssociationsResult from required parameters
 #### `newDescribeEffectiveInstanceAssociationsResult'`
 
 ``` purescript
-newDescribeEffectiveInstanceAssociationsResult' :: ({ "Associations" :: NullOrUndefined (InstanceAssociationList), "NextToken" :: NullOrUndefined (NextToken) } -> { "Associations" :: NullOrUndefined (InstanceAssociationList), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribeEffectiveInstanceAssociationsResult
+newDescribeEffectiveInstanceAssociationsResult' :: ({ "Associations" :: Maybe (InstanceAssociationList), "NextToken" :: Maybe (NextToken) } -> { "Associations" :: Maybe (InstanceAssociationList), "NextToken" :: Maybe (NextToken) }) -> DescribeEffectiveInstanceAssociationsResult
 ```
 
 Constructs DescribeEffectiveInstanceAssociationsResult's fields from required parameters
@@ -4228,7 +4228,7 @@ Constructs DescribeEffectiveInstanceAssociationsResult's fields from required pa
 
 ``` purescript
 newtype DescribeEffectivePatchesForPatchBaselineRequest
-  = DescribeEffectivePatchesForPatchBaselineRequest { "BaselineId" :: BaselineId, "MaxResults" :: NullOrUndefined (PatchBaselineMaxResults), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribeEffectivePatchesForPatchBaselineRequest { "BaselineId" :: BaselineId, "MaxResults" :: Maybe (PatchBaselineMaxResults), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -4251,7 +4251,7 @@ Constructs DescribeEffectivePatchesForPatchBaselineRequest from required paramet
 #### `newDescribeEffectivePatchesForPatchBaselineRequest'`
 
 ``` purescript
-newDescribeEffectivePatchesForPatchBaselineRequest' :: BaselineId -> ({ "BaselineId" :: BaselineId, "MaxResults" :: NullOrUndefined (PatchBaselineMaxResults), "NextToken" :: NullOrUndefined (NextToken) } -> { "BaselineId" :: BaselineId, "MaxResults" :: NullOrUndefined (PatchBaselineMaxResults), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribeEffectivePatchesForPatchBaselineRequest
+newDescribeEffectivePatchesForPatchBaselineRequest' :: BaselineId -> ({ "BaselineId" :: BaselineId, "MaxResults" :: Maybe (PatchBaselineMaxResults), "NextToken" :: Maybe (NextToken) } -> { "BaselineId" :: BaselineId, "MaxResults" :: Maybe (PatchBaselineMaxResults), "NextToken" :: Maybe (NextToken) }) -> DescribeEffectivePatchesForPatchBaselineRequest
 ```
 
 Constructs DescribeEffectivePatchesForPatchBaselineRequest's fields from required parameters
@@ -4260,7 +4260,7 @@ Constructs DescribeEffectivePatchesForPatchBaselineRequest's fields from require
 
 ``` purescript
 newtype DescribeEffectivePatchesForPatchBaselineResult
-  = DescribeEffectivePatchesForPatchBaselineResult { "EffectivePatches" :: NullOrUndefined (EffectivePatchList), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribeEffectivePatchesForPatchBaselineResult { "EffectivePatches" :: Maybe (EffectivePatchList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -4283,7 +4283,7 @@ Constructs DescribeEffectivePatchesForPatchBaselineResult from required paramete
 #### `newDescribeEffectivePatchesForPatchBaselineResult'`
 
 ``` purescript
-newDescribeEffectivePatchesForPatchBaselineResult' :: ({ "EffectivePatches" :: NullOrUndefined (EffectivePatchList), "NextToken" :: NullOrUndefined (NextToken) } -> { "EffectivePatches" :: NullOrUndefined (EffectivePatchList), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribeEffectivePatchesForPatchBaselineResult
+newDescribeEffectivePatchesForPatchBaselineResult' :: ({ "EffectivePatches" :: Maybe (EffectivePatchList), "NextToken" :: Maybe (NextToken) } -> { "EffectivePatches" :: Maybe (EffectivePatchList), "NextToken" :: Maybe (NextToken) }) -> DescribeEffectivePatchesForPatchBaselineResult
 ```
 
 Constructs DescribeEffectivePatchesForPatchBaselineResult's fields from required parameters
@@ -4292,7 +4292,7 @@ Constructs DescribeEffectivePatchesForPatchBaselineResult's fields from required
 
 ``` purescript
 newtype DescribeInstanceAssociationsStatusRequest
-  = DescribeInstanceAssociationsStatusRequest { "InstanceId" :: InstanceId, "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribeInstanceAssociationsStatusRequest { "InstanceId" :: InstanceId, "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -4315,7 +4315,7 @@ Constructs DescribeInstanceAssociationsStatusRequest from required parameters
 #### `newDescribeInstanceAssociationsStatusRequest'`
 
 ``` purescript
-newDescribeInstanceAssociationsStatusRequest' :: InstanceId -> ({ "InstanceId" :: InstanceId, "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (NextToken) } -> { "InstanceId" :: InstanceId, "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribeInstanceAssociationsStatusRequest
+newDescribeInstanceAssociationsStatusRequest' :: InstanceId -> ({ "InstanceId" :: InstanceId, "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (NextToken) } -> { "InstanceId" :: InstanceId, "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (NextToken) }) -> DescribeInstanceAssociationsStatusRequest
 ```
 
 Constructs DescribeInstanceAssociationsStatusRequest's fields from required parameters
@@ -4324,7 +4324,7 @@ Constructs DescribeInstanceAssociationsStatusRequest's fields from required para
 
 ``` purescript
 newtype DescribeInstanceAssociationsStatusResult
-  = DescribeInstanceAssociationsStatusResult { "InstanceAssociationStatusInfos" :: NullOrUndefined (InstanceAssociationStatusInfos), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribeInstanceAssociationsStatusResult { "InstanceAssociationStatusInfos" :: Maybe (InstanceAssociationStatusInfos), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -4347,7 +4347,7 @@ Constructs DescribeInstanceAssociationsStatusResult from required parameters
 #### `newDescribeInstanceAssociationsStatusResult'`
 
 ``` purescript
-newDescribeInstanceAssociationsStatusResult' :: ({ "InstanceAssociationStatusInfos" :: NullOrUndefined (InstanceAssociationStatusInfos), "NextToken" :: NullOrUndefined (NextToken) } -> { "InstanceAssociationStatusInfos" :: NullOrUndefined (InstanceAssociationStatusInfos), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribeInstanceAssociationsStatusResult
+newDescribeInstanceAssociationsStatusResult' :: ({ "InstanceAssociationStatusInfos" :: Maybe (InstanceAssociationStatusInfos), "NextToken" :: Maybe (NextToken) } -> { "InstanceAssociationStatusInfos" :: Maybe (InstanceAssociationStatusInfos), "NextToken" :: Maybe (NextToken) }) -> DescribeInstanceAssociationsStatusResult
 ```
 
 Constructs DescribeInstanceAssociationsStatusResult's fields from required parameters
@@ -4356,7 +4356,7 @@ Constructs DescribeInstanceAssociationsStatusResult's fields from required param
 
 ``` purescript
 newtype DescribeInstanceInformationRequest
-  = DescribeInstanceInformationRequest { "InstanceInformationFilterList" :: NullOrUndefined (InstanceInformationFilterList), "Filters" :: NullOrUndefined (InstanceInformationStringFilterList), "MaxResults" :: NullOrUndefined (MaxResultsEC2Compatible), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribeInstanceInformationRequest { "InstanceInformationFilterList" :: Maybe (InstanceInformationFilterList), "Filters" :: Maybe (InstanceInformationStringFilterList), "MaxResults" :: Maybe (MaxResultsEC2Compatible), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -4379,7 +4379,7 @@ Constructs DescribeInstanceInformationRequest from required parameters
 #### `newDescribeInstanceInformationRequest'`
 
 ``` purescript
-newDescribeInstanceInformationRequest' :: ({ "InstanceInformationFilterList" :: NullOrUndefined (InstanceInformationFilterList), "Filters" :: NullOrUndefined (InstanceInformationStringFilterList), "MaxResults" :: NullOrUndefined (MaxResultsEC2Compatible), "NextToken" :: NullOrUndefined (NextToken) } -> { "InstanceInformationFilterList" :: NullOrUndefined (InstanceInformationFilterList), "Filters" :: NullOrUndefined (InstanceInformationStringFilterList), "MaxResults" :: NullOrUndefined (MaxResultsEC2Compatible), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribeInstanceInformationRequest
+newDescribeInstanceInformationRequest' :: ({ "InstanceInformationFilterList" :: Maybe (InstanceInformationFilterList), "Filters" :: Maybe (InstanceInformationStringFilterList), "MaxResults" :: Maybe (MaxResultsEC2Compatible), "NextToken" :: Maybe (NextToken) } -> { "InstanceInformationFilterList" :: Maybe (InstanceInformationFilterList), "Filters" :: Maybe (InstanceInformationStringFilterList), "MaxResults" :: Maybe (MaxResultsEC2Compatible), "NextToken" :: Maybe (NextToken) }) -> DescribeInstanceInformationRequest
 ```
 
 Constructs DescribeInstanceInformationRequest's fields from required parameters
@@ -4388,7 +4388,7 @@ Constructs DescribeInstanceInformationRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeInstanceInformationResult
-  = DescribeInstanceInformationResult { "InstanceInformationList" :: NullOrUndefined (InstanceInformationList), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribeInstanceInformationResult { "InstanceInformationList" :: Maybe (InstanceInformationList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -4411,7 +4411,7 @@ Constructs DescribeInstanceInformationResult from required parameters
 #### `newDescribeInstanceInformationResult'`
 
 ``` purescript
-newDescribeInstanceInformationResult' :: ({ "InstanceInformationList" :: NullOrUndefined (InstanceInformationList), "NextToken" :: NullOrUndefined (NextToken) } -> { "InstanceInformationList" :: NullOrUndefined (InstanceInformationList), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribeInstanceInformationResult
+newDescribeInstanceInformationResult' :: ({ "InstanceInformationList" :: Maybe (InstanceInformationList), "NextToken" :: Maybe (NextToken) } -> { "InstanceInformationList" :: Maybe (InstanceInformationList), "NextToken" :: Maybe (NextToken) }) -> DescribeInstanceInformationResult
 ```
 
 Constructs DescribeInstanceInformationResult's fields from required parameters
@@ -4420,7 +4420,7 @@ Constructs DescribeInstanceInformationResult's fields from required parameters
 
 ``` purescript
 newtype DescribeInstancePatchStatesForPatchGroupRequest
-  = DescribeInstancePatchStatesForPatchGroupRequest { "PatchGroup" :: PatchGroup, "Filters" :: NullOrUndefined (InstancePatchStateFilterList), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (PatchComplianceMaxResults) }
+  = DescribeInstancePatchStatesForPatchGroupRequest { "PatchGroup" :: PatchGroup, "Filters" :: Maybe (InstancePatchStateFilterList), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (PatchComplianceMaxResults) }
 ```
 
 ##### Instances
@@ -4443,7 +4443,7 @@ Constructs DescribeInstancePatchStatesForPatchGroupRequest from required paramet
 #### `newDescribeInstancePatchStatesForPatchGroupRequest'`
 
 ``` purescript
-newDescribeInstancePatchStatesForPatchGroupRequest' :: PatchGroup -> ({ "PatchGroup" :: PatchGroup, "Filters" :: NullOrUndefined (InstancePatchStateFilterList), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (PatchComplianceMaxResults) } -> { "PatchGroup" :: PatchGroup, "Filters" :: NullOrUndefined (InstancePatchStateFilterList), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (PatchComplianceMaxResults) }) -> DescribeInstancePatchStatesForPatchGroupRequest
+newDescribeInstancePatchStatesForPatchGroupRequest' :: PatchGroup -> ({ "PatchGroup" :: PatchGroup, "Filters" :: Maybe (InstancePatchStateFilterList), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (PatchComplianceMaxResults) } -> { "PatchGroup" :: PatchGroup, "Filters" :: Maybe (InstancePatchStateFilterList), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (PatchComplianceMaxResults) }) -> DescribeInstancePatchStatesForPatchGroupRequest
 ```
 
 Constructs DescribeInstancePatchStatesForPatchGroupRequest's fields from required parameters
@@ -4452,7 +4452,7 @@ Constructs DescribeInstancePatchStatesForPatchGroupRequest's fields from require
 
 ``` purescript
 newtype DescribeInstancePatchStatesForPatchGroupResult
-  = DescribeInstancePatchStatesForPatchGroupResult { "InstancePatchStates" :: NullOrUndefined (InstancePatchStatesList), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribeInstancePatchStatesForPatchGroupResult { "InstancePatchStates" :: Maybe (InstancePatchStatesList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -4475,7 +4475,7 @@ Constructs DescribeInstancePatchStatesForPatchGroupResult from required paramete
 #### `newDescribeInstancePatchStatesForPatchGroupResult'`
 
 ``` purescript
-newDescribeInstancePatchStatesForPatchGroupResult' :: ({ "InstancePatchStates" :: NullOrUndefined (InstancePatchStatesList), "NextToken" :: NullOrUndefined (NextToken) } -> { "InstancePatchStates" :: NullOrUndefined (InstancePatchStatesList), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribeInstancePatchStatesForPatchGroupResult
+newDescribeInstancePatchStatesForPatchGroupResult' :: ({ "InstancePatchStates" :: Maybe (InstancePatchStatesList), "NextToken" :: Maybe (NextToken) } -> { "InstancePatchStates" :: Maybe (InstancePatchStatesList), "NextToken" :: Maybe (NextToken) }) -> DescribeInstancePatchStatesForPatchGroupResult
 ```
 
 Constructs DescribeInstancePatchStatesForPatchGroupResult's fields from required parameters
@@ -4484,7 +4484,7 @@ Constructs DescribeInstancePatchStatesForPatchGroupResult's fields from required
 
 ``` purescript
 newtype DescribeInstancePatchStatesRequest
-  = DescribeInstancePatchStatesRequest { "InstanceIds" :: InstanceIdList, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (PatchComplianceMaxResults) }
+  = DescribeInstancePatchStatesRequest { "InstanceIds" :: InstanceIdList, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (PatchComplianceMaxResults) }
 ```
 
 ##### Instances
@@ -4507,7 +4507,7 @@ Constructs DescribeInstancePatchStatesRequest from required parameters
 #### `newDescribeInstancePatchStatesRequest'`
 
 ``` purescript
-newDescribeInstancePatchStatesRequest' :: InstanceIdList -> ({ "InstanceIds" :: InstanceIdList, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (PatchComplianceMaxResults) } -> { "InstanceIds" :: InstanceIdList, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (PatchComplianceMaxResults) }) -> DescribeInstancePatchStatesRequest
+newDescribeInstancePatchStatesRequest' :: InstanceIdList -> ({ "InstanceIds" :: InstanceIdList, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (PatchComplianceMaxResults) } -> { "InstanceIds" :: InstanceIdList, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (PatchComplianceMaxResults) }) -> DescribeInstancePatchStatesRequest
 ```
 
 Constructs DescribeInstancePatchStatesRequest's fields from required parameters
@@ -4516,7 +4516,7 @@ Constructs DescribeInstancePatchStatesRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeInstancePatchStatesResult
-  = DescribeInstancePatchStatesResult { "InstancePatchStates" :: NullOrUndefined (InstancePatchStateList), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribeInstancePatchStatesResult { "InstancePatchStates" :: Maybe (InstancePatchStateList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -4539,7 +4539,7 @@ Constructs DescribeInstancePatchStatesResult from required parameters
 #### `newDescribeInstancePatchStatesResult'`
 
 ``` purescript
-newDescribeInstancePatchStatesResult' :: ({ "InstancePatchStates" :: NullOrUndefined (InstancePatchStateList), "NextToken" :: NullOrUndefined (NextToken) } -> { "InstancePatchStates" :: NullOrUndefined (InstancePatchStateList), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribeInstancePatchStatesResult
+newDescribeInstancePatchStatesResult' :: ({ "InstancePatchStates" :: Maybe (InstancePatchStateList), "NextToken" :: Maybe (NextToken) } -> { "InstancePatchStates" :: Maybe (InstancePatchStateList), "NextToken" :: Maybe (NextToken) }) -> DescribeInstancePatchStatesResult
 ```
 
 Constructs DescribeInstancePatchStatesResult's fields from required parameters
@@ -4548,7 +4548,7 @@ Constructs DescribeInstancePatchStatesResult's fields from required parameters
 
 ``` purescript
 newtype DescribeInstancePatchesRequest
-  = DescribeInstancePatchesRequest { "InstanceId" :: InstanceId, "Filters" :: NullOrUndefined (PatchOrchestratorFilterList), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (PatchComplianceMaxResults) }
+  = DescribeInstancePatchesRequest { "InstanceId" :: InstanceId, "Filters" :: Maybe (PatchOrchestratorFilterList), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (PatchComplianceMaxResults) }
 ```
 
 ##### Instances
@@ -4571,7 +4571,7 @@ Constructs DescribeInstancePatchesRequest from required parameters
 #### `newDescribeInstancePatchesRequest'`
 
 ``` purescript
-newDescribeInstancePatchesRequest' :: InstanceId -> ({ "InstanceId" :: InstanceId, "Filters" :: NullOrUndefined (PatchOrchestratorFilterList), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (PatchComplianceMaxResults) } -> { "InstanceId" :: InstanceId, "Filters" :: NullOrUndefined (PatchOrchestratorFilterList), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (PatchComplianceMaxResults) }) -> DescribeInstancePatchesRequest
+newDescribeInstancePatchesRequest' :: InstanceId -> ({ "InstanceId" :: InstanceId, "Filters" :: Maybe (PatchOrchestratorFilterList), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (PatchComplianceMaxResults) } -> { "InstanceId" :: InstanceId, "Filters" :: Maybe (PatchOrchestratorFilterList), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (PatchComplianceMaxResults) }) -> DescribeInstancePatchesRequest
 ```
 
 Constructs DescribeInstancePatchesRequest's fields from required parameters
@@ -4580,7 +4580,7 @@ Constructs DescribeInstancePatchesRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeInstancePatchesResult
-  = DescribeInstancePatchesResult { "Patches" :: NullOrUndefined (PatchComplianceDataList), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribeInstancePatchesResult { "Patches" :: Maybe (PatchComplianceDataList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -4603,7 +4603,7 @@ Constructs DescribeInstancePatchesResult from required parameters
 #### `newDescribeInstancePatchesResult'`
 
 ``` purescript
-newDescribeInstancePatchesResult' :: ({ "Patches" :: NullOrUndefined (PatchComplianceDataList), "NextToken" :: NullOrUndefined (NextToken) } -> { "Patches" :: NullOrUndefined (PatchComplianceDataList), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribeInstancePatchesResult
+newDescribeInstancePatchesResult' :: ({ "Patches" :: Maybe (PatchComplianceDataList), "NextToken" :: Maybe (NextToken) } -> { "Patches" :: Maybe (PatchComplianceDataList), "NextToken" :: Maybe (NextToken) }) -> DescribeInstancePatchesResult
 ```
 
 Constructs DescribeInstancePatchesResult's fields from required parameters
@@ -4612,7 +4612,7 @@ Constructs DescribeInstancePatchesResult's fields from required parameters
 
 ``` purescript
 newtype DescribeMaintenanceWindowExecutionTaskInvocationsRequest
-  = DescribeMaintenanceWindowExecutionTaskInvocationsRequest { "WindowExecutionId" :: MaintenanceWindowExecutionId, "TaskId" :: MaintenanceWindowExecutionTaskId, "Filters" :: NullOrUndefined (MaintenanceWindowFilterList), "MaxResults" :: NullOrUndefined (MaintenanceWindowMaxResults), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribeMaintenanceWindowExecutionTaskInvocationsRequest { "WindowExecutionId" :: MaintenanceWindowExecutionId, "TaskId" :: MaintenanceWindowExecutionTaskId, "Filters" :: Maybe (MaintenanceWindowFilterList), "MaxResults" :: Maybe (MaintenanceWindowMaxResults), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -4635,7 +4635,7 @@ Constructs DescribeMaintenanceWindowExecutionTaskInvocationsRequest from require
 #### `newDescribeMaintenanceWindowExecutionTaskInvocationsRequest'`
 
 ``` purescript
-newDescribeMaintenanceWindowExecutionTaskInvocationsRequest' :: MaintenanceWindowExecutionTaskId -> MaintenanceWindowExecutionId -> ({ "WindowExecutionId" :: MaintenanceWindowExecutionId, "TaskId" :: MaintenanceWindowExecutionTaskId, "Filters" :: NullOrUndefined (MaintenanceWindowFilterList), "MaxResults" :: NullOrUndefined (MaintenanceWindowMaxResults), "NextToken" :: NullOrUndefined (NextToken) } -> { "WindowExecutionId" :: MaintenanceWindowExecutionId, "TaskId" :: MaintenanceWindowExecutionTaskId, "Filters" :: NullOrUndefined (MaintenanceWindowFilterList), "MaxResults" :: NullOrUndefined (MaintenanceWindowMaxResults), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribeMaintenanceWindowExecutionTaskInvocationsRequest
+newDescribeMaintenanceWindowExecutionTaskInvocationsRequest' :: MaintenanceWindowExecutionTaskId -> MaintenanceWindowExecutionId -> ({ "WindowExecutionId" :: MaintenanceWindowExecutionId, "TaskId" :: MaintenanceWindowExecutionTaskId, "Filters" :: Maybe (MaintenanceWindowFilterList), "MaxResults" :: Maybe (MaintenanceWindowMaxResults), "NextToken" :: Maybe (NextToken) } -> { "WindowExecutionId" :: MaintenanceWindowExecutionId, "TaskId" :: MaintenanceWindowExecutionTaskId, "Filters" :: Maybe (MaintenanceWindowFilterList), "MaxResults" :: Maybe (MaintenanceWindowMaxResults), "NextToken" :: Maybe (NextToken) }) -> DescribeMaintenanceWindowExecutionTaskInvocationsRequest
 ```
 
 Constructs DescribeMaintenanceWindowExecutionTaskInvocationsRequest's fields from required parameters
@@ -4644,7 +4644,7 @@ Constructs DescribeMaintenanceWindowExecutionTaskInvocationsRequest's fields fro
 
 ``` purescript
 newtype DescribeMaintenanceWindowExecutionTaskInvocationsResult
-  = DescribeMaintenanceWindowExecutionTaskInvocationsResult { "WindowExecutionTaskInvocationIdentities" :: NullOrUndefined (MaintenanceWindowExecutionTaskInvocationIdentityList), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribeMaintenanceWindowExecutionTaskInvocationsResult { "WindowExecutionTaskInvocationIdentities" :: Maybe (MaintenanceWindowExecutionTaskInvocationIdentityList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -4667,7 +4667,7 @@ Constructs DescribeMaintenanceWindowExecutionTaskInvocationsResult from required
 #### `newDescribeMaintenanceWindowExecutionTaskInvocationsResult'`
 
 ``` purescript
-newDescribeMaintenanceWindowExecutionTaskInvocationsResult' :: ({ "WindowExecutionTaskInvocationIdentities" :: NullOrUndefined (MaintenanceWindowExecutionTaskInvocationIdentityList), "NextToken" :: NullOrUndefined (NextToken) } -> { "WindowExecutionTaskInvocationIdentities" :: NullOrUndefined (MaintenanceWindowExecutionTaskInvocationIdentityList), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribeMaintenanceWindowExecutionTaskInvocationsResult
+newDescribeMaintenanceWindowExecutionTaskInvocationsResult' :: ({ "WindowExecutionTaskInvocationIdentities" :: Maybe (MaintenanceWindowExecutionTaskInvocationIdentityList), "NextToken" :: Maybe (NextToken) } -> { "WindowExecutionTaskInvocationIdentities" :: Maybe (MaintenanceWindowExecutionTaskInvocationIdentityList), "NextToken" :: Maybe (NextToken) }) -> DescribeMaintenanceWindowExecutionTaskInvocationsResult
 ```
 
 Constructs DescribeMaintenanceWindowExecutionTaskInvocationsResult's fields from required parameters
@@ -4676,7 +4676,7 @@ Constructs DescribeMaintenanceWindowExecutionTaskInvocationsResult's fields from
 
 ``` purescript
 newtype DescribeMaintenanceWindowExecutionTasksRequest
-  = DescribeMaintenanceWindowExecutionTasksRequest { "WindowExecutionId" :: MaintenanceWindowExecutionId, "Filters" :: NullOrUndefined (MaintenanceWindowFilterList), "MaxResults" :: NullOrUndefined (MaintenanceWindowMaxResults), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribeMaintenanceWindowExecutionTasksRequest { "WindowExecutionId" :: MaintenanceWindowExecutionId, "Filters" :: Maybe (MaintenanceWindowFilterList), "MaxResults" :: Maybe (MaintenanceWindowMaxResults), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -4699,7 +4699,7 @@ Constructs DescribeMaintenanceWindowExecutionTasksRequest from required paramete
 #### `newDescribeMaintenanceWindowExecutionTasksRequest'`
 
 ``` purescript
-newDescribeMaintenanceWindowExecutionTasksRequest' :: MaintenanceWindowExecutionId -> ({ "WindowExecutionId" :: MaintenanceWindowExecutionId, "Filters" :: NullOrUndefined (MaintenanceWindowFilterList), "MaxResults" :: NullOrUndefined (MaintenanceWindowMaxResults), "NextToken" :: NullOrUndefined (NextToken) } -> { "WindowExecutionId" :: MaintenanceWindowExecutionId, "Filters" :: NullOrUndefined (MaintenanceWindowFilterList), "MaxResults" :: NullOrUndefined (MaintenanceWindowMaxResults), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribeMaintenanceWindowExecutionTasksRequest
+newDescribeMaintenanceWindowExecutionTasksRequest' :: MaintenanceWindowExecutionId -> ({ "WindowExecutionId" :: MaintenanceWindowExecutionId, "Filters" :: Maybe (MaintenanceWindowFilterList), "MaxResults" :: Maybe (MaintenanceWindowMaxResults), "NextToken" :: Maybe (NextToken) } -> { "WindowExecutionId" :: MaintenanceWindowExecutionId, "Filters" :: Maybe (MaintenanceWindowFilterList), "MaxResults" :: Maybe (MaintenanceWindowMaxResults), "NextToken" :: Maybe (NextToken) }) -> DescribeMaintenanceWindowExecutionTasksRequest
 ```
 
 Constructs DescribeMaintenanceWindowExecutionTasksRequest's fields from required parameters
@@ -4708,7 +4708,7 @@ Constructs DescribeMaintenanceWindowExecutionTasksRequest's fields from required
 
 ``` purescript
 newtype DescribeMaintenanceWindowExecutionTasksResult
-  = DescribeMaintenanceWindowExecutionTasksResult { "WindowExecutionTaskIdentities" :: NullOrUndefined (MaintenanceWindowExecutionTaskIdentityList), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribeMaintenanceWindowExecutionTasksResult { "WindowExecutionTaskIdentities" :: Maybe (MaintenanceWindowExecutionTaskIdentityList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -4731,7 +4731,7 @@ Constructs DescribeMaintenanceWindowExecutionTasksResult from required parameter
 #### `newDescribeMaintenanceWindowExecutionTasksResult'`
 
 ``` purescript
-newDescribeMaintenanceWindowExecutionTasksResult' :: ({ "WindowExecutionTaskIdentities" :: NullOrUndefined (MaintenanceWindowExecutionTaskIdentityList), "NextToken" :: NullOrUndefined (NextToken) } -> { "WindowExecutionTaskIdentities" :: NullOrUndefined (MaintenanceWindowExecutionTaskIdentityList), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribeMaintenanceWindowExecutionTasksResult
+newDescribeMaintenanceWindowExecutionTasksResult' :: ({ "WindowExecutionTaskIdentities" :: Maybe (MaintenanceWindowExecutionTaskIdentityList), "NextToken" :: Maybe (NextToken) } -> { "WindowExecutionTaskIdentities" :: Maybe (MaintenanceWindowExecutionTaskIdentityList), "NextToken" :: Maybe (NextToken) }) -> DescribeMaintenanceWindowExecutionTasksResult
 ```
 
 Constructs DescribeMaintenanceWindowExecutionTasksResult's fields from required parameters
@@ -4740,7 +4740,7 @@ Constructs DescribeMaintenanceWindowExecutionTasksResult's fields from required 
 
 ``` purescript
 newtype DescribeMaintenanceWindowExecutionsRequest
-  = DescribeMaintenanceWindowExecutionsRequest { "WindowId" :: MaintenanceWindowId, "Filters" :: NullOrUndefined (MaintenanceWindowFilterList), "MaxResults" :: NullOrUndefined (MaintenanceWindowMaxResults), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribeMaintenanceWindowExecutionsRequest { "WindowId" :: MaintenanceWindowId, "Filters" :: Maybe (MaintenanceWindowFilterList), "MaxResults" :: Maybe (MaintenanceWindowMaxResults), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -4763,7 +4763,7 @@ Constructs DescribeMaintenanceWindowExecutionsRequest from required parameters
 #### `newDescribeMaintenanceWindowExecutionsRequest'`
 
 ``` purescript
-newDescribeMaintenanceWindowExecutionsRequest' :: MaintenanceWindowId -> ({ "WindowId" :: MaintenanceWindowId, "Filters" :: NullOrUndefined (MaintenanceWindowFilterList), "MaxResults" :: NullOrUndefined (MaintenanceWindowMaxResults), "NextToken" :: NullOrUndefined (NextToken) } -> { "WindowId" :: MaintenanceWindowId, "Filters" :: NullOrUndefined (MaintenanceWindowFilterList), "MaxResults" :: NullOrUndefined (MaintenanceWindowMaxResults), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribeMaintenanceWindowExecutionsRequest
+newDescribeMaintenanceWindowExecutionsRequest' :: MaintenanceWindowId -> ({ "WindowId" :: MaintenanceWindowId, "Filters" :: Maybe (MaintenanceWindowFilterList), "MaxResults" :: Maybe (MaintenanceWindowMaxResults), "NextToken" :: Maybe (NextToken) } -> { "WindowId" :: MaintenanceWindowId, "Filters" :: Maybe (MaintenanceWindowFilterList), "MaxResults" :: Maybe (MaintenanceWindowMaxResults), "NextToken" :: Maybe (NextToken) }) -> DescribeMaintenanceWindowExecutionsRequest
 ```
 
 Constructs DescribeMaintenanceWindowExecutionsRequest's fields from required parameters
@@ -4772,7 +4772,7 @@ Constructs DescribeMaintenanceWindowExecutionsRequest's fields from required par
 
 ``` purescript
 newtype DescribeMaintenanceWindowExecutionsResult
-  = DescribeMaintenanceWindowExecutionsResult { "WindowExecutions" :: NullOrUndefined (MaintenanceWindowExecutionList), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribeMaintenanceWindowExecutionsResult { "WindowExecutions" :: Maybe (MaintenanceWindowExecutionList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -4795,7 +4795,7 @@ Constructs DescribeMaintenanceWindowExecutionsResult from required parameters
 #### `newDescribeMaintenanceWindowExecutionsResult'`
 
 ``` purescript
-newDescribeMaintenanceWindowExecutionsResult' :: ({ "WindowExecutions" :: NullOrUndefined (MaintenanceWindowExecutionList), "NextToken" :: NullOrUndefined (NextToken) } -> { "WindowExecutions" :: NullOrUndefined (MaintenanceWindowExecutionList), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribeMaintenanceWindowExecutionsResult
+newDescribeMaintenanceWindowExecutionsResult' :: ({ "WindowExecutions" :: Maybe (MaintenanceWindowExecutionList), "NextToken" :: Maybe (NextToken) } -> { "WindowExecutions" :: Maybe (MaintenanceWindowExecutionList), "NextToken" :: Maybe (NextToken) }) -> DescribeMaintenanceWindowExecutionsResult
 ```
 
 Constructs DescribeMaintenanceWindowExecutionsResult's fields from required parameters
@@ -4804,7 +4804,7 @@ Constructs DescribeMaintenanceWindowExecutionsResult's fields from required para
 
 ``` purescript
 newtype DescribeMaintenanceWindowTargetsRequest
-  = DescribeMaintenanceWindowTargetsRequest { "WindowId" :: MaintenanceWindowId, "Filters" :: NullOrUndefined (MaintenanceWindowFilterList), "MaxResults" :: NullOrUndefined (MaintenanceWindowMaxResults), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribeMaintenanceWindowTargetsRequest { "WindowId" :: MaintenanceWindowId, "Filters" :: Maybe (MaintenanceWindowFilterList), "MaxResults" :: Maybe (MaintenanceWindowMaxResults), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -4827,7 +4827,7 @@ Constructs DescribeMaintenanceWindowTargetsRequest from required parameters
 #### `newDescribeMaintenanceWindowTargetsRequest'`
 
 ``` purescript
-newDescribeMaintenanceWindowTargetsRequest' :: MaintenanceWindowId -> ({ "WindowId" :: MaintenanceWindowId, "Filters" :: NullOrUndefined (MaintenanceWindowFilterList), "MaxResults" :: NullOrUndefined (MaintenanceWindowMaxResults), "NextToken" :: NullOrUndefined (NextToken) } -> { "WindowId" :: MaintenanceWindowId, "Filters" :: NullOrUndefined (MaintenanceWindowFilterList), "MaxResults" :: NullOrUndefined (MaintenanceWindowMaxResults), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribeMaintenanceWindowTargetsRequest
+newDescribeMaintenanceWindowTargetsRequest' :: MaintenanceWindowId -> ({ "WindowId" :: MaintenanceWindowId, "Filters" :: Maybe (MaintenanceWindowFilterList), "MaxResults" :: Maybe (MaintenanceWindowMaxResults), "NextToken" :: Maybe (NextToken) } -> { "WindowId" :: MaintenanceWindowId, "Filters" :: Maybe (MaintenanceWindowFilterList), "MaxResults" :: Maybe (MaintenanceWindowMaxResults), "NextToken" :: Maybe (NextToken) }) -> DescribeMaintenanceWindowTargetsRequest
 ```
 
 Constructs DescribeMaintenanceWindowTargetsRequest's fields from required parameters
@@ -4836,7 +4836,7 @@ Constructs DescribeMaintenanceWindowTargetsRequest's fields from required parame
 
 ``` purescript
 newtype DescribeMaintenanceWindowTargetsResult
-  = DescribeMaintenanceWindowTargetsResult { "Targets" :: NullOrUndefined (MaintenanceWindowTargetList), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribeMaintenanceWindowTargetsResult { "Targets" :: Maybe (MaintenanceWindowTargetList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -4859,7 +4859,7 @@ Constructs DescribeMaintenanceWindowTargetsResult from required parameters
 #### `newDescribeMaintenanceWindowTargetsResult'`
 
 ``` purescript
-newDescribeMaintenanceWindowTargetsResult' :: ({ "Targets" :: NullOrUndefined (MaintenanceWindowTargetList), "NextToken" :: NullOrUndefined (NextToken) } -> { "Targets" :: NullOrUndefined (MaintenanceWindowTargetList), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribeMaintenanceWindowTargetsResult
+newDescribeMaintenanceWindowTargetsResult' :: ({ "Targets" :: Maybe (MaintenanceWindowTargetList), "NextToken" :: Maybe (NextToken) } -> { "Targets" :: Maybe (MaintenanceWindowTargetList), "NextToken" :: Maybe (NextToken) }) -> DescribeMaintenanceWindowTargetsResult
 ```
 
 Constructs DescribeMaintenanceWindowTargetsResult's fields from required parameters
@@ -4868,7 +4868,7 @@ Constructs DescribeMaintenanceWindowTargetsResult's fields from required paramet
 
 ``` purescript
 newtype DescribeMaintenanceWindowTasksRequest
-  = DescribeMaintenanceWindowTasksRequest { "WindowId" :: MaintenanceWindowId, "Filters" :: NullOrUndefined (MaintenanceWindowFilterList), "MaxResults" :: NullOrUndefined (MaintenanceWindowMaxResults), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribeMaintenanceWindowTasksRequest { "WindowId" :: MaintenanceWindowId, "Filters" :: Maybe (MaintenanceWindowFilterList), "MaxResults" :: Maybe (MaintenanceWindowMaxResults), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -4891,7 +4891,7 @@ Constructs DescribeMaintenanceWindowTasksRequest from required parameters
 #### `newDescribeMaintenanceWindowTasksRequest'`
 
 ``` purescript
-newDescribeMaintenanceWindowTasksRequest' :: MaintenanceWindowId -> ({ "WindowId" :: MaintenanceWindowId, "Filters" :: NullOrUndefined (MaintenanceWindowFilterList), "MaxResults" :: NullOrUndefined (MaintenanceWindowMaxResults), "NextToken" :: NullOrUndefined (NextToken) } -> { "WindowId" :: MaintenanceWindowId, "Filters" :: NullOrUndefined (MaintenanceWindowFilterList), "MaxResults" :: NullOrUndefined (MaintenanceWindowMaxResults), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribeMaintenanceWindowTasksRequest
+newDescribeMaintenanceWindowTasksRequest' :: MaintenanceWindowId -> ({ "WindowId" :: MaintenanceWindowId, "Filters" :: Maybe (MaintenanceWindowFilterList), "MaxResults" :: Maybe (MaintenanceWindowMaxResults), "NextToken" :: Maybe (NextToken) } -> { "WindowId" :: MaintenanceWindowId, "Filters" :: Maybe (MaintenanceWindowFilterList), "MaxResults" :: Maybe (MaintenanceWindowMaxResults), "NextToken" :: Maybe (NextToken) }) -> DescribeMaintenanceWindowTasksRequest
 ```
 
 Constructs DescribeMaintenanceWindowTasksRequest's fields from required parameters
@@ -4900,7 +4900,7 @@ Constructs DescribeMaintenanceWindowTasksRequest's fields from required paramete
 
 ``` purescript
 newtype DescribeMaintenanceWindowTasksResult
-  = DescribeMaintenanceWindowTasksResult { "Tasks" :: NullOrUndefined (MaintenanceWindowTaskList), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribeMaintenanceWindowTasksResult { "Tasks" :: Maybe (MaintenanceWindowTaskList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -4923,7 +4923,7 @@ Constructs DescribeMaintenanceWindowTasksResult from required parameters
 #### `newDescribeMaintenanceWindowTasksResult'`
 
 ``` purescript
-newDescribeMaintenanceWindowTasksResult' :: ({ "Tasks" :: NullOrUndefined (MaintenanceWindowTaskList), "NextToken" :: NullOrUndefined (NextToken) } -> { "Tasks" :: NullOrUndefined (MaintenanceWindowTaskList), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribeMaintenanceWindowTasksResult
+newDescribeMaintenanceWindowTasksResult' :: ({ "Tasks" :: Maybe (MaintenanceWindowTaskList), "NextToken" :: Maybe (NextToken) } -> { "Tasks" :: Maybe (MaintenanceWindowTaskList), "NextToken" :: Maybe (NextToken) }) -> DescribeMaintenanceWindowTasksResult
 ```
 
 Constructs DescribeMaintenanceWindowTasksResult's fields from required parameters
@@ -4932,7 +4932,7 @@ Constructs DescribeMaintenanceWindowTasksResult's fields from required parameter
 
 ``` purescript
 newtype DescribeMaintenanceWindowsRequest
-  = DescribeMaintenanceWindowsRequest { "Filters" :: NullOrUndefined (MaintenanceWindowFilterList), "MaxResults" :: NullOrUndefined (MaintenanceWindowMaxResults), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribeMaintenanceWindowsRequest { "Filters" :: Maybe (MaintenanceWindowFilterList), "MaxResults" :: Maybe (MaintenanceWindowMaxResults), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -4955,7 +4955,7 @@ Constructs DescribeMaintenanceWindowsRequest from required parameters
 #### `newDescribeMaintenanceWindowsRequest'`
 
 ``` purescript
-newDescribeMaintenanceWindowsRequest' :: ({ "Filters" :: NullOrUndefined (MaintenanceWindowFilterList), "MaxResults" :: NullOrUndefined (MaintenanceWindowMaxResults), "NextToken" :: NullOrUndefined (NextToken) } -> { "Filters" :: NullOrUndefined (MaintenanceWindowFilterList), "MaxResults" :: NullOrUndefined (MaintenanceWindowMaxResults), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribeMaintenanceWindowsRequest
+newDescribeMaintenanceWindowsRequest' :: ({ "Filters" :: Maybe (MaintenanceWindowFilterList), "MaxResults" :: Maybe (MaintenanceWindowMaxResults), "NextToken" :: Maybe (NextToken) } -> { "Filters" :: Maybe (MaintenanceWindowFilterList), "MaxResults" :: Maybe (MaintenanceWindowMaxResults), "NextToken" :: Maybe (NextToken) }) -> DescribeMaintenanceWindowsRequest
 ```
 
 Constructs DescribeMaintenanceWindowsRequest's fields from required parameters
@@ -4964,7 +4964,7 @@ Constructs DescribeMaintenanceWindowsRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeMaintenanceWindowsResult
-  = DescribeMaintenanceWindowsResult { "WindowIdentities" :: NullOrUndefined (MaintenanceWindowIdentityList), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribeMaintenanceWindowsResult { "WindowIdentities" :: Maybe (MaintenanceWindowIdentityList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -4987,7 +4987,7 @@ Constructs DescribeMaintenanceWindowsResult from required parameters
 #### `newDescribeMaintenanceWindowsResult'`
 
 ``` purescript
-newDescribeMaintenanceWindowsResult' :: ({ "WindowIdentities" :: NullOrUndefined (MaintenanceWindowIdentityList), "NextToken" :: NullOrUndefined (NextToken) } -> { "WindowIdentities" :: NullOrUndefined (MaintenanceWindowIdentityList), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribeMaintenanceWindowsResult
+newDescribeMaintenanceWindowsResult' :: ({ "WindowIdentities" :: Maybe (MaintenanceWindowIdentityList), "NextToken" :: Maybe (NextToken) } -> { "WindowIdentities" :: Maybe (MaintenanceWindowIdentityList), "NextToken" :: Maybe (NextToken) }) -> DescribeMaintenanceWindowsResult
 ```
 
 Constructs DescribeMaintenanceWindowsResult's fields from required parameters
@@ -4996,7 +4996,7 @@ Constructs DescribeMaintenanceWindowsResult's fields from required parameters
 
 ``` purescript
 newtype DescribeParametersRequest
-  = DescribeParametersRequest { "Filters" :: NullOrUndefined (ParametersFilterList), "ParameterFilters" :: NullOrUndefined (ParameterStringFilterList), "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribeParametersRequest { "Filters" :: Maybe (ParametersFilterList), "ParameterFilters" :: Maybe (ParameterStringFilterList), "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -5019,7 +5019,7 @@ Constructs DescribeParametersRequest from required parameters
 #### `newDescribeParametersRequest'`
 
 ``` purescript
-newDescribeParametersRequest' :: ({ "Filters" :: NullOrUndefined (ParametersFilterList), "ParameterFilters" :: NullOrUndefined (ParameterStringFilterList), "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (NextToken) } -> { "Filters" :: NullOrUndefined (ParametersFilterList), "ParameterFilters" :: NullOrUndefined (ParameterStringFilterList), "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribeParametersRequest
+newDescribeParametersRequest' :: ({ "Filters" :: Maybe (ParametersFilterList), "ParameterFilters" :: Maybe (ParameterStringFilterList), "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (NextToken) } -> { "Filters" :: Maybe (ParametersFilterList), "ParameterFilters" :: Maybe (ParameterStringFilterList), "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (NextToken) }) -> DescribeParametersRequest
 ```
 
 Constructs DescribeParametersRequest's fields from required parameters
@@ -5028,7 +5028,7 @@ Constructs DescribeParametersRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeParametersResult
-  = DescribeParametersResult { "Parameters" :: NullOrUndefined (ParameterMetadataList), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribeParametersResult { "Parameters" :: Maybe (ParameterMetadataList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -5051,7 +5051,7 @@ Constructs DescribeParametersResult from required parameters
 #### `newDescribeParametersResult'`
 
 ``` purescript
-newDescribeParametersResult' :: ({ "Parameters" :: NullOrUndefined (ParameterMetadataList), "NextToken" :: NullOrUndefined (NextToken) } -> { "Parameters" :: NullOrUndefined (ParameterMetadataList), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribeParametersResult
+newDescribeParametersResult' :: ({ "Parameters" :: Maybe (ParameterMetadataList), "NextToken" :: Maybe (NextToken) } -> { "Parameters" :: Maybe (ParameterMetadataList), "NextToken" :: Maybe (NextToken) }) -> DescribeParametersResult
 ```
 
 Constructs DescribeParametersResult's fields from required parameters
@@ -5060,7 +5060,7 @@ Constructs DescribeParametersResult's fields from required parameters
 
 ``` purescript
 newtype DescribePatchBaselinesRequest
-  = DescribePatchBaselinesRequest { "Filters" :: NullOrUndefined (PatchOrchestratorFilterList), "MaxResults" :: NullOrUndefined (PatchBaselineMaxResults), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribePatchBaselinesRequest { "Filters" :: Maybe (PatchOrchestratorFilterList), "MaxResults" :: Maybe (PatchBaselineMaxResults), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -5083,7 +5083,7 @@ Constructs DescribePatchBaselinesRequest from required parameters
 #### `newDescribePatchBaselinesRequest'`
 
 ``` purescript
-newDescribePatchBaselinesRequest' :: ({ "Filters" :: NullOrUndefined (PatchOrchestratorFilterList), "MaxResults" :: NullOrUndefined (PatchBaselineMaxResults), "NextToken" :: NullOrUndefined (NextToken) } -> { "Filters" :: NullOrUndefined (PatchOrchestratorFilterList), "MaxResults" :: NullOrUndefined (PatchBaselineMaxResults), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribePatchBaselinesRequest
+newDescribePatchBaselinesRequest' :: ({ "Filters" :: Maybe (PatchOrchestratorFilterList), "MaxResults" :: Maybe (PatchBaselineMaxResults), "NextToken" :: Maybe (NextToken) } -> { "Filters" :: Maybe (PatchOrchestratorFilterList), "MaxResults" :: Maybe (PatchBaselineMaxResults), "NextToken" :: Maybe (NextToken) }) -> DescribePatchBaselinesRequest
 ```
 
 Constructs DescribePatchBaselinesRequest's fields from required parameters
@@ -5092,7 +5092,7 @@ Constructs DescribePatchBaselinesRequest's fields from required parameters
 
 ``` purescript
 newtype DescribePatchBaselinesResult
-  = DescribePatchBaselinesResult { "BaselineIdentities" :: NullOrUndefined (PatchBaselineIdentityList), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribePatchBaselinesResult { "BaselineIdentities" :: Maybe (PatchBaselineIdentityList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -5115,7 +5115,7 @@ Constructs DescribePatchBaselinesResult from required parameters
 #### `newDescribePatchBaselinesResult'`
 
 ``` purescript
-newDescribePatchBaselinesResult' :: ({ "BaselineIdentities" :: NullOrUndefined (PatchBaselineIdentityList), "NextToken" :: NullOrUndefined (NextToken) } -> { "BaselineIdentities" :: NullOrUndefined (PatchBaselineIdentityList), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribePatchBaselinesResult
+newDescribePatchBaselinesResult' :: ({ "BaselineIdentities" :: Maybe (PatchBaselineIdentityList), "NextToken" :: Maybe (NextToken) } -> { "BaselineIdentities" :: Maybe (PatchBaselineIdentityList), "NextToken" :: Maybe (NextToken) }) -> DescribePatchBaselinesResult
 ```
 
 Constructs DescribePatchBaselinesResult's fields from required parameters
@@ -5156,7 +5156,7 @@ Constructs DescribePatchGroupStateRequest's fields from required parameters
 
 ``` purescript
 newtype DescribePatchGroupStateResult
-  = DescribePatchGroupStateResult { "Instances" :: NullOrUndefined (Int), "InstancesWithInstalledPatches" :: NullOrUndefined (Int), "InstancesWithInstalledOtherPatches" :: NullOrUndefined (Int), "InstancesWithMissingPatches" :: NullOrUndefined (Int), "InstancesWithFailedPatches" :: NullOrUndefined (Int), "InstancesWithNotApplicablePatches" :: NullOrUndefined (Int) }
+  = DescribePatchGroupStateResult { "Instances" :: Maybe (Int), "InstancesWithInstalledPatches" :: Maybe (Int), "InstancesWithInstalledOtherPatches" :: Maybe (Int), "InstancesWithMissingPatches" :: Maybe (Int), "InstancesWithFailedPatches" :: Maybe (Int), "InstancesWithNotApplicablePatches" :: Maybe (Int) }
 ```
 
 ##### Instances
@@ -5179,7 +5179,7 @@ Constructs DescribePatchGroupStateResult from required parameters
 #### `newDescribePatchGroupStateResult'`
 
 ``` purescript
-newDescribePatchGroupStateResult' :: ({ "Instances" :: NullOrUndefined (Int), "InstancesWithInstalledPatches" :: NullOrUndefined (Int), "InstancesWithInstalledOtherPatches" :: NullOrUndefined (Int), "InstancesWithMissingPatches" :: NullOrUndefined (Int), "InstancesWithFailedPatches" :: NullOrUndefined (Int), "InstancesWithNotApplicablePatches" :: NullOrUndefined (Int) } -> { "Instances" :: NullOrUndefined (Int), "InstancesWithInstalledPatches" :: NullOrUndefined (Int), "InstancesWithInstalledOtherPatches" :: NullOrUndefined (Int), "InstancesWithMissingPatches" :: NullOrUndefined (Int), "InstancesWithFailedPatches" :: NullOrUndefined (Int), "InstancesWithNotApplicablePatches" :: NullOrUndefined (Int) }) -> DescribePatchGroupStateResult
+newDescribePatchGroupStateResult' :: ({ "Instances" :: Maybe (Int), "InstancesWithInstalledPatches" :: Maybe (Int), "InstancesWithInstalledOtherPatches" :: Maybe (Int), "InstancesWithMissingPatches" :: Maybe (Int), "InstancesWithFailedPatches" :: Maybe (Int), "InstancesWithNotApplicablePatches" :: Maybe (Int) } -> { "Instances" :: Maybe (Int), "InstancesWithInstalledPatches" :: Maybe (Int), "InstancesWithInstalledOtherPatches" :: Maybe (Int), "InstancesWithMissingPatches" :: Maybe (Int), "InstancesWithFailedPatches" :: Maybe (Int), "InstancesWithNotApplicablePatches" :: Maybe (Int) }) -> DescribePatchGroupStateResult
 ```
 
 Constructs DescribePatchGroupStateResult's fields from required parameters
@@ -5188,7 +5188,7 @@ Constructs DescribePatchGroupStateResult's fields from required parameters
 
 ``` purescript
 newtype DescribePatchGroupsRequest
-  = DescribePatchGroupsRequest { "MaxResults" :: NullOrUndefined (PatchBaselineMaxResults), "Filters" :: NullOrUndefined (PatchOrchestratorFilterList), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribePatchGroupsRequest { "MaxResults" :: Maybe (PatchBaselineMaxResults), "Filters" :: Maybe (PatchOrchestratorFilterList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -5211,7 +5211,7 @@ Constructs DescribePatchGroupsRequest from required parameters
 #### `newDescribePatchGroupsRequest'`
 
 ``` purescript
-newDescribePatchGroupsRequest' :: ({ "MaxResults" :: NullOrUndefined (PatchBaselineMaxResults), "Filters" :: NullOrUndefined (PatchOrchestratorFilterList), "NextToken" :: NullOrUndefined (NextToken) } -> { "MaxResults" :: NullOrUndefined (PatchBaselineMaxResults), "Filters" :: NullOrUndefined (PatchOrchestratorFilterList), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribePatchGroupsRequest
+newDescribePatchGroupsRequest' :: ({ "MaxResults" :: Maybe (PatchBaselineMaxResults), "Filters" :: Maybe (PatchOrchestratorFilterList), "NextToken" :: Maybe (NextToken) } -> { "MaxResults" :: Maybe (PatchBaselineMaxResults), "Filters" :: Maybe (PatchOrchestratorFilterList), "NextToken" :: Maybe (NextToken) }) -> DescribePatchGroupsRequest
 ```
 
 Constructs DescribePatchGroupsRequest's fields from required parameters
@@ -5220,7 +5220,7 @@ Constructs DescribePatchGroupsRequest's fields from required parameters
 
 ``` purescript
 newtype DescribePatchGroupsResult
-  = DescribePatchGroupsResult { "Mappings" :: NullOrUndefined (PatchGroupPatchBaselineMappingList), "NextToken" :: NullOrUndefined (NextToken) }
+  = DescribePatchGroupsResult { "Mappings" :: Maybe (PatchGroupPatchBaselineMappingList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -5243,7 +5243,7 @@ Constructs DescribePatchGroupsResult from required parameters
 #### `newDescribePatchGroupsResult'`
 
 ``` purescript
-newDescribePatchGroupsResult' :: ({ "Mappings" :: NullOrUndefined (PatchGroupPatchBaselineMappingList), "NextToken" :: NullOrUndefined (NextToken) } -> { "Mappings" :: NullOrUndefined (PatchGroupPatchBaselineMappingList), "NextToken" :: NullOrUndefined (NextToken) }) -> DescribePatchGroupsResult
+newDescribePatchGroupsResult' :: ({ "Mappings" :: Maybe (PatchGroupPatchBaselineMappingList), "NextToken" :: Maybe (NextToken) } -> { "Mappings" :: Maybe (PatchGroupPatchBaselineMappingList), "NextToken" :: Maybe (NextToken) }) -> DescribePatchGroupsResult
 ```
 
 Constructs DescribePatchGroupsResult's fields from required parameters
@@ -5284,7 +5284,7 @@ Encode DocumentARN
 
 ``` purescript
 newtype DocumentAlreadyExists
-  = DocumentAlreadyExists { "Message" :: NullOrUndefined (String) }
+  = DocumentAlreadyExists { "Message" :: Maybe (String) }
 ```
 
 <p>The specified document already exists.</p>
@@ -5309,7 +5309,7 @@ Constructs DocumentAlreadyExists from required parameters
 #### `newDocumentAlreadyExists'`
 
 ``` purescript
-newDocumentAlreadyExists' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> DocumentAlreadyExists
+newDocumentAlreadyExists' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> DocumentAlreadyExists
 ```
 
 Constructs DocumentAlreadyExists's fields from required parameters
@@ -5334,7 +5334,7 @@ Encode DocumentContent
 
 ``` purescript
 newtype DocumentDefaultVersionDescription
-  = DocumentDefaultVersionDescription { "Name" :: NullOrUndefined (DocumentName), "DefaultVersion" :: NullOrUndefined (DocumentVersion) }
+  = DocumentDefaultVersionDescription { "Name" :: Maybe (DocumentName), "DefaultVersion" :: Maybe (DocumentVersion) }
 ```
 
 <p>A default version of a document.</p>
@@ -5359,7 +5359,7 @@ Constructs DocumentDefaultVersionDescription from required parameters
 #### `newDocumentDefaultVersionDescription'`
 
 ``` purescript
-newDocumentDefaultVersionDescription' :: ({ "Name" :: NullOrUndefined (DocumentName), "DefaultVersion" :: NullOrUndefined (DocumentVersion) } -> { "Name" :: NullOrUndefined (DocumentName), "DefaultVersion" :: NullOrUndefined (DocumentVersion) }) -> DocumentDefaultVersionDescription
+newDocumentDefaultVersionDescription' :: ({ "Name" :: Maybe (DocumentName), "DefaultVersion" :: Maybe (DocumentVersion) } -> { "Name" :: Maybe (DocumentName), "DefaultVersion" :: Maybe (DocumentVersion) }) -> DocumentDefaultVersionDescription
 ```
 
 Constructs DocumentDefaultVersionDescription's fields from required parameters
@@ -5368,7 +5368,7 @@ Constructs DocumentDefaultVersionDescription's fields from required parameters
 
 ``` purescript
 newtype DocumentDescription
-  = DocumentDescription { "Sha1" :: NullOrUndefined (DocumentSha1), "Hash" :: NullOrUndefined (DocumentHash), "HashType" :: NullOrUndefined (DocumentHashType), "Name" :: NullOrUndefined (DocumentARN), "Owner" :: NullOrUndefined (DocumentOwner), "CreatedDate" :: NullOrUndefined (DateTime), "Status" :: NullOrUndefined (DocumentStatus), "DocumentVersion" :: NullOrUndefined (DocumentVersion), "Description" :: NullOrUndefined (DescriptionInDocument), "Parameters" :: NullOrUndefined (DocumentParameterList), "PlatformTypes" :: NullOrUndefined (PlatformTypeList), "DocumentType" :: NullOrUndefined (DocumentType), "SchemaVersion" :: NullOrUndefined (DocumentSchemaVersion), "LatestVersion" :: NullOrUndefined (DocumentVersion), "DefaultVersion" :: NullOrUndefined (DocumentVersion), "DocumentFormat" :: NullOrUndefined (DocumentFormat), "TargetType" :: NullOrUndefined (TargetType), "Tags" :: NullOrUndefined (TagList) }
+  = DocumentDescription { "Sha1" :: Maybe (DocumentSha1), "Hash" :: Maybe (DocumentHash), "HashType" :: Maybe (DocumentHashType), "Name" :: Maybe (DocumentARN), "Owner" :: Maybe (DocumentOwner), "CreatedDate" :: Maybe (DateTime), "Status" :: Maybe (DocumentStatus), "DocumentVersion" :: Maybe (DocumentVersion), "Description" :: Maybe (DescriptionInDocument), "Parameters" :: Maybe (DocumentParameterList), "PlatformTypes" :: Maybe (PlatformTypeList), "DocumentType" :: Maybe (DocumentType), "SchemaVersion" :: Maybe (DocumentSchemaVersion), "LatestVersion" :: Maybe (DocumentVersion), "DefaultVersion" :: Maybe (DocumentVersion), "DocumentFormat" :: Maybe (DocumentFormat), "TargetType" :: Maybe (TargetType), "Tags" :: Maybe (TagList) }
 ```
 
 <p>Describes a Systems Manager document. </p>
@@ -5393,7 +5393,7 @@ Constructs DocumentDescription from required parameters
 #### `newDocumentDescription'`
 
 ``` purescript
-newDocumentDescription' :: ({ "Sha1" :: NullOrUndefined (DocumentSha1), "Hash" :: NullOrUndefined (DocumentHash), "HashType" :: NullOrUndefined (DocumentHashType), "Name" :: NullOrUndefined (DocumentARN), "Owner" :: NullOrUndefined (DocumentOwner), "CreatedDate" :: NullOrUndefined (DateTime), "Status" :: NullOrUndefined (DocumentStatus), "DocumentVersion" :: NullOrUndefined (DocumentVersion), "Description" :: NullOrUndefined (DescriptionInDocument), "Parameters" :: NullOrUndefined (DocumentParameterList), "PlatformTypes" :: NullOrUndefined (PlatformTypeList), "DocumentType" :: NullOrUndefined (DocumentType), "SchemaVersion" :: NullOrUndefined (DocumentSchemaVersion), "LatestVersion" :: NullOrUndefined (DocumentVersion), "DefaultVersion" :: NullOrUndefined (DocumentVersion), "DocumentFormat" :: NullOrUndefined (DocumentFormat), "TargetType" :: NullOrUndefined (TargetType), "Tags" :: NullOrUndefined (TagList) } -> { "Sha1" :: NullOrUndefined (DocumentSha1), "Hash" :: NullOrUndefined (DocumentHash), "HashType" :: NullOrUndefined (DocumentHashType), "Name" :: NullOrUndefined (DocumentARN), "Owner" :: NullOrUndefined (DocumentOwner), "CreatedDate" :: NullOrUndefined (DateTime), "Status" :: NullOrUndefined (DocumentStatus), "DocumentVersion" :: NullOrUndefined (DocumentVersion), "Description" :: NullOrUndefined (DescriptionInDocument), "Parameters" :: NullOrUndefined (DocumentParameterList), "PlatformTypes" :: NullOrUndefined (PlatformTypeList), "DocumentType" :: NullOrUndefined (DocumentType), "SchemaVersion" :: NullOrUndefined (DocumentSchemaVersion), "LatestVersion" :: NullOrUndefined (DocumentVersion), "DefaultVersion" :: NullOrUndefined (DocumentVersion), "DocumentFormat" :: NullOrUndefined (DocumentFormat), "TargetType" :: NullOrUndefined (TargetType), "Tags" :: NullOrUndefined (TagList) }) -> DocumentDescription
+newDocumentDescription' :: ({ "Sha1" :: Maybe (DocumentSha1), "Hash" :: Maybe (DocumentHash), "HashType" :: Maybe (DocumentHashType), "Name" :: Maybe (DocumentARN), "Owner" :: Maybe (DocumentOwner), "CreatedDate" :: Maybe (DateTime), "Status" :: Maybe (DocumentStatus), "DocumentVersion" :: Maybe (DocumentVersion), "Description" :: Maybe (DescriptionInDocument), "Parameters" :: Maybe (DocumentParameterList), "PlatformTypes" :: Maybe (PlatformTypeList), "DocumentType" :: Maybe (DocumentType), "SchemaVersion" :: Maybe (DocumentSchemaVersion), "LatestVersion" :: Maybe (DocumentVersion), "DefaultVersion" :: Maybe (DocumentVersion), "DocumentFormat" :: Maybe (DocumentFormat), "TargetType" :: Maybe (TargetType), "Tags" :: Maybe (TagList) } -> { "Sha1" :: Maybe (DocumentSha1), "Hash" :: Maybe (DocumentHash), "HashType" :: Maybe (DocumentHashType), "Name" :: Maybe (DocumentARN), "Owner" :: Maybe (DocumentOwner), "CreatedDate" :: Maybe (DateTime), "Status" :: Maybe (DocumentStatus), "DocumentVersion" :: Maybe (DocumentVersion), "Description" :: Maybe (DescriptionInDocument), "Parameters" :: Maybe (DocumentParameterList), "PlatformTypes" :: Maybe (PlatformTypeList), "DocumentType" :: Maybe (DocumentType), "SchemaVersion" :: Maybe (DocumentSchemaVersion), "LatestVersion" :: Maybe (DocumentVersion), "DefaultVersion" :: Maybe (DocumentVersion), "DocumentFormat" :: Maybe (DocumentFormat), "TargetType" :: Maybe (TargetType), "Tags" :: Maybe (TagList) }) -> DocumentDescription
 ```
 
 Constructs DocumentDescription's fields from required parameters
@@ -5532,7 +5532,7 @@ Encode DocumentHashType
 
 ``` purescript
 newtype DocumentIdentifier
-  = DocumentIdentifier { "Name" :: NullOrUndefined (DocumentARN), "Owner" :: NullOrUndefined (DocumentOwner), "PlatformTypes" :: NullOrUndefined (PlatformTypeList), "DocumentVersion" :: NullOrUndefined (DocumentVersion), "DocumentType" :: NullOrUndefined (DocumentType), "SchemaVersion" :: NullOrUndefined (DocumentSchemaVersion), "DocumentFormat" :: NullOrUndefined (DocumentFormat), "TargetType" :: NullOrUndefined (TargetType), "Tags" :: NullOrUndefined (TagList) }
+  = DocumentIdentifier { "Name" :: Maybe (DocumentARN), "Owner" :: Maybe (DocumentOwner), "PlatformTypes" :: Maybe (PlatformTypeList), "DocumentVersion" :: Maybe (DocumentVersion), "DocumentType" :: Maybe (DocumentType), "SchemaVersion" :: Maybe (DocumentSchemaVersion), "DocumentFormat" :: Maybe (DocumentFormat), "TargetType" :: Maybe (TargetType), "Tags" :: Maybe (TagList) }
 ```
 
 <p>Describes the name of a Systems Manager document.</p>
@@ -5557,7 +5557,7 @@ Constructs DocumentIdentifier from required parameters
 #### `newDocumentIdentifier'`
 
 ``` purescript
-newDocumentIdentifier' :: ({ "Name" :: NullOrUndefined (DocumentARN), "Owner" :: NullOrUndefined (DocumentOwner), "PlatformTypes" :: NullOrUndefined (PlatformTypeList), "DocumentVersion" :: NullOrUndefined (DocumentVersion), "DocumentType" :: NullOrUndefined (DocumentType), "SchemaVersion" :: NullOrUndefined (DocumentSchemaVersion), "DocumentFormat" :: NullOrUndefined (DocumentFormat), "TargetType" :: NullOrUndefined (TargetType), "Tags" :: NullOrUndefined (TagList) } -> { "Name" :: NullOrUndefined (DocumentARN), "Owner" :: NullOrUndefined (DocumentOwner), "PlatformTypes" :: NullOrUndefined (PlatformTypeList), "DocumentVersion" :: NullOrUndefined (DocumentVersion), "DocumentType" :: NullOrUndefined (DocumentType), "SchemaVersion" :: NullOrUndefined (DocumentSchemaVersion), "DocumentFormat" :: NullOrUndefined (DocumentFormat), "TargetType" :: NullOrUndefined (TargetType), "Tags" :: NullOrUndefined (TagList) }) -> DocumentIdentifier
+newDocumentIdentifier' :: ({ "Name" :: Maybe (DocumentARN), "Owner" :: Maybe (DocumentOwner), "PlatformTypes" :: Maybe (PlatformTypeList), "DocumentVersion" :: Maybe (DocumentVersion), "DocumentType" :: Maybe (DocumentType), "SchemaVersion" :: Maybe (DocumentSchemaVersion), "DocumentFormat" :: Maybe (DocumentFormat), "TargetType" :: Maybe (TargetType), "Tags" :: Maybe (TagList) } -> { "Name" :: Maybe (DocumentARN), "Owner" :: Maybe (DocumentOwner), "PlatformTypes" :: Maybe (PlatformTypeList), "DocumentVersion" :: Maybe (DocumentVersion), "DocumentType" :: Maybe (DocumentType), "SchemaVersion" :: Maybe (DocumentSchemaVersion), "DocumentFormat" :: Maybe (DocumentFormat), "TargetType" :: Maybe (TargetType), "Tags" :: Maybe (TagList) }) -> DocumentIdentifier
 ```
 
 Constructs DocumentIdentifier's fields from required parameters
@@ -5582,7 +5582,7 @@ Encode DocumentIdentifierList
 
 ``` purescript
 newtype DocumentKeyValuesFilter
-  = DocumentKeyValuesFilter { "Key" :: NullOrUndefined (DocumentKeyValuesFilterKey), "Values" :: NullOrUndefined (DocumentKeyValuesFilterValues) }
+  = DocumentKeyValuesFilter { "Key" :: Maybe (DocumentKeyValuesFilterKey), "Values" :: Maybe (DocumentKeyValuesFilterValues) }
 ```
 
 <p>One or more filters. Use a filter to return a more specific list of documents.</p> <p>For keys, you can specify one or more tags that have been applied to a document. </p> <p>Other valid values include Owner, Name, PlatformTypes, and DocumentType.</p> <p>Note that only one Owner can be specified in a request. For example: <code>Key=Owner,Values=Self</code>.</p> <p>If you use Name as a key, you can use a name prefix to return a list of documents. For example, in the AWS CLI, to return a list of all documents that begin with <code>Te</code>, run the following command:</p> <p> <code>aws ssm list-documents --filters Key=Name,Values=Te</code> </p> <p>If you specify more than two keys, only documents that are identified by all the tags are returned in the results. If you specify more than two values for a key, documents that are identified by any of the values are returned in the results.</p> <p>To specify a custom key and value pair, use the format <code>Key=tag:[tagName],Values=[valueName]</code>.</p> <p>For example, if you created a Key called region and are using the AWS CLI to call the <code>list-documents</code> command: </p> <p> <code>aws ssm list-documents --filters Key=tag:region,Values=east,west Key=Owner,Values=Self</code> </p>
@@ -5607,7 +5607,7 @@ Constructs DocumentKeyValuesFilter from required parameters
 #### `newDocumentKeyValuesFilter'`
 
 ``` purescript
-newDocumentKeyValuesFilter' :: ({ "Key" :: NullOrUndefined (DocumentKeyValuesFilterKey), "Values" :: NullOrUndefined (DocumentKeyValuesFilterValues) } -> { "Key" :: NullOrUndefined (DocumentKeyValuesFilterKey), "Values" :: NullOrUndefined (DocumentKeyValuesFilterValues) }) -> DocumentKeyValuesFilter
+newDocumentKeyValuesFilter' :: ({ "Key" :: Maybe (DocumentKeyValuesFilterKey), "Values" :: Maybe (DocumentKeyValuesFilterValues) } -> { "Key" :: Maybe (DocumentKeyValuesFilterKey), "Values" :: Maybe (DocumentKeyValuesFilterValues) }) -> DocumentKeyValuesFilter
 ```
 
 Constructs DocumentKeyValuesFilter's fields from required parameters
@@ -5680,7 +5680,7 @@ Encode DocumentKeyValuesFilterValues
 
 ``` purescript
 newtype DocumentLimitExceeded
-  = DocumentLimitExceeded { "Message" :: NullOrUndefined (String) }
+  = DocumentLimitExceeded { "Message" :: Maybe (String) }
 ```
 
 <p>You can have at most 200 active Systems Manager documents.</p>
@@ -5705,7 +5705,7 @@ Constructs DocumentLimitExceeded from required parameters
 #### `newDocumentLimitExceeded'`
 
 ``` purescript
-newDocumentLimitExceeded' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> DocumentLimitExceeded
+newDocumentLimitExceeded' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> DocumentLimitExceeded
 ```
 
 Constructs DocumentLimitExceeded's fields from required parameters
@@ -5746,7 +5746,7 @@ Encode DocumentOwner
 
 ``` purescript
 newtype DocumentParameter
-  = DocumentParameter { "Name" :: NullOrUndefined (DocumentParameterName), "Type" :: NullOrUndefined (DocumentParameterType), "Description" :: NullOrUndefined (DocumentParameterDescrption), "DefaultValue" :: NullOrUndefined (DocumentParameterDefaultValue) }
+  = DocumentParameter { "Name" :: Maybe (DocumentParameterName), "Type" :: Maybe (DocumentParameterType), "Description" :: Maybe (DocumentParameterDescrption), "DefaultValue" :: Maybe (DocumentParameterDefaultValue) }
 ```
 
 <p>Parameters specified in a System Manager document that execute on the server when the command is run. </p>
@@ -5771,7 +5771,7 @@ Constructs DocumentParameter from required parameters
 #### `newDocumentParameter'`
 
 ``` purescript
-newDocumentParameter' :: ({ "Name" :: NullOrUndefined (DocumentParameterName), "Type" :: NullOrUndefined (DocumentParameterType), "Description" :: NullOrUndefined (DocumentParameterDescrption), "DefaultValue" :: NullOrUndefined (DocumentParameterDefaultValue) } -> { "Name" :: NullOrUndefined (DocumentParameterName), "Type" :: NullOrUndefined (DocumentParameterType), "Description" :: NullOrUndefined (DocumentParameterDescrption), "DefaultValue" :: NullOrUndefined (DocumentParameterDefaultValue) }) -> DocumentParameter
+newDocumentParameter' :: ({ "Name" :: Maybe (DocumentParameterName), "Type" :: Maybe (DocumentParameterType), "Description" :: Maybe (DocumentParameterDescrption), "DefaultValue" :: Maybe (DocumentParameterDefaultValue) } -> { "Name" :: Maybe (DocumentParameterName), "Type" :: Maybe (DocumentParameterType), "Description" :: Maybe (DocumentParameterDescrption), "DefaultValue" :: Maybe (DocumentParameterDefaultValue) }) -> DocumentParameter
 ```
 
 Constructs DocumentParameter's fields from required parameters
@@ -5860,7 +5860,7 @@ Encode DocumentParameterType
 
 ``` purescript
 newtype DocumentPermissionLimit
-  = DocumentPermissionLimit { "Message" :: NullOrUndefined (String) }
+  = DocumentPermissionLimit { "Message" :: Maybe (String) }
 ```
 
 <p>The document cannot be shared with more AWS user accounts. You can share a document with a maximum of 20 accounts. You can publicly share up to five documents. If you need to increase this limit, contact AWS Support.</p>
@@ -5885,7 +5885,7 @@ Constructs DocumentPermissionLimit from required parameters
 #### `newDocumentPermissionLimit'`
 
 ``` purescript
-newDocumentPermissionLimit' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> DocumentPermissionLimit
+newDocumentPermissionLimit' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> DocumentPermissionLimit
 ```
 
 Constructs DocumentPermissionLimit's fields from required parameters
@@ -5990,7 +5990,7 @@ Encode DocumentVersion
 
 ``` purescript
 newtype DocumentVersionInfo
-  = DocumentVersionInfo { "Name" :: NullOrUndefined (DocumentName), "DocumentVersion" :: NullOrUndefined (DocumentVersion), "CreatedDate" :: NullOrUndefined (DateTime), "IsDefaultVersion" :: NullOrUndefined (Boolean), "DocumentFormat" :: NullOrUndefined (DocumentFormat) }
+  = DocumentVersionInfo { "Name" :: Maybe (DocumentName), "DocumentVersion" :: Maybe (DocumentVersion), "CreatedDate" :: Maybe (DateTime), "IsDefaultVersion" :: Maybe (Boolean), "DocumentFormat" :: Maybe (DocumentFormat) }
 ```
 
 <p>Version information about the document.</p>
@@ -6015,7 +6015,7 @@ Constructs DocumentVersionInfo from required parameters
 #### `newDocumentVersionInfo'`
 
 ``` purescript
-newDocumentVersionInfo' :: ({ "Name" :: NullOrUndefined (DocumentName), "DocumentVersion" :: NullOrUndefined (DocumentVersion), "CreatedDate" :: NullOrUndefined (DateTime), "IsDefaultVersion" :: NullOrUndefined (Boolean), "DocumentFormat" :: NullOrUndefined (DocumentFormat) } -> { "Name" :: NullOrUndefined (DocumentName), "DocumentVersion" :: NullOrUndefined (DocumentVersion), "CreatedDate" :: NullOrUndefined (DateTime), "IsDefaultVersion" :: NullOrUndefined (Boolean), "DocumentFormat" :: NullOrUndefined (DocumentFormat) }) -> DocumentVersionInfo
+newDocumentVersionInfo' :: ({ "Name" :: Maybe (DocumentName), "DocumentVersion" :: Maybe (DocumentVersion), "CreatedDate" :: Maybe (DateTime), "IsDefaultVersion" :: Maybe (Boolean), "DocumentFormat" :: Maybe (DocumentFormat) } -> { "Name" :: Maybe (DocumentName), "DocumentVersion" :: Maybe (DocumentVersion), "CreatedDate" :: Maybe (DateTime), "IsDefaultVersion" :: Maybe (Boolean), "DocumentFormat" :: Maybe (DocumentFormat) }) -> DocumentVersionInfo
 ```
 
 Constructs DocumentVersionInfo's fields from required parameters
@@ -6024,7 +6024,7 @@ Constructs DocumentVersionInfo's fields from required parameters
 
 ``` purescript
 newtype DocumentVersionLimitExceeded
-  = DocumentVersionLimitExceeded { "Message" :: NullOrUndefined (String) }
+  = DocumentVersionLimitExceeded { "Message" :: Maybe (String) }
 ```
 
 <p>The document has too many versions. Delete one or more document versions and try again.</p>
@@ -6049,7 +6049,7 @@ Constructs DocumentVersionLimitExceeded from required parameters
 #### `newDocumentVersionLimitExceeded'`
 
 ``` purescript
-newDocumentVersionLimitExceeded' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> DocumentVersionLimitExceeded
+newDocumentVersionLimitExceeded' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> DocumentVersionLimitExceeded
 ```
 
 Constructs DocumentVersionLimitExceeded's fields from required parameters
@@ -6090,7 +6090,7 @@ Encode DocumentVersionNumber
 
 ``` purescript
 newtype DoesNotExistException
-  = DoesNotExistException { "Message" :: NullOrUndefined (String) }
+  = DoesNotExistException { "Message" :: Maybe (String) }
 ```
 
 <p>Error returned when the ID specified for a resource, such as a Maintenance Window or Patch baseline, doesn't exist.</p> <p>For information about resource limits in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems Manager Limits</a>.</p>
@@ -6115,7 +6115,7 @@ Constructs DoesNotExistException from required parameters
 #### `newDoesNotExistException'`
 
 ``` purescript
-newDoesNotExistException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> DoesNotExistException
+newDoesNotExistException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> DoesNotExistException
 ```
 
 Constructs DoesNotExistException's fields from required parameters
@@ -6124,7 +6124,7 @@ Constructs DoesNotExistException's fields from required parameters
 
 ``` purescript
 newtype DuplicateDocumentContent
-  = DuplicateDocumentContent { "Message" :: NullOrUndefined (String) }
+  = DuplicateDocumentContent { "Message" :: Maybe (String) }
 ```
 
 <p>The content of the association document matches another document. Change the content of the document and try again.</p>
@@ -6149,7 +6149,7 @@ Constructs DuplicateDocumentContent from required parameters
 #### `newDuplicateDocumentContent'`
 
 ``` purescript
-newDuplicateDocumentContent' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> DuplicateDocumentContent
+newDuplicateDocumentContent' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> DuplicateDocumentContent
 ```
 
 Constructs DuplicateDocumentContent's fields from required parameters
@@ -6192,7 +6192,7 @@ Encode EffectiveInstanceAssociationMaxResults
 
 ``` purescript
 newtype EffectivePatch
-  = EffectivePatch { "Patch" :: NullOrUndefined (Patch), "PatchStatus" :: NullOrUndefined (PatchStatus) }
+  = EffectivePatch { "Patch" :: Maybe (Patch), "PatchStatus" :: Maybe (PatchStatus) }
 ```
 
 <p>The EffectivePatch structure defines metadata about a patch along with the approval state of the patch in a particular patch baseline. The approval state includes information about whether the patch is currently approved, due to be approved by a rule, explicitly approved, or explicitly rejected and the date the patch was or will be approved.</p>
@@ -6217,7 +6217,7 @@ Constructs EffectivePatch from required parameters
 #### `newEffectivePatch'`
 
 ``` purescript
-newEffectivePatch' :: ({ "Patch" :: NullOrUndefined (Patch), "PatchStatus" :: NullOrUndefined (PatchStatus) } -> { "Patch" :: NullOrUndefined (Patch), "PatchStatus" :: NullOrUndefined (PatchStatus) }) -> EffectivePatch
+newEffectivePatch' :: ({ "Patch" :: Maybe (Patch), "PatchStatus" :: Maybe (PatchStatus) } -> { "Patch" :: Maybe (Patch), "PatchStatus" :: Maybe (PatchStatus) }) -> EffectivePatch
 ```
 
 Constructs EffectivePatch's fields from required parameters
@@ -6290,7 +6290,7 @@ Encode ExpirationDate
 
 ``` purescript
 newtype FailedCreateAssociation
-  = FailedCreateAssociation { "Entry" :: NullOrUndefined (CreateAssociationBatchRequestEntry), "Message" :: NullOrUndefined (BatchErrorMessage), "Fault" :: NullOrUndefined (Fault) }
+  = FailedCreateAssociation { "Entry" :: Maybe (CreateAssociationBatchRequestEntry), "Message" :: Maybe (BatchErrorMessage), "Fault" :: Maybe (Fault) }
 ```
 
 <p>Describes a failed association.</p>
@@ -6315,7 +6315,7 @@ Constructs FailedCreateAssociation from required parameters
 #### `newFailedCreateAssociation'`
 
 ``` purescript
-newFailedCreateAssociation' :: ({ "Entry" :: NullOrUndefined (CreateAssociationBatchRequestEntry), "Message" :: NullOrUndefined (BatchErrorMessage), "Fault" :: NullOrUndefined (Fault) } -> { "Entry" :: NullOrUndefined (CreateAssociationBatchRequestEntry), "Message" :: NullOrUndefined (BatchErrorMessage), "Fault" :: NullOrUndefined (Fault) }) -> FailedCreateAssociation
+newFailedCreateAssociation' :: ({ "Entry" :: Maybe (CreateAssociationBatchRequestEntry), "Message" :: Maybe (BatchErrorMessage), "Fault" :: Maybe (Fault) } -> { "Entry" :: Maybe (CreateAssociationBatchRequestEntry), "Message" :: Maybe (BatchErrorMessage), "Fault" :: Maybe (Fault) }) -> FailedCreateAssociation
 ```
 
 Constructs FailedCreateAssociation's fields from required parameters
@@ -6340,7 +6340,7 @@ Encode FailedCreateAssociationList
 
 ``` purescript
 newtype FailureDetails
-  = FailureDetails { "FailureStage" :: NullOrUndefined (String), "FailureType" :: NullOrUndefined (String), "Details" :: NullOrUndefined (AutomationParameterMap) }
+  = FailureDetails { "FailureStage" :: Maybe (String), "FailureType" :: Maybe (String), "Details" :: Maybe (AutomationParameterMap) }
 ```
 
 <p>Information about an Automation failure.</p>
@@ -6365,7 +6365,7 @@ Constructs FailureDetails from required parameters
 #### `newFailureDetails'`
 
 ``` purescript
-newFailureDetails' :: ({ "FailureStage" :: NullOrUndefined (String), "FailureType" :: NullOrUndefined (String), "Details" :: NullOrUndefined (AutomationParameterMap) } -> { "FailureStage" :: NullOrUndefined (String), "FailureType" :: NullOrUndefined (String), "Details" :: NullOrUndefined (AutomationParameterMap) }) -> FailureDetails
+newFailureDetails' :: ({ "FailureStage" :: Maybe (String), "FailureType" :: Maybe (String), "Details" :: Maybe (AutomationParameterMap) } -> { "FailureStage" :: Maybe (String), "FailureType" :: Maybe (String), "Details" :: Maybe (AutomationParameterMap) }) -> FailureDetails
 ```
 
 Constructs FailureDetails's fields from required parameters
@@ -6390,7 +6390,7 @@ Encode Fault
 
 ``` purescript
 newtype FeatureNotAvailableException
-  = FeatureNotAvailableException { "Message" :: NullOrUndefined (String) }
+  = FeatureNotAvailableException { "Message" :: Maybe (String) }
 ```
 
 <p>You attempted to register a LAMBDA or STEP_FUNCTION task in a region where the corresponding service is not available. </p>
@@ -6415,7 +6415,7 @@ Constructs FeatureNotAvailableException from required parameters
 #### `newFeatureNotAvailableException'`
 
 ``` purescript
-newFeatureNotAvailableException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> FeatureNotAvailableException
+newFeatureNotAvailableException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> FeatureNotAvailableException
 ```
 
 Constructs FeatureNotAvailableException's fields from required parameters
@@ -6456,7 +6456,7 @@ Constructs GetAutomationExecutionRequest's fields from required parameters
 
 ``` purescript
 newtype GetAutomationExecutionResult
-  = GetAutomationExecutionResult { "AutomationExecution" :: NullOrUndefined (AutomationExecution) }
+  = GetAutomationExecutionResult { "AutomationExecution" :: Maybe (AutomationExecution) }
 ```
 
 ##### Instances
@@ -6479,7 +6479,7 @@ Constructs GetAutomationExecutionResult from required parameters
 #### `newGetAutomationExecutionResult'`
 
 ``` purescript
-newGetAutomationExecutionResult' :: ({ "AutomationExecution" :: NullOrUndefined (AutomationExecution) } -> { "AutomationExecution" :: NullOrUndefined (AutomationExecution) }) -> GetAutomationExecutionResult
+newGetAutomationExecutionResult' :: ({ "AutomationExecution" :: Maybe (AutomationExecution) } -> { "AutomationExecution" :: Maybe (AutomationExecution) }) -> GetAutomationExecutionResult
 ```
 
 Constructs GetAutomationExecutionResult's fields from required parameters
@@ -6488,7 +6488,7 @@ Constructs GetAutomationExecutionResult's fields from required parameters
 
 ``` purescript
 newtype GetCommandInvocationRequest
-  = GetCommandInvocationRequest { "CommandId" :: CommandId, "InstanceId" :: InstanceId, "PluginName" :: NullOrUndefined (CommandPluginName) }
+  = GetCommandInvocationRequest { "CommandId" :: CommandId, "InstanceId" :: InstanceId, "PluginName" :: Maybe (CommandPluginName) }
 ```
 
 ##### Instances
@@ -6511,7 +6511,7 @@ Constructs GetCommandInvocationRequest from required parameters
 #### `newGetCommandInvocationRequest'`
 
 ``` purescript
-newGetCommandInvocationRequest' :: CommandId -> InstanceId -> ({ "CommandId" :: CommandId, "InstanceId" :: InstanceId, "PluginName" :: NullOrUndefined (CommandPluginName) } -> { "CommandId" :: CommandId, "InstanceId" :: InstanceId, "PluginName" :: NullOrUndefined (CommandPluginName) }) -> GetCommandInvocationRequest
+newGetCommandInvocationRequest' :: CommandId -> InstanceId -> ({ "CommandId" :: CommandId, "InstanceId" :: InstanceId, "PluginName" :: Maybe (CommandPluginName) } -> { "CommandId" :: CommandId, "InstanceId" :: InstanceId, "PluginName" :: Maybe (CommandPluginName) }) -> GetCommandInvocationRequest
 ```
 
 Constructs GetCommandInvocationRequest's fields from required parameters
@@ -6520,7 +6520,7 @@ Constructs GetCommandInvocationRequest's fields from required parameters
 
 ``` purescript
 newtype GetCommandInvocationResult
-  = GetCommandInvocationResult { "CommandId" :: NullOrUndefined (CommandId), "InstanceId" :: NullOrUndefined (InstanceId), "Comment" :: NullOrUndefined (Comment), "DocumentName" :: NullOrUndefined (DocumentName), "PluginName" :: NullOrUndefined (CommandPluginName), "ResponseCode" :: NullOrUndefined (ResponseCode), "ExecutionStartDateTime" :: NullOrUndefined (StringDateTime), "ExecutionElapsedTime" :: NullOrUndefined (StringDateTime), "ExecutionEndDateTime" :: NullOrUndefined (StringDateTime), "Status" :: NullOrUndefined (CommandInvocationStatus), "StatusDetails" :: NullOrUndefined (StatusDetails), "StandardOutputContent" :: NullOrUndefined (StandardOutputContent), "StandardOutputUrl" :: NullOrUndefined (Url), "StandardErrorContent" :: NullOrUndefined (StandardErrorContent), "StandardErrorUrl" :: NullOrUndefined (Url) }
+  = GetCommandInvocationResult { "CommandId" :: Maybe (CommandId), "InstanceId" :: Maybe (InstanceId), "Comment" :: Maybe (Comment), "DocumentName" :: Maybe (DocumentName), "PluginName" :: Maybe (CommandPluginName), "ResponseCode" :: Maybe (ResponseCode), "ExecutionStartDateTime" :: Maybe (StringDateTime), "ExecutionElapsedTime" :: Maybe (StringDateTime), "ExecutionEndDateTime" :: Maybe (StringDateTime), "Status" :: Maybe (CommandInvocationStatus), "StatusDetails" :: Maybe (StatusDetails), "StandardOutputContent" :: Maybe (StandardOutputContent), "StandardOutputUrl" :: Maybe (Url), "StandardErrorContent" :: Maybe (StandardErrorContent), "StandardErrorUrl" :: Maybe (Url) }
 ```
 
 ##### Instances
@@ -6543,7 +6543,7 @@ Constructs GetCommandInvocationResult from required parameters
 #### `newGetCommandInvocationResult'`
 
 ``` purescript
-newGetCommandInvocationResult' :: ({ "CommandId" :: NullOrUndefined (CommandId), "InstanceId" :: NullOrUndefined (InstanceId), "Comment" :: NullOrUndefined (Comment), "DocumentName" :: NullOrUndefined (DocumentName), "PluginName" :: NullOrUndefined (CommandPluginName), "ResponseCode" :: NullOrUndefined (ResponseCode), "ExecutionStartDateTime" :: NullOrUndefined (StringDateTime), "ExecutionElapsedTime" :: NullOrUndefined (StringDateTime), "ExecutionEndDateTime" :: NullOrUndefined (StringDateTime), "Status" :: NullOrUndefined (CommandInvocationStatus), "StatusDetails" :: NullOrUndefined (StatusDetails), "StandardOutputContent" :: NullOrUndefined (StandardOutputContent), "StandardOutputUrl" :: NullOrUndefined (Url), "StandardErrorContent" :: NullOrUndefined (StandardErrorContent), "StandardErrorUrl" :: NullOrUndefined (Url) } -> { "CommandId" :: NullOrUndefined (CommandId), "InstanceId" :: NullOrUndefined (InstanceId), "Comment" :: NullOrUndefined (Comment), "DocumentName" :: NullOrUndefined (DocumentName), "PluginName" :: NullOrUndefined (CommandPluginName), "ResponseCode" :: NullOrUndefined (ResponseCode), "ExecutionStartDateTime" :: NullOrUndefined (StringDateTime), "ExecutionElapsedTime" :: NullOrUndefined (StringDateTime), "ExecutionEndDateTime" :: NullOrUndefined (StringDateTime), "Status" :: NullOrUndefined (CommandInvocationStatus), "StatusDetails" :: NullOrUndefined (StatusDetails), "StandardOutputContent" :: NullOrUndefined (StandardOutputContent), "StandardOutputUrl" :: NullOrUndefined (Url), "StandardErrorContent" :: NullOrUndefined (StandardErrorContent), "StandardErrorUrl" :: NullOrUndefined (Url) }) -> GetCommandInvocationResult
+newGetCommandInvocationResult' :: ({ "CommandId" :: Maybe (CommandId), "InstanceId" :: Maybe (InstanceId), "Comment" :: Maybe (Comment), "DocumentName" :: Maybe (DocumentName), "PluginName" :: Maybe (CommandPluginName), "ResponseCode" :: Maybe (ResponseCode), "ExecutionStartDateTime" :: Maybe (StringDateTime), "ExecutionElapsedTime" :: Maybe (StringDateTime), "ExecutionEndDateTime" :: Maybe (StringDateTime), "Status" :: Maybe (CommandInvocationStatus), "StatusDetails" :: Maybe (StatusDetails), "StandardOutputContent" :: Maybe (StandardOutputContent), "StandardOutputUrl" :: Maybe (Url), "StandardErrorContent" :: Maybe (StandardErrorContent), "StandardErrorUrl" :: Maybe (Url) } -> { "CommandId" :: Maybe (CommandId), "InstanceId" :: Maybe (InstanceId), "Comment" :: Maybe (Comment), "DocumentName" :: Maybe (DocumentName), "PluginName" :: Maybe (CommandPluginName), "ResponseCode" :: Maybe (ResponseCode), "ExecutionStartDateTime" :: Maybe (StringDateTime), "ExecutionElapsedTime" :: Maybe (StringDateTime), "ExecutionEndDateTime" :: Maybe (StringDateTime), "Status" :: Maybe (CommandInvocationStatus), "StatusDetails" :: Maybe (StatusDetails), "StandardOutputContent" :: Maybe (StandardOutputContent), "StandardOutputUrl" :: Maybe (Url), "StandardErrorContent" :: Maybe (StandardErrorContent), "StandardErrorUrl" :: Maybe (Url) }) -> GetCommandInvocationResult
 ```
 
 Constructs GetCommandInvocationResult's fields from required parameters
@@ -6552,7 +6552,7 @@ Constructs GetCommandInvocationResult's fields from required parameters
 
 ``` purescript
 newtype GetDefaultPatchBaselineRequest
-  = GetDefaultPatchBaselineRequest { "OperatingSystem" :: NullOrUndefined (OperatingSystem) }
+  = GetDefaultPatchBaselineRequest { "OperatingSystem" :: Maybe (OperatingSystem) }
 ```
 
 ##### Instances
@@ -6575,7 +6575,7 @@ Constructs GetDefaultPatchBaselineRequest from required parameters
 #### `newGetDefaultPatchBaselineRequest'`
 
 ``` purescript
-newGetDefaultPatchBaselineRequest' :: ({ "OperatingSystem" :: NullOrUndefined (OperatingSystem) } -> { "OperatingSystem" :: NullOrUndefined (OperatingSystem) }) -> GetDefaultPatchBaselineRequest
+newGetDefaultPatchBaselineRequest' :: ({ "OperatingSystem" :: Maybe (OperatingSystem) } -> { "OperatingSystem" :: Maybe (OperatingSystem) }) -> GetDefaultPatchBaselineRequest
 ```
 
 Constructs GetDefaultPatchBaselineRequest's fields from required parameters
@@ -6584,7 +6584,7 @@ Constructs GetDefaultPatchBaselineRequest's fields from required parameters
 
 ``` purescript
 newtype GetDefaultPatchBaselineResult
-  = GetDefaultPatchBaselineResult { "BaselineId" :: NullOrUndefined (BaselineId), "OperatingSystem" :: NullOrUndefined (OperatingSystem) }
+  = GetDefaultPatchBaselineResult { "BaselineId" :: Maybe (BaselineId), "OperatingSystem" :: Maybe (OperatingSystem) }
 ```
 
 ##### Instances
@@ -6607,7 +6607,7 @@ Constructs GetDefaultPatchBaselineResult from required parameters
 #### `newGetDefaultPatchBaselineResult'`
 
 ``` purescript
-newGetDefaultPatchBaselineResult' :: ({ "BaselineId" :: NullOrUndefined (BaselineId), "OperatingSystem" :: NullOrUndefined (OperatingSystem) } -> { "BaselineId" :: NullOrUndefined (BaselineId), "OperatingSystem" :: NullOrUndefined (OperatingSystem) }) -> GetDefaultPatchBaselineResult
+newGetDefaultPatchBaselineResult' :: ({ "BaselineId" :: Maybe (BaselineId), "OperatingSystem" :: Maybe (OperatingSystem) } -> { "BaselineId" :: Maybe (BaselineId), "OperatingSystem" :: Maybe (OperatingSystem) }) -> GetDefaultPatchBaselineResult
 ```
 
 Constructs GetDefaultPatchBaselineResult's fields from required parameters
@@ -6648,7 +6648,7 @@ Constructs GetDeployablePatchSnapshotForInstanceRequest's fields from required p
 
 ``` purescript
 newtype GetDeployablePatchSnapshotForInstanceResult
-  = GetDeployablePatchSnapshotForInstanceResult { "InstanceId" :: NullOrUndefined (InstanceId), "SnapshotId" :: NullOrUndefined (SnapshotId), "SnapshotDownloadUrl" :: NullOrUndefined (SnapshotDownloadUrl), "Product" :: NullOrUndefined (Product) }
+  = GetDeployablePatchSnapshotForInstanceResult { "InstanceId" :: Maybe (InstanceId), "SnapshotId" :: Maybe (SnapshotId), "SnapshotDownloadUrl" :: Maybe (SnapshotDownloadUrl), "Product" :: Maybe (Product) }
 ```
 
 ##### Instances
@@ -6671,7 +6671,7 @@ Constructs GetDeployablePatchSnapshotForInstanceResult from required parameters
 #### `newGetDeployablePatchSnapshotForInstanceResult'`
 
 ``` purescript
-newGetDeployablePatchSnapshotForInstanceResult' :: ({ "InstanceId" :: NullOrUndefined (InstanceId), "SnapshotId" :: NullOrUndefined (SnapshotId), "SnapshotDownloadUrl" :: NullOrUndefined (SnapshotDownloadUrl), "Product" :: NullOrUndefined (Product) } -> { "InstanceId" :: NullOrUndefined (InstanceId), "SnapshotId" :: NullOrUndefined (SnapshotId), "SnapshotDownloadUrl" :: NullOrUndefined (SnapshotDownloadUrl), "Product" :: NullOrUndefined (Product) }) -> GetDeployablePatchSnapshotForInstanceResult
+newGetDeployablePatchSnapshotForInstanceResult' :: ({ "InstanceId" :: Maybe (InstanceId), "SnapshotId" :: Maybe (SnapshotId), "SnapshotDownloadUrl" :: Maybe (SnapshotDownloadUrl), "Product" :: Maybe (Product) } -> { "InstanceId" :: Maybe (InstanceId), "SnapshotId" :: Maybe (SnapshotId), "SnapshotDownloadUrl" :: Maybe (SnapshotDownloadUrl), "Product" :: Maybe (Product) }) -> GetDeployablePatchSnapshotForInstanceResult
 ```
 
 Constructs GetDeployablePatchSnapshotForInstanceResult's fields from required parameters
@@ -6680,7 +6680,7 @@ Constructs GetDeployablePatchSnapshotForInstanceResult's fields from required pa
 
 ``` purescript
 newtype GetDocumentRequest
-  = GetDocumentRequest { "Name" :: DocumentARN, "DocumentVersion" :: NullOrUndefined (DocumentVersion), "DocumentFormat" :: NullOrUndefined (DocumentFormat) }
+  = GetDocumentRequest { "Name" :: DocumentARN, "DocumentVersion" :: Maybe (DocumentVersion), "DocumentFormat" :: Maybe (DocumentFormat) }
 ```
 
 ##### Instances
@@ -6703,7 +6703,7 @@ Constructs GetDocumentRequest from required parameters
 #### `newGetDocumentRequest'`
 
 ``` purescript
-newGetDocumentRequest' :: DocumentARN -> ({ "Name" :: DocumentARN, "DocumentVersion" :: NullOrUndefined (DocumentVersion), "DocumentFormat" :: NullOrUndefined (DocumentFormat) } -> { "Name" :: DocumentARN, "DocumentVersion" :: NullOrUndefined (DocumentVersion), "DocumentFormat" :: NullOrUndefined (DocumentFormat) }) -> GetDocumentRequest
+newGetDocumentRequest' :: DocumentARN -> ({ "Name" :: DocumentARN, "DocumentVersion" :: Maybe (DocumentVersion), "DocumentFormat" :: Maybe (DocumentFormat) } -> { "Name" :: DocumentARN, "DocumentVersion" :: Maybe (DocumentVersion), "DocumentFormat" :: Maybe (DocumentFormat) }) -> GetDocumentRequest
 ```
 
 Constructs GetDocumentRequest's fields from required parameters
@@ -6712,7 +6712,7 @@ Constructs GetDocumentRequest's fields from required parameters
 
 ``` purescript
 newtype GetDocumentResult
-  = GetDocumentResult { "Name" :: NullOrUndefined (DocumentARN), "DocumentVersion" :: NullOrUndefined (DocumentVersion), "Content" :: NullOrUndefined (DocumentContent), "DocumentType" :: NullOrUndefined (DocumentType), "DocumentFormat" :: NullOrUndefined (DocumentFormat) }
+  = GetDocumentResult { "Name" :: Maybe (DocumentARN), "DocumentVersion" :: Maybe (DocumentVersion), "Content" :: Maybe (DocumentContent), "DocumentType" :: Maybe (DocumentType), "DocumentFormat" :: Maybe (DocumentFormat) }
 ```
 
 ##### Instances
@@ -6735,7 +6735,7 @@ Constructs GetDocumentResult from required parameters
 #### `newGetDocumentResult'`
 
 ``` purescript
-newGetDocumentResult' :: ({ "Name" :: NullOrUndefined (DocumentARN), "DocumentVersion" :: NullOrUndefined (DocumentVersion), "Content" :: NullOrUndefined (DocumentContent), "DocumentType" :: NullOrUndefined (DocumentType), "DocumentFormat" :: NullOrUndefined (DocumentFormat) } -> { "Name" :: NullOrUndefined (DocumentARN), "DocumentVersion" :: NullOrUndefined (DocumentVersion), "Content" :: NullOrUndefined (DocumentContent), "DocumentType" :: NullOrUndefined (DocumentType), "DocumentFormat" :: NullOrUndefined (DocumentFormat) }) -> GetDocumentResult
+newGetDocumentResult' :: ({ "Name" :: Maybe (DocumentARN), "DocumentVersion" :: Maybe (DocumentVersion), "Content" :: Maybe (DocumentContent), "DocumentType" :: Maybe (DocumentType), "DocumentFormat" :: Maybe (DocumentFormat) } -> { "Name" :: Maybe (DocumentARN), "DocumentVersion" :: Maybe (DocumentVersion), "Content" :: Maybe (DocumentContent), "DocumentType" :: Maybe (DocumentType), "DocumentFormat" :: Maybe (DocumentFormat) }) -> GetDocumentResult
 ```
 
 Constructs GetDocumentResult's fields from required parameters
@@ -6744,7 +6744,7 @@ Constructs GetDocumentResult's fields from required parameters
 
 ``` purescript
 newtype GetInventoryRequest
-  = GetInventoryRequest { "Filters" :: NullOrUndefined (InventoryFilterList), "Aggregators" :: NullOrUndefined (InventoryAggregatorList), "ResultAttributes" :: NullOrUndefined (ResultAttributeList), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults) }
+  = GetInventoryRequest { "Filters" :: Maybe (InventoryFilterList), "Aggregators" :: Maybe (InventoryAggregatorList), "ResultAttributes" :: Maybe (ResultAttributeList), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults) }
 ```
 
 ##### Instances
@@ -6767,7 +6767,7 @@ Constructs GetInventoryRequest from required parameters
 #### `newGetInventoryRequest'`
 
 ``` purescript
-newGetInventoryRequest' :: ({ "Filters" :: NullOrUndefined (InventoryFilterList), "Aggregators" :: NullOrUndefined (InventoryAggregatorList), "ResultAttributes" :: NullOrUndefined (ResultAttributeList), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults) } -> { "Filters" :: NullOrUndefined (InventoryFilterList), "Aggregators" :: NullOrUndefined (InventoryAggregatorList), "ResultAttributes" :: NullOrUndefined (ResultAttributeList), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults) }) -> GetInventoryRequest
+newGetInventoryRequest' :: ({ "Filters" :: Maybe (InventoryFilterList), "Aggregators" :: Maybe (InventoryAggregatorList), "ResultAttributes" :: Maybe (ResultAttributeList), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults) } -> { "Filters" :: Maybe (InventoryFilterList), "Aggregators" :: Maybe (InventoryAggregatorList), "ResultAttributes" :: Maybe (ResultAttributeList), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults) }) -> GetInventoryRequest
 ```
 
 Constructs GetInventoryRequest's fields from required parameters
@@ -6776,7 +6776,7 @@ Constructs GetInventoryRequest's fields from required parameters
 
 ``` purescript
 newtype GetInventoryResult
-  = GetInventoryResult { "Entities" :: NullOrUndefined (InventoryResultEntityList), "NextToken" :: NullOrUndefined (NextToken) }
+  = GetInventoryResult { "Entities" :: Maybe (InventoryResultEntityList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -6799,7 +6799,7 @@ Constructs GetInventoryResult from required parameters
 #### `newGetInventoryResult'`
 
 ``` purescript
-newGetInventoryResult' :: ({ "Entities" :: NullOrUndefined (InventoryResultEntityList), "NextToken" :: NullOrUndefined (NextToken) } -> { "Entities" :: NullOrUndefined (InventoryResultEntityList), "NextToken" :: NullOrUndefined (NextToken) }) -> GetInventoryResult
+newGetInventoryResult' :: ({ "Entities" :: Maybe (InventoryResultEntityList), "NextToken" :: Maybe (NextToken) } -> { "Entities" :: Maybe (InventoryResultEntityList), "NextToken" :: Maybe (NextToken) }) -> GetInventoryResult
 ```
 
 Constructs GetInventoryResult's fields from required parameters
@@ -6824,7 +6824,7 @@ Encode GetInventorySchemaMaxResults
 
 ``` purescript
 newtype GetInventorySchemaRequest
-  = GetInventorySchemaRequest { "TypeName" :: NullOrUndefined (InventoryItemTypeNameFilter), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (GetInventorySchemaMaxResults), "Aggregator" :: NullOrUndefined (AggregatorSchemaOnly), "SubType" :: NullOrUndefined (IsSubTypeSchema) }
+  = GetInventorySchemaRequest { "TypeName" :: Maybe (InventoryItemTypeNameFilter), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (GetInventorySchemaMaxResults), "Aggregator" :: Maybe (AggregatorSchemaOnly), "SubType" :: Maybe (IsSubTypeSchema) }
 ```
 
 ##### Instances
@@ -6847,7 +6847,7 @@ Constructs GetInventorySchemaRequest from required parameters
 #### `newGetInventorySchemaRequest'`
 
 ``` purescript
-newGetInventorySchemaRequest' :: ({ "TypeName" :: NullOrUndefined (InventoryItemTypeNameFilter), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (GetInventorySchemaMaxResults), "Aggregator" :: NullOrUndefined (AggregatorSchemaOnly), "SubType" :: NullOrUndefined (IsSubTypeSchema) } -> { "TypeName" :: NullOrUndefined (InventoryItemTypeNameFilter), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (GetInventorySchemaMaxResults), "Aggregator" :: NullOrUndefined (AggregatorSchemaOnly), "SubType" :: NullOrUndefined (IsSubTypeSchema) }) -> GetInventorySchemaRequest
+newGetInventorySchemaRequest' :: ({ "TypeName" :: Maybe (InventoryItemTypeNameFilter), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (GetInventorySchemaMaxResults), "Aggregator" :: Maybe (AggregatorSchemaOnly), "SubType" :: Maybe (IsSubTypeSchema) } -> { "TypeName" :: Maybe (InventoryItemTypeNameFilter), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (GetInventorySchemaMaxResults), "Aggregator" :: Maybe (AggregatorSchemaOnly), "SubType" :: Maybe (IsSubTypeSchema) }) -> GetInventorySchemaRequest
 ```
 
 Constructs GetInventorySchemaRequest's fields from required parameters
@@ -6856,7 +6856,7 @@ Constructs GetInventorySchemaRequest's fields from required parameters
 
 ``` purescript
 newtype GetInventorySchemaResult
-  = GetInventorySchemaResult { "Schemas" :: NullOrUndefined (InventoryItemSchemaResultList), "NextToken" :: NullOrUndefined (NextToken) }
+  = GetInventorySchemaResult { "Schemas" :: Maybe (InventoryItemSchemaResultList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -6879,7 +6879,7 @@ Constructs GetInventorySchemaResult from required parameters
 #### `newGetInventorySchemaResult'`
 
 ``` purescript
-newGetInventorySchemaResult' :: ({ "Schemas" :: NullOrUndefined (InventoryItemSchemaResultList), "NextToken" :: NullOrUndefined (NextToken) } -> { "Schemas" :: NullOrUndefined (InventoryItemSchemaResultList), "NextToken" :: NullOrUndefined (NextToken) }) -> GetInventorySchemaResult
+newGetInventorySchemaResult' :: ({ "Schemas" :: Maybe (InventoryItemSchemaResultList), "NextToken" :: Maybe (NextToken) } -> { "Schemas" :: Maybe (InventoryItemSchemaResultList), "NextToken" :: Maybe (NextToken) }) -> GetInventorySchemaResult
 ```
 
 Constructs GetInventorySchemaResult's fields from required parameters
@@ -6920,7 +6920,7 @@ Constructs GetMaintenanceWindowExecutionRequest's fields from required parameter
 
 ``` purescript
 newtype GetMaintenanceWindowExecutionResult
-  = GetMaintenanceWindowExecutionResult { "WindowExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionId), "TaskIds" :: NullOrUndefined (MaintenanceWindowExecutionTaskIdList), "Status" :: NullOrUndefined (MaintenanceWindowExecutionStatus), "StatusDetails" :: NullOrUndefined (MaintenanceWindowExecutionStatusDetails), "StartTime" :: NullOrUndefined (DateTime), "EndTime" :: NullOrUndefined (DateTime) }
+  = GetMaintenanceWindowExecutionResult { "WindowExecutionId" :: Maybe (MaintenanceWindowExecutionId), "TaskIds" :: Maybe (MaintenanceWindowExecutionTaskIdList), "Status" :: Maybe (MaintenanceWindowExecutionStatus), "StatusDetails" :: Maybe (MaintenanceWindowExecutionStatusDetails), "StartTime" :: Maybe (DateTime), "EndTime" :: Maybe (DateTime) }
 ```
 
 ##### Instances
@@ -6943,7 +6943,7 @@ Constructs GetMaintenanceWindowExecutionResult from required parameters
 #### `newGetMaintenanceWindowExecutionResult'`
 
 ``` purescript
-newGetMaintenanceWindowExecutionResult' :: ({ "WindowExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionId), "TaskIds" :: NullOrUndefined (MaintenanceWindowExecutionTaskIdList), "Status" :: NullOrUndefined (MaintenanceWindowExecutionStatus), "StatusDetails" :: NullOrUndefined (MaintenanceWindowExecutionStatusDetails), "StartTime" :: NullOrUndefined (DateTime), "EndTime" :: NullOrUndefined (DateTime) } -> { "WindowExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionId), "TaskIds" :: NullOrUndefined (MaintenanceWindowExecutionTaskIdList), "Status" :: NullOrUndefined (MaintenanceWindowExecutionStatus), "StatusDetails" :: NullOrUndefined (MaintenanceWindowExecutionStatusDetails), "StartTime" :: NullOrUndefined (DateTime), "EndTime" :: NullOrUndefined (DateTime) }) -> GetMaintenanceWindowExecutionResult
+newGetMaintenanceWindowExecutionResult' :: ({ "WindowExecutionId" :: Maybe (MaintenanceWindowExecutionId), "TaskIds" :: Maybe (MaintenanceWindowExecutionTaskIdList), "Status" :: Maybe (MaintenanceWindowExecutionStatus), "StatusDetails" :: Maybe (MaintenanceWindowExecutionStatusDetails), "StartTime" :: Maybe (DateTime), "EndTime" :: Maybe (DateTime) } -> { "WindowExecutionId" :: Maybe (MaintenanceWindowExecutionId), "TaskIds" :: Maybe (MaintenanceWindowExecutionTaskIdList), "Status" :: Maybe (MaintenanceWindowExecutionStatus), "StatusDetails" :: Maybe (MaintenanceWindowExecutionStatusDetails), "StartTime" :: Maybe (DateTime), "EndTime" :: Maybe (DateTime) }) -> GetMaintenanceWindowExecutionResult
 ```
 
 Constructs GetMaintenanceWindowExecutionResult's fields from required parameters
@@ -6984,7 +6984,7 @@ Constructs GetMaintenanceWindowExecutionTaskInvocationRequest's fields from requ
 
 ``` purescript
 newtype GetMaintenanceWindowExecutionTaskInvocationResult
-  = GetMaintenanceWindowExecutionTaskInvocationResult { "WindowExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionId), "TaskExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionTaskId), "InvocationId" :: NullOrUndefined (MaintenanceWindowExecutionTaskInvocationId), "ExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionTaskExecutionId), "TaskType" :: NullOrUndefined (MaintenanceWindowTaskType), "Parameters" :: NullOrUndefined (MaintenanceWindowExecutionTaskInvocationParameters), "Status" :: NullOrUndefined (MaintenanceWindowExecutionStatus), "StatusDetails" :: NullOrUndefined (MaintenanceWindowExecutionStatusDetails), "StartTime" :: NullOrUndefined (DateTime), "EndTime" :: NullOrUndefined (DateTime), "OwnerInformation" :: NullOrUndefined (OwnerInformation), "WindowTargetId" :: NullOrUndefined (MaintenanceWindowTaskTargetId) }
+  = GetMaintenanceWindowExecutionTaskInvocationResult { "WindowExecutionId" :: Maybe (MaintenanceWindowExecutionId), "TaskExecutionId" :: Maybe (MaintenanceWindowExecutionTaskId), "InvocationId" :: Maybe (MaintenanceWindowExecutionTaskInvocationId), "ExecutionId" :: Maybe (MaintenanceWindowExecutionTaskExecutionId), "TaskType" :: Maybe (MaintenanceWindowTaskType), "Parameters" :: Maybe (MaintenanceWindowExecutionTaskInvocationParameters), "Status" :: Maybe (MaintenanceWindowExecutionStatus), "StatusDetails" :: Maybe (MaintenanceWindowExecutionStatusDetails), "StartTime" :: Maybe (DateTime), "EndTime" :: Maybe (DateTime), "OwnerInformation" :: Maybe (OwnerInformation), "WindowTargetId" :: Maybe (MaintenanceWindowTaskTargetId) }
 ```
 
 ##### Instances
@@ -7007,7 +7007,7 @@ Constructs GetMaintenanceWindowExecutionTaskInvocationResult from required param
 #### `newGetMaintenanceWindowExecutionTaskInvocationResult'`
 
 ``` purescript
-newGetMaintenanceWindowExecutionTaskInvocationResult' :: ({ "WindowExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionId), "TaskExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionTaskId), "InvocationId" :: NullOrUndefined (MaintenanceWindowExecutionTaskInvocationId), "ExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionTaskExecutionId), "TaskType" :: NullOrUndefined (MaintenanceWindowTaskType), "Parameters" :: NullOrUndefined (MaintenanceWindowExecutionTaskInvocationParameters), "Status" :: NullOrUndefined (MaintenanceWindowExecutionStatus), "StatusDetails" :: NullOrUndefined (MaintenanceWindowExecutionStatusDetails), "StartTime" :: NullOrUndefined (DateTime), "EndTime" :: NullOrUndefined (DateTime), "OwnerInformation" :: NullOrUndefined (OwnerInformation), "WindowTargetId" :: NullOrUndefined (MaintenanceWindowTaskTargetId) } -> { "WindowExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionId), "TaskExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionTaskId), "InvocationId" :: NullOrUndefined (MaintenanceWindowExecutionTaskInvocationId), "ExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionTaskExecutionId), "TaskType" :: NullOrUndefined (MaintenanceWindowTaskType), "Parameters" :: NullOrUndefined (MaintenanceWindowExecutionTaskInvocationParameters), "Status" :: NullOrUndefined (MaintenanceWindowExecutionStatus), "StatusDetails" :: NullOrUndefined (MaintenanceWindowExecutionStatusDetails), "StartTime" :: NullOrUndefined (DateTime), "EndTime" :: NullOrUndefined (DateTime), "OwnerInformation" :: NullOrUndefined (OwnerInformation), "WindowTargetId" :: NullOrUndefined (MaintenanceWindowTaskTargetId) }) -> GetMaintenanceWindowExecutionTaskInvocationResult
+newGetMaintenanceWindowExecutionTaskInvocationResult' :: ({ "WindowExecutionId" :: Maybe (MaintenanceWindowExecutionId), "TaskExecutionId" :: Maybe (MaintenanceWindowExecutionTaskId), "InvocationId" :: Maybe (MaintenanceWindowExecutionTaskInvocationId), "ExecutionId" :: Maybe (MaintenanceWindowExecutionTaskExecutionId), "TaskType" :: Maybe (MaintenanceWindowTaskType), "Parameters" :: Maybe (MaintenanceWindowExecutionTaskInvocationParameters), "Status" :: Maybe (MaintenanceWindowExecutionStatus), "StatusDetails" :: Maybe (MaintenanceWindowExecutionStatusDetails), "StartTime" :: Maybe (DateTime), "EndTime" :: Maybe (DateTime), "OwnerInformation" :: Maybe (OwnerInformation), "WindowTargetId" :: Maybe (MaintenanceWindowTaskTargetId) } -> { "WindowExecutionId" :: Maybe (MaintenanceWindowExecutionId), "TaskExecutionId" :: Maybe (MaintenanceWindowExecutionTaskId), "InvocationId" :: Maybe (MaintenanceWindowExecutionTaskInvocationId), "ExecutionId" :: Maybe (MaintenanceWindowExecutionTaskExecutionId), "TaskType" :: Maybe (MaintenanceWindowTaskType), "Parameters" :: Maybe (MaintenanceWindowExecutionTaskInvocationParameters), "Status" :: Maybe (MaintenanceWindowExecutionStatus), "StatusDetails" :: Maybe (MaintenanceWindowExecutionStatusDetails), "StartTime" :: Maybe (DateTime), "EndTime" :: Maybe (DateTime), "OwnerInformation" :: Maybe (OwnerInformation), "WindowTargetId" :: Maybe (MaintenanceWindowTaskTargetId) }) -> GetMaintenanceWindowExecutionTaskInvocationResult
 ```
 
 Constructs GetMaintenanceWindowExecutionTaskInvocationResult's fields from required parameters
@@ -7048,7 +7048,7 @@ Constructs GetMaintenanceWindowExecutionTaskRequest's fields from required param
 
 ``` purescript
 newtype GetMaintenanceWindowExecutionTaskResult
-  = GetMaintenanceWindowExecutionTaskResult { "WindowExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionId), "TaskExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionTaskId), "TaskArn" :: NullOrUndefined (MaintenanceWindowTaskArn), "ServiceRole" :: NullOrUndefined (ServiceRole), "Type" :: NullOrUndefined (MaintenanceWindowTaskType), "TaskParameters" :: NullOrUndefined (MaintenanceWindowTaskParametersList), "Priority" :: NullOrUndefined (MaintenanceWindowTaskPriority), "MaxConcurrency" :: NullOrUndefined (MaxConcurrency), "MaxErrors" :: NullOrUndefined (MaxErrors), "Status" :: NullOrUndefined (MaintenanceWindowExecutionStatus), "StatusDetails" :: NullOrUndefined (MaintenanceWindowExecutionStatusDetails), "StartTime" :: NullOrUndefined (DateTime), "EndTime" :: NullOrUndefined (DateTime) }
+  = GetMaintenanceWindowExecutionTaskResult { "WindowExecutionId" :: Maybe (MaintenanceWindowExecutionId), "TaskExecutionId" :: Maybe (MaintenanceWindowExecutionTaskId), "TaskArn" :: Maybe (MaintenanceWindowTaskArn), "ServiceRole" :: Maybe (ServiceRole), "Type" :: Maybe (MaintenanceWindowTaskType), "TaskParameters" :: Maybe (MaintenanceWindowTaskParametersList), "Priority" :: Maybe (MaintenanceWindowTaskPriority), "MaxConcurrency" :: Maybe (MaxConcurrency), "MaxErrors" :: Maybe (MaxErrors), "Status" :: Maybe (MaintenanceWindowExecutionStatus), "StatusDetails" :: Maybe (MaintenanceWindowExecutionStatusDetails), "StartTime" :: Maybe (DateTime), "EndTime" :: Maybe (DateTime) }
 ```
 
 ##### Instances
@@ -7071,7 +7071,7 @@ Constructs GetMaintenanceWindowExecutionTaskResult from required parameters
 #### `newGetMaintenanceWindowExecutionTaskResult'`
 
 ``` purescript
-newGetMaintenanceWindowExecutionTaskResult' :: ({ "WindowExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionId), "TaskExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionTaskId), "TaskArn" :: NullOrUndefined (MaintenanceWindowTaskArn), "ServiceRole" :: NullOrUndefined (ServiceRole), "Type" :: NullOrUndefined (MaintenanceWindowTaskType), "TaskParameters" :: NullOrUndefined (MaintenanceWindowTaskParametersList), "Priority" :: NullOrUndefined (MaintenanceWindowTaskPriority), "MaxConcurrency" :: NullOrUndefined (MaxConcurrency), "MaxErrors" :: NullOrUndefined (MaxErrors), "Status" :: NullOrUndefined (MaintenanceWindowExecutionStatus), "StatusDetails" :: NullOrUndefined (MaintenanceWindowExecutionStatusDetails), "StartTime" :: NullOrUndefined (DateTime), "EndTime" :: NullOrUndefined (DateTime) } -> { "WindowExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionId), "TaskExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionTaskId), "TaskArn" :: NullOrUndefined (MaintenanceWindowTaskArn), "ServiceRole" :: NullOrUndefined (ServiceRole), "Type" :: NullOrUndefined (MaintenanceWindowTaskType), "TaskParameters" :: NullOrUndefined (MaintenanceWindowTaskParametersList), "Priority" :: NullOrUndefined (MaintenanceWindowTaskPriority), "MaxConcurrency" :: NullOrUndefined (MaxConcurrency), "MaxErrors" :: NullOrUndefined (MaxErrors), "Status" :: NullOrUndefined (MaintenanceWindowExecutionStatus), "StatusDetails" :: NullOrUndefined (MaintenanceWindowExecutionStatusDetails), "StartTime" :: NullOrUndefined (DateTime), "EndTime" :: NullOrUndefined (DateTime) }) -> GetMaintenanceWindowExecutionTaskResult
+newGetMaintenanceWindowExecutionTaskResult' :: ({ "WindowExecutionId" :: Maybe (MaintenanceWindowExecutionId), "TaskExecutionId" :: Maybe (MaintenanceWindowExecutionTaskId), "TaskArn" :: Maybe (MaintenanceWindowTaskArn), "ServiceRole" :: Maybe (ServiceRole), "Type" :: Maybe (MaintenanceWindowTaskType), "TaskParameters" :: Maybe (MaintenanceWindowTaskParametersList), "Priority" :: Maybe (MaintenanceWindowTaskPriority), "MaxConcurrency" :: Maybe (MaxConcurrency), "MaxErrors" :: Maybe (MaxErrors), "Status" :: Maybe (MaintenanceWindowExecutionStatus), "StatusDetails" :: Maybe (MaintenanceWindowExecutionStatusDetails), "StartTime" :: Maybe (DateTime), "EndTime" :: Maybe (DateTime) } -> { "WindowExecutionId" :: Maybe (MaintenanceWindowExecutionId), "TaskExecutionId" :: Maybe (MaintenanceWindowExecutionTaskId), "TaskArn" :: Maybe (MaintenanceWindowTaskArn), "ServiceRole" :: Maybe (ServiceRole), "Type" :: Maybe (MaintenanceWindowTaskType), "TaskParameters" :: Maybe (MaintenanceWindowTaskParametersList), "Priority" :: Maybe (MaintenanceWindowTaskPriority), "MaxConcurrency" :: Maybe (MaxConcurrency), "MaxErrors" :: Maybe (MaxErrors), "Status" :: Maybe (MaintenanceWindowExecutionStatus), "StatusDetails" :: Maybe (MaintenanceWindowExecutionStatusDetails), "StartTime" :: Maybe (DateTime), "EndTime" :: Maybe (DateTime) }) -> GetMaintenanceWindowExecutionTaskResult
 ```
 
 Constructs GetMaintenanceWindowExecutionTaskResult's fields from required parameters
@@ -7112,7 +7112,7 @@ Constructs GetMaintenanceWindowRequest's fields from required parameters
 
 ``` purescript
 newtype GetMaintenanceWindowResult
-  = GetMaintenanceWindowResult { "WindowId" :: NullOrUndefined (MaintenanceWindowId), "Name" :: NullOrUndefined (MaintenanceWindowName), "Description" :: NullOrUndefined (MaintenanceWindowDescription), "Schedule" :: NullOrUndefined (MaintenanceWindowSchedule), "Duration" :: NullOrUndefined (MaintenanceWindowDurationHours), "Cutoff" :: NullOrUndefined (MaintenanceWindowCutoff), "AllowUnassociatedTargets" :: NullOrUndefined (MaintenanceWindowAllowUnassociatedTargets), "Enabled" :: NullOrUndefined (MaintenanceWindowEnabled), "CreatedDate" :: NullOrUndefined (DateTime), "ModifiedDate" :: NullOrUndefined (DateTime) }
+  = GetMaintenanceWindowResult { "WindowId" :: Maybe (MaintenanceWindowId), "Name" :: Maybe (MaintenanceWindowName), "Description" :: Maybe (MaintenanceWindowDescription), "Schedule" :: Maybe (MaintenanceWindowSchedule), "Duration" :: Maybe (MaintenanceWindowDurationHours), "Cutoff" :: Maybe (MaintenanceWindowCutoff), "AllowUnassociatedTargets" :: Maybe (MaintenanceWindowAllowUnassociatedTargets), "Enabled" :: Maybe (MaintenanceWindowEnabled), "CreatedDate" :: Maybe (DateTime), "ModifiedDate" :: Maybe (DateTime) }
 ```
 
 ##### Instances
@@ -7135,7 +7135,7 @@ Constructs GetMaintenanceWindowResult from required parameters
 #### `newGetMaintenanceWindowResult'`
 
 ``` purescript
-newGetMaintenanceWindowResult' :: ({ "WindowId" :: NullOrUndefined (MaintenanceWindowId), "Name" :: NullOrUndefined (MaintenanceWindowName), "Description" :: NullOrUndefined (MaintenanceWindowDescription), "Schedule" :: NullOrUndefined (MaintenanceWindowSchedule), "Duration" :: NullOrUndefined (MaintenanceWindowDurationHours), "Cutoff" :: NullOrUndefined (MaintenanceWindowCutoff), "AllowUnassociatedTargets" :: NullOrUndefined (MaintenanceWindowAllowUnassociatedTargets), "Enabled" :: NullOrUndefined (MaintenanceWindowEnabled), "CreatedDate" :: NullOrUndefined (DateTime), "ModifiedDate" :: NullOrUndefined (DateTime) } -> { "WindowId" :: NullOrUndefined (MaintenanceWindowId), "Name" :: NullOrUndefined (MaintenanceWindowName), "Description" :: NullOrUndefined (MaintenanceWindowDescription), "Schedule" :: NullOrUndefined (MaintenanceWindowSchedule), "Duration" :: NullOrUndefined (MaintenanceWindowDurationHours), "Cutoff" :: NullOrUndefined (MaintenanceWindowCutoff), "AllowUnassociatedTargets" :: NullOrUndefined (MaintenanceWindowAllowUnassociatedTargets), "Enabled" :: NullOrUndefined (MaintenanceWindowEnabled), "CreatedDate" :: NullOrUndefined (DateTime), "ModifiedDate" :: NullOrUndefined (DateTime) }) -> GetMaintenanceWindowResult
+newGetMaintenanceWindowResult' :: ({ "WindowId" :: Maybe (MaintenanceWindowId), "Name" :: Maybe (MaintenanceWindowName), "Description" :: Maybe (MaintenanceWindowDescription), "Schedule" :: Maybe (MaintenanceWindowSchedule), "Duration" :: Maybe (MaintenanceWindowDurationHours), "Cutoff" :: Maybe (MaintenanceWindowCutoff), "AllowUnassociatedTargets" :: Maybe (MaintenanceWindowAllowUnassociatedTargets), "Enabled" :: Maybe (MaintenanceWindowEnabled), "CreatedDate" :: Maybe (DateTime), "ModifiedDate" :: Maybe (DateTime) } -> { "WindowId" :: Maybe (MaintenanceWindowId), "Name" :: Maybe (MaintenanceWindowName), "Description" :: Maybe (MaintenanceWindowDescription), "Schedule" :: Maybe (MaintenanceWindowSchedule), "Duration" :: Maybe (MaintenanceWindowDurationHours), "Cutoff" :: Maybe (MaintenanceWindowCutoff), "AllowUnassociatedTargets" :: Maybe (MaintenanceWindowAllowUnassociatedTargets), "Enabled" :: Maybe (MaintenanceWindowEnabled), "CreatedDate" :: Maybe (DateTime), "ModifiedDate" :: Maybe (DateTime) }) -> GetMaintenanceWindowResult
 ```
 
 Constructs GetMaintenanceWindowResult's fields from required parameters
@@ -7176,7 +7176,7 @@ Constructs GetMaintenanceWindowTaskRequest's fields from required parameters
 
 ``` purescript
 newtype GetMaintenanceWindowTaskResult
-  = GetMaintenanceWindowTaskResult { "WindowId" :: NullOrUndefined (MaintenanceWindowId), "WindowTaskId" :: NullOrUndefined (MaintenanceWindowTaskId), "Targets" :: NullOrUndefined (Targets), "TaskArn" :: NullOrUndefined (MaintenanceWindowTaskArn), "ServiceRoleArn" :: NullOrUndefined (ServiceRole), "TaskType" :: NullOrUndefined (MaintenanceWindowTaskType), "TaskParameters" :: NullOrUndefined (MaintenanceWindowTaskParameters), "TaskInvocationParameters" :: NullOrUndefined (MaintenanceWindowTaskInvocationParameters), "Priority" :: NullOrUndefined (MaintenanceWindowTaskPriority), "MaxConcurrency" :: NullOrUndefined (MaxConcurrency), "MaxErrors" :: NullOrUndefined (MaxErrors), "LoggingInfo" :: NullOrUndefined (LoggingInfo), "Name" :: NullOrUndefined (MaintenanceWindowName), "Description" :: NullOrUndefined (MaintenanceWindowDescription) }
+  = GetMaintenanceWindowTaskResult { "WindowId" :: Maybe (MaintenanceWindowId), "WindowTaskId" :: Maybe (MaintenanceWindowTaskId), "Targets" :: Maybe (Targets), "TaskArn" :: Maybe (MaintenanceWindowTaskArn), "ServiceRoleArn" :: Maybe (ServiceRole), "TaskType" :: Maybe (MaintenanceWindowTaskType), "TaskParameters" :: Maybe (MaintenanceWindowTaskParameters), "TaskInvocationParameters" :: Maybe (MaintenanceWindowTaskInvocationParameters), "Priority" :: Maybe (MaintenanceWindowTaskPriority), "MaxConcurrency" :: Maybe (MaxConcurrency), "MaxErrors" :: Maybe (MaxErrors), "LoggingInfo" :: Maybe (LoggingInfo), "Name" :: Maybe (MaintenanceWindowName), "Description" :: Maybe (MaintenanceWindowDescription) }
 ```
 
 ##### Instances
@@ -7199,7 +7199,7 @@ Constructs GetMaintenanceWindowTaskResult from required parameters
 #### `newGetMaintenanceWindowTaskResult'`
 
 ``` purescript
-newGetMaintenanceWindowTaskResult' :: ({ "WindowId" :: NullOrUndefined (MaintenanceWindowId), "WindowTaskId" :: NullOrUndefined (MaintenanceWindowTaskId), "Targets" :: NullOrUndefined (Targets), "TaskArn" :: NullOrUndefined (MaintenanceWindowTaskArn), "ServiceRoleArn" :: NullOrUndefined (ServiceRole), "TaskType" :: NullOrUndefined (MaintenanceWindowTaskType), "TaskParameters" :: NullOrUndefined (MaintenanceWindowTaskParameters), "TaskInvocationParameters" :: NullOrUndefined (MaintenanceWindowTaskInvocationParameters), "Priority" :: NullOrUndefined (MaintenanceWindowTaskPriority), "MaxConcurrency" :: NullOrUndefined (MaxConcurrency), "MaxErrors" :: NullOrUndefined (MaxErrors), "LoggingInfo" :: NullOrUndefined (LoggingInfo), "Name" :: NullOrUndefined (MaintenanceWindowName), "Description" :: NullOrUndefined (MaintenanceWindowDescription) } -> { "WindowId" :: NullOrUndefined (MaintenanceWindowId), "WindowTaskId" :: NullOrUndefined (MaintenanceWindowTaskId), "Targets" :: NullOrUndefined (Targets), "TaskArn" :: NullOrUndefined (MaintenanceWindowTaskArn), "ServiceRoleArn" :: NullOrUndefined (ServiceRole), "TaskType" :: NullOrUndefined (MaintenanceWindowTaskType), "TaskParameters" :: NullOrUndefined (MaintenanceWindowTaskParameters), "TaskInvocationParameters" :: NullOrUndefined (MaintenanceWindowTaskInvocationParameters), "Priority" :: NullOrUndefined (MaintenanceWindowTaskPriority), "MaxConcurrency" :: NullOrUndefined (MaxConcurrency), "MaxErrors" :: NullOrUndefined (MaxErrors), "LoggingInfo" :: NullOrUndefined (LoggingInfo), "Name" :: NullOrUndefined (MaintenanceWindowName), "Description" :: NullOrUndefined (MaintenanceWindowDescription) }) -> GetMaintenanceWindowTaskResult
+newGetMaintenanceWindowTaskResult' :: ({ "WindowId" :: Maybe (MaintenanceWindowId), "WindowTaskId" :: Maybe (MaintenanceWindowTaskId), "Targets" :: Maybe (Targets), "TaskArn" :: Maybe (MaintenanceWindowTaskArn), "ServiceRoleArn" :: Maybe (ServiceRole), "TaskType" :: Maybe (MaintenanceWindowTaskType), "TaskParameters" :: Maybe (MaintenanceWindowTaskParameters), "TaskInvocationParameters" :: Maybe (MaintenanceWindowTaskInvocationParameters), "Priority" :: Maybe (MaintenanceWindowTaskPriority), "MaxConcurrency" :: Maybe (MaxConcurrency), "MaxErrors" :: Maybe (MaxErrors), "LoggingInfo" :: Maybe (LoggingInfo), "Name" :: Maybe (MaintenanceWindowName), "Description" :: Maybe (MaintenanceWindowDescription) } -> { "WindowId" :: Maybe (MaintenanceWindowId), "WindowTaskId" :: Maybe (MaintenanceWindowTaskId), "Targets" :: Maybe (Targets), "TaskArn" :: Maybe (MaintenanceWindowTaskArn), "ServiceRoleArn" :: Maybe (ServiceRole), "TaskType" :: Maybe (MaintenanceWindowTaskType), "TaskParameters" :: Maybe (MaintenanceWindowTaskParameters), "TaskInvocationParameters" :: Maybe (MaintenanceWindowTaskInvocationParameters), "Priority" :: Maybe (MaintenanceWindowTaskPriority), "MaxConcurrency" :: Maybe (MaxConcurrency), "MaxErrors" :: Maybe (MaxErrors), "LoggingInfo" :: Maybe (LoggingInfo), "Name" :: Maybe (MaintenanceWindowName), "Description" :: Maybe (MaintenanceWindowDescription) }) -> GetMaintenanceWindowTaskResult
 ```
 
 Constructs GetMaintenanceWindowTaskResult's fields from required parameters
@@ -7208,7 +7208,7 @@ Constructs GetMaintenanceWindowTaskResult's fields from required parameters
 
 ``` purescript
 newtype GetParameterHistoryRequest
-  = GetParameterHistoryRequest { "Name" :: PSParameterName, "WithDecryption" :: NullOrUndefined (Boolean), "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (NextToken) }
+  = GetParameterHistoryRequest { "Name" :: PSParameterName, "WithDecryption" :: Maybe (Boolean), "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -7231,7 +7231,7 @@ Constructs GetParameterHistoryRequest from required parameters
 #### `newGetParameterHistoryRequest'`
 
 ``` purescript
-newGetParameterHistoryRequest' :: PSParameterName -> ({ "Name" :: PSParameterName, "WithDecryption" :: NullOrUndefined (Boolean), "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (NextToken) } -> { "Name" :: PSParameterName, "WithDecryption" :: NullOrUndefined (Boolean), "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (NextToken) }) -> GetParameterHistoryRequest
+newGetParameterHistoryRequest' :: PSParameterName -> ({ "Name" :: PSParameterName, "WithDecryption" :: Maybe (Boolean), "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (NextToken) } -> { "Name" :: PSParameterName, "WithDecryption" :: Maybe (Boolean), "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (NextToken) }) -> GetParameterHistoryRequest
 ```
 
 Constructs GetParameterHistoryRequest's fields from required parameters
@@ -7240,7 +7240,7 @@ Constructs GetParameterHistoryRequest's fields from required parameters
 
 ``` purescript
 newtype GetParameterHistoryResult
-  = GetParameterHistoryResult { "Parameters" :: NullOrUndefined (ParameterHistoryList), "NextToken" :: NullOrUndefined (NextToken) }
+  = GetParameterHistoryResult { "Parameters" :: Maybe (ParameterHistoryList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -7263,7 +7263,7 @@ Constructs GetParameterHistoryResult from required parameters
 #### `newGetParameterHistoryResult'`
 
 ``` purescript
-newGetParameterHistoryResult' :: ({ "Parameters" :: NullOrUndefined (ParameterHistoryList), "NextToken" :: NullOrUndefined (NextToken) } -> { "Parameters" :: NullOrUndefined (ParameterHistoryList), "NextToken" :: NullOrUndefined (NextToken) }) -> GetParameterHistoryResult
+newGetParameterHistoryResult' :: ({ "Parameters" :: Maybe (ParameterHistoryList), "NextToken" :: Maybe (NextToken) } -> { "Parameters" :: Maybe (ParameterHistoryList), "NextToken" :: Maybe (NextToken) }) -> GetParameterHistoryResult
 ```
 
 Constructs GetParameterHistoryResult's fields from required parameters
@@ -7272,7 +7272,7 @@ Constructs GetParameterHistoryResult's fields from required parameters
 
 ``` purescript
 newtype GetParameterRequest
-  = GetParameterRequest { "Name" :: PSParameterName, "WithDecryption" :: NullOrUndefined (Boolean) }
+  = GetParameterRequest { "Name" :: PSParameterName, "WithDecryption" :: Maybe (Boolean) }
 ```
 
 ##### Instances
@@ -7295,7 +7295,7 @@ Constructs GetParameterRequest from required parameters
 #### `newGetParameterRequest'`
 
 ``` purescript
-newGetParameterRequest' :: PSParameterName -> ({ "Name" :: PSParameterName, "WithDecryption" :: NullOrUndefined (Boolean) } -> { "Name" :: PSParameterName, "WithDecryption" :: NullOrUndefined (Boolean) }) -> GetParameterRequest
+newGetParameterRequest' :: PSParameterName -> ({ "Name" :: PSParameterName, "WithDecryption" :: Maybe (Boolean) } -> { "Name" :: PSParameterName, "WithDecryption" :: Maybe (Boolean) }) -> GetParameterRequest
 ```
 
 Constructs GetParameterRequest's fields from required parameters
@@ -7304,7 +7304,7 @@ Constructs GetParameterRequest's fields from required parameters
 
 ``` purescript
 newtype GetParameterResult
-  = GetParameterResult { "Parameter" :: NullOrUndefined (Parameter) }
+  = GetParameterResult { "Parameter" :: Maybe (Parameter) }
 ```
 
 ##### Instances
@@ -7327,7 +7327,7 @@ Constructs GetParameterResult from required parameters
 #### `newGetParameterResult'`
 
 ``` purescript
-newGetParameterResult' :: ({ "Parameter" :: NullOrUndefined (Parameter) } -> { "Parameter" :: NullOrUndefined (Parameter) }) -> GetParameterResult
+newGetParameterResult' :: ({ "Parameter" :: Maybe (Parameter) } -> { "Parameter" :: Maybe (Parameter) }) -> GetParameterResult
 ```
 
 Constructs GetParameterResult's fields from required parameters
@@ -7352,7 +7352,7 @@ Encode GetParametersByPathMaxResults
 
 ``` purescript
 newtype GetParametersByPathRequest
-  = GetParametersByPathRequest { "Path" :: PSParameterName, "Recursive" :: NullOrUndefined (Boolean), "ParameterFilters" :: NullOrUndefined (ParameterStringFilterList), "WithDecryption" :: NullOrUndefined (Boolean), "MaxResults" :: NullOrUndefined (GetParametersByPathMaxResults), "NextToken" :: NullOrUndefined (NextToken) }
+  = GetParametersByPathRequest { "Path" :: PSParameterName, "Recursive" :: Maybe (Boolean), "ParameterFilters" :: Maybe (ParameterStringFilterList), "WithDecryption" :: Maybe (Boolean), "MaxResults" :: Maybe (GetParametersByPathMaxResults), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -7375,7 +7375,7 @@ Constructs GetParametersByPathRequest from required parameters
 #### `newGetParametersByPathRequest'`
 
 ``` purescript
-newGetParametersByPathRequest' :: PSParameterName -> ({ "Path" :: PSParameterName, "Recursive" :: NullOrUndefined (Boolean), "ParameterFilters" :: NullOrUndefined (ParameterStringFilterList), "WithDecryption" :: NullOrUndefined (Boolean), "MaxResults" :: NullOrUndefined (GetParametersByPathMaxResults), "NextToken" :: NullOrUndefined (NextToken) } -> { "Path" :: PSParameterName, "Recursive" :: NullOrUndefined (Boolean), "ParameterFilters" :: NullOrUndefined (ParameterStringFilterList), "WithDecryption" :: NullOrUndefined (Boolean), "MaxResults" :: NullOrUndefined (GetParametersByPathMaxResults), "NextToken" :: NullOrUndefined (NextToken) }) -> GetParametersByPathRequest
+newGetParametersByPathRequest' :: PSParameterName -> ({ "Path" :: PSParameterName, "Recursive" :: Maybe (Boolean), "ParameterFilters" :: Maybe (ParameterStringFilterList), "WithDecryption" :: Maybe (Boolean), "MaxResults" :: Maybe (GetParametersByPathMaxResults), "NextToken" :: Maybe (NextToken) } -> { "Path" :: PSParameterName, "Recursive" :: Maybe (Boolean), "ParameterFilters" :: Maybe (ParameterStringFilterList), "WithDecryption" :: Maybe (Boolean), "MaxResults" :: Maybe (GetParametersByPathMaxResults), "NextToken" :: Maybe (NextToken) }) -> GetParametersByPathRequest
 ```
 
 Constructs GetParametersByPathRequest's fields from required parameters
@@ -7384,7 +7384,7 @@ Constructs GetParametersByPathRequest's fields from required parameters
 
 ``` purescript
 newtype GetParametersByPathResult
-  = GetParametersByPathResult { "Parameters" :: NullOrUndefined (ParameterList), "NextToken" :: NullOrUndefined (NextToken) }
+  = GetParametersByPathResult { "Parameters" :: Maybe (ParameterList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -7407,7 +7407,7 @@ Constructs GetParametersByPathResult from required parameters
 #### `newGetParametersByPathResult'`
 
 ``` purescript
-newGetParametersByPathResult' :: ({ "Parameters" :: NullOrUndefined (ParameterList), "NextToken" :: NullOrUndefined (NextToken) } -> { "Parameters" :: NullOrUndefined (ParameterList), "NextToken" :: NullOrUndefined (NextToken) }) -> GetParametersByPathResult
+newGetParametersByPathResult' :: ({ "Parameters" :: Maybe (ParameterList), "NextToken" :: Maybe (NextToken) } -> { "Parameters" :: Maybe (ParameterList), "NextToken" :: Maybe (NextToken) }) -> GetParametersByPathResult
 ```
 
 Constructs GetParametersByPathResult's fields from required parameters
@@ -7416,7 +7416,7 @@ Constructs GetParametersByPathResult's fields from required parameters
 
 ``` purescript
 newtype GetParametersRequest
-  = GetParametersRequest { "Names" :: ParameterNameList, "WithDecryption" :: NullOrUndefined (Boolean) }
+  = GetParametersRequest { "Names" :: ParameterNameList, "WithDecryption" :: Maybe (Boolean) }
 ```
 
 ##### Instances
@@ -7439,7 +7439,7 @@ Constructs GetParametersRequest from required parameters
 #### `newGetParametersRequest'`
 
 ``` purescript
-newGetParametersRequest' :: ParameterNameList -> ({ "Names" :: ParameterNameList, "WithDecryption" :: NullOrUndefined (Boolean) } -> { "Names" :: ParameterNameList, "WithDecryption" :: NullOrUndefined (Boolean) }) -> GetParametersRequest
+newGetParametersRequest' :: ParameterNameList -> ({ "Names" :: ParameterNameList, "WithDecryption" :: Maybe (Boolean) } -> { "Names" :: ParameterNameList, "WithDecryption" :: Maybe (Boolean) }) -> GetParametersRequest
 ```
 
 Constructs GetParametersRequest's fields from required parameters
@@ -7448,7 +7448,7 @@ Constructs GetParametersRequest's fields from required parameters
 
 ``` purescript
 newtype GetParametersResult
-  = GetParametersResult { "Parameters" :: NullOrUndefined (ParameterList), "InvalidParameters" :: NullOrUndefined (ParameterNameList) }
+  = GetParametersResult { "Parameters" :: Maybe (ParameterList), "InvalidParameters" :: Maybe (ParameterNameList) }
 ```
 
 ##### Instances
@@ -7471,7 +7471,7 @@ Constructs GetParametersResult from required parameters
 #### `newGetParametersResult'`
 
 ``` purescript
-newGetParametersResult' :: ({ "Parameters" :: NullOrUndefined (ParameterList), "InvalidParameters" :: NullOrUndefined (ParameterNameList) } -> { "Parameters" :: NullOrUndefined (ParameterList), "InvalidParameters" :: NullOrUndefined (ParameterNameList) }) -> GetParametersResult
+newGetParametersResult' :: ({ "Parameters" :: Maybe (ParameterList), "InvalidParameters" :: Maybe (ParameterNameList) } -> { "Parameters" :: Maybe (ParameterList), "InvalidParameters" :: Maybe (ParameterNameList) }) -> GetParametersResult
 ```
 
 Constructs GetParametersResult's fields from required parameters
@@ -7480,7 +7480,7 @@ Constructs GetParametersResult's fields from required parameters
 
 ``` purescript
 newtype GetPatchBaselineForPatchGroupRequest
-  = GetPatchBaselineForPatchGroupRequest { "PatchGroup" :: PatchGroup, "OperatingSystem" :: NullOrUndefined (OperatingSystem) }
+  = GetPatchBaselineForPatchGroupRequest { "PatchGroup" :: PatchGroup, "OperatingSystem" :: Maybe (OperatingSystem) }
 ```
 
 ##### Instances
@@ -7503,7 +7503,7 @@ Constructs GetPatchBaselineForPatchGroupRequest from required parameters
 #### `newGetPatchBaselineForPatchGroupRequest'`
 
 ``` purescript
-newGetPatchBaselineForPatchGroupRequest' :: PatchGroup -> ({ "PatchGroup" :: PatchGroup, "OperatingSystem" :: NullOrUndefined (OperatingSystem) } -> { "PatchGroup" :: PatchGroup, "OperatingSystem" :: NullOrUndefined (OperatingSystem) }) -> GetPatchBaselineForPatchGroupRequest
+newGetPatchBaselineForPatchGroupRequest' :: PatchGroup -> ({ "PatchGroup" :: PatchGroup, "OperatingSystem" :: Maybe (OperatingSystem) } -> { "PatchGroup" :: PatchGroup, "OperatingSystem" :: Maybe (OperatingSystem) }) -> GetPatchBaselineForPatchGroupRequest
 ```
 
 Constructs GetPatchBaselineForPatchGroupRequest's fields from required parameters
@@ -7512,7 +7512,7 @@ Constructs GetPatchBaselineForPatchGroupRequest's fields from required parameter
 
 ``` purescript
 newtype GetPatchBaselineForPatchGroupResult
-  = GetPatchBaselineForPatchGroupResult { "BaselineId" :: NullOrUndefined (BaselineId), "PatchGroup" :: NullOrUndefined (PatchGroup), "OperatingSystem" :: NullOrUndefined (OperatingSystem) }
+  = GetPatchBaselineForPatchGroupResult { "BaselineId" :: Maybe (BaselineId), "PatchGroup" :: Maybe (PatchGroup), "OperatingSystem" :: Maybe (OperatingSystem) }
 ```
 
 ##### Instances
@@ -7535,7 +7535,7 @@ Constructs GetPatchBaselineForPatchGroupResult from required parameters
 #### `newGetPatchBaselineForPatchGroupResult'`
 
 ``` purescript
-newGetPatchBaselineForPatchGroupResult' :: ({ "BaselineId" :: NullOrUndefined (BaselineId), "PatchGroup" :: NullOrUndefined (PatchGroup), "OperatingSystem" :: NullOrUndefined (OperatingSystem) } -> { "BaselineId" :: NullOrUndefined (BaselineId), "PatchGroup" :: NullOrUndefined (PatchGroup), "OperatingSystem" :: NullOrUndefined (OperatingSystem) }) -> GetPatchBaselineForPatchGroupResult
+newGetPatchBaselineForPatchGroupResult' :: ({ "BaselineId" :: Maybe (BaselineId), "PatchGroup" :: Maybe (PatchGroup), "OperatingSystem" :: Maybe (OperatingSystem) } -> { "BaselineId" :: Maybe (BaselineId), "PatchGroup" :: Maybe (PatchGroup), "OperatingSystem" :: Maybe (OperatingSystem) }) -> GetPatchBaselineForPatchGroupResult
 ```
 
 Constructs GetPatchBaselineForPatchGroupResult's fields from required parameters
@@ -7576,7 +7576,7 @@ Constructs GetPatchBaselineRequest's fields from required parameters
 
 ``` purescript
 newtype GetPatchBaselineResult
-  = GetPatchBaselineResult { "BaselineId" :: NullOrUndefined (BaselineId), "Name" :: NullOrUndefined (BaselineName), "OperatingSystem" :: NullOrUndefined (OperatingSystem), "GlobalFilters" :: NullOrUndefined (PatchFilterGroup), "ApprovalRules" :: NullOrUndefined (PatchRuleGroup), "ApprovedPatches" :: NullOrUndefined (PatchIdList), "ApprovedPatchesComplianceLevel" :: NullOrUndefined (PatchComplianceLevel), "ApprovedPatchesEnableNonSecurity" :: NullOrUndefined (Boolean), "RejectedPatches" :: NullOrUndefined (PatchIdList), "PatchGroups" :: NullOrUndefined (PatchGroupList), "CreatedDate" :: NullOrUndefined (DateTime), "ModifiedDate" :: NullOrUndefined (DateTime), "Description" :: NullOrUndefined (BaselineDescription), "Sources" :: NullOrUndefined (PatchSourceList) }
+  = GetPatchBaselineResult { "BaselineId" :: Maybe (BaselineId), "Name" :: Maybe (BaselineName), "OperatingSystem" :: Maybe (OperatingSystem), "GlobalFilters" :: Maybe (PatchFilterGroup), "ApprovalRules" :: Maybe (PatchRuleGroup), "ApprovedPatches" :: Maybe (PatchIdList), "ApprovedPatchesComplianceLevel" :: Maybe (PatchComplianceLevel), "ApprovedPatchesEnableNonSecurity" :: Maybe (Boolean), "RejectedPatches" :: Maybe (PatchIdList), "PatchGroups" :: Maybe (PatchGroupList), "CreatedDate" :: Maybe (DateTime), "ModifiedDate" :: Maybe (DateTime), "Description" :: Maybe (BaselineDescription), "Sources" :: Maybe (PatchSourceList) }
 ```
 
 ##### Instances
@@ -7599,7 +7599,7 @@ Constructs GetPatchBaselineResult from required parameters
 #### `newGetPatchBaselineResult'`
 
 ``` purescript
-newGetPatchBaselineResult' :: ({ "BaselineId" :: NullOrUndefined (BaselineId), "Name" :: NullOrUndefined (BaselineName), "OperatingSystem" :: NullOrUndefined (OperatingSystem), "GlobalFilters" :: NullOrUndefined (PatchFilterGroup), "ApprovalRules" :: NullOrUndefined (PatchRuleGroup), "ApprovedPatches" :: NullOrUndefined (PatchIdList), "ApprovedPatchesComplianceLevel" :: NullOrUndefined (PatchComplianceLevel), "ApprovedPatchesEnableNonSecurity" :: NullOrUndefined (Boolean), "RejectedPatches" :: NullOrUndefined (PatchIdList), "PatchGroups" :: NullOrUndefined (PatchGroupList), "CreatedDate" :: NullOrUndefined (DateTime), "ModifiedDate" :: NullOrUndefined (DateTime), "Description" :: NullOrUndefined (BaselineDescription), "Sources" :: NullOrUndefined (PatchSourceList) } -> { "BaselineId" :: NullOrUndefined (BaselineId), "Name" :: NullOrUndefined (BaselineName), "OperatingSystem" :: NullOrUndefined (OperatingSystem), "GlobalFilters" :: NullOrUndefined (PatchFilterGroup), "ApprovalRules" :: NullOrUndefined (PatchRuleGroup), "ApprovedPatches" :: NullOrUndefined (PatchIdList), "ApprovedPatchesComplianceLevel" :: NullOrUndefined (PatchComplianceLevel), "ApprovedPatchesEnableNonSecurity" :: NullOrUndefined (Boolean), "RejectedPatches" :: NullOrUndefined (PatchIdList), "PatchGroups" :: NullOrUndefined (PatchGroupList), "CreatedDate" :: NullOrUndefined (DateTime), "ModifiedDate" :: NullOrUndefined (DateTime), "Description" :: NullOrUndefined (BaselineDescription), "Sources" :: NullOrUndefined (PatchSourceList) }) -> GetPatchBaselineResult
+newGetPatchBaselineResult' :: ({ "BaselineId" :: Maybe (BaselineId), "Name" :: Maybe (BaselineName), "OperatingSystem" :: Maybe (OperatingSystem), "GlobalFilters" :: Maybe (PatchFilterGroup), "ApprovalRules" :: Maybe (PatchRuleGroup), "ApprovedPatches" :: Maybe (PatchIdList), "ApprovedPatchesComplianceLevel" :: Maybe (PatchComplianceLevel), "ApprovedPatchesEnableNonSecurity" :: Maybe (Boolean), "RejectedPatches" :: Maybe (PatchIdList), "PatchGroups" :: Maybe (PatchGroupList), "CreatedDate" :: Maybe (DateTime), "ModifiedDate" :: Maybe (DateTime), "Description" :: Maybe (BaselineDescription), "Sources" :: Maybe (PatchSourceList) } -> { "BaselineId" :: Maybe (BaselineId), "Name" :: Maybe (BaselineName), "OperatingSystem" :: Maybe (OperatingSystem), "GlobalFilters" :: Maybe (PatchFilterGroup), "ApprovalRules" :: Maybe (PatchRuleGroup), "ApprovedPatches" :: Maybe (PatchIdList), "ApprovedPatchesComplianceLevel" :: Maybe (PatchComplianceLevel), "ApprovedPatchesEnableNonSecurity" :: Maybe (Boolean), "RejectedPatches" :: Maybe (PatchIdList), "PatchGroups" :: Maybe (PatchGroupList), "CreatedDate" :: Maybe (DateTime), "ModifiedDate" :: Maybe (DateTime), "Description" :: Maybe (BaselineDescription), "Sources" :: Maybe (PatchSourceList) }) -> GetPatchBaselineResult
 ```
 
 Constructs GetPatchBaselineResult's fields from required parameters
@@ -7608,7 +7608,7 @@ Constructs GetPatchBaselineResult's fields from required parameters
 
 ``` purescript
 newtype HierarchyLevelLimitExceededException
-  = HierarchyLevelLimitExceededException { message :: NullOrUndefined (String) }
+  = HierarchyLevelLimitExceededException { message :: Maybe (String) }
 ```
 
 <p>A hierarchy can have a maximum of 15 levels. For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working with Systems Manager Parameters</a>. </p>
@@ -7633,7 +7633,7 @@ Constructs HierarchyLevelLimitExceededException from required parameters
 #### `newHierarchyLevelLimitExceededException'`
 
 ``` purescript
-newHierarchyLevelLimitExceededException' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> HierarchyLevelLimitExceededException
+newHierarchyLevelLimitExceededException' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> HierarchyLevelLimitExceededException
 ```
 
 Constructs HierarchyLevelLimitExceededException's fields from required parameters
@@ -7642,7 +7642,7 @@ Constructs HierarchyLevelLimitExceededException's fields from required parameter
 
 ``` purescript
 newtype HierarchyTypeMismatchException
-  = HierarchyTypeMismatchException { message :: NullOrUndefined (String) }
+  = HierarchyTypeMismatchException { message :: Maybe (String) }
 ```
 
 <p>Parameter Store does not support changing a parameter type in a hierarchy. For example, you can't change a parameter from a String type to a SecureString type. You must create a new, unique parameter.</p>
@@ -7667,7 +7667,7 @@ Constructs HierarchyTypeMismatchException from required parameters
 #### `newHierarchyTypeMismatchException'`
 
 ``` purescript
-newHierarchyTypeMismatchException' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> HierarchyTypeMismatchException
+newHierarchyTypeMismatchException' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> HierarchyTypeMismatchException
 ```
 
 Constructs HierarchyTypeMismatchException's fields from required parameters
@@ -7724,7 +7724,7 @@ Encode IdempotencyToken
 
 ``` purescript
 newtype IdempotentParameterMismatch
-  = IdempotentParameterMismatch { "Message" :: NullOrUndefined (String) }
+  = IdempotentParameterMismatch { "Message" :: Maybe (String) }
 ```
 
 <p>Error returned when an idempotent operation is retried and the parameters don't match the original call to the API with the same idempotency token. </p>
@@ -7749,7 +7749,7 @@ Constructs IdempotentParameterMismatch from required parameters
 #### `newIdempotentParameterMismatch'`
 
 ``` purescript
-newIdempotentParameterMismatch' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> IdempotentParameterMismatch
+newIdempotentParameterMismatch' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> IdempotentParameterMismatch
 ```
 
 Constructs IdempotentParameterMismatch's fields from required parameters
@@ -7758,7 +7758,7 @@ Constructs IdempotentParameterMismatch's fields from required parameters
 
 ``` purescript
 newtype InstanceAggregatedAssociationOverview
-  = InstanceAggregatedAssociationOverview { "DetailedStatus" :: NullOrUndefined (StatusName), "InstanceAssociationStatusAggregatedCount" :: NullOrUndefined (InstanceAssociationStatusAggregatedCount) }
+  = InstanceAggregatedAssociationOverview { "DetailedStatus" :: Maybe (StatusName), "InstanceAssociationStatusAggregatedCount" :: Maybe (InstanceAssociationStatusAggregatedCount) }
 ```
 
 <p>Status information about the aggregated associations.</p>
@@ -7783,7 +7783,7 @@ Constructs InstanceAggregatedAssociationOverview from required parameters
 #### `newInstanceAggregatedAssociationOverview'`
 
 ``` purescript
-newInstanceAggregatedAssociationOverview' :: ({ "DetailedStatus" :: NullOrUndefined (StatusName), "InstanceAssociationStatusAggregatedCount" :: NullOrUndefined (InstanceAssociationStatusAggregatedCount) } -> { "DetailedStatus" :: NullOrUndefined (StatusName), "InstanceAssociationStatusAggregatedCount" :: NullOrUndefined (InstanceAssociationStatusAggregatedCount) }) -> InstanceAggregatedAssociationOverview
+newInstanceAggregatedAssociationOverview' :: ({ "DetailedStatus" :: Maybe (StatusName), "InstanceAssociationStatusAggregatedCount" :: Maybe (InstanceAssociationStatusAggregatedCount) } -> { "DetailedStatus" :: Maybe (StatusName), "InstanceAssociationStatusAggregatedCount" :: Maybe (InstanceAssociationStatusAggregatedCount) }) -> InstanceAggregatedAssociationOverview
 ```
 
 Constructs InstanceAggregatedAssociationOverview's fields from required parameters
@@ -7792,7 +7792,7 @@ Constructs InstanceAggregatedAssociationOverview's fields from required paramete
 
 ``` purescript
 newtype InstanceAssociation
-  = InstanceAssociation { "AssociationId" :: NullOrUndefined (AssociationId), "InstanceId" :: NullOrUndefined (InstanceId), "Content" :: NullOrUndefined (DocumentContent), "AssociationVersion" :: NullOrUndefined (AssociationVersion) }
+  = InstanceAssociation { "AssociationId" :: Maybe (AssociationId), "InstanceId" :: Maybe (InstanceId), "Content" :: Maybe (DocumentContent), "AssociationVersion" :: Maybe (AssociationVersion) }
 ```
 
 <p>One or more association documents on the instance. </p>
@@ -7817,7 +7817,7 @@ Constructs InstanceAssociation from required parameters
 #### `newInstanceAssociation'`
 
 ``` purescript
-newInstanceAssociation' :: ({ "AssociationId" :: NullOrUndefined (AssociationId), "InstanceId" :: NullOrUndefined (InstanceId), "Content" :: NullOrUndefined (DocumentContent), "AssociationVersion" :: NullOrUndefined (AssociationVersion) } -> { "AssociationId" :: NullOrUndefined (AssociationId), "InstanceId" :: NullOrUndefined (InstanceId), "Content" :: NullOrUndefined (DocumentContent), "AssociationVersion" :: NullOrUndefined (AssociationVersion) }) -> InstanceAssociation
+newInstanceAssociation' :: ({ "AssociationId" :: Maybe (AssociationId), "InstanceId" :: Maybe (InstanceId), "Content" :: Maybe (DocumentContent), "AssociationVersion" :: Maybe (AssociationVersion) } -> { "AssociationId" :: Maybe (AssociationId), "InstanceId" :: Maybe (InstanceId), "Content" :: Maybe (DocumentContent), "AssociationVersion" :: Maybe (AssociationVersion) }) -> InstanceAssociation
 ```
 
 Constructs InstanceAssociation's fields from required parameters
@@ -7858,7 +7858,7 @@ Encode InstanceAssociationList
 
 ``` purescript
 newtype InstanceAssociationOutputLocation
-  = InstanceAssociationOutputLocation { "S3Location" :: NullOrUndefined (S3OutputLocation) }
+  = InstanceAssociationOutputLocation { "S3Location" :: Maybe (S3OutputLocation) }
 ```
 
 <p>An Amazon S3 bucket where you want to store the results of this request.</p>
@@ -7883,7 +7883,7 @@ Constructs InstanceAssociationOutputLocation from required parameters
 #### `newInstanceAssociationOutputLocation'`
 
 ``` purescript
-newInstanceAssociationOutputLocation' :: ({ "S3Location" :: NullOrUndefined (S3OutputLocation) } -> { "S3Location" :: NullOrUndefined (S3OutputLocation) }) -> InstanceAssociationOutputLocation
+newInstanceAssociationOutputLocation' :: ({ "S3Location" :: Maybe (S3OutputLocation) } -> { "S3Location" :: Maybe (S3OutputLocation) }) -> InstanceAssociationOutputLocation
 ```
 
 Constructs InstanceAssociationOutputLocation's fields from required parameters
@@ -7892,7 +7892,7 @@ Constructs InstanceAssociationOutputLocation's fields from required parameters
 
 ``` purescript
 newtype InstanceAssociationOutputUrl
-  = InstanceAssociationOutputUrl { "S3OutputUrl" :: NullOrUndefined (S3OutputUrl) }
+  = InstanceAssociationOutputUrl { "S3OutputUrl" :: Maybe (S3OutputUrl) }
 ```
 
 <p>The URL of Amazon S3 bucket where you want to store the results of this request.</p>
@@ -7917,7 +7917,7 @@ Constructs InstanceAssociationOutputUrl from required parameters
 #### `newInstanceAssociationOutputUrl'`
 
 ``` purescript
-newInstanceAssociationOutputUrl' :: ({ "S3OutputUrl" :: NullOrUndefined (S3OutputUrl) } -> { "S3OutputUrl" :: NullOrUndefined (S3OutputUrl) }) -> InstanceAssociationOutputUrl
+newInstanceAssociationOutputUrl' :: ({ "S3OutputUrl" :: Maybe (S3OutputUrl) } -> { "S3OutputUrl" :: Maybe (S3OutputUrl) }) -> InstanceAssociationOutputUrl
 ```
 
 Constructs InstanceAssociationOutputUrl's fields from required parameters
@@ -7942,7 +7942,7 @@ Encode InstanceAssociationStatusAggregatedCount
 
 ``` purescript
 newtype InstanceAssociationStatusInfo
-  = InstanceAssociationStatusInfo { "AssociationId" :: NullOrUndefined (AssociationId), "Name" :: NullOrUndefined (DocumentName), "DocumentVersion" :: NullOrUndefined (DocumentVersion), "AssociationVersion" :: NullOrUndefined (AssociationVersion), "InstanceId" :: NullOrUndefined (InstanceId), "ExecutionDate" :: NullOrUndefined (DateTime), "Status" :: NullOrUndefined (StatusName), "DetailedStatus" :: NullOrUndefined (StatusName), "ExecutionSummary" :: NullOrUndefined (InstanceAssociationExecutionSummary), "ErrorCode" :: NullOrUndefined (AgentErrorCode), "OutputUrl" :: NullOrUndefined (InstanceAssociationOutputUrl), "AssociationName" :: NullOrUndefined (AssociationName) }
+  = InstanceAssociationStatusInfo { "AssociationId" :: Maybe (AssociationId), "Name" :: Maybe (DocumentName), "DocumentVersion" :: Maybe (DocumentVersion), "AssociationVersion" :: Maybe (AssociationVersion), "InstanceId" :: Maybe (InstanceId), "ExecutionDate" :: Maybe (DateTime), "Status" :: Maybe (StatusName), "DetailedStatus" :: Maybe (StatusName), "ExecutionSummary" :: Maybe (InstanceAssociationExecutionSummary), "ErrorCode" :: Maybe (AgentErrorCode), "OutputUrl" :: Maybe (InstanceAssociationOutputUrl), "AssociationName" :: Maybe (AssociationName) }
 ```
 
 <p>Status information about the instance association.</p>
@@ -7967,7 +7967,7 @@ Constructs InstanceAssociationStatusInfo from required parameters
 #### `newInstanceAssociationStatusInfo'`
 
 ``` purescript
-newInstanceAssociationStatusInfo' :: ({ "AssociationId" :: NullOrUndefined (AssociationId), "Name" :: NullOrUndefined (DocumentName), "DocumentVersion" :: NullOrUndefined (DocumentVersion), "AssociationVersion" :: NullOrUndefined (AssociationVersion), "InstanceId" :: NullOrUndefined (InstanceId), "ExecutionDate" :: NullOrUndefined (DateTime), "Status" :: NullOrUndefined (StatusName), "DetailedStatus" :: NullOrUndefined (StatusName), "ExecutionSummary" :: NullOrUndefined (InstanceAssociationExecutionSummary), "ErrorCode" :: NullOrUndefined (AgentErrorCode), "OutputUrl" :: NullOrUndefined (InstanceAssociationOutputUrl), "AssociationName" :: NullOrUndefined (AssociationName) } -> { "AssociationId" :: NullOrUndefined (AssociationId), "Name" :: NullOrUndefined (DocumentName), "DocumentVersion" :: NullOrUndefined (DocumentVersion), "AssociationVersion" :: NullOrUndefined (AssociationVersion), "InstanceId" :: NullOrUndefined (InstanceId), "ExecutionDate" :: NullOrUndefined (DateTime), "Status" :: NullOrUndefined (StatusName), "DetailedStatus" :: NullOrUndefined (StatusName), "ExecutionSummary" :: NullOrUndefined (InstanceAssociationExecutionSummary), "ErrorCode" :: NullOrUndefined (AgentErrorCode), "OutputUrl" :: NullOrUndefined (InstanceAssociationOutputUrl), "AssociationName" :: NullOrUndefined (AssociationName) }) -> InstanceAssociationStatusInfo
+newInstanceAssociationStatusInfo' :: ({ "AssociationId" :: Maybe (AssociationId), "Name" :: Maybe (DocumentName), "DocumentVersion" :: Maybe (DocumentVersion), "AssociationVersion" :: Maybe (AssociationVersion), "InstanceId" :: Maybe (InstanceId), "ExecutionDate" :: Maybe (DateTime), "Status" :: Maybe (StatusName), "DetailedStatus" :: Maybe (StatusName), "ExecutionSummary" :: Maybe (InstanceAssociationExecutionSummary), "ErrorCode" :: Maybe (AgentErrorCode), "OutputUrl" :: Maybe (InstanceAssociationOutputUrl), "AssociationName" :: Maybe (AssociationName) } -> { "AssociationId" :: Maybe (AssociationId), "Name" :: Maybe (DocumentName), "DocumentVersion" :: Maybe (DocumentVersion), "AssociationVersion" :: Maybe (AssociationVersion), "InstanceId" :: Maybe (InstanceId), "ExecutionDate" :: Maybe (DateTime), "Status" :: Maybe (StatusName), "DetailedStatus" :: Maybe (StatusName), "ExecutionSummary" :: Maybe (InstanceAssociationExecutionSummary), "ErrorCode" :: Maybe (AgentErrorCode), "OutputUrl" :: Maybe (InstanceAssociationOutputUrl), "AssociationName" :: Maybe (AssociationName) }) -> InstanceAssociationStatusInfo
 ```
 
 Constructs InstanceAssociationStatusInfo's fields from required parameters
@@ -8040,7 +8040,7 @@ Encode InstanceIdList
 
 ``` purescript
 newtype InstanceInformation
-  = InstanceInformation { "InstanceId" :: NullOrUndefined (InstanceId), "PingStatus" :: NullOrUndefined (PingStatus), "LastPingDateTime" :: NullOrUndefined (DateTime), "AgentVersion" :: NullOrUndefined (Version), "IsLatestVersion" :: NullOrUndefined (Boolean), "PlatformType" :: NullOrUndefined (PlatformType), "PlatformName" :: NullOrUndefined (String), "PlatformVersion" :: NullOrUndefined (String), "ActivationId" :: NullOrUndefined (ActivationId), "IamRole" :: NullOrUndefined (IamRole), "RegistrationDate" :: NullOrUndefined (DateTime), "ResourceType" :: NullOrUndefined (ResourceType), "Name" :: NullOrUndefined (String), "IPAddress" :: NullOrUndefined (IPAddress), "ComputerName" :: NullOrUndefined (ComputerName), "AssociationStatus" :: NullOrUndefined (StatusName), "LastAssociationExecutionDate" :: NullOrUndefined (DateTime), "LastSuccessfulAssociationExecutionDate" :: NullOrUndefined (DateTime), "AssociationOverview" :: NullOrUndefined (InstanceAggregatedAssociationOverview) }
+  = InstanceInformation { "InstanceId" :: Maybe (InstanceId), "PingStatus" :: Maybe (PingStatus), "LastPingDateTime" :: Maybe (DateTime), "AgentVersion" :: Maybe (Version), "IsLatestVersion" :: Maybe (Boolean), "PlatformType" :: Maybe (PlatformType), "PlatformName" :: Maybe (String), "PlatformVersion" :: Maybe (String), "ActivationId" :: Maybe (ActivationId), "IamRole" :: Maybe (IamRole), "RegistrationDate" :: Maybe (DateTime), "ResourceType" :: Maybe (ResourceType), "Name" :: Maybe (String), "IPAddress" :: Maybe (IPAddress), "ComputerName" :: Maybe (ComputerName), "AssociationStatus" :: Maybe (StatusName), "LastAssociationExecutionDate" :: Maybe (DateTime), "LastSuccessfulAssociationExecutionDate" :: Maybe (DateTime), "AssociationOverview" :: Maybe (InstanceAggregatedAssociationOverview) }
 ```
 
 <p>Describes a filter for a specific list of instances. </p>
@@ -8065,7 +8065,7 @@ Constructs InstanceInformation from required parameters
 #### `newInstanceInformation'`
 
 ``` purescript
-newInstanceInformation' :: ({ "InstanceId" :: NullOrUndefined (InstanceId), "PingStatus" :: NullOrUndefined (PingStatus), "LastPingDateTime" :: NullOrUndefined (DateTime), "AgentVersion" :: NullOrUndefined (Version), "IsLatestVersion" :: NullOrUndefined (Boolean), "PlatformType" :: NullOrUndefined (PlatformType), "PlatformName" :: NullOrUndefined (String), "PlatformVersion" :: NullOrUndefined (String), "ActivationId" :: NullOrUndefined (ActivationId), "IamRole" :: NullOrUndefined (IamRole), "RegistrationDate" :: NullOrUndefined (DateTime), "ResourceType" :: NullOrUndefined (ResourceType), "Name" :: NullOrUndefined (String), "IPAddress" :: NullOrUndefined (IPAddress), "ComputerName" :: NullOrUndefined (ComputerName), "AssociationStatus" :: NullOrUndefined (StatusName), "LastAssociationExecutionDate" :: NullOrUndefined (DateTime), "LastSuccessfulAssociationExecutionDate" :: NullOrUndefined (DateTime), "AssociationOverview" :: NullOrUndefined (InstanceAggregatedAssociationOverview) } -> { "InstanceId" :: NullOrUndefined (InstanceId), "PingStatus" :: NullOrUndefined (PingStatus), "LastPingDateTime" :: NullOrUndefined (DateTime), "AgentVersion" :: NullOrUndefined (Version), "IsLatestVersion" :: NullOrUndefined (Boolean), "PlatformType" :: NullOrUndefined (PlatformType), "PlatformName" :: NullOrUndefined (String), "PlatformVersion" :: NullOrUndefined (String), "ActivationId" :: NullOrUndefined (ActivationId), "IamRole" :: NullOrUndefined (IamRole), "RegistrationDate" :: NullOrUndefined (DateTime), "ResourceType" :: NullOrUndefined (ResourceType), "Name" :: NullOrUndefined (String), "IPAddress" :: NullOrUndefined (IPAddress), "ComputerName" :: NullOrUndefined (ComputerName), "AssociationStatus" :: NullOrUndefined (StatusName), "LastAssociationExecutionDate" :: NullOrUndefined (DateTime), "LastSuccessfulAssociationExecutionDate" :: NullOrUndefined (DateTime), "AssociationOverview" :: NullOrUndefined (InstanceAggregatedAssociationOverview) }) -> InstanceInformation
+newInstanceInformation' :: ({ "InstanceId" :: Maybe (InstanceId), "PingStatus" :: Maybe (PingStatus), "LastPingDateTime" :: Maybe (DateTime), "AgentVersion" :: Maybe (Version), "IsLatestVersion" :: Maybe (Boolean), "PlatformType" :: Maybe (PlatformType), "PlatformName" :: Maybe (String), "PlatformVersion" :: Maybe (String), "ActivationId" :: Maybe (ActivationId), "IamRole" :: Maybe (IamRole), "RegistrationDate" :: Maybe (DateTime), "ResourceType" :: Maybe (ResourceType), "Name" :: Maybe (String), "IPAddress" :: Maybe (IPAddress), "ComputerName" :: Maybe (ComputerName), "AssociationStatus" :: Maybe (StatusName), "LastAssociationExecutionDate" :: Maybe (DateTime), "LastSuccessfulAssociationExecutionDate" :: Maybe (DateTime), "AssociationOverview" :: Maybe (InstanceAggregatedAssociationOverview) } -> { "InstanceId" :: Maybe (InstanceId), "PingStatus" :: Maybe (PingStatus), "LastPingDateTime" :: Maybe (DateTime), "AgentVersion" :: Maybe (Version), "IsLatestVersion" :: Maybe (Boolean), "PlatformType" :: Maybe (PlatformType), "PlatformName" :: Maybe (String), "PlatformVersion" :: Maybe (String), "ActivationId" :: Maybe (ActivationId), "IamRole" :: Maybe (IamRole), "RegistrationDate" :: Maybe (DateTime), "ResourceType" :: Maybe (ResourceType), "Name" :: Maybe (String), "IPAddress" :: Maybe (IPAddress), "ComputerName" :: Maybe (ComputerName), "AssociationStatus" :: Maybe (StatusName), "LastAssociationExecutionDate" :: Maybe (DateTime), "LastSuccessfulAssociationExecutionDate" :: Maybe (DateTime), "AssociationOverview" :: Maybe (InstanceAggregatedAssociationOverview) }) -> InstanceInformation
 ```
 
 Constructs InstanceInformation's fields from required parameters
@@ -8254,7 +8254,7 @@ Encode InstanceInformationStringFilterList
 
 ``` purescript
 newtype InstancePatchState
-  = InstancePatchState { "InstanceId" :: InstanceId, "PatchGroup" :: PatchGroup, "BaselineId" :: BaselineId, "SnapshotId" :: NullOrUndefined (SnapshotId), "OwnerInformation" :: NullOrUndefined (OwnerInformation), "InstalledCount" :: NullOrUndefined (PatchInstalledCount), "InstalledOtherCount" :: NullOrUndefined (PatchInstalledOtherCount), "MissingCount" :: NullOrUndefined (PatchMissingCount), "FailedCount" :: NullOrUndefined (PatchFailedCount), "NotApplicableCount" :: NullOrUndefined (PatchNotApplicableCount), "OperationStartTime" :: DateTime, "OperationEndTime" :: DateTime, "Operation" :: PatchOperationType }
+  = InstancePatchState { "InstanceId" :: InstanceId, "PatchGroup" :: PatchGroup, "BaselineId" :: BaselineId, "SnapshotId" :: Maybe (SnapshotId), "OwnerInformation" :: Maybe (OwnerInformation), "InstalledCount" :: Maybe (PatchInstalledCount), "InstalledOtherCount" :: Maybe (PatchInstalledOtherCount), "MissingCount" :: Maybe (PatchMissingCount), "FailedCount" :: Maybe (PatchFailedCount), "NotApplicableCount" :: Maybe (PatchNotApplicableCount), "OperationStartTime" :: DateTime, "OperationEndTime" :: DateTime, "Operation" :: PatchOperationType }
 ```
 
 <p>Defines the high-level patch compliance state for a managed instance, providing information about the number of installed, missing, not applicable, and failed patches along with metadata about the operation when this information was gathered for the instance.</p>
@@ -8279,7 +8279,7 @@ Constructs InstancePatchState from required parameters
 #### `newInstancePatchState'`
 
 ``` purescript
-newInstancePatchState' :: BaselineId -> InstanceId -> PatchOperationType -> DateTime -> DateTime -> PatchGroup -> ({ "InstanceId" :: InstanceId, "PatchGroup" :: PatchGroup, "BaselineId" :: BaselineId, "SnapshotId" :: NullOrUndefined (SnapshotId), "OwnerInformation" :: NullOrUndefined (OwnerInformation), "InstalledCount" :: NullOrUndefined (PatchInstalledCount), "InstalledOtherCount" :: NullOrUndefined (PatchInstalledOtherCount), "MissingCount" :: NullOrUndefined (PatchMissingCount), "FailedCount" :: NullOrUndefined (PatchFailedCount), "NotApplicableCount" :: NullOrUndefined (PatchNotApplicableCount), "OperationStartTime" :: DateTime, "OperationEndTime" :: DateTime, "Operation" :: PatchOperationType } -> { "InstanceId" :: InstanceId, "PatchGroup" :: PatchGroup, "BaselineId" :: BaselineId, "SnapshotId" :: NullOrUndefined (SnapshotId), "OwnerInformation" :: NullOrUndefined (OwnerInformation), "InstalledCount" :: NullOrUndefined (PatchInstalledCount), "InstalledOtherCount" :: NullOrUndefined (PatchInstalledOtherCount), "MissingCount" :: NullOrUndefined (PatchMissingCount), "FailedCount" :: NullOrUndefined (PatchFailedCount), "NotApplicableCount" :: NullOrUndefined (PatchNotApplicableCount), "OperationStartTime" :: DateTime, "OperationEndTime" :: DateTime, "Operation" :: PatchOperationType }) -> InstancePatchState
+newInstancePatchState' :: BaselineId -> InstanceId -> PatchOperationType -> DateTime -> DateTime -> PatchGroup -> ({ "InstanceId" :: InstanceId, "PatchGroup" :: PatchGroup, "BaselineId" :: BaselineId, "SnapshotId" :: Maybe (SnapshotId), "OwnerInformation" :: Maybe (OwnerInformation), "InstalledCount" :: Maybe (PatchInstalledCount), "InstalledOtherCount" :: Maybe (PatchInstalledOtherCount), "MissingCount" :: Maybe (PatchMissingCount), "FailedCount" :: Maybe (PatchFailedCount), "NotApplicableCount" :: Maybe (PatchNotApplicableCount), "OperationStartTime" :: DateTime, "OperationEndTime" :: DateTime, "Operation" :: PatchOperationType } -> { "InstanceId" :: InstanceId, "PatchGroup" :: PatchGroup, "BaselineId" :: BaselineId, "SnapshotId" :: Maybe (SnapshotId), "OwnerInformation" :: Maybe (OwnerInformation), "InstalledCount" :: Maybe (PatchInstalledCount), "InstalledOtherCount" :: Maybe (PatchInstalledOtherCount), "MissingCount" :: Maybe (PatchMissingCount), "FailedCount" :: Maybe (PatchFailedCount), "NotApplicableCount" :: Maybe (PatchNotApplicableCount), "OperationStartTime" :: DateTime, "OperationEndTime" :: DateTime, "Operation" :: PatchOperationType }) -> InstancePatchState
 ```
 
 Constructs InstancePatchState's fields from required parameters
@@ -8450,7 +8450,7 @@ Encode InstanceTagName
 
 ``` purescript
 newtype InternalServerError
-  = InternalServerError { "Message" :: NullOrUndefined (String) }
+  = InternalServerError { "Message" :: Maybe (String) }
 ```
 
 <p>An error occurred on the server side.</p>
@@ -8475,7 +8475,7 @@ Constructs InternalServerError from required parameters
 #### `newInternalServerError'`
 
 ``` purescript
-newInternalServerError' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> InternalServerError
+newInternalServerError' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> InternalServerError
 ```
 
 Constructs InternalServerError's fields from required parameters
@@ -8484,7 +8484,7 @@ Constructs InternalServerError's fields from required parameters
 
 ``` purescript
 newtype InvalidActivation
-  = InvalidActivation { "Message" :: NullOrUndefined (String) }
+  = InvalidActivation { "Message" :: Maybe (String) }
 ```
 
 <p>The activation is not valid. The activation might have been deleted, or the ActivationId and the ActivationCode do not match.</p>
@@ -8509,7 +8509,7 @@ Constructs InvalidActivation from required parameters
 #### `newInvalidActivation'`
 
 ``` purescript
-newInvalidActivation' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> InvalidActivation
+newInvalidActivation' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> InvalidActivation
 ```
 
 Constructs InvalidActivation's fields from required parameters
@@ -8518,7 +8518,7 @@ Constructs InvalidActivation's fields from required parameters
 
 ``` purescript
 newtype InvalidActivationId
-  = InvalidActivationId { "Message" :: NullOrUndefined (String) }
+  = InvalidActivationId { "Message" :: Maybe (String) }
 ```
 
 <p>The activation ID is not valid. Verify the you entered the correct ActivationId or ActivationCode and try again.</p>
@@ -8543,7 +8543,7 @@ Constructs InvalidActivationId from required parameters
 #### `newInvalidActivationId'`
 
 ``` purescript
-newInvalidActivationId' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> InvalidActivationId
+newInvalidActivationId' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> InvalidActivationId
 ```
 
 Constructs InvalidActivationId's fields from required parameters
@@ -8552,7 +8552,7 @@ Constructs InvalidActivationId's fields from required parameters
 
 ``` purescript
 newtype InvalidAllowedPatternException
-  = InvalidAllowedPatternException { message :: NullOrUndefined (String) }
+  = InvalidAllowedPatternException { message :: Maybe (String) }
 ```
 
 <p>The request does not meet the regular expression requirement.</p>
@@ -8577,7 +8577,7 @@ Constructs InvalidAllowedPatternException from required parameters
 #### `newInvalidAllowedPatternException'`
 
 ``` purescript
-newInvalidAllowedPatternException' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> InvalidAllowedPatternException
+newInvalidAllowedPatternException' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> InvalidAllowedPatternException
 ```
 
 Constructs InvalidAllowedPatternException's fields from required parameters
@@ -8586,7 +8586,7 @@ Constructs InvalidAllowedPatternException's fields from required parameters
 
 ``` purescript
 newtype InvalidAssociationVersion
-  = InvalidAssociationVersion { "Message" :: NullOrUndefined (String) }
+  = InvalidAssociationVersion { "Message" :: Maybe (String) }
 ```
 
 <p>The version you specified is not valid. Use ListAssociationVersions to view all versions of an association according to the association ID. Or, use the <code>$LATEST</code> parameter to view the latest version of the association.</p>
@@ -8611,7 +8611,7 @@ Constructs InvalidAssociationVersion from required parameters
 #### `newInvalidAssociationVersion'`
 
 ``` purescript
-newInvalidAssociationVersion' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> InvalidAssociationVersion
+newInvalidAssociationVersion' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> InvalidAssociationVersion
 ```
 
 Constructs InvalidAssociationVersion's fields from required parameters
@@ -8620,7 +8620,7 @@ Constructs InvalidAssociationVersion's fields from required parameters
 
 ``` purescript
 newtype InvalidAutomationExecutionParametersException
-  = InvalidAutomationExecutionParametersException { "Message" :: NullOrUndefined (String) }
+  = InvalidAutomationExecutionParametersException { "Message" :: Maybe (String) }
 ```
 
 <p>The supplied parameters for invoking the specified Automation document are incorrect. For example, they may not match the set of parameters permitted for the specified Automation document.</p>
@@ -8645,7 +8645,7 @@ Constructs InvalidAutomationExecutionParametersException from required parameter
 #### `newInvalidAutomationExecutionParametersException'`
 
 ``` purescript
-newInvalidAutomationExecutionParametersException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> InvalidAutomationExecutionParametersException
+newInvalidAutomationExecutionParametersException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> InvalidAutomationExecutionParametersException
 ```
 
 Constructs InvalidAutomationExecutionParametersException's fields from required parameters
@@ -8654,7 +8654,7 @@ Constructs InvalidAutomationExecutionParametersException's fields from required 
 
 ``` purescript
 newtype InvalidAutomationSignalException
-  = InvalidAutomationSignalException { "Message" :: NullOrUndefined (String) }
+  = InvalidAutomationSignalException { "Message" :: Maybe (String) }
 ```
 
 <p>The signal is not valid for the current Automation execution.</p>
@@ -8679,7 +8679,7 @@ Constructs InvalidAutomationSignalException from required parameters
 #### `newInvalidAutomationSignalException'`
 
 ``` purescript
-newInvalidAutomationSignalException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> InvalidAutomationSignalException
+newInvalidAutomationSignalException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> InvalidAutomationSignalException
 ```
 
 Constructs InvalidAutomationSignalException's fields from required parameters
@@ -8688,7 +8688,7 @@ Constructs InvalidAutomationSignalException's fields from required parameters
 
 ``` purescript
 newtype InvalidAutomationStatusUpdateException
-  = InvalidAutomationStatusUpdateException { "Message" :: NullOrUndefined (String) }
+  = InvalidAutomationStatusUpdateException { "Message" :: Maybe (String) }
 ```
 
 <p>The specified update status operation is not valid.</p>
@@ -8713,7 +8713,7 @@ Constructs InvalidAutomationStatusUpdateException from required parameters
 #### `newInvalidAutomationStatusUpdateException'`
 
 ``` purescript
-newInvalidAutomationStatusUpdateException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> InvalidAutomationStatusUpdateException
+newInvalidAutomationStatusUpdateException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> InvalidAutomationStatusUpdateException
 ```
 
 Constructs InvalidAutomationStatusUpdateException's fields from required parameters
@@ -8738,7 +8738,7 @@ Encode InvalidCommandId
 
 ``` purescript
 newtype InvalidDocument
-  = InvalidDocument { "Message" :: NullOrUndefined (String) }
+  = InvalidDocument { "Message" :: Maybe (String) }
 ```
 
 <p>The specified document does not exist.</p>
@@ -8763,7 +8763,7 @@ Constructs InvalidDocument from required parameters
 #### `newInvalidDocument'`
 
 ``` purescript
-newInvalidDocument' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> InvalidDocument
+newInvalidDocument' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> InvalidDocument
 ```
 
 Constructs InvalidDocument's fields from required parameters
@@ -8772,7 +8772,7 @@ Constructs InvalidDocument's fields from required parameters
 
 ``` purescript
 newtype InvalidDocumentContent
-  = InvalidDocumentContent { "Message" :: NullOrUndefined (String) }
+  = InvalidDocumentContent { "Message" :: Maybe (String) }
 ```
 
 <p>The content for the document is not valid.</p>
@@ -8797,7 +8797,7 @@ Constructs InvalidDocumentContent from required parameters
 #### `newInvalidDocumentContent'`
 
 ``` purescript
-newInvalidDocumentContent' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> InvalidDocumentContent
+newInvalidDocumentContent' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> InvalidDocumentContent
 ```
 
 Constructs InvalidDocumentContent's fields from required parameters
@@ -8806,7 +8806,7 @@ Constructs InvalidDocumentContent's fields from required parameters
 
 ``` purescript
 newtype InvalidDocumentOperation
-  = InvalidDocumentOperation { "Message" :: NullOrUndefined (String) }
+  = InvalidDocumentOperation { "Message" :: Maybe (String) }
 ```
 
 <p>You attempted to delete a document while it is still shared. You must stop sharing the document before you can delete it.</p>
@@ -8831,7 +8831,7 @@ Constructs InvalidDocumentOperation from required parameters
 #### `newInvalidDocumentOperation'`
 
 ``` purescript
-newInvalidDocumentOperation' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> InvalidDocumentOperation
+newInvalidDocumentOperation' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> InvalidDocumentOperation
 ```
 
 Constructs InvalidDocumentOperation's fields from required parameters
@@ -8840,7 +8840,7 @@ Constructs InvalidDocumentOperation's fields from required parameters
 
 ``` purescript
 newtype InvalidDocumentSchemaVersion
-  = InvalidDocumentSchemaVersion { "Message" :: NullOrUndefined (String) }
+  = InvalidDocumentSchemaVersion { "Message" :: Maybe (String) }
 ```
 
 <p>The version of the document schema is not supported.</p>
@@ -8865,7 +8865,7 @@ Constructs InvalidDocumentSchemaVersion from required parameters
 #### `newInvalidDocumentSchemaVersion'`
 
 ``` purescript
-newInvalidDocumentSchemaVersion' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> InvalidDocumentSchemaVersion
+newInvalidDocumentSchemaVersion' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> InvalidDocumentSchemaVersion
 ```
 
 Constructs InvalidDocumentSchemaVersion's fields from required parameters
@@ -8874,7 +8874,7 @@ Constructs InvalidDocumentSchemaVersion's fields from required parameters
 
 ``` purescript
 newtype InvalidDocumentVersion
-  = InvalidDocumentVersion { "Message" :: NullOrUndefined (String) }
+  = InvalidDocumentVersion { "Message" :: Maybe (String) }
 ```
 
 <p>The document version is not valid or does not exist.</p>
@@ -8899,7 +8899,7 @@ Constructs InvalidDocumentVersion from required parameters
 #### `newInvalidDocumentVersion'`
 
 ``` purescript
-newInvalidDocumentVersion' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> InvalidDocumentVersion
+newInvalidDocumentVersion' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> InvalidDocumentVersion
 ```
 
 Constructs InvalidDocumentVersion's fields from required parameters
@@ -8908,7 +8908,7 @@ Constructs InvalidDocumentVersion's fields from required parameters
 
 ``` purescript
 newtype InvalidFilter
-  = InvalidFilter { "Message" :: NullOrUndefined (String) }
+  = InvalidFilter { "Message" :: Maybe (String) }
 ```
 
 <p>The filter name is not valid. Verify the you entered the correct name and try again.</p>
@@ -8933,7 +8933,7 @@ Constructs InvalidFilter from required parameters
 #### `newInvalidFilter'`
 
 ``` purescript
-newInvalidFilter' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> InvalidFilter
+newInvalidFilter' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> InvalidFilter
 ```
 
 Constructs InvalidFilter's fields from required parameters
@@ -8960,7 +8960,7 @@ Encode InvalidFilterKey
 
 ``` purescript
 newtype InvalidFilterOption
-  = InvalidFilterOption { message :: NullOrUndefined (String) }
+  = InvalidFilterOption { message :: Maybe (String) }
 ```
 
 <p>The specified filter option is not valid. Valid options are Equals and BeginsWith. For Path filter, valid options are Recursive and OneLevel.</p>
@@ -8985,7 +8985,7 @@ Constructs InvalidFilterOption from required parameters
 #### `newInvalidFilterOption'`
 
 ``` purescript
-newInvalidFilterOption' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> InvalidFilterOption
+newInvalidFilterOption' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> InvalidFilterOption
 ```
 
 Constructs InvalidFilterOption's fields from required parameters
@@ -8994,7 +8994,7 @@ Constructs InvalidFilterOption's fields from required parameters
 
 ``` purescript
 newtype InvalidFilterValue
-  = InvalidFilterValue { "Message" :: NullOrUndefined (String) }
+  = InvalidFilterValue { "Message" :: Maybe (String) }
 ```
 
 <p>The filter value is not valid. Verify the value and try again.</p>
@@ -9019,7 +9019,7 @@ Constructs InvalidFilterValue from required parameters
 #### `newInvalidFilterValue'`
 
 ``` purescript
-newInvalidFilterValue' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> InvalidFilterValue
+newInvalidFilterValue' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> InvalidFilterValue
 ```
 
 Constructs InvalidFilterValue's fields from required parameters
@@ -9028,7 +9028,7 @@ Constructs InvalidFilterValue's fields from required parameters
 
 ``` purescript
 newtype InvalidInstanceId
-  = InvalidInstanceId { "Message" :: NullOrUndefined (String) }
+  = InvalidInstanceId { "Message" :: Maybe (String) }
 ```
 
 <p>The following problems can cause this exception:</p> <p>You do not have permission to access the instance.</p> <p>The SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service is running.</p> <p>The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM Agent or EC2Config service.</p> <p>The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states are: Shutting-down and Terminated.</p>
@@ -9053,7 +9053,7 @@ Constructs InvalidInstanceId from required parameters
 #### `newInvalidInstanceId'`
 
 ``` purescript
-newInvalidInstanceId' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> InvalidInstanceId
+newInvalidInstanceId' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> InvalidInstanceId
 ```
 
 Constructs InvalidInstanceId's fields from required parameters
@@ -9062,7 +9062,7 @@ Constructs InvalidInstanceId's fields from required parameters
 
 ``` purescript
 newtype InvalidInstanceInformationFilterValue
-  = InvalidInstanceInformationFilterValue { message :: NullOrUndefined (String) }
+  = InvalidInstanceInformationFilterValue { message :: Maybe (String) }
 ```
 
 <p>The specified filter value is not valid.</p>
@@ -9087,7 +9087,7 @@ Constructs InvalidInstanceInformationFilterValue from required parameters
 #### `newInvalidInstanceInformationFilterValue'`
 
 ``` purescript
-newInvalidInstanceInformationFilterValue' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> InvalidInstanceInformationFilterValue
+newInvalidInstanceInformationFilterValue' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> InvalidInstanceInformationFilterValue
 ```
 
 Constructs InvalidInstanceInformationFilterValue's fields from required parameters
@@ -9096,7 +9096,7 @@ Constructs InvalidInstanceInformationFilterValue's fields from required paramete
 
 ``` purescript
 newtype InvalidInventoryItemContextException
-  = InvalidInventoryItemContextException { "Message" :: NullOrUndefined (String) }
+  = InvalidInventoryItemContextException { "Message" :: Maybe (String) }
 ```
 
 <p>You specified invalid keys or values in the <code>Context</code> attribute for <code>InventoryItem</code>. Verify the keys and values, and try again.</p>
@@ -9121,7 +9121,7 @@ Constructs InvalidInventoryItemContextException from required parameters
 #### `newInvalidInventoryItemContextException'`
 
 ``` purescript
-newInvalidInventoryItemContextException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> InvalidInventoryItemContextException
+newInvalidInventoryItemContextException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> InvalidInventoryItemContextException
 ```
 
 Constructs InvalidInventoryItemContextException's fields from required parameters
@@ -9130,7 +9130,7 @@ Constructs InvalidInventoryItemContextException's fields from required parameter
 
 ``` purescript
 newtype InvalidItemContentException
-  = InvalidItemContentException { "TypeName" :: NullOrUndefined (InventoryItemTypeName), "Message" :: NullOrUndefined (String) }
+  = InvalidItemContentException { "TypeName" :: Maybe (InventoryItemTypeName), "Message" :: Maybe (String) }
 ```
 
 <p>One or more content items is not valid.</p>
@@ -9155,7 +9155,7 @@ Constructs InvalidItemContentException from required parameters
 #### `newInvalidItemContentException'`
 
 ``` purescript
-newInvalidItemContentException' :: ({ "TypeName" :: NullOrUndefined (InventoryItemTypeName), "Message" :: NullOrUndefined (String) } -> { "TypeName" :: NullOrUndefined (InventoryItemTypeName), "Message" :: NullOrUndefined (String) }) -> InvalidItemContentException
+newInvalidItemContentException' :: ({ "TypeName" :: Maybe (InventoryItemTypeName), "Message" :: Maybe (String) } -> { "TypeName" :: Maybe (InventoryItemTypeName), "Message" :: Maybe (String) }) -> InvalidItemContentException
 ```
 
 Constructs InvalidItemContentException's fields from required parameters
@@ -9164,7 +9164,7 @@ Constructs InvalidItemContentException's fields from required parameters
 
 ``` purescript
 newtype InvalidKeyId
-  = InvalidKeyId { message :: NullOrUndefined (String) }
+  = InvalidKeyId { message :: Maybe (String) }
 ```
 
 <p>The query key ID is not valid.</p>
@@ -9189,7 +9189,7 @@ Constructs InvalidKeyId from required parameters
 #### `newInvalidKeyId'`
 
 ``` purescript
-newInvalidKeyId' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> InvalidKeyId
+newInvalidKeyId' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> InvalidKeyId
 ```
 
 Constructs InvalidKeyId's fields from required parameters
@@ -9198,7 +9198,7 @@ Constructs InvalidKeyId's fields from required parameters
 
 ``` purescript
 newtype InvalidNextToken
-  = InvalidNextToken { "Message" :: NullOrUndefined (String) }
+  = InvalidNextToken { "Message" :: Maybe (String) }
 ```
 
 <p>The specified token is not valid.</p>
@@ -9223,7 +9223,7 @@ Constructs InvalidNextToken from required parameters
 #### `newInvalidNextToken'`
 
 ``` purescript
-newInvalidNextToken' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> InvalidNextToken
+newInvalidNextToken' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> InvalidNextToken
 ```
 
 Constructs InvalidNextToken's fields from required parameters
@@ -9232,7 +9232,7 @@ Constructs InvalidNextToken's fields from required parameters
 
 ``` purescript
 newtype InvalidNotificationConfig
-  = InvalidNotificationConfig { "Message" :: NullOrUndefined (String) }
+  = InvalidNotificationConfig { "Message" :: Maybe (String) }
 ```
 
 <p>One or more configuration items is not valid. Verify that a valid Amazon Resource Name (ARN) was provided for an Amazon SNS topic.</p>
@@ -9257,7 +9257,7 @@ Constructs InvalidNotificationConfig from required parameters
 #### `newInvalidNotificationConfig'`
 
 ``` purescript
-newInvalidNotificationConfig' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> InvalidNotificationConfig
+newInvalidNotificationConfig' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> InvalidNotificationConfig
 ```
 
 Constructs InvalidNotificationConfig's fields from required parameters
@@ -9302,7 +9302,7 @@ Encode InvalidOutputLocation
 
 ``` purescript
 newtype InvalidParameters
-  = InvalidParameters { "Message" :: NullOrUndefined (String) }
+  = InvalidParameters { "Message" :: Maybe (String) }
 ```
 
 <p>You must specify values for all required parameters in the Systems Manager document. You can only supply values to parameters defined in the Systems Manager document.</p>
@@ -9327,7 +9327,7 @@ Constructs InvalidParameters from required parameters
 #### `newInvalidParameters'`
 
 ``` purescript
-newInvalidParameters' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> InvalidParameters
+newInvalidParameters' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> InvalidParameters
 ```
 
 Constructs InvalidParameters's fields from required parameters
@@ -9336,7 +9336,7 @@ Constructs InvalidParameters's fields from required parameters
 
 ``` purescript
 newtype InvalidPermissionType
-  = InvalidPermissionType { "Message" :: NullOrUndefined (String) }
+  = InvalidPermissionType { "Message" :: Maybe (String) }
 ```
 
 <p>The permission type is not supported. <i>Share</i> is the only supported permission type.</p>
@@ -9361,7 +9361,7 @@ Constructs InvalidPermissionType from required parameters
 #### `newInvalidPermissionType'`
 
 ``` purescript
-newInvalidPermissionType' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> InvalidPermissionType
+newInvalidPermissionType' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> InvalidPermissionType
 ```
 
 Constructs InvalidPermissionType's fields from required parameters
@@ -9424,7 +9424,7 @@ Encode InvalidResourceType
 
 ``` purescript
 newtype InvalidResultAttributeException
-  = InvalidResultAttributeException { "Message" :: NullOrUndefined (String) }
+  = InvalidResultAttributeException { "Message" :: Maybe (String) }
 ```
 
 <p>The specified inventory item result attribute is not valid.</p>
@@ -9449,7 +9449,7 @@ Constructs InvalidResultAttributeException from required parameters
 #### `newInvalidResultAttributeException'`
 
 ``` purescript
-newInvalidResultAttributeException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> InvalidResultAttributeException
+newInvalidResultAttributeException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> InvalidResultAttributeException
 ```
 
 Constructs InvalidResultAttributeException's fields from required parameters
@@ -9458,7 +9458,7 @@ Constructs InvalidResultAttributeException's fields from required parameters
 
 ``` purescript
 newtype InvalidRole
-  = InvalidRole { "Message" :: NullOrUndefined (String) }
+  = InvalidRole { "Message" :: Maybe (String) }
 ```
 
 <p>The role name can't contain invalid characters. Also verify that you specified an IAM role for notifications that includes the required trust policy. For information about configuring the IAM role for Run Command notifications, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/rc-sns-notifications.html">Configuring Amazon SNS Notifications for Run Command</a> in the <i>AWS Systems Manager User Guide</i>.</p>
@@ -9483,7 +9483,7 @@ Constructs InvalidRole from required parameters
 #### `newInvalidRole'`
 
 ``` purescript
-newInvalidRole' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> InvalidRole
+newInvalidRole' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> InvalidRole
 ```
 
 Constructs InvalidRole's fields from required parameters
@@ -9492,7 +9492,7 @@ Constructs InvalidRole's fields from required parameters
 
 ``` purescript
 newtype InvalidSchedule
-  = InvalidSchedule { "Message" :: NullOrUndefined (String) }
+  = InvalidSchedule { "Message" :: Maybe (String) }
 ```
 
 <p>The schedule is invalid. Verify your cron or rate expression and try again.</p>
@@ -9517,7 +9517,7 @@ Constructs InvalidSchedule from required parameters
 #### `newInvalidSchedule'`
 
 ``` purescript
-newInvalidSchedule' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> InvalidSchedule
+newInvalidSchedule' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> InvalidSchedule
 ```
 
 Constructs InvalidSchedule's fields from required parameters
@@ -9526,7 +9526,7 @@ Constructs InvalidSchedule's fields from required parameters
 
 ``` purescript
 newtype InvalidTarget
-  = InvalidTarget { "Message" :: NullOrUndefined (String) }
+  = InvalidTarget { "Message" :: Maybe (String) }
 ```
 
 <p>The target is not valid or does not exist. It might not be configured for EC2 Systems Manager or you might not have permission to perform the operation.</p>
@@ -9551,7 +9551,7 @@ Constructs InvalidTarget from required parameters
 #### `newInvalidTarget'`
 
 ``` purescript
-newInvalidTarget' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> InvalidTarget
+newInvalidTarget' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> InvalidTarget
 ```
 
 Constructs InvalidTarget's fields from required parameters
@@ -9560,7 +9560,7 @@ Constructs InvalidTarget's fields from required parameters
 
 ``` purescript
 newtype InvalidTypeNameException
-  = InvalidTypeNameException { "Message" :: NullOrUndefined (String) }
+  = InvalidTypeNameException { "Message" :: Maybe (String) }
 ```
 
 <p>The parameter type name is not valid.</p>
@@ -9585,7 +9585,7 @@ Constructs InvalidTypeNameException from required parameters
 #### `newInvalidTypeNameException'`
 
 ``` purescript
-newInvalidTypeNameException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> InvalidTypeNameException
+newInvalidTypeNameException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> InvalidTypeNameException
 ```
 
 Constructs InvalidTypeNameException's fields from required parameters
@@ -9594,7 +9594,7 @@ Constructs InvalidTypeNameException's fields from required parameters
 
 ``` purescript
 newtype InvalidUpdate
-  = InvalidUpdate { "Message" :: NullOrUndefined (String) }
+  = InvalidUpdate { "Message" :: Maybe (String) }
 ```
 
 <p>The update is not valid.</p>
@@ -9619,7 +9619,7 @@ Constructs InvalidUpdate from required parameters
 #### `newInvalidUpdate'`
 
 ``` purescript
-newInvalidUpdate' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> InvalidUpdate
+newInvalidUpdate' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> InvalidUpdate
 ```
 
 Constructs InvalidUpdate's fields from required parameters
@@ -9628,7 +9628,7 @@ Constructs InvalidUpdate's fields from required parameters
 
 ``` purescript
 newtype InventoryAggregator
-  = InventoryAggregator { "Expression" :: NullOrUndefined (InventoryAggregatorExpression) }
+  = InventoryAggregator { "Expression" :: Maybe (InventoryAggregatorExpression) }
 ```
 
 <p>Specifies the inventory type and attribute for the aggregation execution.</p>
@@ -9653,7 +9653,7 @@ Constructs InventoryAggregator from required parameters
 #### `newInventoryAggregator'`
 
 ``` purescript
-newInventoryAggregator' :: ({ "Expression" :: NullOrUndefined (InventoryAggregatorExpression) } -> { "Expression" :: NullOrUndefined (InventoryAggregatorExpression) }) -> InventoryAggregator
+newInventoryAggregator' :: ({ "Expression" :: Maybe (InventoryAggregatorExpression) } -> { "Expression" :: Maybe (InventoryAggregatorExpression) }) -> InventoryAggregator
 ```
 
 Constructs InventoryAggregator's fields from required parameters
@@ -9710,7 +9710,7 @@ Encode InventoryAttributeDataType
 
 ``` purescript
 newtype InventoryFilter
-  = InventoryFilter { "Key" :: InventoryFilterKey, "Values" :: InventoryFilterValueList, "Type" :: NullOrUndefined (InventoryQueryOperatorType) }
+  = InventoryFilter { "Key" :: InventoryFilterKey, "Values" :: InventoryFilterValueList, "Type" :: Maybe (InventoryQueryOperatorType) }
 ```
 
 <p>One or more filters. Use a filter to return a more specific list of results.</p>
@@ -9735,7 +9735,7 @@ Constructs InventoryFilter from required parameters
 #### `newInventoryFilter'`
 
 ``` purescript
-newInventoryFilter' :: InventoryFilterKey -> InventoryFilterValueList -> ({ "Key" :: InventoryFilterKey, "Values" :: InventoryFilterValueList, "Type" :: NullOrUndefined (InventoryQueryOperatorType) } -> { "Key" :: InventoryFilterKey, "Values" :: InventoryFilterValueList, "Type" :: NullOrUndefined (InventoryQueryOperatorType) }) -> InventoryFilter
+newInventoryFilter' :: InventoryFilterKey -> InventoryFilterValueList -> ({ "Key" :: InventoryFilterKey, "Values" :: InventoryFilterValueList, "Type" :: Maybe (InventoryQueryOperatorType) } -> { "Key" :: InventoryFilterKey, "Values" :: InventoryFilterValueList, "Type" :: Maybe (InventoryQueryOperatorType) }) -> InventoryFilter
 ```
 
 Constructs InventoryFilter's fields from required parameters
@@ -9808,7 +9808,7 @@ Encode InventoryFilterValueList
 
 ``` purescript
 newtype InventoryItem
-  = InventoryItem { "TypeName" :: InventoryItemTypeName, "SchemaVersion" :: InventoryItemSchemaVersion, "CaptureTime" :: InventoryItemCaptureTime, "ContentHash" :: NullOrUndefined (InventoryItemContentHash), "Content" :: NullOrUndefined (InventoryItemEntryList), "Context" :: NullOrUndefined (InventoryItemContentContext) }
+  = InventoryItem { "TypeName" :: InventoryItemTypeName, "SchemaVersion" :: InventoryItemSchemaVersion, "CaptureTime" :: InventoryItemCaptureTime, "ContentHash" :: Maybe (InventoryItemContentHash), "Content" :: Maybe (InventoryItemEntryList), "Context" :: Maybe (InventoryItemContentContext) }
 ```
 
 <p>Information collected from managed instances based on your inventory policy document</p>
@@ -9833,7 +9833,7 @@ Constructs InventoryItem from required parameters
 #### `newInventoryItem'`
 
 ``` purescript
-newInventoryItem' :: InventoryItemCaptureTime -> InventoryItemSchemaVersion -> InventoryItemTypeName -> ({ "TypeName" :: InventoryItemTypeName, "SchemaVersion" :: InventoryItemSchemaVersion, "CaptureTime" :: InventoryItemCaptureTime, "ContentHash" :: NullOrUndefined (InventoryItemContentHash), "Content" :: NullOrUndefined (InventoryItemEntryList), "Context" :: NullOrUndefined (InventoryItemContentContext) } -> { "TypeName" :: InventoryItemTypeName, "SchemaVersion" :: InventoryItemSchemaVersion, "CaptureTime" :: InventoryItemCaptureTime, "ContentHash" :: NullOrUndefined (InventoryItemContentHash), "Content" :: NullOrUndefined (InventoryItemEntryList), "Context" :: NullOrUndefined (InventoryItemContentContext) }) -> InventoryItem
+newInventoryItem' :: InventoryItemCaptureTime -> InventoryItemSchemaVersion -> InventoryItemTypeName -> ({ "TypeName" :: InventoryItemTypeName, "SchemaVersion" :: InventoryItemSchemaVersion, "CaptureTime" :: InventoryItemCaptureTime, "ContentHash" :: Maybe (InventoryItemContentHash), "Content" :: Maybe (InventoryItemEntryList), "Context" :: Maybe (InventoryItemContentContext) } -> { "TypeName" :: InventoryItemTypeName, "SchemaVersion" :: InventoryItemSchemaVersion, "CaptureTime" :: InventoryItemCaptureTime, "ContentHash" :: Maybe (InventoryItemContentHash), "Content" :: Maybe (InventoryItemEntryList), "Context" :: Maybe (InventoryItemContentContext) }) -> InventoryItem
 ```
 
 Constructs InventoryItem's fields from required parameters
@@ -10004,7 +10004,7 @@ Encode InventoryItemList
 
 ``` purescript
 newtype InventoryItemSchema
-  = InventoryItemSchema { "TypeName" :: InventoryItemTypeName, "Version" :: NullOrUndefined (InventoryItemSchemaVersion), "Attributes" :: InventoryItemAttributeList, "DisplayName" :: NullOrUndefined (InventoryTypeDisplayName) }
+  = InventoryItemSchema { "TypeName" :: InventoryItemTypeName, "Version" :: Maybe (InventoryItemSchemaVersion), "Attributes" :: InventoryItemAttributeList, "DisplayName" :: Maybe (InventoryTypeDisplayName) }
 ```
 
 <p>The inventory item schema definition. Users can use this to compose inventory query filters.</p>
@@ -10029,7 +10029,7 @@ Constructs InventoryItemSchema from required parameters
 #### `newInventoryItemSchema'`
 
 ``` purescript
-newInventoryItemSchema' :: InventoryItemAttributeList -> InventoryItemTypeName -> ({ "TypeName" :: InventoryItemTypeName, "Version" :: NullOrUndefined (InventoryItemSchemaVersion), "Attributes" :: InventoryItemAttributeList, "DisplayName" :: NullOrUndefined (InventoryTypeDisplayName) } -> { "TypeName" :: InventoryItemTypeName, "Version" :: NullOrUndefined (InventoryItemSchemaVersion), "Attributes" :: InventoryItemAttributeList, "DisplayName" :: NullOrUndefined (InventoryTypeDisplayName) }) -> InventoryItemSchema
+newInventoryItemSchema' :: InventoryItemAttributeList -> InventoryItemTypeName -> ({ "TypeName" :: InventoryItemTypeName, "Version" :: Maybe (InventoryItemSchemaVersion), "Attributes" :: InventoryItemAttributeList, "DisplayName" :: Maybe (InventoryTypeDisplayName) } -> { "TypeName" :: InventoryItemTypeName, "Version" :: Maybe (InventoryItemSchemaVersion), "Attributes" :: InventoryItemAttributeList, "DisplayName" :: Maybe (InventoryTypeDisplayName) }) -> InventoryItemSchema
 ```
 
 Constructs InventoryItemSchema's fields from required parameters
@@ -10118,7 +10118,7 @@ Encode InventoryQueryOperatorType
 
 ``` purescript
 newtype InventoryResultEntity
-  = InventoryResultEntity { "Id" :: NullOrUndefined (InventoryResultEntityId), "Data" :: NullOrUndefined (InventoryResultItemMap) }
+  = InventoryResultEntity { "Id" :: Maybe (InventoryResultEntityId), "Data" :: Maybe (InventoryResultItemMap) }
 ```
 
 <p>Inventory query results.</p>
@@ -10143,7 +10143,7 @@ Constructs InventoryResultEntity from required parameters
 #### `newInventoryResultEntity'`
 
 ``` purescript
-newInventoryResultEntity' :: ({ "Id" :: NullOrUndefined (InventoryResultEntityId), "Data" :: NullOrUndefined (InventoryResultItemMap) } -> { "Id" :: NullOrUndefined (InventoryResultEntityId), "Data" :: NullOrUndefined (InventoryResultItemMap) }) -> InventoryResultEntity
+newInventoryResultEntity' :: ({ "Id" :: Maybe (InventoryResultEntityId), "Data" :: Maybe (InventoryResultItemMap) } -> { "Id" :: Maybe (InventoryResultEntityId), "Data" :: Maybe (InventoryResultItemMap) }) -> InventoryResultEntity
 ```
 
 Constructs InventoryResultEntity's fields from required parameters
@@ -10184,7 +10184,7 @@ Encode InventoryResultEntityList
 
 ``` purescript
 newtype InventoryResultItem
-  = InventoryResultItem { "TypeName" :: InventoryItemTypeName, "SchemaVersion" :: InventoryItemSchemaVersion, "CaptureTime" :: NullOrUndefined (InventoryItemCaptureTime), "ContentHash" :: NullOrUndefined (InventoryItemContentHash), "Content" :: InventoryItemEntryList }
+  = InventoryResultItem { "TypeName" :: InventoryItemTypeName, "SchemaVersion" :: InventoryItemSchemaVersion, "CaptureTime" :: Maybe (InventoryItemCaptureTime), "ContentHash" :: Maybe (InventoryItemContentHash), "Content" :: InventoryItemEntryList }
 ```
 
 <p>The inventory result item.</p>
@@ -10209,7 +10209,7 @@ Constructs InventoryResultItem from required parameters
 #### `newInventoryResultItem'`
 
 ``` purescript
-newInventoryResultItem' :: InventoryItemEntryList -> InventoryItemSchemaVersion -> InventoryItemTypeName -> ({ "TypeName" :: InventoryItemTypeName, "SchemaVersion" :: InventoryItemSchemaVersion, "CaptureTime" :: NullOrUndefined (InventoryItemCaptureTime), "ContentHash" :: NullOrUndefined (InventoryItemContentHash), "Content" :: InventoryItemEntryList } -> { "TypeName" :: InventoryItemTypeName, "SchemaVersion" :: InventoryItemSchemaVersion, "CaptureTime" :: NullOrUndefined (InventoryItemCaptureTime), "ContentHash" :: NullOrUndefined (InventoryItemContentHash), "Content" :: InventoryItemEntryList }) -> InventoryResultItem
+newInventoryResultItem' :: InventoryItemEntryList -> InventoryItemSchemaVersion -> InventoryItemTypeName -> ({ "TypeName" :: InventoryItemTypeName, "SchemaVersion" :: InventoryItemSchemaVersion, "CaptureTime" :: Maybe (InventoryItemCaptureTime), "ContentHash" :: Maybe (InventoryItemContentHash), "Content" :: InventoryItemEntryList } -> { "TypeName" :: InventoryItemTypeName, "SchemaVersion" :: InventoryItemSchemaVersion, "CaptureTime" :: Maybe (InventoryItemCaptureTime), "ContentHash" :: Maybe (InventoryItemContentHash), "Content" :: InventoryItemEntryList }) -> InventoryResultItem
 ```
 
 Constructs InventoryResultItem's fields from required parameters
@@ -10316,7 +10316,7 @@ Encode IsSubTypeSchema
 
 ``` purescript
 newtype ItemContentMismatchException
-  = ItemContentMismatchException { "TypeName" :: NullOrUndefined (InventoryItemTypeName), "Message" :: NullOrUndefined (String) }
+  = ItemContentMismatchException { "TypeName" :: Maybe (InventoryItemTypeName), "Message" :: Maybe (String) }
 ```
 
 <p>The inventory item has invalid content. </p>
@@ -10341,7 +10341,7 @@ Constructs ItemContentMismatchException from required parameters
 #### `newItemContentMismatchException'`
 
 ``` purescript
-newItemContentMismatchException' :: ({ "TypeName" :: NullOrUndefined (InventoryItemTypeName), "Message" :: NullOrUndefined (String) } -> { "TypeName" :: NullOrUndefined (InventoryItemTypeName), "Message" :: NullOrUndefined (String) }) -> ItemContentMismatchException
+newItemContentMismatchException' :: ({ "TypeName" :: Maybe (InventoryItemTypeName), "Message" :: Maybe (String) } -> { "TypeName" :: Maybe (InventoryItemTypeName), "Message" :: Maybe (String) }) -> ItemContentMismatchException
 ```
 
 Constructs ItemContentMismatchException's fields from required parameters
@@ -10350,7 +10350,7 @@ Constructs ItemContentMismatchException's fields from required parameters
 
 ``` purescript
 newtype ItemSizeLimitExceededException
-  = ItemSizeLimitExceededException { "TypeName" :: NullOrUndefined (InventoryItemTypeName), "Message" :: NullOrUndefined (String) }
+  = ItemSizeLimitExceededException { "TypeName" :: Maybe (InventoryItemTypeName), "Message" :: Maybe (String) }
 ```
 
 <p>The inventory item size has exceeded the size limit.</p>
@@ -10375,7 +10375,7 @@ Constructs ItemSizeLimitExceededException from required parameters
 #### `newItemSizeLimitExceededException'`
 
 ``` purescript
-newItemSizeLimitExceededException' :: ({ "TypeName" :: NullOrUndefined (InventoryItemTypeName), "Message" :: NullOrUndefined (String) } -> { "TypeName" :: NullOrUndefined (InventoryItemTypeName), "Message" :: NullOrUndefined (String) }) -> ItemSizeLimitExceededException
+newItemSizeLimitExceededException' :: ({ "TypeName" :: Maybe (InventoryItemTypeName), "Message" :: Maybe (String) } -> { "TypeName" :: Maybe (InventoryItemTypeName), "Message" :: Maybe (String) }) -> ItemSizeLimitExceededException
 ```
 
 Constructs ItemSizeLimitExceededException's fields from required parameters
@@ -10464,7 +10464,7 @@ Encode LastSuccessfulResourceDataSyncTime
 
 ``` purescript
 newtype ListAssociationVersionsRequest
-  = ListAssociationVersionsRequest { "AssociationId" :: AssociationId, "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListAssociationVersionsRequest { "AssociationId" :: AssociationId, "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -10487,7 +10487,7 @@ Constructs ListAssociationVersionsRequest from required parameters
 #### `newListAssociationVersionsRequest'`
 
 ``` purescript
-newListAssociationVersionsRequest' :: AssociationId -> ({ "AssociationId" :: AssociationId, "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (NextToken) } -> { "AssociationId" :: AssociationId, "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (NextToken) }) -> ListAssociationVersionsRequest
+newListAssociationVersionsRequest' :: AssociationId -> ({ "AssociationId" :: AssociationId, "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (NextToken) } -> { "AssociationId" :: AssociationId, "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (NextToken) }) -> ListAssociationVersionsRequest
 ```
 
 Constructs ListAssociationVersionsRequest's fields from required parameters
@@ -10496,7 +10496,7 @@ Constructs ListAssociationVersionsRequest's fields from required parameters
 
 ``` purescript
 newtype ListAssociationVersionsResult
-  = ListAssociationVersionsResult { "AssociationVersions" :: NullOrUndefined (AssociationVersionList), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListAssociationVersionsResult { "AssociationVersions" :: Maybe (AssociationVersionList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -10519,7 +10519,7 @@ Constructs ListAssociationVersionsResult from required parameters
 #### `newListAssociationVersionsResult'`
 
 ``` purescript
-newListAssociationVersionsResult' :: ({ "AssociationVersions" :: NullOrUndefined (AssociationVersionList), "NextToken" :: NullOrUndefined (NextToken) } -> { "AssociationVersions" :: NullOrUndefined (AssociationVersionList), "NextToken" :: NullOrUndefined (NextToken) }) -> ListAssociationVersionsResult
+newListAssociationVersionsResult' :: ({ "AssociationVersions" :: Maybe (AssociationVersionList), "NextToken" :: Maybe (NextToken) } -> { "AssociationVersions" :: Maybe (AssociationVersionList), "NextToken" :: Maybe (NextToken) }) -> ListAssociationVersionsResult
 ```
 
 Constructs ListAssociationVersionsResult's fields from required parameters
@@ -10528,7 +10528,7 @@ Constructs ListAssociationVersionsResult's fields from required parameters
 
 ``` purescript
 newtype ListAssociationsRequest
-  = ListAssociationsRequest { "AssociationFilterList" :: NullOrUndefined (AssociationFilterList), "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListAssociationsRequest { "AssociationFilterList" :: Maybe (AssociationFilterList), "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -10551,7 +10551,7 @@ Constructs ListAssociationsRequest from required parameters
 #### `newListAssociationsRequest'`
 
 ``` purescript
-newListAssociationsRequest' :: ({ "AssociationFilterList" :: NullOrUndefined (AssociationFilterList), "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (NextToken) } -> { "AssociationFilterList" :: NullOrUndefined (AssociationFilterList), "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (NextToken) }) -> ListAssociationsRequest
+newListAssociationsRequest' :: ({ "AssociationFilterList" :: Maybe (AssociationFilterList), "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (NextToken) } -> { "AssociationFilterList" :: Maybe (AssociationFilterList), "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (NextToken) }) -> ListAssociationsRequest
 ```
 
 Constructs ListAssociationsRequest's fields from required parameters
@@ -10560,7 +10560,7 @@ Constructs ListAssociationsRequest's fields from required parameters
 
 ``` purescript
 newtype ListAssociationsResult
-  = ListAssociationsResult { "Associations" :: NullOrUndefined (AssociationList), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListAssociationsResult { "Associations" :: Maybe (AssociationList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -10583,7 +10583,7 @@ Constructs ListAssociationsResult from required parameters
 #### `newListAssociationsResult'`
 
 ``` purescript
-newListAssociationsResult' :: ({ "Associations" :: NullOrUndefined (AssociationList), "NextToken" :: NullOrUndefined (NextToken) } -> { "Associations" :: NullOrUndefined (AssociationList), "NextToken" :: NullOrUndefined (NextToken) }) -> ListAssociationsResult
+newListAssociationsResult' :: ({ "Associations" :: Maybe (AssociationList), "NextToken" :: Maybe (NextToken) } -> { "Associations" :: Maybe (AssociationList), "NextToken" :: Maybe (NextToken) }) -> ListAssociationsResult
 ```
 
 Constructs ListAssociationsResult's fields from required parameters
@@ -10592,7 +10592,7 @@ Constructs ListAssociationsResult's fields from required parameters
 
 ``` purescript
 newtype ListCommandInvocationsRequest
-  = ListCommandInvocationsRequest { "CommandId" :: NullOrUndefined (CommandId), "InstanceId" :: NullOrUndefined (InstanceId), "MaxResults" :: NullOrUndefined (CommandMaxResults), "NextToken" :: NullOrUndefined (NextToken), "Filters" :: NullOrUndefined (CommandFilterList), "Details" :: NullOrUndefined (Boolean) }
+  = ListCommandInvocationsRequest { "CommandId" :: Maybe (CommandId), "InstanceId" :: Maybe (InstanceId), "MaxResults" :: Maybe (CommandMaxResults), "NextToken" :: Maybe (NextToken), "Filters" :: Maybe (CommandFilterList), "Details" :: Maybe (Boolean) }
 ```
 
 ##### Instances
@@ -10615,7 +10615,7 @@ Constructs ListCommandInvocationsRequest from required parameters
 #### `newListCommandInvocationsRequest'`
 
 ``` purescript
-newListCommandInvocationsRequest' :: ({ "CommandId" :: NullOrUndefined (CommandId), "InstanceId" :: NullOrUndefined (InstanceId), "MaxResults" :: NullOrUndefined (CommandMaxResults), "NextToken" :: NullOrUndefined (NextToken), "Filters" :: NullOrUndefined (CommandFilterList), "Details" :: NullOrUndefined (Boolean) } -> { "CommandId" :: NullOrUndefined (CommandId), "InstanceId" :: NullOrUndefined (InstanceId), "MaxResults" :: NullOrUndefined (CommandMaxResults), "NextToken" :: NullOrUndefined (NextToken), "Filters" :: NullOrUndefined (CommandFilterList), "Details" :: NullOrUndefined (Boolean) }) -> ListCommandInvocationsRequest
+newListCommandInvocationsRequest' :: ({ "CommandId" :: Maybe (CommandId), "InstanceId" :: Maybe (InstanceId), "MaxResults" :: Maybe (CommandMaxResults), "NextToken" :: Maybe (NextToken), "Filters" :: Maybe (CommandFilterList), "Details" :: Maybe (Boolean) } -> { "CommandId" :: Maybe (CommandId), "InstanceId" :: Maybe (InstanceId), "MaxResults" :: Maybe (CommandMaxResults), "NextToken" :: Maybe (NextToken), "Filters" :: Maybe (CommandFilterList), "Details" :: Maybe (Boolean) }) -> ListCommandInvocationsRequest
 ```
 
 Constructs ListCommandInvocationsRequest's fields from required parameters
@@ -10624,7 +10624,7 @@ Constructs ListCommandInvocationsRequest's fields from required parameters
 
 ``` purescript
 newtype ListCommandInvocationsResult
-  = ListCommandInvocationsResult { "CommandInvocations" :: NullOrUndefined (CommandInvocationList), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListCommandInvocationsResult { "CommandInvocations" :: Maybe (CommandInvocationList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -10647,7 +10647,7 @@ Constructs ListCommandInvocationsResult from required parameters
 #### `newListCommandInvocationsResult'`
 
 ``` purescript
-newListCommandInvocationsResult' :: ({ "CommandInvocations" :: NullOrUndefined (CommandInvocationList), "NextToken" :: NullOrUndefined (NextToken) } -> { "CommandInvocations" :: NullOrUndefined (CommandInvocationList), "NextToken" :: NullOrUndefined (NextToken) }) -> ListCommandInvocationsResult
+newListCommandInvocationsResult' :: ({ "CommandInvocations" :: Maybe (CommandInvocationList), "NextToken" :: Maybe (NextToken) } -> { "CommandInvocations" :: Maybe (CommandInvocationList), "NextToken" :: Maybe (NextToken) }) -> ListCommandInvocationsResult
 ```
 
 Constructs ListCommandInvocationsResult's fields from required parameters
@@ -10656,7 +10656,7 @@ Constructs ListCommandInvocationsResult's fields from required parameters
 
 ``` purescript
 newtype ListCommandsRequest
-  = ListCommandsRequest { "CommandId" :: NullOrUndefined (CommandId), "InstanceId" :: NullOrUndefined (InstanceId), "MaxResults" :: NullOrUndefined (CommandMaxResults), "NextToken" :: NullOrUndefined (NextToken), "Filters" :: NullOrUndefined (CommandFilterList) }
+  = ListCommandsRequest { "CommandId" :: Maybe (CommandId), "InstanceId" :: Maybe (InstanceId), "MaxResults" :: Maybe (CommandMaxResults), "NextToken" :: Maybe (NextToken), "Filters" :: Maybe (CommandFilterList) }
 ```
 
 ##### Instances
@@ -10679,7 +10679,7 @@ Constructs ListCommandsRequest from required parameters
 #### `newListCommandsRequest'`
 
 ``` purescript
-newListCommandsRequest' :: ({ "CommandId" :: NullOrUndefined (CommandId), "InstanceId" :: NullOrUndefined (InstanceId), "MaxResults" :: NullOrUndefined (CommandMaxResults), "NextToken" :: NullOrUndefined (NextToken), "Filters" :: NullOrUndefined (CommandFilterList) } -> { "CommandId" :: NullOrUndefined (CommandId), "InstanceId" :: NullOrUndefined (InstanceId), "MaxResults" :: NullOrUndefined (CommandMaxResults), "NextToken" :: NullOrUndefined (NextToken), "Filters" :: NullOrUndefined (CommandFilterList) }) -> ListCommandsRequest
+newListCommandsRequest' :: ({ "CommandId" :: Maybe (CommandId), "InstanceId" :: Maybe (InstanceId), "MaxResults" :: Maybe (CommandMaxResults), "NextToken" :: Maybe (NextToken), "Filters" :: Maybe (CommandFilterList) } -> { "CommandId" :: Maybe (CommandId), "InstanceId" :: Maybe (InstanceId), "MaxResults" :: Maybe (CommandMaxResults), "NextToken" :: Maybe (NextToken), "Filters" :: Maybe (CommandFilterList) }) -> ListCommandsRequest
 ```
 
 Constructs ListCommandsRequest's fields from required parameters
@@ -10688,7 +10688,7 @@ Constructs ListCommandsRequest's fields from required parameters
 
 ``` purescript
 newtype ListCommandsResult
-  = ListCommandsResult { "Commands" :: NullOrUndefined (CommandList), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListCommandsResult { "Commands" :: Maybe (CommandList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -10711,7 +10711,7 @@ Constructs ListCommandsResult from required parameters
 #### `newListCommandsResult'`
 
 ``` purescript
-newListCommandsResult' :: ({ "Commands" :: NullOrUndefined (CommandList), "NextToken" :: NullOrUndefined (NextToken) } -> { "Commands" :: NullOrUndefined (CommandList), "NextToken" :: NullOrUndefined (NextToken) }) -> ListCommandsResult
+newListCommandsResult' :: ({ "Commands" :: Maybe (CommandList), "NextToken" :: Maybe (NextToken) } -> { "Commands" :: Maybe (CommandList), "NextToken" :: Maybe (NextToken) }) -> ListCommandsResult
 ```
 
 Constructs ListCommandsResult's fields from required parameters
@@ -10720,7 +10720,7 @@ Constructs ListCommandsResult's fields from required parameters
 
 ``` purescript
 newtype ListComplianceItemsRequest
-  = ListComplianceItemsRequest { "Filters" :: NullOrUndefined (ComplianceStringFilterList), "ResourceIds" :: NullOrUndefined (ComplianceResourceIdList), "ResourceTypes" :: NullOrUndefined (ComplianceResourceTypeList), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults) }
+  = ListComplianceItemsRequest { "Filters" :: Maybe (ComplianceStringFilterList), "ResourceIds" :: Maybe (ComplianceResourceIdList), "ResourceTypes" :: Maybe (ComplianceResourceTypeList), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults) }
 ```
 
 ##### Instances
@@ -10743,7 +10743,7 @@ Constructs ListComplianceItemsRequest from required parameters
 #### `newListComplianceItemsRequest'`
 
 ``` purescript
-newListComplianceItemsRequest' :: ({ "Filters" :: NullOrUndefined (ComplianceStringFilterList), "ResourceIds" :: NullOrUndefined (ComplianceResourceIdList), "ResourceTypes" :: NullOrUndefined (ComplianceResourceTypeList), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults) } -> { "Filters" :: NullOrUndefined (ComplianceStringFilterList), "ResourceIds" :: NullOrUndefined (ComplianceResourceIdList), "ResourceTypes" :: NullOrUndefined (ComplianceResourceTypeList), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults) }) -> ListComplianceItemsRequest
+newListComplianceItemsRequest' :: ({ "Filters" :: Maybe (ComplianceStringFilterList), "ResourceIds" :: Maybe (ComplianceResourceIdList), "ResourceTypes" :: Maybe (ComplianceResourceTypeList), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults) } -> { "Filters" :: Maybe (ComplianceStringFilterList), "ResourceIds" :: Maybe (ComplianceResourceIdList), "ResourceTypes" :: Maybe (ComplianceResourceTypeList), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults) }) -> ListComplianceItemsRequest
 ```
 
 Constructs ListComplianceItemsRequest's fields from required parameters
@@ -10752,7 +10752,7 @@ Constructs ListComplianceItemsRequest's fields from required parameters
 
 ``` purescript
 newtype ListComplianceItemsResult
-  = ListComplianceItemsResult { "ComplianceItems" :: NullOrUndefined (ComplianceItemList), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListComplianceItemsResult { "ComplianceItems" :: Maybe (ComplianceItemList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -10775,7 +10775,7 @@ Constructs ListComplianceItemsResult from required parameters
 #### `newListComplianceItemsResult'`
 
 ``` purescript
-newListComplianceItemsResult' :: ({ "ComplianceItems" :: NullOrUndefined (ComplianceItemList), "NextToken" :: NullOrUndefined (NextToken) } -> { "ComplianceItems" :: NullOrUndefined (ComplianceItemList), "NextToken" :: NullOrUndefined (NextToken) }) -> ListComplianceItemsResult
+newListComplianceItemsResult' :: ({ "ComplianceItems" :: Maybe (ComplianceItemList), "NextToken" :: Maybe (NextToken) } -> { "ComplianceItems" :: Maybe (ComplianceItemList), "NextToken" :: Maybe (NextToken) }) -> ListComplianceItemsResult
 ```
 
 Constructs ListComplianceItemsResult's fields from required parameters
@@ -10784,7 +10784,7 @@ Constructs ListComplianceItemsResult's fields from required parameters
 
 ``` purescript
 newtype ListComplianceSummariesRequest
-  = ListComplianceSummariesRequest { "Filters" :: NullOrUndefined (ComplianceStringFilterList), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults) }
+  = ListComplianceSummariesRequest { "Filters" :: Maybe (ComplianceStringFilterList), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults) }
 ```
 
 ##### Instances
@@ -10807,7 +10807,7 @@ Constructs ListComplianceSummariesRequest from required parameters
 #### `newListComplianceSummariesRequest'`
 
 ``` purescript
-newListComplianceSummariesRequest' :: ({ "Filters" :: NullOrUndefined (ComplianceStringFilterList), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults) } -> { "Filters" :: NullOrUndefined (ComplianceStringFilterList), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults) }) -> ListComplianceSummariesRequest
+newListComplianceSummariesRequest' :: ({ "Filters" :: Maybe (ComplianceStringFilterList), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults) } -> { "Filters" :: Maybe (ComplianceStringFilterList), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults) }) -> ListComplianceSummariesRequest
 ```
 
 Constructs ListComplianceSummariesRequest's fields from required parameters
@@ -10816,7 +10816,7 @@ Constructs ListComplianceSummariesRequest's fields from required parameters
 
 ``` purescript
 newtype ListComplianceSummariesResult
-  = ListComplianceSummariesResult { "ComplianceSummaryItems" :: NullOrUndefined (ComplianceSummaryItemList), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListComplianceSummariesResult { "ComplianceSummaryItems" :: Maybe (ComplianceSummaryItemList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -10839,7 +10839,7 @@ Constructs ListComplianceSummariesResult from required parameters
 #### `newListComplianceSummariesResult'`
 
 ``` purescript
-newListComplianceSummariesResult' :: ({ "ComplianceSummaryItems" :: NullOrUndefined (ComplianceSummaryItemList), "NextToken" :: NullOrUndefined (NextToken) } -> { "ComplianceSummaryItems" :: NullOrUndefined (ComplianceSummaryItemList), "NextToken" :: NullOrUndefined (NextToken) }) -> ListComplianceSummariesResult
+newListComplianceSummariesResult' :: ({ "ComplianceSummaryItems" :: Maybe (ComplianceSummaryItemList), "NextToken" :: Maybe (NextToken) } -> { "ComplianceSummaryItems" :: Maybe (ComplianceSummaryItemList), "NextToken" :: Maybe (NextToken) }) -> ListComplianceSummariesResult
 ```
 
 Constructs ListComplianceSummariesResult's fields from required parameters
@@ -10848,7 +10848,7 @@ Constructs ListComplianceSummariesResult's fields from required parameters
 
 ``` purescript
 newtype ListDocumentVersionsRequest
-  = ListDocumentVersionsRequest { "Name" :: DocumentName, "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListDocumentVersionsRequest { "Name" :: DocumentName, "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -10871,7 +10871,7 @@ Constructs ListDocumentVersionsRequest from required parameters
 #### `newListDocumentVersionsRequest'`
 
 ``` purescript
-newListDocumentVersionsRequest' :: DocumentName -> ({ "Name" :: DocumentName, "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (NextToken) } -> { "Name" :: DocumentName, "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (NextToken) }) -> ListDocumentVersionsRequest
+newListDocumentVersionsRequest' :: DocumentName -> ({ "Name" :: DocumentName, "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (NextToken) } -> { "Name" :: DocumentName, "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (NextToken) }) -> ListDocumentVersionsRequest
 ```
 
 Constructs ListDocumentVersionsRequest's fields from required parameters
@@ -10880,7 +10880,7 @@ Constructs ListDocumentVersionsRequest's fields from required parameters
 
 ``` purescript
 newtype ListDocumentVersionsResult
-  = ListDocumentVersionsResult { "DocumentVersions" :: NullOrUndefined (DocumentVersionList), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListDocumentVersionsResult { "DocumentVersions" :: Maybe (DocumentVersionList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -10903,7 +10903,7 @@ Constructs ListDocumentVersionsResult from required parameters
 #### `newListDocumentVersionsResult'`
 
 ``` purescript
-newListDocumentVersionsResult' :: ({ "DocumentVersions" :: NullOrUndefined (DocumentVersionList), "NextToken" :: NullOrUndefined (NextToken) } -> { "DocumentVersions" :: NullOrUndefined (DocumentVersionList), "NextToken" :: NullOrUndefined (NextToken) }) -> ListDocumentVersionsResult
+newListDocumentVersionsResult' :: ({ "DocumentVersions" :: Maybe (DocumentVersionList), "NextToken" :: Maybe (NextToken) } -> { "DocumentVersions" :: Maybe (DocumentVersionList), "NextToken" :: Maybe (NextToken) }) -> ListDocumentVersionsResult
 ```
 
 Constructs ListDocumentVersionsResult's fields from required parameters
@@ -10912,7 +10912,7 @@ Constructs ListDocumentVersionsResult's fields from required parameters
 
 ``` purescript
 newtype ListDocumentsRequest
-  = ListDocumentsRequest { "DocumentFilterList" :: NullOrUndefined (DocumentFilterList), "Filters" :: NullOrUndefined (DocumentKeyValuesFilterList), "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListDocumentsRequest { "DocumentFilterList" :: Maybe (DocumentFilterList), "Filters" :: Maybe (DocumentKeyValuesFilterList), "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -10935,7 +10935,7 @@ Constructs ListDocumentsRequest from required parameters
 #### `newListDocumentsRequest'`
 
 ``` purescript
-newListDocumentsRequest' :: ({ "DocumentFilterList" :: NullOrUndefined (DocumentFilterList), "Filters" :: NullOrUndefined (DocumentKeyValuesFilterList), "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (NextToken) } -> { "DocumentFilterList" :: NullOrUndefined (DocumentFilterList), "Filters" :: NullOrUndefined (DocumentKeyValuesFilterList), "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (NextToken) }) -> ListDocumentsRequest
+newListDocumentsRequest' :: ({ "DocumentFilterList" :: Maybe (DocumentFilterList), "Filters" :: Maybe (DocumentKeyValuesFilterList), "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (NextToken) } -> { "DocumentFilterList" :: Maybe (DocumentFilterList), "Filters" :: Maybe (DocumentKeyValuesFilterList), "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (NextToken) }) -> ListDocumentsRequest
 ```
 
 Constructs ListDocumentsRequest's fields from required parameters
@@ -10944,7 +10944,7 @@ Constructs ListDocumentsRequest's fields from required parameters
 
 ``` purescript
 newtype ListDocumentsResult
-  = ListDocumentsResult { "DocumentIdentifiers" :: NullOrUndefined (DocumentIdentifierList), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListDocumentsResult { "DocumentIdentifiers" :: Maybe (DocumentIdentifierList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -10967,7 +10967,7 @@ Constructs ListDocumentsResult from required parameters
 #### `newListDocumentsResult'`
 
 ``` purescript
-newListDocumentsResult' :: ({ "DocumentIdentifiers" :: NullOrUndefined (DocumentIdentifierList), "NextToken" :: NullOrUndefined (NextToken) } -> { "DocumentIdentifiers" :: NullOrUndefined (DocumentIdentifierList), "NextToken" :: NullOrUndefined (NextToken) }) -> ListDocumentsResult
+newListDocumentsResult' :: ({ "DocumentIdentifiers" :: Maybe (DocumentIdentifierList), "NextToken" :: Maybe (NextToken) } -> { "DocumentIdentifiers" :: Maybe (DocumentIdentifierList), "NextToken" :: Maybe (NextToken) }) -> ListDocumentsResult
 ```
 
 Constructs ListDocumentsResult's fields from required parameters
@@ -10976,7 +10976,7 @@ Constructs ListDocumentsResult's fields from required parameters
 
 ``` purescript
 newtype ListInventoryEntriesRequest
-  = ListInventoryEntriesRequest { "InstanceId" :: InstanceId, "TypeName" :: InventoryItemTypeName, "Filters" :: NullOrUndefined (InventoryFilterList), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults) }
+  = ListInventoryEntriesRequest { "InstanceId" :: InstanceId, "TypeName" :: InventoryItemTypeName, "Filters" :: Maybe (InventoryFilterList), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults) }
 ```
 
 ##### Instances
@@ -10999,7 +10999,7 @@ Constructs ListInventoryEntriesRequest from required parameters
 #### `newListInventoryEntriesRequest'`
 
 ``` purescript
-newListInventoryEntriesRequest' :: InstanceId -> InventoryItemTypeName -> ({ "InstanceId" :: InstanceId, "TypeName" :: InventoryItemTypeName, "Filters" :: NullOrUndefined (InventoryFilterList), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults) } -> { "InstanceId" :: InstanceId, "TypeName" :: InventoryItemTypeName, "Filters" :: NullOrUndefined (InventoryFilterList), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults) }) -> ListInventoryEntriesRequest
+newListInventoryEntriesRequest' :: InstanceId -> InventoryItemTypeName -> ({ "InstanceId" :: InstanceId, "TypeName" :: InventoryItemTypeName, "Filters" :: Maybe (InventoryFilterList), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults) } -> { "InstanceId" :: InstanceId, "TypeName" :: InventoryItemTypeName, "Filters" :: Maybe (InventoryFilterList), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults) }) -> ListInventoryEntriesRequest
 ```
 
 Constructs ListInventoryEntriesRequest's fields from required parameters
@@ -11008,7 +11008,7 @@ Constructs ListInventoryEntriesRequest's fields from required parameters
 
 ``` purescript
 newtype ListInventoryEntriesResult
-  = ListInventoryEntriesResult { "TypeName" :: NullOrUndefined (InventoryItemTypeName), "InstanceId" :: NullOrUndefined (InstanceId), "SchemaVersion" :: NullOrUndefined (InventoryItemSchemaVersion), "CaptureTime" :: NullOrUndefined (InventoryItemCaptureTime), "Entries" :: NullOrUndefined (InventoryItemEntryList), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListInventoryEntriesResult { "TypeName" :: Maybe (InventoryItemTypeName), "InstanceId" :: Maybe (InstanceId), "SchemaVersion" :: Maybe (InventoryItemSchemaVersion), "CaptureTime" :: Maybe (InventoryItemCaptureTime), "Entries" :: Maybe (InventoryItemEntryList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -11031,7 +11031,7 @@ Constructs ListInventoryEntriesResult from required parameters
 #### `newListInventoryEntriesResult'`
 
 ``` purescript
-newListInventoryEntriesResult' :: ({ "TypeName" :: NullOrUndefined (InventoryItemTypeName), "InstanceId" :: NullOrUndefined (InstanceId), "SchemaVersion" :: NullOrUndefined (InventoryItemSchemaVersion), "CaptureTime" :: NullOrUndefined (InventoryItemCaptureTime), "Entries" :: NullOrUndefined (InventoryItemEntryList), "NextToken" :: NullOrUndefined (NextToken) } -> { "TypeName" :: NullOrUndefined (InventoryItemTypeName), "InstanceId" :: NullOrUndefined (InstanceId), "SchemaVersion" :: NullOrUndefined (InventoryItemSchemaVersion), "CaptureTime" :: NullOrUndefined (InventoryItemCaptureTime), "Entries" :: NullOrUndefined (InventoryItemEntryList), "NextToken" :: NullOrUndefined (NextToken) }) -> ListInventoryEntriesResult
+newListInventoryEntriesResult' :: ({ "TypeName" :: Maybe (InventoryItemTypeName), "InstanceId" :: Maybe (InstanceId), "SchemaVersion" :: Maybe (InventoryItemSchemaVersion), "CaptureTime" :: Maybe (InventoryItemCaptureTime), "Entries" :: Maybe (InventoryItemEntryList), "NextToken" :: Maybe (NextToken) } -> { "TypeName" :: Maybe (InventoryItemTypeName), "InstanceId" :: Maybe (InstanceId), "SchemaVersion" :: Maybe (InventoryItemSchemaVersion), "CaptureTime" :: Maybe (InventoryItemCaptureTime), "Entries" :: Maybe (InventoryItemEntryList), "NextToken" :: Maybe (NextToken) }) -> ListInventoryEntriesResult
 ```
 
 Constructs ListInventoryEntriesResult's fields from required parameters
@@ -11040,7 +11040,7 @@ Constructs ListInventoryEntriesResult's fields from required parameters
 
 ``` purescript
 newtype ListResourceComplianceSummariesRequest
-  = ListResourceComplianceSummariesRequest { "Filters" :: NullOrUndefined (ComplianceStringFilterList), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults) }
+  = ListResourceComplianceSummariesRequest { "Filters" :: Maybe (ComplianceStringFilterList), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults) }
 ```
 
 ##### Instances
@@ -11063,7 +11063,7 @@ Constructs ListResourceComplianceSummariesRequest from required parameters
 #### `newListResourceComplianceSummariesRequest'`
 
 ``` purescript
-newListResourceComplianceSummariesRequest' :: ({ "Filters" :: NullOrUndefined (ComplianceStringFilterList), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults) } -> { "Filters" :: NullOrUndefined (ComplianceStringFilterList), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults) }) -> ListResourceComplianceSummariesRequest
+newListResourceComplianceSummariesRequest' :: ({ "Filters" :: Maybe (ComplianceStringFilterList), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults) } -> { "Filters" :: Maybe (ComplianceStringFilterList), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults) }) -> ListResourceComplianceSummariesRequest
 ```
 
 Constructs ListResourceComplianceSummariesRequest's fields from required parameters
@@ -11072,7 +11072,7 @@ Constructs ListResourceComplianceSummariesRequest's fields from required paramet
 
 ``` purescript
 newtype ListResourceComplianceSummariesResult
-  = ListResourceComplianceSummariesResult { "ResourceComplianceSummaryItems" :: NullOrUndefined (ResourceComplianceSummaryItemList), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListResourceComplianceSummariesResult { "ResourceComplianceSummaryItems" :: Maybe (ResourceComplianceSummaryItemList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -11095,7 +11095,7 @@ Constructs ListResourceComplianceSummariesResult from required parameters
 #### `newListResourceComplianceSummariesResult'`
 
 ``` purescript
-newListResourceComplianceSummariesResult' :: ({ "ResourceComplianceSummaryItems" :: NullOrUndefined (ResourceComplianceSummaryItemList), "NextToken" :: NullOrUndefined (NextToken) } -> { "ResourceComplianceSummaryItems" :: NullOrUndefined (ResourceComplianceSummaryItemList), "NextToken" :: NullOrUndefined (NextToken) }) -> ListResourceComplianceSummariesResult
+newListResourceComplianceSummariesResult' :: ({ "ResourceComplianceSummaryItems" :: Maybe (ResourceComplianceSummaryItemList), "NextToken" :: Maybe (NextToken) } -> { "ResourceComplianceSummaryItems" :: Maybe (ResourceComplianceSummaryItemList), "NextToken" :: Maybe (NextToken) }) -> ListResourceComplianceSummariesResult
 ```
 
 Constructs ListResourceComplianceSummariesResult's fields from required parameters
@@ -11104,7 +11104,7 @@ Constructs ListResourceComplianceSummariesResult's fields from required paramete
 
 ``` purescript
 newtype ListResourceDataSyncRequest
-  = ListResourceDataSyncRequest { "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults) }
+  = ListResourceDataSyncRequest { "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults) }
 ```
 
 ##### Instances
@@ -11127,7 +11127,7 @@ Constructs ListResourceDataSyncRequest from required parameters
 #### `newListResourceDataSyncRequest'`
 
 ``` purescript
-newListResourceDataSyncRequest' :: ({ "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults) } -> { "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (MaxResults) }) -> ListResourceDataSyncRequest
+newListResourceDataSyncRequest' :: ({ "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults) } -> { "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (MaxResults) }) -> ListResourceDataSyncRequest
 ```
 
 Constructs ListResourceDataSyncRequest's fields from required parameters
@@ -11136,7 +11136,7 @@ Constructs ListResourceDataSyncRequest's fields from required parameters
 
 ``` purescript
 newtype ListResourceDataSyncResult
-  = ListResourceDataSyncResult { "ResourceDataSyncItems" :: NullOrUndefined (ResourceDataSyncItemList), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListResourceDataSyncResult { "ResourceDataSyncItems" :: Maybe (ResourceDataSyncItemList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -11159,7 +11159,7 @@ Constructs ListResourceDataSyncResult from required parameters
 #### `newListResourceDataSyncResult'`
 
 ``` purescript
-newListResourceDataSyncResult' :: ({ "ResourceDataSyncItems" :: NullOrUndefined (ResourceDataSyncItemList), "NextToken" :: NullOrUndefined (NextToken) } -> { "ResourceDataSyncItems" :: NullOrUndefined (ResourceDataSyncItemList), "NextToken" :: NullOrUndefined (NextToken) }) -> ListResourceDataSyncResult
+newListResourceDataSyncResult' :: ({ "ResourceDataSyncItems" :: Maybe (ResourceDataSyncItemList), "NextToken" :: Maybe (NextToken) } -> { "ResourceDataSyncItems" :: Maybe (ResourceDataSyncItemList), "NextToken" :: Maybe (NextToken) }) -> ListResourceDataSyncResult
 ```
 
 Constructs ListResourceDataSyncResult's fields from required parameters
@@ -11200,7 +11200,7 @@ Constructs ListTagsForResourceRequest's fields from required parameters
 
 ``` purescript
 newtype ListTagsForResourceResult
-  = ListTagsForResourceResult { "TagList" :: NullOrUndefined (TagList) }
+  = ListTagsForResourceResult { "TagList" :: Maybe (TagList) }
 ```
 
 ##### Instances
@@ -11223,7 +11223,7 @@ Constructs ListTagsForResourceResult from required parameters
 #### `newListTagsForResourceResult'`
 
 ``` purescript
-newListTagsForResourceResult' :: ({ "TagList" :: NullOrUndefined (TagList) } -> { "TagList" :: NullOrUndefined (TagList) }) -> ListTagsForResourceResult
+newListTagsForResourceResult' :: ({ "TagList" :: Maybe (TagList) } -> { "TagList" :: Maybe (TagList) }) -> ListTagsForResourceResult
 ```
 
 Constructs ListTagsForResourceResult's fields from required parameters
@@ -11232,7 +11232,7 @@ Constructs ListTagsForResourceResult's fields from required parameters
 
 ``` purescript
 newtype LoggingInfo
-  = LoggingInfo { "S3BucketName" :: S3BucketName, "S3KeyPrefix" :: NullOrUndefined (S3KeyPrefix), "S3Region" :: S3Region }
+  = LoggingInfo { "S3BucketName" :: S3BucketName, "S3KeyPrefix" :: Maybe (S3KeyPrefix), "S3Region" :: S3Region }
 ```
 
 <p>Information about an Amazon S3 bucket to write instance-level logs to.</p>
@@ -11257,7 +11257,7 @@ Constructs LoggingInfo from required parameters
 #### `newLoggingInfo'`
 
 ``` purescript
-newLoggingInfo' :: S3BucketName -> S3Region -> ({ "S3BucketName" :: S3BucketName, "S3KeyPrefix" :: NullOrUndefined (S3KeyPrefix), "S3Region" :: S3Region } -> { "S3BucketName" :: S3BucketName, "S3KeyPrefix" :: NullOrUndefined (S3KeyPrefix), "S3Region" :: S3Region }) -> LoggingInfo
+newLoggingInfo' :: S3BucketName -> S3Region -> ({ "S3BucketName" :: S3BucketName, "S3KeyPrefix" :: Maybe (S3KeyPrefix), "S3Region" :: S3Region } -> { "S3BucketName" :: S3BucketName, "S3KeyPrefix" :: Maybe (S3KeyPrefix), "S3Region" :: S3Region }) -> LoggingInfo
 ```
 
 Constructs LoggingInfo's fields from required parameters
@@ -11282,7 +11282,7 @@ Encode MaintenanceWindowAllowUnassociatedTargets
 
 ``` purescript
 newtype MaintenanceWindowAutomationParameters
-  = MaintenanceWindowAutomationParameters { "DocumentVersion" :: NullOrUndefined (DocumentVersion), "Parameters" :: NullOrUndefined (AutomationParameterMap) }
+  = MaintenanceWindowAutomationParameters { "DocumentVersion" :: Maybe (DocumentVersion), "Parameters" :: Maybe (AutomationParameterMap) }
 ```
 
 <p>The parameters for an AUTOMATION task type.</p>
@@ -11307,7 +11307,7 @@ Constructs MaintenanceWindowAutomationParameters from required parameters
 #### `newMaintenanceWindowAutomationParameters'`
 
 ``` purescript
-newMaintenanceWindowAutomationParameters' :: ({ "DocumentVersion" :: NullOrUndefined (DocumentVersion), "Parameters" :: NullOrUndefined (AutomationParameterMap) } -> { "DocumentVersion" :: NullOrUndefined (DocumentVersion), "Parameters" :: NullOrUndefined (AutomationParameterMap) }) -> MaintenanceWindowAutomationParameters
+newMaintenanceWindowAutomationParameters' :: ({ "DocumentVersion" :: Maybe (DocumentVersion), "Parameters" :: Maybe (AutomationParameterMap) } -> { "DocumentVersion" :: Maybe (DocumentVersion), "Parameters" :: Maybe (AutomationParameterMap) }) -> MaintenanceWindowAutomationParameters
 ```
 
 Constructs MaintenanceWindowAutomationParameters's fields from required parameters
@@ -11380,7 +11380,7 @@ Encode MaintenanceWindowEnabled
 
 ``` purescript
 newtype MaintenanceWindowExecution
-  = MaintenanceWindowExecution { "WindowId" :: NullOrUndefined (MaintenanceWindowId), "WindowExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionId), "Status" :: NullOrUndefined (MaintenanceWindowExecutionStatus), "StatusDetails" :: NullOrUndefined (MaintenanceWindowExecutionStatusDetails), "StartTime" :: NullOrUndefined (DateTime), "EndTime" :: NullOrUndefined (DateTime) }
+  = MaintenanceWindowExecution { "WindowId" :: Maybe (MaintenanceWindowId), "WindowExecutionId" :: Maybe (MaintenanceWindowExecutionId), "Status" :: Maybe (MaintenanceWindowExecutionStatus), "StatusDetails" :: Maybe (MaintenanceWindowExecutionStatusDetails), "StartTime" :: Maybe (DateTime), "EndTime" :: Maybe (DateTime) }
 ```
 
 <p>Describes the information about an execution of a Maintenance Window. </p>
@@ -11405,7 +11405,7 @@ Constructs MaintenanceWindowExecution from required parameters
 #### `newMaintenanceWindowExecution'`
 
 ``` purescript
-newMaintenanceWindowExecution' :: ({ "WindowId" :: NullOrUndefined (MaintenanceWindowId), "WindowExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionId), "Status" :: NullOrUndefined (MaintenanceWindowExecutionStatus), "StatusDetails" :: NullOrUndefined (MaintenanceWindowExecutionStatusDetails), "StartTime" :: NullOrUndefined (DateTime), "EndTime" :: NullOrUndefined (DateTime) } -> { "WindowId" :: NullOrUndefined (MaintenanceWindowId), "WindowExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionId), "Status" :: NullOrUndefined (MaintenanceWindowExecutionStatus), "StatusDetails" :: NullOrUndefined (MaintenanceWindowExecutionStatusDetails), "StartTime" :: NullOrUndefined (DateTime), "EndTime" :: NullOrUndefined (DateTime) }) -> MaintenanceWindowExecution
+newMaintenanceWindowExecution' :: ({ "WindowId" :: Maybe (MaintenanceWindowId), "WindowExecutionId" :: Maybe (MaintenanceWindowExecutionId), "Status" :: Maybe (MaintenanceWindowExecutionStatus), "StatusDetails" :: Maybe (MaintenanceWindowExecutionStatusDetails), "StartTime" :: Maybe (DateTime), "EndTime" :: Maybe (DateTime) } -> { "WindowId" :: Maybe (MaintenanceWindowId), "WindowExecutionId" :: Maybe (MaintenanceWindowExecutionId), "Status" :: Maybe (MaintenanceWindowExecutionStatus), "StatusDetails" :: Maybe (MaintenanceWindowExecutionStatusDetails), "StartTime" :: Maybe (DateTime), "EndTime" :: Maybe (DateTime) }) -> MaintenanceWindowExecution
 ```
 
 Constructs MaintenanceWindowExecution's fields from required parameters
@@ -11526,7 +11526,7 @@ Encode MaintenanceWindowExecutionTaskIdList
 
 ``` purescript
 newtype MaintenanceWindowExecutionTaskIdentity
-  = MaintenanceWindowExecutionTaskIdentity { "WindowExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionId), "TaskExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionTaskId), "Status" :: NullOrUndefined (MaintenanceWindowExecutionStatus), "StatusDetails" :: NullOrUndefined (MaintenanceWindowExecutionStatusDetails), "StartTime" :: NullOrUndefined (DateTime), "EndTime" :: NullOrUndefined (DateTime), "TaskArn" :: NullOrUndefined (MaintenanceWindowTaskArn), "TaskType" :: NullOrUndefined (MaintenanceWindowTaskType) }
+  = MaintenanceWindowExecutionTaskIdentity { "WindowExecutionId" :: Maybe (MaintenanceWindowExecutionId), "TaskExecutionId" :: Maybe (MaintenanceWindowExecutionTaskId), "Status" :: Maybe (MaintenanceWindowExecutionStatus), "StatusDetails" :: Maybe (MaintenanceWindowExecutionStatusDetails), "StartTime" :: Maybe (DateTime), "EndTime" :: Maybe (DateTime), "TaskArn" :: Maybe (MaintenanceWindowTaskArn), "TaskType" :: Maybe (MaintenanceWindowTaskType) }
 ```
 
 <p>Information about a task execution performed as part of a Maintenance Window execution.</p>
@@ -11551,7 +11551,7 @@ Constructs MaintenanceWindowExecutionTaskIdentity from required parameters
 #### `newMaintenanceWindowExecutionTaskIdentity'`
 
 ``` purescript
-newMaintenanceWindowExecutionTaskIdentity' :: ({ "WindowExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionId), "TaskExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionTaskId), "Status" :: NullOrUndefined (MaintenanceWindowExecutionStatus), "StatusDetails" :: NullOrUndefined (MaintenanceWindowExecutionStatusDetails), "StartTime" :: NullOrUndefined (DateTime), "EndTime" :: NullOrUndefined (DateTime), "TaskArn" :: NullOrUndefined (MaintenanceWindowTaskArn), "TaskType" :: NullOrUndefined (MaintenanceWindowTaskType) } -> { "WindowExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionId), "TaskExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionTaskId), "Status" :: NullOrUndefined (MaintenanceWindowExecutionStatus), "StatusDetails" :: NullOrUndefined (MaintenanceWindowExecutionStatusDetails), "StartTime" :: NullOrUndefined (DateTime), "EndTime" :: NullOrUndefined (DateTime), "TaskArn" :: NullOrUndefined (MaintenanceWindowTaskArn), "TaskType" :: NullOrUndefined (MaintenanceWindowTaskType) }) -> MaintenanceWindowExecutionTaskIdentity
+newMaintenanceWindowExecutionTaskIdentity' :: ({ "WindowExecutionId" :: Maybe (MaintenanceWindowExecutionId), "TaskExecutionId" :: Maybe (MaintenanceWindowExecutionTaskId), "Status" :: Maybe (MaintenanceWindowExecutionStatus), "StatusDetails" :: Maybe (MaintenanceWindowExecutionStatusDetails), "StartTime" :: Maybe (DateTime), "EndTime" :: Maybe (DateTime), "TaskArn" :: Maybe (MaintenanceWindowTaskArn), "TaskType" :: Maybe (MaintenanceWindowTaskType) } -> { "WindowExecutionId" :: Maybe (MaintenanceWindowExecutionId), "TaskExecutionId" :: Maybe (MaintenanceWindowExecutionTaskId), "Status" :: Maybe (MaintenanceWindowExecutionStatus), "StatusDetails" :: Maybe (MaintenanceWindowExecutionStatusDetails), "StartTime" :: Maybe (DateTime), "EndTime" :: Maybe (DateTime), "TaskArn" :: Maybe (MaintenanceWindowTaskArn), "TaskType" :: Maybe (MaintenanceWindowTaskType) }) -> MaintenanceWindowExecutionTaskIdentity
 ```
 
 Constructs MaintenanceWindowExecutionTaskIdentity's fields from required parameters
@@ -11592,7 +11592,7 @@ Encode MaintenanceWindowExecutionTaskInvocationId
 
 ``` purescript
 newtype MaintenanceWindowExecutionTaskInvocationIdentity
-  = MaintenanceWindowExecutionTaskInvocationIdentity { "WindowExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionId), "TaskExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionTaskId), "InvocationId" :: NullOrUndefined (MaintenanceWindowExecutionTaskInvocationId), "ExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionTaskExecutionId), "TaskType" :: NullOrUndefined (MaintenanceWindowTaskType), "Parameters" :: NullOrUndefined (MaintenanceWindowExecutionTaskInvocationParameters), "Status" :: NullOrUndefined (MaintenanceWindowExecutionStatus), "StatusDetails" :: NullOrUndefined (MaintenanceWindowExecutionStatusDetails), "StartTime" :: NullOrUndefined (DateTime), "EndTime" :: NullOrUndefined (DateTime), "OwnerInformation" :: NullOrUndefined (OwnerInformation), "WindowTargetId" :: NullOrUndefined (MaintenanceWindowTaskTargetId) }
+  = MaintenanceWindowExecutionTaskInvocationIdentity { "WindowExecutionId" :: Maybe (MaintenanceWindowExecutionId), "TaskExecutionId" :: Maybe (MaintenanceWindowExecutionTaskId), "InvocationId" :: Maybe (MaintenanceWindowExecutionTaskInvocationId), "ExecutionId" :: Maybe (MaintenanceWindowExecutionTaskExecutionId), "TaskType" :: Maybe (MaintenanceWindowTaskType), "Parameters" :: Maybe (MaintenanceWindowExecutionTaskInvocationParameters), "Status" :: Maybe (MaintenanceWindowExecutionStatus), "StatusDetails" :: Maybe (MaintenanceWindowExecutionStatusDetails), "StartTime" :: Maybe (DateTime), "EndTime" :: Maybe (DateTime), "OwnerInformation" :: Maybe (OwnerInformation), "WindowTargetId" :: Maybe (MaintenanceWindowTaskTargetId) }
 ```
 
 <p>Describes the information about a task invocation for a particular target as part of a task execution performed as part of a Maintenance Window execution.</p>
@@ -11617,7 +11617,7 @@ Constructs MaintenanceWindowExecutionTaskInvocationIdentity from required parame
 #### `newMaintenanceWindowExecutionTaskInvocationIdentity'`
 
 ``` purescript
-newMaintenanceWindowExecutionTaskInvocationIdentity' :: ({ "WindowExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionId), "TaskExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionTaskId), "InvocationId" :: NullOrUndefined (MaintenanceWindowExecutionTaskInvocationId), "ExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionTaskExecutionId), "TaskType" :: NullOrUndefined (MaintenanceWindowTaskType), "Parameters" :: NullOrUndefined (MaintenanceWindowExecutionTaskInvocationParameters), "Status" :: NullOrUndefined (MaintenanceWindowExecutionStatus), "StatusDetails" :: NullOrUndefined (MaintenanceWindowExecutionStatusDetails), "StartTime" :: NullOrUndefined (DateTime), "EndTime" :: NullOrUndefined (DateTime), "OwnerInformation" :: NullOrUndefined (OwnerInformation), "WindowTargetId" :: NullOrUndefined (MaintenanceWindowTaskTargetId) } -> { "WindowExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionId), "TaskExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionTaskId), "InvocationId" :: NullOrUndefined (MaintenanceWindowExecutionTaskInvocationId), "ExecutionId" :: NullOrUndefined (MaintenanceWindowExecutionTaskExecutionId), "TaskType" :: NullOrUndefined (MaintenanceWindowTaskType), "Parameters" :: NullOrUndefined (MaintenanceWindowExecutionTaskInvocationParameters), "Status" :: NullOrUndefined (MaintenanceWindowExecutionStatus), "StatusDetails" :: NullOrUndefined (MaintenanceWindowExecutionStatusDetails), "StartTime" :: NullOrUndefined (DateTime), "EndTime" :: NullOrUndefined (DateTime), "OwnerInformation" :: NullOrUndefined (OwnerInformation), "WindowTargetId" :: NullOrUndefined (MaintenanceWindowTaskTargetId) }) -> MaintenanceWindowExecutionTaskInvocationIdentity
+newMaintenanceWindowExecutionTaskInvocationIdentity' :: ({ "WindowExecutionId" :: Maybe (MaintenanceWindowExecutionId), "TaskExecutionId" :: Maybe (MaintenanceWindowExecutionTaskId), "InvocationId" :: Maybe (MaintenanceWindowExecutionTaskInvocationId), "ExecutionId" :: Maybe (MaintenanceWindowExecutionTaskExecutionId), "TaskType" :: Maybe (MaintenanceWindowTaskType), "Parameters" :: Maybe (MaintenanceWindowExecutionTaskInvocationParameters), "Status" :: Maybe (MaintenanceWindowExecutionStatus), "StatusDetails" :: Maybe (MaintenanceWindowExecutionStatusDetails), "StartTime" :: Maybe (DateTime), "EndTime" :: Maybe (DateTime), "OwnerInformation" :: Maybe (OwnerInformation), "WindowTargetId" :: Maybe (MaintenanceWindowTaskTargetId) } -> { "WindowExecutionId" :: Maybe (MaintenanceWindowExecutionId), "TaskExecutionId" :: Maybe (MaintenanceWindowExecutionTaskId), "InvocationId" :: Maybe (MaintenanceWindowExecutionTaskInvocationId), "ExecutionId" :: Maybe (MaintenanceWindowExecutionTaskExecutionId), "TaskType" :: Maybe (MaintenanceWindowTaskType), "Parameters" :: Maybe (MaintenanceWindowExecutionTaskInvocationParameters), "Status" :: Maybe (MaintenanceWindowExecutionStatus), "StatusDetails" :: Maybe (MaintenanceWindowExecutionStatusDetails), "StartTime" :: Maybe (DateTime), "EndTime" :: Maybe (DateTime), "OwnerInformation" :: Maybe (OwnerInformation), "WindowTargetId" :: Maybe (MaintenanceWindowTaskTargetId) }) -> MaintenanceWindowExecutionTaskInvocationIdentity
 ```
 
 Constructs MaintenanceWindowExecutionTaskInvocationIdentity's fields from required parameters
@@ -11658,7 +11658,7 @@ Encode MaintenanceWindowExecutionTaskInvocationParameters
 
 ``` purescript
 newtype MaintenanceWindowFilter
-  = MaintenanceWindowFilter { "Key" :: NullOrUndefined (MaintenanceWindowFilterKey), "Values" :: NullOrUndefined (MaintenanceWindowFilterValues) }
+  = MaintenanceWindowFilter { "Key" :: Maybe (MaintenanceWindowFilterKey), "Values" :: Maybe (MaintenanceWindowFilterValues) }
 ```
 
 <p>Filter used in the request.</p>
@@ -11683,7 +11683,7 @@ Constructs MaintenanceWindowFilter from required parameters
 #### `newMaintenanceWindowFilter'`
 
 ``` purescript
-newMaintenanceWindowFilter' :: ({ "Key" :: NullOrUndefined (MaintenanceWindowFilterKey), "Values" :: NullOrUndefined (MaintenanceWindowFilterValues) } -> { "Key" :: NullOrUndefined (MaintenanceWindowFilterKey), "Values" :: NullOrUndefined (MaintenanceWindowFilterValues) }) -> MaintenanceWindowFilter
+newMaintenanceWindowFilter' :: ({ "Key" :: Maybe (MaintenanceWindowFilterKey), "Values" :: Maybe (MaintenanceWindowFilterValues) } -> { "Key" :: Maybe (MaintenanceWindowFilterKey), "Values" :: Maybe (MaintenanceWindowFilterValues) }) -> MaintenanceWindowFilter
 ```
 
 Constructs MaintenanceWindowFilter's fields from required parameters
@@ -11772,7 +11772,7 @@ Encode MaintenanceWindowId
 
 ``` purescript
 newtype MaintenanceWindowIdentity
-  = MaintenanceWindowIdentity { "WindowId" :: NullOrUndefined (MaintenanceWindowId), "Name" :: NullOrUndefined (MaintenanceWindowName), "Description" :: NullOrUndefined (MaintenanceWindowDescription), "Enabled" :: NullOrUndefined (MaintenanceWindowEnabled), "Duration" :: NullOrUndefined (MaintenanceWindowDurationHours), "Cutoff" :: NullOrUndefined (MaintenanceWindowCutoff) }
+  = MaintenanceWindowIdentity { "WindowId" :: Maybe (MaintenanceWindowId), "Name" :: Maybe (MaintenanceWindowName), "Description" :: Maybe (MaintenanceWindowDescription), "Enabled" :: Maybe (MaintenanceWindowEnabled), "Duration" :: Maybe (MaintenanceWindowDurationHours), "Cutoff" :: Maybe (MaintenanceWindowCutoff) }
 ```
 
 <p>Information about the Maintenance Window.</p>
@@ -11797,7 +11797,7 @@ Constructs MaintenanceWindowIdentity from required parameters
 #### `newMaintenanceWindowIdentity'`
 
 ``` purescript
-newMaintenanceWindowIdentity' :: ({ "WindowId" :: NullOrUndefined (MaintenanceWindowId), "Name" :: NullOrUndefined (MaintenanceWindowName), "Description" :: NullOrUndefined (MaintenanceWindowDescription), "Enabled" :: NullOrUndefined (MaintenanceWindowEnabled), "Duration" :: NullOrUndefined (MaintenanceWindowDurationHours), "Cutoff" :: NullOrUndefined (MaintenanceWindowCutoff) } -> { "WindowId" :: NullOrUndefined (MaintenanceWindowId), "Name" :: NullOrUndefined (MaintenanceWindowName), "Description" :: NullOrUndefined (MaintenanceWindowDescription), "Enabled" :: NullOrUndefined (MaintenanceWindowEnabled), "Duration" :: NullOrUndefined (MaintenanceWindowDurationHours), "Cutoff" :: NullOrUndefined (MaintenanceWindowCutoff) }) -> MaintenanceWindowIdentity
+newMaintenanceWindowIdentity' :: ({ "WindowId" :: Maybe (MaintenanceWindowId), "Name" :: Maybe (MaintenanceWindowName), "Description" :: Maybe (MaintenanceWindowDescription), "Enabled" :: Maybe (MaintenanceWindowEnabled), "Duration" :: Maybe (MaintenanceWindowDurationHours), "Cutoff" :: Maybe (MaintenanceWindowCutoff) } -> { "WindowId" :: Maybe (MaintenanceWindowId), "Name" :: Maybe (MaintenanceWindowName), "Description" :: Maybe (MaintenanceWindowDescription), "Enabled" :: Maybe (MaintenanceWindowEnabled), "Duration" :: Maybe (MaintenanceWindowDurationHours), "Cutoff" :: Maybe (MaintenanceWindowCutoff) }) -> MaintenanceWindowIdentity
 ```
 
 Constructs MaintenanceWindowIdentity's fields from required parameters
@@ -11838,7 +11838,7 @@ Encode MaintenanceWindowLambdaClientContext
 
 ``` purescript
 newtype MaintenanceWindowLambdaParameters
-  = MaintenanceWindowLambdaParameters { "ClientContext" :: NullOrUndefined (MaintenanceWindowLambdaClientContext), "Qualifier" :: NullOrUndefined (MaintenanceWindowLambdaQualifier), "Payload" :: NullOrUndefined (MaintenanceWindowLambdaPayload) }
+  = MaintenanceWindowLambdaParameters { "ClientContext" :: Maybe (MaintenanceWindowLambdaClientContext), "Qualifier" :: Maybe (MaintenanceWindowLambdaQualifier), "Payload" :: Maybe (MaintenanceWindowLambdaPayload) }
 ```
 
 <p>The parameters for a LAMBDA task type.</p>
@@ -11863,7 +11863,7 @@ Constructs MaintenanceWindowLambdaParameters from required parameters
 #### `newMaintenanceWindowLambdaParameters'`
 
 ``` purescript
-newMaintenanceWindowLambdaParameters' :: ({ "ClientContext" :: NullOrUndefined (MaintenanceWindowLambdaClientContext), "Qualifier" :: NullOrUndefined (MaintenanceWindowLambdaQualifier), "Payload" :: NullOrUndefined (MaintenanceWindowLambdaPayload) } -> { "ClientContext" :: NullOrUndefined (MaintenanceWindowLambdaClientContext), "Qualifier" :: NullOrUndefined (MaintenanceWindowLambdaQualifier), "Payload" :: NullOrUndefined (MaintenanceWindowLambdaPayload) }) -> MaintenanceWindowLambdaParameters
+newMaintenanceWindowLambdaParameters' :: ({ "ClientContext" :: Maybe (MaintenanceWindowLambdaClientContext), "Qualifier" :: Maybe (MaintenanceWindowLambdaQualifier), "Payload" :: Maybe (MaintenanceWindowLambdaPayload) } -> { "ClientContext" :: Maybe (MaintenanceWindowLambdaClientContext), "Qualifier" :: Maybe (MaintenanceWindowLambdaQualifier), "Payload" :: Maybe (MaintenanceWindowLambdaPayload) }) -> MaintenanceWindowLambdaParameters
 ```
 
 Constructs MaintenanceWindowLambdaParameters's fields from required parameters
@@ -11952,7 +11952,7 @@ Encode MaintenanceWindowResourceType
 
 ``` purescript
 newtype MaintenanceWindowRunCommandParameters
-  = MaintenanceWindowRunCommandParameters { "Comment" :: NullOrUndefined (Comment), "DocumentHash" :: NullOrUndefined (DocumentHash), "DocumentHashType" :: NullOrUndefined (DocumentHashType), "NotificationConfig" :: NullOrUndefined (NotificationConfig), "OutputS3BucketName" :: NullOrUndefined (S3BucketName), "OutputS3KeyPrefix" :: NullOrUndefined (S3KeyPrefix), "Parameters" :: NullOrUndefined (Parameters), "ServiceRoleArn" :: NullOrUndefined (ServiceRole), "TimeoutSeconds" :: NullOrUndefined (TimeoutSeconds) }
+  = MaintenanceWindowRunCommandParameters { "Comment" :: Maybe (Comment), "DocumentHash" :: Maybe (DocumentHash), "DocumentHashType" :: Maybe (DocumentHashType), "NotificationConfig" :: Maybe (NotificationConfig), "OutputS3BucketName" :: Maybe (S3BucketName), "OutputS3KeyPrefix" :: Maybe (S3KeyPrefix), "Parameters" :: Maybe (Parameters), "ServiceRoleArn" :: Maybe (ServiceRole), "TimeoutSeconds" :: Maybe (TimeoutSeconds) }
 ```
 
 <p>The parameters for a RUN_COMMAND task type.</p>
@@ -11977,7 +11977,7 @@ Constructs MaintenanceWindowRunCommandParameters from required parameters
 #### `newMaintenanceWindowRunCommandParameters'`
 
 ``` purescript
-newMaintenanceWindowRunCommandParameters' :: ({ "Comment" :: NullOrUndefined (Comment), "DocumentHash" :: NullOrUndefined (DocumentHash), "DocumentHashType" :: NullOrUndefined (DocumentHashType), "NotificationConfig" :: NullOrUndefined (NotificationConfig), "OutputS3BucketName" :: NullOrUndefined (S3BucketName), "OutputS3KeyPrefix" :: NullOrUndefined (S3KeyPrefix), "Parameters" :: NullOrUndefined (Parameters), "ServiceRoleArn" :: NullOrUndefined (ServiceRole), "TimeoutSeconds" :: NullOrUndefined (TimeoutSeconds) } -> { "Comment" :: NullOrUndefined (Comment), "DocumentHash" :: NullOrUndefined (DocumentHash), "DocumentHashType" :: NullOrUndefined (DocumentHashType), "NotificationConfig" :: NullOrUndefined (NotificationConfig), "OutputS3BucketName" :: NullOrUndefined (S3BucketName), "OutputS3KeyPrefix" :: NullOrUndefined (S3KeyPrefix), "Parameters" :: NullOrUndefined (Parameters), "ServiceRoleArn" :: NullOrUndefined (ServiceRole), "TimeoutSeconds" :: NullOrUndefined (TimeoutSeconds) }) -> MaintenanceWindowRunCommandParameters
+newMaintenanceWindowRunCommandParameters' :: ({ "Comment" :: Maybe (Comment), "DocumentHash" :: Maybe (DocumentHash), "DocumentHashType" :: Maybe (DocumentHashType), "NotificationConfig" :: Maybe (NotificationConfig), "OutputS3BucketName" :: Maybe (S3BucketName), "OutputS3KeyPrefix" :: Maybe (S3KeyPrefix), "Parameters" :: Maybe (Parameters), "ServiceRoleArn" :: Maybe (ServiceRole), "TimeoutSeconds" :: Maybe (TimeoutSeconds) } -> { "Comment" :: Maybe (Comment), "DocumentHash" :: Maybe (DocumentHash), "DocumentHashType" :: Maybe (DocumentHashType), "NotificationConfig" :: Maybe (NotificationConfig), "OutputS3BucketName" :: Maybe (S3BucketName), "OutputS3KeyPrefix" :: Maybe (S3KeyPrefix), "Parameters" :: Maybe (Parameters), "ServiceRoleArn" :: Maybe (ServiceRole), "TimeoutSeconds" :: Maybe (TimeoutSeconds) }) -> MaintenanceWindowRunCommandParameters
 ```
 
 Constructs MaintenanceWindowRunCommandParameters's fields from required parameters
@@ -12034,7 +12034,7 @@ Encode MaintenanceWindowStepFunctionsName
 
 ``` purescript
 newtype MaintenanceWindowStepFunctionsParameters
-  = MaintenanceWindowStepFunctionsParameters { "Input" :: NullOrUndefined (MaintenanceWindowStepFunctionsInput), "Name" :: NullOrUndefined (MaintenanceWindowStepFunctionsName) }
+  = MaintenanceWindowStepFunctionsParameters { "Input" :: Maybe (MaintenanceWindowStepFunctionsInput), "Name" :: Maybe (MaintenanceWindowStepFunctionsName) }
 ```
 
 <p>The parameters for the STEP_FUNCTION execution.</p>
@@ -12059,7 +12059,7 @@ Constructs MaintenanceWindowStepFunctionsParameters from required parameters
 #### `newMaintenanceWindowStepFunctionsParameters'`
 
 ``` purescript
-newMaintenanceWindowStepFunctionsParameters' :: ({ "Input" :: NullOrUndefined (MaintenanceWindowStepFunctionsInput), "Name" :: NullOrUndefined (MaintenanceWindowStepFunctionsName) } -> { "Input" :: NullOrUndefined (MaintenanceWindowStepFunctionsInput), "Name" :: NullOrUndefined (MaintenanceWindowStepFunctionsName) }) -> MaintenanceWindowStepFunctionsParameters
+newMaintenanceWindowStepFunctionsParameters' :: ({ "Input" :: Maybe (MaintenanceWindowStepFunctionsInput), "Name" :: Maybe (MaintenanceWindowStepFunctionsName) } -> { "Input" :: Maybe (MaintenanceWindowStepFunctionsInput), "Name" :: Maybe (MaintenanceWindowStepFunctionsName) }) -> MaintenanceWindowStepFunctionsParameters
 ```
 
 Constructs MaintenanceWindowStepFunctionsParameters's fields from required parameters
@@ -12068,7 +12068,7 @@ Constructs MaintenanceWindowStepFunctionsParameters's fields from required param
 
 ``` purescript
 newtype MaintenanceWindowTarget
-  = MaintenanceWindowTarget { "WindowId" :: NullOrUndefined (MaintenanceWindowId), "WindowTargetId" :: NullOrUndefined (MaintenanceWindowTargetId), "ResourceType" :: NullOrUndefined (MaintenanceWindowResourceType), "Targets" :: NullOrUndefined (Targets), "OwnerInformation" :: NullOrUndefined (OwnerInformation), "Name" :: NullOrUndefined (MaintenanceWindowName), "Description" :: NullOrUndefined (MaintenanceWindowDescription) }
+  = MaintenanceWindowTarget { "WindowId" :: Maybe (MaintenanceWindowId), "WindowTargetId" :: Maybe (MaintenanceWindowTargetId), "ResourceType" :: Maybe (MaintenanceWindowResourceType), "Targets" :: Maybe (Targets), "OwnerInformation" :: Maybe (OwnerInformation), "Name" :: Maybe (MaintenanceWindowName), "Description" :: Maybe (MaintenanceWindowDescription) }
 ```
 
 <p>The target registered with the Maintenance Window.</p>
@@ -12093,7 +12093,7 @@ Constructs MaintenanceWindowTarget from required parameters
 #### `newMaintenanceWindowTarget'`
 
 ``` purescript
-newMaintenanceWindowTarget' :: ({ "WindowId" :: NullOrUndefined (MaintenanceWindowId), "WindowTargetId" :: NullOrUndefined (MaintenanceWindowTargetId), "ResourceType" :: NullOrUndefined (MaintenanceWindowResourceType), "Targets" :: NullOrUndefined (Targets), "OwnerInformation" :: NullOrUndefined (OwnerInformation), "Name" :: NullOrUndefined (MaintenanceWindowName), "Description" :: NullOrUndefined (MaintenanceWindowDescription) } -> { "WindowId" :: NullOrUndefined (MaintenanceWindowId), "WindowTargetId" :: NullOrUndefined (MaintenanceWindowTargetId), "ResourceType" :: NullOrUndefined (MaintenanceWindowResourceType), "Targets" :: NullOrUndefined (Targets), "OwnerInformation" :: NullOrUndefined (OwnerInformation), "Name" :: NullOrUndefined (MaintenanceWindowName), "Description" :: NullOrUndefined (MaintenanceWindowDescription) }) -> MaintenanceWindowTarget
+newMaintenanceWindowTarget' :: ({ "WindowId" :: Maybe (MaintenanceWindowId), "WindowTargetId" :: Maybe (MaintenanceWindowTargetId), "ResourceType" :: Maybe (MaintenanceWindowResourceType), "Targets" :: Maybe (Targets), "OwnerInformation" :: Maybe (OwnerInformation), "Name" :: Maybe (MaintenanceWindowName), "Description" :: Maybe (MaintenanceWindowDescription) } -> { "WindowId" :: Maybe (MaintenanceWindowId), "WindowTargetId" :: Maybe (MaintenanceWindowTargetId), "ResourceType" :: Maybe (MaintenanceWindowResourceType), "Targets" :: Maybe (Targets), "OwnerInformation" :: Maybe (OwnerInformation), "Name" :: Maybe (MaintenanceWindowName), "Description" :: Maybe (MaintenanceWindowDescription) }) -> MaintenanceWindowTarget
 ```
 
 Constructs MaintenanceWindowTarget's fields from required parameters
@@ -12134,7 +12134,7 @@ Encode MaintenanceWindowTargetList
 
 ``` purescript
 newtype MaintenanceWindowTask
-  = MaintenanceWindowTask { "WindowId" :: NullOrUndefined (MaintenanceWindowId), "WindowTaskId" :: NullOrUndefined (MaintenanceWindowTaskId), "TaskArn" :: NullOrUndefined (MaintenanceWindowTaskArn), "Type" :: NullOrUndefined (MaintenanceWindowTaskType), "Targets" :: NullOrUndefined (Targets), "TaskParameters" :: NullOrUndefined (MaintenanceWindowTaskParameters), "Priority" :: NullOrUndefined (MaintenanceWindowTaskPriority), "LoggingInfo" :: NullOrUndefined (LoggingInfo), "ServiceRoleArn" :: NullOrUndefined (ServiceRole), "MaxConcurrency" :: NullOrUndefined (MaxConcurrency), "MaxErrors" :: NullOrUndefined (MaxErrors), "Name" :: NullOrUndefined (MaintenanceWindowName), "Description" :: NullOrUndefined (MaintenanceWindowDescription) }
+  = MaintenanceWindowTask { "WindowId" :: Maybe (MaintenanceWindowId), "WindowTaskId" :: Maybe (MaintenanceWindowTaskId), "TaskArn" :: Maybe (MaintenanceWindowTaskArn), "Type" :: Maybe (MaintenanceWindowTaskType), "Targets" :: Maybe (Targets), "TaskParameters" :: Maybe (MaintenanceWindowTaskParameters), "Priority" :: Maybe (MaintenanceWindowTaskPriority), "LoggingInfo" :: Maybe (LoggingInfo), "ServiceRoleArn" :: Maybe (ServiceRole), "MaxConcurrency" :: Maybe (MaxConcurrency), "MaxErrors" :: Maybe (MaxErrors), "Name" :: Maybe (MaintenanceWindowName), "Description" :: Maybe (MaintenanceWindowDescription) }
 ```
 
 <p>Information about a task defined for a Maintenance Window.</p>
@@ -12159,7 +12159,7 @@ Constructs MaintenanceWindowTask from required parameters
 #### `newMaintenanceWindowTask'`
 
 ``` purescript
-newMaintenanceWindowTask' :: ({ "WindowId" :: NullOrUndefined (MaintenanceWindowId), "WindowTaskId" :: NullOrUndefined (MaintenanceWindowTaskId), "TaskArn" :: NullOrUndefined (MaintenanceWindowTaskArn), "Type" :: NullOrUndefined (MaintenanceWindowTaskType), "Targets" :: NullOrUndefined (Targets), "TaskParameters" :: NullOrUndefined (MaintenanceWindowTaskParameters), "Priority" :: NullOrUndefined (MaintenanceWindowTaskPriority), "LoggingInfo" :: NullOrUndefined (LoggingInfo), "ServiceRoleArn" :: NullOrUndefined (ServiceRole), "MaxConcurrency" :: NullOrUndefined (MaxConcurrency), "MaxErrors" :: NullOrUndefined (MaxErrors), "Name" :: NullOrUndefined (MaintenanceWindowName), "Description" :: NullOrUndefined (MaintenanceWindowDescription) } -> { "WindowId" :: NullOrUndefined (MaintenanceWindowId), "WindowTaskId" :: NullOrUndefined (MaintenanceWindowTaskId), "TaskArn" :: NullOrUndefined (MaintenanceWindowTaskArn), "Type" :: NullOrUndefined (MaintenanceWindowTaskType), "Targets" :: NullOrUndefined (Targets), "TaskParameters" :: NullOrUndefined (MaintenanceWindowTaskParameters), "Priority" :: NullOrUndefined (MaintenanceWindowTaskPriority), "LoggingInfo" :: NullOrUndefined (LoggingInfo), "ServiceRoleArn" :: NullOrUndefined (ServiceRole), "MaxConcurrency" :: NullOrUndefined (MaxConcurrency), "MaxErrors" :: NullOrUndefined (MaxErrors), "Name" :: NullOrUndefined (MaintenanceWindowName), "Description" :: NullOrUndefined (MaintenanceWindowDescription) }) -> MaintenanceWindowTask
+newMaintenanceWindowTask' :: ({ "WindowId" :: Maybe (MaintenanceWindowId), "WindowTaskId" :: Maybe (MaintenanceWindowTaskId), "TaskArn" :: Maybe (MaintenanceWindowTaskArn), "Type" :: Maybe (MaintenanceWindowTaskType), "Targets" :: Maybe (Targets), "TaskParameters" :: Maybe (MaintenanceWindowTaskParameters), "Priority" :: Maybe (MaintenanceWindowTaskPriority), "LoggingInfo" :: Maybe (LoggingInfo), "ServiceRoleArn" :: Maybe (ServiceRole), "MaxConcurrency" :: Maybe (MaxConcurrency), "MaxErrors" :: Maybe (MaxErrors), "Name" :: Maybe (MaintenanceWindowName), "Description" :: Maybe (MaintenanceWindowDescription) } -> { "WindowId" :: Maybe (MaintenanceWindowId), "WindowTaskId" :: Maybe (MaintenanceWindowTaskId), "TaskArn" :: Maybe (MaintenanceWindowTaskArn), "Type" :: Maybe (MaintenanceWindowTaskType), "Targets" :: Maybe (Targets), "TaskParameters" :: Maybe (MaintenanceWindowTaskParameters), "Priority" :: Maybe (MaintenanceWindowTaskPriority), "LoggingInfo" :: Maybe (LoggingInfo), "ServiceRoleArn" :: Maybe (ServiceRole), "MaxConcurrency" :: Maybe (MaxConcurrency), "MaxErrors" :: Maybe (MaxErrors), "Name" :: Maybe (MaintenanceWindowName), "Description" :: Maybe (MaintenanceWindowDescription) }) -> MaintenanceWindowTask
 ```
 
 Constructs MaintenanceWindowTask's fields from required parameters
@@ -12200,7 +12200,7 @@ Encode MaintenanceWindowTaskId
 
 ``` purescript
 newtype MaintenanceWindowTaskInvocationParameters
-  = MaintenanceWindowTaskInvocationParameters { "RunCommand" :: NullOrUndefined (MaintenanceWindowRunCommandParameters), "Automation" :: NullOrUndefined (MaintenanceWindowAutomationParameters), "StepFunctions" :: NullOrUndefined (MaintenanceWindowStepFunctionsParameters), "Lambda" :: NullOrUndefined (MaintenanceWindowLambdaParameters) }
+  = MaintenanceWindowTaskInvocationParameters { "RunCommand" :: Maybe (MaintenanceWindowRunCommandParameters), "Automation" :: Maybe (MaintenanceWindowAutomationParameters), "StepFunctions" :: Maybe (MaintenanceWindowStepFunctionsParameters), "Lambda" :: Maybe (MaintenanceWindowLambdaParameters) }
 ```
 
 <p>The parameters for task execution.</p>
@@ -12225,7 +12225,7 @@ Constructs MaintenanceWindowTaskInvocationParameters from required parameters
 #### `newMaintenanceWindowTaskInvocationParameters'`
 
 ``` purescript
-newMaintenanceWindowTaskInvocationParameters' :: ({ "RunCommand" :: NullOrUndefined (MaintenanceWindowRunCommandParameters), "Automation" :: NullOrUndefined (MaintenanceWindowAutomationParameters), "StepFunctions" :: NullOrUndefined (MaintenanceWindowStepFunctionsParameters), "Lambda" :: NullOrUndefined (MaintenanceWindowLambdaParameters) } -> { "RunCommand" :: NullOrUndefined (MaintenanceWindowRunCommandParameters), "Automation" :: NullOrUndefined (MaintenanceWindowAutomationParameters), "StepFunctions" :: NullOrUndefined (MaintenanceWindowStepFunctionsParameters), "Lambda" :: NullOrUndefined (MaintenanceWindowLambdaParameters) }) -> MaintenanceWindowTaskInvocationParameters
+newMaintenanceWindowTaskInvocationParameters' :: ({ "RunCommand" :: Maybe (MaintenanceWindowRunCommandParameters), "Automation" :: Maybe (MaintenanceWindowAutomationParameters), "StepFunctions" :: Maybe (MaintenanceWindowStepFunctionsParameters), "Lambda" :: Maybe (MaintenanceWindowLambdaParameters) } -> { "RunCommand" :: Maybe (MaintenanceWindowRunCommandParameters), "Automation" :: Maybe (MaintenanceWindowAutomationParameters), "StepFunctions" :: Maybe (MaintenanceWindowStepFunctionsParameters), "Lambda" :: Maybe (MaintenanceWindowLambdaParameters) }) -> MaintenanceWindowTaskInvocationParameters
 ```
 
 Constructs MaintenanceWindowTaskInvocationParameters's fields from required parameters
@@ -12282,7 +12282,7 @@ Encode MaintenanceWindowTaskParameterValue
 
 ``` purescript
 newtype MaintenanceWindowTaskParameterValueExpression
-  = MaintenanceWindowTaskParameterValueExpression { "Values" :: NullOrUndefined (MaintenanceWindowTaskParameterValueList) }
+  = MaintenanceWindowTaskParameterValueExpression { "Values" :: Maybe (MaintenanceWindowTaskParameterValueList) }
 ```
 
 <p>Defines the values for a task parameter.</p>
@@ -12307,7 +12307,7 @@ Constructs MaintenanceWindowTaskParameterValueExpression from required parameter
 #### `newMaintenanceWindowTaskParameterValueExpression'`
 
 ``` purescript
-newMaintenanceWindowTaskParameterValueExpression' :: ({ "Values" :: NullOrUndefined (MaintenanceWindowTaskParameterValueList) } -> { "Values" :: NullOrUndefined (MaintenanceWindowTaskParameterValueList) }) -> MaintenanceWindowTaskParameterValueExpression
+newMaintenanceWindowTaskParameterValueExpression' :: ({ "Values" :: Maybe (MaintenanceWindowTaskParameterValueList) } -> { "Values" :: Maybe (MaintenanceWindowTaskParameterValueList) }) -> MaintenanceWindowTaskParameterValueExpression
 ```
 
 Constructs MaintenanceWindowTaskParameterValueExpression's fields from required parameters
@@ -12444,7 +12444,7 @@ Encode MaxConcurrency
 
 ``` purescript
 newtype MaxDocumentSizeExceeded
-  = MaxDocumentSizeExceeded { "Message" :: NullOrUndefined (String) }
+  = MaxDocumentSizeExceeded { "Message" :: Maybe (String) }
 ```
 
 <p>The size limit of a document is 64 KB.</p>
@@ -12469,7 +12469,7 @@ Constructs MaxDocumentSizeExceeded from required parameters
 #### `newMaxDocumentSizeExceeded'`
 
 ``` purescript
-newMaxDocumentSizeExceeded' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> MaxDocumentSizeExceeded
+newMaxDocumentSizeExceeded' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> MaxDocumentSizeExceeded
 ```
 
 Constructs MaxDocumentSizeExceeded's fields from required parameters
@@ -12526,7 +12526,7 @@ Encode MaxResultsEC2Compatible
 
 ``` purescript
 newtype ModifyDocumentPermissionRequest
-  = ModifyDocumentPermissionRequest { "Name" :: DocumentName, "PermissionType" :: DocumentPermissionType, "AccountIdsToAdd" :: NullOrUndefined (AccountIdList), "AccountIdsToRemove" :: NullOrUndefined (AccountIdList) }
+  = ModifyDocumentPermissionRequest { "Name" :: DocumentName, "PermissionType" :: DocumentPermissionType, "AccountIdsToAdd" :: Maybe (AccountIdList), "AccountIdsToRemove" :: Maybe (AccountIdList) }
 ```
 
 ##### Instances
@@ -12549,7 +12549,7 @@ Constructs ModifyDocumentPermissionRequest from required parameters
 #### `newModifyDocumentPermissionRequest'`
 
 ``` purescript
-newModifyDocumentPermissionRequest' :: DocumentName -> DocumentPermissionType -> ({ "Name" :: DocumentName, "PermissionType" :: DocumentPermissionType, "AccountIdsToAdd" :: NullOrUndefined (AccountIdList), "AccountIdsToRemove" :: NullOrUndefined (AccountIdList) } -> { "Name" :: DocumentName, "PermissionType" :: DocumentPermissionType, "AccountIdsToAdd" :: NullOrUndefined (AccountIdList), "AccountIdsToRemove" :: NullOrUndefined (AccountIdList) }) -> ModifyDocumentPermissionRequest
+newModifyDocumentPermissionRequest' :: DocumentName -> DocumentPermissionType -> ({ "Name" :: DocumentName, "PermissionType" :: DocumentPermissionType, "AccountIdsToAdd" :: Maybe (AccountIdList), "AccountIdsToRemove" :: Maybe (AccountIdList) } -> { "Name" :: DocumentName, "PermissionType" :: DocumentPermissionType, "AccountIdsToAdd" :: Maybe (AccountIdList), "AccountIdsToRemove" :: Maybe (AccountIdList) }) -> ModifyDocumentPermissionRequest
 ```
 
 Constructs ModifyDocumentPermissionRequest's fields from required parameters
@@ -12590,7 +12590,7 @@ Encode NextToken
 
 ``` purescript
 newtype NonCompliantSummary
-  = NonCompliantSummary { "NonCompliantCount" :: NullOrUndefined (ComplianceSummaryCount), "SeveritySummary" :: NullOrUndefined (SeveritySummary) }
+  = NonCompliantSummary { "NonCompliantCount" :: Maybe (ComplianceSummaryCount), "SeveritySummary" :: Maybe (SeveritySummary) }
 ```
 
 <p>A summary of resources that are not compliant. The summary is organized according to resource type.</p>
@@ -12615,7 +12615,7 @@ Constructs NonCompliantSummary from required parameters
 #### `newNonCompliantSummary'`
 
 ``` purescript
-newNonCompliantSummary' :: ({ "NonCompliantCount" :: NullOrUndefined (ComplianceSummaryCount), "SeveritySummary" :: NullOrUndefined (SeveritySummary) } -> { "NonCompliantCount" :: NullOrUndefined (ComplianceSummaryCount), "SeveritySummary" :: NullOrUndefined (SeveritySummary) }) -> NonCompliantSummary
+newNonCompliantSummary' :: ({ "NonCompliantCount" :: Maybe (ComplianceSummaryCount), "SeveritySummary" :: Maybe (SeveritySummary) } -> { "NonCompliantCount" :: Maybe (ComplianceSummaryCount), "SeveritySummary" :: Maybe (SeveritySummary) }) -> NonCompliantSummary
 ```
 
 Constructs NonCompliantSummary's fields from required parameters
@@ -12656,7 +12656,7 @@ Encode NotificationArn
 
 ``` purescript
 newtype NotificationConfig
-  = NotificationConfig { "NotificationArn" :: NullOrUndefined (NotificationArn), "NotificationEvents" :: NullOrUndefined (NotificationEventList), "NotificationType" :: NullOrUndefined (NotificationType) }
+  = NotificationConfig { "NotificationArn" :: Maybe (NotificationArn), "NotificationEvents" :: Maybe (NotificationEventList), "NotificationType" :: Maybe (NotificationType) }
 ```
 
 <p>Configurations for sending notifications.</p>
@@ -12681,7 +12681,7 @@ Constructs NotificationConfig from required parameters
 #### `newNotificationConfig'`
 
 ``` purescript
-newNotificationConfig' :: ({ "NotificationArn" :: NullOrUndefined (NotificationArn), "NotificationEvents" :: NullOrUndefined (NotificationEventList), "NotificationType" :: NullOrUndefined (NotificationType) } -> { "NotificationArn" :: NullOrUndefined (NotificationArn), "NotificationEvents" :: NullOrUndefined (NotificationEventList), "NotificationType" :: NullOrUndefined (NotificationType) }) -> NotificationConfig
+newNotificationConfig' :: ({ "NotificationArn" :: Maybe (NotificationArn), "NotificationEvents" :: Maybe (NotificationEventList), "NotificationType" :: Maybe (NotificationType) } -> { "NotificationArn" :: Maybe (NotificationArn), "NotificationEvents" :: Maybe (NotificationEventList), "NotificationType" :: Maybe (NotificationType) }) -> NotificationConfig
 ```
 
 Constructs NotificationConfig's fields from required parameters
@@ -12818,7 +12818,7 @@ Encode PSParameterVersion
 
 ``` purescript
 newtype Parameter
-  = Parameter { "Name" :: NullOrUndefined (PSParameterName), "Type" :: NullOrUndefined (ParameterType), "Value" :: NullOrUndefined (PSParameterValue), "Version" :: NullOrUndefined (PSParameterVersion) }
+  = Parameter { "Name" :: Maybe (PSParameterName), "Type" :: Maybe (ParameterType), "Value" :: Maybe (PSParameterValue), "Version" :: Maybe (PSParameterVersion) }
 ```
 
 <p>An Amazon EC2 Systems Manager parameter in Parameter Store.</p>
@@ -12843,7 +12843,7 @@ Constructs Parameter from required parameters
 #### `newParameter'`
 
 ``` purescript
-newParameter' :: ({ "Name" :: NullOrUndefined (PSParameterName), "Type" :: NullOrUndefined (ParameterType), "Value" :: NullOrUndefined (PSParameterValue), "Version" :: NullOrUndefined (PSParameterVersion) } -> { "Name" :: NullOrUndefined (PSParameterName), "Type" :: NullOrUndefined (ParameterType), "Value" :: NullOrUndefined (PSParameterValue), "Version" :: NullOrUndefined (PSParameterVersion) }) -> Parameter
+newParameter' :: ({ "Name" :: Maybe (PSParameterName), "Type" :: Maybe (ParameterType), "Value" :: Maybe (PSParameterValue), "Version" :: Maybe (PSParameterVersion) } -> { "Name" :: Maybe (PSParameterName), "Type" :: Maybe (ParameterType), "Value" :: Maybe (PSParameterValue), "Version" :: Maybe (PSParameterVersion) }) -> Parameter
 ```
 
 Constructs Parameter's fields from required parameters
@@ -12852,7 +12852,7 @@ Constructs Parameter's fields from required parameters
 
 ``` purescript
 newtype ParameterAlreadyExists
-  = ParameterAlreadyExists { message :: NullOrUndefined (String) }
+  = ParameterAlreadyExists { message :: Maybe (String) }
 ```
 
 <p>The parameter already exists. You can't create duplicate parameters.</p>
@@ -12877,7 +12877,7 @@ Constructs ParameterAlreadyExists from required parameters
 #### `newParameterAlreadyExists'`
 
 ``` purescript
-newParameterAlreadyExists' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> ParameterAlreadyExists
+newParameterAlreadyExists' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> ParameterAlreadyExists
 ```
 
 Constructs ParameterAlreadyExists's fields from required parameters
@@ -12902,7 +12902,7 @@ Encode ParameterDescription
 
 ``` purescript
 newtype ParameterHistory
-  = ParameterHistory { "Name" :: NullOrUndefined (PSParameterName), "Type" :: NullOrUndefined (ParameterType), "KeyId" :: NullOrUndefined (ParameterKeyId), "LastModifiedDate" :: NullOrUndefined (DateTime), "LastModifiedUser" :: NullOrUndefined (String), "Description" :: NullOrUndefined (ParameterDescription), "Value" :: NullOrUndefined (PSParameterValue), "AllowedPattern" :: NullOrUndefined (AllowedPattern), "Version" :: NullOrUndefined (PSParameterVersion) }
+  = ParameterHistory { "Name" :: Maybe (PSParameterName), "Type" :: Maybe (ParameterType), "KeyId" :: Maybe (ParameterKeyId), "LastModifiedDate" :: Maybe (DateTime), "LastModifiedUser" :: Maybe (String), "Description" :: Maybe (ParameterDescription), "Value" :: Maybe (PSParameterValue), "AllowedPattern" :: Maybe (AllowedPattern), "Version" :: Maybe (PSParameterVersion) }
 ```
 
 <p>Information about parameter usage.</p>
@@ -12927,7 +12927,7 @@ Constructs ParameterHistory from required parameters
 #### `newParameterHistory'`
 
 ``` purescript
-newParameterHistory' :: ({ "Name" :: NullOrUndefined (PSParameterName), "Type" :: NullOrUndefined (ParameterType), "KeyId" :: NullOrUndefined (ParameterKeyId), "LastModifiedDate" :: NullOrUndefined (DateTime), "LastModifiedUser" :: NullOrUndefined (String), "Description" :: NullOrUndefined (ParameterDescription), "Value" :: NullOrUndefined (PSParameterValue), "AllowedPattern" :: NullOrUndefined (AllowedPattern), "Version" :: NullOrUndefined (PSParameterVersion) } -> { "Name" :: NullOrUndefined (PSParameterName), "Type" :: NullOrUndefined (ParameterType), "KeyId" :: NullOrUndefined (ParameterKeyId), "LastModifiedDate" :: NullOrUndefined (DateTime), "LastModifiedUser" :: NullOrUndefined (String), "Description" :: NullOrUndefined (ParameterDescription), "Value" :: NullOrUndefined (PSParameterValue), "AllowedPattern" :: NullOrUndefined (AllowedPattern), "Version" :: NullOrUndefined (PSParameterVersion) }) -> ParameterHistory
+newParameterHistory' :: ({ "Name" :: Maybe (PSParameterName), "Type" :: Maybe (ParameterType), "KeyId" :: Maybe (ParameterKeyId), "LastModifiedDate" :: Maybe (DateTime), "LastModifiedUser" :: Maybe (String), "Description" :: Maybe (ParameterDescription), "Value" :: Maybe (PSParameterValue), "AllowedPattern" :: Maybe (AllowedPattern), "Version" :: Maybe (PSParameterVersion) } -> { "Name" :: Maybe (PSParameterName), "Type" :: Maybe (ParameterType), "KeyId" :: Maybe (ParameterKeyId), "LastModifiedDate" :: Maybe (DateTime), "LastModifiedUser" :: Maybe (String), "Description" :: Maybe (ParameterDescription), "Value" :: Maybe (PSParameterValue), "AllowedPattern" :: Maybe (AllowedPattern), "Version" :: Maybe (PSParameterVersion) }) -> ParameterHistory
 ```
 
 Constructs ParameterHistory's fields from required parameters
@@ -12968,7 +12968,7 @@ Encode ParameterKeyId
 
 ``` purescript
 newtype ParameterLimitExceeded
-  = ParameterLimitExceeded { message :: NullOrUndefined (String) }
+  = ParameterLimitExceeded { message :: Maybe (String) }
 ```
 
 <p>You have exceeded the number of parameters for this AWS account. Delete one or more parameters and try again.</p>
@@ -12993,7 +12993,7 @@ Constructs ParameterLimitExceeded from required parameters
 #### `newParameterLimitExceeded'`
 
 ``` purescript
-newParameterLimitExceeded' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> ParameterLimitExceeded
+newParameterLimitExceeded' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> ParameterLimitExceeded
 ```
 
 Constructs ParameterLimitExceeded's fields from required parameters
@@ -13018,7 +13018,7 @@ Encode ParameterList
 
 ``` purescript
 newtype ParameterMaxVersionLimitExceeded
-  = ParameterMaxVersionLimitExceeded { message :: NullOrUndefined (String) }
+  = ParameterMaxVersionLimitExceeded { message :: Maybe (String) }
 ```
 
 <p>The parameter exceeded the maximum number of allowed versions.</p>
@@ -13043,7 +13043,7 @@ Constructs ParameterMaxVersionLimitExceeded from required parameters
 #### `newParameterMaxVersionLimitExceeded'`
 
 ``` purescript
-newParameterMaxVersionLimitExceeded' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> ParameterMaxVersionLimitExceeded
+newParameterMaxVersionLimitExceeded' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> ParameterMaxVersionLimitExceeded
 ```
 
 Constructs ParameterMaxVersionLimitExceeded's fields from required parameters
@@ -13052,7 +13052,7 @@ Constructs ParameterMaxVersionLimitExceeded's fields from required parameters
 
 ``` purescript
 newtype ParameterMetadata
-  = ParameterMetadata { "Name" :: NullOrUndefined (PSParameterName), "Type" :: NullOrUndefined (ParameterType), "KeyId" :: NullOrUndefined (ParameterKeyId), "LastModifiedDate" :: NullOrUndefined (DateTime), "LastModifiedUser" :: NullOrUndefined (String), "Description" :: NullOrUndefined (ParameterDescription), "AllowedPattern" :: NullOrUndefined (AllowedPattern), "Version" :: NullOrUndefined (PSParameterVersion) }
+  = ParameterMetadata { "Name" :: Maybe (PSParameterName), "Type" :: Maybe (ParameterType), "KeyId" :: Maybe (ParameterKeyId), "LastModifiedDate" :: Maybe (DateTime), "LastModifiedUser" :: Maybe (String), "Description" :: Maybe (ParameterDescription), "AllowedPattern" :: Maybe (AllowedPattern), "Version" :: Maybe (PSParameterVersion) }
 ```
 
 <p>Metada includes information like the ARN of the last user and the date/time the parameter was last used.</p>
@@ -13077,7 +13077,7 @@ Constructs ParameterMetadata from required parameters
 #### `newParameterMetadata'`
 
 ``` purescript
-newParameterMetadata' :: ({ "Name" :: NullOrUndefined (PSParameterName), "Type" :: NullOrUndefined (ParameterType), "KeyId" :: NullOrUndefined (ParameterKeyId), "LastModifiedDate" :: NullOrUndefined (DateTime), "LastModifiedUser" :: NullOrUndefined (String), "Description" :: NullOrUndefined (ParameterDescription), "AllowedPattern" :: NullOrUndefined (AllowedPattern), "Version" :: NullOrUndefined (PSParameterVersion) } -> { "Name" :: NullOrUndefined (PSParameterName), "Type" :: NullOrUndefined (ParameterType), "KeyId" :: NullOrUndefined (ParameterKeyId), "LastModifiedDate" :: NullOrUndefined (DateTime), "LastModifiedUser" :: NullOrUndefined (String), "Description" :: NullOrUndefined (ParameterDescription), "AllowedPattern" :: NullOrUndefined (AllowedPattern), "Version" :: NullOrUndefined (PSParameterVersion) }) -> ParameterMetadata
+newParameterMetadata' :: ({ "Name" :: Maybe (PSParameterName), "Type" :: Maybe (ParameterType), "KeyId" :: Maybe (ParameterKeyId), "LastModifiedDate" :: Maybe (DateTime), "LastModifiedUser" :: Maybe (String), "Description" :: Maybe (ParameterDescription), "AllowedPattern" :: Maybe (AllowedPattern), "Version" :: Maybe (PSParameterVersion) } -> { "Name" :: Maybe (PSParameterName), "Type" :: Maybe (ParameterType), "KeyId" :: Maybe (ParameterKeyId), "LastModifiedDate" :: Maybe (DateTime), "LastModifiedUser" :: Maybe (String), "Description" :: Maybe (ParameterDescription), "AllowedPattern" :: Maybe (AllowedPattern), "Version" :: Maybe (PSParameterVersion) }) -> ParameterMetadata
 ```
 
 Constructs ParameterMetadata's fields from required parameters
@@ -13134,7 +13134,7 @@ Encode ParameterNameList
 
 ``` purescript
 newtype ParameterNotFound
-  = ParameterNotFound { message :: NullOrUndefined (String) }
+  = ParameterNotFound { message :: Maybe (String) }
 ```
 
 <p>The parameter could not be found. Verify the name and try again.</p>
@@ -13159,7 +13159,7 @@ Constructs ParameterNotFound from required parameters
 #### `newParameterNotFound'`
 
 ``` purescript
-newParameterNotFound' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> ParameterNotFound
+newParameterNotFound' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> ParameterNotFound
 ```
 
 Constructs ParameterNotFound's fields from required parameters
@@ -13168,7 +13168,7 @@ Constructs ParameterNotFound's fields from required parameters
 
 ``` purescript
 newtype ParameterPatternMismatchException
-  = ParameterPatternMismatchException { message :: NullOrUndefined (String) }
+  = ParameterPatternMismatchException { message :: Maybe (String) }
 ```
 
 <p>The parameter name is not valid.</p>
@@ -13193,7 +13193,7 @@ Constructs ParameterPatternMismatchException from required parameters
 #### `newParameterPatternMismatchException'`
 
 ``` purescript
-newParameterPatternMismatchException' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> ParameterPatternMismatchException
+newParameterPatternMismatchException' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> ParameterPatternMismatchException
 ```
 
 Constructs ParameterPatternMismatchException's fields from required parameters
@@ -13202,7 +13202,7 @@ Constructs ParameterPatternMismatchException's fields from required parameters
 
 ``` purescript
 newtype ParameterStringFilter
-  = ParameterStringFilter { "Key" :: ParameterStringFilterKey, "Option" :: NullOrUndefined (ParameterStringQueryOption), "Values" :: NullOrUndefined (ParameterStringFilterValueList) }
+  = ParameterStringFilter { "Key" :: ParameterStringFilterKey, "Option" :: Maybe (ParameterStringQueryOption), "Values" :: Maybe (ParameterStringFilterValueList) }
 ```
 
 <p>One or more filters. Use a filter to return a more specific list of results.</p>
@@ -13227,7 +13227,7 @@ Constructs ParameterStringFilter from required parameters
 #### `newParameterStringFilter'`
 
 ``` purescript
-newParameterStringFilter' :: ParameterStringFilterKey -> ({ "Key" :: ParameterStringFilterKey, "Option" :: NullOrUndefined (ParameterStringQueryOption), "Values" :: NullOrUndefined (ParameterStringFilterValueList) } -> { "Key" :: ParameterStringFilterKey, "Option" :: NullOrUndefined (ParameterStringQueryOption), "Values" :: NullOrUndefined (ParameterStringFilterValueList) }) -> ParameterStringFilter
+newParameterStringFilter' :: ParameterStringFilterKey -> ({ "Key" :: ParameterStringFilterKey, "Option" :: Maybe (ParameterStringQueryOption), "Values" :: Maybe (ParameterStringFilterValueList) } -> { "Key" :: ParameterStringFilterKey, "Option" :: Maybe (ParameterStringQueryOption), "Values" :: Maybe (ParameterStringFilterValueList) }) -> ParameterStringFilter
 ```
 
 Constructs ParameterStringFilter's fields from required parameters
@@ -13364,7 +13364,7 @@ Encode ParameterValueList
 
 ``` purescript
 newtype ParameterVersionNotFound
-  = ParameterVersionNotFound { message :: NullOrUndefined (String) }
+  = ParameterVersionNotFound { message :: Maybe (String) }
 ```
 
 <p>The specified parameter version was not found. Verify the parameter name and version, and try again.</p>
@@ -13389,7 +13389,7 @@ Constructs ParameterVersionNotFound from required parameters
 #### `newParameterVersionNotFound'`
 
 ``` purescript
-newParameterVersionNotFound' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> ParameterVersionNotFound
+newParameterVersionNotFound' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> ParameterVersionNotFound
 ```
 
 Constructs ParameterVersionNotFound's fields from required parameters
@@ -13512,7 +13512,7 @@ Encode ParametersFilterValueList
 
 ``` purescript
 newtype Patch
-  = Patch { "Id" :: NullOrUndefined (PatchId), "ReleaseDate" :: NullOrUndefined (DateTime), "Title" :: NullOrUndefined (PatchTitle), "Description" :: NullOrUndefined (PatchDescription), "ContentUrl" :: NullOrUndefined (PatchContentUrl), "Vendor" :: NullOrUndefined (PatchVendor), "ProductFamily" :: NullOrUndefined (PatchProductFamily), "Product" :: NullOrUndefined (PatchProduct), "Classification" :: NullOrUndefined (PatchClassification), "MsrcSeverity" :: NullOrUndefined (PatchMsrcSeverity), "KbNumber" :: NullOrUndefined (PatchKbNumber), "MsrcNumber" :: NullOrUndefined (PatchMsrcNumber), "Language" :: NullOrUndefined (PatchLanguage) }
+  = Patch { "Id" :: Maybe (PatchId), "ReleaseDate" :: Maybe (DateTime), "Title" :: Maybe (PatchTitle), "Description" :: Maybe (PatchDescription), "ContentUrl" :: Maybe (PatchContentUrl), "Vendor" :: Maybe (PatchVendor), "ProductFamily" :: Maybe (PatchProductFamily), "Product" :: Maybe (PatchProduct), "Classification" :: Maybe (PatchClassification), "MsrcSeverity" :: Maybe (PatchMsrcSeverity), "KbNumber" :: Maybe (PatchKbNumber), "MsrcNumber" :: Maybe (PatchMsrcNumber), "Language" :: Maybe (PatchLanguage) }
 ```
 
 <p>Represents metadata about a patch.</p>
@@ -13537,7 +13537,7 @@ Constructs Patch from required parameters
 #### `newPatch'`
 
 ``` purescript
-newPatch' :: ({ "Id" :: NullOrUndefined (PatchId), "ReleaseDate" :: NullOrUndefined (DateTime), "Title" :: NullOrUndefined (PatchTitle), "Description" :: NullOrUndefined (PatchDescription), "ContentUrl" :: NullOrUndefined (PatchContentUrl), "Vendor" :: NullOrUndefined (PatchVendor), "ProductFamily" :: NullOrUndefined (PatchProductFamily), "Product" :: NullOrUndefined (PatchProduct), "Classification" :: NullOrUndefined (PatchClassification), "MsrcSeverity" :: NullOrUndefined (PatchMsrcSeverity), "KbNumber" :: NullOrUndefined (PatchKbNumber), "MsrcNumber" :: NullOrUndefined (PatchMsrcNumber), "Language" :: NullOrUndefined (PatchLanguage) } -> { "Id" :: NullOrUndefined (PatchId), "ReleaseDate" :: NullOrUndefined (DateTime), "Title" :: NullOrUndefined (PatchTitle), "Description" :: NullOrUndefined (PatchDescription), "ContentUrl" :: NullOrUndefined (PatchContentUrl), "Vendor" :: NullOrUndefined (PatchVendor), "ProductFamily" :: NullOrUndefined (PatchProductFamily), "Product" :: NullOrUndefined (PatchProduct), "Classification" :: NullOrUndefined (PatchClassification), "MsrcSeverity" :: NullOrUndefined (PatchMsrcSeverity), "KbNumber" :: NullOrUndefined (PatchKbNumber), "MsrcNumber" :: NullOrUndefined (PatchMsrcNumber), "Language" :: NullOrUndefined (PatchLanguage) }) -> Patch
+newPatch' :: ({ "Id" :: Maybe (PatchId), "ReleaseDate" :: Maybe (DateTime), "Title" :: Maybe (PatchTitle), "Description" :: Maybe (PatchDescription), "ContentUrl" :: Maybe (PatchContentUrl), "Vendor" :: Maybe (PatchVendor), "ProductFamily" :: Maybe (PatchProductFamily), "Product" :: Maybe (PatchProduct), "Classification" :: Maybe (PatchClassification), "MsrcSeverity" :: Maybe (PatchMsrcSeverity), "KbNumber" :: Maybe (PatchKbNumber), "MsrcNumber" :: Maybe (PatchMsrcNumber), "Language" :: Maybe (PatchLanguage) } -> { "Id" :: Maybe (PatchId), "ReleaseDate" :: Maybe (DateTime), "Title" :: Maybe (PatchTitle), "Description" :: Maybe (PatchDescription), "ContentUrl" :: Maybe (PatchContentUrl), "Vendor" :: Maybe (PatchVendor), "ProductFamily" :: Maybe (PatchProductFamily), "Product" :: Maybe (PatchProduct), "Classification" :: Maybe (PatchClassification), "MsrcSeverity" :: Maybe (PatchMsrcSeverity), "KbNumber" :: Maybe (PatchKbNumber), "MsrcNumber" :: Maybe (PatchMsrcNumber), "Language" :: Maybe (PatchLanguage) }) -> Patch
 ```
 
 Constructs Patch's fields from required parameters
@@ -13546,7 +13546,7 @@ Constructs Patch's fields from required parameters
 
 ``` purescript
 newtype PatchBaselineIdentity
-  = PatchBaselineIdentity { "BaselineId" :: NullOrUndefined (BaselineId), "BaselineName" :: NullOrUndefined (BaselineName), "OperatingSystem" :: NullOrUndefined (OperatingSystem), "BaselineDescription" :: NullOrUndefined (BaselineDescription), "DefaultBaseline" :: NullOrUndefined (DefaultBaseline) }
+  = PatchBaselineIdentity { "BaselineId" :: Maybe (BaselineId), "BaselineName" :: Maybe (BaselineName), "OperatingSystem" :: Maybe (OperatingSystem), "BaselineDescription" :: Maybe (BaselineDescription), "DefaultBaseline" :: Maybe (DefaultBaseline) }
 ```
 
 <p>Defines the basic information about a patch baseline.</p>
@@ -13571,7 +13571,7 @@ Constructs PatchBaselineIdentity from required parameters
 #### `newPatchBaselineIdentity'`
 
 ``` purescript
-newPatchBaselineIdentity' :: ({ "BaselineId" :: NullOrUndefined (BaselineId), "BaselineName" :: NullOrUndefined (BaselineName), "OperatingSystem" :: NullOrUndefined (OperatingSystem), "BaselineDescription" :: NullOrUndefined (BaselineDescription), "DefaultBaseline" :: NullOrUndefined (DefaultBaseline) } -> { "BaselineId" :: NullOrUndefined (BaselineId), "BaselineName" :: NullOrUndefined (BaselineName), "OperatingSystem" :: NullOrUndefined (OperatingSystem), "BaselineDescription" :: NullOrUndefined (BaselineDescription), "DefaultBaseline" :: NullOrUndefined (DefaultBaseline) }) -> PatchBaselineIdentity
+newPatchBaselineIdentity' :: ({ "BaselineId" :: Maybe (BaselineId), "BaselineName" :: Maybe (BaselineName), "OperatingSystem" :: Maybe (OperatingSystem), "BaselineDescription" :: Maybe (BaselineDescription), "DefaultBaseline" :: Maybe (DefaultBaseline) } -> { "BaselineId" :: Maybe (BaselineId), "BaselineName" :: Maybe (BaselineName), "OperatingSystem" :: Maybe (OperatingSystem), "BaselineDescription" :: Maybe (BaselineDescription), "DefaultBaseline" :: Maybe (DefaultBaseline) }) -> PatchBaselineIdentity
 ```
 
 Constructs PatchBaselineIdentity's fields from required parameters
@@ -13954,7 +13954,7 @@ Encode PatchGroupList
 
 ``` purescript
 newtype PatchGroupPatchBaselineMapping
-  = PatchGroupPatchBaselineMapping { "PatchGroup" :: NullOrUndefined (PatchGroup), "BaselineIdentity" :: NullOrUndefined (PatchBaselineIdentity) }
+  = PatchGroupPatchBaselineMapping { "PatchGroup" :: Maybe (PatchGroup), "BaselineIdentity" :: Maybe (PatchBaselineIdentity) }
 ```
 
 <p>The mapping between a patch group and the patch baseline the patch group is registered with.</p>
@@ -13979,7 +13979,7 @@ Constructs PatchGroupPatchBaselineMapping from required parameters
 #### `newPatchGroupPatchBaselineMapping'`
 
 ``` purescript
-newPatchGroupPatchBaselineMapping' :: ({ "PatchGroup" :: NullOrUndefined (PatchGroup), "BaselineIdentity" :: NullOrUndefined (PatchBaselineIdentity) } -> { "PatchGroup" :: NullOrUndefined (PatchGroup), "BaselineIdentity" :: NullOrUndefined (PatchBaselineIdentity) }) -> PatchGroupPatchBaselineMapping
+newPatchGroupPatchBaselineMapping' :: ({ "PatchGroup" :: Maybe (PatchGroup), "BaselineIdentity" :: Maybe (PatchBaselineIdentity) } -> { "PatchGroup" :: Maybe (PatchGroup), "BaselineIdentity" :: Maybe (PatchBaselineIdentity) }) -> PatchGroupPatchBaselineMapping
 ```
 
 Constructs PatchGroupPatchBaselineMapping's fields from required parameters
@@ -14196,7 +14196,7 @@ Encode PatchOperationType
 
 ``` purescript
 newtype PatchOrchestratorFilter
-  = PatchOrchestratorFilter { "Key" :: NullOrUndefined (PatchOrchestratorFilterKey), "Values" :: NullOrUndefined (PatchOrchestratorFilterValues) }
+  = PatchOrchestratorFilter { "Key" :: Maybe (PatchOrchestratorFilterKey), "Values" :: Maybe (PatchOrchestratorFilterValues) }
 ```
 
 <p>Defines a filter used in Patch Manager APIs.</p>
@@ -14221,7 +14221,7 @@ Constructs PatchOrchestratorFilter from required parameters
 #### `newPatchOrchestratorFilter'`
 
 ``` purescript
-newPatchOrchestratorFilter' :: ({ "Key" :: NullOrUndefined (PatchOrchestratorFilterKey), "Values" :: NullOrUndefined (PatchOrchestratorFilterValues) } -> { "Key" :: NullOrUndefined (PatchOrchestratorFilterKey), "Values" :: NullOrUndefined (PatchOrchestratorFilterValues) }) -> PatchOrchestratorFilter
+newPatchOrchestratorFilter' :: ({ "Key" :: Maybe (PatchOrchestratorFilterKey), "Values" :: Maybe (PatchOrchestratorFilterValues) } -> { "Key" :: Maybe (PatchOrchestratorFilterKey), "Values" :: Maybe (PatchOrchestratorFilterValues) }) -> PatchOrchestratorFilter
 ```
 
 Constructs PatchOrchestratorFilter's fields from required parameters
@@ -14326,7 +14326,7 @@ Encode PatchProductFamily
 
 ``` purescript
 newtype PatchRule
-  = PatchRule { "PatchFilterGroup" :: PatchFilterGroup, "ComplianceLevel" :: NullOrUndefined (PatchComplianceLevel), "ApproveAfterDays" :: ApproveAfterDays, "EnableNonSecurity" :: NullOrUndefined (Boolean) }
+  = PatchRule { "PatchFilterGroup" :: PatchFilterGroup, "ComplianceLevel" :: Maybe (PatchComplianceLevel), "ApproveAfterDays" :: ApproveAfterDays, "EnableNonSecurity" :: Maybe (Boolean) }
 ```
 
 <p>Defines an approval rule for a patch baseline.</p>
@@ -14351,7 +14351,7 @@ Constructs PatchRule from required parameters
 #### `newPatchRule'`
 
 ``` purescript
-newPatchRule' :: ApproveAfterDays -> PatchFilterGroup -> ({ "PatchFilterGroup" :: PatchFilterGroup, "ComplianceLevel" :: NullOrUndefined (PatchComplianceLevel), "ApproveAfterDays" :: ApproveAfterDays, "EnableNonSecurity" :: NullOrUndefined (Boolean) } -> { "PatchFilterGroup" :: PatchFilterGroup, "ComplianceLevel" :: NullOrUndefined (PatchComplianceLevel), "ApproveAfterDays" :: ApproveAfterDays, "EnableNonSecurity" :: NullOrUndefined (Boolean) }) -> PatchRule
+newPatchRule' :: ApproveAfterDays -> PatchFilterGroup -> ({ "PatchFilterGroup" :: PatchFilterGroup, "ComplianceLevel" :: Maybe (PatchComplianceLevel), "ApproveAfterDays" :: ApproveAfterDays, "EnableNonSecurity" :: Maybe (Boolean) } -> { "PatchFilterGroup" :: PatchFilterGroup, "ComplianceLevel" :: Maybe (PatchComplianceLevel), "ApproveAfterDays" :: ApproveAfterDays, "EnableNonSecurity" :: Maybe (Boolean) }) -> PatchRule
 ```
 
 Constructs PatchRule's fields from required parameters
@@ -14540,7 +14540,7 @@ Encode PatchSourceProductList
 
 ``` purescript
 newtype PatchStatus
-  = PatchStatus { "DeploymentStatus" :: NullOrUndefined (PatchDeploymentStatus), "ComplianceLevel" :: NullOrUndefined (PatchComplianceLevel), "ApprovalDate" :: NullOrUndefined (DateTime) }
+  = PatchStatus { "DeploymentStatus" :: Maybe (PatchDeploymentStatus), "ComplianceLevel" :: Maybe (PatchComplianceLevel), "ApprovalDate" :: Maybe (DateTime) }
 ```
 
 <p>Information about the approval status of a patch.</p>
@@ -14565,7 +14565,7 @@ Constructs PatchStatus from required parameters
 #### `newPatchStatus'`
 
 ``` purescript
-newPatchStatus' :: ({ "DeploymentStatus" :: NullOrUndefined (PatchDeploymentStatus), "ComplianceLevel" :: NullOrUndefined (PatchComplianceLevel), "ApprovalDate" :: NullOrUndefined (DateTime) } -> { "DeploymentStatus" :: NullOrUndefined (PatchDeploymentStatus), "ComplianceLevel" :: NullOrUndefined (PatchComplianceLevel), "ApprovalDate" :: NullOrUndefined (DateTime) }) -> PatchStatus
+newPatchStatus' :: ({ "DeploymentStatus" :: Maybe (PatchDeploymentStatus), "ComplianceLevel" :: Maybe (PatchComplianceLevel), "ApprovalDate" :: Maybe (DateTime) } -> { "DeploymentStatus" :: Maybe (PatchDeploymentStatus), "ComplianceLevel" :: Maybe (PatchComplianceLevel), "ApprovalDate" :: Maybe (DateTime) }) -> PatchStatus
 ```
 
 Constructs PatchStatus's fields from required parameters
@@ -14670,7 +14670,7 @@ Encode Product
 
 ``` purescript
 newtype PutComplianceItemsRequest
-  = PutComplianceItemsRequest { "ResourceId" :: ComplianceResourceId, "ResourceType" :: ComplianceResourceType, "ComplianceType" :: ComplianceTypeName, "ExecutionSummary" :: ComplianceExecutionSummary, "Items" :: ComplianceItemEntryList, "ItemContentHash" :: NullOrUndefined (ComplianceItemContentHash) }
+  = PutComplianceItemsRequest { "ResourceId" :: ComplianceResourceId, "ResourceType" :: ComplianceResourceType, "ComplianceType" :: ComplianceTypeName, "ExecutionSummary" :: ComplianceExecutionSummary, "Items" :: ComplianceItemEntryList, "ItemContentHash" :: Maybe (ComplianceItemContentHash) }
 ```
 
 ##### Instances
@@ -14693,7 +14693,7 @@ Constructs PutComplianceItemsRequest from required parameters
 #### `newPutComplianceItemsRequest'`
 
 ``` purescript
-newPutComplianceItemsRequest' :: ComplianceTypeName -> ComplianceExecutionSummary -> ComplianceItemEntryList -> ComplianceResourceId -> ComplianceResourceType -> ({ "ResourceId" :: ComplianceResourceId, "ResourceType" :: ComplianceResourceType, "ComplianceType" :: ComplianceTypeName, "ExecutionSummary" :: ComplianceExecutionSummary, "Items" :: ComplianceItemEntryList, "ItemContentHash" :: NullOrUndefined (ComplianceItemContentHash) } -> { "ResourceId" :: ComplianceResourceId, "ResourceType" :: ComplianceResourceType, "ComplianceType" :: ComplianceTypeName, "ExecutionSummary" :: ComplianceExecutionSummary, "Items" :: ComplianceItemEntryList, "ItemContentHash" :: NullOrUndefined (ComplianceItemContentHash) }) -> PutComplianceItemsRequest
+newPutComplianceItemsRequest' :: ComplianceTypeName -> ComplianceExecutionSummary -> ComplianceItemEntryList -> ComplianceResourceId -> ComplianceResourceType -> ({ "ResourceId" :: ComplianceResourceId, "ResourceType" :: ComplianceResourceType, "ComplianceType" :: ComplianceTypeName, "ExecutionSummary" :: ComplianceExecutionSummary, "Items" :: ComplianceItemEntryList, "ItemContentHash" :: Maybe (ComplianceItemContentHash) } -> { "ResourceId" :: ComplianceResourceId, "ResourceType" :: ComplianceResourceType, "ComplianceType" :: ComplianceTypeName, "ExecutionSummary" :: ComplianceExecutionSummary, "Items" :: ComplianceItemEntryList, "ItemContentHash" :: Maybe (ComplianceItemContentHash) }) -> PutComplianceItemsRequest
 ```
 
 Constructs PutComplianceItemsRequest's fields from required parameters
@@ -14766,7 +14766,7 @@ Encode PutInventoryResult
 
 ``` purescript
 newtype PutParameterRequest
-  = PutParameterRequest { "Name" :: PSParameterName, "Description" :: NullOrUndefined (ParameterDescription), "Value" :: PSParameterValue, "Type" :: ParameterType, "KeyId" :: NullOrUndefined (ParameterKeyId), "Overwrite" :: NullOrUndefined (Boolean), "AllowedPattern" :: NullOrUndefined (AllowedPattern) }
+  = PutParameterRequest { "Name" :: PSParameterName, "Description" :: Maybe (ParameterDescription), "Value" :: PSParameterValue, "Type" :: ParameterType, "KeyId" :: Maybe (ParameterKeyId), "Overwrite" :: Maybe (Boolean), "AllowedPattern" :: Maybe (AllowedPattern) }
 ```
 
 ##### Instances
@@ -14789,7 +14789,7 @@ Constructs PutParameterRequest from required parameters
 #### `newPutParameterRequest'`
 
 ``` purescript
-newPutParameterRequest' :: PSParameterName -> ParameterType -> PSParameterValue -> ({ "Name" :: PSParameterName, "Description" :: NullOrUndefined (ParameterDescription), "Value" :: PSParameterValue, "Type" :: ParameterType, "KeyId" :: NullOrUndefined (ParameterKeyId), "Overwrite" :: NullOrUndefined (Boolean), "AllowedPattern" :: NullOrUndefined (AllowedPattern) } -> { "Name" :: PSParameterName, "Description" :: NullOrUndefined (ParameterDescription), "Value" :: PSParameterValue, "Type" :: ParameterType, "KeyId" :: NullOrUndefined (ParameterKeyId), "Overwrite" :: NullOrUndefined (Boolean), "AllowedPattern" :: NullOrUndefined (AllowedPattern) }) -> PutParameterRequest
+newPutParameterRequest' :: PSParameterName -> ParameterType -> PSParameterValue -> ({ "Name" :: PSParameterName, "Description" :: Maybe (ParameterDescription), "Value" :: PSParameterValue, "Type" :: ParameterType, "KeyId" :: Maybe (ParameterKeyId), "Overwrite" :: Maybe (Boolean), "AllowedPattern" :: Maybe (AllowedPattern) } -> { "Name" :: PSParameterName, "Description" :: Maybe (ParameterDescription), "Value" :: PSParameterValue, "Type" :: ParameterType, "KeyId" :: Maybe (ParameterKeyId), "Overwrite" :: Maybe (Boolean), "AllowedPattern" :: Maybe (AllowedPattern) }) -> PutParameterRequest
 ```
 
 Constructs PutParameterRequest's fields from required parameters
@@ -14798,7 +14798,7 @@ Constructs PutParameterRequest's fields from required parameters
 
 ``` purescript
 newtype PutParameterResult
-  = PutParameterResult { "Version" :: NullOrUndefined (PSParameterVersion) }
+  = PutParameterResult { "Version" :: Maybe (PSParameterVersion) }
 ```
 
 ##### Instances
@@ -14821,7 +14821,7 @@ Constructs PutParameterResult from required parameters
 #### `newPutParameterResult'`
 
 ``` purescript
-newPutParameterResult' :: ({ "Version" :: NullOrUndefined (PSParameterVersion) } -> { "Version" :: NullOrUndefined (PSParameterVersion) }) -> PutParameterResult
+newPutParameterResult' :: ({ "Version" :: Maybe (PSParameterVersion) } -> { "Version" :: Maybe (PSParameterVersion) }) -> PutParameterResult
 ```
 
 Constructs PutParameterResult's fields from required parameters
@@ -14862,7 +14862,7 @@ Constructs RegisterDefaultPatchBaselineRequest's fields from required parameters
 
 ``` purescript
 newtype RegisterDefaultPatchBaselineResult
-  = RegisterDefaultPatchBaselineResult { "BaselineId" :: NullOrUndefined (BaselineId) }
+  = RegisterDefaultPatchBaselineResult { "BaselineId" :: Maybe (BaselineId) }
 ```
 
 ##### Instances
@@ -14885,7 +14885,7 @@ Constructs RegisterDefaultPatchBaselineResult from required parameters
 #### `newRegisterDefaultPatchBaselineResult'`
 
 ``` purescript
-newRegisterDefaultPatchBaselineResult' :: ({ "BaselineId" :: NullOrUndefined (BaselineId) } -> { "BaselineId" :: NullOrUndefined (BaselineId) }) -> RegisterDefaultPatchBaselineResult
+newRegisterDefaultPatchBaselineResult' :: ({ "BaselineId" :: Maybe (BaselineId) } -> { "BaselineId" :: Maybe (BaselineId) }) -> RegisterDefaultPatchBaselineResult
 ```
 
 Constructs RegisterDefaultPatchBaselineResult's fields from required parameters
@@ -14926,7 +14926,7 @@ Constructs RegisterPatchBaselineForPatchGroupRequest's fields from required para
 
 ``` purescript
 newtype RegisterPatchBaselineForPatchGroupResult
-  = RegisterPatchBaselineForPatchGroupResult { "BaselineId" :: NullOrUndefined (BaselineId), "PatchGroup" :: NullOrUndefined (PatchGroup) }
+  = RegisterPatchBaselineForPatchGroupResult { "BaselineId" :: Maybe (BaselineId), "PatchGroup" :: Maybe (PatchGroup) }
 ```
 
 ##### Instances
@@ -14949,7 +14949,7 @@ Constructs RegisterPatchBaselineForPatchGroupResult from required parameters
 #### `newRegisterPatchBaselineForPatchGroupResult'`
 
 ``` purescript
-newRegisterPatchBaselineForPatchGroupResult' :: ({ "BaselineId" :: NullOrUndefined (BaselineId), "PatchGroup" :: NullOrUndefined (PatchGroup) } -> { "BaselineId" :: NullOrUndefined (BaselineId), "PatchGroup" :: NullOrUndefined (PatchGroup) }) -> RegisterPatchBaselineForPatchGroupResult
+newRegisterPatchBaselineForPatchGroupResult' :: ({ "BaselineId" :: Maybe (BaselineId), "PatchGroup" :: Maybe (PatchGroup) } -> { "BaselineId" :: Maybe (BaselineId), "PatchGroup" :: Maybe (PatchGroup) }) -> RegisterPatchBaselineForPatchGroupResult
 ```
 
 Constructs RegisterPatchBaselineForPatchGroupResult's fields from required parameters
@@ -14958,7 +14958,7 @@ Constructs RegisterPatchBaselineForPatchGroupResult's fields from required param
 
 ``` purescript
 newtype RegisterTargetWithMaintenanceWindowRequest
-  = RegisterTargetWithMaintenanceWindowRequest { "WindowId" :: MaintenanceWindowId, "ResourceType" :: MaintenanceWindowResourceType, "Targets" :: Targets, "OwnerInformation" :: NullOrUndefined (OwnerInformation), "Name" :: NullOrUndefined (MaintenanceWindowName), "Description" :: NullOrUndefined (MaintenanceWindowDescription), "ClientToken" :: NullOrUndefined (ClientToken) }
+  = RegisterTargetWithMaintenanceWindowRequest { "WindowId" :: MaintenanceWindowId, "ResourceType" :: MaintenanceWindowResourceType, "Targets" :: Targets, "OwnerInformation" :: Maybe (OwnerInformation), "Name" :: Maybe (MaintenanceWindowName), "Description" :: Maybe (MaintenanceWindowDescription), "ClientToken" :: Maybe (ClientToken) }
 ```
 
 ##### Instances
@@ -14981,7 +14981,7 @@ Constructs RegisterTargetWithMaintenanceWindowRequest from required parameters
 #### `newRegisterTargetWithMaintenanceWindowRequest'`
 
 ``` purescript
-newRegisterTargetWithMaintenanceWindowRequest' :: MaintenanceWindowResourceType -> Targets -> MaintenanceWindowId -> ({ "WindowId" :: MaintenanceWindowId, "ResourceType" :: MaintenanceWindowResourceType, "Targets" :: Targets, "OwnerInformation" :: NullOrUndefined (OwnerInformation), "Name" :: NullOrUndefined (MaintenanceWindowName), "Description" :: NullOrUndefined (MaintenanceWindowDescription), "ClientToken" :: NullOrUndefined (ClientToken) } -> { "WindowId" :: MaintenanceWindowId, "ResourceType" :: MaintenanceWindowResourceType, "Targets" :: Targets, "OwnerInformation" :: NullOrUndefined (OwnerInformation), "Name" :: NullOrUndefined (MaintenanceWindowName), "Description" :: NullOrUndefined (MaintenanceWindowDescription), "ClientToken" :: NullOrUndefined (ClientToken) }) -> RegisterTargetWithMaintenanceWindowRequest
+newRegisterTargetWithMaintenanceWindowRequest' :: MaintenanceWindowResourceType -> Targets -> MaintenanceWindowId -> ({ "WindowId" :: MaintenanceWindowId, "ResourceType" :: MaintenanceWindowResourceType, "Targets" :: Targets, "OwnerInformation" :: Maybe (OwnerInformation), "Name" :: Maybe (MaintenanceWindowName), "Description" :: Maybe (MaintenanceWindowDescription), "ClientToken" :: Maybe (ClientToken) } -> { "WindowId" :: MaintenanceWindowId, "ResourceType" :: MaintenanceWindowResourceType, "Targets" :: Targets, "OwnerInformation" :: Maybe (OwnerInformation), "Name" :: Maybe (MaintenanceWindowName), "Description" :: Maybe (MaintenanceWindowDescription), "ClientToken" :: Maybe (ClientToken) }) -> RegisterTargetWithMaintenanceWindowRequest
 ```
 
 Constructs RegisterTargetWithMaintenanceWindowRequest's fields from required parameters
@@ -14990,7 +14990,7 @@ Constructs RegisterTargetWithMaintenanceWindowRequest's fields from required par
 
 ``` purescript
 newtype RegisterTargetWithMaintenanceWindowResult
-  = RegisterTargetWithMaintenanceWindowResult { "WindowTargetId" :: NullOrUndefined (MaintenanceWindowTargetId) }
+  = RegisterTargetWithMaintenanceWindowResult { "WindowTargetId" :: Maybe (MaintenanceWindowTargetId) }
 ```
 
 ##### Instances
@@ -15013,7 +15013,7 @@ Constructs RegisterTargetWithMaintenanceWindowResult from required parameters
 #### `newRegisterTargetWithMaintenanceWindowResult'`
 
 ``` purescript
-newRegisterTargetWithMaintenanceWindowResult' :: ({ "WindowTargetId" :: NullOrUndefined (MaintenanceWindowTargetId) } -> { "WindowTargetId" :: NullOrUndefined (MaintenanceWindowTargetId) }) -> RegisterTargetWithMaintenanceWindowResult
+newRegisterTargetWithMaintenanceWindowResult' :: ({ "WindowTargetId" :: Maybe (MaintenanceWindowTargetId) } -> { "WindowTargetId" :: Maybe (MaintenanceWindowTargetId) }) -> RegisterTargetWithMaintenanceWindowResult
 ```
 
 Constructs RegisterTargetWithMaintenanceWindowResult's fields from required parameters
@@ -15022,7 +15022,7 @@ Constructs RegisterTargetWithMaintenanceWindowResult's fields from required para
 
 ``` purescript
 newtype RegisterTaskWithMaintenanceWindowRequest
-  = RegisterTaskWithMaintenanceWindowRequest { "WindowId" :: MaintenanceWindowId, "Targets" :: Targets, "TaskArn" :: MaintenanceWindowTaskArn, "ServiceRoleArn" :: ServiceRole, "TaskType" :: MaintenanceWindowTaskType, "TaskParameters" :: NullOrUndefined (MaintenanceWindowTaskParameters), "TaskInvocationParameters" :: NullOrUndefined (MaintenanceWindowTaskInvocationParameters), "Priority" :: NullOrUndefined (MaintenanceWindowTaskPriority), "MaxConcurrency" :: MaxConcurrency, "MaxErrors" :: MaxErrors, "LoggingInfo" :: NullOrUndefined (LoggingInfo), "Name" :: NullOrUndefined (MaintenanceWindowName), "Description" :: NullOrUndefined (MaintenanceWindowDescription), "ClientToken" :: NullOrUndefined (ClientToken) }
+  = RegisterTaskWithMaintenanceWindowRequest { "WindowId" :: MaintenanceWindowId, "Targets" :: Targets, "TaskArn" :: MaintenanceWindowTaskArn, "ServiceRoleArn" :: ServiceRole, "TaskType" :: MaintenanceWindowTaskType, "TaskParameters" :: Maybe (MaintenanceWindowTaskParameters), "TaskInvocationParameters" :: Maybe (MaintenanceWindowTaskInvocationParameters), "Priority" :: Maybe (MaintenanceWindowTaskPriority), "MaxConcurrency" :: MaxConcurrency, "MaxErrors" :: MaxErrors, "LoggingInfo" :: Maybe (LoggingInfo), "Name" :: Maybe (MaintenanceWindowName), "Description" :: Maybe (MaintenanceWindowDescription), "ClientToken" :: Maybe (ClientToken) }
 ```
 
 ##### Instances
@@ -15045,7 +15045,7 @@ Constructs RegisterTaskWithMaintenanceWindowRequest from required parameters
 #### `newRegisterTaskWithMaintenanceWindowRequest'`
 
 ``` purescript
-newRegisterTaskWithMaintenanceWindowRequest' :: MaxConcurrency -> MaxErrors -> ServiceRole -> Targets -> MaintenanceWindowTaskArn -> MaintenanceWindowTaskType -> MaintenanceWindowId -> ({ "WindowId" :: MaintenanceWindowId, "Targets" :: Targets, "TaskArn" :: MaintenanceWindowTaskArn, "ServiceRoleArn" :: ServiceRole, "TaskType" :: MaintenanceWindowTaskType, "TaskParameters" :: NullOrUndefined (MaintenanceWindowTaskParameters), "TaskInvocationParameters" :: NullOrUndefined (MaintenanceWindowTaskInvocationParameters), "Priority" :: NullOrUndefined (MaintenanceWindowTaskPriority), "MaxConcurrency" :: MaxConcurrency, "MaxErrors" :: MaxErrors, "LoggingInfo" :: NullOrUndefined (LoggingInfo), "Name" :: NullOrUndefined (MaintenanceWindowName), "Description" :: NullOrUndefined (MaintenanceWindowDescription), "ClientToken" :: NullOrUndefined (ClientToken) } -> { "WindowId" :: MaintenanceWindowId, "Targets" :: Targets, "TaskArn" :: MaintenanceWindowTaskArn, "ServiceRoleArn" :: ServiceRole, "TaskType" :: MaintenanceWindowTaskType, "TaskParameters" :: NullOrUndefined (MaintenanceWindowTaskParameters), "TaskInvocationParameters" :: NullOrUndefined (MaintenanceWindowTaskInvocationParameters), "Priority" :: NullOrUndefined (MaintenanceWindowTaskPriority), "MaxConcurrency" :: MaxConcurrency, "MaxErrors" :: MaxErrors, "LoggingInfo" :: NullOrUndefined (LoggingInfo), "Name" :: NullOrUndefined (MaintenanceWindowName), "Description" :: NullOrUndefined (MaintenanceWindowDescription), "ClientToken" :: NullOrUndefined (ClientToken) }) -> RegisterTaskWithMaintenanceWindowRequest
+newRegisterTaskWithMaintenanceWindowRequest' :: MaxConcurrency -> MaxErrors -> ServiceRole -> Targets -> MaintenanceWindowTaskArn -> MaintenanceWindowTaskType -> MaintenanceWindowId -> ({ "WindowId" :: MaintenanceWindowId, "Targets" :: Targets, "TaskArn" :: MaintenanceWindowTaskArn, "ServiceRoleArn" :: ServiceRole, "TaskType" :: MaintenanceWindowTaskType, "TaskParameters" :: Maybe (MaintenanceWindowTaskParameters), "TaskInvocationParameters" :: Maybe (MaintenanceWindowTaskInvocationParameters), "Priority" :: Maybe (MaintenanceWindowTaskPriority), "MaxConcurrency" :: MaxConcurrency, "MaxErrors" :: MaxErrors, "LoggingInfo" :: Maybe (LoggingInfo), "Name" :: Maybe (MaintenanceWindowName), "Description" :: Maybe (MaintenanceWindowDescription), "ClientToken" :: Maybe (ClientToken) } -> { "WindowId" :: MaintenanceWindowId, "Targets" :: Targets, "TaskArn" :: MaintenanceWindowTaskArn, "ServiceRoleArn" :: ServiceRole, "TaskType" :: MaintenanceWindowTaskType, "TaskParameters" :: Maybe (MaintenanceWindowTaskParameters), "TaskInvocationParameters" :: Maybe (MaintenanceWindowTaskInvocationParameters), "Priority" :: Maybe (MaintenanceWindowTaskPriority), "MaxConcurrency" :: MaxConcurrency, "MaxErrors" :: MaxErrors, "LoggingInfo" :: Maybe (LoggingInfo), "Name" :: Maybe (MaintenanceWindowName), "Description" :: Maybe (MaintenanceWindowDescription), "ClientToken" :: Maybe (ClientToken) }) -> RegisterTaskWithMaintenanceWindowRequest
 ```
 
 Constructs RegisterTaskWithMaintenanceWindowRequest's fields from required parameters
@@ -15054,7 +15054,7 @@ Constructs RegisterTaskWithMaintenanceWindowRequest's fields from required param
 
 ``` purescript
 newtype RegisterTaskWithMaintenanceWindowResult
-  = RegisterTaskWithMaintenanceWindowResult { "WindowTaskId" :: NullOrUndefined (MaintenanceWindowTaskId) }
+  = RegisterTaskWithMaintenanceWindowResult { "WindowTaskId" :: Maybe (MaintenanceWindowTaskId) }
 ```
 
 ##### Instances
@@ -15077,7 +15077,7 @@ Constructs RegisterTaskWithMaintenanceWindowResult from required parameters
 #### `newRegisterTaskWithMaintenanceWindowResult'`
 
 ``` purescript
-newRegisterTaskWithMaintenanceWindowResult' :: ({ "WindowTaskId" :: NullOrUndefined (MaintenanceWindowTaskId) } -> { "WindowTaskId" :: NullOrUndefined (MaintenanceWindowTaskId) }) -> RegisterTaskWithMaintenanceWindowResult
+newRegisterTaskWithMaintenanceWindowResult' :: ({ "WindowTaskId" :: Maybe (MaintenanceWindowTaskId) } -> { "WindowTaskId" :: Maybe (MaintenanceWindowTaskId) }) -> RegisterTaskWithMaintenanceWindowResult
 ```
 
 Constructs RegisterTaskWithMaintenanceWindowResult's fields from required parameters
@@ -15166,7 +15166,7 @@ Encode RemoveTagsFromResourceResult
 
 ``` purescript
 newtype ResolvedTargets
-  = ResolvedTargets { "ParameterValues" :: NullOrUndefined (TargetParameterList), "Truncated" :: NullOrUndefined (Boolean) }
+  = ResolvedTargets { "ParameterValues" :: Maybe (TargetParameterList), "Truncated" :: Maybe (Boolean) }
 ```
 
 <p>Information about targets that resolved during the Automation execution.</p>
@@ -15191,7 +15191,7 @@ Constructs ResolvedTargets from required parameters
 #### `newResolvedTargets'`
 
 ``` purescript
-newResolvedTargets' :: ({ "ParameterValues" :: NullOrUndefined (TargetParameterList), "Truncated" :: NullOrUndefined (Boolean) } -> { "ParameterValues" :: NullOrUndefined (TargetParameterList), "Truncated" :: NullOrUndefined (Boolean) }) -> ResolvedTargets
+newResolvedTargets' :: ({ "ParameterValues" :: Maybe (TargetParameterList), "Truncated" :: Maybe (Boolean) } -> { "ParameterValues" :: Maybe (TargetParameterList), "Truncated" :: Maybe (Boolean) }) -> ResolvedTargets
 ```
 
 Constructs ResolvedTargets's fields from required parameters
@@ -15200,7 +15200,7 @@ Constructs ResolvedTargets's fields from required parameters
 
 ``` purescript
 newtype ResourceComplianceSummaryItem
-  = ResourceComplianceSummaryItem { "ComplianceType" :: NullOrUndefined (ComplianceTypeName), "ResourceType" :: NullOrUndefined (ComplianceResourceType), "ResourceId" :: NullOrUndefined (ComplianceResourceId), "Status" :: NullOrUndefined (ComplianceStatus), "OverallSeverity" :: NullOrUndefined (ComplianceSeverity), "ExecutionSummary" :: NullOrUndefined (ComplianceExecutionSummary), "CompliantSummary" :: NullOrUndefined (CompliantSummary), "NonCompliantSummary" :: NullOrUndefined (NonCompliantSummary) }
+  = ResourceComplianceSummaryItem { "ComplianceType" :: Maybe (ComplianceTypeName), "ResourceType" :: Maybe (ComplianceResourceType), "ResourceId" :: Maybe (ComplianceResourceId), "Status" :: Maybe (ComplianceStatus), "OverallSeverity" :: Maybe (ComplianceSeverity), "ExecutionSummary" :: Maybe (ComplianceExecutionSummary), "CompliantSummary" :: Maybe (CompliantSummary), "NonCompliantSummary" :: Maybe (NonCompliantSummary) }
 ```
 
 <p>Compliance summary information for a specific resource. </p>
@@ -15225,7 +15225,7 @@ Constructs ResourceComplianceSummaryItem from required parameters
 #### `newResourceComplianceSummaryItem'`
 
 ``` purescript
-newResourceComplianceSummaryItem' :: ({ "ComplianceType" :: NullOrUndefined (ComplianceTypeName), "ResourceType" :: NullOrUndefined (ComplianceResourceType), "ResourceId" :: NullOrUndefined (ComplianceResourceId), "Status" :: NullOrUndefined (ComplianceStatus), "OverallSeverity" :: NullOrUndefined (ComplianceSeverity), "ExecutionSummary" :: NullOrUndefined (ComplianceExecutionSummary), "CompliantSummary" :: NullOrUndefined (CompliantSummary), "NonCompliantSummary" :: NullOrUndefined (NonCompliantSummary) } -> { "ComplianceType" :: NullOrUndefined (ComplianceTypeName), "ResourceType" :: NullOrUndefined (ComplianceResourceType), "ResourceId" :: NullOrUndefined (ComplianceResourceId), "Status" :: NullOrUndefined (ComplianceStatus), "OverallSeverity" :: NullOrUndefined (ComplianceSeverity), "ExecutionSummary" :: NullOrUndefined (ComplianceExecutionSummary), "CompliantSummary" :: NullOrUndefined (CompliantSummary), "NonCompliantSummary" :: NullOrUndefined (NonCompliantSummary) }) -> ResourceComplianceSummaryItem
+newResourceComplianceSummaryItem' :: ({ "ComplianceType" :: Maybe (ComplianceTypeName), "ResourceType" :: Maybe (ComplianceResourceType), "ResourceId" :: Maybe (ComplianceResourceId), "Status" :: Maybe (ComplianceStatus), "OverallSeverity" :: Maybe (ComplianceSeverity), "ExecutionSummary" :: Maybe (ComplianceExecutionSummary), "CompliantSummary" :: Maybe (CompliantSummary), "NonCompliantSummary" :: Maybe (NonCompliantSummary) } -> { "ComplianceType" :: Maybe (ComplianceTypeName), "ResourceType" :: Maybe (ComplianceResourceType), "ResourceId" :: Maybe (ComplianceResourceId), "Status" :: Maybe (ComplianceStatus), "OverallSeverity" :: Maybe (ComplianceSeverity), "ExecutionSummary" :: Maybe (ComplianceExecutionSummary), "CompliantSummary" :: Maybe (CompliantSummary), "NonCompliantSummary" :: Maybe (NonCompliantSummary) }) -> ResourceComplianceSummaryItem
 ```
 
 Constructs ResourceComplianceSummaryItem's fields from required parameters
@@ -15266,7 +15266,7 @@ Encode ResourceDataSyncAWSKMSKeyARN
 
 ``` purescript
 newtype ResourceDataSyncAlreadyExistsException
-  = ResourceDataSyncAlreadyExistsException { "SyncName" :: NullOrUndefined (ResourceDataSyncName) }
+  = ResourceDataSyncAlreadyExistsException { "SyncName" :: Maybe (ResourceDataSyncName) }
 ```
 
 <p>A sync configuration with the same name already exists.</p>
@@ -15291,7 +15291,7 @@ Constructs ResourceDataSyncAlreadyExistsException from required parameters
 #### `newResourceDataSyncAlreadyExistsException'`
 
 ``` purescript
-newResourceDataSyncAlreadyExistsException' :: ({ "SyncName" :: NullOrUndefined (ResourceDataSyncName) } -> { "SyncName" :: NullOrUndefined (ResourceDataSyncName) }) -> ResourceDataSyncAlreadyExistsException
+newResourceDataSyncAlreadyExistsException' :: ({ "SyncName" :: Maybe (ResourceDataSyncName) } -> { "SyncName" :: Maybe (ResourceDataSyncName) }) -> ResourceDataSyncAlreadyExistsException
 ```
 
 Constructs ResourceDataSyncAlreadyExistsException's fields from required parameters
@@ -15300,7 +15300,7 @@ Constructs ResourceDataSyncAlreadyExistsException's fields from required paramet
 
 ``` purescript
 newtype ResourceDataSyncCountExceededException
-  = ResourceDataSyncCountExceededException { "Message" :: NullOrUndefined (String) }
+  = ResourceDataSyncCountExceededException { "Message" :: Maybe (String) }
 ```
 
 <p>You have exceeded the allowed maximum sync configurations.</p>
@@ -15325,7 +15325,7 @@ Constructs ResourceDataSyncCountExceededException from required parameters
 #### `newResourceDataSyncCountExceededException'`
 
 ``` purescript
-newResourceDataSyncCountExceededException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> ResourceDataSyncCountExceededException
+newResourceDataSyncCountExceededException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> ResourceDataSyncCountExceededException
 ```
 
 Constructs ResourceDataSyncCountExceededException's fields from required parameters
@@ -15350,7 +15350,7 @@ Encode ResourceDataSyncCreatedTime
 
 ``` purescript
 newtype ResourceDataSyncInvalidConfigurationException
-  = ResourceDataSyncInvalidConfigurationException { "Message" :: NullOrUndefined (String) }
+  = ResourceDataSyncInvalidConfigurationException { "Message" :: Maybe (String) }
 ```
 
 <p>The specified sync configuration is invalid.</p>
@@ -15375,7 +15375,7 @@ Constructs ResourceDataSyncInvalidConfigurationException from required parameter
 #### `newResourceDataSyncInvalidConfigurationException'`
 
 ``` purescript
-newResourceDataSyncInvalidConfigurationException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> ResourceDataSyncInvalidConfigurationException
+newResourceDataSyncInvalidConfigurationException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> ResourceDataSyncInvalidConfigurationException
 ```
 
 Constructs ResourceDataSyncInvalidConfigurationException's fields from required parameters
@@ -15384,7 +15384,7 @@ Constructs ResourceDataSyncInvalidConfigurationException's fields from required 
 
 ``` purescript
 newtype ResourceDataSyncItem
-  = ResourceDataSyncItem { "SyncName" :: NullOrUndefined (ResourceDataSyncName), "S3Destination" :: NullOrUndefined (ResourceDataSyncS3Destination), "LastSyncTime" :: NullOrUndefined (LastResourceDataSyncTime), "LastSuccessfulSyncTime" :: NullOrUndefined (LastSuccessfulResourceDataSyncTime), "LastStatus" :: NullOrUndefined (LastResourceDataSyncStatus), "SyncCreatedTime" :: NullOrUndefined (ResourceDataSyncCreatedTime), "LastSyncStatusMessage" :: NullOrUndefined (LastResourceDataSyncMessage) }
+  = ResourceDataSyncItem { "SyncName" :: Maybe (ResourceDataSyncName), "S3Destination" :: Maybe (ResourceDataSyncS3Destination), "LastSyncTime" :: Maybe (LastResourceDataSyncTime), "LastSuccessfulSyncTime" :: Maybe (LastSuccessfulResourceDataSyncTime), "LastStatus" :: Maybe (LastResourceDataSyncStatus), "SyncCreatedTime" :: Maybe (ResourceDataSyncCreatedTime), "LastSyncStatusMessage" :: Maybe (LastResourceDataSyncMessage) }
 ```
 
 <p>Information about a Resource Data Sync configuration, including its current status and last successful sync.</p>
@@ -15409,7 +15409,7 @@ Constructs ResourceDataSyncItem from required parameters
 #### `newResourceDataSyncItem'`
 
 ``` purescript
-newResourceDataSyncItem' :: ({ "SyncName" :: NullOrUndefined (ResourceDataSyncName), "S3Destination" :: NullOrUndefined (ResourceDataSyncS3Destination), "LastSyncTime" :: NullOrUndefined (LastResourceDataSyncTime), "LastSuccessfulSyncTime" :: NullOrUndefined (LastSuccessfulResourceDataSyncTime), "LastStatus" :: NullOrUndefined (LastResourceDataSyncStatus), "SyncCreatedTime" :: NullOrUndefined (ResourceDataSyncCreatedTime), "LastSyncStatusMessage" :: NullOrUndefined (LastResourceDataSyncMessage) } -> { "SyncName" :: NullOrUndefined (ResourceDataSyncName), "S3Destination" :: NullOrUndefined (ResourceDataSyncS3Destination), "LastSyncTime" :: NullOrUndefined (LastResourceDataSyncTime), "LastSuccessfulSyncTime" :: NullOrUndefined (LastSuccessfulResourceDataSyncTime), "LastStatus" :: NullOrUndefined (LastResourceDataSyncStatus), "SyncCreatedTime" :: NullOrUndefined (ResourceDataSyncCreatedTime), "LastSyncStatusMessage" :: NullOrUndefined (LastResourceDataSyncMessage) }) -> ResourceDataSyncItem
+newResourceDataSyncItem' :: ({ "SyncName" :: Maybe (ResourceDataSyncName), "S3Destination" :: Maybe (ResourceDataSyncS3Destination), "LastSyncTime" :: Maybe (LastResourceDataSyncTime), "LastSuccessfulSyncTime" :: Maybe (LastSuccessfulResourceDataSyncTime), "LastStatus" :: Maybe (LastResourceDataSyncStatus), "SyncCreatedTime" :: Maybe (ResourceDataSyncCreatedTime), "LastSyncStatusMessage" :: Maybe (LastResourceDataSyncMessage) } -> { "SyncName" :: Maybe (ResourceDataSyncName), "S3Destination" :: Maybe (ResourceDataSyncS3Destination), "LastSyncTime" :: Maybe (LastResourceDataSyncTime), "LastSuccessfulSyncTime" :: Maybe (LastSuccessfulResourceDataSyncTime), "LastStatus" :: Maybe (LastResourceDataSyncStatus), "SyncCreatedTime" :: Maybe (ResourceDataSyncCreatedTime), "LastSyncStatusMessage" :: Maybe (LastResourceDataSyncMessage) }) -> ResourceDataSyncItem
 ```
 
 Constructs ResourceDataSyncItem's fields from required parameters
@@ -15450,7 +15450,7 @@ Encode ResourceDataSyncName
 
 ``` purescript
 newtype ResourceDataSyncNotFoundException
-  = ResourceDataSyncNotFoundException { "SyncName" :: NullOrUndefined (ResourceDataSyncName) }
+  = ResourceDataSyncNotFoundException { "SyncName" :: Maybe (ResourceDataSyncName) }
 ```
 
 <p>The specified sync name was not found.</p>
@@ -15475,7 +15475,7 @@ Constructs ResourceDataSyncNotFoundException from required parameters
 #### `newResourceDataSyncNotFoundException'`
 
 ``` purescript
-newResourceDataSyncNotFoundException' :: ({ "SyncName" :: NullOrUndefined (ResourceDataSyncName) } -> { "SyncName" :: NullOrUndefined (ResourceDataSyncName) }) -> ResourceDataSyncNotFoundException
+newResourceDataSyncNotFoundException' :: ({ "SyncName" :: Maybe (ResourceDataSyncName) } -> { "SyncName" :: Maybe (ResourceDataSyncName) }) -> ResourceDataSyncNotFoundException
 ```
 
 Constructs ResourceDataSyncNotFoundException's fields from required parameters
@@ -15500,7 +15500,7 @@ Encode ResourceDataSyncS3BucketName
 
 ``` purescript
 newtype ResourceDataSyncS3Destination
-  = ResourceDataSyncS3Destination { "BucketName" :: ResourceDataSyncS3BucketName, "Prefix" :: NullOrUndefined (ResourceDataSyncS3Prefix), "SyncFormat" :: ResourceDataSyncS3Format, "Region" :: ResourceDataSyncS3Region, "AWSKMSKeyARN" :: NullOrUndefined (ResourceDataSyncAWSKMSKeyARN) }
+  = ResourceDataSyncS3Destination { "BucketName" :: ResourceDataSyncS3BucketName, "Prefix" :: Maybe (ResourceDataSyncS3Prefix), "SyncFormat" :: ResourceDataSyncS3Format, "Region" :: ResourceDataSyncS3Region, "AWSKMSKeyARN" :: Maybe (ResourceDataSyncAWSKMSKeyARN) }
 ```
 
 <p>Information about the target Amazon S3 bucket for the Resource Data Sync.</p>
@@ -15525,7 +15525,7 @@ Constructs ResourceDataSyncS3Destination from required parameters
 #### `newResourceDataSyncS3Destination'`
 
 ``` purescript
-newResourceDataSyncS3Destination' :: ResourceDataSyncS3BucketName -> ResourceDataSyncS3Region -> ResourceDataSyncS3Format -> ({ "BucketName" :: ResourceDataSyncS3BucketName, "Prefix" :: NullOrUndefined (ResourceDataSyncS3Prefix), "SyncFormat" :: ResourceDataSyncS3Format, "Region" :: ResourceDataSyncS3Region, "AWSKMSKeyARN" :: NullOrUndefined (ResourceDataSyncAWSKMSKeyARN) } -> { "BucketName" :: ResourceDataSyncS3BucketName, "Prefix" :: NullOrUndefined (ResourceDataSyncS3Prefix), "SyncFormat" :: ResourceDataSyncS3Format, "Region" :: ResourceDataSyncS3Region, "AWSKMSKeyARN" :: NullOrUndefined (ResourceDataSyncAWSKMSKeyARN) }) -> ResourceDataSyncS3Destination
+newResourceDataSyncS3Destination' :: ResourceDataSyncS3BucketName -> ResourceDataSyncS3Region -> ResourceDataSyncS3Format -> ({ "BucketName" :: ResourceDataSyncS3BucketName, "Prefix" :: Maybe (ResourceDataSyncS3Prefix), "SyncFormat" :: ResourceDataSyncS3Format, "Region" :: ResourceDataSyncS3Region, "AWSKMSKeyARN" :: Maybe (ResourceDataSyncAWSKMSKeyARN) } -> { "BucketName" :: ResourceDataSyncS3BucketName, "Prefix" :: Maybe (ResourceDataSyncS3Prefix), "SyncFormat" :: ResourceDataSyncS3Format, "Region" :: ResourceDataSyncS3Region, "AWSKMSKeyARN" :: Maybe (ResourceDataSyncAWSKMSKeyARN) }) -> ResourceDataSyncS3Destination
 ```
 
 Constructs ResourceDataSyncS3Destination's fields from required parameters
@@ -15598,7 +15598,7 @@ Encode ResourceId
 
 ``` purescript
 newtype ResourceInUseException
-  = ResourceInUseException { "Message" :: NullOrUndefined (String) }
+  = ResourceInUseException { "Message" :: Maybe (String) }
 ```
 
 <p>Error returned if an attempt is made to delete a patch baseline that is registered for a patch group.</p>
@@ -15623,7 +15623,7 @@ Constructs ResourceInUseException from required parameters
 #### `newResourceInUseException'`
 
 ``` purescript
-newResourceInUseException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> ResourceInUseException
+newResourceInUseException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> ResourceInUseException
 ```
 
 Constructs ResourceInUseException's fields from required parameters
@@ -15632,7 +15632,7 @@ Constructs ResourceInUseException's fields from required parameters
 
 ``` purescript
 newtype ResourceLimitExceededException
-  = ResourceLimitExceededException { "Message" :: NullOrUndefined (String) }
+  = ResourceLimitExceededException { "Message" :: Maybe (String) }
 ```
 
 <p>Error returned when the caller has exceeded the default resource limits. For example, too many Maintenance Windows or Patch baselines have been created.</p> <p>For information about resource limits in Systems Manager, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems Manager Limits</a>.</p>
@@ -15657,7 +15657,7 @@ Constructs ResourceLimitExceededException from required parameters
 #### `newResourceLimitExceededException'`
 
 ``` purescript
-newResourceLimitExceededException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> ResourceLimitExceededException
+newResourceLimitExceededException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> ResourceLimitExceededException
 ```
 
 Constructs ResourceLimitExceededException's fields from required parameters
@@ -15796,7 +15796,7 @@ Encode S3KeyPrefix
 
 ``` purescript
 newtype S3OutputLocation
-  = S3OutputLocation { "OutputS3Region" :: NullOrUndefined (S3Region), "OutputS3BucketName" :: NullOrUndefined (S3BucketName), "OutputS3KeyPrefix" :: NullOrUndefined (S3KeyPrefix) }
+  = S3OutputLocation { "OutputS3Region" :: Maybe (S3Region), "OutputS3BucketName" :: Maybe (S3BucketName), "OutputS3KeyPrefix" :: Maybe (S3KeyPrefix) }
 ```
 
 <p>An Amazon S3 bucket where you want to store the results of this request.</p>
@@ -15821,7 +15821,7 @@ Constructs S3OutputLocation from required parameters
 #### `newS3OutputLocation'`
 
 ``` purescript
-newS3OutputLocation' :: ({ "OutputS3Region" :: NullOrUndefined (S3Region), "OutputS3BucketName" :: NullOrUndefined (S3BucketName), "OutputS3KeyPrefix" :: NullOrUndefined (S3KeyPrefix) } -> { "OutputS3Region" :: NullOrUndefined (S3Region), "OutputS3BucketName" :: NullOrUndefined (S3BucketName), "OutputS3KeyPrefix" :: NullOrUndefined (S3KeyPrefix) }) -> S3OutputLocation
+newS3OutputLocation' :: ({ "OutputS3Region" :: Maybe (S3Region), "OutputS3BucketName" :: Maybe (S3BucketName), "OutputS3KeyPrefix" :: Maybe (S3KeyPrefix) } -> { "OutputS3Region" :: Maybe (S3Region), "OutputS3BucketName" :: Maybe (S3BucketName), "OutputS3KeyPrefix" :: Maybe (S3KeyPrefix) }) -> S3OutputLocation
 ```
 
 Constructs S3OutputLocation's fields from required parameters
@@ -15830,7 +15830,7 @@ Constructs S3OutputLocation's fields from required parameters
 
 ``` purescript
 newtype S3OutputUrl
-  = S3OutputUrl { "OutputUrl" :: NullOrUndefined (Url) }
+  = S3OutputUrl { "OutputUrl" :: Maybe (Url) }
 ```
 
 <p>A URL for the Amazon S3 bucket where you want to store the results of this request.</p>
@@ -15855,7 +15855,7 @@ Constructs S3OutputUrl from required parameters
 #### `newS3OutputUrl'`
 
 ``` purescript
-newS3OutputUrl' :: ({ "OutputUrl" :: NullOrUndefined (Url) } -> { "OutputUrl" :: NullOrUndefined (Url) }) -> S3OutputUrl
+newS3OutputUrl' :: ({ "OutputUrl" :: Maybe (Url) } -> { "OutputUrl" :: Maybe (Url) }) -> S3OutputUrl
 ```
 
 Constructs S3OutputUrl's fields from required parameters
@@ -15896,7 +15896,7 @@ Encode ScheduleExpression
 
 ``` purescript
 newtype SendAutomationSignalRequest
-  = SendAutomationSignalRequest { "AutomationExecutionId" :: AutomationExecutionId, "SignalType" :: SignalType, "Payload" :: NullOrUndefined (AutomationParameterMap) }
+  = SendAutomationSignalRequest { "AutomationExecutionId" :: AutomationExecutionId, "SignalType" :: SignalType, "Payload" :: Maybe (AutomationParameterMap) }
 ```
 
 ##### Instances
@@ -15919,7 +15919,7 @@ Constructs SendAutomationSignalRequest from required parameters
 #### `newSendAutomationSignalRequest'`
 
 ``` purescript
-newSendAutomationSignalRequest' :: AutomationExecutionId -> SignalType -> ({ "AutomationExecutionId" :: AutomationExecutionId, "SignalType" :: SignalType, "Payload" :: NullOrUndefined (AutomationParameterMap) } -> { "AutomationExecutionId" :: AutomationExecutionId, "SignalType" :: SignalType, "Payload" :: NullOrUndefined (AutomationParameterMap) }) -> SendAutomationSignalRequest
+newSendAutomationSignalRequest' :: AutomationExecutionId -> SignalType -> ({ "AutomationExecutionId" :: AutomationExecutionId, "SignalType" :: SignalType, "Payload" :: Maybe (AutomationParameterMap) } -> { "AutomationExecutionId" :: AutomationExecutionId, "SignalType" :: SignalType, "Payload" :: Maybe (AutomationParameterMap) }) -> SendAutomationSignalRequest
 ```
 
 Constructs SendAutomationSignalRequest's fields from required parameters
@@ -15944,7 +15944,7 @@ Encode SendAutomationSignalResult
 
 ``` purescript
 newtype SendCommandRequest
-  = SendCommandRequest { "InstanceIds" :: NullOrUndefined (InstanceIdList), "Targets" :: NullOrUndefined (Targets), "DocumentName" :: DocumentARN, "DocumentHash" :: NullOrUndefined (DocumentHash), "DocumentHashType" :: NullOrUndefined (DocumentHashType), "TimeoutSeconds" :: NullOrUndefined (TimeoutSeconds), "Comment" :: NullOrUndefined (Comment), "Parameters" :: NullOrUndefined (Parameters), "OutputS3Region" :: NullOrUndefined (S3Region), "OutputS3BucketName" :: NullOrUndefined (S3BucketName), "OutputS3KeyPrefix" :: NullOrUndefined (S3KeyPrefix), "MaxConcurrency" :: NullOrUndefined (MaxConcurrency), "MaxErrors" :: NullOrUndefined (MaxErrors), "ServiceRoleArn" :: NullOrUndefined (ServiceRole), "NotificationConfig" :: NullOrUndefined (NotificationConfig) }
+  = SendCommandRequest { "InstanceIds" :: Maybe (InstanceIdList), "Targets" :: Maybe (Targets), "DocumentName" :: DocumentARN, "DocumentHash" :: Maybe (DocumentHash), "DocumentHashType" :: Maybe (DocumentHashType), "TimeoutSeconds" :: Maybe (TimeoutSeconds), "Comment" :: Maybe (Comment), "Parameters" :: Maybe (Parameters), "OutputS3Region" :: Maybe (S3Region), "OutputS3BucketName" :: Maybe (S3BucketName), "OutputS3KeyPrefix" :: Maybe (S3KeyPrefix), "MaxConcurrency" :: Maybe (MaxConcurrency), "MaxErrors" :: Maybe (MaxErrors), "ServiceRoleArn" :: Maybe (ServiceRole), "NotificationConfig" :: Maybe (NotificationConfig) }
 ```
 
 ##### Instances
@@ -15967,7 +15967,7 @@ Constructs SendCommandRequest from required parameters
 #### `newSendCommandRequest'`
 
 ``` purescript
-newSendCommandRequest' :: DocumentARN -> ({ "InstanceIds" :: NullOrUndefined (InstanceIdList), "Targets" :: NullOrUndefined (Targets), "DocumentName" :: DocumentARN, "DocumentHash" :: NullOrUndefined (DocumentHash), "DocumentHashType" :: NullOrUndefined (DocumentHashType), "TimeoutSeconds" :: NullOrUndefined (TimeoutSeconds), "Comment" :: NullOrUndefined (Comment), "Parameters" :: NullOrUndefined (Parameters), "OutputS3Region" :: NullOrUndefined (S3Region), "OutputS3BucketName" :: NullOrUndefined (S3BucketName), "OutputS3KeyPrefix" :: NullOrUndefined (S3KeyPrefix), "MaxConcurrency" :: NullOrUndefined (MaxConcurrency), "MaxErrors" :: NullOrUndefined (MaxErrors), "ServiceRoleArn" :: NullOrUndefined (ServiceRole), "NotificationConfig" :: NullOrUndefined (NotificationConfig) } -> { "InstanceIds" :: NullOrUndefined (InstanceIdList), "Targets" :: NullOrUndefined (Targets), "DocumentName" :: DocumentARN, "DocumentHash" :: NullOrUndefined (DocumentHash), "DocumentHashType" :: NullOrUndefined (DocumentHashType), "TimeoutSeconds" :: NullOrUndefined (TimeoutSeconds), "Comment" :: NullOrUndefined (Comment), "Parameters" :: NullOrUndefined (Parameters), "OutputS3Region" :: NullOrUndefined (S3Region), "OutputS3BucketName" :: NullOrUndefined (S3BucketName), "OutputS3KeyPrefix" :: NullOrUndefined (S3KeyPrefix), "MaxConcurrency" :: NullOrUndefined (MaxConcurrency), "MaxErrors" :: NullOrUndefined (MaxErrors), "ServiceRoleArn" :: NullOrUndefined (ServiceRole), "NotificationConfig" :: NullOrUndefined (NotificationConfig) }) -> SendCommandRequest
+newSendCommandRequest' :: DocumentARN -> ({ "InstanceIds" :: Maybe (InstanceIdList), "Targets" :: Maybe (Targets), "DocumentName" :: DocumentARN, "DocumentHash" :: Maybe (DocumentHash), "DocumentHashType" :: Maybe (DocumentHashType), "TimeoutSeconds" :: Maybe (TimeoutSeconds), "Comment" :: Maybe (Comment), "Parameters" :: Maybe (Parameters), "OutputS3Region" :: Maybe (S3Region), "OutputS3BucketName" :: Maybe (S3BucketName), "OutputS3KeyPrefix" :: Maybe (S3KeyPrefix), "MaxConcurrency" :: Maybe (MaxConcurrency), "MaxErrors" :: Maybe (MaxErrors), "ServiceRoleArn" :: Maybe (ServiceRole), "NotificationConfig" :: Maybe (NotificationConfig) } -> { "InstanceIds" :: Maybe (InstanceIdList), "Targets" :: Maybe (Targets), "DocumentName" :: DocumentARN, "DocumentHash" :: Maybe (DocumentHash), "DocumentHashType" :: Maybe (DocumentHashType), "TimeoutSeconds" :: Maybe (TimeoutSeconds), "Comment" :: Maybe (Comment), "Parameters" :: Maybe (Parameters), "OutputS3Region" :: Maybe (S3Region), "OutputS3BucketName" :: Maybe (S3BucketName), "OutputS3KeyPrefix" :: Maybe (S3KeyPrefix), "MaxConcurrency" :: Maybe (MaxConcurrency), "MaxErrors" :: Maybe (MaxErrors), "ServiceRoleArn" :: Maybe (ServiceRole), "NotificationConfig" :: Maybe (NotificationConfig) }) -> SendCommandRequest
 ```
 
 Constructs SendCommandRequest's fields from required parameters
@@ -15976,7 +15976,7 @@ Constructs SendCommandRequest's fields from required parameters
 
 ``` purescript
 newtype SendCommandResult
-  = SendCommandResult { "Command" :: NullOrUndefined (Command) }
+  = SendCommandResult { "Command" :: Maybe (Command) }
 ```
 
 ##### Instances
@@ -15999,7 +15999,7 @@ Constructs SendCommandResult from required parameters
 #### `newSendCommandResult'`
 
 ``` purescript
-newSendCommandResult' :: ({ "Command" :: NullOrUndefined (Command) } -> { "Command" :: NullOrUndefined (Command) }) -> SendCommandResult
+newSendCommandResult' :: ({ "Command" :: Maybe (Command) } -> { "Command" :: Maybe (Command) }) -> SendCommandResult
 ```
 
 Constructs SendCommandResult's fields from required parameters
@@ -16024,7 +16024,7 @@ Encode ServiceRole
 
 ``` purescript
 newtype SeveritySummary
-  = SeveritySummary { "CriticalCount" :: NullOrUndefined (ComplianceSummaryCount), "HighCount" :: NullOrUndefined (ComplianceSummaryCount), "MediumCount" :: NullOrUndefined (ComplianceSummaryCount), "LowCount" :: NullOrUndefined (ComplianceSummaryCount), "InformationalCount" :: NullOrUndefined (ComplianceSummaryCount), "UnspecifiedCount" :: NullOrUndefined (ComplianceSummaryCount) }
+  = SeveritySummary { "CriticalCount" :: Maybe (ComplianceSummaryCount), "HighCount" :: Maybe (ComplianceSummaryCount), "MediumCount" :: Maybe (ComplianceSummaryCount), "LowCount" :: Maybe (ComplianceSummaryCount), "InformationalCount" :: Maybe (ComplianceSummaryCount), "UnspecifiedCount" :: Maybe (ComplianceSummaryCount) }
 ```
 
 <p>The number of managed instances found for each patch severity level defined in the request filter.</p>
@@ -16049,7 +16049,7 @@ Constructs SeveritySummary from required parameters
 #### `newSeveritySummary'`
 
 ``` purescript
-newSeveritySummary' :: ({ "CriticalCount" :: NullOrUndefined (ComplianceSummaryCount), "HighCount" :: NullOrUndefined (ComplianceSummaryCount), "MediumCount" :: NullOrUndefined (ComplianceSummaryCount), "LowCount" :: NullOrUndefined (ComplianceSummaryCount), "InformationalCount" :: NullOrUndefined (ComplianceSummaryCount), "UnspecifiedCount" :: NullOrUndefined (ComplianceSummaryCount) } -> { "CriticalCount" :: NullOrUndefined (ComplianceSummaryCount), "HighCount" :: NullOrUndefined (ComplianceSummaryCount), "MediumCount" :: NullOrUndefined (ComplianceSummaryCount), "LowCount" :: NullOrUndefined (ComplianceSummaryCount), "InformationalCount" :: NullOrUndefined (ComplianceSummaryCount), "UnspecifiedCount" :: NullOrUndefined (ComplianceSummaryCount) }) -> SeveritySummary
+newSeveritySummary' :: ({ "CriticalCount" :: Maybe (ComplianceSummaryCount), "HighCount" :: Maybe (ComplianceSummaryCount), "MediumCount" :: Maybe (ComplianceSummaryCount), "LowCount" :: Maybe (ComplianceSummaryCount), "InformationalCount" :: Maybe (ComplianceSummaryCount), "UnspecifiedCount" :: Maybe (ComplianceSummaryCount) } -> { "CriticalCount" :: Maybe (ComplianceSummaryCount), "HighCount" :: Maybe (ComplianceSummaryCount), "MediumCount" :: Maybe (ComplianceSummaryCount), "LowCount" :: Maybe (ComplianceSummaryCount), "InformationalCount" :: Maybe (ComplianceSummaryCount), "UnspecifiedCount" :: Maybe (ComplianceSummaryCount) }) -> SeveritySummary
 ```
 
 Constructs SeveritySummary's fields from required parameters
@@ -16138,7 +16138,7 @@ Encode StandardOutputContent
 
 ``` purescript
 newtype StartAutomationExecutionRequest
-  = StartAutomationExecutionRequest { "DocumentName" :: DocumentARN, "DocumentVersion" :: NullOrUndefined (DocumentVersion), "Parameters" :: NullOrUndefined (AutomationParameterMap), "ClientToken" :: NullOrUndefined (IdempotencyToken), "Mode" :: NullOrUndefined (ExecutionMode), "TargetParameterName" :: NullOrUndefined (AutomationParameterKey), "Targets" :: NullOrUndefined (Targets), "MaxConcurrency" :: NullOrUndefined (MaxConcurrency), "MaxErrors" :: NullOrUndefined (MaxErrors) }
+  = StartAutomationExecutionRequest { "DocumentName" :: DocumentARN, "DocumentVersion" :: Maybe (DocumentVersion), "Parameters" :: Maybe (AutomationParameterMap), "ClientToken" :: Maybe (IdempotencyToken), "Mode" :: Maybe (ExecutionMode), "TargetParameterName" :: Maybe (AutomationParameterKey), "Targets" :: Maybe (Targets), "MaxConcurrency" :: Maybe (MaxConcurrency), "MaxErrors" :: Maybe (MaxErrors) }
 ```
 
 ##### Instances
@@ -16161,7 +16161,7 @@ Constructs StartAutomationExecutionRequest from required parameters
 #### `newStartAutomationExecutionRequest'`
 
 ``` purescript
-newStartAutomationExecutionRequest' :: DocumentARN -> ({ "DocumentName" :: DocumentARN, "DocumentVersion" :: NullOrUndefined (DocumentVersion), "Parameters" :: NullOrUndefined (AutomationParameterMap), "ClientToken" :: NullOrUndefined (IdempotencyToken), "Mode" :: NullOrUndefined (ExecutionMode), "TargetParameterName" :: NullOrUndefined (AutomationParameterKey), "Targets" :: NullOrUndefined (Targets), "MaxConcurrency" :: NullOrUndefined (MaxConcurrency), "MaxErrors" :: NullOrUndefined (MaxErrors) } -> { "DocumentName" :: DocumentARN, "DocumentVersion" :: NullOrUndefined (DocumentVersion), "Parameters" :: NullOrUndefined (AutomationParameterMap), "ClientToken" :: NullOrUndefined (IdempotencyToken), "Mode" :: NullOrUndefined (ExecutionMode), "TargetParameterName" :: NullOrUndefined (AutomationParameterKey), "Targets" :: NullOrUndefined (Targets), "MaxConcurrency" :: NullOrUndefined (MaxConcurrency), "MaxErrors" :: NullOrUndefined (MaxErrors) }) -> StartAutomationExecutionRequest
+newStartAutomationExecutionRequest' :: DocumentARN -> ({ "DocumentName" :: DocumentARN, "DocumentVersion" :: Maybe (DocumentVersion), "Parameters" :: Maybe (AutomationParameterMap), "ClientToken" :: Maybe (IdempotencyToken), "Mode" :: Maybe (ExecutionMode), "TargetParameterName" :: Maybe (AutomationParameterKey), "Targets" :: Maybe (Targets), "MaxConcurrency" :: Maybe (MaxConcurrency), "MaxErrors" :: Maybe (MaxErrors) } -> { "DocumentName" :: DocumentARN, "DocumentVersion" :: Maybe (DocumentVersion), "Parameters" :: Maybe (AutomationParameterMap), "ClientToken" :: Maybe (IdempotencyToken), "Mode" :: Maybe (ExecutionMode), "TargetParameterName" :: Maybe (AutomationParameterKey), "Targets" :: Maybe (Targets), "MaxConcurrency" :: Maybe (MaxConcurrency), "MaxErrors" :: Maybe (MaxErrors) }) -> StartAutomationExecutionRequest
 ```
 
 Constructs StartAutomationExecutionRequest's fields from required parameters
@@ -16170,7 +16170,7 @@ Constructs StartAutomationExecutionRequest's fields from required parameters
 
 ``` purescript
 newtype StartAutomationExecutionResult
-  = StartAutomationExecutionResult { "AutomationExecutionId" :: NullOrUndefined (AutomationExecutionId) }
+  = StartAutomationExecutionResult { "AutomationExecutionId" :: Maybe (AutomationExecutionId) }
 ```
 
 ##### Instances
@@ -16193,7 +16193,7 @@ Constructs StartAutomationExecutionResult from required parameters
 #### `newStartAutomationExecutionResult'`
 
 ``` purescript
-newStartAutomationExecutionResult' :: ({ "AutomationExecutionId" :: NullOrUndefined (AutomationExecutionId) } -> { "AutomationExecutionId" :: NullOrUndefined (AutomationExecutionId) }) -> StartAutomationExecutionResult
+newStartAutomationExecutionResult' :: ({ "AutomationExecutionId" :: Maybe (AutomationExecutionId) } -> { "AutomationExecutionId" :: Maybe (AutomationExecutionId) }) -> StartAutomationExecutionResult
 ```
 
 Constructs StartAutomationExecutionResult's fields from required parameters
@@ -16284,7 +16284,7 @@ Encode StatusUnchanged
 
 ``` purescript
 newtype StepExecution
-  = StepExecution { "StepName" :: NullOrUndefined (String), "Action" :: NullOrUndefined (AutomationActionName), "TimeoutSeconds" :: NullOrUndefined (Number), "OnFailure" :: NullOrUndefined (String), "MaxAttempts" :: NullOrUndefined (Int), "ExecutionStartTime" :: NullOrUndefined (DateTime), "ExecutionEndTime" :: NullOrUndefined (DateTime), "StepStatus" :: NullOrUndefined (AutomationExecutionStatus), "ResponseCode" :: NullOrUndefined (String), "Inputs" :: NullOrUndefined (NormalStringMap), "Outputs" :: NullOrUndefined (AutomationParameterMap), "Response" :: NullOrUndefined (String), "FailureMessage" :: NullOrUndefined (String), "FailureDetails" :: NullOrUndefined (FailureDetails), "StepExecutionId" :: NullOrUndefined (String), "OverriddenParameters" :: NullOrUndefined (AutomationParameterMap) }
+  = StepExecution { "StepName" :: Maybe (String), "Action" :: Maybe (AutomationActionName), "TimeoutSeconds" :: Maybe (Number), "OnFailure" :: Maybe (String), "MaxAttempts" :: Maybe (Int), "ExecutionStartTime" :: Maybe (DateTime), "ExecutionEndTime" :: Maybe (DateTime), "StepStatus" :: Maybe (AutomationExecutionStatus), "ResponseCode" :: Maybe (String), "Inputs" :: Maybe (NormalStringMap), "Outputs" :: Maybe (AutomationParameterMap), "Response" :: Maybe (String), "FailureMessage" :: Maybe (String), "FailureDetails" :: Maybe (FailureDetails), "StepExecutionId" :: Maybe (String), "OverriddenParameters" :: Maybe (AutomationParameterMap) }
 ```
 
 <p>Detailed information about an the execution state of an Automation step.</p>
@@ -16309,7 +16309,7 @@ Constructs StepExecution from required parameters
 #### `newStepExecution'`
 
 ``` purescript
-newStepExecution' :: ({ "StepName" :: NullOrUndefined (String), "Action" :: NullOrUndefined (AutomationActionName), "TimeoutSeconds" :: NullOrUndefined (Number), "OnFailure" :: NullOrUndefined (String), "MaxAttempts" :: NullOrUndefined (Int), "ExecutionStartTime" :: NullOrUndefined (DateTime), "ExecutionEndTime" :: NullOrUndefined (DateTime), "StepStatus" :: NullOrUndefined (AutomationExecutionStatus), "ResponseCode" :: NullOrUndefined (String), "Inputs" :: NullOrUndefined (NormalStringMap), "Outputs" :: NullOrUndefined (AutomationParameterMap), "Response" :: NullOrUndefined (String), "FailureMessage" :: NullOrUndefined (String), "FailureDetails" :: NullOrUndefined (FailureDetails), "StepExecutionId" :: NullOrUndefined (String), "OverriddenParameters" :: NullOrUndefined (AutomationParameterMap) } -> { "StepName" :: NullOrUndefined (String), "Action" :: NullOrUndefined (AutomationActionName), "TimeoutSeconds" :: NullOrUndefined (Number), "OnFailure" :: NullOrUndefined (String), "MaxAttempts" :: NullOrUndefined (Int), "ExecutionStartTime" :: NullOrUndefined (DateTime), "ExecutionEndTime" :: NullOrUndefined (DateTime), "StepStatus" :: NullOrUndefined (AutomationExecutionStatus), "ResponseCode" :: NullOrUndefined (String), "Inputs" :: NullOrUndefined (NormalStringMap), "Outputs" :: NullOrUndefined (AutomationParameterMap), "Response" :: NullOrUndefined (String), "FailureMessage" :: NullOrUndefined (String), "FailureDetails" :: NullOrUndefined (FailureDetails), "StepExecutionId" :: NullOrUndefined (String), "OverriddenParameters" :: NullOrUndefined (AutomationParameterMap) }) -> StepExecution
+newStepExecution' :: ({ "StepName" :: Maybe (String), "Action" :: Maybe (AutomationActionName), "TimeoutSeconds" :: Maybe (Number), "OnFailure" :: Maybe (String), "MaxAttempts" :: Maybe (Int), "ExecutionStartTime" :: Maybe (DateTime), "ExecutionEndTime" :: Maybe (DateTime), "StepStatus" :: Maybe (AutomationExecutionStatus), "ResponseCode" :: Maybe (String), "Inputs" :: Maybe (NormalStringMap), "Outputs" :: Maybe (AutomationParameterMap), "Response" :: Maybe (String), "FailureMessage" :: Maybe (String), "FailureDetails" :: Maybe (FailureDetails), "StepExecutionId" :: Maybe (String), "OverriddenParameters" :: Maybe (AutomationParameterMap) } -> { "StepName" :: Maybe (String), "Action" :: Maybe (AutomationActionName), "TimeoutSeconds" :: Maybe (Number), "OnFailure" :: Maybe (String), "MaxAttempts" :: Maybe (Int), "ExecutionStartTime" :: Maybe (DateTime), "ExecutionEndTime" :: Maybe (DateTime), "StepStatus" :: Maybe (AutomationExecutionStatus), "ResponseCode" :: Maybe (String), "Inputs" :: Maybe (NormalStringMap), "Outputs" :: Maybe (AutomationParameterMap), "Response" :: Maybe (String), "FailureMessage" :: Maybe (String), "FailureDetails" :: Maybe (FailureDetails), "StepExecutionId" :: Maybe (String), "OverriddenParameters" :: Maybe (AutomationParameterMap) }) -> StepExecution
 ```
 
 Constructs StepExecution's fields from required parameters
@@ -16432,7 +16432,7 @@ Encode StepExecutionList
 
 ``` purescript
 newtype StopAutomationExecutionRequest
-  = StopAutomationExecutionRequest { "AutomationExecutionId" :: AutomationExecutionId, "Type" :: NullOrUndefined (StopType) }
+  = StopAutomationExecutionRequest { "AutomationExecutionId" :: AutomationExecutionId, "Type" :: Maybe (StopType) }
 ```
 
 ##### Instances
@@ -16455,7 +16455,7 @@ Constructs StopAutomationExecutionRequest from required parameters
 #### `newStopAutomationExecutionRequest'`
 
 ``` purescript
-newStopAutomationExecutionRequest' :: AutomationExecutionId -> ({ "AutomationExecutionId" :: AutomationExecutionId, "Type" :: NullOrUndefined (StopType) } -> { "AutomationExecutionId" :: AutomationExecutionId, "Type" :: NullOrUndefined (StopType) }) -> StopAutomationExecutionRequest
+newStopAutomationExecutionRequest' :: AutomationExecutionId -> ({ "AutomationExecutionId" :: AutomationExecutionId, "Type" :: Maybe (StopType) } -> { "AutomationExecutionId" :: AutomationExecutionId, "Type" :: Maybe (StopType) }) -> StopAutomationExecutionRequest
 ```
 
 Constructs StopAutomationExecutionRequest's fields from required parameters
@@ -16528,7 +16528,7 @@ Encode StringList
 
 ``` purescript
 newtype SubTypeCountLimitExceededException
-  = SubTypeCountLimitExceededException { "Message" :: NullOrUndefined (String) }
+  = SubTypeCountLimitExceededException { "Message" :: Maybe (String) }
 ```
 
 <p>The sub-type count exceeded the limit for the inventory type.</p>
@@ -16553,7 +16553,7 @@ Constructs SubTypeCountLimitExceededException from required parameters
 #### `newSubTypeCountLimitExceededException'`
 
 ``` purescript
-newSubTypeCountLimitExceededException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> SubTypeCountLimitExceededException
+newSubTypeCountLimitExceededException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> SubTypeCountLimitExceededException
 ```
 
 Constructs SubTypeCountLimitExceededException's fields from required parameters
@@ -16644,7 +16644,7 @@ Encode TagValue
 
 ``` purescript
 newtype Target
-  = Target { "Key" :: NullOrUndefined (TargetKey), "Values" :: NullOrUndefined (TargetValues) }
+  = Target { "Key" :: Maybe (TargetKey), "Values" :: Maybe (TargetValues) }
 ```
 
 <p>An array of search criteria that targets instances using a Key,Value combination that you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in the call.</p> <p/>
@@ -16669,7 +16669,7 @@ Constructs Target from required parameters
 #### `newTarget'`
 
 ``` purescript
-newTarget' :: ({ "Key" :: NullOrUndefined (TargetKey), "Values" :: NullOrUndefined (TargetValues) } -> { "Key" :: NullOrUndefined (TargetKey), "Values" :: NullOrUndefined (TargetValues) }) -> Target
+newTarget' :: ({ "Key" :: Maybe (TargetKey), "Values" :: Maybe (TargetValues) } -> { "Key" :: Maybe (TargetKey), "Values" :: Maybe (TargetValues) }) -> Target
 ```
 
 Constructs Target's fields from required parameters
@@ -16694,7 +16694,7 @@ Encode TargetCount
 
 ``` purescript
 newtype TargetInUseException
-  = TargetInUseException { "Message" :: NullOrUndefined (String) }
+  = TargetInUseException { "Message" :: Maybe (String) }
 ```
 
 <p>You specified the <code>Safe</code> option for the DeregisterTargetFromMaintenanceWindow operation, but the target is still referenced in a task.</p>
@@ -16719,7 +16719,7 @@ Constructs TargetInUseException from required parameters
 #### `newTargetInUseException'`
 
 ``` purescript
-newTargetInUseException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> TargetInUseException
+newTargetInUseException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> TargetInUseException
 ```
 
 Constructs TargetInUseException's fields from required parameters
@@ -16858,7 +16858,7 @@ Encode TooManyTagsError
 
 ``` purescript
 newtype TooManyUpdates
-  = TooManyUpdates { "Message" :: NullOrUndefined (String) }
+  = TooManyUpdates { "Message" :: Maybe (String) }
 ```
 
 <p>There are concurrent updates for a resource that supports one update at a time.</p>
@@ -16883,7 +16883,7 @@ Constructs TooManyUpdates from required parameters
 #### `newTooManyUpdates'`
 
 ``` purescript
-newTooManyUpdates' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> TooManyUpdates
+newTooManyUpdates' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> TooManyUpdates
 ```
 
 Constructs TooManyUpdates's fields from required parameters
@@ -16892,7 +16892,7 @@ Constructs TooManyUpdates's fields from required parameters
 
 ``` purescript
 newtype TotalSizeLimitExceededException
-  = TotalSizeLimitExceededException { "Message" :: NullOrUndefined (String) }
+  = TotalSizeLimitExceededException { "Message" :: Maybe (String) }
 ```
 
 <p>The size of inventory data has exceeded the total size limit for the resource.</p>
@@ -16917,7 +16917,7 @@ Constructs TotalSizeLimitExceededException from required parameters
 #### `newTotalSizeLimitExceededException'`
 
 ``` purescript
-newTotalSizeLimitExceededException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> TotalSizeLimitExceededException
+newTotalSizeLimitExceededException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> TotalSizeLimitExceededException
 ```
 
 Constructs TotalSizeLimitExceededException's fields from required parameters
@@ -16926,7 +16926,7 @@ Constructs TotalSizeLimitExceededException's fields from required parameters
 
 ``` purescript
 newtype UnsupportedInventoryItemContextException
-  = UnsupportedInventoryItemContextException { "TypeName" :: NullOrUndefined (InventoryItemTypeName), "Message" :: NullOrUndefined (String) }
+  = UnsupportedInventoryItemContextException { "TypeName" :: Maybe (InventoryItemTypeName), "Message" :: Maybe (String) }
 ```
 
 <p>The <code>Context</code> attribute that you specified for the <code>InventoryItem</code> is not allowed for this inventory type. You can only use the <code>Context</code> attribute with inventory types like <code>AWS:ComplianceItem</code>.</p>
@@ -16951,7 +16951,7 @@ Constructs UnsupportedInventoryItemContextException from required parameters
 #### `newUnsupportedInventoryItemContextException'`
 
 ``` purescript
-newUnsupportedInventoryItemContextException' :: ({ "TypeName" :: NullOrUndefined (InventoryItemTypeName), "Message" :: NullOrUndefined (String) } -> { "TypeName" :: NullOrUndefined (InventoryItemTypeName), "Message" :: NullOrUndefined (String) }) -> UnsupportedInventoryItemContextException
+newUnsupportedInventoryItemContextException' :: ({ "TypeName" :: Maybe (InventoryItemTypeName), "Message" :: Maybe (String) } -> { "TypeName" :: Maybe (InventoryItemTypeName), "Message" :: Maybe (String) }) -> UnsupportedInventoryItemContextException
 ```
 
 Constructs UnsupportedInventoryItemContextException's fields from required parameters
@@ -16960,7 +16960,7 @@ Constructs UnsupportedInventoryItemContextException's fields from required param
 
 ``` purescript
 newtype UnsupportedInventorySchemaVersionException
-  = UnsupportedInventorySchemaVersionException { "Message" :: NullOrUndefined (String) }
+  = UnsupportedInventorySchemaVersionException { "Message" :: Maybe (String) }
 ```
 
 <p>Inventory item type schema version has to match supported versions in the service. Check output of GetInventorySchema to see the available schema version for each type.</p>
@@ -16985,7 +16985,7 @@ Constructs UnsupportedInventorySchemaVersionException from required parameters
 #### `newUnsupportedInventorySchemaVersionException'`
 
 ``` purescript
-newUnsupportedInventorySchemaVersionException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> UnsupportedInventorySchemaVersionException
+newUnsupportedInventorySchemaVersionException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> UnsupportedInventorySchemaVersionException
 ```
 
 Constructs UnsupportedInventorySchemaVersionException's fields from required parameters
@@ -16994,7 +16994,7 @@ Constructs UnsupportedInventorySchemaVersionException's fields from required par
 
 ``` purescript
 newtype UnsupportedOperatingSystem
-  = UnsupportedOperatingSystem { "Message" :: NullOrUndefined (String) }
+  = UnsupportedOperatingSystem { "Message" :: Maybe (String) }
 ```
 
 <p>The operating systems you specified is not supported, or the operation is not supported for the operating system. Valid operating systems include: Windows, AmazonLinux, RedhatEnterpriseLinux, and Ubuntu.</p>
@@ -17019,7 +17019,7 @@ Constructs UnsupportedOperatingSystem from required parameters
 #### `newUnsupportedOperatingSystem'`
 
 ``` purescript
-newUnsupportedOperatingSystem' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> UnsupportedOperatingSystem
+newUnsupportedOperatingSystem' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> UnsupportedOperatingSystem
 ```
 
 Constructs UnsupportedOperatingSystem's fields from required parameters
@@ -17028,7 +17028,7 @@ Constructs UnsupportedOperatingSystem's fields from required parameters
 
 ``` purescript
 newtype UnsupportedParameterType
-  = UnsupportedParameterType { message :: NullOrUndefined (String) }
+  = UnsupportedParameterType { message :: Maybe (String) }
 ```
 
 <p>The parameter type is not supported.</p>
@@ -17053,7 +17053,7 @@ Constructs UnsupportedParameterType from required parameters
 #### `newUnsupportedParameterType'`
 
 ``` purescript
-newUnsupportedParameterType' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> UnsupportedParameterType
+newUnsupportedParameterType' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> UnsupportedParameterType
 ```
 
 Constructs UnsupportedParameterType's fields from required parameters
@@ -17062,7 +17062,7 @@ Constructs UnsupportedParameterType's fields from required parameters
 
 ``` purescript
 newtype UnsupportedPlatformType
-  = UnsupportedPlatformType { "Message" :: NullOrUndefined (String) }
+  = UnsupportedPlatformType { "Message" :: Maybe (String) }
 ```
 
 <p>The document does not support the platform type of the given instance ID(s). For example, you sent an document for a Windows instance to a Linux instance.</p>
@@ -17087,7 +17087,7 @@ Constructs UnsupportedPlatformType from required parameters
 #### `newUnsupportedPlatformType'`
 
 ``` purescript
-newUnsupportedPlatformType' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> UnsupportedPlatformType
+newUnsupportedPlatformType' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> UnsupportedPlatformType
 ```
 
 Constructs UnsupportedPlatformType's fields from required parameters
@@ -17096,7 +17096,7 @@ Constructs UnsupportedPlatformType's fields from required parameters
 
 ``` purescript
 newtype UpdateAssociationRequest
-  = UpdateAssociationRequest { "AssociationId" :: AssociationId, "Parameters" :: NullOrUndefined (Parameters), "DocumentVersion" :: NullOrUndefined (DocumentVersion), "ScheduleExpression" :: NullOrUndefined (ScheduleExpression), "OutputLocation" :: NullOrUndefined (InstanceAssociationOutputLocation), "Name" :: NullOrUndefined (DocumentName), "Targets" :: NullOrUndefined (Targets), "AssociationName" :: NullOrUndefined (AssociationName), "AssociationVersion" :: NullOrUndefined (AssociationVersion) }
+  = UpdateAssociationRequest { "AssociationId" :: AssociationId, "Parameters" :: Maybe (Parameters), "DocumentVersion" :: Maybe (DocumentVersion), "ScheduleExpression" :: Maybe (ScheduleExpression), "OutputLocation" :: Maybe (InstanceAssociationOutputLocation), "Name" :: Maybe (DocumentName), "Targets" :: Maybe (Targets), "AssociationName" :: Maybe (AssociationName), "AssociationVersion" :: Maybe (AssociationVersion) }
 ```
 
 ##### Instances
@@ -17119,7 +17119,7 @@ Constructs UpdateAssociationRequest from required parameters
 #### `newUpdateAssociationRequest'`
 
 ``` purescript
-newUpdateAssociationRequest' :: AssociationId -> ({ "AssociationId" :: AssociationId, "Parameters" :: NullOrUndefined (Parameters), "DocumentVersion" :: NullOrUndefined (DocumentVersion), "ScheduleExpression" :: NullOrUndefined (ScheduleExpression), "OutputLocation" :: NullOrUndefined (InstanceAssociationOutputLocation), "Name" :: NullOrUndefined (DocumentName), "Targets" :: NullOrUndefined (Targets), "AssociationName" :: NullOrUndefined (AssociationName), "AssociationVersion" :: NullOrUndefined (AssociationVersion) } -> { "AssociationId" :: AssociationId, "Parameters" :: NullOrUndefined (Parameters), "DocumentVersion" :: NullOrUndefined (DocumentVersion), "ScheduleExpression" :: NullOrUndefined (ScheduleExpression), "OutputLocation" :: NullOrUndefined (InstanceAssociationOutputLocation), "Name" :: NullOrUndefined (DocumentName), "Targets" :: NullOrUndefined (Targets), "AssociationName" :: NullOrUndefined (AssociationName), "AssociationVersion" :: NullOrUndefined (AssociationVersion) }) -> UpdateAssociationRequest
+newUpdateAssociationRequest' :: AssociationId -> ({ "AssociationId" :: AssociationId, "Parameters" :: Maybe (Parameters), "DocumentVersion" :: Maybe (DocumentVersion), "ScheduleExpression" :: Maybe (ScheduleExpression), "OutputLocation" :: Maybe (InstanceAssociationOutputLocation), "Name" :: Maybe (DocumentName), "Targets" :: Maybe (Targets), "AssociationName" :: Maybe (AssociationName), "AssociationVersion" :: Maybe (AssociationVersion) } -> { "AssociationId" :: AssociationId, "Parameters" :: Maybe (Parameters), "DocumentVersion" :: Maybe (DocumentVersion), "ScheduleExpression" :: Maybe (ScheduleExpression), "OutputLocation" :: Maybe (InstanceAssociationOutputLocation), "Name" :: Maybe (DocumentName), "Targets" :: Maybe (Targets), "AssociationName" :: Maybe (AssociationName), "AssociationVersion" :: Maybe (AssociationVersion) }) -> UpdateAssociationRequest
 ```
 
 Constructs UpdateAssociationRequest's fields from required parameters
@@ -17128,7 +17128,7 @@ Constructs UpdateAssociationRequest's fields from required parameters
 
 ``` purescript
 newtype UpdateAssociationResult
-  = UpdateAssociationResult { "AssociationDescription" :: NullOrUndefined (AssociationDescription) }
+  = UpdateAssociationResult { "AssociationDescription" :: Maybe (AssociationDescription) }
 ```
 
 ##### Instances
@@ -17151,7 +17151,7 @@ Constructs UpdateAssociationResult from required parameters
 #### `newUpdateAssociationResult'`
 
 ``` purescript
-newUpdateAssociationResult' :: ({ "AssociationDescription" :: NullOrUndefined (AssociationDescription) } -> { "AssociationDescription" :: NullOrUndefined (AssociationDescription) }) -> UpdateAssociationResult
+newUpdateAssociationResult' :: ({ "AssociationDescription" :: Maybe (AssociationDescription) } -> { "AssociationDescription" :: Maybe (AssociationDescription) }) -> UpdateAssociationResult
 ```
 
 Constructs UpdateAssociationResult's fields from required parameters
@@ -17192,7 +17192,7 @@ Constructs UpdateAssociationStatusRequest's fields from required parameters
 
 ``` purescript
 newtype UpdateAssociationStatusResult
-  = UpdateAssociationStatusResult { "AssociationDescription" :: NullOrUndefined (AssociationDescription) }
+  = UpdateAssociationStatusResult { "AssociationDescription" :: Maybe (AssociationDescription) }
 ```
 
 ##### Instances
@@ -17215,7 +17215,7 @@ Constructs UpdateAssociationStatusResult from required parameters
 #### `newUpdateAssociationStatusResult'`
 
 ``` purescript
-newUpdateAssociationStatusResult' :: ({ "AssociationDescription" :: NullOrUndefined (AssociationDescription) } -> { "AssociationDescription" :: NullOrUndefined (AssociationDescription) }) -> UpdateAssociationStatusResult
+newUpdateAssociationStatusResult' :: ({ "AssociationDescription" :: Maybe (AssociationDescription) } -> { "AssociationDescription" :: Maybe (AssociationDescription) }) -> UpdateAssociationStatusResult
 ```
 
 Constructs UpdateAssociationStatusResult's fields from required parameters
@@ -17256,7 +17256,7 @@ Constructs UpdateDocumentDefaultVersionRequest's fields from required parameters
 
 ``` purescript
 newtype UpdateDocumentDefaultVersionResult
-  = UpdateDocumentDefaultVersionResult { "Description" :: NullOrUndefined (DocumentDefaultVersionDescription) }
+  = UpdateDocumentDefaultVersionResult { "Description" :: Maybe (DocumentDefaultVersionDescription) }
 ```
 
 ##### Instances
@@ -17279,7 +17279,7 @@ Constructs UpdateDocumentDefaultVersionResult from required parameters
 #### `newUpdateDocumentDefaultVersionResult'`
 
 ``` purescript
-newUpdateDocumentDefaultVersionResult' :: ({ "Description" :: NullOrUndefined (DocumentDefaultVersionDescription) } -> { "Description" :: NullOrUndefined (DocumentDefaultVersionDescription) }) -> UpdateDocumentDefaultVersionResult
+newUpdateDocumentDefaultVersionResult' :: ({ "Description" :: Maybe (DocumentDefaultVersionDescription) } -> { "Description" :: Maybe (DocumentDefaultVersionDescription) }) -> UpdateDocumentDefaultVersionResult
 ```
 
 Constructs UpdateDocumentDefaultVersionResult's fields from required parameters
@@ -17288,7 +17288,7 @@ Constructs UpdateDocumentDefaultVersionResult's fields from required parameters
 
 ``` purescript
 newtype UpdateDocumentRequest
-  = UpdateDocumentRequest { "Content" :: DocumentContent, "Name" :: DocumentName, "DocumentVersion" :: NullOrUndefined (DocumentVersion), "DocumentFormat" :: NullOrUndefined (DocumentFormat), "TargetType" :: NullOrUndefined (TargetType) }
+  = UpdateDocumentRequest { "Content" :: DocumentContent, "Name" :: DocumentName, "DocumentVersion" :: Maybe (DocumentVersion), "DocumentFormat" :: Maybe (DocumentFormat), "TargetType" :: Maybe (TargetType) }
 ```
 
 ##### Instances
@@ -17311,7 +17311,7 @@ Constructs UpdateDocumentRequest from required parameters
 #### `newUpdateDocumentRequest'`
 
 ``` purescript
-newUpdateDocumentRequest' :: DocumentContent -> DocumentName -> ({ "Content" :: DocumentContent, "Name" :: DocumentName, "DocumentVersion" :: NullOrUndefined (DocumentVersion), "DocumentFormat" :: NullOrUndefined (DocumentFormat), "TargetType" :: NullOrUndefined (TargetType) } -> { "Content" :: DocumentContent, "Name" :: DocumentName, "DocumentVersion" :: NullOrUndefined (DocumentVersion), "DocumentFormat" :: NullOrUndefined (DocumentFormat), "TargetType" :: NullOrUndefined (TargetType) }) -> UpdateDocumentRequest
+newUpdateDocumentRequest' :: DocumentContent -> DocumentName -> ({ "Content" :: DocumentContent, "Name" :: DocumentName, "DocumentVersion" :: Maybe (DocumentVersion), "DocumentFormat" :: Maybe (DocumentFormat), "TargetType" :: Maybe (TargetType) } -> { "Content" :: DocumentContent, "Name" :: DocumentName, "DocumentVersion" :: Maybe (DocumentVersion), "DocumentFormat" :: Maybe (DocumentFormat), "TargetType" :: Maybe (TargetType) }) -> UpdateDocumentRequest
 ```
 
 Constructs UpdateDocumentRequest's fields from required parameters
@@ -17320,7 +17320,7 @@ Constructs UpdateDocumentRequest's fields from required parameters
 
 ``` purescript
 newtype UpdateDocumentResult
-  = UpdateDocumentResult { "DocumentDescription" :: NullOrUndefined (DocumentDescription) }
+  = UpdateDocumentResult { "DocumentDescription" :: Maybe (DocumentDescription) }
 ```
 
 ##### Instances
@@ -17343,7 +17343,7 @@ Constructs UpdateDocumentResult from required parameters
 #### `newUpdateDocumentResult'`
 
 ``` purescript
-newUpdateDocumentResult' :: ({ "DocumentDescription" :: NullOrUndefined (DocumentDescription) } -> { "DocumentDescription" :: NullOrUndefined (DocumentDescription) }) -> UpdateDocumentResult
+newUpdateDocumentResult' :: ({ "DocumentDescription" :: Maybe (DocumentDescription) } -> { "DocumentDescription" :: Maybe (DocumentDescription) }) -> UpdateDocumentResult
 ```
 
 Constructs UpdateDocumentResult's fields from required parameters
@@ -17352,7 +17352,7 @@ Constructs UpdateDocumentResult's fields from required parameters
 
 ``` purescript
 newtype UpdateMaintenanceWindowRequest
-  = UpdateMaintenanceWindowRequest { "WindowId" :: MaintenanceWindowId, "Name" :: NullOrUndefined (MaintenanceWindowName), "Description" :: NullOrUndefined (MaintenanceWindowDescription), "Schedule" :: NullOrUndefined (MaintenanceWindowSchedule), "Duration" :: NullOrUndefined (MaintenanceWindowDurationHours), "Cutoff" :: NullOrUndefined (MaintenanceWindowCutoff), "AllowUnassociatedTargets" :: NullOrUndefined (MaintenanceWindowAllowUnassociatedTargets), "Enabled" :: NullOrUndefined (MaintenanceWindowEnabled), "Replace" :: NullOrUndefined (Boolean) }
+  = UpdateMaintenanceWindowRequest { "WindowId" :: MaintenanceWindowId, "Name" :: Maybe (MaintenanceWindowName), "Description" :: Maybe (MaintenanceWindowDescription), "Schedule" :: Maybe (MaintenanceWindowSchedule), "Duration" :: Maybe (MaintenanceWindowDurationHours), "Cutoff" :: Maybe (MaintenanceWindowCutoff), "AllowUnassociatedTargets" :: Maybe (MaintenanceWindowAllowUnassociatedTargets), "Enabled" :: Maybe (MaintenanceWindowEnabled), "Replace" :: Maybe (Boolean) }
 ```
 
 ##### Instances
@@ -17375,7 +17375,7 @@ Constructs UpdateMaintenanceWindowRequest from required parameters
 #### `newUpdateMaintenanceWindowRequest'`
 
 ``` purescript
-newUpdateMaintenanceWindowRequest' :: MaintenanceWindowId -> ({ "WindowId" :: MaintenanceWindowId, "Name" :: NullOrUndefined (MaintenanceWindowName), "Description" :: NullOrUndefined (MaintenanceWindowDescription), "Schedule" :: NullOrUndefined (MaintenanceWindowSchedule), "Duration" :: NullOrUndefined (MaintenanceWindowDurationHours), "Cutoff" :: NullOrUndefined (MaintenanceWindowCutoff), "AllowUnassociatedTargets" :: NullOrUndefined (MaintenanceWindowAllowUnassociatedTargets), "Enabled" :: NullOrUndefined (MaintenanceWindowEnabled), "Replace" :: NullOrUndefined (Boolean) } -> { "WindowId" :: MaintenanceWindowId, "Name" :: NullOrUndefined (MaintenanceWindowName), "Description" :: NullOrUndefined (MaintenanceWindowDescription), "Schedule" :: NullOrUndefined (MaintenanceWindowSchedule), "Duration" :: NullOrUndefined (MaintenanceWindowDurationHours), "Cutoff" :: NullOrUndefined (MaintenanceWindowCutoff), "AllowUnassociatedTargets" :: NullOrUndefined (MaintenanceWindowAllowUnassociatedTargets), "Enabled" :: NullOrUndefined (MaintenanceWindowEnabled), "Replace" :: NullOrUndefined (Boolean) }) -> UpdateMaintenanceWindowRequest
+newUpdateMaintenanceWindowRequest' :: MaintenanceWindowId -> ({ "WindowId" :: MaintenanceWindowId, "Name" :: Maybe (MaintenanceWindowName), "Description" :: Maybe (MaintenanceWindowDescription), "Schedule" :: Maybe (MaintenanceWindowSchedule), "Duration" :: Maybe (MaintenanceWindowDurationHours), "Cutoff" :: Maybe (MaintenanceWindowCutoff), "AllowUnassociatedTargets" :: Maybe (MaintenanceWindowAllowUnassociatedTargets), "Enabled" :: Maybe (MaintenanceWindowEnabled), "Replace" :: Maybe (Boolean) } -> { "WindowId" :: MaintenanceWindowId, "Name" :: Maybe (MaintenanceWindowName), "Description" :: Maybe (MaintenanceWindowDescription), "Schedule" :: Maybe (MaintenanceWindowSchedule), "Duration" :: Maybe (MaintenanceWindowDurationHours), "Cutoff" :: Maybe (MaintenanceWindowCutoff), "AllowUnassociatedTargets" :: Maybe (MaintenanceWindowAllowUnassociatedTargets), "Enabled" :: Maybe (MaintenanceWindowEnabled), "Replace" :: Maybe (Boolean) }) -> UpdateMaintenanceWindowRequest
 ```
 
 Constructs UpdateMaintenanceWindowRequest's fields from required parameters
@@ -17384,7 +17384,7 @@ Constructs UpdateMaintenanceWindowRequest's fields from required parameters
 
 ``` purescript
 newtype UpdateMaintenanceWindowResult
-  = UpdateMaintenanceWindowResult { "WindowId" :: NullOrUndefined (MaintenanceWindowId), "Name" :: NullOrUndefined (MaintenanceWindowName), "Description" :: NullOrUndefined (MaintenanceWindowDescription), "Schedule" :: NullOrUndefined (MaintenanceWindowSchedule), "Duration" :: NullOrUndefined (MaintenanceWindowDurationHours), "Cutoff" :: NullOrUndefined (MaintenanceWindowCutoff), "AllowUnassociatedTargets" :: NullOrUndefined (MaintenanceWindowAllowUnassociatedTargets), "Enabled" :: NullOrUndefined (MaintenanceWindowEnabled) }
+  = UpdateMaintenanceWindowResult { "WindowId" :: Maybe (MaintenanceWindowId), "Name" :: Maybe (MaintenanceWindowName), "Description" :: Maybe (MaintenanceWindowDescription), "Schedule" :: Maybe (MaintenanceWindowSchedule), "Duration" :: Maybe (MaintenanceWindowDurationHours), "Cutoff" :: Maybe (MaintenanceWindowCutoff), "AllowUnassociatedTargets" :: Maybe (MaintenanceWindowAllowUnassociatedTargets), "Enabled" :: Maybe (MaintenanceWindowEnabled) }
 ```
 
 ##### Instances
@@ -17407,7 +17407,7 @@ Constructs UpdateMaintenanceWindowResult from required parameters
 #### `newUpdateMaintenanceWindowResult'`
 
 ``` purescript
-newUpdateMaintenanceWindowResult' :: ({ "WindowId" :: NullOrUndefined (MaintenanceWindowId), "Name" :: NullOrUndefined (MaintenanceWindowName), "Description" :: NullOrUndefined (MaintenanceWindowDescription), "Schedule" :: NullOrUndefined (MaintenanceWindowSchedule), "Duration" :: NullOrUndefined (MaintenanceWindowDurationHours), "Cutoff" :: NullOrUndefined (MaintenanceWindowCutoff), "AllowUnassociatedTargets" :: NullOrUndefined (MaintenanceWindowAllowUnassociatedTargets), "Enabled" :: NullOrUndefined (MaintenanceWindowEnabled) } -> { "WindowId" :: NullOrUndefined (MaintenanceWindowId), "Name" :: NullOrUndefined (MaintenanceWindowName), "Description" :: NullOrUndefined (MaintenanceWindowDescription), "Schedule" :: NullOrUndefined (MaintenanceWindowSchedule), "Duration" :: NullOrUndefined (MaintenanceWindowDurationHours), "Cutoff" :: NullOrUndefined (MaintenanceWindowCutoff), "AllowUnassociatedTargets" :: NullOrUndefined (MaintenanceWindowAllowUnassociatedTargets), "Enabled" :: NullOrUndefined (MaintenanceWindowEnabled) }) -> UpdateMaintenanceWindowResult
+newUpdateMaintenanceWindowResult' :: ({ "WindowId" :: Maybe (MaintenanceWindowId), "Name" :: Maybe (MaintenanceWindowName), "Description" :: Maybe (MaintenanceWindowDescription), "Schedule" :: Maybe (MaintenanceWindowSchedule), "Duration" :: Maybe (MaintenanceWindowDurationHours), "Cutoff" :: Maybe (MaintenanceWindowCutoff), "AllowUnassociatedTargets" :: Maybe (MaintenanceWindowAllowUnassociatedTargets), "Enabled" :: Maybe (MaintenanceWindowEnabled) } -> { "WindowId" :: Maybe (MaintenanceWindowId), "Name" :: Maybe (MaintenanceWindowName), "Description" :: Maybe (MaintenanceWindowDescription), "Schedule" :: Maybe (MaintenanceWindowSchedule), "Duration" :: Maybe (MaintenanceWindowDurationHours), "Cutoff" :: Maybe (MaintenanceWindowCutoff), "AllowUnassociatedTargets" :: Maybe (MaintenanceWindowAllowUnassociatedTargets), "Enabled" :: Maybe (MaintenanceWindowEnabled) }) -> UpdateMaintenanceWindowResult
 ```
 
 Constructs UpdateMaintenanceWindowResult's fields from required parameters
@@ -17416,7 +17416,7 @@ Constructs UpdateMaintenanceWindowResult's fields from required parameters
 
 ``` purescript
 newtype UpdateMaintenanceWindowTargetRequest
-  = UpdateMaintenanceWindowTargetRequest { "WindowId" :: MaintenanceWindowId, "WindowTargetId" :: MaintenanceWindowTargetId, "Targets" :: NullOrUndefined (Targets), "OwnerInformation" :: NullOrUndefined (OwnerInformation), "Name" :: NullOrUndefined (MaintenanceWindowName), "Description" :: NullOrUndefined (MaintenanceWindowDescription), "Replace" :: NullOrUndefined (Boolean) }
+  = UpdateMaintenanceWindowTargetRequest { "WindowId" :: MaintenanceWindowId, "WindowTargetId" :: MaintenanceWindowTargetId, "Targets" :: Maybe (Targets), "OwnerInformation" :: Maybe (OwnerInformation), "Name" :: Maybe (MaintenanceWindowName), "Description" :: Maybe (MaintenanceWindowDescription), "Replace" :: Maybe (Boolean) }
 ```
 
 ##### Instances
@@ -17439,7 +17439,7 @@ Constructs UpdateMaintenanceWindowTargetRequest from required parameters
 #### `newUpdateMaintenanceWindowTargetRequest'`
 
 ``` purescript
-newUpdateMaintenanceWindowTargetRequest' :: MaintenanceWindowId -> MaintenanceWindowTargetId -> ({ "WindowId" :: MaintenanceWindowId, "WindowTargetId" :: MaintenanceWindowTargetId, "Targets" :: NullOrUndefined (Targets), "OwnerInformation" :: NullOrUndefined (OwnerInformation), "Name" :: NullOrUndefined (MaintenanceWindowName), "Description" :: NullOrUndefined (MaintenanceWindowDescription), "Replace" :: NullOrUndefined (Boolean) } -> { "WindowId" :: MaintenanceWindowId, "WindowTargetId" :: MaintenanceWindowTargetId, "Targets" :: NullOrUndefined (Targets), "OwnerInformation" :: NullOrUndefined (OwnerInformation), "Name" :: NullOrUndefined (MaintenanceWindowName), "Description" :: NullOrUndefined (MaintenanceWindowDescription), "Replace" :: NullOrUndefined (Boolean) }) -> UpdateMaintenanceWindowTargetRequest
+newUpdateMaintenanceWindowTargetRequest' :: MaintenanceWindowId -> MaintenanceWindowTargetId -> ({ "WindowId" :: MaintenanceWindowId, "WindowTargetId" :: MaintenanceWindowTargetId, "Targets" :: Maybe (Targets), "OwnerInformation" :: Maybe (OwnerInformation), "Name" :: Maybe (MaintenanceWindowName), "Description" :: Maybe (MaintenanceWindowDescription), "Replace" :: Maybe (Boolean) } -> { "WindowId" :: MaintenanceWindowId, "WindowTargetId" :: MaintenanceWindowTargetId, "Targets" :: Maybe (Targets), "OwnerInformation" :: Maybe (OwnerInformation), "Name" :: Maybe (MaintenanceWindowName), "Description" :: Maybe (MaintenanceWindowDescription), "Replace" :: Maybe (Boolean) }) -> UpdateMaintenanceWindowTargetRequest
 ```
 
 Constructs UpdateMaintenanceWindowTargetRequest's fields from required parameters
@@ -17448,7 +17448,7 @@ Constructs UpdateMaintenanceWindowTargetRequest's fields from required parameter
 
 ``` purescript
 newtype UpdateMaintenanceWindowTargetResult
-  = UpdateMaintenanceWindowTargetResult { "WindowId" :: NullOrUndefined (MaintenanceWindowId), "WindowTargetId" :: NullOrUndefined (MaintenanceWindowTargetId), "Targets" :: NullOrUndefined (Targets), "OwnerInformation" :: NullOrUndefined (OwnerInformation), "Name" :: NullOrUndefined (MaintenanceWindowName), "Description" :: NullOrUndefined (MaintenanceWindowDescription) }
+  = UpdateMaintenanceWindowTargetResult { "WindowId" :: Maybe (MaintenanceWindowId), "WindowTargetId" :: Maybe (MaintenanceWindowTargetId), "Targets" :: Maybe (Targets), "OwnerInformation" :: Maybe (OwnerInformation), "Name" :: Maybe (MaintenanceWindowName), "Description" :: Maybe (MaintenanceWindowDescription) }
 ```
 
 ##### Instances
@@ -17471,7 +17471,7 @@ Constructs UpdateMaintenanceWindowTargetResult from required parameters
 #### `newUpdateMaintenanceWindowTargetResult'`
 
 ``` purescript
-newUpdateMaintenanceWindowTargetResult' :: ({ "WindowId" :: NullOrUndefined (MaintenanceWindowId), "WindowTargetId" :: NullOrUndefined (MaintenanceWindowTargetId), "Targets" :: NullOrUndefined (Targets), "OwnerInformation" :: NullOrUndefined (OwnerInformation), "Name" :: NullOrUndefined (MaintenanceWindowName), "Description" :: NullOrUndefined (MaintenanceWindowDescription) } -> { "WindowId" :: NullOrUndefined (MaintenanceWindowId), "WindowTargetId" :: NullOrUndefined (MaintenanceWindowTargetId), "Targets" :: NullOrUndefined (Targets), "OwnerInformation" :: NullOrUndefined (OwnerInformation), "Name" :: NullOrUndefined (MaintenanceWindowName), "Description" :: NullOrUndefined (MaintenanceWindowDescription) }) -> UpdateMaintenanceWindowTargetResult
+newUpdateMaintenanceWindowTargetResult' :: ({ "WindowId" :: Maybe (MaintenanceWindowId), "WindowTargetId" :: Maybe (MaintenanceWindowTargetId), "Targets" :: Maybe (Targets), "OwnerInformation" :: Maybe (OwnerInformation), "Name" :: Maybe (MaintenanceWindowName), "Description" :: Maybe (MaintenanceWindowDescription) } -> { "WindowId" :: Maybe (MaintenanceWindowId), "WindowTargetId" :: Maybe (MaintenanceWindowTargetId), "Targets" :: Maybe (Targets), "OwnerInformation" :: Maybe (OwnerInformation), "Name" :: Maybe (MaintenanceWindowName), "Description" :: Maybe (MaintenanceWindowDescription) }) -> UpdateMaintenanceWindowTargetResult
 ```
 
 Constructs UpdateMaintenanceWindowTargetResult's fields from required parameters
@@ -17480,7 +17480,7 @@ Constructs UpdateMaintenanceWindowTargetResult's fields from required parameters
 
 ``` purescript
 newtype UpdateMaintenanceWindowTaskRequest
-  = UpdateMaintenanceWindowTaskRequest { "WindowId" :: MaintenanceWindowId, "WindowTaskId" :: MaintenanceWindowTaskId, "Targets" :: NullOrUndefined (Targets), "TaskArn" :: NullOrUndefined (MaintenanceWindowTaskArn), "ServiceRoleArn" :: NullOrUndefined (ServiceRole), "TaskParameters" :: NullOrUndefined (MaintenanceWindowTaskParameters), "TaskInvocationParameters" :: NullOrUndefined (MaintenanceWindowTaskInvocationParameters), "Priority" :: NullOrUndefined (MaintenanceWindowTaskPriority), "MaxConcurrency" :: NullOrUndefined (MaxConcurrency), "MaxErrors" :: NullOrUndefined (MaxErrors), "LoggingInfo" :: NullOrUndefined (LoggingInfo), "Name" :: NullOrUndefined (MaintenanceWindowName), "Description" :: NullOrUndefined (MaintenanceWindowDescription), "Replace" :: NullOrUndefined (Boolean) }
+  = UpdateMaintenanceWindowTaskRequest { "WindowId" :: MaintenanceWindowId, "WindowTaskId" :: MaintenanceWindowTaskId, "Targets" :: Maybe (Targets), "TaskArn" :: Maybe (MaintenanceWindowTaskArn), "ServiceRoleArn" :: Maybe (ServiceRole), "TaskParameters" :: Maybe (MaintenanceWindowTaskParameters), "TaskInvocationParameters" :: Maybe (MaintenanceWindowTaskInvocationParameters), "Priority" :: Maybe (MaintenanceWindowTaskPriority), "MaxConcurrency" :: Maybe (MaxConcurrency), "MaxErrors" :: Maybe (MaxErrors), "LoggingInfo" :: Maybe (LoggingInfo), "Name" :: Maybe (MaintenanceWindowName), "Description" :: Maybe (MaintenanceWindowDescription), "Replace" :: Maybe (Boolean) }
 ```
 
 ##### Instances
@@ -17503,7 +17503,7 @@ Constructs UpdateMaintenanceWindowTaskRequest from required parameters
 #### `newUpdateMaintenanceWindowTaskRequest'`
 
 ``` purescript
-newUpdateMaintenanceWindowTaskRequest' :: MaintenanceWindowId -> MaintenanceWindowTaskId -> ({ "WindowId" :: MaintenanceWindowId, "WindowTaskId" :: MaintenanceWindowTaskId, "Targets" :: NullOrUndefined (Targets), "TaskArn" :: NullOrUndefined (MaintenanceWindowTaskArn), "ServiceRoleArn" :: NullOrUndefined (ServiceRole), "TaskParameters" :: NullOrUndefined (MaintenanceWindowTaskParameters), "TaskInvocationParameters" :: NullOrUndefined (MaintenanceWindowTaskInvocationParameters), "Priority" :: NullOrUndefined (MaintenanceWindowTaskPriority), "MaxConcurrency" :: NullOrUndefined (MaxConcurrency), "MaxErrors" :: NullOrUndefined (MaxErrors), "LoggingInfo" :: NullOrUndefined (LoggingInfo), "Name" :: NullOrUndefined (MaintenanceWindowName), "Description" :: NullOrUndefined (MaintenanceWindowDescription), "Replace" :: NullOrUndefined (Boolean) } -> { "WindowId" :: MaintenanceWindowId, "WindowTaskId" :: MaintenanceWindowTaskId, "Targets" :: NullOrUndefined (Targets), "TaskArn" :: NullOrUndefined (MaintenanceWindowTaskArn), "ServiceRoleArn" :: NullOrUndefined (ServiceRole), "TaskParameters" :: NullOrUndefined (MaintenanceWindowTaskParameters), "TaskInvocationParameters" :: NullOrUndefined (MaintenanceWindowTaskInvocationParameters), "Priority" :: NullOrUndefined (MaintenanceWindowTaskPriority), "MaxConcurrency" :: NullOrUndefined (MaxConcurrency), "MaxErrors" :: NullOrUndefined (MaxErrors), "LoggingInfo" :: NullOrUndefined (LoggingInfo), "Name" :: NullOrUndefined (MaintenanceWindowName), "Description" :: NullOrUndefined (MaintenanceWindowDescription), "Replace" :: NullOrUndefined (Boolean) }) -> UpdateMaintenanceWindowTaskRequest
+newUpdateMaintenanceWindowTaskRequest' :: MaintenanceWindowId -> MaintenanceWindowTaskId -> ({ "WindowId" :: MaintenanceWindowId, "WindowTaskId" :: MaintenanceWindowTaskId, "Targets" :: Maybe (Targets), "TaskArn" :: Maybe (MaintenanceWindowTaskArn), "ServiceRoleArn" :: Maybe (ServiceRole), "TaskParameters" :: Maybe (MaintenanceWindowTaskParameters), "TaskInvocationParameters" :: Maybe (MaintenanceWindowTaskInvocationParameters), "Priority" :: Maybe (MaintenanceWindowTaskPriority), "MaxConcurrency" :: Maybe (MaxConcurrency), "MaxErrors" :: Maybe (MaxErrors), "LoggingInfo" :: Maybe (LoggingInfo), "Name" :: Maybe (MaintenanceWindowName), "Description" :: Maybe (MaintenanceWindowDescription), "Replace" :: Maybe (Boolean) } -> { "WindowId" :: MaintenanceWindowId, "WindowTaskId" :: MaintenanceWindowTaskId, "Targets" :: Maybe (Targets), "TaskArn" :: Maybe (MaintenanceWindowTaskArn), "ServiceRoleArn" :: Maybe (ServiceRole), "TaskParameters" :: Maybe (MaintenanceWindowTaskParameters), "TaskInvocationParameters" :: Maybe (MaintenanceWindowTaskInvocationParameters), "Priority" :: Maybe (MaintenanceWindowTaskPriority), "MaxConcurrency" :: Maybe (MaxConcurrency), "MaxErrors" :: Maybe (MaxErrors), "LoggingInfo" :: Maybe (LoggingInfo), "Name" :: Maybe (MaintenanceWindowName), "Description" :: Maybe (MaintenanceWindowDescription), "Replace" :: Maybe (Boolean) }) -> UpdateMaintenanceWindowTaskRequest
 ```
 
 Constructs UpdateMaintenanceWindowTaskRequest's fields from required parameters
@@ -17512,7 +17512,7 @@ Constructs UpdateMaintenanceWindowTaskRequest's fields from required parameters
 
 ``` purescript
 newtype UpdateMaintenanceWindowTaskResult
-  = UpdateMaintenanceWindowTaskResult { "WindowId" :: NullOrUndefined (MaintenanceWindowId), "WindowTaskId" :: NullOrUndefined (MaintenanceWindowTaskId), "Targets" :: NullOrUndefined (Targets), "TaskArn" :: NullOrUndefined (MaintenanceWindowTaskArn), "ServiceRoleArn" :: NullOrUndefined (ServiceRole), "TaskParameters" :: NullOrUndefined (MaintenanceWindowTaskParameters), "TaskInvocationParameters" :: NullOrUndefined (MaintenanceWindowTaskInvocationParameters), "Priority" :: NullOrUndefined (MaintenanceWindowTaskPriority), "MaxConcurrency" :: NullOrUndefined (MaxConcurrency), "MaxErrors" :: NullOrUndefined (MaxErrors), "LoggingInfo" :: NullOrUndefined (LoggingInfo), "Name" :: NullOrUndefined (MaintenanceWindowName), "Description" :: NullOrUndefined (MaintenanceWindowDescription) }
+  = UpdateMaintenanceWindowTaskResult { "WindowId" :: Maybe (MaintenanceWindowId), "WindowTaskId" :: Maybe (MaintenanceWindowTaskId), "Targets" :: Maybe (Targets), "TaskArn" :: Maybe (MaintenanceWindowTaskArn), "ServiceRoleArn" :: Maybe (ServiceRole), "TaskParameters" :: Maybe (MaintenanceWindowTaskParameters), "TaskInvocationParameters" :: Maybe (MaintenanceWindowTaskInvocationParameters), "Priority" :: Maybe (MaintenanceWindowTaskPriority), "MaxConcurrency" :: Maybe (MaxConcurrency), "MaxErrors" :: Maybe (MaxErrors), "LoggingInfo" :: Maybe (LoggingInfo), "Name" :: Maybe (MaintenanceWindowName), "Description" :: Maybe (MaintenanceWindowDescription) }
 ```
 
 ##### Instances
@@ -17535,7 +17535,7 @@ Constructs UpdateMaintenanceWindowTaskResult from required parameters
 #### `newUpdateMaintenanceWindowTaskResult'`
 
 ``` purescript
-newUpdateMaintenanceWindowTaskResult' :: ({ "WindowId" :: NullOrUndefined (MaintenanceWindowId), "WindowTaskId" :: NullOrUndefined (MaintenanceWindowTaskId), "Targets" :: NullOrUndefined (Targets), "TaskArn" :: NullOrUndefined (MaintenanceWindowTaskArn), "ServiceRoleArn" :: NullOrUndefined (ServiceRole), "TaskParameters" :: NullOrUndefined (MaintenanceWindowTaskParameters), "TaskInvocationParameters" :: NullOrUndefined (MaintenanceWindowTaskInvocationParameters), "Priority" :: NullOrUndefined (MaintenanceWindowTaskPriority), "MaxConcurrency" :: NullOrUndefined (MaxConcurrency), "MaxErrors" :: NullOrUndefined (MaxErrors), "LoggingInfo" :: NullOrUndefined (LoggingInfo), "Name" :: NullOrUndefined (MaintenanceWindowName), "Description" :: NullOrUndefined (MaintenanceWindowDescription) } -> { "WindowId" :: NullOrUndefined (MaintenanceWindowId), "WindowTaskId" :: NullOrUndefined (MaintenanceWindowTaskId), "Targets" :: NullOrUndefined (Targets), "TaskArn" :: NullOrUndefined (MaintenanceWindowTaskArn), "ServiceRoleArn" :: NullOrUndefined (ServiceRole), "TaskParameters" :: NullOrUndefined (MaintenanceWindowTaskParameters), "TaskInvocationParameters" :: NullOrUndefined (MaintenanceWindowTaskInvocationParameters), "Priority" :: NullOrUndefined (MaintenanceWindowTaskPriority), "MaxConcurrency" :: NullOrUndefined (MaxConcurrency), "MaxErrors" :: NullOrUndefined (MaxErrors), "LoggingInfo" :: NullOrUndefined (LoggingInfo), "Name" :: NullOrUndefined (MaintenanceWindowName), "Description" :: NullOrUndefined (MaintenanceWindowDescription) }) -> UpdateMaintenanceWindowTaskResult
+newUpdateMaintenanceWindowTaskResult' :: ({ "WindowId" :: Maybe (MaintenanceWindowId), "WindowTaskId" :: Maybe (MaintenanceWindowTaskId), "Targets" :: Maybe (Targets), "TaskArn" :: Maybe (MaintenanceWindowTaskArn), "ServiceRoleArn" :: Maybe (ServiceRole), "TaskParameters" :: Maybe (MaintenanceWindowTaskParameters), "TaskInvocationParameters" :: Maybe (MaintenanceWindowTaskInvocationParameters), "Priority" :: Maybe (MaintenanceWindowTaskPriority), "MaxConcurrency" :: Maybe (MaxConcurrency), "MaxErrors" :: Maybe (MaxErrors), "LoggingInfo" :: Maybe (LoggingInfo), "Name" :: Maybe (MaintenanceWindowName), "Description" :: Maybe (MaintenanceWindowDescription) } -> { "WindowId" :: Maybe (MaintenanceWindowId), "WindowTaskId" :: Maybe (MaintenanceWindowTaskId), "Targets" :: Maybe (Targets), "TaskArn" :: Maybe (MaintenanceWindowTaskArn), "ServiceRoleArn" :: Maybe (ServiceRole), "TaskParameters" :: Maybe (MaintenanceWindowTaskParameters), "TaskInvocationParameters" :: Maybe (MaintenanceWindowTaskInvocationParameters), "Priority" :: Maybe (MaintenanceWindowTaskPriority), "MaxConcurrency" :: Maybe (MaxConcurrency), "MaxErrors" :: Maybe (MaxErrors), "LoggingInfo" :: Maybe (LoggingInfo), "Name" :: Maybe (MaintenanceWindowName), "Description" :: Maybe (MaintenanceWindowDescription) }) -> UpdateMaintenanceWindowTaskResult
 ```
 
 Constructs UpdateMaintenanceWindowTaskResult's fields from required parameters
@@ -17592,7 +17592,7 @@ Encode UpdateManagedInstanceRoleResult
 
 ``` purescript
 newtype UpdatePatchBaselineRequest
-  = UpdatePatchBaselineRequest { "BaselineId" :: BaselineId, "Name" :: NullOrUndefined (BaselineName), "GlobalFilters" :: NullOrUndefined (PatchFilterGroup), "ApprovalRules" :: NullOrUndefined (PatchRuleGroup), "ApprovedPatches" :: NullOrUndefined (PatchIdList), "ApprovedPatchesComplianceLevel" :: NullOrUndefined (PatchComplianceLevel), "ApprovedPatchesEnableNonSecurity" :: NullOrUndefined (Boolean), "RejectedPatches" :: NullOrUndefined (PatchIdList), "Description" :: NullOrUndefined (BaselineDescription), "Sources" :: NullOrUndefined (PatchSourceList), "Replace" :: NullOrUndefined (Boolean) }
+  = UpdatePatchBaselineRequest { "BaselineId" :: BaselineId, "Name" :: Maybe (BaselineName), "GlobalFilters" :: Maybe (PatchFilterGroup), "ApprovalRules" :: Maybe (PatchRuleGroup), "ApprovedPatches" :: Maybe (PatchIdList), "ApprovedPatchesComplianceLevel" :: Maybe (PatchComplianceLevel), "ApprovedPatchesEnableNonSecurity" :: Maybe (Boolean), "RejectedPatches" :: Maybe (PatchIdList), "Description" :: Maybe (BaselineDescription), "Sources" :: Maybe (PatchSourceList), "Replace" :: Maybe (Boolean) }
 ```
 
 ##### Instances
@@ -17615,7 +17615,7 @@ Constructs UpdatePatchBaselineRequest from required parameters
 #### `newUpdatePatchBaselineRequest'`
 
 ``` purescript
-newUpdatePatchBaselineRequest' :: BaselineId -> ({ "BaselineId" :: BaselineId, "Name" :: NullOrUndefined (BaselineName), "GlobalFilters" :: NullOrUndefined (PatchFilterGroup), "ApprovalRules" :: NullOrUndefined (PatchRuleGroup), "ApprovedPatches" :: NullOrUndefined (PatchIdList), "ApprovedPatchesComplianceLevel" :: NullOrUndefined (PatchComplianceLevel), "ApprovedPatchesEnableNonSecurity" :: NullOrUndefined (Boolean), "RejectedPatches" :: NullOrUndefined (PatchIdList), "Description" :: NullOrUndefined (BaselineDescription), "Sources" :: NullOrUndefined (PatchSourceList), "Replace" :: NullOrUndefined (Boolean) } -> { "BaselineId" :: BaselineId, "Name" :: NullOrUndefined (BaselineName), "GlobalFilters" :: NullOrUndefined (PatchFilterGroup), "ApprovalRules" :: NullOrUndefined (PatchRuleGroup), "ApprovedPatches" :: NullOrUndefined (PatchIdList), "ApprovedPatchesComplianceLevel" :: NullOrUndefined (PatchComplianceLevel), "ApprovedPatchesEnableNonSecurity" :: NullOrUndefined (Boolean), "RejectedPatches" :: NullOrUndefined (PatchIdList), "Description" :: NullOrUndefined (BaselineDescription), "Sources" :: NullOrUndefined (PatchSourceList), "Replace" :: NullOrUndefined (Boolean) }) -> UpdatePatchBaselineRequest
+newUpdatePatchBaselineRequest' :: BaselineId -> ({ "BaselineId" :: BaselineId, "Name" :: Maybe (BaselineName), "GlobalFilters" :: Maybe (PatchFilterGroup), "ApprovalRules" :: Maybe (PatchRuleGroup), "ApprovedPatches" :: Maybe (PatchIdList), "ApprovedPatchesComplianceLevel" :: Maybe (PatchComplianceLevel), "ApprovedPatchesEnableNonSecurity" :: Maybe (Boolean), "RejectedPatches" :: Maybe (PatchIdList), "Description" :: Maybe (BaselineDescription), "Sources" :: Maybe (PatchSourceList), "Replace" :: Maybe (Boolean) } -> { "BaselineId" :: BaselineId, "Name" :: Maybe (BaselineName), "GlobalFilters" :: Maybe (PatchFilterGroup), "ApprovalRules" :: Maybe (PatchRuleGroup), "ApprovedPatches" :: Maybe (PatchIdList), "ApprovedPatchesComplianceLevel" :: Maybe (PatchComplianceLevel), "ApprovedPatchesEnableNonSecurity" :: Maybe (Boolean), "RejectedPatches" :: Maybe (PatchIdList), "Description" :: Maybe (BaselineDescription), "Sources" :: Maybe (PatchSourceList), "Replace" :: Maybe (Boolean) }) -> UpdatePatchBaselineRequest
 ```
 
 Constructs UpdatePatchBaselineRequest's fields from required parameters
@@ -17624,7 +17624,7 @@ Constructs UpdatePatchBaselineRequest's fields from required parameters
 
 ``` purescript
 newtype UpdatePatchBaselineResult
-  = UpdatePatchBaselineResult { "BaselineId" :: NullOrUndefined (BaselineId), "Name" :: NullOrUndefined (BaselineName), "OperatingSystem" :: NullOrUndefined (OperatingSystem), "GlobalFilters" :: NullOrUndefined (PatchFilterGroup), "ApprovalRules" :: NullOrUndefined (PatchRuleGroup), "ApprovedPatches" :: NullOrUndefined (PatchIdList), "ApprovedPatchesComplianceLevel" :: NullOrUndefined (PatchComplianceLevel), "ApprovedPatchesEnableNonSecurity" :: NullOrUndefined (Boolean), "RejectedPatches" :: NullOrUndefined (PatchIdList), "CreatedDate" :: NullOrUndefined (DateTime), "ModifiedDate" :: NullOrUndefined (DateTime), "Description" :: NullOrUndefined (BaselineDescription), "Sources" :: NullOrUndefined (PatchSourceList) }
+  = UpdatePatchBaselineResult { "BaselineId" :: Maybe (BaselineId), "Name" :: Maybe (BaselineName), "OperatingSystem" :: Maybe (OperatingSystem), "GlobalFilters" :: Maybe (PatchFilterGroup), "ApprovalRules" :: Maybe (PatchRuleGroup), "ApprovedPatches" :: Maybe (PatchIdList), "ApprovedPatchesComplianceLevel" :: Maybe (PatchComplianceLevel), "ApprovedPatchesEnableNonSecurity" :: Maybe (Boolean), "RejectedPatches" :: Maybe (PatchIdList), "CreatedDate" :: Maybe (DateTime), "ModifiedDate" :: Maybe (DateTime), "Description" :: Maybe (BaselineDescription), "Sources" :: Maybe (PatchSourceList) }
 ```
 
 ##### Instances
@@ -17647,7 +17647,7 @@ Constructs UpdatePatchBaselineResult from required parameters
 #### `newUpdatePatchBaselineResult'`
 
 ``` purescript
-newUpdatePatchBaselineResult' :: ({ "BaselineId" :: NullOrUndefined (BaselineId), "Name" :: NullOrUndefined (BaselineName), "OperatingSystem" :: NullOrUndefined (OperatingSystem), "GlobalFilters" :: NullOrUndefined (PatchFilterGroup), "ApprovalRules" :: NullOrUndefined (PatchRuleGroup), "ApprovedPatches" :: NullOrUndefined (PatchIdList), "ApprovedPatchesComplianceLevel" :: NullOrUndefined (PatchComplianceLevel), "ApprovedPatchesEnableNonSecurity" :: NullOrUndefined (Boolean), "RejectedPatches" :: NullOrUndefined (PatchIdList), "CreatedDate" :: NullOrUndefined (DateTime), "ModifiedDate" :: NullOrUndefined (DateTime), "Description" :: NullOrUndefined (BaselineDescription), "Sources" :: NullOrUndefined (PatchSourceList) } -> { "BaselineId" :: NullOrUndefined (BaselineId), "Name" :: NullOrUndefined (BaselineName), "OperatingSystem" :: NullOrUndefined (OperatingSystem), "GlobalFilters" :: NullOrUndefined (PatchFilterGroup), "ApprovalRules" :: NullOrUndefined (PatchRuleGroup), "ApprovedPatches" :: NullOrUndefined (PatchIdList), "ApprovedPatchesComplianceLevel" :: NullOrUndefined (PatchComplianceLevel), "ApprovedPatchesEnableNonSecurity" :: NullOrUndefined (Boolean), "RejectedPatches" :: NullOrUndefined (PatchIdList), "CreatedDate" :: NullOrUndefined (DateTime), "ModifiedDate" :: NullOrUndefined (DateTime), "Description" :: NullOrUndefined (BaselineDescription), "Sources" :: NullOrUndefined (PatchSourceList) }) -> UpdatePatchBaselineResult
+newUpdatePatchBaselineResult' :: ({ "BaselineId" :: Maybe (BaselineId), "Name" :: Maybe (BaselineName), "OperatingSystem" :: Maybe (OperatingSystem), "GlobalFilters" :: Maybe (PatchFilterGroup), "ApprovalRules" :: Maybe (PatchRuleGroup), "ApprovedPatches" :: Maybe (PatchIdList), "ApprovedPatchesComplianceLevel" :: Maybe (PatchComplianceLevel), "ApprovedPatchesEnableNonSecurity" :: Maybe (Boolean), "RejectedPatches" :: Maybe (PatchIdList), "CreatedDate" :: Maybe (DateTime), "ModifiedDate" :: Maybe (DateTime), "Description" :: Maybe (BaselineDescription), "Sources" :: Maybe (PatchSourceList) } -> { "BaselineId" :: Maybe (BaselineId), "Name" :: Maybe (BaselineName), "OperatingSystem" :: Maybe (OperatingSystem), "GlobalFilters" :: Maybe (PatchFilterGroup), "ApprovalRules" :: Maybe (PatchRuleGroup), "ApprovedPatches" :: Maybe (PatchIdList), "ApprovedPatchesComplianceLevel" :: Maybe (PatchComplianceLevel), "ApprovedPatchesEnableNonSecurity" :: Maybe (Boolean), "RejectedPatches" :: Maybe (PatchIdList), "CreatedDate" :: Maybe (DateTime), "ModifiedDate" :: Maybe (DateTime), "Description" :: Maybe (BaselineDescription), "Sources" :: Maybe (PatchSourceList) }) -> UpdatePatchBaselineResult
 ```
 
 Constructs UpdatePatchBaselineResult's fields from required parameters
